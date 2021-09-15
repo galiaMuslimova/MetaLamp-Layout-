@@ -1,6 +1,6 @@
-/*!*****************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!./includes/fonts/fonts.css ***!
-  \*****************************************************************************/
+/*!********************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!./fonts/fonts.css ***!
+  \********************************************************************/
 @font-face {
   font-family: 'Montserrat Bold';
   src: url(8bb2285f366abc2673b5.ttf) format('truetype');
@@ -18,33 +18,13 @@
 /*!*******************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./index.scss ***!
   \*******************************************************************************************************/
-.header p {
-  line-height: 17px;
-}
-.header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-list {
-  padding: 0px;
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  align-items: center;
-}
-.nav-list li {
-  padding: 0 10px;
-}
-
 .btn {
   text-transform: uppercase;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
   border: none;
   color: #ffffff;
+  line-height: 15px;
 }
 .btn_header {
   height: 34px;
@@ -59,20 +39,61 @@
   width: 196px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  width: 106px;
+  justify-content: space-between;
+}
+
+.header-container {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-list li {
+  padding: 0 0 0 20px;
+}
+.nav-list li p {
+  line-height: 17px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer .column {
+  max-width: 260px;
+}
+
 .body {
   max-width: 1440px;
-}
-.body p {
   color: rgba(110, 112, 165, 0.5);
-  font-family: Montserrat Regular;
+  font-family: "Montserrat Regular", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
 }
 
-.wrapper {
-  align-items: center;
+h3 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #1F2041;
 }
 
 .container {

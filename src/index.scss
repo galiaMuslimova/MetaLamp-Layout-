@@ -1,23 +1,25 @@
-@import '/includes/header/header.scss';
-@import '/includes/button/button.scss';
+@import 'fonts/fonts.css';
+@import 'assets/assets.scss';
+
+@import './includes/includes.scss';
 
 $max-width: 1440px;
 
 .body {
-  max-width: $max-width;    
-  
-  p {
+  max-width: $max-width;   
     color: rgba(110, 112, 165, 0.5);
-    font-family: Montserrat;
+    font-family: 'Montserrat Regular', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 18px;
-  }
+    line-height: 18px;  
 }
 
-.wrapper {
-  align-items: center;
+h3 {
+  font-family: 'Montserrat Bold', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #1F2041
 }
 
 .container {

@@ -1,26 +1,28 @@
-.header {
-  p {
-    line-height: 17px;
-  }
-
-  &-container {    
+.header {  
+  &-container {   
+    height: 70px; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-
 }
 
 .nav {
-  &-list {
+  &-list {    
+    padding: 0px;
+    margin: 0px;
     display: flex;
     flex-direction: row;
     list-style-type: none;
     align-items: center;
+    justify-content: space-between;
 
     li {
-      padding: 0 10px;
+      padding: 0 0 0 20px;
+      p {
+        line-height: 17px;
+      }      
     }
   }
   
