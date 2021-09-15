@@ -1,0 +1,17 @@
+.rights {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(31, 32, 65, 0.5);
+}
+
+.icons-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  padding: 0 0 0 20px;
+}

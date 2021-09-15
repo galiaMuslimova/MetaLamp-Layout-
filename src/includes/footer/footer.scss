@@ -1,8 +1,14 @@
-.footer {
-  &-container {
+@import './rights/rights.scss';
+
+.footer { 
+
+  &-content {
+    height: 372px;
+    line-height: 18px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   .column {
