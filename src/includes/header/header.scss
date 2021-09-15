@@ -1,0 +1,27 @@
+.header {
+  p {
+    line-height: 17px;
+  }
+
+  &-container {    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+.nav {
+  &-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+
+    li {
+      padding: 0 10px;
+    }
+  }
+  
+}

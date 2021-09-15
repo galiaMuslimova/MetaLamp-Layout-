@@ -1,0 +1,22 @@
+.btn {
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+  border: none;
+  color: #ffffff;
+
+  &_header {
+    height: 34px;
+
+    &_login {
+      width: 87px;
+      background: none;
+      color: #aa99ce;
+      border: 2px solid #aa99ce;
+    }
+
+    &_register {
+      width: 196px;
+    }
+  }
+}
