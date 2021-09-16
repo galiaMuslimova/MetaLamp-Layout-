@@ -1,11 +1,5 @@
-.main {
+.main { 
+  height: 830px; 
   background-image: url("@/pages/main/background.jpg");
   background-size: cover;
-  height: 200px;
-  width: 200px;
-  margin: 0 auto;
-
-  &-container {
-    height: 830px;    
-  }
 }

@@ -1,13 +1,11 @@
-@import 'fonts/fonts.css';
-@import 'assets/assets.scss';
-
-@import './includes/includes.scss';
-@import './pages/main/main.scss';
-
 $max-width: 1440px;
 
+body {
+  margin: 0;
+}
+
 .body {
-  max-width: $max-width;   
+  margin: 0 auto;  
   color: rgba(31, 32, 65, 0.5);
   font-family: 'Montserrat Regular', sans-serif;
   font-style: normal;
