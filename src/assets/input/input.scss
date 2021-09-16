@@ -1,0 +1,19 @@
+.input {
+  width: 150px;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  &__btn {
+    width: 44px;
+    height: 44px;
+    color: rgba(31, 32, 65, 0.5);
+    background-color: #FFFFFF;
+    border: 0px;
+    box-sizing: border-box;
+  }
+}

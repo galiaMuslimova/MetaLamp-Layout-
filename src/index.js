@@ -8,6 +8,8 @@ import '@/assets/assets.scss';
 
 import '@/pages/main/main.scss';
 
+import '@/assets/input/input.js'
+
 
 
 

@@ -29,16 +29,22 @@ p{
   font-size: 14px;  
   line-height: 17px;
   color: rgba(31, 32, 65, 0.5);
+}
 
   .p_dark{
     color: rgba(31, 32, 65, 0.75);
     line-height: 24px;
   } 
-  .p-light {
+  .p_light {
     color: rgba(31, 32, 65, 0.25);
     line-height: 24px;
   }
-}
+  .p_input {
+    color: rgba(31, 32, 65, 0.75);
+    line-height: 18px;
+    padding: 0px 0px 0px 15px;
+  }
+
 
 .container {
   max-width: 1180px;
