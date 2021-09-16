@@ -10,6 +10,26 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/assets.scss":
+/*!****************************!*\
+  !*** ./assets/assets.scss ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./assets/assets.scss?");
+
+/***/ }),
+
+/***/ "./includes/includes.scss":
+/*!********************************!*\
+  !*** ./includes/includes.scss ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./includes/includes.scss?");
+
+/***/ }),
+
 /***/ "./index.scss":
 /*!********************!*\
   !*** ./index.scss ***!
@@ -20,13 +40,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./pages/main/main.scss":
+/*!******************************!*\
+  !*** ./pages/main/main.scss ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./pages/main/main.scss?");
+
+/***/ }),
+
+/***/ "./fonts/fonts.css":
+/*!*************************!*\
+  !*** ./fonts/fonts.css ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./fonts/fonts.css?");
+
+/***/ }),
+
 /***/ "./index.js":
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../index.scss */ \"./index.scss\");\n\r\n\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fonts_fonts_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/fonts/fonts.css */ \"./fonts/fonts.css\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/index.scss */ \"./index.scss\");\n/* harmony import */ var _includes_includes_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/includes/includes.scss */ \"./includes/includes.scss\");\n/* harmony import */ var _assets_assets_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/assets/assets.scss */ \"./assets/assets.scss\");\n/* harmony import */ var _pages_main_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/pages/main/main.scss */ \"./pages/main/main.scss\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 
