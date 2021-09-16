@@ -1,5 +1,26 @@
 .main { 
   height: 830px; 
   background-image: url("@/pages/main/background.jpg");
-  background-size: cover;
+  background-size: cover;  
+
+  &-container {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+  }
+}
+
+.note {  
+  position: absolute;  
+  height: 48px;
+  width: 297px;
+  bottom: 18px;
+  right: 0px;
+
+  &-p {
+    margin: 0;
+    color: rgba(31, 32, 65, 0.75);
+    text-align: right;
+    line-height: 24px;
+  }  
 }
