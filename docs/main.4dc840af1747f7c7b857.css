@@ -24,13 +24,14 @@ body {
 
 .body {
   margin: 0 auto;
-  color: rgba(31, 32, 65, 0.5);
-  font-family: "Montserrat Regular", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  position: relative;
+}
+
+h2 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1F2041;
+  margin: 0;
 }
 
 h3 {
@@ -40,12 +41,24 @@ h3 {
   color: #1F2041;
 }
 
-p__large-interval {
+p {
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+}
+p .p_dark {
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 24px;
+}
+p .p-light {
+  color: rgba(31, 32, 65, 0.25);
   line-height: 24px;
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 1180px;
+  padding: 0px 10px;
   margin: 0 auto;
 }
 /*!*******************************************************************************************************************!*\
@@ -76,11 +89,17 @@ p__large-interval {
 }
 
 .rights {
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.rights-content {
   height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.rights p {
+  color: rgba(31, 32, 65, 0.75);
 }
 
 .icons-list {
@@ -92,22 +111,21 @@ p__large-interval {
   padding: 0 0 0 20px;
 }
 
-.footer {
+.links {
   box-shadow: 0px 1px 0px 0px #1F20411A;
 }
-.footer-content {
+.links-content {
   height: 372px;
-  line-height: 18px;
   display: flex;
   align-items: center;
 }
-.footer .row {
+.links .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
-.footer .column {
+.links .column {
   max-width: 260px;
   display: flex;
   flex-direction: column;
@@ -146,6 +164,20 @@ p__large-interval {
 /*!*****************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/main/main.scss ***!
   \*****************************************************************************************************************/
+.entry {
+  height: 374px;
+  width: 380px;
+  position: absolute;
+  top: 70px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.entry-inner {
+  padding: 40px 30px 30px 30px;
+}
+
 .main {
   height: 830px;
   background-image: url(b16b5f294258b914f18e.jpg);
@@ -162,7 +194,7 @@ p__large-interval {
   height: 48px;
   width: 297px;
   bottom: 18px;
-  right: 0px;
+  right: 10px;
 }
 .note-p {
   margin: 0;

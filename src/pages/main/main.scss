@@ -1,3 +1,5 @@
+@import './entry/entry.scss';;
+
 .main { 
   height: 830px; 
   background-image: url("@/pages/main/background.jpg");
@@ -15,7 +17,7 @@
   height: 48px;
   width: 297px;
   bottom: 18px;
-  right: 0px;
+  right: 10px;
 
   &-p {
     margin: 0;

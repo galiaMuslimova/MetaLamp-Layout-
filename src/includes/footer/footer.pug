@@ -1,28 +1,3 @@
-footer(class='footer')
-  div(class='container footer-container')
-    div(class='footer-content')
-      div(class='row')
-        div(class='column')
-          include ../../assets/logo/logo.pug
-          p(class='p__large-interval') Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-        div(class='column')
-          h3 Навигация 
-          p О нас
-          p Новости
-          p Служба поддержки
-          p Услуги
-        div(class='column')
-          h3 О нас
-          p О сервисе
-          p Наша команда
-          p Вакансии
-          p Инвесторы
-        div(class='column')
-          h3 Служба поддержки
-          p Соглашение
-          p Сообщества
-          p Связь с нами
-        div(class='column')
-          h3 Подписка
-          p(class='p__large-interval') Получайте специальные предложения и новости сервиса
-include rights/rights.pug     
+footer
+  include links/links.pug 
+  include rights/rights.pug     
