@@ -67,7 +67,18 @@ p {
 .container {
   max-width: 1180px;
   padding: 0px 10px;
-  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 /*!*******************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./includes/includes.scss ***!
@@ -170,15 +181,59 @@ p {
   justify-content: space-between;
 }
 
+.calendar {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 320px;
+  height: 369px;
+  top: 44px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+}
+
+.select {
+  display: none;
+  position: absolute;
+  top: 44px;
+  z-index: 2;
+  width: 320px;
+  height: 159px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+
 .input {
-  width: 150px;
+  position: relative;
   height: 44px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
+}
+.input-empty {
+  width: 320px;
+}
+.input-pointer, .input-dropdown {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.input-pointer {
+  width: 260px;
+}
+.input-dropdown.filter {
+  width: 266px;
+}
+.input-dropdown.entryDate {
+  width: 150px;
+}
+.input-dropdown.entryGuests {
+  width: 320px;
 }
 .input__btn {
   width: 44px;
@@ -189,18 +244,8 @@ p {
   box-sizing: border-box;
 }
 
-.calendar {
-  z-index: 2;
-  position: absolute;
-  width: 320px;
-  height: 369px;
-  left: 30px;
-  top: 190px;
-  background: #FFFFFF;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  border-radius: 4px;
+.active {
+  display: block;
 }
 /*!*****************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/main/main.scss ***!
@@ -217,11 +262,6 @@ p {
 }
 .entry-inner {
   padding: 40px 30px 30px 30px;
-}
-.entry-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .main {

@@ -80,7 +80,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \*******************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(\".input__btn\").on('click', function(event) {\r\n  console.log(event)\r\n});\n\n//# sourceURL=webpack:///./assets/input/input.js?");
+eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(document).ready(function(event) {\r\n  $('.input__btn').click(function() {\r\n    let id = $(this).parent()[0].id;\r\n    $('#' + id + '-input').toggleClass('active');\r\n  })\r\n})\n\n//# sourceURL=webpack:///./assets/input/input.js?");
 
 /***/ }),
 

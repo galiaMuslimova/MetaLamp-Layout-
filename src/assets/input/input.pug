@@ -1,4 +1,10 @@
-div(class='input')
-  p(class='p_input') ДД.ММ.ГГГГ
-  button(class='input__btn')
-    include input__btn.svg
+include ../select/select.pug
+include ../calendar/calendar.pug
+
+mixin input(type, id, text)
+  div(id=id, class='input', class='input-'+type)&attributes(attributes)
+    p(class='p_input')= text
+    if(type == 'dropdown')
+      button(class='input__btn')
+        include input__btn.svg
+    

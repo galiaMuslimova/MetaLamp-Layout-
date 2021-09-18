@@ -45,10 +45,22 @@ p{
     padding: 0px 0px 0px 15px;
   }
 
-
 .container {
   max-width: 1180px;
   padding: 0px 10px;
-  margin: 0 auto;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 

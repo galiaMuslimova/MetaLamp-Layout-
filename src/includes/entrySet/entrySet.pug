@@ -1,0 +1,17 @@
+include ../../assets/input/input.pug
+include ../../assets/calendar/calendar.pug
+include ../../assets/select/select.pug
+
+div(class='row')
+  div(class='col')
+    h3 прибытие        
+    +input('dropdown','arrival','ДД.ММ.ГГГГ')(class='entryDate')
+  div(class='col')
+    h3 выезд
+    +input('dropdown','departure','ДД.ММ.ГГГГ')(class='entryDate')
+  +calendar(id)
+div(class='row')
+  div(class='col')
+    h3 гости
+    +input('dropdown','guests','Сколько гостей')(class='entryGuests')   
+  +select(id)           

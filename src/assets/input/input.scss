@@ -1,12 +1,36 @@
-.input {
-  width: 150px;
+.input {  
+  position: relative;
   height: 44px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  border-radius: 4px;  
+
+  &-empty {
+    width: 320px;
+  }
+
+  &-pointer,
+  &-dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-pointer {
+    width: 260px;
+  }
+
+  &-dropdown {
+    &.filter {
+      width: 266px;
+    }
+    &.entryDate {
+      width: 150px;
+    } 
+    &.entryGuests {
+      width: 320px;
+    }    
+  }
   
   &__btn {
     width: 44px;
@@ -16,4 +40,8 @@
     border: 0px;
     box-sizing: border-box;
   }
+}
+
+.active {
+  display: block;
 }
