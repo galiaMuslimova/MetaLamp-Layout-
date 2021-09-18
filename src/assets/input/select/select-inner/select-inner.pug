@@ -1,0 +1,13 @@
+include count/count.pug
+
+mixin select-inner()
+  div(class='select-inner')
+    div(class='row select__row')
+      h3 взрослые
+      +count()
+    div(class='row select__row')
+      h3 дети
+      +count()
+    div(class='row select__row')
+      h3 младенцы
+      +count()
