@@ -6,18 +6,23 @@
   color: #ffffff;
   line-height: 15px;
 
-  &_header {
+  &-header {
     height: 34px;
 
-    &_login {
+    &__login {
       width: 87px;
       background: none;
       color: #aa99ce;
       border: 2px solid #aa99ce;
     }
 
-    &_register {
+    &__register {
       width: 196px;
     }
+  }
+
+  &-entry {
+    width: 320px;
+    height: 44px;
   }
 }

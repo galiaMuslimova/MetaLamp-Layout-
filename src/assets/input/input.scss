@@ -1,5 +1,7 @@
+@import 'calendar/calendar.scss';
+@import 'select/select.scss';
+
 .input {  
-  position: relative;
   height: 44px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -9,14 +11,14 @@
     width: 320px;
   }
 
-  &-pointer,
+  &-arrow,
   &-dropdown {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  &-pointer {
+  &-arrow {
     width: 260px;
   }
 
@@ -40,6 +42,18 @@
     border: 0px;
     box-sizing: border-box;
   }
+}
+
+.drop {
+  display: none;
+  position: absolute;
+  top: 89px;
+  left: 0px;
+  z-index: 2;
+
+  background: #FFFFFF;
+  box-sizing: border-box;  
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
 .active {

@@ -10,5 +10,10 @@
 
   &-inner {
     padding: 40px 30px 30px 30px;
+
+    .row:last-child {
+      padding-top: 31px;
+    }
   }  
+  
 }
