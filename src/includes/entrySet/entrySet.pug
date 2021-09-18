@@ -1,13 +1,13 @@
 include ../../assets/input/input.pug
 
-div(class='row')
+div(class='row row-entry')
   div(class='col')
     h3 прибытие        
     +input('dropdown','ДД.ММ.ГГГГ','calendar', 'arrival')(class='entryDate')
   div(class='col')
     h3 выезд
     +input('dropdown','ДД.ММ.ГГГГ','calendar','departure')(class='entryDate')  
-div(class='row')
+div(class='row row-entry')
   div(class='col')
     h3 гости
     +input('dropdown','Сколько гостей','select','guests')(class='entryGuests')      

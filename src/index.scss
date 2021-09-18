@@ -2,6 +2,7 @@ $max-width: 1440px;
 
 body {
   margin: 0;
+  width: 100%;
 }
 
 .body {
@@ -21,7 +22,7 @@ h3 {
   font-size: 12px;
   text-transform: uppercase;
   color: #1F2041;
-  
+  margin: 5px 0px;
 }
 
 p{
@@ -46,7 +47,7 @@ p{
   }
 
 .container {
-  max-width: 1180px;
+  max-width: 1160px;
   padding: 0px 10px;
   margin: 0 auto;
 }
@@ -56,6 +57,11 @@ p{
   flex-direction: row;
   justify-content: space-between;
   position: relative;
+  
+
+  &-entry {
+    padding: 17px 0px 0px 0px;
+  }
 }
 
 .col {

@@ -20,6 +20,7 @@
   \*******************************************************************************************************/
 body {
   margin: 0;
+  width: 100%;
 }
 
 .body {
@@ -39,6 +40,7 @@ h3 {
   font-size: 12px;
   text-transform: uppercase;
   color: #1F2041;
+  margin: 5px 0px;
 }
 
 p {
@@ -65,14 +67,19 @@ p {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1160px;
   padding: 0px 10px;
+  margin: 0 auto;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
+}
+.row-entry {
+  padding: 17px 0px 0px 0px;
 }
 
 .col {
@@ -135,14 +142,9 @@ p {
 }
 .links-content {
   height: 372px;
-  display: flex;
-  align-items: center;
 }
-.links .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+.links-row {
+  padding: 100px 0px 0px 0px;
 }
 .links .column {
   max-width: 260px;
@@ -161,17 +163,21 @@ p {
   color: #ffffff;
   line-height: 15px;
 }
-.btn_header {
+.btn-header {
   height: 34px;
 }
-.btn_header_login {
+.btn-header__login {
   width: 87px;
   background: none;
   color: #aa99ce;
   border: 2px solid #aa99ce;
 }
-.btn_header_register {
+.btn-header__register {
   width: 196px;
+}
+.btn-entry {
+  width: 320px;
+  height: 44px;
 }
 
 .logo {
@@ -182,48 +188,34 @@ p {
 }
 
 .calendar {
-  display: none;
-  position: absolute;
-  z-index: 2;
   width: 320px;
   height: 369px;
-  top: 44px;
-  background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
 }
 
 .select {
-  display: none;
-  position: absolute;
-  top: 44px;
-  z-index: 2;
   width: 320px;
   height: 159px;
-  background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.5);
-  box-sizing: border-box;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
 .input {
-  position: relative;
   height: 44px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
+  box-sizing: border-box;
 }
 .input-empty {
   width: 320px;
 }
-.input-pointer, .input-dropdown {
+.input-arrow, .input-dropdown {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.input-pointer {
+.input-arrow {
   width: 260px;
 }
 .input-dropdown.filter {
@@ -236,12 +228,23 @@ p {
   width: 320px;
 }
 .input__btn {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   color: rgba(31, 32, 65, 0.5);
   background-color: #FFFFFF;
   border: 0px;
   box-sizing: border-box;
+}
+
+.drop {
+  display: none;
+  position: absolute;
+  top: 89px;
+  left: 0px;
+  z-index: 2;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
 .active {
@@ -259,9 +262,13 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  box-sizing: border-box;
 }
 .entry-inner {
-  padding: 40px 30px 30px 30px;
+  padding: 39px 30px 30px 29px;
+}
+.entry-inner .row:last-child {
+  padding-top: 31px;
 }
 
 .main {
@@ -279,8 +286,8 @@ p {
   position: absolute;
   height: 48px;
   width: 297px;
-  bottom: 18px;
-  right: 10px;
+  bottom: 21px;
+  right: 4px;
 }
 .note-p {
   margin: 0;

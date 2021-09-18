@@ -6,6 +6,7 @@
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;  
+  box-sizing: border-box;
 
   &-empty {
     width: 320px;
@@ -35,8 +36,8 @@
   }
   
   &__btn {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     color: rgba(31, 32, 65, 0.5);
     background-color: #FFFFFF;
     border: 0px;

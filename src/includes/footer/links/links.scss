@@ -3,15 +3,11 @@
 
   &-content {
     height: 372px; 
-    display: flex;
-    align-items: center; 
+    
   }
 
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+  &-row {
+    padding: 100px 0px 0px 0px;
   }
 
   .column {
