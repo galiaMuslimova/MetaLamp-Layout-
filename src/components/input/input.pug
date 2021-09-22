@@ -1,0 +1,26 @@
+//-
+  input(type, text)
+  
+  type:
+  - empty(пустой)
+  - arrow(input со стрелкой)
+  - dropdown(input с выпадающим списком)   
+
+  text: текст в поле input
+
+mixin input(type, text)
+  //непосредственно input 
+  div(class='input', class='input_'+type)&attributes(attributes)
+    p(class='p_input')= text
+
+    //добавляет кнопку 
+    if(type == 'dropdown')
+      button(class='input__btn')
+        include dropdown-btn.svg
+      
+    if(type == 'arrow')
+      button(class='input__btn')
+        include arrow-btn.svg
+
+    
+    

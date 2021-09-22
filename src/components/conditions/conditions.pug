@@ -1,0 +1,14 @@
+include ../input/input.pug
+
+div(class='conditions')
+  div(class='row')
+    div(class='col')
+      h3 прибытие        
+      +input('dropdown','ДД.ММ.ГГГГ')(class='entryDate')
+    div(class='col')
+      h3 выезд
+      +input('dropdown','ДД.ММ.ГГГГ')(class='entryDate')  
+  div(class='row')
+    div(class='col')
+      h3 гости
+      +input('dropdown','Сколько гостей')(class='entryGuests')      

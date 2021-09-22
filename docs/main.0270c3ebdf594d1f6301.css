@@ -1,0 +1,325 @@
+/*!*************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./theme/fonts.scss ***!
+  \*************************************************************************************************************/
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url(079ca05d3ded9bc107ab.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url(3cd786652b8a2e9d41f2.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url(4c3d23174e1f233b946d.ttf) format("truetype");
+}
+/*!**************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./theme/global.scss ***!
+  \**************************************************************************************************************/
+body {
+  margin: 0 auto;
+  width: 100%;
+}
+
+h2 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1F2041;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #1F2041;
+  margin: 5px 0px;
+}
+
+.h3_light {
+  color: #BC9CFF;
+}
+
+p {
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.p_dark {
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 24px;
+}
+.p_light {
+  color: rgba(31, 32, 65, 0.25);
+  line-height: 24px;
+}
+.p_input {
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 18px;
+  padding: 0px 0px 0px 15px;
+}
+
+.container {
+  max-width: 1160px;
+  padding: 0px 10px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.drop {
+  display: block;
+  position: absolute;
+  left: 0px;
+  z-index: 2;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+/*!**************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/button/button.scss ***!
+  \**************************************************************************************************************************/
+.btn {
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+  border: none;
+  color: #ffffff;
+  line-height: 15px;
+}
+.btn_header {
+  height: 34px;
+}
+.btn_header-login {
+  width: 87px;
+  background: none;
+  color: #aa99ce;
+  border: 2px solid #aa99ce;
+}
+.btn_header-register {
+  width: 196px;
+}
+.btn_entry {
+  width: 320px;
+  height: 44px;
+  margin: 37px 0px 0px 0px;
+}
+/*!******************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/calendar/calendar.scss ***!
+  \******************************************************************************************************************************/
+.calendar {
+  display: block;
+  width: 320px;
+  height: 369px;
+  top: 89px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+/*!**********************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/conditions/conditions.scss ***!
+  \**********************************************************************************************************************************/
+.conditions .row {
+  padding: 17px 0px 0px 0px;
+}
+/*!**********************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/entry-card/entry-card.scss ***!
+  \**********************************************************************************************************************************/
+.entry-card {
+  height: 374px;
+  width: 380px;
+  position: absolute;
+  top: 70px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.entry-inner {
+  padding: 39px 30px 30px 29px;
+}
+/*!**************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/footer/footer.scss ***!
+  \**************************************************************************************************************************/
+.rights {
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.rights-content {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rights p {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.icons-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  padding: 0 0 0 20px;
+}
+
+.links {
+  box-shadow: 0px 1px 0px 0px #1F20411A;
+}
+.links-container {
+  height: 372px;
+}
+.links-row {
+  padding: 100px 0px 0px 0px;
+}
+.links-col {
+  max-width: 260px;
+  align-items: flex-start;
+}
+/*!**************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/header/header.scss ***!
+  \**************************************************************************************************************************/
+.header-container {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-list li {
+  padding: 0 0 0 20px;
+}
+.nav-list li p {
+  line-height: 17px;
+}
+/*!************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/input/input.scss ***!
+  \************************************************************************************************************************/
+.input {
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.input_empty {
+  width: 320px;
+}
+.input_arrow, .input_dropdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.input_arrow {
+  width: 260px;
+}
+.input_dropdown.filter {
+  width: 266px;
+}
+.input_dropdown.entryDate {
+  width: 150px;
+}
+.input_dropdown.entryGuests {
+  width: 320px;
+}
+.input__btn {
+  width: 42px;
+  height: 42px;
+  color: rgba(31, 32, 65, 0.5);
+  background-color: #FFFFFF;
+  border: 0px;
+  box-sizing: border-box;
+}
+/*!**********************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/logo/logo.scss ***!
+  \**********************************************************************************************************************/
+.logo {
+  display: flex;
+  align-items: center;
+  width: 106px;
+  justify-content: space-between;
+}
+/*!**************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/select/select.scss ***!
+  \**************************************************************************************************************************/
+.count__btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 22px;
+  color: #1F204180;
+  background-color: #ffff;
+}
+.count__num {
+  padding: 0px 11px;
+}
+
+.select-inner {
+  height: 119px;
+}
+
+.select__row {
+  padding: 7px 7px 0px 15px;
+}
+.select__row_bottom {
+  padding-bottom: 7px;
+}
+
+.select {
+  display: block;
+  width: 320px;
+  height: 159px;
+  top: 84px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+/*!*****************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/main/main.scss ***!
+  \*****************************************************************************************************************/
+.main {
+  height: 830px;
+  background-image: url(b16b5f294258b914f18e.jpg);
+  background-size: cover;
+}
+.main-container {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.note {
+  position: absolute;
+  height: 48px;
+  width: 297px;
+  bottom: 21px;
+  right: 4px;
+}
+.note__p {
+  margin: 0;
+  color: rgba(31, 32, 65, 0.75);
+  text-align: right;
+  line-height: 24px;
+}
