@@ -1,14 +1,18 @@
 include ../input/input.pug
+include ../calendar/calendar.pug
+include ../select/select.pug
 
 div(class='conditions')
-  div(class='row')
+  div(class='row conditions__row')
     div(class='col')
       h3 прибытие        
-      +input('dropdown','ДД.ММ.ГГГГ')(class='entryDate')
+      +input('dropdown','ДД.ММ.ГГГГ')(class='entryDate date')
     div(class='col')
       h3 выезд
-      +input('dropdown','ДД.ММ.ГГГГ')(class='entryDate')  
-  div(class='row')
+      +input('dropdown','ДД.ММ.ГГГГ')(class='entryDate date')
+    +calendar()  
+  div(class='row conditions__row')
     div(class='col')
       h3 гости
-      +input('dropdown','Сколько гостей')(class='entryGuests')      
+      +input('dropdown','Сколько гостей')(class='entryGuests quests')  
+    +select()  

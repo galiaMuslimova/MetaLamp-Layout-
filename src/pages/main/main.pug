@@ -1,10 +1,9 @@
-html
-  head
-  body
-    include ../../components/header/header.pug
-    div(class='main')
-      div(class='container main-container')
-        include ../../components/entry-card/entry-card.pug
-        div(class='note') 
-          p(class='note__p') Лучшие номера для вашей работы, отдыха и просто вдохновения
-    include ../../components/footer/footer.pug
+extends ../base/base.pug
+
+block content
+  div(class='main')
+    div(class='container main-container')
+      include ../../components/entry-card/entry-card.pug
+      div(class='note') 
+        p(class='note__p') Лучшие номера для вашей работы, отдыха и просто вдохновения
+  

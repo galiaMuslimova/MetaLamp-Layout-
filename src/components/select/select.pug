@@ -1,8 +1,8 @@
-include select-inner/select-inner.pug
+include ../select-content/select-content.pug
 
-mixin select(id)
-  div(class='drop select' id=id+'-input')
-    +select-inner()
+mixin select()
+  div(class='drop select')
+    +select-content()
     div(class='row select__row select__row_bottom')
       h3(class='h3_light') очистить
       h3(class='h3_light') применить

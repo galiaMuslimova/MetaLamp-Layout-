@@ -1,4 +1,5 @@
 $(window).on('load',function(){
-  let calendar = $('.calendar').clone();
-  $('.input-dropdown').after(calendar);
+  $('.input__btn',).click(function () {
+    $(this).closest('.row').find('.drop').toggleClass('active')      
+  });
 });
