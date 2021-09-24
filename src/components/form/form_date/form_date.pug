@@ -1,0 +1,9 @@
+include ../../input/input.pug
+include ../../calendar/calendar.pug
+
+mixin form_date(title)
+  form(class='form form_date')
+    legend 
+      h3=title 
+    +input('ДД.ММ.ГГГГ', 'dropdown', 'date')
+    +calendar()

@@ -19,11 +19,11 @@ h3 {
   margin: 5px 0px;
 }
 
-.h3_light{
+.h3_light {
   color: #BC9CFF;
 }
 
-p{
+p, input{
   font-family: 'Montserrat Regular', sans-serif;
   font-size: 14px;  
   line-height: 17px;
@@ -38,11 +38,6 @@ p{
   &_light {
     color: rgba(31, 32, 65, 0.25);
     line-height: 24px;
-  }
-  &_input {
-    color: rgba(31, 32, 65, 0.75);
-    line-height: 18px;
-    padding: 0px 0px 0px 15px;
   }
 }
 

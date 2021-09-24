@@ -15,5 +15,6 @@ import '@c/select/select.scss';
 
 import './pages/main/main.scss'
 
-import './components/input/input.js'
-import './components/select-content/count/count.js'
+import '@c/form/form.js'
+import '@c/select-content/count/count.js'
+import '@c/select/select.js'

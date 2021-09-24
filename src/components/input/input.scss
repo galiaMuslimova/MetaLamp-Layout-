@@ -1,19 +1,17 @@
-.input {  
+.input {
   height: 44px;
+  position: relative;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;  
-  box-sizing: border-box;
+  box-sizing: border-box;   
+  
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 18px;
+  padding: 0px 0px 0px 15px;
 
   &_empty {
     width: 320px;
-  }
-
-  &_arrow,
-  &_dropdown {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
 
   &_arrow {
@@ -24,17 +22,15 @@
     &.filter {
       width: 266px;
     }
-    &.entryDate {
-      width: 150px;
-    } 
-    &.entryGuests {
-      width: 320px;
-    }    
   }
-  
+
   &__btn {
-    width: 42px;
-    height: 42px;
+    position: absolute;
+    z-index: 3;
+    right: 2px;
+    bottom: 2px;
+    width: 40px;
+    height: 40px;
     color: rgba(31, 32, 65, 0.5);
     background-color: #FFFFFF;
     border: 0px;
