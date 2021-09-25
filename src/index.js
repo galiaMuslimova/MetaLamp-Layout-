@@ -1,20 +1,12 @@
-import './theme/fonts.scss';
-import './theme/global.scss';
+function requireAll(requireContext) {
+  return requireContext.keys().map(requireContext);
+}
 
-import '@c/button/button.scss';
-import '@c/drop/drop.scss';
-import '@c/calendar/calendar.scss';
-import '@c/conditions/conditions.scss';
-import '@c/entry-card/entry-card.scss';
-import '@c/footer/footer.scss';
-import '@c/header/header.scss';
-import '@c/input/input.scss';
-import '@c/logo/logo.scss';
-import '@c/select-content/select-content.scss';
-import '@c/select/select.scss';
+requireAll(require.context('./theme', true, /\.js$/));
+requireAll(require.context('./theme', true, /\.scss$/));
 
-import './pages/main/main.scss'
+requireAll(require.context('@c', true, /\.js$/));
+requireAll(require.context('@c', true, /\.scss$/));
 
-import '@c/form/form.js'
-import '@c/select-content/count/count.js'
-import '@c/select/select.js'
+requireAll(require.context('./pages', true, /\.js$/));
+requireAll(require.context('./pages', true, /\.scss$/));
