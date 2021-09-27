@@ -1,0 +1,26 @@
+[
+  {
+    "image": "./img/888.png",
+    "num": 888,
+    "luxury": true,
+    "cost": 9990,
+    "star": 5,
+    "review": 145
+  },
+  {
+    "image": "./img/840.png",
+    "num": 840,
+    "luxury": false,
+    "cost": 9990,
+    "star": 4,
+    "review": 65
+  },
+  {
+    "image": "./img/980.png",
+    "num": 980,
+    "luxury": true,
+    "cost": 8500,
+    "star": 3,
+    "review": 35
+  }
+]

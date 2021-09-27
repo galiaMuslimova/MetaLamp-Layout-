@@ -1,7 +1,7 @@
 $(window).on('load', function () {
-  $('.submit').click(function () {
+  $('.submit').on('click', function () {
     let input = $(this).closest('.form').find('.input');
-    let count = localStorage.getItem('guestsCount');
+    let count = sessionStorage.getItem('guestsCount');
 
     function declOfNum(number, titles) {
       cases = [2, 0, 1, 1, 1, 2];
@@ -10,6 +10,11 @@ $(window).on('load', function () {
     let str = count + ' ' + declOfNum(count, ['гость', 'гостя', 'гостей']);
 
     input.val(str);
-    $(this).closest('.form').find('.drop').removeClass('active');
+    $(this).closest('.form').find('.drop').removeClass('active'); 
+  });
+
+  $('.reset').click(function () {
+    $(this).closest('.form').trigger('reset');
+    sessionStorage.clear();   
   });
 });

@@ -2,10 +2,10 @@ include ../../input/input.pug
 include ../../select/select.pug
 include ../../select-content/select-content.pug
 
-mixin form_select(type)
+mixin form_select(type, id)
 
   if(type=='guests')
-    form(class='form', class=attributes.class, accessKey='guestsCount')
+    form(class='form', class=attributes.class, name='guestsCount')
       legend 
         h3='гости' 
       +input('Сколько гостей', 'dropdown', 'text')

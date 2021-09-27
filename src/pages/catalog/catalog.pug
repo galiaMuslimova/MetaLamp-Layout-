@@ -3,7 +3,9 @@ extends ../base/base.pug
 block content
   div(class='catalog')
     div(class='container catalog-container')
-      include ../../components/filter/filter.pug
-      div(class='catalog-content')
+      div(class='row')
+        include ../../components/filter/filter.pug
+        div(class='catalog-content')
+          include ../../components/catalog-list/catalog-list.pug
     
   
