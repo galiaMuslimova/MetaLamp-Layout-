@@ -1,8 +1,8 @@
 include ../select-content/select-content.pug
 
-mixin select()
+mixin select(array)
   div(class='drop select')
-    +select-content()
+    +select-content(array)
     div(class='row select__row select__row_bottom')
       button(type='reset', class='btn_submit reset', form='guests') 
         h3(class='h3_light') очистить

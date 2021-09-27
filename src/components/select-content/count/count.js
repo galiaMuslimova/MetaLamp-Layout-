@@ -9,6 +9,6 @@ $(window).on('load', function () {
       if (i > 0) {
         num.val(--i);
       }        
-    }      
+    }     
   });
 });

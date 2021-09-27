@@ -1,13 +1,13 @@
 include count/count.pug
 
-mixin select-content()
+mixin select-content(array)
   div(class='select-content')
     div(class='row select__row')
-      h3 взрослые
+      h3=array[0]
       +count()
     div(class='row select__row')
-      h3 дети
+      h3=array[1]
       +count()
     div(class='row select__row')
-      h3 младенцы
+      h3=array[2]
       +count()

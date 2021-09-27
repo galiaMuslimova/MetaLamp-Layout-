@@ -1,10 +1,25 @@
 include ../../input/input.pug
 include ../../select/select.pug
+include ../../select-content/select-content.pug
 
-mixin form_select(title, value, id)
-  form(class='form form_select', id=id)
-    legend 
-      h3=title 
-    +input(value, 'dropdown', 'text')
-    +select()
-    
+mixin form_select(type)
+
+  if(type=='guests')
+    form(class='form', class=attributes.class, accessKey='guestsCount')
+      legend 
+        h3='гости' 
+      +input('Сколько гостей', 'dropdown', 'text')
+      if(attributes.class == 'withButton')
+        +select(['взрослые', 'дети', 'младенцы'])      
+      else 
+        div(class='drop')
+          +select-content(['взрослые', 'дети', 'младенцы'])
+
+  if(type=='rooms') 
+    form(class='form', key='roomsCount')
+      legend 
+        h3='удобства номера' 
+      +input('2 спальни, 2 кровати', 'dropdown', 'text')
+      div(class='drop')
+        +select-content(['спальни', 'кровати', 'ванные комнаты'])
+  

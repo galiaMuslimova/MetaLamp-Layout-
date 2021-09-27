@@ -1,19 +1,15 @@
 $(window).on('load', function () {
-
   $('.submit').click(function () {
-    let form = $(this).closest('.form');
-    let count = 0;
+    let input = $(this).closest('.form').find('.input');
+    let count = localStorage.getItem('guestsCount');
 
-    form.find('.count__num').each( function () {
-      count += Number($(this).val());      
-    });
+    function declOfNum(number, titles) {
+      cases = [2, 0, 1, 1, 1, 2];
+      return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+    }
+    let str = count + ' ' + declOfNum(count, ['гость', 'гостя', 'гостей']);
 
-    let input = form.find('.input');
-    if (count == 0) { input.val('Сколько гостей') } else
-      if (count == 1) { input.val(count + ' гость')} else
-        if ((count >= 2) && (count <= 4)) { input.val(count + ' гостя') } else
-          if ((count > 4) && (count < 20)) { input.val(count + ' гостей') } else
-            {input.val('Много гостей')};  
-    form.find('.drop').removeClass('active');
+    input.val(str);
+    $(this).closest('.form').find('.drop').removeClass('active');
   });
 });
