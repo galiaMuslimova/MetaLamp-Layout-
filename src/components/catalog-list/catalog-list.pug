@@ -1,2 +1,17 @@
+- const data = require('./catalog-list.json')
+
 div(class='catalog-list')
-  include catalog__unit/catalog__unit.pug
+  each val in data  
+    div(class='catalog-item')
+      div(class='catalog-item__image')
+        img(srcset=`${require(`./img/${val.num}.png`)}`)
+      div(class='row row_catalog-item')
+        div 
+          h4= '№' + val.num
+        if(val.luxury) 
+            div(classs='p_light') люкс
+        div(class='p_lightGrey')= val.cost + ' р в сутки'
+      div(class='catalog-item__divider')
+      div(class='row row_catalog-item')
+        div= val.star 
+        div(class='p_lightGrey')= val.review + ' отзывов'

@@ -1,5 +1,10 @@
 .catalog {
-  &-content {
+  &-content {    
     width: 834px;
+    height: 1090px;
+  }
+
+  &__title{
+    margin: 30px 0px 20px 0px;
   }
 }

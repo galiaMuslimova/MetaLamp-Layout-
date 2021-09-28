@@ -1,45 +1,87 @@
+$greyLight: rgba(31, 32, 65, 0.25);
+$grey: rgba(31, 32, 65, 0.5);
+$greyDark: rgba(31, 32, 65, 0.75);
+$dark: #1F2041;
+$light: #BC9CFF;
+$white: #FFFFFF;
+$black: #000000;
+
 body {
   margin: 0 auto;
-  width: 100%;
+  width: 100%;  
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  color: $greyDark;
 }
 
-h2 {
-  font-family: 'Montserrat Bold', sans-serif;;
+h1, h2, h3, h4 {
+  font-weight: bold;  
+  color: $dark;
+}
+
+h1 {
   font-size: 24px;
-  line-height: 29px;
-  color: #1F2041;
+  line-height: 29px;  
   margin: 0;
 }
 
-h3 {
-  font-family: 'Montserrat Bold', sans-serif;
+h2 {  
+  font-size: 19px; 
+  line-height: 23px;
+}
+
+h3 {  
   font-size: 12px;
+  line-height: 15px;
   text-transform: uppercase;
-  color: #1F2041;
   margin: 5px 0px;
 }
 
-.h3_light {
-  color: #BC9CFF;
-}
-
-p, input{
-  font-family: 'Montserrat Regular', sans-serif;
-  font-size: 14px;  
+h4 {  
+  font-size: 14px;
   line-height: 17px;
-  color: rgba(31, 32, 65, 0.5);
 }
 
-.p{
-  &_dark{
-    color: rgba(31, 32, 65, 0.75);
-    line-height: 24px;
-  } 
+p, input, button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  color: $greyDark;
+}
+
+.p {
+  &_nav {
+    line-height: 17px;
+    color: $grey;
+  }
+  &_lightGrey {
+    line-height: 18px;
+    color: $grey;
+  }
+  &_small {
+    font-style: 12px;
+    line-height: 14px;
+    color: $grey;
+  }  
+  &_light, &_blue {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  }
   &_light {
-    color: rgba(31, 32, 65, 0.25);
-    line-height: 24px;
+    color: $light;
+  }
+  &_blue {
+    color: $white;
   }
 }
+
+
+
 
 a {
   text-decoration: none;

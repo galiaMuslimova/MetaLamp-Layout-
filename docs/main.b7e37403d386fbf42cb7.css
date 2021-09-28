@@ -2,16 +2,22 @@
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./theme/fonts.scss ***!
   \*************************************************************************************************************/
 @font-face {
-  font-family: "Montserrat Bold";
-  src: url(079ca05d3ded9bc107ab.ttf) format("truetype");
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/079ca05d3ded9bc107ab.ttf) format("truetype");
 }
 @font-face {
-  font-family: "Montserrat Regular";
-  src: url(3cd786652b8a2e9d41f2.ttf) format("truetype");
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/3cd786652b8a2e9d41f2.ttf) format("truetype");
 }
 @font-face {
-  font-family: "Quicksand Bold";
-  src: url(4c3d23174e1f233b946d.ttf) format("truetype");
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/4c3d23174e1f233b946d.ttf) format("truetype");
 }
 /*!**************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./theme/global.scss ***!
@@ -19,42 +25,77 @@
 body {
   margin: 0 auto;
   width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  color: rgba(31, 32, 65, 0.75);
 }
 
-h2 {
-  font-family: "Montserrat Bold", sans-serif;
+h1, h2, h3, h4 {
+  font-weight: bold;
+  color: #1F2041;
+}
+
+h1 {
   font-size: 24px;
   line-height: 29px;
-  color: #1F2041;
   margin: 0;
 }
 
+h2 {
+  font-size: 19px;
+  line-height: 23px;
+}
+
 h3 {
-  font-family: "Montserrat Bold", sans-serif;
   font-size: 12px;
+  line-height: 15px;
   text-transform: uppercase;
-  color: #1F2041;
   margin: 5px 0px;
 }
 
-.h3_light {
-  color: #BC9CFF;
+h4 {
+  font-size: 14px;
+  line-height: 17px;
 }
 
-p, input {
-  font-family: "Montserrat Regular", sans-serif;
+p, input, button {
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.p_nav {
   line-height: 17px;
   color: rgba(31, 32, 65, 0.5);
 }
-
-.p_dark {
-  color: rgba(31, 32, 65, 0.75);
-  line-height: 24px;
+.p_lightGrey {
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.p_small {
+  font-style: 12px;
+  line-height: 14px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.p_light, .p_blue {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
 }
 .p_light {
-  color: rgba(31, 32, 65, 0.25);
-  line-height: 24px;
+  color: #BC9CFF;
+}
+.p_blue {
+  color: #FFFFFF;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -74,16 +115,23 @@ p, input {
   display: flex;
   flex-direction: column;
 }
+/*!**********************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form.scss ***!
+  \**********************************************************************************************************************/
+.form {
+  position: relative;
+}
+/*!*************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form_date/form_date.scss ***!
+  \*************************************************************************************************************************************/
+
 /*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/button/button.scss ***!
   \**************************************************************************************************************************/
 .btn {
-  text-transform: uppercase;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
   border: none;
-  color: #ffffff;
-  line-height: 15px;
 }
 .btn_header {
   height: 34px;
@@ -91,7 +139,6 @@ p, input {
 .btn_header-login {
   width: 87px;
   background: none;
-  color: #aa99ce;
   border: 2px solid #aa99ce;
 }
 .btn_header-register {
@@ -101,6 +148,74 @@ p, input {
   width: 320px;
   height: 44px;
   margin: 37px 0px 0px 0px;
+}
+.btn_circle {
+  width: 40px;
+  height: 40px;
+}
+/*!******************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/calendar/calendar.scss ***!
+  \******************************************************************************************************************************/
+.calendar {
+  width: 320px;
+  height: 369px;
+  top: 89px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+/*!**************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/catalog-list/catalog-list.scss ***!
+  \**************************************************************************************************************************************/
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.catalog-item {
+  position: relative;
+  width: 270px;
+  height: 257px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  margin: 0px 0px 20px 0px;
+  font-weight: bold;
+}
+.catalog-item__image {
+  height: 151px;
+}
+.catalog-item__divider {
+  position: absolute;
+  left: 20px;
+  width: 230px;
+  height: 1px;
+  background: rgba(31, 32, 65, 0.1);
+}
+.catalog-item .row_catalog-item {
+  height: 53px;
+  align-items: center;
+  padding: 0px 20px;
+}
+/*!**************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/catalog-turn/catalog-turn.scss ***!
+  \**************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/conditions/conditions.scss ***!
+  \**********************************************************************************************************************************/
+.conditions__row {
+  padding: 17px 0px 0px 0px;
+}
+.conditions__row:first-child .form_date:last-child .drop {
+  left: auto;
+  right: 0;
+}
+.conditions .withButton .input {
+  width: 320px;
+}
+.conditions .form_date .input {
+  width: 150px;
 }
 /*!**********************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/drop/drop.scss ***!
@@ -117,32 +232,6 @@ p, input {
 
 .active {
   display: block;
-}
-/*!******************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/calendar/calendar.scss ***!
-  \******************************************************************************************************************************/
-.calendar {
-  width: 320px;
-  height: 369px;
-  top: 89px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-}
-/*!**********************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/conditions/conditions.scss ***!
-  \**********************************************************************************************************************************/
-.conditions__row {
-  padding: 17px 0px 0px 0px;
-}
-.conditions__row:first-child .form_date:last-child .drop {
-  left: auto;
-  right: 0;
-}
-.conditions .form_select .input {
-  width: 320px;
-}
-.conditions .form_date .input {
-  width: 150px;
 }
 /*!**********************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/entry-card/entry-card.scss ***!
@@ -162,6 +251,22 @@ p, input {
   padding: 39px 30px 30px 29px;
 }
 /*!**************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/filter/filter.scss ***!
+  \**************************************************************************************************************************/
+.filter {
+  width: 266px;
+  padding: 25px 0px 0px 0px;
+}
+.filter .form {
+  width: 100%;
+}
+.filter .input {
+  width: 100%;
+}
+.filter .drop {
+  width: 100%;
+}
+/*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/footer/footer.scss ***!
   \**************************************************************************************************************************/
 .rights {
@@ -173,9 +278,6 @@ p, input {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.rights p {
-  color: rgba(31, 32, 65, 0.75);
 }
 
 .icons-list {
@@ -200,9 +302,54 @@ p, input {
   max-width: 260px;
   align-items: flex-start;
 }
+/*!*******************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/footer/links/links.scss ***!
+  \*******************************************************************************************************************************/
+.links {
+  box-shadow: 0px 1px 0px 0px #1F20411A;
+}
+.links-container {
+  height: 372px;
+}
+.links-row {
+  padding: 100px 0px 0px 0px;
+}
+.links-col {
+  max-width: 260px;
+  align-items: flex-start;
+}
+/*!*********************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/footer/rights/rights.scss ***!
+  \*********************************************************************************************************************************/
+.rights {
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.rights-content {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  padding: 0 0 0 20px;
+}
+/*!*****************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form_select/form_select.scss ***!
+  \*****************************************************************************************************************************************/
+
 /*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/header/header.scss ***!
   \**************************************************************************************************************************/
+.header {
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
 .header-container {
   height: 70px;
   display: flex;
@@ -246,9 +393,6 @@ p, input {
 .input_arrow {
   width: 260px;
 }
-.input_dropdown.filter {
-  width: 266px;
-}
 .input__btn {
   position: absolute;
   z-index: 3;
@@ -270,6 +414,30 @@ p, input {
   width: 106px;
   justify-content: space-between;
 }
+/*!***************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/select-content/count/count.scss ***!
+  \***************************************************************************************************************************************/
+.count {
+  width: 92px;
+}
+.count__btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 22px;
+  color: #1F204180;
+  background-color: #ffff;
+}
+.count__num {
+  max-width: 32px;
+  border: none;
+  text-align: center;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+}
 /*!******************************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/select-content/select-content.scss ***!
   \******************************************************************************************************************************************/
@@ -289,8 +457,9 @@ p, input {
   max-width: 32px;
   border: none;
   text-align: center;
-  font-family: "Montserrat Bold", sans-serif;
   font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
   color: #1F2041;
 }
 
@@ -317,12 +486,22 @@ p, input {
   border: none;
   background-color: white;
 }
-/*!*****************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/main/main.scss ***!
-  \*****************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/catalog/catalog.scss ***!
+  \***********************************************************************************************************************/
+.catalog-content {
+  width: 834px;
+  height: 1090px;
+}
+.catalog__title {
+  margin: 30px 0px 20px 0px;
+}
+/*!*******************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/index/index.scss ***!
+  \*******************************************************************************************************************/
 .main {
   height: 830px;
-  background-image: url(b16b5f294258b914f18e.jpg);
+  background-image: url(images/b16b5f294258b914f18e.jpg);
   background-size: cover;
 }
 .main-container {
@@ -340,17 +519,5 @@ p, input {
 }
 .note__p {
   margin: 0;
-  color: rgba(31, 32, 65, 0.75);
   text-align: right;
-  line-height: 24px;
 }
-/*!**********************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form.scss ***!
-  \**********************************************************************************************************************/
-.form {
-  position: relative;
-}
-/*!*************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form_date/form_date.scss ***!
-  \*************************************************************************************************************************************/
-

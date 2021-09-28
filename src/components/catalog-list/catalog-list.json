@@ -1,6 +1,5 @@
 [
   {
-    "image": "./img/888.png",
     "num": 888,
     "luxury": true,
     "cost": 9990,
@@ -8,7 +7,6 @@
     "review": 145
   },
   {
-    "image": "./img/840.png",
     "num": 840,
     "luxury": false,
     "cost": 9990,
@@ -16,11 +14,73 @@
     "review": 65
   },
   {
-    "image": "./img/980.png",
     "num": 980,
     "luxury": true,
     "cost": 8500,
     "star": 3,
     "review": 35
+  },
+  {
+    "num": 856,
+    "luxury": false,
+    "cost": 7300,
+    "star": 5,
+    "review": 19
+  },
+  {
+    "num": 740,
+    "luxury": false,
+    "cost": 6000,
+    "star": 4,
+    "review": 44
+  },
+  {
+    "num": 982,
+    "luxury": false,
+    "cost": 5800,
+    "star": 3,
+    "review": 56
+  },
+  {
+    "num": 678,
+    "luxury": false,
+    "cost": 5500,
+    "star": 5,
+    "review": 45
+  },
+  {
+    "num": 350,
+    "luxury": false,
+    "cost": 5300,
+    "star": 4,
+    "review": 39
+  },
+  {
+    "num": 450,
+    "luxury": false,
+    "cost": 5000,
+    "star": 3,
+    "review": 77
+  },
+  {
+    "num": 666,
+    "luxury": false,
+    "cost": 5000,
+    "star": 5,
+    "review": 25
+  },
+  {
+    "num": 444,
+    "luxury": false,
+    "cost": 5000,
+    "star": 3,
+    "review": 15
+  },
+  {
+    "num": 352,
+    "luxury": false,
+    "cost": 5000,
+    "star": 3,
+    "review": 55
   }
 ]

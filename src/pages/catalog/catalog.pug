@@ -4,8 +4,14 @@ block content
   div(class='catalog')
     div(class='container catalog-container')
       div(class='row')
-        include ../../components/filter/filter.pug
-        div(class='catalog-content')
-          include ../../components/catalog-list/catalog-list.pug
+        div(class='col')
+          include ../../components/filter/filter.pug
+        div(class='col')
+          div(class='catalog__title')
+            h1 Номера, которые мы для вас подобрали
+          div(class='catalog-content')
+            include ../../components/catalog-list/catalog-list.pug
+          div(class='caatlog-turn')
+            include ../../components/catalog-turn/catalog-turn.pug
     
   
