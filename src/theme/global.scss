@@ -1,6 +1,6 @@
 $greyLight: rgba(31, 32, 65, 0.25);
 $grey: rgba(31, 32, 65, 0.5);
-$greyDark: rgba(31, 32, 65, 0.75);
+$greyDark: rgba(31, 32, 65, 0.75); //основной цвет
 $dark: #1F2041;
 $light: #BC9CFF;
 $white: #FFFFFF;
@@ -21,17 +21,20 @@ h1, h2, h3, h4 {
   color: $dark;
 }
 
+//Заголовки страниц
 h1 {
   font-size: 24px;
   line-height: 29px;  
   margin: 0;
 }
 
+//Подзаголовки на странице room
 h2 {  
   font-size: 19px; 
   line-height: 23px;
 }
 
+//Заголовки форм
 h3 {  
   font-size: 12px;
   line-height: 15px;
@@ -39,11 +42,14 @@ h3 {
   margin: 5px 0px;
 }
 
+//Номера комнат
 h4 {  
   font-size: 14px;
   line-height: 17px;
 }
 
+
+//основной шрифт
 p, input, button {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -53,47 +59,56 @@ p, input, button {
 }
 
 .p {
+  //header и некоторые столбцы footer
   &_nav {
     line-height: 17px;
     color: $grey;
   }
+
+  //более светлые тексты, чаще в filter
   &_lightGrey {
     line-height: 18px;
     color: $grey;
   }
+
+  //номера в календаре и тексты с маленьким шрифтом
   &_small {
-    font-style: 12px;
+    font-size: 12px;
     line-height: 14px;
     color: $grey;
-  }  
+  } 
+  
+  //шрифты для кнопок
   &_light, &_blue {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 15px;
   font-weight: bold;
   }
+
+  //для белой кнопки
   &_light {
     color: $light;
   }
+
+  //для синей кнопки
   &_blue {
     color: $white;
   }
 }
 
-
-
-
 a {
   text-decoration: none;
 }
 
-
+//ограничивает содержимое страницы
 .container {
   max-width: 1160px;
   padding: 0px 10px;
   margin: 0 auto;
 }
 
+//размещает элементы в строку
 .row {
   display: flex;
   flex-direction: row;
@@ -101,6 +116,7 @@ a {
   position: relative;
 }
 
+//размещает элементы в столбец
 .col {
   display: flex;
   flex-direction: column;

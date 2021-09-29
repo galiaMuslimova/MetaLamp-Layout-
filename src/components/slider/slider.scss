@@ -1,0 +1,26 @@
+.slider-styled,
+.slider-styled .noUi-handle {
+    box-shadow: none;
+}
+.slider-styled .noUi-handle::before,
+.slider-styled .noUi-handle::after {
+    display: none;
+}
+
+#slider-round {
+    height: 6px;
+}
+
+#slider-round .noUi-connect {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+#slider-round .noUi-handle {
+    height: 12px;
+    width: 12px;
+    top: -5px;
+    right: -6px; /* half the width */
+    border-radius: 10px;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
