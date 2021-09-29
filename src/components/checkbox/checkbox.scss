@@ -1,0 +1,27 @@
+input[type=checkbox] {
+  display: none;
+}
+/* to hide the checkbox itself */
+ label>input[type=checkbox]:before {
+    position: absolute;
+    background-color: #FFFFFF;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #BC9CFF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: inline-block;
+}
+/* space between checkbox and label */
+ label>input[type=checkbox]:checked:before {
+    font-family: 'fontello';
+    display: inline-block;
+    content: "\e804";
+}
+
+/*.icon-ok {
+  position: absolute;
+  background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}*/
