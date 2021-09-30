@@ -5,6 +5,16 @@ include ../checkbox/checkbox.pug
 div(class='filter')
   +form_date('даты пребывания в отеле')
   +form_select('guests')
-  include ../slider/slider.pug
+  include ../slider/slider.pug  
+  form(class='form form_checkbox')
+    h3 правила дома
+    div
+      +checkbox('Можно курить', id='smoke')(class='p_lightGrey')
+      +checkbox('Можно с питомцами', id='pets')(class='p_lightGrey')
+      +checkbox('Можно пригласить гостей (до 10 человек)', id='invite')(class='p_lightGrey')
+  form(class='form form_checkbox')
+    h3 доступность
+    div
+      +checkbox('Широкий коридор', id='corridor', 'Ширина коридоров в номере не менее 91 см.')(class='p_bold')
+      +checkbox('Помощник для инвалидов', id='invalid', 'На 1 этаже вас встретит специалист и проводит до номера.')(class='p_bold')
   +form_select('rooms')
-  +checkbox()

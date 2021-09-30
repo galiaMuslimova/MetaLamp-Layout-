@@ -1,7 +1,10 @@
-mixin checkbox()
-  form
-    h3 правила дома
-    div(class='row')
-      label
-        input(type="checkbox" id="checkbox")
-      p(class='p_lightGrey') Можно курить
+mixin checkbox(text, id, subtitle)
+  div(class='row row_checkbox') 
+    input(type="checkbox" id=id name='check')
+    label(for=id)
+    if(subtitle)
+      div
+        p(class=attributes.class)=text
+        p(class='p_small')=subtitle
+    else 
+      p(class=attributes.class)=text

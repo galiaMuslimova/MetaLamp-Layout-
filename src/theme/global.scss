@@ -59,6 +59,11 @@ p, input, button {
 }
 
 .p {
+  //чекбоксы фильтра с начертанием bold
+  &_bold {
+    font-weight: bold;
+    line-height: 18px;
+  }
   //header и некоторые столбцы footer
   &_nav {
     line-height: 17px;

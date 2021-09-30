@@ -1,27 +1,48 @@
 input[type=checkbox] {
-  display: none;
-}
-/* to hide the checkbox itself */
- label>input[type=checkbox]:before {
-    position: absolute;
-    background-color: #FFFFFF;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  & + label:before {
+    font-family: 'fontello';
+    content: "\e804";
+    background: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    font-size: 10px; 
+    line-height: 20px;
+    font-weight: bold;
+    margin: 0px 10px 0px 0px;
+      
     height: 20px;
     width: 20px;
-    border: 1px solid #BC9CFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 4px;
+
     display: inline-block;
-}
-/* space between checkbox and label */
- label>input[type=checkbox]:checked:before {
-    font-family: 'fontello';
-    display: inline-block;
-    content: "\e804";
+    text-align: center;
+    vertical-align: middle;
+  }
+  &:checked + label:before {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-/*.icon-ok {
-  position: absolute;
-  background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}*/
+.row_checkbox {
+  justify-content: flex-start;
+  margin: 0px 0px 10px 0px;
+
+  p{
+    margin: 0px;
+    max-width: 203px;
+  } 
+}
+
+div {
+   #invalid ~ & {
+    p{max-width: 230px;}  
+   }
+}
