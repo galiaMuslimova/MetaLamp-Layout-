@@ -1,9 +1,9 @@
-include ../select-content/select-content.pug
+include count/count.pug
 
 mixin select(array)
-  div(class='drop select')
-    +select-content(array)
-    div(class='row select__row select__row_bottom')
-      button(type='button', class='btn_submit reset p_light') очистить
-      button(type='button', class='btn_submit submit p_light') применить
+  div(class='select')    
+    each item in array
+      div(class='row select__row')
+        h3=item
+        +count(item)
         

@@ -1,5 +1,5 @@
 .conditions {
-  &__row {
+  &-row {
     padding: 17px 0px 0px 0px;
 
     &:first-child {
@@ -11,6 +11,19 @@
       }
     }
   }
+
+  &-select {  
+    width: 320px;
+    height: 159px;
+    top: 84px;
+    border: 1px solid rgba(43, 45, 88, 0.5);  
+  }
+
+  .btn_submit {
+    border: none;
+    background-color: white;
+  }
+
 
   .withButton {
     .input {

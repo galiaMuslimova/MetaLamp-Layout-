@@ -1,4 +1,33 @@
+import { count } from './count/count.js'
+
 $(window).on('load', function () {
+  //задает значения 0 для элементов select
+  $('.count__num').each(function () {
+    let id = $(this).closest('.count')[0].id;
+    sessionStorage.setItem(id, 0);    
+  });
+
+  function makeInputText (el) {
+    let form = el.closest('.form');
+    if(form.hasClass('guests')) {
+      let adults = Number(sessionStorage.getItem('взрослые')) + Number(sessionStorage.getItem('дети'));
+      let babies = sessionStorage.getItem('младенцы');
+      return (adults + 'взрослые, ' + babies + 'младенцы');
+    }
+  }
+
+  $('.plus, .minus').click(function () {
+    count($(this)); 
+    let text = makeInputText($(this));
+    if($(this).closest('.form').hasClass('guests')) {
+      $(".guests>.input").val(text);
+    }     
+    
+  })
+});
+
+/*$(window).on('load', function () {
+
   $('.submit').on('click', function () {
     let input = $(this).closest('.form').find('.input');
     let count = sessionStorage.getItem('guestsCount');
@@ -17,4 +46,4 @@ $(window).on('load', function () {
     $(this).closest('.form').trigger('reset');
     sessionStorage.clear();   
   });
-});
+});*/

@@ -1,7 +1,6 @@
-$(window).on('load', function () {
+/*$(window).on('load', function () {
 
-  function selectCount(el) {    
-    //sessionStorage.setItem('roomsCount', '0'); 
+ function selectCount(el) {    
 
     let form = el.closest('.form');
     let key = form[0].name;
@@ -11,7 +10,6 @@ $(window).on('load', function () {
     }
     else {
       sessionStorage.setItem(key, 0);
-      console.log('dd');
     };
 
     if (el.hasClass('minus')) {
@@ -30,4 +28,4 @@ $(window).on('load', function () {
   $('.count__btn').click(function () {      
     selectCount($(this));   
   })   
-});
+});*/
