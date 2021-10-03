@@ -1,6 +1,7 @@
 .catalog-list {
   display: grid;
-  grid-template-columns: 1fr 12px 1fr 12px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 12px;
 }
 
 .catalog-item {
@@ -29,5 +30,18 @@
     height: 53px;
     align-items: center;
     padding: 0px 20px;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .catalog-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .catalog-list {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 }

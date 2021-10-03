@@ -1,10 +1,9 @@
 .filter {
   width: 266px;
-  padding: 25px 10px 0px 0px;
+  padding: 25px 5px 0px 0px;
 
   .form {
     margin: 0px 0px 30px 0px;
-
     &:first-child {
       margin: 0px 0px 20px 0px;
     }
@@ -15,6 +14,26 @@
 
   .drop {
     width: 100%;
-  }    
-  
+  }      
+}
+
+@media only screen and (max-width: 860px) {
+  .filter {
+    z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-column-gap: 40px;
+
+    .col {
+      max-width: 320px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .filter {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
