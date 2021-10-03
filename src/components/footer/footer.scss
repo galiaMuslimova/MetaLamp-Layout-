@@ -1,4 +1,5 @@
-@import './rights/rights.scss';
-@import './links/links.scss';
-
-
+@media only screen and (max-width: 1024px) {
+  .links {
+    display: none;
+  }
+}

@@ -5,7 +5,7 @@ mixin form_select(title, array, type)
   form(class='form form_select', class=type)
     legend 
       h3=title 
-    +input(' ', 'dropdown', 'text')
+    +input('dropdown', 'text', '')
     div(class='drop', class=attributes.class)
       +select(array)  
       if attributes.class

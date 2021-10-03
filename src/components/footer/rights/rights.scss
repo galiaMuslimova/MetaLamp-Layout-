@@ -8,6 +8,10 @@
     justify-content: space-between;
     align-items: center;
   } 
+
+  &__logo {
+    display: none;
+  }
 }
 
 .icons-list {
@@ -17,4 +21,18 @@
 
 .icon {
   padding: 0 0 0 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .rights {    
+    &-content {
+      height: 367px;
+      flex-direction: column;
+      justify-content: center;
+    } 
+
+    &__logo {
+      display: block;
+    }
+  }
 }

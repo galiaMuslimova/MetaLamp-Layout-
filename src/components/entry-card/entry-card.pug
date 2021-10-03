@@ -1,6 +1,13 @@
+include ../form/form_date/form_date.pug
+include ../form/form_select/form_select.pug
+
 div(class='entry-card')
   div(class='entry-inner')
     h1 Найдём номера под ваши пожелания
-    include ../conditions/conditions.pug
+    div(class='row entry-row')          
+      +form_date('прибытие')
+      +form_date('выезд')   
+    div(class='row entry-row')
+      +form_select('гости', ['взрослые', 'дети', 'младенцы'], 'guests')(class='entry-select')
     button(class='btn btn_entry') 
       a(href='catalog.html' class='p_blue') подобрать номер

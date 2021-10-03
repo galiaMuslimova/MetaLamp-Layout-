@@ -14,4 +14,27 @@
   &-inner {
     padding: 39px 30px 30px 29px;
   } 
+
+  &-row {
+    padding: 17px 0px 0px 0px;
+    &:first-child {
+      .form_date:last-child {
+        .drop {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &-select {  
+    width: 320px;
+    height: 159px;
+    top: 84px;
+    border: 1px solid rgba(43, 45, 88, 0.5);  
+  }
 }
+
+
+  
+

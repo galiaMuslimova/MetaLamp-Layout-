@@ -1,25 +1,25 @@
 .count {  
-  width: 92px;
+  width: 5.75rem;
 
   &__btn {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
 
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 0.0625rem solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
-    border-radius: 22px;
+    border-radius: 1.375rem;
 
     color: #1F204180;
     background-color: #ffff;
   }
 
   &__num {
-    max-width: 32px;
+    max-width: 2rem;
     border: none;
     text-align: center;
 
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
     text-transform: uppercase;
     color: #1F2041;
   }  

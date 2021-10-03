@@ -1,14 +1,19 @@
-mixin input(value, category, type)
-  if(category == 'dropdown')
-    input(type=type, value=value, class='input')
-    button(type='button', class='input__btn')
-      include dropdown-btn.svg
-  if(category == 'arrow')
-    input(value=value, class='input')
-    button(ctype='button' class='input__btn')
-      include arrow-btn.svg
-  if(category == 'empty')
-    input(value=value, class='input')
+mixin input(category, text)    
+  if(category=='default')
+    div(class='row input-row')
+      input(type='text', placeholder=text, class='input') 
+  if(category=='dropdown') 
+    div(class='row input-row')     
+      input(type=text, value=text, class='input input_withBtn')
+      button(type='button', class='input-row__btn icon-down-open')
+  if(category=='date') 
+    div(class='row input-row input-row_date')     
+      input(type='date', value=text, class='input input_withBtn')
+      button(type='button', class='input-row__btn icon-down-open')
+  if(category=='subscript') 
+    div(class='row input-row input-row_subscript')     
+      input(type=text, placeholder=text, class='input input_withBtn')
+      button(type='button', class='input-row__btn icon-right')
 
 
 

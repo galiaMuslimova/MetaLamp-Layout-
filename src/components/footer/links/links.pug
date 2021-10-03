@@ -1,3 +1,5 @@
+include ../../input/input.pug
+
 div(class='links')
   div(class='container links-container')
     div(class='row links-row')
@@ -24,4 +26,5 @@ div(class='links')
       div(class='col links-col')
         h3 Подписка
         p Получайте специальные предложения и новости сервиса
+        +input('subscript', 'E-mail')
         

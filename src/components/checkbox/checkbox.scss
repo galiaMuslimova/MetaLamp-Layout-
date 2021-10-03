@@ -9,16 +9,16 @@ input[type=checkbox] {
     background: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
-    font-size: 10px; 
-    line-height: 20px;
+    font-size: 0.625rem; 
+    line-height: 1.25rem;
     font-weight: bold;
-    margin: 0px 10px 0px 0px;
+    margin: 0rem 0.625rem 0rem 0rem;
       
-    height: 20px;
-    width: 20px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    height: 1.25rem;
+    width: 1.25rem;
+    border: 0.0625rem solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 0.25rem;
 
     display: inline-block;
     text-align: center;
@@ -33,16 +33,16 @@ input[type=checkbox] {
 
 .row_checkbox {
   justify-content: flex-start;
-  margin: 0px 0px 10px 0px;
+  margin: 0rem 0rem 0.625rem 0rem;
 
   p{
-    margin: 0px;
-    max-width: 203px;
+    margin: 0rem;
+    max-width: 12.6875rem;
   } 
 }
 
 div {
    #invalid ~ & {
-    p{max-width: 230px;}  
+    p{max-width: 14.375rem;}  
    }
 }

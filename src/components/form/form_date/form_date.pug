@@ -5,5 +5,5 @@ mixin form_date(title)
   form(class='form form_date')
     legend 
       h3=title 
-    +input('ДД.ММ.ГГГГ', 'dropdown', 'date')
+    +input('date', 'ДД.ММ.ГГГГ')
     +calendar()
