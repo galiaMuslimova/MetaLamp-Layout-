@@ -6,13 +6,12 @@ div(class='catalog-list')
     div(class='catalog-item')
       div(class='catalog-item__image')
         img(srcset=`${require(`./img/${val.num}.png`)}`)
-      div(class='row row_catalog-item')
-        div 
-          h4= '№' + val.num
+      div(class='row catalog-item-row')
+        h4= '№' + val.num
         if(val.luxury) 
-            div(classs='p_light') люкс
+          div(classs='p_light') люкс
         div(class='p_lightGrey')= val.cost + ' р в сутки'
       div(class='catalog-item__divider')
-      div(class='row row_catalog-item')
-        div          
+      div(class='row catalog-item-row')
+        div stars         
         div(class='p_lightGrey')= val.review + ' отзывов'

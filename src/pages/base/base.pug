@@ -2,6 +2,8 @@ doctype html
 html
   head
   body
-    include ../../components/header/header.pug
-    block content
-    include ../../components/footer/footer.pug
+    div.wrapper
+      include ../../components/header/header.pug
+      div.content
+        block content
+      include ../../components/footer/footer.pug

@@ -1,19 +1,80 @@
 /*!**************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./theme/global.scss ***!
   \**************************************************************************************************************/
-body {
-  margin: 0 auto;
+html, body {
+  height: 100%;
   width: 100%;
+  margin: 0;
+  font-size: 14px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.container {
+  max-width: 1160px;
+  padding: 0px 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+/*!*************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./theme/fonts.scss ***!
+  \*************************************************************************************************************/
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/079ca05d3ded9bc107ab.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/3cd786652b8a2e9d41f2.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/4c3d23174e1f233b946d.ttf) format("truetype");
+}
+html, body, p, input, button {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 24px;
   font-weight: normal;
   color: rgba(31, 32, 65, 0.75);
+  background-color: #FFFFFF;
 }
 
 h1, h2, h3, h4 {
   font-weight: bold;
-  color: #1F2041;
+  color: #1f2041;
 }
 
 h1 {
@@ -39,14 +100,10 @@ h4 {
   line-height: 17px;
 }
 
-p, input, button {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: normal;
-  color: rgba(31, 32, 65, 0.75);
+.p_bold {
+  font-weight: bold;
+  line-height: 18px;
 }
-
 .p_nav {
   line-height: 17px;
   color: rgba(31, 32, 65, 0.5);
@@ -71,49 +128,6 @@ p, input, button {
 }
 .p_blue {
   color: #FFFFFF;
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  max-width: 1160px;
-  padding: 0px 10px;
-  margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-}
-/*!*************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./theme/fonts.scss ***!
-  \*************************************************************************************************************/
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: bold;
-  src: url(fonts/079ca05d3ded9bc107ab.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: normal;
-  src: url(fonts/3cd786652b8a2e9d41f2.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: bold;
-  src: url(fonts/4c3d23174e1f233b946d.ttf) format("truetype");
 }
 /*!************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!./theme/css/icons.css ***!
@@ -179,16 +193,6 @@ a {
 .icon-circle:before { content: '\f111'; } /* '' */
 .icon-instagram:before { content: '\f16d'; } /* '' */
 .icon-circle-thin:before { content: '\f1db'; } /* '' */
-
-/*!**********************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form.scss ***!
-  \**********************************************************************************************************************/
-.form {
-  position: relative;
-}
-/*!*************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form_date/form_date.scss ***!
-  \*************************************************************************************************************************************/
 
 /*!*************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/nouislider/dist/nouislider.css ***!
@@ -510,6 +514,7 @@ a {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
   border: none;
+  cursor: pointer;
 }
 .btn_header {
   height: 34px;
@@ -531,6 +536,10 @@ a {
   width: 40px;
   height: 40px;
 }
+.btn_submit {
+  border: none;
+  background-color: white;
+}
 /*!******************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/calendar/calendar.scss ***!
   \******************************************************************************************************************************/
@@ -545,9 +554,20 @@ a {
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/catalog-list/catalog-list.scss ***!
   \**************************************************************************************************************************************/
 .catalog-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 12px;
+}
+@media only screen and (max-width: 1150px) {
+  .catalog-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .catalog-list {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 .catalog-item {
@@ -560,6 +580,11 @@ a {
   margin: 0px 0px 20px 0px;
   font-weight: bold;
 }
+.catalog-item-row {
+  height: 53px;
+  align-items: center;
+  padding: 0px 20px;
+}
 .catalog-item__image {
   height: 151px;
 }
@@ -570,11 +595,6 @@ a {
   height: 1px;
   background: rgba(31, 32, 65, 0.1);
 }
-.catalog-item .row_catalog-item {
-  height: 53px;
-  align-items: center;
-  padding: 0px 20px;
-}
 /*!**************************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/catalog-turn/catalog-turn.scss ***!
   \**************************************************************************************************************************************/
@@ -583,49 +603,46 @@ a {
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/checkbox/checkbox.scss ***!
   \******************************************************************************************************************************/
 input[type=checkbox] {
-  display: none;
-}
-
-/* to hide the checkbox itself */
-label > input[type=checkbox]:before {
   position: absolute;
-  background-color: #FFFFFF;
-  height: 20px;
-  width: 20px;
-  border: 1px solid #BC9CFF;
-  box-sizing: border-box;
-  border-radius: 4px;
-  display: inline-block;
+  z-index: -1;
+  opacity: 0;
 }
-
-/* space between checkbox and label */
-label > input[type=checkbox]:checked:before {
+input[type=checkbox] + label:before {
   font-family: "fontello";
-  display: inline-block;
   content: "\e804";
-}
-
-/*.icon-ok {
-  position: absolute;
-  background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}*/
-/*!**********************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/conditions/conditions.scss ***!
-  \**********************************************************************************************************************************/
-.conditions__row {
-  padding: 17px 0px 0px 0px;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  margin: 0rem 0.625rem 0rem 0rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  border: 0.0625rem solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
 }
-.conditions__row:first-child .form_date:last-child .drop {
-  left: auto;
-  right: 0;
+input[type=checkbox]:checked + label:before {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.conditions .withButton .input {
-  width: 320px;
+
+.row_checkbox {
+  justify-content: flex-start;
+  margin: 0rem 0rem 0.625rem 0rem;
 }
-.conditions .form_date .input {
-  width: 150px;
+.row_checkbox p {
+  margin: 0rem;
+  max-width: 12.6875rem;
+}
+
+#invalid ~ div p {
+  max-width: 14.375rem;
 }
 /*!**********************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/drop/drop.scss ***!
@@ -638,6 +655,10 @@ label > input[type=checkbox]:checked:before {
   background: #FFFFFF;
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.drop_facilities {
+  box-shadow: none;
+  padding: 7px 0px 0px 0px;
 }
 
 .active {
@@ -660,15 +681,27 @@ label > input[type=checkbox]:checked:before {
 .entry-inner {
   padding: 39px 30px 30px 29px;
 }
+.entry-row {
+  padding: 17px 0px 0px 0px;
+}
+.entry-row:first-child .form_date:last-child .drop {
+  left: auto;
+  right: 0;
+}
+.entry-select {
+  width: 320px;
+  height: 159px;
+  top: 84px;
+  border: 1px solid rgba(43, 45, 88, 0.5);
+}
 /*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/filter/filter.scss ***!
   \**************************************************************************************************************************/
 .filter {
   width: 266px;
-  padding: 25px 0px 0px 0px;
+  padding: 25px 5px 0px 0px;
 }
 .filter .form {
-  width: 100%;
   margin: 0px 0px 30px 0px;
 }
 .filter .form:first-child {
@@ -680,41 +713,36 @@ label > input[type=checkbox]:checked:before {
 .filter .drop {
   width: 100%;
 }
+
+@media only screen and (max-width: 860px) {
+  .filter {
+    z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+  .filter .col {
+    max-width: 320px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .filter {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
 /*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/footer/footer.scss ***!
   \**************************************************************************************************************************/
-.rights {
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-}
-.rights-content {
-  height: 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.footer {
+  flex: 0 0 auto;
 }
 
-.icons-list {
-  display: flex;
-  flex-direction: row;
-}
-
-.icon {
-  padding: 0 0 0 20px;
-}
-
-.links {
-  box-shadow: 0px 1px 0px 0px #1F20411A;
-}
-.links-container {
-  height: 372px;
-}
-.links-row {
-  padding: 100px 0px 0px 0px;
-}
-.links-col {
-  max-width: 260px;
-  align-items: flex-start;
+@media only screen and (max-width: 1024px) {
+  .links {
+    display: none;
+  }
 }
 /*!*******************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/footer/links/links.scss ***!
@@ -745,6 +773,9 @@ label > input[type=checkbox]:checked:before {
   justify-content: space-between;
   align-items: center;
 }
+.rights__logo {
+  display: none;
+}
 
 .icons-list {
   display: flex;
@@ -754,14 +785,39 @@ label > input[type=checkbox]:checked:before {
 .icon {
   padding: 0 0 0 20px;
 }
-/*!*****************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form_select/form_select.scss ***!
-  \*****************************************************************************************************************************************/
+
+@media only screen and (max-width: 1024px) {
+  .rights-content {
+    height: 367px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .rights__logo {
+    display: block;
+  }
+}
+/*!**********************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form.scss ***!
+  \**********************************************************************************************************************/
+.form {
+  position: relative;
+  width: 100%;
+}
+.form_checkbox {
+  margin: 0rem 0rem 1.875rem 0rem;
+}
+.form_checkbox h3 {
+  margin: 0rem 0rem 1rem 0rem;
+}
+/*!*************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/form/form_date/form_date.scss ***!
+  \*************************************************************************************************************************************/
 
 /*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/header/header.scss ***!
   \**************************************************************************************************************************/
 .header {
+  flex: 0 0 auto;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .header-container {
@@ -790,34 +846,55 @@ label > input[type=checkbox]:checked:before {
 /*!************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/input/input.scss ***!
   \************************************************************************************************************************/
-.input {
-  height: 44px;
-  position: relative;
+input {
   background: #FFFFFF;
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
   border-radius: 4px;
-  box-sizing: border-box;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+}
+input:hover, input:focus {
+  outline: none;
+  border: 1px solid rgba(31, 32, 65, 0.5);
   color: rgba(31, 32, 65, 0.75);
-  line-height: 18px;
-  padding: 0px 0px 0px 15px;
 }
-.input_empty {
-  width: 320px;
+input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
 }
-.input_arrow {
-  width: 260px;
+
+.input-row {
+  height: 44px;
+  max-width: 320px;
 }
-.input__btn {
-  position: absolute;
-  z-index: 3;
-  right: 2px;
-  bottom: 2px;
-  width: 40px;
-  height: 40px;
+.input-row_date {
+  max-width: 150px;
+}
+.input-row_date-filter {
+  max-width: 320px;
+}
+.input-row_subscript {
+  max-width: 260px;
+}
+.input-row__btn {
+  width: 44px;
+  height: 100%;
   color: rgba(31, 32, 65, 0.5);
-  background-color: #FFFFFF;
-  border: 0px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-left: none;
+  border-radius: 0px 4px 4px 0px;
+  background: #FFFFFF;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 0px 15px;
+}
+.input_withBtn {
+  border-right: none;
+  border-radius: 4px 0px 0px 4px;
+  color: rgba(31, 32, 65, 0.75);
 }
 /*!**********************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/logo/logo.scss ***!
@@ -828,77 +905,41 @@ label > input[type=checkbox]:checked:before {
   width: 106px;
   justify-content: space-between;
 }
-/*!***************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/select-content/count/count.scss ***!
-  \***************************************************************************************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/select/count/count.scss ***!
+  \*******************************************************************************************************************************/
 .count {
-  width: 92px;
+  width: 5.75rem;
 }
 .count__btn {
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 0.0625rem solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
-  border-radius: 22px;
+  border-radius: 1.375rem;
   color: #1F204180;
   background-color: #ffff;
 }
 .count__num {
-  max-width: 32px;
+  max-width: 2rem;
   border: none;
   text-align: center;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
   text-transform: uppercase;
   color: #1F2041;
-}
-/*!******************************************************************************************************************************************!*\
-  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/select-content/select-content.scss ***!
-  \******************************************************************************************************************************************/
-.count {
-  width: 92px;
-}
-.count__btn {
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  border-radius: 22px;
-  color: #1F204180;
-  background-color: #ffff;
-}
-.count__num {
-  max-width: 32px;
-  border: none;
-  text-align: center;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #1F2041;
-}
-
-.select-content {
-  height: 119px;
-}
-
-.select__row {
-  padding: 7px 7px 0px 15px;
-}
-.select__row_bottom {
-  padding-bottom: 7px;
 }
 /*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/select/select.scss ***!
   \**************************************************************************************************************************/
 .select {
-  width: 320px;
-  height: 159px;
-  top: 84px;
-  border: 1px solid rgba(31, 32, 65, 0.5);
+  height: 7.4375rem;
 }
-.select .btn_submit {
-  border: none;
-  background-color: white;
+.select__row {
+  padding: 0.4375rem 0.4375rem 0rem 0.9375rem;
+}
+.select__row_bottom {
+  padding-bottom: 0.4375rem;
 }
 /*!**************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./components/slider/slider.scss ***!
@@ -922,23 +963,39 @@ label > input[type=checkbox]:checked:before {
 }
 
 #slider-round .noUi-handle {
-  height: 12px;
-  width: 12px;
-  top: -5px;
-  right: -6px;
+  height: 0.75rem;
+  width: 0.75rem;
+  top: -0.3125rem;
+  right: -0.375rem;
   /* half the width */
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 /*!***********************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/catalog/catalog.scss ***!
   \***********************************************************************************************************************/
 .catalog-content {
-  width: 834px;
-  height: 1090px;
+  max-width: 834px;
+  min-height: 1090px;
 }
 .catalog__title {
   margin: 30px 0px 20px 0px;
+}
+
+@media only screen and (max-width: 1150px) {
+  .catalog-col {
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .catalog-row {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .catalog__title {
+    text-align: center;
+  }
 }
 /*!*******************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./pages/index/index.scss ***!
@@ -959,7 +1016,7 @@ label > input[type=checkbox]:checked:before {
   height: 48px;
   width: 297px;
   bottom: 21px;
-  right: 4px;
+  right: 10px;
 }
 .note__p {
   margin: 0;

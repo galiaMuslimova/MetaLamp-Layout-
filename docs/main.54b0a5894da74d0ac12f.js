@@ -85,17 +85,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./components/conditions/conditions.scss":
-/*!***********************************************!*\
-  !*** ./components/conditions/conditions.scss ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./components/conditions/conditions.scss?");
-
-/***/ }),
-
 /***/ "./components/drop/drop.scss":
 /*!***********************************!*\
   !*** ./components/drop/drop.scss ***!
@@ -184,17 +173,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./components/form/form_select/form_select.scss":
-/*!******************************************************!*\
-  !*** ./components/form/form_select/form_select.scss ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./components/form/form_select/form_select.scss?");
-
-/***/ }),
-
 /***/ "./components/header/header.scss":
 /*!***************************************!*\
   !*** ./components/header/header.scss ***!
@@ -228,25 +206,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./components/select-content/count/count.scss":
-/*!****************************************************!*\
-  !*** ./components/select-content/count/count.scss ***!
-  \****************************************************/
+/***/ "./components/select/count/count.scss":
+/*!********************************************!*\
+  !*** ./components/select/count/count.scss ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./components/select-content/count/count.scss?");
-
-/***/ }),
-
-/***/ "./components/select-content/select-content.scss":
-/*!*******************************************************!*\
-  !*** ./components/select-content/select-content.scss ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./components/select-content/select-content.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./components/select/count/count.scss?");
 
 /***/ }),
 
@@ -337,23 +304,23 @@ eval("(function (global, factory) {\n     true ? factory(exports) :\n    0;\n}(t
 
 /***/ }),
 
+/***/ "./components/button/button.js":
+/*!*************************************!*\
+  !*** ./components/button/button.js ***!
+  \*************************************/
+/***/ (() => {
+
+eval("\n\n//# sourceURL=webpack:///./components/button/button.js?");
+
+/***/ }),
+
 /***/ "./components/catalog-list/catalog-list.js":
 /*!*************************************************!*\
   !*** ./components/catalog-list/catalog-list.js ***!
   \*************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\r\n\n\n//# sourceURL=webpack:///./components/catalog-list/catalog-list.js?");
-
-/***/ }),
-
-/***/ "./components/conditions/conditions.js":
-/*!*********************************************!*\
-  !*** ./components/conditions/conditions.js ***!
-  \*********************************************/
-/***/ (() => {
-
-eval("\n\n//# sourceURL=webpack:///./components/conditions/conditions.js?");
+eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(window).on('load', function () {\r\n  $('.catalog-item').click(function () {\r\n    $(location).attr('href', \"./room.html\")\r\n  })\r\n})\r\n\n\n//# sourceURL=webpack:///./components/catalog-list/catalog-list.js?");
 
 /***/ }),
 
@@ -361,20 +328,9 @@ eval("\n\n//# sourceURL=webpack:///./components/conditions/conditions.js?");
 /*!*************************************!*\
   !*** ./components/filter/filter.js ***!
   \*************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ (() => {
 
-eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(document).ready(function () {\r\n    $(\".filter > .form[name='guestsCount']\").find('.input').val(sessionStorage.getItem('guestsCount'));\r\n});\n\n//# sourceURL=webpack:///./components/filter/filter.js?");
-
-/***/ }),
-
-/***/ "./components/form/form.js":
-/*!*********************************!*\
-  !*** ./components/form/form.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.scss */ \"./components/form/form.scss\");\n/* harmony import */ var _form_date_form_date_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form_date/form_date.scss */ \"./components/form/form_date/form_date.scss\");\n/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n\r\n\r\n//import './form_select/form_select.scss'\r\n\r\n$(window).on('load', function () {\r\n  $('.input__btn').click(function () {\r\n    $(this).closest('.form').find('.drop').toggleClass('active')\r\n  });\r\n});\n\n//# sourceURL=webpack:///./components/form/form.js?");
+eval("\n\n//# sourceURL=webpack:///./components/filter/filter.js?");
 
 /***/ }),
 
@@ -382,29 +338,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _for
 /*!****************************************************!*\
   !*** ./components/form/form_select/form_select.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(window).on('load', function () {\r\n\r\n  function selectCount(el) {    \r\n    //sessionStorage.setItem('roomsCount', '0'); \r\n\r\n    let form = el.closest('.form');\r\n    let key = form[0].name;\r\n    let count = 0;\r\n    if ((sessionStorage.getItem(key)) && (!isNaN(sessionStorage.getItem(key)))){\r\n        count = sessionStorage.getItem(key);\r\n    }\r\n    else {\r\n      sessionStorage.setItem(key, 0);\r\n      console.log('dd');\r\n    };\r\n\r\n    if (el.hasClass('minus')) {\r\n      if (count > 0) {\r\n        --count;\r\n      }\r\n    };\r\n\r\n    if (el.hasClass('plus')) {\r\n      ++count;      \r\n    }; \r\n    \r\n    sessionStorage.setItem(key, count)\r\n  }\r\n\r\n  $('.count__btn').click(function () {      \r\n    selectCount($(this));   \r\n  })   \r\n});\n\n//# sourceURL=webpack:///./components/form/form_select/form_select.js?");
-
-/***/ }),
-
-/***/ "./components/select-content/count/count.js":
-/*!**************************************************!*\
-  !*** ./components/select-content/count/count.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(window).on('load', function () {\r\n  $('.plus, .minus').click(function () {\r\n    let num = $(this).siblings('.count__num');\r\n    let i = num.val();\r\n    if($(this).hasClass('plus')) {\r\n      num.val(++i);\r\n    };\r\n    if ($(this).hasClass('minus')) {\r\n      if (i > 0) {\r\n        num.val(--i);\r\n      }        \r\n    }     \r\n  });\r\n});\r\n\n\n//# sourceURL=webpack:///./components/select-content/count/count.js?");
-
-/***/ }),
-
-/***/ "./components/select-content/select-content.js":
-/*!*****************************************************!*\
-  !*** ./components/select-content/select-content.js ***!
-  \*****************************************************/
 /***/ (() => {
 
-eval("\r\n  \n\n//# sourceURL=webpack:///./components/select-content/select-content.js?");
+eval("/*$(window).on('load', function () {\r\n\r\n function selectCount(el) {    \r\n\r\n    let form = el.closest('.form');\r\n    let key = form[0].name;\r\n    let count = 0;\r\n    if ((sessionStorage.getItem(key)) && (!isNaN(sessionStorage.getItem(key)))){\r\n        count = sessionStorage.getItem(key);\r\n    }\r\n    else {\r\n      sessionStorage.setItem(key, 0);\r\n    };\r\n\r\n    if (el.hasClass('minus')) {\r\n      if (count > 0) {\r\n        --count;\r\n      }\r\n    };\r\n\r\n    if (el.hasClass('plus')) {\r\n      ++count;      \r\n    }; \r\n    \r\n    sessionStorage.setItem(key, count)\r\n  }\r\n\r\n  $('.count__btn').click(function () {      \r\n    selectCount($(this));   \r\n  })   \r\n});*/\n\n//# sourceURL=webpack:///./components/form/form_select/form_select.js?");
+
+/***/ }),
+
+/***/ "./components/input/input.js":
+/*!***********************************!*\
+  !*** ./components/input/input.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(window).on('load', function () {\r\n  $('.input-row__btn').click(function () {\r\n    $(this).closest('.form').find('.drop').toggleClass('active')\r\n  })\r\n})\n\n//# sourceURL=webpack:///./components/input/input.js?");
+
+/***/ }),
+
+/***/ "./components/select/count/count.js":
+/*!******************************************!*\
+  !*** ./components/select/count/count.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"count\": () => (/* binding */ count)\n/* harmony export */ });\nfunction count (el) {  \r\n  let id = el.closest('.count')[0].id;\r\n  let inputNum = el.siblings('.count__num');\r\n  let i = inputNum.val();\r\n\r\n  if (el.hasClass('plus')) {+\r\n    inputNum.val(++i);\r\n  };\r\n  if (el.hasClass('minus')) {\r\n    if (i > 0) {\r\n      inputNum.val(--i);      \r\n    }        \r\n  }\r\n  sessionStorage.setItem(id, i)\r\n}\r\n\n\n//# sourceURL=webpack:///./components/select/count/count.js?");
 
 /***/ }),
 
@@ -412,9 +369,10 @@ eval("\r\n  \n\n//# sourceURL=webpack:///./components/select-content/select-cont
 /*!*************************************!*\
   !*** ./components/select/select.js ***!
   \*************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n$(window).on('load', function () {\r\n  $('.submit').on('click', function () {\r\n    let input = $(this).closest('.form').find('.input');\r\n    let count = sessionStorage.getItem('guestsCount');\r\n\r\n    function declOfNum(number, titles) {\r\n      cases = [2, 0, 1, 1, 1, 2];\r\n      return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];\r\n    }\r\n    let str = count + ' ' + declOfNum(count, ['гость', 'гостя', 'гостей']);\r\n\r\n    input.val(str);\r\n    $(this).closest('.form').find('.drop').removeClass('active'); \r\n  });\r\n\r\n  $('.reset').click(function () {\r\n    $(this).closest('.form').trigger('reset');\r\n    sessionStorage.clear();   \r\n  });\r\n});\n\n//# sourceURL=webpack:///./components/select/select.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _count_count_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./count/count.js */ \"./components/select/count/count.js\");\n/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n\r\n\r\n$(window).on('load', function () {\r\n  //задает значения 0 для элементов select\r\n  $('.count__num').each(function () {\r\n    let id = $(this).closest('.count')[0].id;\r\n    sessionStorage.setItem(id, 0);    \r\n  });\r\n\r\n  function makeInputText (el) {\r\n    let form = el.closest('.form');\r\n    if(form.hasClass('guests')) {\r\n      let adults = Number(sessionStorage.getItem('взрослые')) + Number(sessionStorage.getItem('дети'));\r\n      let babies = sessionStorage.getItem('младенцы');\r\n      return (adults + 'взрослые, ' + babies + 'младенцы');\r\n    }\r\n  }\r\n\r\n  $('.plus, .minus').click(function () {\r\n    (0,_count_count_js__WEBPACK_IMPORTED_MODULE_0__.count)($(this)); \r\n    let text = makeInputText($(this));\r\n    if($(this).closest('.form').hasClass('guests')) {\r\n      $(\".guests>.input\").val(text);\r\n    }     \r\n    \r\n  })\r\n});\r\n\r\n/*$(window).on('load', function () {\r\n\r\n  $('.submit').on('click', function () {\r\n    let input = $(this).closest('.form').find('.input');\r\n    let count = sessionStorage.getItem('guestsCount');\r\n\r\n    function declOfNum(number, titles) {\r\n      cases = [2, 0, 1, 1, 1, 2];\r\n      return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];\r\n    }\r\n    let str = count + ' ' + declOfNum(count, ['гость', 'гостя', 'гостей']);\r\n\r\n    input.val(str);\r\n    $(this).closest('.form').find('.drop').removeClass('active'); \r\n  });\r\n\r\n  $('.reset').click(function () {\r\n    $(this).closest('.form').trigger('reset');\r\n    sessionStorage.clear();   \r\n  });\r\n});*/\n\n//# sourceURL=webpack:///./components/select/select.js?");
 
 /***/ }),
 
@@ -435,7 +393,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var noui
   \********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var map = {\n\t\"./catalog-list/catalog-list.js\": \"./components/catalog-list/catalog-list.js\",\n\t\"./conditions/conditions.js\": \"./components/conditions/conditions.js\",\n\t\"./filter/filter.js\": \"./components/filter/filter.js\",\n\t\"./form/form.js\": \"./components/form/form.js\",\n\t\"./form/form_select/form_select.js\": \"./components/form/form_select/form_select.js\",\n\t\"./select-content/count/count.js\": \"./components/select-content/count/count.js\",\n\t\"./select-content/select-content.js\": \"./components/select-content/select-content.js\",\n\t\"./select/select.js\": \"./components/select/select.js\",\n\t\"./slider/slider.js\": \"./components/slider/slider.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync recursive \\\\.js$\";\n\n//# sourceURL=webpack:///./components/_sync_\\.js$?");
+eval("var map = {\n\t\"./button/button.js\": \"./components/button/button.js\",\n\t\"./catalog-list/catalog-list.js\": \"./components/catalog-list/catalog-list.js\",\n\t\"./filter/filter.js\": \"./components/filter/filter.js\",\n\t\"./form/form_select/form_select.js\": \"./components/form/form_select/form_select.js\",\n\t\"./input/input.js\": \"./components/input/input.js\",\n\t\"./select/count/count.js\": \"./components/select/count/count.js\",\n\t\"./select/select.js\": \"./components/select/select.js\",\n\t\"./slider/slider.js\": \"./components/slider/slider.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync recursive \\\\.js$\";\n\n//# sourceURL=webpack:///./components/_sync_\\.js$?");
 
 /***/ }),
 
@@ -445,7 +403,7 @@ eval("var map = {\n\t\"./catalog-list/catalog-list.js\": \"./components/catalog-
   \**********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var map = {\n\t\"./button/button.scss\": \"./components/button/button.scss\",\n\t\"./calendar/calendar.scss\": \"./components/calendar/calendar.scss\",\n\t\"./catalog-list/catalog-list.scss\": \"./components/catalog-list/catalog-list.scss\",\n\t\"./catalog-turn/catalog-turn.scss\": \"./components/catalog-turn/catalog-turn.scss\",\n\t\"./checkbox/checkbox.scss\": \"./components/checkbox/checkbox.scss\",\n\t\"./conditions/conditions.scss\": \"./components/conditions/conditions.scss\",\n\t\"./drop/drop.scss\": \"./components/drop/drop.scss\",\n\t\"./entry-card/entry-card.scss\": \"./components/entry-card/entry-card.scss\",\n\t\"./filter/filter.scss\": \"./components/filter/filter.scss\",\n\t\"./footer/footer.scss\": \"./components/footer/footer.scss\",\n\t\"./footer/links/links.scss\": \"./components/footer/links/links.scss\",\n\t\"./footer/rights/rights.scss\": \"./components/footer/rights/rights.scss\",\n\t\"./form/form.scss\": \"./components/form/form.scss\",\n\t\"./form/form_date/form_date.scss\": \"./components/form/form_date/form_date.scss\",\n\t\"./form/form_select/form_select.scss\": \"./components/form/form_select/form_select.scss\",\n\t\"./header/header.scss\": \"./components/header/header.scss\",\n\t\"./input/input.scss\": \"./components/input/input.scss\",\n\t\"./logo/logo.scss\": \"./components/logo/logo.scss\",\n\t\"./select-content/count/count.scss\": \"./components/select-content/count/count.scss\",\n\t\"./select-content/select-content.scss\": \"./components/select-content/select-content.scss\",\n\t\"./select/select.scss\": \"./components/select/select.scss\",\n\t\"./slider/slider.scss\": \"./components/slider/slider.scss\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync recursive \\\\.scss$\";\n\n//# sourceURL=webpack:///./components/_sync_\\.scss$?");
+eval("var map = {\n\t\"./button/button.scss\": \"./components/button/button.scss\",\n\t\"./calendar/calendar.scss\": \"./components/calendar/calendar.scss\",\n\t\"./catalog-list/catalog-list.scss\": \"./components/catalog-list/catalog-list.scss\",\n\t\"./catalog-turn/catalog-turn.scss\": \"./components/catalog-turn/catalog-turn.scss\",\n\t\"./checkbox/checkbox.scss\": \"./components/checkbox/checkbox.scss\",\n\t\"./drop/drop.scss\": \"./components/drop/drop.scss\",\n\t\"./entry-card/entry-card.scss\": \"./components/entry-card/entry-card.scss\",\n\t\"./filter/filter.scss\": \"./components/filter/filter.scss\",\n\t\"./footer/footer.scss\": \"./components/footer/footer.scss\",\n\t\"./footer/links/links.scss\": \"./components/footer/links/links.scss\",\n\t\"./footer/rights/rights.scss\": \"./components/footer/rights/rights.scss\",\n\t\"./form/form.scss\": \"./components/form/form.scss\",\n\t\"./form/form_date/form_date.scss\": \"./components/form/form_date/form_date.scss\",\n\t\"./header/header.scss\": \"./components/header/header.scss\",\n\t\"./input/input.scss\": \"./components/input/input.scss\",\n\t\"./logo/logo.scss\": \"./components/logo/logo.scss\",\n\t\"./select/count/count.scss\": \"./components/select/count/count.scss\",\n\t\"./select/select.scss\": \"./components/select/select.scss\",\n\t\"./slider/slider.scss\": \"./components/slider/slider.scss\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync recursive \\\\.scss$\";\n\n//# sourceURL=webpack:///./components/_sync_\\.scss$?");
 
 /***/ }),
 

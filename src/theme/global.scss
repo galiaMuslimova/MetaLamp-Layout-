@@ -1,113 +1,20 @@
-$darkShade: rgba(31,32,65,1);
-$purple: #BC9CFF;
-$green: #6FCF97;
-$white: #FFFFFF;
-
-/*
-opacity
-100% — FF
-75% — BF
-50% — 80
-25% — 40
-5% — 0D
-*/
-
-html {
-  font-size: 14px;
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;  
-}
-
-//основной шрифт
-body, p, input, button {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: normal;
-  color: rgba(31,32,65,0.75);
-}
-
-h1, h2, h3, h4 {
-  font-weight: bold;  
-  color: $darkShade;
-}
-
-//Заголовки страниц
-h1 {
-  font-size: 24px;
-  line-height: 29px;  
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
-}
-
-//Подзаголовки на странице room
-h2 {  
-  font-size: 19px; 
-  line-height: 23px;
-}
-
-//Заголовки форм
-h3 {  
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 5px 0px;
-}
-
-//Номера комнат
-h4 {  
   font-size: 14px;
-  line-height: 17px;
 }
 
-.p {
-  //чекбоксы фильтра с начертанием bold
-  &_bold {
-    font-weight: bold;
-    line-height: 18px;
-  }
-  //header и некоторые столбцы footer
-  &_nav {
-    line-height: 17px;
-    color: rgba(31,32,65,0.5);
-  }
-
-  //более светлые тексты, чаще в filter
-  &_lightGrey {
-    line-height: 18px;
-    color: rgba(31,32,65,0.5);
-  }
-
-  //номера в календаре и тексты с маленьким шрифтом
-  &_small {
-    font-size: 12px;
-    line-height: 14px;
-    color: rgba(31,32,65,0.5);
-  } 
-  
-  //шрифты для кнопок
-  &_light, &_blue {
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: bold;
-  }
-
-  //для белой кнопки
-  &_light {
-    color: $purple;
-  }
-
-  //для синей кнопки
-  &_blue {
-    color: $white;
-  }
+.wrapper {
+  margin: 0 auto;
+  min-width: 100%;  
+  min-height: 100%;
+  display: flex;
+	flex-direction: column;	
 }
 
-a {
-  text-decoration: none;
+.content {
+  flex: 1 0 auto;
 }
 
 //ограничивает содержимое страницы
@@ -130,6 +37,10 @@ a {
 .col {
   display: flex;
   flex-direction: column;
+}
+
+a {
+  text-decoration: none;
 }
 
 
