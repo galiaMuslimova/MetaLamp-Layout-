@@ -1,9 +1,0 @@
-include ../../input/input.pug
-include ../../calendar/calendar.pug
-
-mixin form_date(title)
-  form(class='form form_date')
-    legend 
-      h3=title 
-    +input('date', 'ДД.ММ.ГГГГ')(class=attributes.class)
-    +calendar()

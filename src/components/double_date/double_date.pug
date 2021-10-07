@@ -1,0 +1,13 @@
+include ../input/input.pug
+include ../calendar/calendar.pug
+
+mixin double_date(title, id)
+  form.form.form_date
+    div.row
+      div.col
+        h3=title[0]
+        +input('dropdown', 'ДД.ММ.ГГГГ', id+'-input_left')(class='input-row_date')
+      div.col
+        h3=title[1]
+        +input('dropdown', 'ДД.ММ.ГГГГ', id+'-input_right')(class='input-row_date')
+    +calendar()

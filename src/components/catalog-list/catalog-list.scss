@@ -21,7 +21,7 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
   margin: 0px 0px 20px 0px;
-  font-weight: bold;
+  font-weight: bold; 
 
   &-row {
     height: 53px;
@@ -31,6 +31,45 @@
 
   &__image {
     height: 151px;
+    position: relative;
+
+    .image-open {
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      width: 15%;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+
+      &__btn {
+        display: none;
+      }
+    }
+
+    &:hover {
+    .image-open {      
+      text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+      background-color: rgba(0,0,0,0);
+      opacity: .5;
+
+      &_left {
+        background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+      }
+
+      &_right {
+        right: 0;
+        left: auto;
+        background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%)
+      }
+      
+      &__btn {
+        display: inline-block;
+      }
+    }
+           
+    }  
   } 
 
   &__divider {

@@ -1,7 +1,7 @@
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
-$(document).ready(function () {
+$(window).on('load', function () {
   let slider = document.getElementById('slider-round');
 
   noUiSlider.create(slider, {

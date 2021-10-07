@@ -1,10 +1,9 @@
-include ../form/form_date/form_date.pug
 include ../form/form_select/form_select.pug
 include ../checkbox/checkbox.pug
 
 div(class='filter')
   div(class='col')
-    +form_date('даты пребывания в отеле')(class='input-row_date-filter')
+    //+form_date('даты пребывания в отеле', 'filter-calendar')(class='input-row_date-filter')
     +form_select('гости',['взрослые', 'дети', 'младенцы'], 'guests')
     include ../slider/slider.pug  
     form(class='form form_checkbox')
