@@ -1,28 +1,34 @@
 - const data = require('./catalog-list.json')
 
-
 div.catalog-list
   each val in data  
     div.catalog-item
-      div.catalog-item__image
-        a.image-open.image-open_left
-          span.image-open__btn.icon-left-open
-        img(srcset=`${require(`./img/${val.num}.png`)}`)
-        a.image-open.image-open_right
-          span.image-open__btn.icon-right-open
-      div.row.catalog-item-row
-        h4= '№' + val.num
-        if(val.luxury) 
-          div.p_light люкс
-        div.p_lightGrey= val.cost + ' р в сутки'
-      div.catalog-item__divider
-      div.row.catalog-item-row
-        div.stars 
-        - let i = 0
-        while i < val.stars 
-          div.icon-star
-          - ++i
-        while i < 5 
-          div.icon-star-empty
-          - ++i                   
-        div.p_lightGrey= val.review + ' отзывов'
+      div.catalog-item__carousel.carousel
+        a.carousel-mover.carousel-mover_left
+          span.carousel-mover__btn.icon-left-open
+        div.carousel-image
+          img(srcset=`${require(`./img/${val.num}.png`)}`)
+        a.carousel-mover.carousel-mover_right
+          span.carousel-mover__btn.icon-right-open
+        ol.carousel-indicators  
+          li.active 
+          li
+          li
+          li
+      div.catalog-item-content
+        div.row.catalog-item-row
+          h4= '№' + val.num
+          if(val.luxury) 
+            div.p_light люкс
+          div.p_lightGrey= val.cost + ' р в сутки'
+        div.catalog-item__divider
+        div.row.catalog-item-row
+          div.stars 
+          - let i = 0
+          while i < val.stars 
+            div.icon-star
+            - ++i
+          while i < 5 
+            div.icon-star-empty
+            - ++i                   
+          div.p_lightGrey= val.review + ' отзывов'

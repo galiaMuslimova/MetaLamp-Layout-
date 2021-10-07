@@ -22,55 +22,13 @@
   border-radius: 4px;
   margin: 0px 0px 20px 0px;
   font-weight: bold; 
+  cursor: pointer;
 
   &-row {
     height: 53px;
     align-items: center;
     padding: 0px 20px;
-  }
-
-  &__image {
-    height: 151px;
-    position: relative;
-
-    .image-open {
-      position: absolute;
-      top:0;
-      bottom:0;
-      left:0;
-      width: 15%;
-      font-size: 20px;
-      color: #fff;
-      text-align: center;
-
-      &__btn {
-        display: none;
-      }
-    }
-
-    &:hover {
-    .image-open {      
-      text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
-      background-color: rgba(0,0,0,0);
-      opacity: .5;
-
-      &_left {
-        background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
-      }
-
-      &_right {
-        right: 0;
-        left: auto;
-        background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%)
-      }
-      
-      &__btn {
-        display: inline-block;
-      }
-    }
-           
-    }  
-  } 
+  }   
 
   &__divider {
     position: absolute;
@@ -78,6 +36,75 @@
     width: 230px;
     height: 1px;
     background: rgba(31, 32, 65, 0.1);
+  }
+
+  .stars {
+    font-size: 24px;
+    .icon-star{
+      
+      color: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+    }
+    
+  }
+}
+
+.carousel {
+  height: 151px;
+  position: relative;
+
+  &-mover {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width: 4200/270%;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+
+    &__btn {
+      display: none;
+    }
+  }
+
+  &:hover {
+    .carousel-mover {      
+      &_left {
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      }
+
+      &_right {
+        right: 0;
+        left: auto;
+        background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
+      }
+      
+      &__btn {
+        display: inline-block;
+      }
+    }           
+  }
+  
+  &-indicators {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0px 0px 0px 4px;
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 7px;
+      border: 1px solid #FFFFFF;
+      box-sizing: border-box;
+
+      &.active {
+        background-color: #fff;
+      }
+    }
   }
 }
 
