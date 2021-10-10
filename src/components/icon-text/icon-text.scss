@@ -1,0 +1,23 @@
+.icon-text {
+  margin: 20px 0px 0px 0px;
+  min-width: 280px;
+
+  > .row {
+    justify-content: flex-start;
+  }
+
+  &__icon {
+    margin: 0px 10px 0px 0px;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__divider {
+    margin: 20px 0px 0px 0px;
+    height: 1px;
+    width: 100%;
+    background: rgba(31, 32, 65, 0.1);
+  }
+}

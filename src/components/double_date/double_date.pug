@@ -10,4 +10,9 @@ mixin double_date(title, id)
       div.col
         h3=title[1]
         +input('dropdown', 'ДД.ММ.ГГГГ', id+'-input_right')(class='input-row_date')
-    +calendar()
+    div.drop.drop_calendar
+      +calendar()
+      if attributes.class
+        div(class='row')
+          button(type='button', class='btn_submit reset p_light') очистить
+          button(type='button', class='btn_submit submit p_light') применить

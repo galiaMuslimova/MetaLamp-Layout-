@@ -1,7 +1,30 @@
 extends ../base/base.pug
+include ../../components/icon-text/icon-text.pug
+include ../../components/chart/chart.pug
 
 block content
-  div(class='room')
-    div(class='room-image')
-    div(class='room-content')
-      h3 Сведения о номере
+  .room
+    .room-image
+      div 
+        img(src=require('../../components/catalog-list/img/888/888-1.png'))
+      .room-image-col
+        div   
+          img(src=require('../../components/catalog-list/img/888/888-2.png'))
+        div 
+          img(src=require('../../components/catalog-list/img/888/888-3.png'))
+    .container.room-container
+      .room-content 
+        .info
+          div 
+            h2 Сведения о номере
+            +icon-text('emoticon', 'Комфорт', 'Шумопоглощающие стены')
+            +icon-text('city', 'Удобство', 'Окно в каждой из спален')
+            +icon-text('comfort', 'Уют', 'Номер оснащён камином')
+          div
+            h2 Впечатления от номера
+            +chart()
+        .review 
+          h2 Отзывы посетителей номера
+        .rules
+                
+      div

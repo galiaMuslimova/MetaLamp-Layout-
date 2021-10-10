@@ -1,0 +1,9 @@
+mixin icon-text(name, title, text)
+  .icon-text
+    .row
+      .icon-text__icon 
+        img(src=require('./svg/' + name + '.svg'))
+      .col
+        .icon-text__title= title
+        .icon-text__text= text
+    .icon-text__divider
