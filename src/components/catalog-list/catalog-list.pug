@@ -1,12 +1,12 @@
 - const data = require('./catalog-list.json')
 
-div.catalog-list
+.catalog-list
   each val in data  
-    div.catalog-item
-      div.catalog-item__carousel.carousel
+    .catalog-item
+      .catalog-item__carousel.carousel
         a.carousel-mover.carousel-mover_left
           span.carousel-mover__btn.icon-left-open
-        div.carousel-image
+        .carousel-image
           img(srcset=`${require(`./img/${val.num}/${val.num}-1.png`)}`)
         a.carousel-mover.carousel-mover_right
           span.carousel-mover__btn.icon-right-open
@@ -15,20 +15,20 @@ div.catalog-list
           li
           li
           li
-      div.catalog-item-content
-        div.row.catalog-item-row
+      .catalog-item-content
+        .row.catalog-item-row
           h4= '№' + val.num
           if(val.luxury) 
-            div.p_light люкс
-          div.p_lightGrey= val.cost + ' р в сутки'
-        div.catalog-item__divider
-        div.row.catalog-item-row
-          div.stars 
+            .p_light люкс
+          .p_lightGrey= val.cost + ' р в сутки'
+        .catalog-item__divider
+        .row.catalog-item-row
+          .stars 
           - let i = 0
           while i < val.stars 
-            div.icon-star
+            .icon-star
             - ++i
           while i < 5 
-            div.icon-star-empty
+            .icon-star-empty
             - ++i                   
-          div.p_lightGrey= val.review + ' отзывов'
+          .p_lightGrey= val.review + ' отзывов'

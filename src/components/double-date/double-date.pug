@@ -1,14 +1,14 @@
 include ../input/input.pug
 include ../calendar/calendar.pug
 
-mixin double_date(title, id)
+mixin double-date(id)
   form.form.form_date
     div.row
       div.col
-        h3=title[0]
+        h3 Прибытие
         +input('dropdown', 'ДД.ММ.ГГГГ', id+'-input_left')(class='input-row_date')
       div.col
-        h3=title[1]
+        h3 Выезд
         +input('dropdown', 'ДД.ММ.ГГГГ', id+'-input_right')(class='input-row_date')
     div.drop.drop_calendar
       +calendar()

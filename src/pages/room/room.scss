@@ -16,15 +16,22 @@
   }
 
   &-container {
+    padding-top: 70px;
     display: grid;
-    grid-template-columns: 0.6fr 0.3fr;
+    grid-template-columns: 0.65fr 380px;
     grid-column-gap: 6%;
 
     //710px
     .info {
       display: grid;
-      grid-template-columns: 0.4fr 0.5fr; //280px 350px
+      grid-template-columns: 0.45fr 0.55fr; //280px 350px
       grid-column-gap: 11%; //80px
+    }
+
+    .rules {
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      grid-column-gap: 10%; //70px
     }
   }
 }

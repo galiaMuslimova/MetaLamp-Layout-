@@ -66,6 +66,10 @@ h4 {
   line-height: 17px;
 }
 
+p {
+  margin: 0;
+}
+
 .p {
   //чекбоксы фильтра с начертанием bold
   &_bold {

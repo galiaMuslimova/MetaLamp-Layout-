@@ -1,0 +1,31 @@
+include ../double-date/double-date.pug
+include ../form/form_select/form_select.pug
+
+.room-card 
+  .room-card-inner 
+    .row.room-card-title.room-card-row
+      h4 №
+      h2 888
+      .p_light люкс
+      .p_lightGrey 9990 р в сутки
+    .room-card-row
+      +double-date('room')
+    .room-card-row
+      +form_select('гости', ['взрослые', 'дети', 'младенцы'], 'guests')(class='room-select')
+    .room-card-row.room-card-calculation
+      .col 
+        .row 
+          p 9 990₽ х 4 суток
+          p 39 960₽
+        .row 
+          p Сбор за услуги: скидка 2 179₽
+          p 0₽
+        .row 
+          p Сбор за дополнительные услуги
+          p 300₽
+    .row.room-card-total.total 
+      h2 Итого
+      .total__divider
+      h2 38 081₽
+    .room-card-btn
+      button(class='btn btn_card') забронировать

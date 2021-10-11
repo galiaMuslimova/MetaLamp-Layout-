@@ -18,10 +18,14 @@
     }
   }
 
-  &_entry {
+  &_card {
     width: 320px;
     height: 44px;
-    margin: 37px 0px 0px 0px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
   }  
 
   &_circle {
