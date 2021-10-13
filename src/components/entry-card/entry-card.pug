@@ -1,11 +1,12 @@
 include ../double-date/double-date.pug
 include ../form/form_select/form_select.pug
 
-div(class='entry-card')
-  div(class='entry-inner')
+.entry-card
+  .entry-inner
     h1 Найдём номера под ваши пожелания
-    div(class='row entry-row')          
+    .row.entry-row          
       +double-date('entry')(class='entry-date')  
-    div(class='row entry-row')
+    .row.entry-row 
       +form_select('гости', ['взрослые', 'дети', 'младенцы'], 'guests')(class='entry-select')
-    button(class='btn btn_card') подобрать номер
+    button.btn.btn_card подобрать номер
+      i.icon-right

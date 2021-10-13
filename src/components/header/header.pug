@@ -1,19 +1,23 @@
-header(class='header')
-  div(class='container header-container')
+header
+  .container.header-container
     include ../logo/logo.pug
-    div(class='nav') 
-      ul(class='nav-list')
+    nav 
+      ul
         li 
-          p(class='p_nav') О нас
+          p.p_nav О нас
+        li.row 
+          p.p_nav Услуги
+          i.icon-down-open
         li 
-          p(class='p_nav') Услуги
+          p.p_nav Вакансии
         li 
-          p(class='p_nav') Вакансии
-        li 
-          p(class='p_nav') Новости
-        li 
-          p(class='p_nav') Соглашения
+          p.p_nav Новости
+        li.row
+          p.p_nav Соглашения
+          i.icon-down-open
         li
-          button(class='btn btn_header btn_header-login p_light') войти            
+          button.btn.btn_header.btn_header-login.p_light войти            
         li
-          button(class='btn btn_header btn_header-register p_blue') зарегистрироваться
+          button.btn.btn_header.btn_header-register.p_blue зарегистрироваться
+    .nav-btn
+      span

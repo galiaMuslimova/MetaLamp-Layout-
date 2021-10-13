@@ -1,31 +1,105 @@
-.header {  
+header {  
   flex: 0 0 auto;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  &-container {   
+
+
+  .header-container {   
     height: 70px; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    @media only screen and (max-width: 924px) {
+      height: 60px;
+    }
   }
-}
 
-.nav {
-  &-list {    
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    align-items: center;
-    justify-content: space-between;
+  nav {
+    background-color: #fff;
+    overflow: auto;
+    
+    @media only screen and (max-width: 924px) {
+      display: none;
+      z-index: 10;
+      position: absolute;
+      top: 60px;
+      width: 100%;    
+    }
+    ul {    
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      align-items: center;
+      justify-content: space-between;
 
-    li {
-      padding: 0 0 0 20px;
-      
-      p {
-        line-height: 17px;
-      }      
+      @media only screen and (max-width: 924px) {
+        flex-direction: column;        
+      }
+
+      li {
+        padding: 0 0 0 20px;
+        @media only screen and (max-width: 924px) {
+          margin: 10px;
+        }
+        &.row {
+          align-items: center;
+        }
+        p {
+          line-height: 17px;
+        }      
+      }
+    }
+  }
+
+  .nav-btn {
+    display: none;
+    height: 35px;
+    width: 45px;
+    position: relative;
+
+    @media only screen and (max-width: 924px) {
+      display: block;
+    }
+    span, &:after, &:before {
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      background: #515758;
+      margin: 0 auto;
+    }
+
+    span{
+      top: 16px;
+    }
+    &:after, &:before{
+      content: '';
+    }
+    &:after{
+      bottom: 5px;
+    }
+    &:before{
+      top: 5px;
+    }
+
+    &.open-menu {
+      span {
+        opacity:0; 
+        transition: 0.1s; 
+      }
+      &:before {
+        transform: rotate(45deg);
+        top: 16px;
+        transition: 0.2s;
+      }
+      &:after {
+        transform: rotate(-45deg);
+        bottom: 16px;
+        transition: 0.2s;
+      }
     }
   }
   

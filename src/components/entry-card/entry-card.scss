@@ -13,6 +13,9 @@
 
   &-inner {
     padding: 39px 30px 30px 29px;
+    >:last-child {
+      margin-top: 30px;
+    }
   } 
 
   &-row {
