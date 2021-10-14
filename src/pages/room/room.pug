@@ -13,26 +13,23 @@ block content
         div 
           img(src=require('../../components/catalog-list/img/888/888-3.png'))
     .container.room-container
-      .room-content 
-        .info
-          div 
-            h2 Сведения о номере
-            +icon-text('emoticon', 'Комфорт', 'Шумопоглощающие стены')
-            +icon-text('city', 'Удобство', 'Окно в каждой из спален')
-            +icon-text('comfort', 'Уют', 'Номер оснащён камином')
-          div
-            h2 Впечатления от номера              
-            +chart(260, [130, 65, 65, 0])
-        .review 
-          .row
-            h2 Отзывы посетителей номера
-            p 2 отзыва
-          include ../../components/review/review.pug
-        .rules
-          div   
-            h2 Правила 
-          div 
-            h2 Отмена 
-            p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.                
-      div
+      .room-info           
+        h2 Сведения о номере
+        +icon-text('emoticon', 'Комфорт', 'Шумопоглощающие стены')
+        +icon-text('city', 'Удобство', 'Окно в каждой из спален')
+        +icon-text('comfort', 'Уют', 'Номер оснащён камином')
+      .room__chart
+        h2 Впечатления от номера              
+        +chart(260, [130, 65, 65, 0])
+      .room__review 
+        .row
+          h2 Отзывы посетителей номера
+          p 2 отзыва
+        include ../../components/review/review.pug
+      .room__rules
+        h2 Правила 
+      .room__cancel 
+        h2 Отмена 
+        p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.                
+      .room__card
         include ../../components/room-card/room-card.pug

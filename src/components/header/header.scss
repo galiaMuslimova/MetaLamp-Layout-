@@ -41,7 +41,7 @@ header {
       }
 
       li {
-        padding: 0 0 0 20px;
+        margin-left: 20px;
         @media only screen and (max-width: 924px) {
           margin: 10px;
         }
@@ -50,7 +50,17 @@ header {
         }
         p {
           line-height: 17px;
-        }      
+        } 
+        .icon-down-open {
+            width: 24px;
+            height: 21px;
+            &:before {
+              color: rgba(31, 32, 65, 0.5);
+              margin: 0;
+              line-height: 0; 
+              width: 24px;
+            }       
+        }     
       }
     }
   }

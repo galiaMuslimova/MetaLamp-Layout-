@@ -4,4 +4,8 @@ $(document).ready(function() {
     $('.nav-btn').toggleClass('open-menu');
     $('body').toggleClass('fixed-page');
   });
+
+  $('.btn_header').click(function() {
+    $(location).attr('href', "./login.html");
+  })
 });

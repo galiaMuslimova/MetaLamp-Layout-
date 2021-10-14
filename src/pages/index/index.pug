@@ -3,6 +3,8 @@ include ../../components/input/input.pug
 
 block content  
   .main
+    .main__image
+      img(src=require("./background.jpg"), alt="background room image")
     .container.main-container
       include ../../components/entry-card/entry-card.pug
       .note

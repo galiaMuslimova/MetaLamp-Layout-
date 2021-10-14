@@ -18,20 +18,53 @@
   &-container {
     padding-top: 70px;
     display: grid;
-    grid-template-columns: 0.65fr 380px;
-    grid-column-gap: 6%;
+    grid-column-gap: 5vw;
+    grid-row-gap: 2vw;
+    grid: 
+    "info chart card"
+    "review review card"
+    "rules cancel card" 
+    / 1fr   1fr   380px      
+    ;
 
-    //710px
-    .info {
-      display: grid;
-      grid-template-columns: 0.45fr 0.55fr; //280px 350px
-      grid-column-gap: 11%; //80px
-    }
+    @media(max-width: 1040px) {   
+      grid:
+        "info card"
+        "chart card"
+        "review review"
+        "rules cancel"
+        /1fr 380px
+        ;  
+      }
+      @media(max-width: 800px) {  
+      grid-template-areas:
+        "card"
+        "info"
+        "chart"
+        "review"
+        "rules"
+        "cancel"        
+        ;  
+      }
+    
+  }
 
-    .rules {
-      display: grid;
-      grid-template-columns: 1fr 1fr; 
-      grid-column-gap: 10%; //70px
-    }
+  &__info {
+    grid-area: info;
+  }
+  &__chart {
+    grid-area: chart;
+  }
+  &__review {
+    grid-area: review;
+  }
+  &__card {
+    grid-area: card;
+  }
+  &__rules {
+    grid-area: rules;
+  }
+  &__cancel {
+    grid-area: cancel;
   }
 }
