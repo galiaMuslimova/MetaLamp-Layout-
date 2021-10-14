@@ -1,33 +1,38 @@
 .main { 
-  max-height: 830px; 
-  height: 100%;
-  display: grid; 
-
-  .main__image {
-    grid-area: 1/1/1/1;
-    height: 100%;
-  }
-
-  &-container {
-    grid-area: 1/1/1/1;
-    position: relative;
+  &-container {  
     height: 100%;
     display: grid;
-    grid-template-columns: 380px 1fr;
-    grid-template-rows: 374px 1fr;
+    grid: 
+      ".    .    ." 4.8vw
+      "card .    ." 374px
+      ".    .    ." 1fr  
+      ".    . note" 48px
+      ".    .    ." 1.25vw
+      /380px 1fr 297px
+      ;
+    @media (max-width: 830px) {
+      grid:
+      ". . ." 4.8vw
+      ". card ." 374px 
+      ". . ." 4.8vw
+      /1fr 380px 1fr
+    }
+
+    .note {  
+      grid-area: note;
+      @media (max-width: 830px) {
+        display: none;
+      }
+      &__p {
+        margin: 0;
+        text-align: right;
+      }  
+    }
+    .main-card {
+      grid-area: card;
+    }
   }
 }
 
-.note {  
-  position: absolute;  
-  height: 48px;
-  width: 297px;
-  bottom: 21px;
-  right: 10px;
 
-  &__p {
-    margin: 0;
-    text-align: right;
-  }  
-}
 

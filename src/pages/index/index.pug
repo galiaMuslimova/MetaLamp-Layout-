@@ -1,12 +1,12 @@
 extends ../base/base.pug
 include ../../components/input/input.pug
 
-block content  
-  .main
-    .main__image
-      img(src=require("./background.jpg"), alt="background room image")
-    .container.main-container
+block content     
+  .container.main-container
+    .main-card
       include ../../components/entry-card/entry-card.pug
-      .note
-        p.note__p Лучшие номера для вашей работы, отдыха и просто вдохновения
+    .note
+      p.note__p Лучшие номера для вашей работы, отдыха и просто вдохновения
 
+block back
+  img(src=require("./background.jpg"), alt="background room image")

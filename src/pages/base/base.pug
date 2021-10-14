@@ -6,7 +6,15 @@ html
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
   body
     .wrapper
-      include ../../components/header/header.pug
+      //-background-image of page
+      .back 
+        block back
+      header
+        include ../../components/header/header.pug
       main
         block content
-      include ../../components/footer/footer.pug
+      //-part of footer with links
+      .links 
+        include ../../components/links/links.pug
+      footer
+        include ../../components/footer/footer.pug
