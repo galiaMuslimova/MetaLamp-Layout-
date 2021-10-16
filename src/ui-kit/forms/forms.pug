@@ -1,10 +1,11 @@
 include ../../components/form/form.pug
-include ../../components/double-date/double-date.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/radio/radio.pug
 
 .container 
   .forms
-    .row-1
-      .col-1 
+    .col-1
+      .row-1 
         +form("Text Field", "E-mail")
         +form("Text Field", "E-mail")
         +form("Dropdown", "text")(class='dropdown')
@@ -12,17 +13,24 @@ include ../../components/double-date/double-date.pug
         .row.double-date 
           +form("date dropdown", "date")(class='dropdown')
           +form("date dropdown", "date")(class='dropdown')
-        .col-1-filter
+        .row-1-filter
           +form("filter date dropdown", "date")(class='dropdown')
           +form("subscription text field", "date")(class='subscript')
-      .col-2
-      .col-3
-    .row-2
-      .col-1 
-      .col-2
-      .col-3
-    .row-3
-      .col-1
-      .col-2
-      .col-3
+      .row-2
+        
+      .row-3
+    .col-2
+      .row-1 
+        form
+          h3 Checkbox Buttons
+          +checkbox("smoke", "Можно курить")
+          +checkbox("pet", "Можно с питомцами")
+          +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
+        +radio("radio buttons")
+      .row-2
+      .row-3
+    .col-3
+      .row-1
+      .row-2
+      .row-3
     

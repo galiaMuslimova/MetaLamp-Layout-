@@ -1,10 +1,10 @@
-mixin checkbox(text, id, subtitle)
-  div(class='row row_checkbox') 
-    input(type="checkbox" id=id name='check')
-    label(for=id)
-    if(subtitle)
+mixin checkbox(id, text, subtext)
+  label.row.check
+    input.check__input(type="checkbox" id=id)
+    span.check__box.icon-ok
+    if(subtext)
       div
-        p(class=attributes.class)=text
-        p(class='p_small')=subtitle
+        p.p_bold=text
+        p.p_small=subtext
     else 
-      p(class=attributes.class)=text
+      p.p_lightGrey=text

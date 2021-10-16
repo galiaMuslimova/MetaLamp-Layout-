@@ -1,13 +1,18 @@
 .forms {
   display: grid;
-  grid-template: repeat(5, min-content) / 1fr 1fr 1fr;
+  grid-template: repeat(3, min-content) / 1fr 1fr 1fr;
   grid-column-gap: 126px;
 
-  .row-1 {
-    .col-1 {
+  .col-1 {
+    .row-1 {
       &-filter {
         max-width: 266px;
       }        
+    }    
+  }
+  .col-2 {
+    .row-1 {
+      grid-area: 1/2;
     }
   }
 
