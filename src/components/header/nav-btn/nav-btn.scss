@@ -1,0 +1,48 @@
+.nav-btn {
+  display: none;
+  height: 35px;
+  width: 45px;
+  position: relative;
+
+  @media only screen and (max-width: 924px) {
+    display: block;
+  }
+  
+  span, &:after, &:before {
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: #515758;
+    margin: 0 auto;
+  }
+
+  span{
+    top: 16px;
+  }
+  &:after, &:before{
+    content: '';
+  }
+  &:after{
+    bottom: 5px;
+  }
+  &:before{
+    top: 5px;
+  }
+
+  &.open-menu {
+    span {
+      opacity:0; 
+      transition: 0.1s; 
+    }
+    &:before {
+      transform: rotate(45deg);
+      top: 16px;
+      transition: 0.2s;
+    }
+    &:after {
+      transform: rotate(-45deg);
+      bottom: 16px;
+      transition: 0.2s;
+    }
+  }
+}

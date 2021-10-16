@@ -1,0 +1,40 @@
+.colors {
+  margin: 145px auto;
+  display: grid;
+  grid-template: min-content / 1fr 1fr;
+  grid-column-gap: 18%;
+  .row {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.colors-item { 
+  gap: 40px;
+  margin-bottom: 20px;
+  &__color {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background-color: red;
+  }
+
+  &__name {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    line-height: 28px;
+    .title {
+      font-weight: bold;
+    }
+  }
+}
+
+.type-list {
+  display: grid;
+  grid-template: repeat(4, min-content) / min-content 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 50px;
+  .type_light {
+    color: rgba(31, 32, 65, 0.25);   
+  }
+}

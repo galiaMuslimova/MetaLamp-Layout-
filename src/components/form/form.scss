@@ -1,12 +1,29 @@
-.form {
-  position: relative;
-  width: 100%;
+.form { 
 
-  &_checkbox {
+  input {
+    width: 100%;
+    min-height: 44px;
+    background: #FFFFFF;    
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid rgba(31, 32, 65, 0.25);    
+
+    &:hover, &:focus {
+      outline: none;
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      color: rgba(31, 32, 65, 0.75); 
+    }
+
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.25);    
+    } 
+  }
+
+ /* &_checkbox {
     h3 {
       margin: 0rem 0rem 1rem 0rem;
     }
 
     margin: 0rem 0rem 1.875rem 0rem;
-  }
+  }*/
 }

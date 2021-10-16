@@ -1,22 +1,32 @@
 .container.header-container
   include ../logo/logo.pug
-  nav 
-    ul
-      li 
-        p.p_nav О нас
-      li.row 
-        p.p_nav Услуги
-        i.icon-down-open
-      li 
-        p.p_nav Вакансии
-      li 
-        p.p_nav Новости
-      li.row
-        p.p_nav Соглашения
-        i.icon-down-open
-      li
-        button.btn.btn_header.btn_header-login.p_light войти            
-      li
-        button.btn.btn_header.btn_header-register.p_blue зарегистрироваться
-  .nav-btn
-    span
+  ul.menu-list    
+    li 
+      a.p_nav(href='./empty.html') О нас
+    li.row 
+      p.p_nav Услуги
+      i.icon-down-open
+      ul.sub-menu-list.drop 
+        li Услуга 1
+        li Услуга 2
+        li Услуга 3
+        li Услуга 4
+    li 
+      a.p_nav(href='./empty.html') Вакансии
+    li 
+      a.p_nav(href='./empty.html') Новости
+    li.row
+      p.p_nav Соглашения
+      i.icon-down-open
+      .drop.nav__drop 
+        ul.sub-menu-list 
+          li Соглашения 1
+          li Соглашения 2
+          li Соглашения 3
+          li Соглашения 4
+          li Соглашения 5
+    li
+      button.btn.btn_header.btn_header-login.p_light войти            
+    li
+      button.btn.btn_header.btn_header-register.p_blue зарегистрироваться
+  include nav-btn/nav-btn.pug

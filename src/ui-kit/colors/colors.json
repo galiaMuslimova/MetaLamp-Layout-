@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Dark Shade 100%",
+    "value": "#1F2041",
+    "opacity": "100%"
+
+  },
+  {
+    "title": "Dark Shade 75%",
+    "value": "#1F2041",
+    "opacity": "75%"
+  },
+  {
+    "title": "Dark Shade 50%",
+    "value": "#1F2041",
+    "opacity": "50%"
+  },
+  {
+    "title": "Dark Shade 25%",
+    "value": "#1F2041",
+    "opacity": "25%"
+  },
+  {
+    "title": "Dark Shade 5%",
+    "value": "#1F2041",
+    "opacity": "5%"
+  },
+  {
+    "title": "Purple",
+    "value": "#BC9CFF"
+  },
+  {
+    "title": "Green",
+    "value": "#6FCF97"
+  }
+]

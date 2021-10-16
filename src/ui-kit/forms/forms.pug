@@ -1,0 +1,14 @@
+include ../../components/form/form.pug
+include ../../components/double-date/double-date.pug
+
+.container 
+  .forms
+    .col-1 
+      +form("Text Field", "E-mail")
+      +form("Text Field", "E-mail")
+      +form("Dropdown", "text")
+      +form("masked text field", "date")
+      +double-date()
+    .col-2 
+    .col-3
+    
