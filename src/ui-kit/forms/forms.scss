@@ -1,5 +1,21 @@
 .forms {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template: repeat(5, min-content) / 1fr 1fr 1fr;
   grid-column-gap: 126px;
+
+  .row-1 {
+    .col-1 {
+      &-filter {
+        max-width: 266px;
+      }        
+    }
+  }
+
+  .double-date { 
+    gap: 20px;  
+    .form {
+      max-width: 150px;
+      width: 100%;
+    }
+  }
 }

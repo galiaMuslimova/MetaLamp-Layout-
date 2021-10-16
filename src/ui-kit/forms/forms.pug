@@ -3,12 +3,26 @@ include ../../components/double-date/double-date.pug
 
 .container 
   .forms
-    .col-1 
-      +form("Text Field", "E-mail")
-      +form("Text Field", "E-mail")
-      +form("Dropdown", "text")
-      +form("masked text field", "date")
-      +double-date()
-    .col-2 
-    .col-3
+    .row-1
+      .col-1 
+        +form("Text Field", "E-mail")
+        +form("Text Field", "E-mail")
+        +form("Dropdown", "text")(class='dropdown')
+        +form("masked text field", "date")(class='dropdown')
+        .row.double-date 
+          +form("date dropdown", "date")(class='dropdown')
+          +form("date dropdown", "date")(class='dropdown')
+        .col-1-filter
+          +form("filter date dropdown", "date")(class='dropdown')
+          +form("subscription text field", "date")(class='subscript')
+      .col-2
+      .col-3
+    .row-2
+      .col-1 
+      .col-2
+      .col-3
+    .row-3
+      .col-1
+      .col-2
+      .col-3
     

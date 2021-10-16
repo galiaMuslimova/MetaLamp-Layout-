@@ -1,14 +1,11 @@
-include ../form/form_select/form_select.pug
+include ../form/form.pug
 include ../checkbox/checkbox.pug
 include ../calendar/calendar.pug
 
 div(class='filter')
   div(class='col')
-    form.form
-      h3 даты пребывания в отеле
-      +input('dropdown', '', 'filter-date')
-      +calendar()
-    +form_select('гости',['взрослые', 'дети', 'младенцы'], 'guests')
+    +form("даты пребывания в отеле", "date")(class="dropdown")
+    +form("гости", "text")(class="dropdown")
     include ../slider/slider.pug  
     form(class='form form_checkbox')
       h3 правила дома
@@ -22,7 +19,7 @@ div(class='filter')
       div
         +checkbox('Широкий коридор', id='corridor', 'Ширина коридоров в номере не менее 91 см.')(class='p_bold')
         +checkbox('Помощник для инвалидов', id='invalid', 'На 1 этаже вас встретит специалист и проводит до номера.')(class='p_bold')
-    +form_select('УДОБСТВА НОМЕРА',['спальни', 'кровати', 'ванные комнаты'])
+    +form("удобства номера", "text")(class="dropdown")
     form(class='form')
       div(class='row')
         h3 дополнительные удобства

@@ -1,5 +1,15 @@
 mixin form(title, type) 
   form.form
     h3= title 
-    input(type= type)
+    .input-row(class=attributes.class)
+
+      input(type=type)
+
+      if(attributes.class=="dropdown")
+        button(type="button")
+          i.icon-down-open
+
+      if(attributes.class=="subscript")
+        button(type="button")
+          i.icon-right
 

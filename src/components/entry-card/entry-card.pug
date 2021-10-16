@@ -1,5 +1,5 @@
 include ../double-date/double-date.pug
-include ../form/form_select/form_select.pug
+include ../form/form.pug
 
 .card.entry-card
   .card-inner.entry-inner
@@ -7,6 +7,6 @@ include ../form/form_select/form_select.pug
     .row.entry-row          
       +double-date('entry')(class='entry-date')  
     .row.entry-row 
-      +form_select('гости', ['взрослые', 'дети', 'младенцы'], 'guests')(class='entry-select')
+      +form("гости", "text")(class="dropdown")
     button.btn.btn_card подобрать номер
       i.icon-right

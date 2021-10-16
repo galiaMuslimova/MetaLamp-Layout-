@@ -1,5 +1,5 @@
 include ../double-date/double-date.pug
-include ../form/form_select/form_select.pug
+include ../form/form.pug
 
 .card.room-card 
   .card-inner
@@ -11,7 +11,7 @@ include ../form/form_select/form_select.pug
     .room-card-row
       +double-date('room')
     .room-card-row
-      +form_select('гости', ['взрослые', 'дети', 'младенцы'], 'guests')(class='room-select')
+      +form("гости", "text")(class="dropdown")
     .room-card-row.room-card-calculation
       .col 
         .row 
