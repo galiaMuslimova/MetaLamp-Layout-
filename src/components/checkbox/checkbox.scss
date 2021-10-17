@@ -1,8 +1,3 @@
-input[type=checkbox] {
-  position: absolute;
-  appearance: none;  
-}
-
 .check {
   margin-top: 10px;
   justify-content: flex-start;
@@ -10,6 +5,10 @@ input[type=checkbox] {
   gap: 10px;
 
   &__input {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     &:checked + .check__box:before {
       display: inline-block;      
     }

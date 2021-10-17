@@ -1,6 +1,8 @@
 include ../../components/form/form.pug
 include ../../components/checkbox/checkbox.pug
 include ../../components/radio/radio.pug
+include ../../components/toggle/toggle.pug
+include ../../components/like/like.pug
 
 .container 
   .forms
@@ -27,6 +29,13 @@ include ../../components/radio/radio.pug
           +checkbox("pet", "Можно с питомцами")
           +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
         +radio("radio buttons")
+        form
+          h3 toggle
+          +toggle("Получать спецпредложения", "checked")
+          +toggle("Получать спецпредложения")
+        form
+          h3 like button 
+          +like()
       .row-2
       .row-3
     .col-3

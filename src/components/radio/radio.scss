@@ -1,16 +1,25 @@
 .radio {
   label {
     gap: 10px;
-    align-items: center;
+    align-items: center;    
+    p {
+      color: rgba(31, 32, 65, 0.5);
+    }
   }
 
   &__input {
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     position: absolute;
 
     &:checked + .radio__box:before {
       display: inline-block;
       margin: 0.2em;      
+    }
+
+    &:checked ~ p {
+      color: rgba(31, 32, 65, 0.75);
     }
   }
 
