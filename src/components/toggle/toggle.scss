@@ -10,10 +10,12 @@
     }
 
     &:checked + .toggle__box:before {      
-      transform: translateX(calc(100% + 3px));      
+      transform: translateX(calc(100%));      
       background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;      
+      -webkit-text-fill-color: transparent;   
+      line-height: 12px;
+      margin: 0.2em;   
     }
   }
 

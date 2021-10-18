@@ -1,2 +1,5 @@
-mixin like()
-  span
+mixin like(count, isCheck, name)
+  label.like 
+    input.like__input(type="checkbox", checked=isCheck, name=name)
+    span.like__icon.icon-heart 
+    p.like__count= count

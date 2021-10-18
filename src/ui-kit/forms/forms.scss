@@ -3,6 +3,8 @@
   grid-template: repeat(3, min-content) / 1fr 1fr 1fr;
   grid-column-gap: 126px;
 
+  
+
   .col-1 {
     .row-1 {
       &-filter {
@@ -21,6 +23,16 @@
     .form {
       max-width: 150px;
       width: 100%;
+    }
+  }
+  .like-row {
+    justify-content: flex-start;
+  }
+  .buttons {
+    .row {
+      margin-bottom: 30px;
+      justify-content: flex-start;
+      gap: 10px;
     }
   }
 }

@@ -1,0 +1,15 @@
+.rate {
+  font-size: 24px;
+  justify-content: flex-start;
+  .rate__item{  
+    height: 24px;
+    width: 24px; 
+    margin: 0;   
+    background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &:before {
+      margin: 0;
+    }
+  }  
+}

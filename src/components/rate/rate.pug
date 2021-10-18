@@ -1,0 +1,9 @@
+mixin rate(count)
+  .row.rate 
+    - let i = 0
+    while i < count 
+      span.rate__item.icon-star
+      - ++i
+    while i < 5 
+      span.rate__item.icon-star-empty
+      - ++i                 

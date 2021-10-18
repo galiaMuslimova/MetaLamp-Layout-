@@ -1,16 +1,63 @@
 .btn {  
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-  border: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
   cursor: pointer;
 
-  &_header {
+  &_blue, &_white, &_link {
+    height: 44px;
+    border-radius: 22px;
+    min-width: 99px;
+  }
+
+  &_blue, &_link {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    border: none;
+    color: #FFFFFF;
+  }
+
+  &_blue, &_white {
+    &:hover, &.hovered {
+      opacity: 0.5;
+    }    
+  }
+
+  &_white {
+    color: #BC9CFF;
+    background-color: #fff;
+    border: 2px solid;
+    border-image: linear-gradient(rgba(188, 156, 255, 1) rgba(139, 164, 249, 1));
+  }
+
+  &_simple {
+    background: none;
+    border: none;
+    color: #BC9CFF;
+    &:hover, &.hovered {
+      color: rgba(31, 32, 65, 0.5);
+    }
+  }
+
+  &_link {
+    width: 100%;
+    position: relative;
+    span {
+      position: absolute;
+      right: 0;
+      width: 44px;
+    }
+  }
+}
+
+  
+
+  /*&_header {
     height: 34px;
 
     &-login {
       width: 87px;
-      background: none;
-      border: 2px solid #aa99ce;
     }
 
     &-register {
@@ -20,12 +67,6 @@
 
   &_card {
     width: 320px;
-    height: 44px;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
     position: relative;
 
     i {
@@ -39,14 +80,5 @@
     width: 40px;
     height: 40px;
   }
-
-  &_submit {
-    border: none;
-    background-color: white;
-
-    &:hover {
-      color: rgba(31, 32, 65, 0.5);
-    }
-  }
-}
+*/
 

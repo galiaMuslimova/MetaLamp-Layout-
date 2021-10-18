@@ -1,4 +1,5 @@
-- const data = require('./catalog-list.json')
+- const data = require('@c/catalog-list/catalog-list.json')
+include ../rate/rate.pug
 
 .catalog-list
   each val in data  
@@ -7,7 +8,7 @@
         a.carousel-mover.carousel-mover_left
           span.carousel-mover__btn.icon-left-open
         .carousel-image
-          img(srcset=`${require(`./img/${val.num}/${val.num}-1.png`)}`)
+          img(srcset=`${require(`@c/catalog-list/img/${val.num}/${val.num}-1.png`)}`)
         a.carousel-mover.carousel-mover_right
           span.carousel-mover__btn.icon-right-open
         ol.carousel-indicators  
@@ -23,12 +24,5 @@
           .p_lightGrey= val.cost + ' р в сутки'
         .catalog-item__divider
         .row.catalog-item-row
-          .stars 
-          - let i = 0
-          while i < val.stars 
-            .icon-star
-            - ++i
-          while i < 5 
-            .icon-star-empty
-            - ++i                   
+          +rate(val.stars)                 
           .p_lightGrey= val.review + ' отзывов'

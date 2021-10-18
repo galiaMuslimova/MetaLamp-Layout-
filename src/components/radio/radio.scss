@@ -15,7 +15,7 @@
 
     &:checked + .radio__box:before {
       display: inline-block;
-      margin: 0.2em;      
+           
     }
 
     &:checked ~ p {

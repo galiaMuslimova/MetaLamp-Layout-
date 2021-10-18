@@ -1,12 +1,13 @@
 include ../form/form.pug
 include ../checkbox/checkbox.pug
 include ../calendar/calendar.pug
+include ../slider/slider.pug 
 
 div(class='filter')
   div(class='col')
     +form("даты пребывания в отеле", "date")(class="dropdown")
     +form("гости", "text")(class="dropdown")
-    include ../slider/slider.pug  
+    +slider("filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
     form(class='form form_checkbox')
       h3 правила дома
       div

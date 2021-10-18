@@ -92,23 +92,5 @@ p {
     font-size: 12px;
     line-height: 14px;
     color: rgba(31,32,65,0.5);
-  } 
-  
-  //шрифты для кнопок
-  &_light, &_blue {
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: bold;
-  }
-
-  //для белой кнопки
-  &_light {
-    color: $purple;
-  }
-
-  //для синей кнопки
-  &_blue {
-    color: $white;
-  }
+  }   
 }

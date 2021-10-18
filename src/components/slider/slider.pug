@@ -1,7 +1,8 @@
-form(class='form')
-  div(class='row')
-    h3 диапазон цены
-    P(class='p_small', id='slider-result')
-  div(class'row')
-    div(class="slider-styled", id="slider-round")
-  p(class='p_small') Стоимость за сутки пребывания в номере
+mixin slider(id, title, text)
+  form.slider
+    .row
+      h3= title
+      p.p_small(id=id + "-slider-result")
+    .row
+      .slider-styled(id=id + "-slider-round")
+    p.p_small= text 
