@@ -1,6 +1,9 @@
 .forms {
   gap: 100px;
-  .row-filter {
+  .col {
+    min-width: 320px;
+  }
+  .col-filter {
     max-width: 266px;  
   }
   .double-date { 

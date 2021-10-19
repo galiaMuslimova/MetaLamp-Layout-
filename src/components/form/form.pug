@@ -1,10 +1,10 @@
 include ../input/input.pug
 
 mixin form(value, category, array) 
-  form.form
+  form(class=category)
     +input(/*type*/"text", /*value*/value )(class='dropdown')
 
-    if(category == "select")
+    if(category == "guests" || category == "comfort")
       +select(array)(class=attributes.class)
 
     if(category == "calendar")

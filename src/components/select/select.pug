@@ -5,9 +5,9 @@ mixin select(array)
     each item in array
       .row.select__row
         h3=item
-        +count(item)
+        +count()
     if(attributes.class=="select_card")
-      .row 
-        button.btn.btn_simple.reset очистить
-        button.btn.btn_simple применить
+      .row.select__row.select__row_buttons 
+        button.btn.btn_simple.reset(type="button") очистить
+        button.btn.btn_simple.submit(type="button") применить
         

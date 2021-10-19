@@ -1,49 +1,45 @@
-import { count } from './count/count.js'
+$(window).on("load", function () {  
 
-$(window).on('load', function () {
-  //задает значения 0 для элементов select
-  $('.count__num').each(function () {
-    let id = $(this).closest('.count')[0].id;
-    sessionStorage.setItem(id, 0);    
+  $(".submit").click(function() {
+    let selectForm = $(this).closest("form");
+    let str = makeInputText(selectForm);
+    selectForm.find(".input").val(str);
+  })
+
+  $(".reset").click(function () {
+    let selectForm = $(this).closest("form");
+    selectForm.trigger("reset");
+    selectForm.find(".minus").each(function() { 
+      $(this).addClass("disabled");
+    });
   });
 
-  function makeInputText (el) {
-    let form = el.closest('.form');
-    if(form.hasClass('guests')) {
-      let adults = Number(sessionStorage.getItem('взрослые')) + Number(sessionStorage.getItem('дети'));
-      let babies = sessionStorage.getItem('младенцы');
-      return (adults + 'взрослые, ' + babies + 'младенцы');
-    }
+  function declOfNum(number, titles) {
+    let cases = [2, 0, 1, 1, 1, 2];
+    return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
   }
 
-  $('.plus, .minus').click(function () {
-    count($(this)); 
-    let text = makeInputText($(this));
-    if($(this).closest('.form').hasClass('guests')) {
-      $(".guests>.input").val(text);
-    }     
-    
-  })
-});
+  function countGuests(selectForm) {
+    let items = selectForm.find(".count__num");    
+    let values = items.map(function(x){
+      return $(items[x]).val()
+    });  
+    let adults = Number(values[0]) + Number(values[1]);
+    let babies = Number(values[2]);      
+    return ([adults, babies]);    
+  }  
 
-/*$(window).on('load', function () {
-
-  $('.submit').on('click', function () {
-    let input = $(this).closest('.form').find('.input');
-    let count = sessionStorage.getItem('guestsCount');
-
-    function declOfNum(number, titles) {
-      cases = [2, 0, 1, 1, 1, 2];
-      return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+  function makeInputText(selectForm) {
+    let numOfGuests = countGuests(selectForm);
+    let adults = numOfGuests[0] + ' ' + declOfNum(numOfGuests[0], ['гость', 'гостя', 'гостей']);
+    let babies = numOfGuests[1] + ' ' + declOfNum(numOfGuests[1], ['младенец', 'младенца', 'младенцев']);
+    let str;
+    if (numOfGuests[1] == 0) {
+      str = adults;
     }
-    let str = count + ' ' + declOfNum(count, ['гость', 'гостя', 'гостей']);
-
-    input.val(str);
-    $(this).closest('.form').find('.drop').removeClass('active'); 
-  });
-
-  $('.reset').click(function () {
-    $(this).closest('.form').trigger('reset');
-    sessionStorage.clear();   
-  });
-});*/
+    else {
+      str = adults + ", " + babies;
+    }    
+    return str;
+  }  
+});

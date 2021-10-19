@@ -11,6 +11,10 @@
 
     color: #1F204180;
     background-color: #ffff;
+
+    &.disabled {
+      opacity: 0.38;
+    }
   }
 
   &__num {

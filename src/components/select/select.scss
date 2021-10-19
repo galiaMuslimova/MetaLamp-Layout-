@@ -1,12 +1,11 @@
 .select {
-  //height: 7.4375rem;
+  padding: 7px;
   border: 1px solid rgba(31, 32, 65, 0.5);
   box-sizing: border-box;
-    &__row {
-    padding: 0.4375rem 0.4375rem 0rem 0.9375rem;
-
-    &_bottom {
-      padding-bottom: 0.4375rem;
+  &__row {
+    padding: 0px 0px 7px 7px;
+    &_buttons {
+      padding-top: 12px;
     }
   }
 }
