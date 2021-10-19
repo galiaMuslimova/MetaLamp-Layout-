@@ -79,14 +79,20 @@ include ../../components/select/select.pug
       .col
         .col-filter 
           //- +form(/*title=*/ "Dropdown", /*type=*/ "text")(class='dropdown')
-          +form(/*value*/ "2 спальни, 2 кровати...", /*category=*/ "comfort", /*items*/ ["Спальни", "Кровати", "Ванные комнаты"])
+          +form(
+            /*category=*/ "placement", 
+            /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
           form
             .row
               h3 expandable checkbox list
               button.form_btn(type="button")
                 i.icon-down-open
       .col 
-        +form(/*value*/ "Сколько гостей", /*category=*/ "guests", /*items*/ ["Взрослые", "Дети", "Младенцы"])(class="select_card")
+        +form( 
+          /*category=*/ "guests", 
+          /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
       .col
-        +form(/*value*/ "3 гостя", /*category=*/ "guests", /*items*/ ["Взрослые", "Дети", "Младенцы"])(class="select_card")
+        +form( 
+          /*category=*/ "guests", 
+          /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 1}])(class="select_card")
     

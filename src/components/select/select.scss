@@ -8,5 +8,11 @@
       padding-top: 12px;
     }
   }
+  .reset {
+    visibility: hidden;
+    &.active {
+      visibility: visible ;
+    }
+  }  
 }
 

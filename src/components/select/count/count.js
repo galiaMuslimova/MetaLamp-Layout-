@@ -1,14 +1,32 @@
+import { createPlacementText, createGuestsText, showHideResetButton } from "@c/select/select.js"
+
 $(document).ready(function () {
   $(".count__num").each(function () {
     if ($(this).val() == 0) {
       $(this).siblings(".minus").addClass("disabled")
     }
   })
+
   $(".plus, .minus").click(function () {
     countSelectItems($(this));
     changeSelectButtonClass($(this));
+    showHideResetButton($(this).closest("form"));
+
+    if (!($(this).closest(".select").hasClass("select_card"))) {
+      let selectForm = $(this).closest("form");
+
+      if (selectForm.hasClass("placement")) {        
+        let str = createPlacementText(selectForm);
+        selectForm.find(".input").val(str);
+      }
+      if (selectForm.hasClass("guests")) {
+        let str = createGuestsText(selectForm);
+        selectForm.find(".input").val(str);
+      }
+    }
   })
-})
+});
+
 
 function countSelectItems (element) {
   let inputElement = element.siblings(".count__num");
@@ -40,5 +58,6 @@ function changeSelectButtonClass(element) {
     }
   }
 }
+
 
 
