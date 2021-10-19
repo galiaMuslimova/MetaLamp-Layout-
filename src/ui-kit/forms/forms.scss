@@ -1,23 +1,8 @@
 .forms {
-  display: grid;
-  grid-template: repeat(3, min-content) / 1fr 1fr 1fr;
-  grid-column-gap: 126px;
-
-  
-
-  .col-1 {
-    .row-1 {
-      &-filter {
-        max-width: 266px;
-      }        
-    }    
+  gap: 100px;
+  .row-filter {
+    max-width: 266px;  
   }
-  .col-2 {
-    .row-1 {
-      grid-area: 1/2;
-    }
-  }
-
   .double-date { 
     gap: 20px;  
     .form {

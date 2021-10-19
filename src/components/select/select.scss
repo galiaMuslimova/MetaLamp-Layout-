@@ -1,5 +1,7 @@
 .select {
-  height: 7.4375rem;
+  //height: 7.4375rem;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-sizing: border-box;
     &__row {
     padding: 0.4375rem 0.4375rem 0rem 0.9375rem;
 

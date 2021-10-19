@@ -1,15 +1,18 @@
-mixin form(title, type) 
+include ../input/input.pug
+
+mixin form(value, category, array) 
   form.form
-    h3= title 
-    .input-row(class=attributes.class)
+    +input(/*type*/"text", /*value*/value )(class='dropdown')
 
-      input(type=type)
+    if(category == "select")
+      +select(array)(class=attributes.class)
 
-      if(attributes.class=="dropdown")
-        button(type="button")
-          i.icon-down-open
+    if(category == "calendar")
+      +calendar()
 
-      if(attributes.class=="subscript")
-        button(type="button")
-          i.icon-right
+
+
+      
+    
+
 

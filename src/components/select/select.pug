@@ -1,9 +1,13 @@
 include count/count.pug
 
 mixin select(array)
-  div(class='select')    
+  .select    
     each item in array
-      div(class='row select__row')
+      .row.select__row
         h3=item
         +count(item)
+    if(attributes.class=="select_card")
+      .row 
+        button.btn.btn_simple.reset очистить
+        button.btn.btn_simple применить
         

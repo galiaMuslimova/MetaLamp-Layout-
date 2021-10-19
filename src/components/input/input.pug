@@ -1,17 +1,16 @@
-mixin input(category, text, id)    
-  if(category=='default')
-    div(class='row input-row')
-      input(type='text', placeholder=text, class='input') 
-  if(category=='dropdown') 
-    div(class='row input-row', class=attributes.class)     
-      input(type=text, value=text, class='input input_withBtn', id=id)
-      button(type='button', class='input-row__btn icon-down-open')
-  if(category=='subscript') 
-    div(class='row input-row input-row_subscript')     
-      input(type=text, placeholder=text, class='input input_withBtn')
-      button(type='button', class='input-row__btn icon-right')
+mixin input(type, value)  
+  .input-row(class=attributes.class)
+    input(type=type, value=value)
 
+    if(attributes.class=="subscript")
+      button(type="button")
+        i.icon-right
 
+    if(attributes.class=="dropdown")
+      button(type="button")
+        i.icon-down-open
+
+  
 
     
     

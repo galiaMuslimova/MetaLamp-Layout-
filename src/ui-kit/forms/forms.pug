@@ -1,4 +1,5 @@
 include ../../components/form/form.pug
+include ../../components/input/input.pug
 include ../../components/checkbox/checkbox.pug
 include ../../components/radio/radio.pug
 include ../../components/toggle/toggle.pug
@@ -8,27 +9,36 @@ include ../../components/slider/slider.pug
 include ../../components/select/select.pug
 
 .container 
-  .forms
-    .col-1
-      .row-1 
-        +form("Text Field", "E-mail")
-        +form("Text Field", "E-mail")
-        +form("Dropdown", "text")(class='dropdown')
-        +form("masked text field", "date")(class='dropdown')
+  .forms.col
+    .row
+      .col
+        form
+          h3 Text Field
+          +input("E-mail", "E-mail")   
+        form
+          h3 Text Field
+          +input("E-mail", "E-mail")
+        form
+          h3 Dropdown
+          +input("text", "E-mail")(class="dropdown")
+        form
+          h3 masked text field
+          +input("date", "E-mail")(class="dropdown")
         .row.double-date 
-          +form("date dropdown", "date")(class='dropdown')
-          +form("date dropdown", "date")(class='dropdown')
+          form
+            h3 date dropdown
+            +input("date", "E-mail")(class="dropdown")
+          form
+            h3 date dropdown
+            +input("date", "E-mail")(class="dropdown")
         .row-filter
-          +form("filter date dropdown", "date")(class='dropdown')
-          +form("subscription text field", "date")(class='subscript')
-      .row-2.row-filter
-        +form("Dropdown", "text")(class='dropdown')
-        +form("Dropdown", "text")(class='dropdown')
-          +select(["Спальни", "Кровати", "Ванные комнаты"])
-        
-      .row-3
-    .col-2
-      .row-1 
+          form
+            h3 filter date dropdown
+            +input("date", "E-mail")(class="dropdown")
+          form
+            h3 subscription text field
+            +input("date", "E-mail")(class="subscript")
+      .col 
         form
           h3 Checkbox Buttons
           +checkbox("smoke", "Можно курить")
@@ -48,11 +58,8 @@ include ../../components/select/select.pug
           h3 rate button
           .row 
             +rate(4)
-            +rate(5)        
-      .row-2
-      .row-3
-    .col-3
-      .row-1
+            +rate(5)
+      .col
         +slider("forms", "Range Slider")
         .buttons
           h3 buttons 
@@ -67,7 +74,18 @@ include ../../components/select/select.pug
             button.btn.btn_simple.hovered click me
           button.btn.btn_link перейти к оплате
             span.icon-right
-        include ../../components/pagination/pagination.pug
-      .row-2
-      .row-3
+        include ../../components/pagination/pagination.pug                
+    .row 
+      .col 
+        //- +form(/*title=*/ "Dropdown", /*type=*/ "text")(class='dropdown')
+        +form(/*value*/ "2 спальни, 2 кровати...", /*category=*/ "select", /*items*/ ["Спальни", "Кровати", "Ванные комнаты"])
+        form
+          .row
+            h3 expandable checkbox list
+            button.form_btn(type="button")
+              i.icon-down-open
+      .col 
+        +form(/*value*/ "Сколько гостей", /*category=*/ "select", /*items*/ ["Взрослые", "Дети", "Младенцы"])(class="select_card")
+      .col
+        +form(/*value*/ "3 гостя", /*category=*/ "select", /*items*/ ["Взрослые", "Дети", "Младенцы"])(class="select_card")
     
