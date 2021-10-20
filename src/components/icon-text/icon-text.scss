@@ -1,19 +1,8 @@
 .icon-text {
-  margin: 20px 0px 0px 0px;
   width: 100%;
 
-  &:last-child {
-    .icon-text__divider {
-      display: none;
-    }
-  }
-
-  > .row {
-    justify-content: flex-start;
-  }
-
-  &__icon {
-    margin: 0px 10px 0px 0px;
+  &>.row {
+    margin: 23px 0px 17px 0px;
   }
 
   &__title {
@@ -21,7 +10,6 @@
   }
 
   &__divider {
-    margin: 20px 0px 0px 0px;
     height: 1px;
     max-width: 280px;
     width: 100%;

@@ -3,11 +3,11 @@ mixin input(type, value)
     input.input(type=type, value=value)
 
     if(attributes.class=="subscript")
-      button(type="button")
+      button.input__right(type="button")
         i.icon-right
 
     if(attributes.class=="dropdown")
-      button(type="button")
+      button.input__open(type="button")
         i.icon-down-open
 
   

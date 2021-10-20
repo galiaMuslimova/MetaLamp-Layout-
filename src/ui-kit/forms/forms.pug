@@ -7,10 +7,12 @@ include ../../components/like/like.pug
 include ../../components/rate/rate.pug
 include ../../components/slider/slider.pug
 include ../../components/select/select.pug
+include ../../components/bullet/bullet.pug
+include ../../components/icon-text/icon-text.pug
 
 .container 
   .forms.col
-    .row
+    .row.row_fill
       .col
         form
           h3 Text Field
@@ -51,48 +53,95 @@ include ../../components/select/select.pug
           +toggle("Получать спецпредложения")
         form
           h3 like button 
-          .row.like-row
+          .row.row_start
             +like("2", false, "like-1")
             +like("12", true, "like-2")
         form
           h3 rate button
-          .row 
+          .row.row_start 
             +rate(4)
             +rate(5)
       .col
         +slider("forms", "Range Slider")
         .buttons
           h3 buttons 
-          .row 
+          .row.row_start 
             button.btn.btn_blue click me
             button.btn.btn_blue.hovered click me
-          .row
+          .row.row_start 
             button.btn.btn_white click me
             button.btn.btn_white.hovered click me
-          .row
+          .row.row_start 
             button.btn.btn_simple click me
             button.btn.btn_simple.hovered click me
           button.btn.btn_link перейти к оплате
             span.icon-right
         include ../../components/pagination/pagination.pug                
-    .row 
+    .row.row_fill 
       .col
         .col-filter 
-          //- +form(/*title=*/ "Dropdown", /*type=*/ "text")(class='dropdown')
-          +form(
-            /*category=*/ "placement", 
-            /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
-          form
-            .row
-              h3 expandable checkbox list
-              button.form_btn(type="button")
-                i.icon-down-open
-      .col 
-        +form( 
-          /*category=*/ "guests", 
-          /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
+          .form-select
+            .row.row_fill.row_title
+              h3 dropdown 
+              h3 default
+            +form(
+              /*category=*/ "placement", 
+              /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+          .form-select.expanded
+            .row.row_fill.row_title
+              h3 dropdown 
+              h3 expanded
+            +form(
+              /*category=*/ "placement", 
+              /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+          .form-select
+            form
+              .row.row_fill
+                h3 expandable checkbox list
+                button.input__open.form_btn(type="button")
+                  i.icon-down-open
+              .drop.checkbox-list 
+                +checkbox("breakfast", "Завтрак")
+                +checkbox("table", "Письменный стол")(class="checked")
+                +checkbox("chair", "Стул для кормления")(class="checked")
+                +checkbox("crib", "Кроватка")(class="checked")
+                +checkbox("TV", "Телевизор")
+                +checkbox("shampoo", "Шампунь")
+          .form-select.expanded
+            form
+              .row.row_fill
+                h3 expandable checkbox list
+                button.input__open.form_btn(type="button")
+                  i.icon-down-open   
+              .drop.checkbox-list 
+                +checkbox("breakfast", "Завтрак")
+                +checkbox("table", "Письменный стол")(class="checked")
+                +checkbox("chair", "Стул для кормления")(class="checked")
+                +checkbox("crib", "Кроватка")(class="checked")
+                +checkbox("TV", "Телевизор")
+                +checkbox("shampoo", "Шампунь")       
       .col
-        +form( 
-          /*category=*/ "guests", 
-          /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 1}])(class="select_card")
+        .form-select.expanded
+          h3 dropdown 
+          +form( 
+            /*category=*/ "guests", 
+            /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
+        form
+          h3 Rich Checkbox Buttons
+          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")          
+      .col
+        .form-select.expanded
+          h3 dropdown 
+          +form( 
+            /*category=*/ "guests", 
+            /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 1}])(class="select_card")
+        form
+          h3 bullet list 
+          +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+    .row.row_fill
+      .col
+        +icon-text("Комфорт", "Шумопоглощающие стены")
+        +icon-text("Удобство", "Окно в каждой из спален")
+      .col
     

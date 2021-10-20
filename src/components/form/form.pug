@@ -2,10 +2,10 @@ include ../input/input.pug
 
 mixin form(category, array) 
   form(class=category)
-    +input(/*type*/"text")(class='dropdown')
+    +input(/*type*/ "text")(class='dropdown')
 
     if(category == "guests" || category == "placement")
-      +select(array)(class=attributes.class)
+      +select(array)(class=attributes.class /* "select_card" for select with submit and reset buttons */)
 
     if(category == "calendar")
       +calendar()

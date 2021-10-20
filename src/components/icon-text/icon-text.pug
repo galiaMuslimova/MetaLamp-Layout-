@@ -1,8 +1,9 @@
-mixin icon-text(name, title, text)
+mixin icon-text(title, text)
+  -const data = require("@c/icon-text/icon-text.json")
   .icon-text
-    .row
+    .row.row_start
       .icon-text__icon 
-        img(src=require('./svg/' + name + '.svg'))
+        img(src=require("@c/icon-text/svg/" + data[title]))
       .col
         .icon-text__title= title
         .icon-text__text= text

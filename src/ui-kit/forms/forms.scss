@@ -3,6 +3,9 @@
   .col {
     min-width: 320px;
   }
+  >.row {
+    gap: 70px;
+  }
   .col-filter {
     max-width: 266px;  
   }
@@ -13,14 +16,15 @@
       width: 100%;
     }
   }
-  .like-row {
-    justify-content: flex-start;
-  }
   .buttons {
     .row {
       margin-bottom: 30px;
-      justify-content: flex-start;
-      gap: 10px;
+    }
+  }
+  .row_title {
+    h3:last-child {
+      opacity: 50%;
+      font-weight: normal;
     }
   }
 }

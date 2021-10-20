@@ -34,8 +34,16 @@ html, body {
 .row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   position: relative;
+
+  &_fill {
+    justify-content: space-between;
+  }    
+
+  &_start {
+    justify-content: flex-start;
+    gap: 10px;
+  }
 }
 
 //размещает элементы в столбец

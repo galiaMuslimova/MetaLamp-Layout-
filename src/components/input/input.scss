@@ -43,11 +43,14 @@
     button {
       width: 44px;
       height: 100%; 
-      color: rgba(31, 32, 65, 0.5);
-      border: none;
-      background: #FFFFFF;
     }
   }
+}
+
+.input__open, .input__right {
+  color: rgba(31, 32, 65, 0.5);
+  border: none;
+  background: #FFFFFF;
 }
 
   

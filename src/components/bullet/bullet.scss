@@ -1,0 +1,12 @@
+.bullet {
+  .row {
+    align-items: baseline;
+    padding-bottom: 10px;
+  }
+  &__ellipse {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(31, 32, 65, 0.25);
+  }
+}
