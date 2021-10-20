@@ -6,10 +6,8 @@
   border-radius: 4px;
   box-sizing: border-box;
 
-  &:hover, &:focus {
-    outline: none;
+  &:focus-within, &:hover {
     border: 1px solid rgba(31, 32, 65, 0.5);
-    color: rgba(31, 32, 65, 0.75); 
   }
   
   input {
@@ -20,11 +18,14 @@
     padding: 0 5px 0px 15px; 
     
     &:hover, &:focus {
-      border: none;
+      outline: none;      
+      &::placeholder {
+        color: rgba(31, 32, 65, 0.75);         
+      }
     }
 
     &::placeholder {
-      color: rgba(31, 32, 65, 0.25);    
+      color: rgba(31, 32, 65, 0.25);         
     } 
 
     &[type=date] {
@@ -43,6 +44,9 @@
     button {
       width: 44px;
       height: 100%; 
+      &:hover, &:focus {
+        outline: none; 
+      }
     }
   }
 }
@@ -51,6 +55,17 @@
   color: rgba(31, 32, 65, 0.5);
   border: none;
   background: #FFFFFF;
+}
+
+.input__open {
+  font-size: 8px;
+}
+
+.input__right {
+  font-size: 18px;
+  background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
   

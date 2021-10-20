@@ -22,9 +22,12 @@
     background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
 
     &:before {
       display: none;
+      font-size: 0.8em;
+      margin: 0.4em;
     }
   }
 }

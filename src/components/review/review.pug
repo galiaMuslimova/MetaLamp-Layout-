@@ -1,13 +1,13 @@
--const data = require('./review.json')
-
-each val in data
-  .review-item
-    .row
-      .col
-        .review__image
-          img(srcset=`${require(`./img/${val.name}.png`)}`)
-        .review__like like
-      .col 
-        .review__title= val.name 
-        .review__subtitle= val.time 
-        .review__content= val.content
+mixin review(data)
+  each val in data
+    .review-item
+      .row.row_start
+        .col
+          .review__image
+            img(srcset= require("@c/review/img/" + val.image))
+          .review__like 
+            +like(val.like)
+        .col 
+          .review__title= val.name 
+          .review__subtitle= val.time 
+          .review__content= val.content

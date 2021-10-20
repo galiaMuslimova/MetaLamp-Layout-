@@ -1,7 +1,7 @@
 mixin checkbox(id, text, subtext)
   label.row.row_start.check
     input.check__input(type="checkbox" id=id checked=attributes.class)
-    span.check__box.icon-ok
+    span.check__box.icon-check
     if(subtext)
       .check__text
         p.p_bold=text

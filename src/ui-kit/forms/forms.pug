@@ -9,39 +9,44 @@ include ../../components/slider/slider.pug
 include ../../components/select/select.pug
 include ../../components/bullet/bullet.pug
 include ../../components/icon-text/icon-text.pug
+include ../../components/review/review.pug
 
 .container 
   .forms.col
     .row.row_fill
       .col
         form
-          h3 Text Field
-          +input("E-mail", "E-mail")   
+          .row.row_fill.row_title
+            h3 Text Field
+            h3 default
+          +input("E-mail", "Email")   
         form
-          h3 Text Field
-          +input("E-mail", "E-mail")
+          .row.row_fill.row_title
+            h3 Text Field
+            h3 Hover / Focus
+          +input("text", "This is pretty awesome", "autofocus")
         form
           h3 Dropdown
-          +input("text", "E-mail")(class="dropdown")
+          +input("text", "Сколько гостей")(class="dropdown")
         form
           h3 masked text field
-          +input("date", "E-mail")(class="dropdown")
+          +input("text", "ДД.ММ.ГГГГ")
         .row.double-date 
           form
             h3 date dropdown
-            +input("date", "E-mail")(class="dropdown")
+            +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
           form
             h3 date dropdown
-            +input("date", "E-mail")(class="dropdown")
+            +input("text", "19.08.2019")(class="dropdown")
         .col-filter
           form
             h3 filter date dropdown
-            +input("date", "E-mail")(class="dropdown")
+            +input("text", "19 авг - 23 авг")(class="dropdown")
           form
             h3 subscription text field
-            +input("date", "E-mail")(class="subscript")
+            +input("text", "Email")(class="subscript")
       .col 
-        form
+        .checkbox-block
           h3 Checkbox Buttons
           +checkbox("smoke", "Можно курить")
           +checkbox("pet", "Можно с питомцами")
@@ -144,4 +149,6 @@ include ../../components/icon-text/icon-text.pug
         +icon-text("Комфорт", "Шумопоглощающие стены")
         +icon-text("Удобство", "Окно в каждой из спален")
       .col
+        -const data = require("@c/review/review.json")
+        +review([data[0]])
     

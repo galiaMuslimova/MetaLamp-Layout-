@@ -1,14 +1,19 @@
-mixin input(type, value)  
+mixin input(type, value, focus)  
   .input-row(class=attributes.class)
-    input.input(type=type, value=value)
 
     if(attributes.class=="subscript")
+      input.input(type=type, placeholder=value)
       button.input__right(type="button")
-        i.icon-right
+        i.icon-arrow
 
     if(attributes.class=="dropdown")
+      input.input(type=type, value=value)
       button.input__open(type="button")
-        i.icon-down-open
+        i.icon-open
+
+    if(!(attributes.class))
+      input.input(type=type, placeholder=value, autofocus=focus)    
+
 
   
 

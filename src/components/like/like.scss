@@ -23,10 +23,10 @@
     }
   }
 
-  &__icon {
-    line-height: 9px;    
+  &__icon {    
     &:before {
-      margin: 0.2em;
+      margin: 0.7em;
+      font-size: 0.5em;
       color: #fff;      
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: rgba(31, 32, 65, 0.25);

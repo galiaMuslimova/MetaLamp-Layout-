@@ -1,17 +1,18 @@
 .forms {
+  margin: 130px auto;
   gap: 100px;
-  .col {
-    min-width: 320px;
-  }
-  >.row {
-    gap: 70px;
+  
+  >.row {    
+    >.col {
+      width: 320px;
+    }
   }
   .col-filter {
     max-width: 266px;  
   }
   .double-date { 
     gap: 20px;  
-    .form {
+    form {
       max-width: 150px;
       width: 100%;
     }

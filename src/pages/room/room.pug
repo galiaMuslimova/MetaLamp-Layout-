@@ -1,6 +1,8 @@
 extends ../base/base.pug
 include ../../components/icon-text/icon-text.pug
 include ../../components/chart/chart.pug
+include ../../components/review/review.pug
+include ../../components/like/like.pug
 
 block content
   .room
@@ -25,7 +27,8 @@ block content
         .row
           h2 Отзывы посетителей номера
           p 2 отзыва
-        include ../../components/review/review.pug
+        -const data = require("@c/review/review.json")
+        +review(data)
       .room__rules
         h2 Правила 
       .room__cancel 

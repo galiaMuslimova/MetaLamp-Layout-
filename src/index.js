@@ -1,3 +1,5 @@
+import './theme/icons/icons.css';
+import './theme/fonts.scss';
 import './theme/global.scss';
 
 function requireAll(requireContext) {
