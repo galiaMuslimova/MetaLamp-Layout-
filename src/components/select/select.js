@@ -1,9 +1,23 @@
-$(window).on("load", function () {   
+$(window).on("load", function () { 
+  $(".select").each(function () {
+    let selectForm = $(this).closest("form");
+    if (selectForm.hasClass("guests")) {
+      let str = createGuestsText(selectForm);
+      selectForm.find(".input").val(str);
+      showHideResetButton(selectForm);
+    }
+    if (selectForm.hasClass("placement")) {
+      let str = createPlacementText(selectForm);
+      selectForm.find(".input").val(str);
+    }
+  });
+
   $(".submit").click(function() {
     let selectForm = $(this).closest("form");
     let str = createGuestsText(selectForm);
     selectForm.find(".input").val(str);
-  })
+    selectForm.find(".drop").removeClass("active");
+  });
 
   $(".reset").click(function () {
     let selectForm = $(this).closest("form");
@@ -15,20 +29,7 @@ $(window).on("load", function () {
     });
     selectForm.find(".input").val("Сколько гостей")
     showHideResetButton(selectForm);
-  });
-
-  $(".select").each(function() {
-    let selectForm = $(this).closest("form");
-    if(selectForm.hasClass("guests")) {
-      let str = createGuestsText(selectForm);
-      selectForm.find(".input").val(str);
-      showHideResetButton(selectForm);
-    }
-    if (selectForm.hasClass("placement")) {
-      let str = createPlacementText(selectForm);
-      selectForm.find(".input").val(str);
-    }    
-  })      
+  });       
 });
 
 function declOfNum(number, titles) {

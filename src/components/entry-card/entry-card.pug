@@ -2,9 +2,21 @@ include ../form/form.pug
 
 .card.entry-card
   .card-inner.entry-inner
-    h1 Найдём номера под ваши пожелания
-    .row.entry-row           
-    .row.entry-row 
-      +form("гости", "text")(class="dropdown")
-    button.btn.btn_card подобрать номер
-      i.icon-right
+    .entry-item
+      h1 Найдём номера под ваши пожелания
+    .entry-item
+      .row.row_fill
+        form
+          h3 прибытие
+          +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
+        form
+          h3 выезд
+          +input("text", "ДД.ММ.ГГГГ")(class="dropdown")       
+    .entry-item
+      h3 гости 
+      +form( 
+        /*category=*/ "guests", 
+        /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
+    .entry-item
+      button.btn.btn_link подобрать номер
+        span.icon-arrow

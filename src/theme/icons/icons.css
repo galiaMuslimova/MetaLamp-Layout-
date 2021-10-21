@@ -3,7 +3,8 @@
     src: url("./icons.eot?533394b0c50f95d7734e024a855fae79?#iefix") format("embedded-opentype"), url("./icons.woff2?533394b0c50f95d7734e024a855fae79") format("woff2"), url("./icons.woff?533394b0c50f95d7734e024a855fae79") format("woff"), url("./icons.ttf?533394b0c50f95d7734e024a855fae79") format("truetype"), url("./icons.svg?533394b0c50f95d7734e024a855fae79#icons") format("svg");
 }
 
-i[class^="icon-"]:before, span[class*=" icon-"]:before {
+i[class^="icon-"]:before, i[class*=" icon-"]:before, 
+span[class^="icon-"]:before, span[class*=" icon-"]:before {
     font-family: icons !important;
     font-style: normal;
     font-weight: normal !important;
