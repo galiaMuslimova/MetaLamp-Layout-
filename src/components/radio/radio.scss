@@ -1,21 +1,17 @@
 .radio {
+  position: relative;
   label {
     gap: 10px;
-    align-items: center;    
+    align-items: center;  
+    position: relative;  
     p {
       color: rgba(31, 32, 65, 0.5);
     }
   }
 
-  &__input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: absolute;
-
+  &__input {   
     &:checked + .radio__box:before {
-      display: inline-block;
-           
+      display: block;           
     }
 
     &:checked ~ p {
@@ -28,14 +24,17 @@
     width: 20px;
     border-radius: 10px;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    cursor: pointer;
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 12px;
+    box-sizing: border-box;
+    cursor: pointer;        
 
     &:before {
       display: none;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      margin: 3px;
+      content: "";
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
   }
 }

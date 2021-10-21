@@ -59,8 +59,16 @@ include ../../components/review/review.pug
         form
           h3 like button 
           .row.row_start
-            +like("2", false, "like-1")
-            +like("12", true, "like-2")
+            +like({              
+              "count": "2",
+              "isCheck": false,
+              "name": "like-1"  
+            })
+            +like({              
+              "count": "12",
+              "isCheck": "checked",
+              "name": "like-2"  
+            })
         form
           h3 rate button
           .row.row_start 

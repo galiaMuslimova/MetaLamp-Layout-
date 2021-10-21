@@ -84,6 +84,18 @@ button {
   }
 }
 
+.input_hidden {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  color: transparent;
+  text-shadow: 0 0 0 black;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
 
 
 

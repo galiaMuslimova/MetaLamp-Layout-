@@ -45,7 +45,6 @@ function takeItemsCount(selectForm) {
 }
 
 export function showHideResetButton(selectForm) {
-  console.log(selectForm);
   let result = takeItemsCount(selectForm).reduce(function (sum, elem) {
     return sum + elem;
   }, 0);

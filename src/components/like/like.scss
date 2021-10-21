@@ -4,17 +4,12 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
   cursor: pointer;
+  position: relative;
 
   &__input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: absolute;
-
+    width: 100%;
     &:checked + .like__icon:before {
       background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
       -webkit-background-clip: text;
@@ -25,6 +20,7 @@
 
   &__icon {    
     &:before {
+      line-height: 10px;
       margin: 0.7em;
       font-size: 0.5em;
       color: #fff;      
@@ -34,9 +30,13 @@
   }
 
   &__count {
+    outline: none;
+    border: none;
+    background: none;
+    width: 100%;
     font-size: 10px;
-    line-height: 12px;
-    text-align: center;
+    line-height: 10px;
     color: rgba(31, 32, 65, 0.25);
+    cursor: pointer;
   }
 }
