@@ -12,151 +12,174 @@ include ../../components/icon-text/icon-text.pug
 include ../../components/review/review.pug
 
 .container 
-  .forms.col
-    .row.row_fill
-      .col
+  .forms
+    //inputs
+    .block1
+      form
+        .row.row_fill.row_title
+          h3 Text Field
+          h3 default
+        +input("E-mail", "Email")   
+      form
+        .row.row_fill.row_title
+          h3 Text Field
+          h3 Hover / Focus
+        +input("text", "This is pretty awesome", "autofocus")
+      form
+        h3 Dropdown
+        +input("text", "Сколько гостей")(class="dropdown")
+      form
+        h3 masked text field
+        +input("text", "ДД.ММ.ГГГГ")
+      .row.double-date 
         form
-          .row.row_fill.row_title
-            h3 Text Field
-            h3 default
-          +input("E-mail", "Email")   
+          h3 date dropdown
+          +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
         form
-          .row.row_fill.row_title
-            h3 Text Field
-            h3 Hover / Focus
-          +input("text", "This is pretty awesome", "autofocus")
-        form
-          h3 Dropdown
-          +input("text", "Сколько гостей")(class="dropdown")
-        form
-          h3 masked text field
-          +input("text", "ДД.ММ.ГГГГ")
-        .row.double-date 
-          form
-            h3 date dropdown
-            +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
-          form
-            h3 date dropdown
-            +input("text", "19.08.2019")(class="dropdown")
-        .col-filter
-          form
-            h3 filter date dropdown
-            +input("text", "19 авг - 23 авг")(class="dropdown")
-          form
-            h3 subscription text field
-            +input("text", "Email")(class="subscript")
-      .col 
-        .checkbox-block
-          h3 Checkbox Buttons
-          +checkbox("smoke", "Можно курить")
-          +checkbox("pet", "Можно с питомцами")
-          +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
-        +radio("radio buttons")
-        form
-          h3 toggle
-          +toggle("Получать спецпредложения", "checked")
-          +toggle("Получать спецпредложения")
-        form
-          h3 like button 
-          .row.row_start
-            +like({              
-              "count": "2",
-              "isCheck": false,
-              "name": "like-1"  
-            })
-            +like({              
-              "count": "12",
-              "isCheck": "checked",
-              "name": "like-2"  
-            })
-        form
-          h3 rate button
-          .row.row_start 
-            +rate(4)
-            +rate(5)
-      .col
-        +slider("forms", "Range Slider")
-        .buttons
-          h3 buttons 
-          .row.row_start 
-            button.btn.btn_blue click me
-            button.btn.btn_blue.hovered click me
-          .row.row_start 
-            button.btn.btn_white click me
-            button.btn.btn_white.hovered click me
-          .row.row_start 
-            button.btn.btn_simple click me
-            button.btn.btn_simple.hovered click me
-          button.btn.btn_link перейти к оплате
-            span.icon-right
-        include ../../components/pagination/pagination.pug                
-    .row.row_fill 
-      .col
-        .col-filter 
-          .form-select
-            .row.row_fill.row_title
-              h3 dropdown 
-              h3 default
-            +form(
-              /*category=*/ "placement", 
-              /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
-          .form-select.expanded
-            .row.row_fill.row_title
-              h3 dropdown 
-              h3 expanded
-            +form(
-              /*category=*/ "placement", 
-              /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
-          .form-select
-            form
-              .row.row_fill
-                h3 expandable checkbox list
-                button.input__open.form_btn(type="button")
-                  i.icon-down-open
-              .drop.checkbox-list 
-                +checkbox("breakfast", "Завтрак")
-                +checkbox("table", "Письменный стол")(class="checked")
-                +checkbox("chair", "Стул для кормления")(class="checked")
-                +checkbox("crib", "Кроватка")(class="checked")
-                +checkbox("TV", "Телевизор")
-                +checkbox("shampoo", "Шампунь")
-          .form-select.expanded
-            form
-              .row.row_fill
-                h3 expandable checkbox list
-                button.input__open.form_btn(type="button")
-                  i.icon-down-open   
-              .drop.checkbox-list 
-                +checkbox("breakfast", "Завтрак")
-                +checkbox("table", "Письменный стол")(class="checked")
-                +checkbox("chair", "Стул для кормления")(class="checked")
-                +checkbox("crib", "Кроватка")(class="checked")
-                +checkbox("TV", "Телевизор")
-                +checkbox("shampoo", "Шампунь")       
-      .col
-        .form-select.expanded
+          h3 date dropdown
+          +input("text", "19.08.2019")(class="dropdown")
+    
+    //checkbox, radio...
+    .block2 
+      .checkbox-block
+        h3 Checkbox Buttons
+        +checkbox("smoke", "Можно курить")
+        +checkbox("pet", "Можно с питомцами")
+        +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
+      +radio("radio buttons")
+      form
+        h3 toggle
+        +toggle("Получать спецпредложения", "checked")
+        +toggle("Получать спецпредложения")
+      form
+        h3 like button 
+        .row.row_start
+          +like({              
+            "count": "2",
+            "isCheck": false,
+            "name": "like-1"  
+          })
+          +like({              
+            "count": "12",
+            "isCheck": "checked",
+            "name": "like-2"  
+          })
+      form
+        h3 rate button
+        .row.row_start 
+          +rate(4)
+          +rate(5)  
+    
+    //slider, buttons...
+    .block3 
+      +slider("forms", "Range Slider")
+      .buttons
+        h3 buttons 
+        .row.row_start 
+          button.btn.btn_blue click me
+          button.btn.btn_blue.hovered click me
+        .row.row_start 
+          button.btn.btn_white click me
+          button.btn.btn_white.hovered click me
+        .row.row_start 
+          button.btn.btn_simple click me
+          button.btn.btn_simple.hovered click me
+        button.btn.btn_link перейти к оплате
+          span.icon-right
+      include ../../components/pagination/pagination.pug
+    
+    //input filter width
+    .block4
+      form
+        h3 filter date dropdown
+        +input("text", "19 авг - 23 авг")(class="dropdown")
+      form
+        h3 subscription text field
+        +input("text", "Email")(class="subscript")
+    
+    //dropdown first column
+    .block5
+      .form-select
+        .row.row_fill.row_title
           h3 dropdown 
-          +form( 
-            /*category=*/ "guests", 
-            /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
-        form
-          h3 Rich Checkbox Buttons
-          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")          
-      .col
-        .form-select.expanded
+          h3 default
+        +form(
+          /*category=*/ "placement", 
+          /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+      .form-select.expanded
+        .row.row_fill.row_title
           h3 dropdown 
-          +form( 
-            /*category=*/ "guests", 
-            /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 1}])(class="select_card")
+          h3 expanded
+        +form(
+          /*category=*/ "placement", 
+          /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+    
+    //dropdown second column
+    .block6
+      .form-select.expanded
+        h3 dropdown 
+        +form( 
+          /*category=*/ "guests", 
+          /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
+    
+    //dropdown third column
+    .block7
+      .form-select.expanded
+        h3 dropdown 
+        +form( 
+          /*category=*/ "guests", 
+          /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 1}])(class="select_card")
+    
+    //expandable list
+    .block8
+      .form-select
         form
-          h3 bullet list 
-          +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
-    .row.row_fill
-      .col
-        +icon-text("Комфорт", "Шумопоглощающие стены")
-        +icon-text("Удобство", "Окно в каждой из спален")
-      .col
-        -const data = require("@c/review/review.json")
-        +review([data[0]])
+          .row.row_fill
+            h3 expandable checkbox list
+            button.input__open.form_btn(type="button")
+              i.icon-down-open
+          .drop.checkbox-list 
+            +checkbox("breakfast", "Завтрак")
+            +checkbox("table", "Письменный стол")(class="checked")
+            +checkbox("chair", "Стул для кормления")(class="checked")
+            +checkbox("crib", "Кроватка")(class="checked")
+            +checkbox("TV", "Телевизор")
+            +checkbox("shampoo", "Шампунь")
+      .form-select.expanded
+        form
+          .row.row_fill
+            h3 expandable checkbox list
+            button.input__open.form_btn(type="button")
+              i.icon-down-open   
+          .drop.checkbox-list 
+            +checkbox("breakfast", "Завтрак")
+            +checkbox("table", "Письменный стол")(class="checked")
+            +checkbox("chair", "Стул для кормления")(class="checked")
+            +checkbox("crib", "Кроватка")(class="checked")
+            +checkbox("TV", "Телевизор")
+            +checkbox("shampoo", "Шампунь") 
+    
+    //rich checkbox
+    .block9 
+      form
+        h3 Rich Checkbox Buttons
+        +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+        +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")   
+   
+    //bullet list
+    .block10 
+      form
+        h3 bullet list 
+        +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+    
+    //icon text
+    .block11 
+      +icon-text("Комфорт", "Шумопоглощающие стены")
+      +icon-text("Удобство", "Окно в каждой из спален")
+    
+    //review
+    .block12
+      -const data = require("@c/review/review.json")
+      +review([data[0]])
+
     

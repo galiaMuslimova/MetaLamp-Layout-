@@ -1,4 +1,3 @@
-include ../double-date/double-date.pug
 include ../form/form.pug
 
 .card.room-card 
@@ -9,7 +8,6 @@ include ../form/form.pug
       .p_light люкс
       .p_lightGrey 9990 р в сутки
     .room-card-row
-      +double-date('room')
     .room-card-row
       +form("гости", "text")(class="dropdown")
     .room-card-row.room-card-calculation

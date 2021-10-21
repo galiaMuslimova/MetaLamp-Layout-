@@ -1,6 +1,6 @@
 .check {
   margin-top: 10px;
-  align-items: center;
+  align-items: flex-start;
 
   &__input {
     &:checked + .check__box:before {

@@ -1,15 +1,31 @@
 .forms {
   margin: 130px auto;
-  gap: 100px;
-  
-  >.row {    
-    >.col {
-      width: 320px;
+  display: grid;
+  justify-content: space-between;
+  grid-row-gap: 50px;
+  grid: 
+  "block1 block2 block3" 
+  "block4 block2 block3"
+  "block5 block6 block7"
+  "block8 block9 block10"
+  "block11 block12 block12"
+  / 320px 320px 320px
+  ;  
+
+  @for $i from 1 through 12 {
+    .block#{$i} {
+      grid-area: block#{$i};
     }
   }
-  .col-filter {
-    max-width: 266px;  
+
+  .block4, .block5 {
+    max-width: 266px;
   }
+
+  form {
+    margin-block-end: 20px;
+  }
+
   .double-date { 
     gap: 20px;  
     form {

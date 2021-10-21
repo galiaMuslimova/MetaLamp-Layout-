@@ -1,11 +1,9 @@
-include ../double-date/double-date.pug
 include ../form/form.pug
 
 .card.entry-card
   .card-inner.entry-inner
     h1 Найдём номера под ваши пожелания
-    .row.entry-row          
-      +double-date('entry')(class='entry-date')  
+    .row.entry-row           
     .row.entry-row 
       +form("гости", "text")(class="dropdown")
     button.btn.btn_card подобрать номер
