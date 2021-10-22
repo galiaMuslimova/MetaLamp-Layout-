@@ -1,7 +1,23 @@
 include ../input/input.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
 
 .card.login-card
   .card-inner
-    h1 Регистрация аккаунта
-    +input('default', 'Имя')
-    +input('default', 'Фамилия')
+    .login-card-item 
+      h1 Регистрация аккаунта
+    .login-card-item
+      +input('text', 'Имя')
+      +input('text', 'Фамилия')
+      +radio(["Мужчина", "Женщина"])
+    .login-card-item
+      h3 дата рождения 
+      +input("text", "ДД.ММ.ГГГГ")
+    .login-card-item
+      h3 данные для входа в сервис
+      +input("text", "Email")
+      +input("text", "Пароль")
+      +toggle("Получать спецпредложения")
+    .login-card-item
+
+      

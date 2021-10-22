@@ -2,3 +2,15 @@
   max-width: 320px;
   width: 100%;
 }
+
+.double-date {
+  form {
+    max-width: 150px;
+    &:last-child {
+      .drop {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}

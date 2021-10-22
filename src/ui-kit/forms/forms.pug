@@ -46,7 +46,9 @@ include ../../components/review/review.pug
         +checkbox("smoke", "Можно курить")
         +checkbox("pet", "Можно с питомцами")
         +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
-      +radio("radio buttons")
+      .radio-block
+        h3 radio buttons
+        +radio(["Мужчина", "Женщина"])
       form
         h3 toggle
         +toggle("Получать спецпредложения", "checked")

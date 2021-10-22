@@ -1,11 +1,10 @@
-mixin radio(title)
-  h3= title
+mixin radio(items)
   form.row.row_start.radio    
     label.row
       input.input_hidden.radio__input(type="radio" name="radio" checked)
       span.radio__box
-      p Женщина
+      p= items[0]
     label.row
       input.input_hidden.radio__input(type="radio" name="radio")
       span.radio__box
-      p Мужчина
+      p= items[1]

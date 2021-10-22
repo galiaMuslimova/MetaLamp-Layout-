@@ -34,18 +34,24 @@
 
   &-cell {
     height: 40px;
-    &:hover {
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      border-radius: 22px;
-    }
+    
     &.-day- {
       font-size: 12px;
       line-height: 15px;
       color: rgba(31, 32, 65, 0.5);
+
+      &:hover {
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border-radius: 22px;
+        color: #fff;
+        font-weight: bold;
+      }
       
       &.-range-from-, &.-range-to- {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         border-radius: 22px;
+        color: #fff;
+        font-weight: bold;
       }
       &.-in-range { 
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);   

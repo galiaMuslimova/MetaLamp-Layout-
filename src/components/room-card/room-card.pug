@@ -2,28 +2,50 @@ include ../form/form.pug
 
 .card.room-card 
   .card-inner
-    .row.room-card-title.room-card-row
-      h4 №
-      h2 888
-      .p_light люкс
-      .p_lightGrey 9990 р в сутки
-    .room-card-row
-    .room-card-row
-      +form("гости", "text")(class="dropdown")
-    .room-card-row.room-card-calculation
-      .col 
-        .row 
+    .room-card-item
+      .row.room-card-title
+        h4 №
+        h2 888
+        h3 люкс
+        .p_lightGrey 9990 р в сутки
+    .room-card-item
+      .room-card-row
+        .row.row_fill.double-date
+          form
+            h3 прибытие
+            +input("text", "19.08.2019")(class="dropdown")
+          form
+            h3 выезд
+            +input("text", "23.08.2019")(class="dropdown")
+    .room-card-item
+      h3 гости 
+      +form( 
+        /*category=*/ "guests", 
+        /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}])(class="select_card")
+    .room-card-item
+      .room-card-calculation.calculation 
+        .calculation-item 
           p 9 990₽ х 4 суток
+        .calculation-item
+        .calculation-item.cost
           p 39 960₽
-        .row 
+        .calculation-item
           p Сбор за услуги: скидка 2 179₽
+        .calculation-item.circle-i
+          span i
+        .calculation-item.cost
           p 0₽
-        .row 
+        .calculation-item
           p Сбор за дополнительные услуги
-          p 300₽
-    .row.room-card-total.total 
-      h2 Итого
-      .total__divider
-      h2 38 081₽
-    .room-card-btn
-      button(class='btn btn_card') забронировать
+        .calculation-item.circle-i
+          span i
+        .calculation-item.cost
+          p 300₽    
+    .room-card-item
+      .row.room-card-total.total 
+        h2 Итого
+        .total__divider
+        h2 38 081₽
+    .room-card-item
+      button.btn.btn_link забронировать
+        span.icon-arrow

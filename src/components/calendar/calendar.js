@@ -13,20 +13,8 @@ $(window).on('load', function () {
     onSelect: function (res) {
       sessionStorage.setItem('date-start', res.formattedDate[0]);
       sessionStorage.setItem('date-end', res.formattedDate[1]);
-      //$('#entry-input_left').val(res.formattedDate[0]);
-      //$('#entry-input_right').val(res.formattedDate[1]);
-    }
+    },
+    buttons: "clear",
   }); 
-
-  $('.drop_calendar').find('.submit').click(function () {
-    $('#entry-input_left').val(sessionStorage.getItem('date-start'));
-    $('#entry-input_right').val(sessionStorage.getItem('date-end'));
-  });
-
-  $('.drop_calendar').find('.reset').click(function () {
-    $('#entry-input_left').val('ДД.ММ.ГГГГ');
-    $('#entry-input_right').val('ДД.ММ.ГГГГ');
-    calendar.clear();
-  })
 })
   

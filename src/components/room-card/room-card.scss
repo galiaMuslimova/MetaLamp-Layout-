@@ -1,36 +1,58 @@
 .room-card {
   width: 380px;
   height: 512px;
-
   h2, h4 {
     margin: 0px;
   }
 
-  &-row {
-    padding-top: 20px;
-  }
-
   &-title {
     justify-content: flex-start;
-    align-items: flex-end;
-    
-    .p_light {
-      padding-left: 10px;
-    }
+    align-items: baseline;    
     :last-child {
+      margin-left: auto;
+    }    
+    h2 {
+      padding: 0px 8px;
+    }
+    h3 {
+      color: #BC9CFF;
+    }
+  } 
+  
+  &-item {
+    margin-bottom: 20px;
+  }
+
+  .calculation {
+    display: grid;
+    grid-template-columns: minmax(min-content, 214px) 30px 1fr;
+
+    &-item {
+      padding-bottom: 10px;
+      p {
+        line-height: 18px;
+      }      
+    }
+    
+    .circle-i {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      margin: 0 auto;
+      line-height: 20px;
+      text-align: center;
+    }    
+
+    .cost {
       margin-left: auto;
     }
   }
 
-  &-calculation {
-    p {
-      padding-bottom: 10px;
-    }    
-  }
-
   .total {
     align-items: baseline;
-    padding-top: 20px;
+    padding-top: 10px;
     h2 {
       white-space: nowrap;
     }
@@ -40,9 +62,5 @@
       border: 1px dashed rgba(31, 32, 65, 0.25);
       box-sizing: border-box;
     }
-  }
-
-  &-btn {
-    padding-top: 20px;
   }
 }
