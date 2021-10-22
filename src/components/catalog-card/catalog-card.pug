@@ -1,0 +1,21 @@
+include ../rate/rate.pug
+include ../carousel/carousel.pug
+
+mixin catalog-card(item)
+  .catalog-item
+    +carousel(item.num)
+    .catalog-item-content
+      .row.row_fill
+        .row
+          h4= '№' + item.num
+          if(item.luxury) 
+            .p_light люкс
+        p.p_lightGrey
+          b= item.cost 
+          span р в сутки
+      .catalog-item__divider
+      .row.row_fill
+        +rate(item.stars)                 
+        p.p_lightGrey
+          b= item.review 
+          span отзывов

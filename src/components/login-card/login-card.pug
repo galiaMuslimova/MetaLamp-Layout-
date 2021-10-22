@@ -4,20 +4,27 @@ include ../toggle/toggle.pug
 
 .card.login-card
   .card-inner
-    .login-card-item 
+    .card-item 
       h1 Регистрация аккаунта
-    .login-card-item
+    .card-item
       +input('text', 'Имя')
       +input('text', 'Фамилия')
       +radio(["Мужчина", "Женщина"])
-    .login-card-item
+    .card-item
       h3 дата рождения 
       +input("text", "ДД.ММ.ГГГГ")
-    .login-card-item
+    .card-item
       h3 данные для входа в сервис
       +input("text", "Email")
       +input("text", "Пароль")
       +toggle("Получать спецпредложения")
-    .login-card-item
+    .card-item
+      button.btn.btn_link подобрать номер
+        span.icon-arrow
+    .card-item
+      .row.row_fill 
+        p Уже есть аккаунт на Toxin
+        button.btn.btn_white войти
+
 
       

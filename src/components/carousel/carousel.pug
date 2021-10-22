@@ -1,0 +1,14 @@
+mixin carousel(num)  
+  .carousel
+    .carousel__mover.carousel__mover_left
+      span.icon-open
+    .carousel__image
+      img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-1.png`)}`)
+    .carousel__mover.carousel__mover_right
+      span.icon-right-open
+    .carousel__indicators.indicators  
+      ol
+        li.active 
+        li
+        li
+        li

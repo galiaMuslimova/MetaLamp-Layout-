@@ -1,6 +1,23 @@
+include ../../components/catalog-card/catalog-card.pug
+
 .cards
   include ../../components/entry-card/entry-card.pug
   include ../../components/room-card/room-card.pug
   .cards-calendar
     include ../../components/calendar/calendar.pug
   include ../../components/login-card/login-card.pug
+  include ../../components/signin-card/signin-card.pug
+  +catalog-card({
+    "num": 888,
+    "luxury": true,
+    "cost": 9990,
+    "stars": 5,
+    "review": 145
+  })
+  +catalog-card({
+    "num": 840,
+    "luxury": false,
+    "cost": 9990,
+    "stars": 4,
+    "review": 65
+  })

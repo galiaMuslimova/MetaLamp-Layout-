@@ -1,10 +1,10 @@
 include ../form/form.pug
 
 .card.entry-card
-  .card-inner.entry-inner
-    .entry-item
+  .card-inner
+    .card-item
       h1 Найдём номера под ваши пожелания
-    .entry-item
+    .card-item
       .row.row_fill.double-date
         form
           h3 прибытие
@@ -12,11 +12,11 @@ include ../form/form.pug
         form
           h3 выезд
           +input("text", "ДД.ММ.ГГГГ")(class="dropdown")       
-    .entry-item
+    .card-item
       h3 гости 
       +form( 
         /*category=*/ "guests", 
         /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
-    .entry-item
+    .card-item
       button.btn.btn_link подобрать номер
         span.icon-arrow
