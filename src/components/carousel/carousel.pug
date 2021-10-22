@@ -1,14 +1,28 @@
+
+
 mixin carousel(num)  
-  .carousel
+  -function requireAll(requireContext) {return requireContext.keys().map(requireContext)}
+  -const images = requireAll(require.context("@c/catalog-list/img/" + num + "/", true, /\.jpg$/));
+  .carousel  
+    .carousel__image 
+      img(srcset=images[1])
+
+    //-.carousel__image
+      .slide.slide-1.slide-active
+        img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-1.png`)}`)
+      .slide.slide-2
+        img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-2.png`)}`)
+      .slide.slide-3
+        img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-3.png`)}`)
+      .slide.slide-4
+        img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-4.png`)}`)
     .carousel__mover.carousel__mover_left
       span.icon-open
-    .carousel__image
-      img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-1.png`)}`)
     .carousel__mover.carousel__mover_right
-      span.icon-right-open
+      span.icon-open
     .carousel__indicators.indicators  
       ol
-        li.active 
+        li.indicator-active 
         li
         li
         li
