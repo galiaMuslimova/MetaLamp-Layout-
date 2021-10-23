@@ -1,9 +1,9 @@
 .wrapper {  
   display: grid; 
-  grid-template: 70px 1fr 372px 70px / 100%;
+  grid-template: min-content 1fr 372px 70px / 100%;
 
   @media only screen and (max-width: 1024px) {
-    grid-template: 70px 1fr 367px / 100%;
+    grid-template: min-content 1fr 367px / 100%;
   }
 
   .back {
@@ -17,13 +17,8 @@
     }
   }
 
-  header, .links, footer {
-    background-color: #fff;
-  }
-
   header {
     grid-area: 1/1;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
 
   main {

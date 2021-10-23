@@ -75,12 +75,7 @@ p {
   &_bold {
     font-weight: bold;
     line-height: 18px;
-  }
-  //header и некоторые столбцы footer
-  &_nav {
-    line-height: 17px;
-    color: rgba(31,32,65,0.5);
-  }
+  }  
 
   //более светлые тексты, чаще в filter
   &_lightGrey {

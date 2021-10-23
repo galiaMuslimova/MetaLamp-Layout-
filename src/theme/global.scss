@@ -54,6 +54,9 @@ html, body {
 
 a {
   text-decoration: none;
+  outline: none;
+  line-height: 17px;
+  color: rgba(31,32,65,0.5);  
 }
 
 form {

@@ -1,12 +1,16 @@
 .cards {
-  padding: 150px;
-  width: 100%;
+  padding: 150px 140px 140px 140px;
   background: #E5E5E5;
   display: grid;
   grid-template-columns: repeat(3, min-content);
   grid-column-gap: 40px;
 
-  &-calendar {
-    width: 320px;
+  &-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;   
+    #calendar {
+      width: 320px;
+    }
   }
 }
