@@ -1,15 +1,15 @@
 $(document).ready(function() {
-  $('.nav-btn').on('click', function() {
-    $('.menu-list').toggleClass('active-menu');
-    $('.nav-btn').toggleClass('open-menu');
-    $('body').toggleClass('fixed-page');
+  $(".nav__btn").on("click", function() {
+    $(".nav__topmenu").toggleClass("nav__topmenu_mobile");
+    $(".nav__btn").toggleClass("nav__btn_open");
+    $("body").toggleClass("fixed-page");
   });
 
-  $('.btn_header').click(function() {
+  $(".nav__login").on("click", function() {
     $(location).attr('href', "./login.html");
   })
 
-  $("nav i").click(function() {
-    $(this).closest('li').find('.drop').toggleClass('active')
+  $(".nav__down").on("click", function() {
+    $(this).siblings(".nav__submenu").toggleClass("open")
   })
 });

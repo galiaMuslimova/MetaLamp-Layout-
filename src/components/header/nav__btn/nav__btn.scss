@@ -1,8 +1,9 @@
-.nav-btn {
+.nav__btn {
   display: none;
   height: 35px;
   width: 45px;
   position: relative;
+  margin-left: 20px;
 
   @media only screen and (max-width: 924px) {
     display: block;
@@ -29,7 +30,7 @@
     top: 5px;
   }
 
-  &.open-menu {
+  &_open {
     span {
       opacity:0; 
       transition: 0.1s; 

@@ -1,14 +1,14 @@
 .header 
   .container.header-container
     include ../logo/logo.pug
-    nav
-      ul.topmenu    
+    nav.nav
+      ul.nav__topmenu    
         li 
           a(href='../../empty.html') О нас
-        li.submenu-link 
-          a(href='../../empty.html') Услуги
+        li.nav__submenu-link 
+          a.nav__down Услуги
             span.icon-open
-          ul.submenu 
+          ul.nav__submenu 
             li 
               a(href='../../empty.html') Услуга 1
             li 
@@ -21,10 +21,10 @@
           a(href='./empty.html') Вакансии
         li 
           a(href='./empty.html') Новости
-        li.submenu-link
-          a(href='./empty.html') Соглашения
+        li.nav__submenu-link
+          a.nav__down Соглашения
             span.icon-open
-          ul.submenu 
+          ul.nav__submenu 
             li 
               a(href='./empty.html') Соглашения 1
             li 
@@ -35,6 +35,6 @@
               a(href='./empty.html') Соглашения 4
             li 
               a(href='./empty.html') Соглашения 5
-      button.btn.btn_header.btn_header-login.p_light войти            
-      button.btn.btn_header.btn_header-register.p_blue зарегистрироваться
-    include nav-btn/nav-btn.pug
+      button.btn.btn_white.nav__signin войти            
+      button.btn.btn_blue.nav__login зарегистрироваться
+    include nav__btn/nav__btn.pug
