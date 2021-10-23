@@ -1,28 +1,26 @@
 
 
 mixin carousel(num)  
+  //-import all images from directory of this number as array "images"
   -function requireAll(requireContext) { return requireContext.keys().filter(el => el.includes(num)).map(requireContext) };
   -const images = requireAll(require.context("@c/catalog-list/img/", true, /\.(jpg|png|jpeg)$/));
-  .carousel  
-    .carousel__image 
-      img(srcset=images[0])
 
-    //-.carousel__image
-      .slide.slide-1.slide-active
-        img(srcset=`${require(`/${num}/${num}-1.png`)}`)
-      .slide.slide-2
-        img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-2.png`)}`)
-      .slide.slide-3
-        img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-3.png`)}`)
-      .slide.slide-4
-        img(srcset=`${require(`@c/catalog-list/img/${num}/${num}-4.png`)}`)
+  .carousel  
+    .carousel__image
+      .slide.shown
+        img(srcset=images[0])
+      .slide
+        img(srcset=images[1])
+      .slide
+        img(srcset=images[2])
+      .slide
+        img(srcset=images[3])
     .carousel__mover.carousel__mover_left
       span.icon-open
     .carousel__mover.carousel__mover_right
       span.icon-open
     .carousel__indicators.indicators  
-      ol
-        li.indicator-active 
-        li
-        li
-        li
+      .indicator.shown 
+      .indicator
+      .indicator
+      .indicator
