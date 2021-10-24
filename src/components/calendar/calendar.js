@@ -12,7 +12,16 @@ $(window).on('load', function () {
     }
   }
 
-  new AirDatepicker('#calendar', {
+  function showDateInInput (res) {
+    let form = $(dp.$datepicker).closest("form");
+    let inputArr = form.find(".input");
+    $(inputArr[0]).val(res.formattedDate[0]);
+    if (res.formattedDate[1]) {
+      $(inputArr[1]).val(res.formattedDate[1]);
+    }
+  }
+
+  let dp = new AirDatepicker('.calendar', {
     navTitles: {
       days: '<strong>MMMM </strong> <strong> yyyy</strong>'
     },
@@ -21,8 +30,7 @@ $(window).on('load', function () {
     dynamicRange: true,
     autoClose: true,
     onSelect: function (res) {
-      sessionStorage.setItem('date-start', res.formattedDate[0]);
-      sessionStorage.setItem('date-end', res.formattedDate[1]);
+      showDateInInput(res);
     },
     buttons: ["clear", submitButton],
   }); 
