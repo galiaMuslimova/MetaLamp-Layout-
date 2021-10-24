@@ -5,13 +5,7 @@ include ../form/form.pug
     .card-item
       h1 Найдём номера под ваши пожелания
     .card-item
-      .row.row_fill.double-date
-        form
-          h3 прибытие
-          +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
-        form
-          h3 выезд
-          +input("text", "ДД.ММ.ГГГГ")(class="dropdown")       
+      include ../double-date/double-date.pug       
     .card-item
       h3 гости 
       +form( 

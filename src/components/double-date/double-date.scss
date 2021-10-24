@@ -1,0 +1,13 @@
+.double-date {
+  form {
+    .col {
+      max-width: 150px;
+    }    
+    &:last-child {
+      .drop {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}

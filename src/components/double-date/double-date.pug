@@ -1,0 +1,12 @@
+include ../calendar/calendar.pug
+
+.double-date
+  form
+    .row.row_fill
+      .col 
+        h3 прибытие
+        +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
+      .col
+        h3 выезд
+        +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
+    +calendar()
