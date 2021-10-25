@@ -5,15 +5,20 @@
   box-sizing: border-box;
   &__row {
     padding-bottom: 7px;
-    &:last-child {
-      padding-top: 12px;
-    }
   }
   .reset {
     visibility: hidden;
     &.active {
       visibility: visible ;
     }
-  }  
+  }     
 }
+
+.select_card {
+  .select__row {
+    &:last-child {
+      padding-top: 12px;
+    }
+  }
+} 
 

@@ -10,7 +10,7 @@ mixin form(category, array, value)
       +select(array)(class=attributes.class /* "select_card" for select with submit and reset buttons */)
 
     if(category == "calendar")
-      +calendar()
+      +calendar()(class="select_card")
 
 
 

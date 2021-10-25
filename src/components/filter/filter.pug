@@ -3,10 +3,19 @@ include ../checkbox/checkbox.pug
 include ../calendar/calendar.pug
 include ../slider/slider.pug 
 
-div(class='filter')
-  div(class='col')
-    +form("даты пребывания в отеле", "date")(class="dropdown")
-    +form("гости", "text")(class="dropdown")
+.filter
+  .col
+    .filter__item
+      h3 даты пребывания в отеле
+      +form(
+        /*category=*/ "calendar", 
+        /*array*/ [],
+        /*value*/ "19 авг - 23 авг") 
+    .filter__item
+      h3 гости
+      +form( 
+        /*category=*/ "guests", 
+        /*array*/ [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]) 
     +slider("filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
     form(class='form form_checkbox')
       h3 правила дома
@@ -14,7 +23,7 @@ div(class='filter')
         +checkbox("Можно курить", id="smoke")(class='p_lightGrey')
         +checkbox('Можно с питомцами', id='pets')(class='p_lightGrey')
         +checkbox('Можно пригласить гостей (до 10 человек)', id='invite')(class='p_lightGrey')
-  div(class='col')
+  .col
     form(class='form form_checkbox')
       h3 доступность
       div

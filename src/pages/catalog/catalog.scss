@@ -7,12 +7,17 @@
     width: 100%;
   }
 
+  &__title{
+    margin: 30px 0px 20px 0px;
+  }
+
   &__content {    
     min-height: 1090px;
   }
-
-  &__title{
-    margin: 30px 0px 20px 0px;
+  
+  &__pagination {
+    display: flex;
+    justify-content: center;
   }
 }
 
