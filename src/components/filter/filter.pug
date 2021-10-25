@@ -35,10 +35,10 @@ include ../slider/slider.pug
         /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
     .filter__item 
       form
-        .row.row_fill
+        .row.row_fill.filter__expandable
           h3 дополнительные удобства
           button.input__open.form_btn(type="button")
-            i.icon-down-open
+            i.icon-open
         .drop.checkbox-list 
           +checkbox("breakfast", "Завтрак")
           +checkbox("table", "Письменный стол")(class="checked")

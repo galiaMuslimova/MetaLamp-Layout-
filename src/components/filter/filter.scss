@@ -5,6 +5,10 @@
   &__item {
     margin-bottom: 30px;
   }     
+
+  &__expandable {
+    align-items: baseline;
+  }
 }
 
 @media only screen and (max-width: 900px) {

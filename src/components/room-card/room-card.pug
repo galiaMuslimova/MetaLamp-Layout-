@@ -1,31 +1,25 @@
+- const roomData = require('@c/room-card/room-card.json')
 include ../form/form.pug
 
-.card.room-card 
+.card.room-card   
   .card-inner
     .card-item
       .row.room-card-title
         h4 №
-        h2 888
-        h3 люкс
-        .p_lightGrey 9990 р в сутки
+        h2= roomData.num
+        h3= roomData.luxury?"люкс":""
+        .p_lightGrey=  roomData.cost + 'р в сутки'
     .card-item
-      .room-card-row
-        .row.row_fill.double-date
-          form
-            h3 прибытие
-            +input("text", "19.08.2019")(class="dropdown")
-          form
-            h3 выезд
-            +input("text", "23.08.2019")(class="dropdown")
+      include ../double-date/double-date.pug
     .card-item
       h3 гости 
       +form( 
-        /*category=*/ "guests", 
+        /*category*/ "guests", 
         /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}])(class="select_card")
     .card-item
       .room-card-calculation.calculation 
         .calculation-item 
-          p 9 990₽ х 4 суток
+          p= roomData.cost + '₽ х 4 суток'
         .calculation-item
         .calculation-item.cost
           p 39 960₽

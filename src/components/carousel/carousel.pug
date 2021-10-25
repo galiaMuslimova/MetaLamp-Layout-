@@ -1,5 +1,3 @@
-
-
 mixin carousel(num)  
   //-import all images from directory of this number as array "images"
   -function requireAll(requireContext) { return requireContext.keys().filter(el => el.includes(num)).map(requireContext) };
@@ -7,13 +5,13 @@ mixin carousel(num)
 
   .carousel  
     .carousel__image
-      .slide.shown
+      .carousel__slide.shown
         img(srcset=images[0])
-      .slide
+      .carousel__slide
         img(srcset=images[1])
-      .slide
+      .carousel__slide
         img(srcset=images[2])
-      .slide
+      .carousel__slide
         img(srcset=images[3])
     .carousel__mover.carousel__mover_left
       span.icon-open

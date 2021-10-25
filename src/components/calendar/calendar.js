@@ -3,11 +3,7 @@ import 'air-datepicker/air-datepicker.css';
 
 $(window).on('load', function () {
   
-  let submitButton = {
-    content: "Применить",
-    tagName: "button",
-    className: "calendar__sub"
-  };  
+  let selectedDates = []; 
 
   function showDateInInput (res) {
     let form = $(dp.$datepicker).closest("form");
@@ -18,7 +14,7 @@ $(window).on('load', function () {
     }
   }
 
-  let dp = new AirDatepicker('.calendar', {
+  let dp = new AirDatepicker('.datepicker', {
     navTitles: {
       days: '<b>MMMM</b> <b>yyyy</b>'
     },
@@ -26,10 +22,12 @@ $(window).on('load', function () {
     range: true,
     dynamicRange: true,
     autoClose: true,
+    prevHtml: '<span class="icon-right"></span>',
     onSelect: function (res) {
-      showDateInInput(res)
+      showDateInInput(res);
+      selectedDates = res;
     }
-  });
+  }); 
 
   
 })
