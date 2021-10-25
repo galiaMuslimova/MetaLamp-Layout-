@@ -2,7 +2,7 @@ mixin slider(id, title, text)
   form.slider
     .row.row_fill
       h3= title
-      p.p_small(id=id + "-slider-result")
+      p.p_small.slider__result
     .row
-      .slider-styled(id=id + "-slider-round")
+      .slider-styled.slider__body
     p.p_small= text 

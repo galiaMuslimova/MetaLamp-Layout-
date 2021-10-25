@@ -16,28 +16,33 @@ include ../slider/slider.pug
       +form( 
         /*category=*/ "guests", 
         /*array*/ [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]) 
-    +slider("filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
-    form(class='form form_checkbox')
+    .filter__item
+      +slider("filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
+    .filter__item 
       h3 правила дома
-      div
-        +checkbox("Можно курить", id="smoke")(class='p_lightGrey')
-        +checkbox('Можно с питомцами', id='pets')(class='p_lightGrey')
-        +checkbox('Можно пригласить гостей (до 10 человек)', id='invite')(class='p_lightGrey')
+      +checkbox("smoke", "Можно курить")
+      +checkbox("pet", "Можно с питомцами")
+      +checkbox("invite", "Можно пригласить гостей (до 10 человек)")    
   .col
-    form(class='form form_checkbox')
+    .filter__item 
       h3 доступность
-      div
-        +checkbox('Широкий коридор', id='corridor', 'Ширина коридоров в номере не менее 91 см.')(class='p_bold')
-        +checkbox('Помощник для инвалидов', id='invalid', 'На 1 этаже вас встретит специалист и проводит до номера.')(class='p_bold')
-    +form("удобства номера", "text")(class="dropdown")
-    form(class='form')
-      div(class='row')
-        h3 дополнительные удобства
-        button(type='button', class='btn_open btn_open_facilities icon-down-open') 
-      div(class='drop drop_facilities')
-        +checkbox('Завтрак', id='breakfast')(class='p_lightGrey')
-        +checkbox('Письменный стол', id='table')(class='p_lightGrey')
-        +checkbox('Стул для кормления', id='babyChair')(class='p_lightGrey')
-        +checkbox('Кроватка', id='bed')(class='p_lightGrey')
-        +checkbox('Телевизор', id='tv')(class='p_lightGrey')
-        +checkbox('Шампунь', id='shampoo')(class='p_lightGrey')
+      +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+      +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.") 
+    .filter__item 
+      h3 удобства номера
+      +form(
+        /*category=*/ "placement", 
+        /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+    .filter__item 
+      form
+        .row.row_fill
+          h3 дополнительные удобства
+          button.input__open.form_btn(type="button")
+            i.icon-down-open
+        .drop.checkbox-list 
+          +checkbox("breakfast", "Завтрак")
+          +checkbox("table", "Письменный стол")(class="checked")
+          +checkbox("chair", "Стул для кормления")(class="checked")
+          +checkbox("crib", "Кроватка")(class="checked")
+          +checkbox("TV", "Телевизор")
+          +checkbox("shampoo", "Шампунь")

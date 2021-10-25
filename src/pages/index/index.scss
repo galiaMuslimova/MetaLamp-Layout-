@@ -1,13 +1,14 @@
 .main { 
   &-container {  
     height: 100%;
+    min-height: 830px;
     display: grid;
     grid: 
-      ".    .    ." 4.8vw
+      ".    .    ." 5.7vw
       "card .    ." 374px
       ".    .    ." 1fr  
       ".    . note" 48px
-      ".    .    ." 1.25vw
+      ".    .    ." 1.6vw
       /380px 1fr 297px
       ;
     @media (max-width: 830px) {

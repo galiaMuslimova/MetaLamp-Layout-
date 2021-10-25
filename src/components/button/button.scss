@@ -6,10 +6,10 @@
   outline: none;  
 
   &_blue, &_white, &_link {
-    height: 44px;
+    max-height: 44px;
+    height: 100%;
     border-radius: 22px;
     padding: 0px 20px;
-
   }
 
   &_blue, &_link {
@@ -32,6 +32,7 @@
     color: #BC9CFF;
     background-color: #fff;
     border: 2px solid;
+    padding: 0px 18px;
     border-image: linear-gradient(rgba(188, 156, 255, 1) rgba(139, 164, 249, 1));
   }
 
