@@ -12,22 +12,14 @@ $(window).on("load", function () {
     }
   });
 
-  $(".submit").click(function() {
+  $(".select__reset").click(function () {
     let selectForm = $(this).closest("form");
-    let str = createGuestsText(selectForm);
-    selectForm.find(".input").val(str);
-    selectForm.find(".drop").removeClass("active");
-  });
-
-  $(".reset").click(function () {
-    let selectForm = $(this).closest("form");
-    selectForm.find(".minus").each(function() { 
-      $(this).addClass("disabled");
-    });
     selectForm.find(".count__num").each(function () {
       $(this).val(0);
+    });    
+    selectForm.find(".minus").each(function () {
+      $(this).addClass("disabled");
     });
-    selectForm.find(".input").val("Сколько гостей")
     showHideResetButton(selectForm);
   });       
 });

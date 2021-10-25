@@ -5,7 +5,7 @@
   box-sizing: border-box;
   &__row {
     padding-bottom: 7px;
-    &_buttons {
+    &:last-child {
       padding-top: 12px;
     }
   }

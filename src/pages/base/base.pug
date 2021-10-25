@@ -11,10 +11,8 @@ html
         block back
       header
         include ../../components/header/header.pug
+        +header()
       main
-        block content
-      //-part of footer with links
-      .links 
-        include ../../components/links/links.pug
+        block content     
       footer
         include ../../components/footer/footer.pug

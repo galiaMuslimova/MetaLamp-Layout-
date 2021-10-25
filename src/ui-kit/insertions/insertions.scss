@@ -1,4 +1,30 @@
 .insertions {
   padding: 140px 0px;
   background: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .footer_mobile {
+    width: 768px;
+    margin: 0 auto;
+    .container {
+      width: 100%;
+    }
+    .links {
+      display: none;
+    }
+    .rights {
+      &__inner {
+        height: 367px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      } 
+
+      &__logo {
+        display: block;
+      }
+    }       
+  }
 }

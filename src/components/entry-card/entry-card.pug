@@ -10,7 +10,8 @@ include ../form/form.pug
       h3 гости 
       +form( 
         /*category=*/ "guests", 
-        /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
+        /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}],
+        /*value*/ "Сколько гостей")(class="select_card")
     .card-item
       button.btn.btn_link подобрать номер
         span.icon-arrow

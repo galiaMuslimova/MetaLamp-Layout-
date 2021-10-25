@@ -1,6 +1,10 @@
 .calendar {
   max-width: 320px;
   width: 100%;
+
+  &__row {
+    padding: 20px;
+  }
 }
 .air-datepicker {
   --adp-width: 100%;

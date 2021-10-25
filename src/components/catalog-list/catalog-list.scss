@@ -1,16 +1,7 @@
 .catalog-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 12px;
-
-  @media only screen and (max-width: 1150px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media only screen and (max-width: 600px) {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-column-gap: 1vw;
 }
 
 

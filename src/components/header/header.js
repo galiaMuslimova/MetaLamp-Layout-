@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(".nav__btn").on("click", function() {
-    $(".nav__topmenu").toggleClass("nav__topmenu_mobile");
-    $(".nav__btn").toggleClass("nav__btn_open");
+    $(this).siblings(".nav").find(".nav__topmenu").toggleClass("nav__topmenu_mobile");
+    $(this).toggleClass("nav__btn_open");
     $("body").toggleClass("fixed-page");
   });
 

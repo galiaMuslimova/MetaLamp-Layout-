@@ -2,9 +2,9 @@ include ../input/input.pug
 include ../select/select.pug
 include ../calendar/calendar.pug
 
-mixin form(category, array) 
+mixin form(category, array, value) 
   form(class=category)
-    +input(/*type*/ "text")(class='dropdown')
+    +input(/*type*/ "text", value)(class='dropdown')
 
     if(category == "guests" || category == "placement")
       +select(array)(class=attributes.class /* "select_card" for select with submit and reset buttons */)
