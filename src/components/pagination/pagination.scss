@@ -1,36 +1,26 @@
 .pagination {
-  .row {
-    justify-content: flex-start;
-  }
-  &__btn {
+  text-align: center;
+  user-select: none;
+
+  &__item {
+    display: inline-block;
     height: 40px;
     width: 40px;
-    background: none;
-    border: none;
-    font-size: 12px;
-    line-height: 15px;
-    color: rgba(31, 32, 65, 0.5);
+    line-height: 40px;
+    cursor: pointer;
 
-    &.pag-checked, &.pag-arrow {
+    &_previous, &_next {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
       border-radius: 22px;
       color: #fff;
       font-weight: bold;
     }
 
-    &.pag-checked {
+    &_current.active {
+      border-radius: 22px;
+      color: #fff;
+      font-weight: bold;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
-
-    &.pag-arrow {
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    }
-
-    &.pag-num{
-      display: none;
-    }
-
-    &.pag-shown {
-      display: block;
-    }
-  }
+  }  
 }

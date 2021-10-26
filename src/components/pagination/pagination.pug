@@ -1,5 +1,24 @@
 .pagination
-  .row
+//-li.pagination__item.pagination__item_previous
+    i.icon-arrow
+  li.pagination__item.pagination__item_current
+    a.pagination__link(href="#") 1
+  li.pagination__item.pagination__item_dots
+    p.pagination__link ...
+  li.pagination__item.pagination__item_current
+    a.pagination__link(href="#") 5
+  li.pagination__item.pagination__item_current
+    a.pagination__link(href="#") 6
+  li.pagination__item.pagination__item_dots
+    a.pagination__link(href="#") ...
+  li.pagination__item.pagination__item_current
+    a.pagination__link(href="#") 10
+  li.pagination__item.pagination__item_next
+    i.icon-arrow
+
+
+    
+  //-.row
     -let n = 4
     button.pagination__btn.pag-dots ...
     button.pagination__btn.pag-arrow.pag-left
@@ -14,7 +33,7 @@
       button.pagination__btn.pag-num(value=n)= n
       -n++
     button.pagination__btn.pag-num.pag-shown(value=15) 15
-    button.pagination__btn.pag-arrow.pag-right.pag-shown
+    button.pagination__btn.pag-arrow.pag-right
       i.icon-arrow
   .row
     p 1 – 12 из 100+ вариантов аренды

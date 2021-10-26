@@ -1,75 +1,71 @@
-$(window).on("load", function () {
-  let dots = $(".pagination").find(".pag-dots").remove();
-  let leftArrow = $(".pagination").find(".pag-left").remove();
-  let rightArrow = $(".pagination").find(".pag-right").remove();
-  let startDots = dots.clone();
-  let endDots = dots.clone();
+function getPageList(totalPages, page){ //15 1
+  function range(start, end){    
+    return Array.from(Array(end - start + 1), (_, i) => i + start);
+  } 
 
-  $(".pag-num").each(function () {
-    if($(this).hasClass("pag-checked")) {
-      showHideDotsArrow($(this));
-    }
-  })
-
-  function showHideDotsArrow (el) { 
-    console.log(el.val());
-    if (el.val() >= 13) {
-      $(".pag-num[value=1]").after(startDots);
-      $(".pag-num[value=1]").before(leftArrow);
-      endDots = endDots.remove();
-      rightArrow = rightArrow.remove(); 
-    } else if (el.val() <= 3) {
-      $(".pag-num[value=15]").before(endDots);
-      $(".pag-num[value=15]").after(rightArrow);
-      startDots = startDots.remove();
-      leftArrow = leftArrow.remove();
-    } else {
-      $(".pag-num[value=15]").before(endDots);
-      $(".pag-num[value=15]").after(rightArrow);
-      $(".pag-num[value=1]").after(startDots);
-      $(".pag-num[value=1]").before(leftArrow);
-    }
+  if (page <= 2) {
+    return range(1, 3).concat(0, totalPages);
   }
 
-  $(".pag-right").on("click", function () {
-    pagRight($(this));
-  })
-
-  $(".pag-left").on("click", function () {
-    pagLeft($(this));
-  })
-
-  function pagRight(el) {
-    let checked = $(el).siblings(".pag-checked");
-    let newChecked;
-    if (!checked.next().hasClass("pag-arrow")) {
-      if (checked.prev().val() != 1) {
-        checked.prev().removeClass("pag-shown");
-      }      
-      checked.next().addClass("pag-checked");
-      checked.removeClass("pag-checked");
-      newChecked = checked.next();
-      newChecked.next().addClass("pag-shown");
-    }
-    showHideDotsArrow(newChecked);
+  if (page <= 3){
+    return range(1, 4).concat(0, range(totalPages, totalPages));
   }
 
-  function pagLeft(el) {
-    let checked = $(el).siblings(".pag-checked");
-    let newChecked;
-    if (!checked.prev().hasClass("pag-arrow")) {
-      if (checked.next().val() != 15) {
-        checked.next().removeClass("pag-shown");
-      }
-      checked.prev().addClass("pag-checked");
-      checked.removeClass("pag-checked");
-      newChecked = checked.prev();
-      newChecked.prev().addClass("pag-shown");
-    }
-    showHideDotsArrow(newChecked);
+  if (page >= totalPages - 1) {
+    return range(1, 1).concat(0, range(totalPages - 2, totalPages));
   }
-})
 
+  if(page >= totalPages - 2){
+    return range(1, 1).concat(0, range(totalPages- 3, totalPages));
+  }
 
+  return range(1, 1).concat(0, range(page - 1, page + 1), 0, totalPages);
+}
 
+$(function(){
+  let numberOfItems = $(".catalog-list .catalog-item").length;
+  let limitPerPage = 12; 
+  let totalPages = Math.ceil(numberOfItems / limitPerPage); 
+  let paginationSize = 7;
+  let currentPage;
 
+  function showPage(pageNum){
+    if (pageNum < 1 || pageNum > totalPages) return false;
+
+    currentPage = pageNum;
+
+    $(".catalog-list .catalog-item").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
+
+    $(".pagination li").slice(1, -1).remove();
+
+    getPageList(totalPages, currentPage).forEach(item => {
+      $("<li>").addClass("pagination__item").addClass(item ? "pagination__item_current" : "pagination__item_dots")
+        .toggleClass("active", item === currentPage).text(item || "...").insertBefore(".pagination__item_next");
+    });
+
+    $(".pagination__item_previous").toggleClass("disable", currentPage === 1);
+    $(".pagination__item_next").toggleClass("disable", currentPage === totalPages);
+    return true;
+  }
+  $(".pagination").append(
+    $("<li>").addClass("pagination__item").addClass("pagination__item_previous").append($("<i>").addClass("icon-arrow")),
+    $("<li>").addClass("pagination__item").addClass("pagination__item_next").append($("<i>").addClass("icon-arrow"))
+  );
+
+  $(".catalog-list").show();
+  showPage(1);
+
+  $(document).on("click", ".pagination li.pagination__item_current:not(.active)", function () {
+    return showPage(+$(this).text());
+  });
+
+  $(".pagination__item_next").on("click", function () {
+    return showPage(currentPage + 1);
+  });
+
+  $(".pagination__item_previous").on("click", function () {
+    return showPage(currentPage - 1);
+  });
+});
+
+  
