@@ -1,11 +1,20 @@
 .pagination
   .row
-    button.pagination__btn.pagination__btn_checked 1
-    button.pagination__btn 2
-    button.pagination__btn 3
-    button.pagination__btn ...
-    button.pagination__btn 5
-    button.pagination__btn.pagination__btn_arrow
+    -let n = 4
+    button.pagination__btn.pag-dots ...
+    button.pagination__btn.pag-arrow.pag-left
+      i.icon-arrow
+    button.pagination__btn.pag-num.pag-checked.pag-shown(value=1) 1
+    
+
+    button.pagination__btn.pag-num.pag-shown(value=2) 2
+    button.pagination__btn.pag-num.pag-shown(value=3) 3
+
+    while n < 15
+      button.pagination__btn.pag-num(value=n)= n
+      -n++
+    button.pagination__btn.pag-num.pag-shown(value=15) 15
+    button.pagination__btn.pag-arrow.pag-right.pag-shown
       i.icon-arrow
   .row
     p 1 – 12 из 100+ вариантов аренды
