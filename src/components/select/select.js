@@ -42,10 +42,10 @@ export function showHideResetButton(selectForm) {
     return sum + elem;
   }, 0);
   if (result > 0) {
-    selectForm.find(".reset").addClass("active");
+    selectForm.find(".select__reset").addClass("active");
   }
   else {
-    selectForm.find(".reset").removeClass("active");
+    selectForm.find(".select__reset").removeClass("active");
   }
 }
 

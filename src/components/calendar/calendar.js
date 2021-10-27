@@ -14,21 +14,24 @@ $(window).on('load', function () {
     }
   }
 
-  let dp = new AirDatepicker('.datepicker', {
+  let dp = new AirDatepicker('.calendar', {
     navTitles: {
-      days: '<b>MMMM</b> <b>yyyy</b>'
+      days: "MMMM <i>yyyy</i>"
     },
     multipleDates: true,      
     range: true,
     dynamicRange: true,
     autoClose: true,
-    prevHtml: '<span class="icon-right"></span>',
+    prevHtml: '<span class="icon-arrow_back"></span>',
+    nextHtml: '<span class="icon-arrow"></span>',
     onSelect: function (res) {
       showDateInInput(res);
       selectedDates = res;
     }
   }); 
 
-  
+  $(".calendar__reset").on("click", function () {
+    dp.clear();
+  })
 })
   

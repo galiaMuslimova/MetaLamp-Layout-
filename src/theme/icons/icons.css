@@ -1,6 +1,6 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?533394b0c50f95d7734e024a855fae79?#iefix") format("embedded-opentype"), url("./icons.woff2?533394b0c50f95d7734e024a855fae79") format("woff2"), url("./icons.woff?533394b0c50f95d7734e024a855fae79") format("woff"), url("./icons.ttf?533394b0c50f95d7734e024a855fae79") format("truetype"), url("./icons.svg?533394b0c50f95d7734e024a855fae79#icons") format("svg");
+    src: url("./icons.woff2?2ec9e36c3a28d46ad2b266b42bb7f47b") format("woff2"), url("./icons.woff?2ec9e36c3a28d46ad2b266b42bb7f47b") format("woff"), url("./icons.ttf?2ec9e36c3a28d46ad2b266b42bb7f47b") format("truetype"), url("./icons.svg?2ec9e36c3a28d46ad2b266b42bb7f47b#icons") format("svg");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before, 
@@ -15,32 +15,34 @@ span[class^="icon-"]:before, span[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow:before {
+.icon-arrow_back:before {
     content: "\f101";
 }
 
-.icon-check:before {
+.icon-arrow:before {
     content: "\f102";
 }
 
-.icon-heart-empty:before {
+.icon-check:before {
     content: "\f103";
 }
 
-.icon-heart:before {
+.icon-heart-empty:before {
     content: "\f104";
 }
 
-.icon-open:before {
+.icon-heart:before {
     content: "\f105";
 }
 
-.icon-star-empty:before {
+.icon-open:before {
     content: "\f106";
-    font-size: 20px;
+}
+
+.icon-star-empty:before {
+    content: "\f107";
 }
 
 .icon-star:before {
-    content: "\f107";
-    font-size: 20px;
+    content: "\f108";
 }

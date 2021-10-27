@@ -11,6 +11,11 @@ mixin input(type, value, focus)
       button.input__open(type="button")
         i.icon-open
 
+    if(attributes.class=="date")
+      input.input(type=type, placeholder=value)
+      button.input__open(type="button")
+        i.icon-open
+
     if(!(attributes.class))
       input.input(type=type, placeholder=value, autofocus=focus)    
 

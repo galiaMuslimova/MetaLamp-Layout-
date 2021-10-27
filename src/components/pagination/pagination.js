@@ -1,24 +1,19 @@
-function getPageList(totalPages, page){ //15 1
+function getPageList(totalPages, page){ 
   function range(start, end){    
     return Array.from(Array(end - start + 1), (_, i) => i + start);
   } 
-
   if (page <= 2) {
     return range(1, 3).concat(0, totalPages);
   }
-
   if (page <= 3){
     return range(1, 4).concat(0, range(totalPages, totalPages));
   }
-
   if (page >= totalPages - 1) {
     return range(1, 1).concat(0, range(totalPages - 2, totalPages));
   }
-
   if(page >= totalPages - 2){
     return range(1, 1).concat(0, range(totalPages- 3, totalPages));
   }
-
   return range(1, 1).concat(0, range(page - 1, page + 1), 0, totalPages);
 }
 
@@ -26,7 +21,6 @@ $(function(){
   let numberOfItems = $(".catalog-list .catalog-item").length;
   let limitPerPage = 12; 
   let totalPages = Math.ceil(numberOfItems / limitPerPage); 
-  let paginationSize = 7;
   let currentPage;
 
   function showPage(pageNum){
@@ -47,16 +41,17 @@ $(function(){
     $(".pagination__item_next").toggleClass("disable", currentPage === totalPages);
     return true;
   }
+
+
   $(".pagination").append(
-    $("<li>").addClass("pagination__item").addClass("pagination__item_previous").append($("<i>").addClass("icon-arrow")),
-    $("<li>").addClass("pagination__item").addClass("pagination__item_next").append($("<i>").addClass("icon-arrow"))
+    $("<li>").addClass("pagination__item").addClass("pagination__item_previous").append($("<span>").addClass("icon-arrow_back")),
+    $("<li>").addClass("pagination__item").addClass("pagination__item_next").append($("<span>").addClass("icon-arrow"))
   );
 
-  $(".catalog-list").show();
   showPage(1);
 
-  $(document).on("click", ".pagination li.pagination__item_current:not(.active)", function () {
-    return showPage(+$(this).text());
+  $(document).on("click", ".pagination__item_current", function () {
+    return showPage(Number($(this).text()));
   });
 
   $(".pagination__item_next").on("click", function () {

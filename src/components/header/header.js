@@ -1,23 +1,5 @@
-$(document).ready(function() {
-  $(".nav__btn").on("click", function() {
-    $(this).siblings(".nav").find(".nav__topmenu").toggleClass("nav__topmenu_mobile");
-    $(this).toggleClass("nav__btn_open");
-    $("body").toggleClass("fixed-page");
-  });
-
-  $(".nav__down").on("click", function () {
-    $(this).siblings(".nav__submenu").toggleClass("open")
-  })
-
+$(function() {  
   $("header").find(".logo").on("click", function () {
     $(location).attr('href', "./");
   })
-
-  $(".nav__login").on("click", function() {
-    $(location).attr('href', "./login.html");
-  });
-
-  $(".nav__signin").on("click", function () {
-    $(location).attr('href', "./signin.html");
-  });  
 });

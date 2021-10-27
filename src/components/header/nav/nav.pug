@@ -1,0 +1,41 @@
+nav.nav
+  ul.nav__topmenu    
+    li 
+      a(href='../../empty.html') О нас
+    li.nav__submenu-link 
+      a.nav__down Услуги
+        span.icon-open
+      ul.nav__submenu 
+        li 
+          a(href='../../empty.html') Услуга 1
+        li 
+          a(href='../../empty.html') Услуга 2
+        li 
+          a(href='../../empty.html') Услуга 3
+        li 
+          a(href='../../empty.html') Услуга 4
+    li 
+      a(href='./empty.html') Вакансии
+    li 
+      a(href='./empty.html') Новости
+    li.nav__submenu-link
+      a.nav__down Соглашения
+        span.icon-open
+      ul.nav__submenu 
+        li 
+          a(href='./empty.html') Соглашения 1
+        li 
+          a(href='./empty.html') Соглашения 2
+        li 
+          a(href='./empty.html') Соглашения 3
+        li 
+          a(href='./empty.html') Соглашения 4
+        li 
+          a(href='./empty.html') Соглашения 5
+  if !isRegistered
+    button.btn.btn_white.nav__signin войти            
+    button.btn.btn_blue.nav__login зарегистрироваться
+  else  
+    .nav__divider |
+    .nav__name Юлий Цезарь
+include nav__btn/nav__btn.pug

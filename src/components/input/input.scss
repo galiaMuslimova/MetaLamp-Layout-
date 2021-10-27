@@ -25,7 +25,10 @@
     }
 
     &::placeholder {
-      color: rgba(31, 32, 65, 0.25);         
+      color: rgba(31, 32, 65, 0.25); 
+      &[type=date] {
+        color: rgba(31, 32, 65, 0.75);
+      }   
     } 
 
     &[type=date] {
@@ -36,7 +39,7 @@
     }
   }
 
-  &.dropdown, &.subscript {
+  &.dropdown, &.subscript, &.date {
     input {     
       color: rgba(31, 32, 65, 0.75);
     }

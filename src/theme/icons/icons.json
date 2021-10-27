@@ -1,9 +1,10 @@
 {
-    "arrow": "\\f101",
-    "check": "\\f102",
-    "heart-empty": "\\f103",
-    "heart": "\\f104",
-    "open": "\\f105",
-    "star-empty": "\\f106",
-    "star": "\\f107"
+    "arrow_back": "\\f101",
+    "arrow": "\\f102",
+    "check": "\\f103",
+    "heart-empty": "\\f104",
+    "heart": "\\f105",
+    "open": "\\f106",
+    "star-empty": "\\f107",
+    "star": "\\f108"
 }
