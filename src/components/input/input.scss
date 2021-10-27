@@ -25,18 +25,17 @@
     }
 
     &::placeholder {
-      color: rgba(31, 32, 65, 0.25); 
-      &[type=date] {
-        color: rgba(31, 32, 65, 0.75);
-      }   
-    } 
+      color: rgba(31, 32, 65, 0.25);   
+    }     
+  }
 
-    &[type=date] {
+  &.date {
+    input {
       text-transform: uppercase;
-      &::-webkit-calendar-picker-indicator {
-        display: none;
-      }      
-    }
+      &::placeholder {
+        color: rgba(31, 32, 65, 0.75);
+      }
+    }    
   }
 
   &.dropdown, &.subscript, &.date {

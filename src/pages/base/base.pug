@@ -1,3 +1,5 @@
+include ../../components/header/header.pug
+
 //-<!DOCTYPE html>
 doctype html
 html
@@ -9,8 +11,7 @@ html
       //-background-image of page
       .back 
         block back
-      header
-        include ../../components/header/header.pug
+      header        
         +header()
       main
         block content     

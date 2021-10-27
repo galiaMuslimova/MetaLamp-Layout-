@@ -2,10 +2,6 @@
   display: grid; 
   grid-template: min-content 1fr min-content / 100%;
 
-  @media only screen and (max-width: 1024px) {
-    grid-template: min-content 1fr min-content / 100%;
-  }
-
   .back {
     grid-area: 1/1/span 2/span 1;
     height: 100%;

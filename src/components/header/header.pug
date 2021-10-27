@@ -1,6 +1,12 @@
 mixin header(isRegistered=false)  
   .header 
-    .container.header-container
-      include ../logo/logo.pug
-      include nav/nav.pug
+    .container.header__container
+      .header__logo
+        include ../logo/logo.pug
+      .header__nav
+        include nav/nav.pug
+      .header__registration 
+        include registration/registration.pug
+      .header__burger-btn
+        include burger-btn/burger-btn.pug
       

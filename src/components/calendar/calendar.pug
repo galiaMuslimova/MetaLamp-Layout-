@@ -1,7 +1,8 @@
 mixin calendar ()
-  .drop.card
-    .calendar
-    if(attributes.class=="select_card")
-      .row.row_fill.calendar__row
-        button.btn.btn_simple.calendar__reset(type="reset") очистить
-        button.btn.btn_simple.submit(type="button") применить
+  .drop
+    .card.calendar-card
+      .calendar
+      if(attributes.class=="select_card")
+        .row.row_fill.calendar__row
+          button.btn.btn_simple.calendar__reset(type="reset") очистить
+          button.btn.btn_simple.submit(type="button") применить
