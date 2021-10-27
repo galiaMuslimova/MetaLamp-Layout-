@@ -1,10 +1,8 @@
 .header {
   background-color: #fff;
-  height: 70px;   
+  min-height: 70px;
+  height: 100%;  
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  @media (max-width: 924px) {
-    height: 100%;
-  } 
 
   &__container { 
     display: grid;
@@ -16,7 +14,7 @@
     @media (max-width: 924px) {
       grid:
         "logo reg burger" 60px
-        "nav nav sub-nav" max-content 
+        "nav nav nav" max-content 
         /1fr max-content max-content;
       }
   }
@@ -28,7 +26,9 @@
   }
 
   &__nav {
+    height: 40px;
     @media (max-width: 924px) {
+      height: 100%;
       grid-area: nav;
     }
   }
