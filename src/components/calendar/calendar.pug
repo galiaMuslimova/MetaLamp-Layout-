@@ -1,7 +1,7 @@
-mixin calendar ()
+mixin calendar (type)
   .drop
     .card.calendar-card
-      .calendar
+      div(class=type)
       if(attributes.class=="select_card")
         .row.row_fill.calendar__row
           button.btn.btn_simple.calendar__reset(type="reset") очистить

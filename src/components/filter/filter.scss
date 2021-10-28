@@ -4,6 +4,9 @@
 
   &__item {
     margin-bottom: 30px;
+    .checkbox-list {
+      box-shadow: none;
+    }
   }     
 
   &__expandable {
