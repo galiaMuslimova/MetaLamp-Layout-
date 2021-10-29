@@ -17,7 +17,7 @@ include ../slider/slider.pug
         /*category=*/ "guests", 
         /*array*/ [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]) 
     .filter__item
-      +slider("filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
+      +slider("slider_filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
     .filter__item 
       h3 правила дома
       +checkbox("smoke", "Можно курить")
