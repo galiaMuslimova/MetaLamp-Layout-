@@ -1,5 +1,6 @@
 - const roomData = require('@c/room-card/room-card.json')
 include ../form/form.pug
+include ../double-date/double-date.pug
 
 .card.room-card   
   .card-inner
@@ -10,7 +11,7 @@ include ../form/form.pug
         h3= roomData.luxury?"люкс":""
         .p_lightGrey=  roomData.cost + 'р в сутки'
     .card-item
-      include ../double-date/double-date.pug
+      +double-date("datepicker_room")
     .card-item
       h3 гости 
       +form( 

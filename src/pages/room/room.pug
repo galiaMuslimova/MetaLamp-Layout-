@@ -3,20 +3,23 @@ include ../../components/icon-text/icon-text.pug
 include ../../components/chart/chart.pug
 include ../../components/review/review.pug
 include ../../components/like/like.pug
+include ../../components/bullet/bullet.pug
 
 block content
   -const selectedRoom = require("@/pages/room/room.json")
+  -function roomRequireAll(requireContext) { return requireContext.keys().map(requireContext) };
+  -const roomImages = roomRequireAll(require.context("@/pages/room/img/", true, /\.(jpg|png|jpeg)$/));
+
   .room
-    .room-image
-      div 
-        //img(src=require('../../components/catalog-list/img/888/888-1.png'))
-      .room-image-col
-        div   
-          //img(src=require('../../components/catalog-list/img/888/888-2.png'))
-        div 
-          //img(src=require('../../components/catalog-list/img/888/888-3.png'))
-    .container.room-container
-      .room-info           
+    .room__view
+      .room__image.room__image_1
+        img(srcset=roomImages[0])
+      .room__image.room__image_2
+        img(srcset=roomImages[1])
+      .room__image.room__image_3
+        img(srcset=roomImages[2])
+    .container.room__container
+      .room__info           
         h2 Сведения о номере
         +icon-text('Комфорт', 'Шумопоглощающие стены')
         +icon-text('Удобство', 'Окно в каждой из спален')
@@ -25,13 +28,15 @@ block content
         h2 Впечатления от номера              
         +chart(selectedRoom.review)
       .room__review 
-        .row
+        .row.row_fill
           h2 Отзывы посетителей номера
           p 2 отзыва
         -const data = require("@c/review/review.json")
         +review(data)
       .room__rules
         h2 Правила 
+        +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", 
+        "Время прибытия — после 13:00, а выезд до 12:00"])
       .room__cancel 
         h2 Отмена 
         p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.                

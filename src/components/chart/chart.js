@@ -29,8 +29,8 @@ $(function(){
       "Разочарован"
     ],
     datasets: [{
-      data: [{ value: chartData.Excellent, order: 4 }, { value: chartData.Good, order: 2 }, { value: chartData.Satisfactory, order: 3 }, { value: chartData.Disappointed, order: 1 }],
-      backgroundColor: [orange_gradient, green_gradient, blue_gradient, black_gradient]
+      data: [chartData.Disappointed, chartData.Satisfactory, chartData.Good, chartData.Excellent],
+      backgroundColor: [black_gradient, blue_gradient, green_gradient, orange_gradient]
     }]
   };
 
@@ -90,14 +90,12 @@ $(function(){
             boxWidth: 10,
             usePointStyle: true,
             pointStyle: "circle"
-          }
+          },
+          reverse: true
         },         
       },
-      scales: {
-        reverse: true,
-      },
       cutout: "90%",
-      responsive: false          
+      responsive: false,      
     }
   }   
 

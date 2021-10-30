@@ -1,11 +1,12 @@
 include ../form/form.pug
+include ../double-date/double-date.pug 
 
 .card.entry-card
   .card-inner
     .card-item
       h1 Найдём номера под ваши пожелания
     .card-item
-      include ../double-date/double-date.pug       
+      +double-date("datepicker_entry")
     .card-item
       h3 гости 
       +form( 

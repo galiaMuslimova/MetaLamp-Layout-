@@ -1,11 +1,13 @@
 include ../calendar/calendar.pug
 
-form
-  .double-date  
-    .double-date__item
-      h3 прибытие
-      +input("text", "ДД.ММ.ГГГГ")(class="date")
-    .double-date__item
-      h3 выезд
-      +input("text", "ДД.ММ.ГГГГ")(class="date")
-  +calendar("datepicker_entry")(class="select_card")
+
+mixin double-date(place)
+  form
+    .double-date  
+      .double-date__item
+        h3 прибытие
+        +input("text", "ДД.ММ.ГГГГ")(class="date")
+      .double-date__item
+        h3 выезд
+        +input("text", "ДД.ММ.ГГГГ")(class="date")
+    +calendar(place)(class="select_card")
