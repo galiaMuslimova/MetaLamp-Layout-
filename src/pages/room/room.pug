@@ -5,6 +5,7 @@ include ../../components/review/review.pug
 include ../../components/like/like.pug
 
 block content
+  -const selectedRoom = require("@/pages/room/room.json")
   .room
     .room-image
       div 
@@ -22,7 +23,7 @@ block content
         +icon-text('Уют', 'Номер оснащён камином')
       .room__chart
         h2 Впечатления от номера              
-        +chart(260, [130, 65, 65, 0])
+        +chart(selectedRoom.review)
       .room__review 
         .row
           h2 Отзывы посетителей номера

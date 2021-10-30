@@ -1,0 +1,14 @@
+{
+  "num": 888,
+  "luxury": true,
+  "cost": 9990,
+  "stars": 5,
+  "review": 145,
+  "voices": {
+    "total": 260,
+    "Excellent": 130,
+    "Good": 65,
+    "Satisfactory": 65,
+    "Disappointed": 0
+  }
+}
