@@ -23,10 +23,10 @@ $(function(){
   
   const data = {
     labels: [
-      "Великолепно",
-      "Хорошо",
+      "Разочарован",
       "Удовлетворительно",
-      "Разочарован"
+      "Хорошо",
+      "Великолепно"
     ],
     datasets: [{
       data: [chartData.Disappointed, chartData.Satisfactory, chartData.Good, chartData.Excellent],

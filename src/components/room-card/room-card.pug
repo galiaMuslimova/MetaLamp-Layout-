@@ -3,9 +3,12 @@ include ../form/form.pug
 include ../double-date/double-date.pug
 
 .card.room-card   
+  -const date = roomData.date
+  -const diff = Math.abs(+new Date(date[1]) - +new Date(date[0]));
+  -const days = diff/1000/60/60/24;
   .card-inner
     .card-item
-      .row.room-card-title
+      .row.room-card__title
         h4 №
         h2= roomData.num
         h3= roomData.luxury?"люкс":""
@@ -18,28 +21,32 @@ include ../double-date/double-date.pug
         /*category*/ "guests", 
         /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}])(class="select_card")
     .card-item
-      .room-card-calculation.calculation 
-        .calculation-item 
-          p= roomData.cost + '₽ х 4 суток'
-        .calculation-item
-        .calculation-item.cost
-          p 39 960₽
-        .calculation-item
-          p Сбор за услуги: скидка 2 179₽
-        .calculation-item.circle-i
+      .room-card__calculation.calculation 
+        .calculation__item 
+          p= roomData.cost + '₽ х '
+            span= days + 'суток'
+        .calculation__item
+        .calculation__item.cost
+          p 
+            span= roomData.cost*days + '₽'
+        .calculation__item
+          p Сбор за услуги: скидка 
+          span= roomData.discount + '₽'
+        .calculation__item.circle-i
           span i
-        .calculation-item.cost
+        .calculation__item.cost
           p 0₽
-        .calculation-item
+        .calculation__item
           p Сбор за дополнительные услуги
-        .calculation-item.circle-i
+        .calculation__item.circle-i
           span i
-        .calculation-item.cost
-          p 300₽    
+        .calculation__item.cost
+          p
+            span.room-card__fee= roomData.fee + '₽'   
     .card-item
-      .row.room-card-total.total 
+      .row.room-card__total.total 
         h2 Итого
         .total__divider
-        h2 38 081₽
+        h2= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
       button.btn.btn_link забронировать
         span.icon-arrow

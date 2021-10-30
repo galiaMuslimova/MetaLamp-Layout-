@@ -5,7 +5,7 @@
     margin: 0px;
   }
 
-  &-title {
+  &__title {
     justify-content: flex-start;
     align-items: baseline;    
     :last-child {
@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: minmax(min-content, 214px) 30px 1fr;
 
-    &-item {
+    &__item {
       margin-bottom: 10px;
       p {
         line-height: 18px;
