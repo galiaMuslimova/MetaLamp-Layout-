@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: row;
     gap: 20px;  
+    align-items: baseline;
 
     @media (max-width: 924px) {
       display: none;
@@ -25,20 +26,18 @@
   }
 
   &__item {    
+    display: grid;
+    align-items: center;
     > a {
       display: block;
-      line-height: 2.9em;
       &:hover, &:focus {        
         font-weight: bold;
         color: rgba(31, 32, 65, 0.75);
       } 
     }
     &_link {
-      display: grid;
-      grid-template-rows: 40px max-content;
-      align-items: center;
-      > a {
-        line-height: 1.9em;
+      @media (max-width: 924px) {
+        grid-template-columns: 1fr min-content;
       }
       span {
         font-size: 0.6em;
