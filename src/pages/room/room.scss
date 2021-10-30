@@ -6,6 +6,10 @@
     "image1 image2" 1fr
     "image1 image3" 1fr
     /0.68fr 0.32fr; 
+
+    @media(max-width: 800px) {
+      grid: "image1";
+    }
   }
 
   &__image {
@@ -14,9 +18,15 @@
     }
     &_2 {
       grid-area: image2;
+      @media(max-width: 800px) {
+        display: none;
+      }
     }
     &_3 {
       grid-area: image3;
+      @media(max-width: 800px) {
+        display: none;
+      }
     }
     img {
       width: 100%;
@@ -25,7 +35,7 @@
   }
 
   &__container {
-    padding-top: 70px;
+    padding-top: 5vw;
     display: grid;
     grid-column-gap: 5vw;
     grid-row-gap: 2vw;
@@ -45,23 +55,30 @@
         /1fr 380px
         ;  
       }
-      @media(max-width: 800px) {  
-      grid-template-areas:
+    @media(max-width: 800px) {  
+      grid:
         "card"
         "info"
         "chart"
         "review"
         "rules"
-        "cancel"        
+        "cancel" 
+        /1fr       
         ;  
       }    
   }
 
   &__info {
     grid-area: info;
+    @media(max-width: 800px) {
+      margin: auto;
+    }
   }
   &__chart {
     grid-area: chart;
+    @media(max-width: 800px) {
+      margin: auto;
+    }
   }
   &__review {
     grid-area: review;
@@ -71,6 +88,9 @@
   }
   &__card {
     grid-area: card;
+    @media(max-width: 800px) {
+      margin: auto;
+    }
   }
   &__rules {
     grid-area: rules;

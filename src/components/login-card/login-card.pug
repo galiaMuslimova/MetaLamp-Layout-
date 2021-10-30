@@ -1,6 +1,7 @@
 include ../input/input.pug
 include ../radio/radio.pug
 include ../toggle/toggle.pug
+include ../calendar/calendar.pug
 
 .card.login-card
   .card-inner
@@ -12,7 +13,9 @@ include ../toggle/toggle.pug
       +radio(["Мужчина", "Женщина"])
     .card-item
       h3 дата рождения 
-      +input("text", "ДД.ММ.ГГГГ")
+      form
+        +input("text", "ДД.ММ.ГГГГ")
+        +calendar("datepicker_login")(class="select_card")
     .card-item
       h3 данные для входа в сервис
       +input("text", "Email")
@@ -24,7 +27,7 @@ include ../toggle/toggle.pug
     .card-item
       .row.row_fill 
         p Уже есть аккаунт на Toxin
-        button.btn.btn_white войти
+        button.btn.btn_white.nav__signin войти
 
 
       

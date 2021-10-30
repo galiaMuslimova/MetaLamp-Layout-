@@ -3,8 +3,11 @@ extends ../base/base.pug
 block content
   .container
     .catalog
-      include ../../components/filter/filter.pug
-      .catalog__col
+      .catalog__filter
+        include ../../components/filter/filter.pug
+      .catalog__button
+        span.icon-open
+      .catalog__list
         .catalog__title
           h1 Номера, которые мы для вас подобрали
         .catalog__content

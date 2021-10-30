@@ -16,7 +16,6 @@ function showDateInInput (res, dp, element) {
     }
   }    
 }
-
 export function makeCalendar(element) {
   let dp = new AirDatepicker(element, {
     navTitles: {
@@ -31,14 +30,15 @@ export function makeCalendar(element) {
       showDateInInput(res, dp, element);
     }
   });
+  $(function () {
+    $(".calendar__reset").on("click", function () {
+      dp.clear();
+    })
+  })
   return dp;
 }
 
-$(function(){
-  $(".calendar__reset").on("click", function () {
-    datepicker_entry.clear();
-  })
-})    
+   
 
   
 

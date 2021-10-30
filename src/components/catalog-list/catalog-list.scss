@@ -2,7 +2,8 @@
   display: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  grid-column-gap: 1vw;
+  grid-column-gap: 12px;
+  grid-row-gap: 21px;
 }
 
 

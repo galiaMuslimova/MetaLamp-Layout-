@@ -16,7 +16,14 @@
         "logo reg burger" 60px
         "nav nav nav" max-content 
         /1fr max-content max-content;
-      }
+    }
+    @media (max-width: 600px) {
+      grid:
+        "logo burger" 60px
+        "reg reg" max-content
+        "nav nav" max-content 
+        /1fr max-content;
+    }
   }
 
   &__logo {
@@ -40,6 +47,13 @@
     @media (max-width: 924px) {
       grid-area: reg
     }
+    @media (max-width: 600px) {
+      display: none;
+      &_mobile {
+        display: flex; 
+        margin: auto;               
+      }
+    }     
   }
 
   &__burger-btn {
