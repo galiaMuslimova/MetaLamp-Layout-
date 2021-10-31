@@ -27,6 +27,7 @@
     align-items: center;
     > a {
       display: block;
+      line-height: 30px;
       &:hover, &:focus {        
         font-weight: bold;
         color: rgba(31, 32, 65, 0.75);

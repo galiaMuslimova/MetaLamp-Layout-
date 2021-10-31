@@ -3,12 +3,12 @@
     height: 100%;
     display: grid;
     grid: 
-      ".    .    ." 5.7vw
+      ".    .    ." 5.3vw
       "card .    ." max-content
-      ".    .    ." 18vw  
+      ".    .    ." 23.9vw  
       ".    . note" 48px
-      ".    .    ." 1.6vw
-      /max-content 1fr 297px
+      ".    .    ." 1.5vw
+      /max-content 1fr 293px
       ;
     @media (max-width: 830px) {
       grid:
@@ -20,6 +20,7 @@
 
     .note {  
       grid-area: note;
+      width: 300px;
       @media (max-width: 830px) {
         display: none;
       }

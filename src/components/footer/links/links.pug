@@ -1,31 +1,31 @@
 include ../../input/input.pug
 
 .links
-  .container
-    .row.row_fill.links__row
+  .container.links__container
       .col.links__col
-        include ../../logo/logo.pug
+        .links__logo
+          include ../../logo/logo.pug
         p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       .col.links__col
-        h3 Навигация 
+        h3.links__subtitle Навигация 
         a(href='../../empty.html') О нас
         a(href='../../empty.html') Новости
         a(href='../../empty.html') Служба поддержки
         a(href='../../empty.html') Услуги
       .col.links__col
-        h3 О нас
+        h3.links__subtitle О нас
         a(href='../../empty.html') О сервисе
         a(href='../../empty.html') Наша команда
         a(href='../../empty.html') Вакансии
         a(href='../../empty.html') Инвесторы
       .col.links__col
-        h3 Служба поддержки
+        h3.links__subtitle Служба поддержки
         a(href='../../empty.html') Соглашение
         a(href='../../empty.html') Сообщества
         a(href='../../empty.html') Связь с нами
       .col.links__col
-        h3 Подписка
+        h3.links__subtitle Подписка
         p Получайте специальные предложения и новости сервиса
-        form
+        form.links__form           
           +input("text", "Email")(class="subscript")
       

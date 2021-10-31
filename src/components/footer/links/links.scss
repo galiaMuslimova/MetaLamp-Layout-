@@ -1,16 +1,38 @@
 .links {
   background-color: #fff;
   border-bottom: 1px solid rgba(31, 32, 65, 0.25);
-  height: 372px;
+  border-top: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  height: 28vw;
   display: flex;
   align-items: center;
   @media only screen and (max-width: 1024px) {
     display: none;
   }
 
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(160px, max-content));
+    grid-column-gap: 3vw;
+  }
+
   &__col {
+    margin-top: 4px;
     max-width: 260px;
     align-items: flex-start;
-    gap: 20px;
+    gap: 14px;
+  }
+
+  &__subtitle {
+    margin: 4px 0px;
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  &__logo {
+    margin-bottom: 3px;
   }
 }
