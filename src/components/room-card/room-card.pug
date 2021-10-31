@@ -6,21 +6,21 @@ include ../double-date/double-date.pug
   -const date = roomData.date
   -const diff = Math.abs(+new Date(date[1]) - +new Date(date[0]));
   -const days = diff/1000/60/60/24;
-  .card-inner
-    .card-item
+  .card__inner
+    .card__item
       .row.room-card__title
         h4 №
         h2= roomData.num
         h3= roomData.luxury?"люкс":""
         .p_lightGrey=  roomData.cost + 'р в сутки'
-    .card-item
+    .card__item
       +double-date("datepicker_room")
-    .card-item
+    .card__item
       h3 гости 
       +form( 
         /*category*/ "guests", 
         /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}])(class="select_card")
-    .card-item
+    .card__item
       .room-card__calculation.calculation 
         .calculation__item 
           p= roomData.cost + '₽ х '
@@ -43,7 +43,7 @@ include ../double-date/double-date.pug
         .calculation__item.cost
           p
             span.room-card__fee= roomData.fee + '₽'   
-    .card-item
+    .card__item
       .row.room-card__total.total 
         h2 Итого
         .total__divider

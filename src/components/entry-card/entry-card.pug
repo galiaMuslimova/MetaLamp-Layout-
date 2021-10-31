@@ -2,17 +2,17 @@ include ../form/form.pug
 include ../double-date/double-date.pug 
 
 .card.entry-card
-  .card-inner
-    .card-item
+  .card__inner
+    .card__item
       h1 Найдём номера под ваши пожелания
-    .card-item
+    .card__item
       +double-date("datepicker_entry")
-    .card-item
+    .card__item
       h3 гости 
       +form( 
         /*category=*/ "guests", 
         /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}],
         /*value*/ "Сколько гостей")(class="select_card")
-    .card-item
+    .card__item
       button.btn.btn_link подобрать номер
         span.icon-arrow

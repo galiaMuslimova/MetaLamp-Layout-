@@ -1,7 +1,7 @@
 .input-row {
   height: 44px;
-  display: flex;
-  flex-direction: row;    
+  display: grid;
+  grid-template-columns: 1fr 44px;  
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   box-sizing: border-box;
