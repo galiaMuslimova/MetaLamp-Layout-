@@ -5,12 +5,13 @@ mixin catalog-card(item)
   .catalog-item
     +carousel(item.num)
     .catalog-item__content
-      .row.row_fill
-        .row
-          h4= '№' + item.num
+      .row.row_start
+        h4.catalog-item__num
+          span N
+          span.catalog-item__num_big= item.num
           if(item.luxury) 
-            .p_light люкс
-        p.p_lightGrey
+            span.catalog-item__num_light люкс
+        p.catalog-item__cost
           b= item.cost 
           span р в сутки
       .catalog-item__divider

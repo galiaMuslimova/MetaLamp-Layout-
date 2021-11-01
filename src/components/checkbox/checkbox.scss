@@ -3,7 +3,7 @@
 
   &__input {
     &:checked + .check__box:before {
-      display: inline-block;      
+      display: block;      
     }
   }
 
@@ -29,6 +29,10 @@
 
   &__text {
     width: 100%;
+  }
+
+  &__subtext {
+    padding-top: 6px;
   }
 }
 

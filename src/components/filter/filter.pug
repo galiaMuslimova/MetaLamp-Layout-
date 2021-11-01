@@ -23,13 +23,14 @@ include ../slider/slider.pug
       h3 правила дома
       .filter__checkbox        
         +checkbox("smoke", "Можно курить")
-        +checkbox("pet", "Можно с питомцами")(checked="checked")
-        +checkbox("invite", "Можно пригласить гостей <br></br> (до 10 человек)")    
+        +checkbox("pet", "Можно с питомцами")(class="checked")
+        +checkbox("invite", "Можно пригласить гостей (до 10 человек)")(class="checked")    
   .col
     .filter__item 
       h3 доступность
-      +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-      +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.") 
+      .filter__checkbox
+        +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+        +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.") 
     .filter__item 
       h3 удобства номера
       +form(
