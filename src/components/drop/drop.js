@@ -4,7 +4,7 @@ $(function () {
     selectForm.find(".drop").removeClass("active");
   });
 
-  $(document).on("click", function(e){
+ /* $(document).on("click", function(e){
     if($(e.target).closest("form").find(".drop").length == 1){
       console.log($(e.target).closest("form"))
       return
@@ -12,5 +12,5 @@ $(function () {
     $(".drop").each(function(){
       $(this).removeClass("active");
     })
-  })
+  })*/
 });

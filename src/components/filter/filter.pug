@@ -17,12 +17,14 @@ include ../slider/slider.pug
         /*category=*/ "guests", 
         /*array*/ [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]) 
     .filter__item
-      +slider("slider_filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
+      .filter__slider
+        +slider("slider_filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
     .filter__item 
       h3 правила дома
-      +checkbox("smoke", "Можно курить")
-      +checkbox("pet", "Можно с питомцами")
-      +checkbox("invite", "Можно пригласить гостей (до 10 человек)")    
+      .filter__checkbox        
+        +checkbox("smoke", "Можно курить")
+        +checkbox("pet", "Можно с питомцами")(checked="checked")
+        +checkbox("invite", "Можно пригласить гостей <br></br> (до 10 человек)")    
   .col
     .filter__item 
       h3 доступность

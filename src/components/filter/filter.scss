@@ -1,13 +1,25 @@
 .filter {
-  width: 266px;
-  padding: 25px 5px 0px 0px;
+  min-width: 266px;
+  width: 100%;
+  padding-top: 2.25vw;
 
   &__item {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     .checkbox-list {
       box-shadow: none;
     }
-  }     
+  }   
+  
+  &__slider {
+    margin: 10px 0px;
+  }
+
+  &__checkbox {
+    padding: 12px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   &__expandable {
     align-items: baseline;

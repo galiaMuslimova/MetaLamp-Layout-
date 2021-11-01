@@ -1,7 +1,7 @@
 .catalog {
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-column-gap: 3vw;
+  grid-column-gap: 4.5vw;
 
   @media only screen and (max-width: 900px) {
     grid-template-columns: 100%;

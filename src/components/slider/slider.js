@@ -4,6 +4,7 @@ import 'nouislider/dist/nouislider.css';
 $(function () {
   function createSlider(el) {    
     let sliderPlace = el.find(".slider__body");
+
     let slider = noUiSlider.create(sliderPlace[0], {
       start: [5000, 10000],
       behaviour: 'drag',
@@ -14,11 +15,16 @@ $(function () {
       }
     });
 
+    function showResult(values) {
+      el.find(".slider__result").text((parseInt(values[0])).toLocaleString() + '₽ - ' + (parseInt(values[1])).toLocaleString() + '₽');
+    }
+
     slider.on("slide", function (values) {
-      el.find(".slider__result").text(parseInt(values[0]) + '₽ - ' + parseInt(values[1]) + '₽');
+      showResult(values)
     })
+    
     let result = slider.get();
-    el.find(".slider__result").text(parseInt(result[0]) + '₽ - ' + parseInt(result[1]) + '₽');
+    showResult(result)
 
     return slider;
   };   
