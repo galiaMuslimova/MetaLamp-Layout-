@@ -20,32 +20,35 @@ include ../slider/slider.pug
       .filter__slider
         +slider("slider_filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
     .filter__item 
-      h3 правила дома
-      .filter__checkbox        
-        +checkbox("smoke", "Можно курить")
-        +checkbox("pet", "Можно с питомцами")(class="checked")
-        +checkbox("invite", "Можно пригласить гостей (до 10 человек)")(class="checked")    
+      form.form_checkbox
+        h3 правила дома
+        .form_checkbox__list        
+          +checkbox("smoke", "Можно курить")
+          +checkbox("pet", "Можно с питомцами")(class="checked")
+          +checkbox("invite", "Можно пригласить гостей (до 10 человек)")(class="checked")    
   .col
     .filter__item 
-      h3 доступность
-      .filter__checkbox
-        +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-        +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.") 
+      form.form_checkbox
+        h3 доступность
+        .form_checkbox__list
+          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.") 
     .filter__item 
       h3 удобства номера
       +form(
         /*category=*/ "placement", 
         /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
     .filter__item 
-      form
+      form.form_checkbox
         .row.row_fill.filter__expandable
           h3 дополнительные удобства
           button.input__open.form_btn(type="button")
-            i.icon-open
-        .drop.checkbox-list 
-          +checkbox("breakfast", "Завтрак")
-          +checkbox("table", "Письменный стол")(class="checked")
-          +checkbox("chair", "Стул для кормления")(class="checked")
-          +checkbox("crib", "Кроватка")(class="checked")
-          +checkbox("TV", "Телевизор")
-          +checkbox("shampoo", "Шампунь")
+            span.icon-open
+        .drop.form_checkbox__drop
+          .form_checkbox__list 
+            +checkbox("breakfast", "Завтрак")
+            +checkbox("table", "Письменный стол")(class="checked")
+            +checkbox("chair", "Стул для кормления")(class="checked")
+            +checkbox("crib", "Кроватка")(class="checked")
+            +checkbox("TV", "Телевизор")
+            +checkbox("shampoo", "Шампунь")

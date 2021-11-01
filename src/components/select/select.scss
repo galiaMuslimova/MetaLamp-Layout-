@@ -5,6 +5,7 @@
   box-sizing: border-box;
   &__row {
     padding-bottom: 7px;
+    align-items: center;
   }
   &__reset {
     visibility: hidden;

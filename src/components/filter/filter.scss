@@ -3,47 +3,53 @@
   width: 100%;
   padding-top: 2vw;
 
+  @media only screen and (max-width: 900px) {
+    z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-column-gap: 40px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
   &__item {
-    margin-bottom: 20px;
-    .checkbox-list {
-      box-shadow: none;
-    }
+    margin-bottom: 20px;    
   }   
   
   &__slider {
     margin: 10px 0px;
   }
 
-  &__checkbox {
-    padding: 12px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   &__expandable {
-    align-items: baseline;
-    padding: 5px 10px 5px 0px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .filter {
-    z-index: 2;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-column-gap: 40px;
-
-    .col {
-      max-width: 320px;
+    align-items: center;
+    padding: 5px 10px 0px 0px;
+    height: 20px;
+    margin-bottom: 5px;
+    h3 {
+      margin-bottom: 0;
+    }
+    .input__open.active {      
+      span::before {
+        display: block;
+        transform: rotateZ(180deg);
+      }      
     }
   }
-}
 
-@media only screen and (max-width: 600px) {
-  .filter {
-    grid-template-columns: 1fr;
-    justify-items: center;
+  .col {
+    max-width: 320px;
+  }
+
+  .drop {
+    margin-top: 0px;
   }
 }
+
+
+
+    
+
