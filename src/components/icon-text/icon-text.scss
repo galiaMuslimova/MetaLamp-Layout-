@@ -1,8 +1,12 @@
 .icon-text {
   width: 100%;
+  display: grid;
+  grid-template-columns: 53px 1fr;
+  margin: 21px 0px 19px 4px;
 
-  &>.row {
-    margin: 23px 0px 17px 0px;
+  &__icon {
+    display: flex;
+    align-items: center;
   }
 
   &__title {
