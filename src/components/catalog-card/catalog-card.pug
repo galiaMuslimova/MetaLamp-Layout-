@@ -5,18 +5,16 @@ mixin catalog-card(item)
   .catalog-item
     +carousel(item.num)
     .catalog-item__content
-      .row.row_start
-        h4.catalog-item__num
-          span N
-          span.catalog-item__num_big= item.num
-          if(item.luxury) 
-            span.catalog-item__num_light люкс
-        p.catalog-item__cost
-          b= item.cost 
-          span р в сутки
+      .row
+        h4.catalog-item__num №
+        h2.catalog-item__num_big= item.num
+        if(item.luxury) 
+          h3.catalog-item__num_light люкс
+        .catalog-item__cost_bold= item.cost.toLocaleString() + '₽'
+        p.catalog-item__cost_small в сутки
       .catalog-item__divider
       .row.row_fill
         +rate(item.stars)                 
-        p.p_lightGrey
-          b= item.review 
-          span отзывов
+        p.catalog-item__review
+          span.catalog-item__review_bold= item.review 
+          span Отзывов

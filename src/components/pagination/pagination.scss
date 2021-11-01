@@ -1,6 +1,7 @@
 .pagination {
   text-align: center;
   user-select: none;
+  font-size: 12px;
 
   &__item {
     display: inline-block;
@@ -19,6 +20,13 @@
       }
       span {
         color: white;
+
+        &:before {
+          display: block;
+          font-size: 1.4em;
+          line-height: 1.4em;
+          margin: 0.3em;
+        }
       }
     }
 

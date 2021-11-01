@@ -1,7 +1,7 @@
 .catalog {
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-column-gap: 4.5vw;
+  grid-column-gap: 4vw;
 
   @media only screen and (max-width: 900px) {
     grid-template-columns: 100%;
@@ -54,6 +54,15 @@
   
   &__pagination {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: max-content;
+    margin: 2.7vw auto 4.5vw auto;
+    padding-right: 15px;
+  }
+
+  &__pag-text {
+    width: max-content;
+    margin: 0 auto;
+    padding: 7px;
   }
 }

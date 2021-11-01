@@ -7,21 +7,57 @@
   border-radius: 4px;
 
   &__content {
-    padding: 20px;
+    padding: 20px 17px 20px 20px;
     .row {
-      align-items: center;
+      align-items: flex-end;
       line-height: 20px;
+      &:last-child {
+        align-items: center;
+      }
     }
   }
 
-  &__cost {
-    margin-left: auto;
+  &__num {
+    line-height: 20px;
+    &_big {
+      font-size: 20px;
+      margin: 0;
+      padding: 0em 0.2em;
+    }
+    &_light {
+      color: #BC9CFF;
+      margin: 0;
+      padding: 0.2em;
+    }
   }
-  
+
+  &__cost {    
+    &_bold {
+      color: rgba(31, 32, 65, 0.5);
+      margin-left: auto;
+      font-weight: bold;
+      padding: 0px 4px;
+    }    
+    &_small {
+      color: rgba(31, 32, 65, 0.5);
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
   &__divider {
     height: 1px;
     background: rgba(31, 32, 65, 0.1);
     margin: 10px 0px;
   }  
+
+  &__review {
+    padding: 0px 2px;
+    color: rgba(31, 32, 65, 0.5);
+    &_bold {
+      font-weight: bold;
+      padding: 0.3em;
+    }
+  }
 }
 
