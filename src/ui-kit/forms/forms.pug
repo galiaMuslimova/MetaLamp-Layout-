@@ -42,10 +42,12 @@ include ../../components/review/review.pug
     //checkbox, radio...
     .block2 
       .checkbox-block
-        h3 Checkbox Buttons
-        +checkbox("smoke", "Можно курить")
-        +checkbox("pet", "Можно с питомцами")
-        +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
+        form.form_checkbox
+          h3 Checkbox Buttons
+          .form_checkbox__list
+            +checkbox("smoke", "Можно курить")
+            +checkbox("pet", "Можно с питомцами")
+            +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
       .radio-block
         h3 radio buttons
         +radio(["Мужчина", "Женщина"])
@@ -73,8 +75,9 @@ include ../../components/review/review.pug
           +rate(5)  
     
     //slider, buttons...
-    .block3 
-      +slider("forms", "Range Slider")
+    .block3
+      .forms__slider
+        +slider("slider_forms", "Range Slider")
       .buttons
         h3 buttons 
         .row.row_start 
@@ -140,7 +143,7 @@ include ../../components/review/review.pug
             h3 expandable checkbox list
             button.input__open.form_btn(type="button")
               i.icon-down-open
-          .drop.checkbox-list 
+          .drop.checkbox-list.filter_checkbox__list
             +checkbox("breakfast", "Завтрак")
             +checkbox("table", "Письменный стол")(class="checked")
             +checkbox("chair", "Стул для кормления")(class="checked")
@@ -163,10 +166,11 @@ include ../../components/review/review.pug
     
     //rich checkbox
     .block9 
-      form
+      form.filter_checkbox
         h3 Rich Checkbox Buttons
-        +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-        +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")   
+        .filter_checkbox__list
+          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")   
    
     //bullet list
     .block10 

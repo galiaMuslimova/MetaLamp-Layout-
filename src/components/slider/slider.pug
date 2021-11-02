@@ -1,8 +1,9 @@
 mixin slider(type, title, text)
   form(class=type)
-    .row.row_fill
+    .row.row_fill.slider__row
       h3= title
       p.p_small.slider__result
-    .row
+    .row.slider__row
       .slider__body
-    p.slider__text= text 
+    if text
+      p.slider__text= text 

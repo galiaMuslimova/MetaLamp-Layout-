@@ -1,13 +1,15 @@
 .radio {
   position: relative;
   gap: 20px;
-  label {
+
+  &__label {
     gap: 10px;
     align-items: center;  
-    position: relative;  
-    p {
-      color: rgba(31, 32, 65, 0.5);
-    }
+    position: relative; 
+  }
+
+  &__text {
+    color: rgba(31, 32, 65, 0.5);
   }
 
   &__input {   

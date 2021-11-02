@@ -16,6 +16,10 @@
     justify-items: center;
   }
 
+  &__col {
+    max-width: 320px;
+  }
+
   &__item {
     margin-bottom: 20px;    
   }   
@@ -38,11 +42,7 @@
         transform: rotateZ(180deg);
       }      
     }
-  }
-
-  .col {
-    max-width: 320px;
-  }
+  }  
 
   .drop {
     margin-top: 0px;

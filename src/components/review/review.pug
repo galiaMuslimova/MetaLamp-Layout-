@@ -2,14 +2,14 @@ include ../like/like.pug
 
 mixin review(data)
   each val in data
-    .review-item
+    .review
       .row
-        .col
+        .col.review__col
           .review__image
             img(srcset= require("@c/review/img/" + val.image))
           .review__like 
             +like(val.like)
-        .col 
+        .col.review__col 
           .review__title= val.name 
           .review__subtitle= val.time 
           .review__content= val.content

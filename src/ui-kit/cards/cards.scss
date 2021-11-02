@@ -5,9 +5,10 @@
   grid-template-columns: repeat(3, min-content);
   grid-column-gap: 40px;
 
-  &-col {
+  &__col {
     display: flex;
     flex-direction: column;
+    width: 380px;
     gap: 40px;   
     #calendar {
       width: 320px;
