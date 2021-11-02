@@ -41,14 +41,15 @@
 
   &__container {
     padding-top: 5vw;
+    padding-bottom: 4vw;
     display: grid;
-    grid-column-gap: 5vw;
-    grid-row-gap: 2vw;
+    grid-column-gap: 4.8vw;
+    grid-row-gap: 1vw;
     grid: 
     "info chart card"
     "review review card"
-    "rules cancel card" 
-    / 1fr   1fr   380px      
+    "rules cancel card"
+    /20vw 24vw 380px      
     ;
 
     @media(max-width: 1040px) {   
@@ -87,8 +88,9 @@
   }
   &__review {
     grid-area: review;
-    .row {
-      align-items: center;
+    >.row {
+      align-items: baseline;
+      margin-bottom: 19px;
     }
   }
   &__card {
@@ -99,8 +101,15 @@
   }
   &__rules {
     grid-area: rules;
+    >h2 {
+      margin-left: 20px;
+      margin-bottom: 18px;
+    }
   }
   &__cancel {
     grid-area: cancel;
+    >h2 {
+      margin-bottom: 18px;
+    }
   }
 }

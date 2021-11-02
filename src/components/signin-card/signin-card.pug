@@ -5,8 +5,10 @@ include ../input/input.pug
     .card__item 
       h1 Войти
     .card__item 
-      +input("text", "Email")
-      +input("text", "Пароль")
+      .card__input
+        +input("text", "Email")
+      .card__input
+        +input("text", "Пароль")
     .card__item 
       button.btn.btn_link Войти
         span.icon-arrow

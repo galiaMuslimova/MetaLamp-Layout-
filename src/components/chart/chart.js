@@ -36,6 +36,7 @@ $(function(){
 
   const config = {
     type: 'doughnut',
+    left: 0,
     data: data,
     plugins: [{
       id: 'text1',
@@ -47,8 +48,7 @@ $(function(){
         ctx.restore();
         ctx.font = "bold 24px 'Montserrat','Arial',sans-serif";
         ctx.fillStyle = "#BC9CFF";
-        ctx.textBaseline = "middle";
-        
+        ctx.textBaseline = "middle";        
 
         var text = chartData.total,
           textX = Math.round((width - ctx.measureText(text).width) / 2),

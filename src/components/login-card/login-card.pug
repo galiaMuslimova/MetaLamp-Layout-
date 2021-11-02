@@ -8,8 +8,10 @@ include ../calendar/calendar.pug
     .card__item 
       h1 Регистрация аккаунта
     .card__item
-      +input('text', 'Имя')
-      +input('text', 'Фамилия')
+      .card__input
+        +input('text', 'Имя')
+      .card__input
+        +input('text', 'Фамилия')
       +radio(["Мужчина", "Женщина"])
     .card__item
       h3 дата рождения 
@@ -18,11 +20,13 @@ include ../calendar/calendar.pug
         +calendar("datepicker_login")(class="select_card")
     .card__item
       h3 данные для входа в сервис
-      +input("text", "Email")
-      +input("text", "Пароль")
+      .card__input
+        +input("text", "Email")
+      .card__input
+        +input("text", "Пароль")
       +toggle("Получать спецпредложения")
     .card__item
-      button.btn.btn_link подобрать номер
+      button.btn.btn_link зарегистрироваться
         span.icon-arrow
     .card__item
       .row.row_fill 
