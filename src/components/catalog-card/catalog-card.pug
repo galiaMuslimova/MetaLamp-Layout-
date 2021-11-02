@@ -8,8 +8,7 @@ mixin catalog-card(item)
       .row
         h4.catalog-item__num №
         h2.catalog-item__num_big= item.num
-        if(item.luxury) 
-          h3.catalog-item__num_light люкс
+        h3.catalog-item__num_light= item.luxury?"люкс":""
         .catalog-item__cost_bold= item.cost.toLocaleString() + '₽'
         p.catalog-item__cost_small в сутки
       .catalog-item__divider

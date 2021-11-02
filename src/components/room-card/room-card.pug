@@ -9,10 +9,11 @@ include ../double-date/double-date.pug
   .card__inner
     .card__item
       .row.room-card__title
-        h4 №
-        h2= roomData.num
-        h3= roomData.luxury?"люкс":""
-        .p_lightGrey=  roomData.cost + 'р в сутки'
+        h4.catalog-item__num №
+        h1.room-card__num= roomData.num
+        h3.catalog-item__num_light= roomData.luxury?"люкс":""
+        .catalog-item__cost_bold= roomData.cost.toLocaleString() + '₽'
+        p.catalog-item__cost_small в сутки
     .card__item
       +double-date("datepicker_room")
     .card__item
@@ -28,10 +29,10 @@ include ../double-date/double-date.pug
         .calculation__item
         .calculation__item.cost
           p 
-            span= roomData.cost*days + '₽'
+            span= (roomData.cost*days).toLocaleString() + '₽'
         .calculation__item
           p Сбор за услуги: скидка 
-          span= roomData.discount + '₽'
+            span= (roomData.discount).toLocaleString() + '₽'
         .calculation__item.circle-i
           span i
         .calculation__item.cost
