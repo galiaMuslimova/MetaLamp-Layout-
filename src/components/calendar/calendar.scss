@@ -24,6 +24,7 @@
 
   &-nav {
     border-bottom: none;
+    padding: 18px;
     &--title {
       font-weight: bold;
       font-size: 19px;
@@ -42,7 +43,10 @@
   }
 
   &-body {
-    &--day-name {
+    &--day-names {
+      margin-bottom: 12px;
+    }
+    &--day-name {      
       text-transform: none;
       font-weight: bold;
       font-size: 12px;
