@@ -2,4 +2,14 @@
   max-width: 380px;
   max-height: 646px;
   margin: 1.3vw auto;
+
+  &__radio {
+    padding: 1px;
+  }
+
+  &__button {
+    button {
+      padding: 0px 24px;
+    }
+  }
 }

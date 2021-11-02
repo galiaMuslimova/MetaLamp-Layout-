@@ -10,25 +10,28 @@
     "image1 image3" 50%
     /0.68fr 0.32fr; 
 
-    @media(max-width: 800px) {
+    @media(max-width: 770px) {
       grid: "image1";
     }
   }
 
   &__image {
     height: max-content;
+    @media(max-width: 770px) {
+      height: 100%;
+    }
     &_1 {
       grid-area: image1;
     }
     &_2 {
       grid-area: image2;
-      @media(max-width: 800px) {
+      @media(max-width: 770px) {
         display: none;
       }
     }
     &_3 {
       grid-area: image3;
-      @media(max-width: 800px) {
+      @media(max-width: 770px) {
         display: none;
       }
     }
@@ -49,19 +52,19 @@
     "info chart card"
     "review review card"
     "rules cancel card"
-    /20vw 24vw 380px      
+    /minmax(280px, 290px) minmax(320px, 1fr) 380px      
     ;
 
-    @media(max-width: 1040px) {   
+    @media(max-width: 1120px) {   
       grid:
         "info card"
         "chart card"
         "review review"
         "rules cancel"
-        /1fr 380px
+        /1fr minmax(380px, 1fr)
         ;  
       }
-    @media(max-width: 800px) {  
+    @media(max-width: 770px) {  
       grid:
         "card"
         "info"

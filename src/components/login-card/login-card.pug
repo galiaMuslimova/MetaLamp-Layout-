@@ -12,7 +12,8 @@ include ../calendar/calendar.pug
         +input('text', 'Имя')
       .card__input
         +input('text', 'Фамилия')
-      +radio(["Мужчина", "Женщина"])
+      .login-card__radio 
+        +radio(["Мужчина", "Женщина"])
     .card__item
       h3 дата рождения 
       form
@@ -24,14 +25,16 @@ include ../calendar/calendar.pug
         +input("text", "Email")
       .card__input
         +input("text", "Пароль")
-      +toggle("Получать спецпредложения")
+      .login-card__toggle
+        +toggle("Получать спецпредложения")
     .card__item
       button.btn.btn_link зарегистрироваться
         span.icon-arrow
     .card__item
       .row.row_fill 
         p Уже есть аккаунт на Toxin
-        button.btn.btn_white.nav__signin войти
+        .login-card__button
+          button.btn.btn_white.nav__signin войти
 
 
       

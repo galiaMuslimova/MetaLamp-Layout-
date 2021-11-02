@@ -1,5 +1,10 @@
 .chart {
-  height: 120px;  
-  margin-top: 1.5vw;
+  &__container {
+    height: 125px; 
+    width: 310px; 
+    margin-top: 1.35vw;
+    position: relative;
+  }
+  
 }
 

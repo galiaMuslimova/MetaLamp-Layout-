@@ -1,5 +1,7 @@
 import Chart from 'chart.js/auto';
 
+//take data from "@/pages/room/room.json".voices and use it to create chart
+
 $(function(){
   const ctx = $(".chart__content")[0].getContext('2d');
   const chartData = (require("@/pages/room/room.json")).voices;
@@ -35,16 +37,15 @@ $(function(){
   };
 
   const config = {
-    type: 'doughnut',
-    left: 0,
+    type: 'doughnut',    
     data: data,
     plugins: [{
       id: 'text1',
       beforeDraw: function (chart) {
-        var width = chart.chartArea.width,
+        let width = chart.chartArea.width,          
           height = chart.chartArea.height,
           ctx = chart.ctx;
-
+          
         ctx.restore();
         ctx.font = "bold 24px 'Montserrat','Arial',sans-serif";
         ctx.fillStyle = "#BC9CFF";
@@ -79,12 +80,17 @@ $(function(){
         }
       }],
     options: {
+      maintainAspectRatio: false,
+      cutout: "90%",
       plugins: {
         legend: {
           position: "right",
+          align: 'end', 
+          maxWidth: 175,         
           labels: {
             font: {
-              family: "'Montserrat', 'Arial', sans-serif"
+              family: "'Montserrat', 'Arial', sans-serif",
+              size: 14
             },
             boxHeight: 10,
             boxWidth: 10,
@@ -93,9 +99,7 @@ $(function(){
           },
           reverse: true
         },         
-      },
-      cutout: "90%",
-      responsive: false,      
+      }
     }
   }   
 
