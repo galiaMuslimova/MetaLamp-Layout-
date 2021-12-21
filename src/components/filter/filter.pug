@@ -25,13 +25,13 @@ include ../slider/slider.pug
         .form_checkbox__list        
           +checkbox("smoke", "Можно курить")
           +checkbox("pet", "Можно с питомцами")(class="checked")
-          +checkbox("invite", "Можно пригласить гостей (до 10 человек)")(class="checked")    
+          +checkbox("invite", "Можно пригласить гостей \n (до 10 человек)")(class="checked")    
   .col
     .filter__item 
       form.form_checkbox
         h3 доступность
         .form_checkbox__list
-          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере \n не менее 91 см.")
           +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.") 
     .filter__item 
       h3 удобства номера

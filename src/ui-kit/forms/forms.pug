@@ -18,7 +18,7 @@ include ../../components/review/review.pug
       form
         .row.row_fill.row_title
           h3 Text Field
-          h3 default
+          h3.row_title__default default
         +input("E-mail", "Email")   
       form
         .row.row_fill.row_title
@@ -46,39 +46,42 @@ include ../../components/review/review.pug
           h3 Checkbox Buttons
           .form_checkbox__list
             +checkbox("smoke", "Можно курить")
-            +checkbox("pet", "Можно с питомцами")
-            +checkbox("invite", "Можно пригласить гостей (до 10 человек)")
-      .radio-block
+            +checkbox("pet", "Можно с питомцами")(class="checked")
+            +checkbox("invite", "Можно пригласить гостей \n (до 10 человек)")(class="checked")
+      .form-block.radio-block
         h3 radio buttons
         +radio(["Мужчина", "Женщина"])
-      form
-        h3 toggle
-        +toggle("Получать спецпредложения", "checked")
-        +toggle("Получать спецпредложения")
-      form
-        h3 like button 
-        .row.row_start
-          +like({              
-            "count": "2",
-            "isCheck": false,
-            "name": "like-1"  
-          })
-          +like({              
-            "count": "12",
-            "isCheck": "checked",
-            "name": "like-2"  
-          })
-      form
-        h3 rate button
-        .row.row_start 
-          +rate(4)
-          +rate(5)  
+      .form-block.toggle-block
+        form
+          h3 toggle
+          +toggle("Получать спецпредложения", "checked")
+          +toggle("Получать спецпредложения")
+      .form-block.like-block
+        form
+          h3 like button 
+          .row.row_start
+            +like({              
+              "count": "2",
+              "isCheck": false,
+              "name": "like-1"  
+            })
+            +like({              
+              "count": "12",
+              "isCheck": "checked",
+              "name": "like-2"  
+            })
+      .form-block.rate-block
+        form
+          h3 rate button
+          .row.row_start 
+            +rate(4)
+            +rate(5)  
     
     //slider, buttons...
     .block3
       .forms__slider
         +slider("slider_forms", "Range Slider")
-      .buttons
+      .buttons-block
         h3 buttons 
         .row.row_start 
           button.btn.btn_blue click me
@@ -91,16 +94,29 @@ include ../../components/review/review.pug
           button.btn.btn_simple.hovered click me
         button.btn.btn_link перейти к оплате
           span.icon-arrow
-      include ../../components/pagination/pagination.pug
-    
+      .pagination-block 
+        h3 pagination
+        .pagination.pagination_forms
+          .pagination__list 
+            .pagination__item.pagination__item_current.active 1
+            .pagination__item 2
+            .pagination__item 3
+            .pagination__item ...
+            .pagination__item 15
+            .pagination__item.pagination__item_next  
+              span.icon-arrow
+          p.pagination__text 1 – 12 из 100+ вариантов аренды 
+
     //input filter width
     .block4
-      form
-        h3 filter date dropdown
-        +input("text", "19 авг - 23 авг")(class="dropdown")
-      form
-        h3 subscription text field
-        +input("text", "Email")(class="subscript")
+      .filter-date-block
+        form
+          h3 filter date dropdown
+          +input("text", "19 авг - 23 авг")(class="dropdown")
+      .filter-subscription-block
+        form
+          h3 subscription text field
+          +input("text", "Email")(class="subscript")
     
     //dropdown first column
     .block5
@@ -111,7 +127,7 @@ include ../../components/review/review.pug
         +form(
           /*category=*/ "placement", 
           /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
-      .form-select.expanded
+      .form-select.js-expanded
         .row.row_fill.row_title
           h3 dropdown 
           h3 expanded
@@ -121,7 +137,7 @@ include ../../components/review/review.pug
     
     //dropdown second column
     .block6
-      .form-select
+      .form-select.js-expanded
         h3 dropdown 
         +form( 
           /*category=*/ "guests", 
@@ -129,20 +145,20 @@ include ../../components/review/review.pug
     
     //dropdown third column
     .block7
-      .form-select.expanded
+      .form-select.js-expanded
         h3 dropdown 
         +form( 
           /*category=*/ "guests", 
-          /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 1}])(class="select_card")
+          /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}])(class="select_card")
     
     //expandable list
     .block8
       .form-select
         form
-          .row.row_fill
+          .row.row_fill.filter__expandable
             h3 expandable checkbox list
             button.input__open.form_btn(type="button")
-              i.icon-down-open
+              span.icon-open
           .drop.checkbox-list.filter_checkbox__list
             +checkbox("breakfast", "Завтрак")
             +checkbox("table", "Письменный стол")(class="checked")
@@ -150,13 +166,13 @@ include ../../components/review/review.pug
             +checkbox("crib", "Кроватка")(class="checked")
             +checkbox("TV", "Телевизор")
             +checkbox("shampoo", "Шампунь")
-      .form-select.expanded
-        form
-          .row.row_fill
+      .form-select.expanded.js-expanded
+        form.form_checkbox
+          .row.row_fill.filter__expandable
             h3 expandable checkbox list
-            button.input__open.form_btn(type="button")
-              i.icon-down-open   
-          .drop.checkbox-list 
+            button.input__open.active.form_btn(type="button")
+              span.icon-open   
+          .drop.form_checkbox__drop 
             +checkbox("breakfast", "Завтрак")
             +checkbox("table", "Письменный стол")(class="checked")
             +checkbox("chair", "Стул для кормления")(class="checked")
@@ -169,14 +185,14 @@ include ../../components/review/review.pug
       form.filter_checkbox
         h3 Rich Checkbox Buttons
         .filter_checkbox__list
-          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")   
+          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере  \n не менее 91 см.")
+          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  \n  и проводит до номера.")   
    
     //bullet list
     .block10 
       form
         h3 bullet list 
-        +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+        +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, \n а выезд до 12:00"])
     
     //icon text
     .block11 

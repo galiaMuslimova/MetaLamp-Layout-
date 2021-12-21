@@ -3,7 +3,8 @@
   font-size: 12px;
   line-height: 15px;
   font-weight: bold;
-  outline: none;  
+  outline: none; 
+  box-sizing: border-box; 
 
   &_blue, &_white, &_link {
     height: 44px;
@@ -31,7 +32,7 @@
     color: #BC9CFF;
     background-color: #fff;
     border: 2px solid;
-    padding: 0px 18px;
+    padding: 0px 16px;
     border-image: linear-gradient(rgba(188, 156, 255, 1) rgba(139, 164, 249, 1));
   }
 

@@ -3,10 +3,15 @@
     align-items: baseline;
     padding-bottom: 10px;
   }
+
   &__ellipse {
     min-width: 10px;
     height: 10px;
     border-radius: 50%;
     background: rgba(31, 32, 65, 0.25);
+  }
+
+  &__text {
+    white-space: pre-wrap;
   }
 }

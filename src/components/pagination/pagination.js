@@ -43,7 +43,7 @@ function showPage(pageNum) {
 export function createPagination(el){
   let currentPage = 1;
 
-  $(".pagination").append(
+  $(el).append(
     $("<li>").addClass("pagination__item").addClass("pagination__item_previous").append($("<span>").addClass("icon-arrow_back")),
     $("<li>").addClass("pagination__item").addClass("pagination__item_next").append($("<span>").addClass("icon-arrow"))
   );
@@ -65,7 +65,10 @@ export function createPagination(el){
 }
 
 $(function(){
-  createPagination()
+  $.fn.pagination = function () {
+    createPagination(this);
+    return this;
+  };
 });
 
   
