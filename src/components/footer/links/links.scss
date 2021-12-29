@@ -13,14 +13,13 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(5, minmax(160px, max-content));
-    grid-column-gap: 2.7vw;
+    grid-column-gap: 2.74vw;
   }
 
   &__col {
-    margin-top: 4px;
     max-width: 260px;
     align-items: flex-start;
-    gap: 14px;
+    gap: 13px;
   }
 
   &__subtitle {

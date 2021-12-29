@@ -4,21 +4,21 @@ mixin carousel(num)
   -const images = requireAll(require.context("@c/catalog-list/img/", true, /\.(jpg|png|jpeg)$/));
 
   .carousel  
-    .carousel__image
-      .carousel__slide.shown
-        img(srcset=images[0])
+    .carousel__image.js-carousel__image
+      .carousel__slide.shown.js-shown
+        img(src=images[0] alt='room image')
       .carousel__slide
-        img(srcset=images[1])
+        img(src=images[1] alt='room image')
       .carousel__slide
-        img(srcset=images[2])
+        img(src=images[2] alt='room image')
       .carousel__slide
-        img(srcset=images[3])
-    .carousel__mover.carousel__mover_left
+        img(src=images[3] alt='room image')
+    .carousel__mover.js-carousel__mover.carousel__mover_left.js-carousel__mover_left
       span.icon-open
-    .carousel__mover.carousel__mover_right
+    .carousel__mover.js-carousel__mover.carousel__mover_right.js-carousel__mover_right
       span.icon-open
-    .carousel__indicators.indicators  
-      .indicator.shown 
+    .carousel__indicators.js-carousel__indicators.indicators
+      .indicator.shown.js-shown
       .indicator
       .indicator
       .indicator

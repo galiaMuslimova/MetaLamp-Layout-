@@ -2,13 +2,12 @@
   h2 {
     margin: 0;
   }
+
   &__view {
     height: 33.1vw;
     display: grid;
-    grid: 
-    "image1 image2" 50%
-    "image1 image3" 50%
-    /0.68fr 0.32fr; 
+    grid:
+      "image1 image2"50% "image1 image3"50% /0.68fr 0.32fr;
 
     @media(max-width: 770px) {
       grid: "image1";
@@ -17,24 +16,31 @@
 
   &__image {
     height: max-content;
+
     @media(max-width: 770px) {
       height: 100%;
     }
+
     &_1 {
       grid-area: image1;
     }
+
     &_2 {
       grid-area: image2;
+
       @media(max-width: 770px) {
         display: none;
       }
     }
+
     &_3 {
       grid-area: image3;
+
       @media(max-width: 770px) {
         display: none;
       }
     }
+
     img {
       width: 100%;
       height: 100%;
@@ -48,73 +54,98 @@
     display: grid;
     grid-column-gap: 4.8vw;
     grid-row-gap: 1vw;
-    grid: 
-    "info chart card"
-    "review review card"
-    "rules cancel card"
-    /minmax(280px, 290px) minmax(320px, 1fr) 380px      
-    ;
+    grid:
+      "info chart card"
+      "review review card"
+      "rules cancel card"
+      /minmax(280px, 290px) minmax(320px, 1fr) 380px;
 
-    @media(max-width: 1120px) {   
+    @media(max-width: 1120px) {
       grid:
         "info card"
         "chart card"
         "review review"
         "rules cancel"
-        /1fr minmax(380px, 1fr)
-        ;  
-      }
-    @media(max-width: 770px) {  
+        /1fr minmax(380px, 1fr);
+    }
+
+    @media(max-width: 770px) {
       grid:
         "card"
         "info"
         "chart"
         "review"
         "rules"
-        "cancel" 
-        /1fr       
-        ;  
-      }    
+        "cancel"
+        /1fr;
+    }
   }
 
   &__info {
     grid-area: info;
+
     @media(max-width: 800px) {
       margin: auto;
     }
   }
+
   &__chart {
     grid-area: chart;
+
     @media(max-width: 800px) {
       margin: auto;
     }
   }
+
   &__review {
     grid-area: review;
+
     >.row {
       align-items: baseline;
       margin-bottom: 19px;
+
+      @media(max-width: 770px) {
+        flex-direction: column;
+      }
+    }
+
+    @media(max-width: 770px) {
+      margin: 15px;
     }
   }
+
   &__card {
     grid-area: card;
+
     @media(max-width: 800px) {
       margin: auto;
     }
   }
+
   &__rules {
     grid-area: rules;
     max-width: 260px;
+
     >h2 {
       margin-left: 20px;
       margin-bottom: 18px;
     }
+
+    @media(max-width: 770px) {
+      margin: 15px;
+    }
   }
+
   &__cancel {
     grid-area: cancel;
     max-width: 340px;
+
     >h2 {
       margin-bottom: 18px;
+    }
+
+    @media(max-width: 770px) {
+      margin: 10px;
     }
   }
 }

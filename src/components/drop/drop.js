@@ -1,6 +1,7 @@
-$(function () {
-  $(".submit").on("click", function () {
-    let selectForm = $(this).closest("form");
-    selectForm.find(".drop").removeClass("active");
+$(() => {
+  $('.js-submit').on('click', function () {
+    const $selectForm = $(this).closest('form');
+    const $drop = $selectForm.find('.js-drop');
+    $drop.removeClass('active');
   });
 });

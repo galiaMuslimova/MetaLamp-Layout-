@@ -15,7 +15,7 @@ include ../double-date/double-date.pug
         .catalog-item__cost_bold= roomData.cost.toLocaleString() + '₽'
         p.catalog-item__cost_small в сутки
     .card__item
-      +double-date("datepicker_room")
+      +double-date("datepicker_room js-datepicker_room")
     .card__item
       h3 гости 
       +form( 
@@ -24,7 +24,7 @@ include ../double-date/double-date.pug
     .card__item
       .room-card__calculation.calculation 
         .calculation__item 
-          p= roomData.cost + '₽ х '
+          p= roomData.cost.toLocaleString() + '₽ х '
             span= days + 'суток'
         .calculation__item
         .calculation__item.cost

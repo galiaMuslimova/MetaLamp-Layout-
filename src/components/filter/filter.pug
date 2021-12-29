@@ -3,8 +3,8 @@ include ../checkbox/checkbox.pug
 include ../calendar/calendar.pug
 include ../slider/slider.pug 
 
-.filter
-  .col.filter__col
+.filter.js-filter
+  .col.col1.filter__col
     .filter__item
       h3 даты пребывания в отеле
       +form(
@@ -26,7 +26,7 @@ include ../slider/slider.pug
           +checkbox("smoke", "Можно курить")
           +checkbox("pet", "Можно с питомцами")(class="checked")
           +checkbox("invite", "Можно пригласить гостей \n (до 10 человек)")(class="checked")    
-  .col
+  .col.col2.filter__col
     .filter__item 
       form.form_checkbox
         h3 доступность
@@ -40,11 +40,11 @@ include ../slider/slider.pug
         /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
     .filter__item 
       form.form_checkbox
-        .row.row_fill.filter__expandable
+        .row.row_fill.filter__expandable.js-filter__expandable
           h3 дополнительные удобства
-          button.input__open.form_btn(type="button")
+          button.input__open.js-input__open.form_btn(type="button")
             span.icon-open
-        .drop.form_checkbox__drop
+        .drop.js-drop.form_checkbox__drop
           .form_checkbox__list 
             +checkbox("breakfast", "Завтрак")
             +checkbox("table", "Письменный стол")(class="checked")

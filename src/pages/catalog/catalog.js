@@ -1,6 +1,7 @@
-$(function(){
-  $(".catalog__button").on("click", function(){
-    $(this).siblings(".catalog__filter").toggleClass('active')
-  })
-  $(".pagination_catalog").pagination();
-})
+$(() => {
+  $('.js-catalog__button').on('click', function () {
+    const $filter = $(this).siblings('.js-catalog__filter');
+    $filter.toggleClass('active');
+  });
+  $('.js-pagination_catalog').pagination();
+});

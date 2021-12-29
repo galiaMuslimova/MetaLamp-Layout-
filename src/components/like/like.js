@@ -1,12 +1,12 @@
-$(document).ready(function() {
-  $(".like").on("change", function() {
-    let isCheck = $(this).find(".like__input").is(":checked");
-    let likeInput = $(this).find(".like__count");
-    let likeCount = Number(likeInput.val());
-    if(isCheck) {      
-      likeInput.val(++likeCount);
+$(document).ready(() => {
+  $('.js-like').on('change', function () {
+    const isCheck = $(this).find('.js-like__input').is(':checked');
+    const $likeInput = $(this).find('.js-like__count');
+    let likeCount = Number($likeInput.val());
+    if (isCheck) {
+      $likeInput.val(likeCount += 1);
     } else {
-      likeInput.val(--likeCount);
+      $likeInput.val(likeCount -= 1);
     }
-  })
-})
+  });
+});

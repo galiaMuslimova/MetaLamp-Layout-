@@ -57,6 +57,9 @@
   }
 
   .card__item {
+    &:first-child {
+      margin-bottom: 18px;
+    }
     &:last-child {
       margin-top: -3px;
     }

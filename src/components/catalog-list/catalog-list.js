@@ -1,5 +1,5 @@
-$(window).on('load', function () {
-  $('.catalog-item__content').click(function () {
-    $(location).attr('href', "./room.html");    
-  })
-})
+$(window).on('load', () => {
+  $('.js-catalog-item__content').on('click', () => {
+    $(location).attr('href', './room.html');
+  });
+});

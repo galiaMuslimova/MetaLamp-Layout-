@@ -1,6 +1,5 @@
 include ../calendar/calendar.pug
 
-
 mixin double-date(place)
   form
     .double-date  
@@ -10,4 +9,5 @@ mixin double-date(place)
       .double-date__item
         h3 выезд
         +input("text", "ДД.ММ.ГГГГ")(class="date")
-    +calendar(place)(class="select_card")
+    .drop.js-drop
+      +calendar(place)(class="select_card")

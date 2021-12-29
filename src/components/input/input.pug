@@ -1,23 +1,23 @@
 mixin input(type, value, focus)  
-  .input-row(class=attributes.class)
+  .input-row.js-input-row(class=attributes.class)
 
     if(attributes.class=="subscript")
-      input.input(type=type, placeholder=value)
+      input.input.js-input(type=type, placeholder=value)
       button.input__right(type="button")
         i.icon-arrow
 
     if(attributes.class=="dropdown")
-      input.input(type=type, value=value)
-      button.input__open(type="button")
+      input.input.js-input(type=type, value=value)
+      button.input__open.js-input__open(type="button")
         i.icon-open
 
     if(attributes.class=="date")
-      input.input(type=type, placeholder=value)
-      button.input__open(type="button")
+      input.input.js-input(type=type, placeholder=value)
+      button.input__open.js-input__open(type="button")
         i.icon-open
 
     if(!(attributes.class))
-      input.input(type=type, placeholder=value, autofocus=focus)    
+      input.input.js-input(type=type, placeholder=value, autofocus=focus)    
 
 
   

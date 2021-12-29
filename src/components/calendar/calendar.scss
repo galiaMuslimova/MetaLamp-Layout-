@@ -3,117 +3,124 @@
     max-width: 320px;
     max-height: 369px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  }  
+  }
 
   &__row {
     padding: 20px;
   }
-  
+
   span {
     color: #BC9CFF;
     font-size: 1.3em;
   }
 
   .air-datepicker {
-  --adp-width: 100%;
-  --adp-font-family: 'Montserrat', 'Arial', sans-serif;
-  --adp-padding: 20px;
-  --adp-day-cell-height: 40px;
-  --adp-btn-border-radius: 22px;
-  --adp-nav-arrow-color: #BC9CFF;
-  --adp-border-color: none;
+    --adp-width: 100%;
+    --adp-font-family: 'Montserrat', 'Arial', sans-serif;
+    --adp-padding: 20px;
+    --adp-day-cell-height: 40px;
+    --adp-btn-border-radius: 22px;
+    --adp-nav-arrow-color: #BC9CFF;
+    --adp-border-color: none;
 
+    &-nav {
+      border-bottom: none;
+      padding: 15px 23px 20px 23px;
 
-  &-nav {
-    border-bottom: none;
-    padding: 18px;
-    &--title {
-      font-weight: bold;
-      font-size: 19px;
-      line-height: 23px;    
-      color: #1F2041;
+      &--title {
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 23px;
+        color: #1F2041;
+
         i {
           font-weight: bold;
           color: #1F2041;
         }
       }
-  }
-
-  &--content {
-    padding-top: 10px;
-    padding-bottom: 0px;
-  }
-
-  &-body {
-    &--day-names {
-      margin-bottom: 12px;
     }
-    &--day-name {      
-      text-transform: none;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
-      color: #BC9CFF;
+
+    &--content {
+      padding-top: 10px;
+      padding-bottom: 0px;
     }
-  }
 
-  &-cell {
-    height: 40px;
-    
-    &.-day- {
-      font-size: 12px;
-      line-height: 15px;
-      color: rgba(31, 32, 65, 0.5);
-
-      &:hover {
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        border-radius: 22px;
-        color: #fff;
-        font-weight: bold;
+    &-body {
+      &--day-names {
+        margin-bottom: 12px;
       }
-      
-      &.-range-from-, &.-range-to- {
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        border-radius: 22px;
-        color: #fff;
+
+      &--day-name {
+        text-transform: none;
         font-weight: bold;
-        &:before {
-          content: "";
-          width: 50%;
-          height: 100%;
-          position: absolute;
+        font-size: 12px;
+        line-height: 15px;
+        color: #BC9CFF;
+      }
+    }
+
+    &-cell {
+      height: 40px;
+
+      &.-day- {
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(31, 32, 65, 0.5);
+
+        &:hover {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+          border-radius: 22px;
+          color: #fff;
+          font-weight: bold;
+        }
+
+        &.-range-from-,
+        &.-range-to- {
           background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-          opacity: 0.25;
-          z-index: -1;
+          border-radius: 22px;
+          color: #fff;
+          font-weight: bold;
+
+          &:before {
+            content: "";
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            opacity: 0.25;
+            z-index: -1;
+          }
         }
-      }
-      &.-range-to- {
-        &:before {
-          right: 50%;
+
+        &.-range-to- {
+          &:before {
+            right: 50%;
+          }
         }
-      }
-      &.-range-from- {
-        &:before {
-          left: 50%;
+
+        &.-range-from- {
+          &:before {
+            left: 50%;
+          }
         }
-      }
-      &.-in-range- { 
-        background: none;
-        &:after {
-          content: "";
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);   
-          opacity: 0.25;
-        }        
-      }
-      &.-other-month- {
-        color: rgba(31, 32, 65, 0.25);
+
+        &.-in-range- {
+          background: none;
+
+          &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            opacity: 0.25;
+          }
+        }
+
+        &.-other-month- {
+          color: rgba(31, 32, 65, 0.25);
+        }
       }
     }
   }
 }
-}
-
-

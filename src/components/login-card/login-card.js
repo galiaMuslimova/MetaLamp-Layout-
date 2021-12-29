@@ -1,8 +1,10 @@
-import { makeCalendar } from "@c/calendar/calendar.js";
+import makeCalendar from '@c/calendar/calendar.js';
 
-$(function () {
-  $(".datepicker_login").closest("form").find(".input-row").on("click", function(){
-    $(this).siblings(".drop").toggleClass("active")
-  })
-  let datepicker_login = makeCalendar(".datepicker_login");
+$(() => {
+  const $inputRow = $('.js-datepicker_login').closest('form').find('.js-input-row');
+  $inputRow.on('click', function () {
+    const $drop = $(this).siblings('.js-drop');
+    $drop.toggleClass('active');
+  });
+  makeCalendar('.js-datepicker_login');
 });

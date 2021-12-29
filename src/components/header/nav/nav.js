@@ -1,5 +1,6 @@
-$(function() {
-  $(".nav__down").on("click", function () {
-    $(this).siblings(".nav__submenu").toggleClass("open")
-  })
-})
+$(() => {
+  $('.js-nav__down').on('click', function () {
+    const $subMenu = $(this).siblings('.js-nav__submenu');
+    $subMenu.toggleClass('open');
+  });
+});

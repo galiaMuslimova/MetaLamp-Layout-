@@ -1,9 +1,6 @@
-import { makeCalendar } from "@c/calendar/calendar.js";
-
-$(function () {
-  $(".entry-card").find(".btn_link").on("click", function () {
-    $(location).attr('href', "./catalog.html");    
+$(() => {
+  const $entryCard = $('.js-entry-card').find('.js-btn_link');
+  $entryCard.on('click', () => {
+    $(location).attr('href', './catalog.html');
   });
-
-  let datepicker_entry = makeCalendar(".datepicker_entry");
 });

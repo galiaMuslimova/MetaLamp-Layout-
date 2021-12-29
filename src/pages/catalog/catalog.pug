@@ -3,9 +3,9 @@ extends ../base/base.pug
 block content
   .container
     .catalog
-      .catalog__filter
+      .catalog__filter.js-catalog__filter
         include ../../components/filter/filter.pug
-      .catalog__button
+      .catalog__button.js-catalog__button
         span.icon-open
       .catalog__list
         .catalog__title
@@ -13,9 +13,7 @@ block content
         .catalog__content
           include ../../components/catalog-list/catalog-list.pug
         .catalog__pagination
-          .pagination.pagination_catalog
-            .row
-              p 1 – 12 из 100+ вариантов аренды
+          .pagination.js-pagination.pagination_catalog.js-pagination_catalog
           .catalog__pag-text 1 – 12 из 100+ вариантов аренды
     
   

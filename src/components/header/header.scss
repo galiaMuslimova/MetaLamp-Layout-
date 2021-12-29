@@ -1,28 +1,24 @@
 .header {
   background-color: #fff;
   min-height: 70px;
-  height: 100%;  
+  height: 100%;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-  &__container { 
+  &__container {
     display: grid;
     height: 100%;
     grid-template: 100% / 1fr max-content max-content;
     grid-column-gap: 20px;
-    align-items: center;  
-    
+    align-items: center;
+
     @media (max-width: 924px) {
       grid:
-        "logo reg burger" 60px
-        "nav nav nav" max-content 
-        /1fr max-content max-content;
+        "logo reg burger"60px "nav nav nav"max-content /1fr max-content max-content;
     }
+
     @media (max-width: 600px) {
       grid:
-        "logo burger" 60px
-        "reg reg" max-content
-        "nav nav" max-content 
-        /1fr max-content;
+        "logo burger"60px "reg reg"max-content "nav nav"max-content /1fr max-content;
     }
   }
 
@@ -34,6 +30,7 @@
 
   &__nav {
     height: 40px;
+
     @media (max-width: 924px) {
       height: 100%;
       grid-area: nav;
@@ -44,16 +41,33 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+
     @media (max-width: 924px) {
       grid-area: reg
     }
+
     @media (max-width: 600px) {
       display: none;
+
       &_mobile {
-        display: flex; 
-        margin: auto;               
+        display: flex;
+        margin: auto;
       }
-    }     
+    }
+
+    .nav__divider {
+      height: 30px;
+      width: 1px;
+      background-color: rgba(31, 32, 65, 0.5);
+    }
+
+    .nav__name {
+      line-height: 30px;
+    }
+
+    .btn {
+      height: 34px;
+    }
   }
 
   &__burger-btn {
@@ -62,7 +76,3 @@
     }
   }
 }
-
-
-  
-  

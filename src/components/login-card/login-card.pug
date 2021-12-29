@@ -18,7 +18,8 @@ include ../calendar/calendar.pug
       h3 дата рождения 
       form
         +input("text", "ДД.ММ.ГГГГ")
-        +calendar("datepicker_login")(class="select_card")
+        .drop.js-drop
+          +calendar("js-datepicker_login")(class="select_card")
     .card__item
       h3 данные для входа в сервис
       .card__input

@@ -10,7 +10,8 @@ mixin form(category, array, value)
       +select(array)(class=attributes.class /* "select_card" for select with submit and reset buttons */)
 
     if(category == "calendar")
-      +calendar("datepicker_filter")
+      .drop.js-drop 
+        +calendar("datepicker_filter js-datepicker_filter")
 
 
 

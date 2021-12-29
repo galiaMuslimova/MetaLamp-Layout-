@@ -2,13 +2,14 @@ include ../rate/rate.pug
 include ../carousel/carousel.pug
 
 mixin catalog-card(item)
-  .catalog-item
+  .catalog-item.js-catalog-item
     +carousel(item.num)
-    .catalog-item__content
+    .catalog-item__content.js-catalog-item__content
       .row
         h4.catalog-item__num №
         h2.catalog-item__num_big= item.num
-        h3.catalog-item__num_light= item.luxury?"люкс":""
+        if(item.luxury)
+          h3.catalog-item__num_light= 'люкс'
         .catalog-item__cost_bold= item.cost.toLocaleString() + '₽'
         p.catalog-item__cost_small в сутки
       .catalog-item__divider

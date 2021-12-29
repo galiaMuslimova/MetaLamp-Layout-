@@ -1,12 +1,12 @@
 include ../form/form.pug
 include ../double-date/double-date.pug 
 
-.card.entry-card
+.card.entry-card.js-entry-card
   .card__inner
     .card__item
-      h1 Найдём номера под ваши пожелания
+      h1.card__title Найдём номера под ваши пожелания
     .card__item
-      +double-date("datepicker_entry")
+      +double-date("datepicker_entry js-datepicker_entry")
     .card__item
       h3 гости 
       +form( 
@@ -14,5 +14,5 @@ include ../double-date/double-date.pug
         /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}],
         /*value*/ "Сколько гостей")(class="select_card")
     .card__item
-      button.btn.btn_link подобрать номер
+      button.btn.btn_link.js-btn_link подобрать номер
         span.icon-arrow

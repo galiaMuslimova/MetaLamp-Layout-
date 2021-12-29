@@ -1,38 +1,40 @@
-$(document).ready(function() {
-  $(".carousel__mover").on("click", function() {     
-    let images = $(this).siblings(".carousel__image");
-    let indicators = $(this).siblings(".carousel__indicators");
+$(document).ready(() => {
+  $('.js-carousel__mover').on('click', function () {
+    const $images = $(this).siblings('.js-carousel__image');
+    const $indicators = $(this).siblings('.js-carousel__indicators');
 
-    function slideToRight (itemList) {
-      let activeItem = itemList.find(".shown");
-      if (activeItem.next()[0] != undefined) {
-        activeItem.next().addClass("shown");
+    function slideToRight(itemList) {
+      const $activeItem = itemList.find('.js-shown');
+      if ($activeItem.next()[0] !== undefined) {
+        const $nextItem = $activeItem.next();
+        $nextItem.addClass('shown js-shown');
       } else {
-        let firstItem = itemList.children().first();
-        $(firstItem).addClass("shown");
+        const $firstItem = itemList.children().first();
+        $($firstItem).addClass('shown js-shown');
       }
-      activeItem.removeClass("shown")
+      $activeItem.removeClass('shown js-shown');
     }
 
     function slideToLeft(itemList) {
-      let activeItem = itemList.find(".shown");
-      if (activeItem.prev()[0] != undefined) {
-        activeItem.prev().addClass("shown");
+      const $activeItem = itemList.find('.js-shown');
+      if ($activeItem.prev()[0] !== undefined) {
+        const $prevItem = $activeItem.prev();
+        $prevItem.addClass('shown js-shown');
       } else {
-        let lastItem = itemList.children().last();
-        $(lastItem).addClass("shown");
+        const $lastItem = itemList.children().last();
+        $($lastItem).addClass('shown js-shown');
       }
-      activeItem.removeClass("shown");
+      $activeItem.removeClass('shown js-shown');
     }
 
-    if($(this).hasClass("carousel__mover_right")) {      
-      slideToRight(images);
-      slideToRight(indicators)
+    if ($(this).hasClass('js-carousel__mover_right')) {
+      slideToRight($images);
+      slideToRight($indicators);
     }
 
-    if ($(this).hasClass("carousel__mover_left")) {
-      slideToLeft(images);
-      slideToLeft(indicators);
+    if ($(this).hasClass('js-carousel__mover_left')) {
+      slideToLeft($images);
+      slideToLeft($indicators);
     }
-  })
-})
+  });
+});

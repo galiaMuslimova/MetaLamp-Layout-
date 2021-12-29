@@ -1,5 +1,14 @@
 {
-  "Комфорт": "comfort.svg",
-  "Удобство": "convenience.svg",
-  "Уют": "cosiness.svg"
+  "Комфорт": {
+    "src": "comfort.svg",
+    "alt": "Комфорт"
+  },
+  "Удобство": {
+    "src": "convenience.svg",
+    "alt": "Комфорт"
+  },
+  "Уют": {
+    "src": "cosiness.svg",
+    "alt": "Комфорт"
+  }
 }

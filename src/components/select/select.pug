@@ -1,14 +1,14 @@
 include count/count.pug
 
 mixin select(array)
-  .drop    
-    .select(class = attributes.class) 
+  .drop.js-drop    
+    .select.js-select(class = attributes.class) 
       each item in array
         .row.row_fill.select__row
           h3=item.name
           +count(item.count)
       if(attributes.class=="select_card")
         .row.row_fill.select__row
-          button.btn.btn_simple.select__reset(type="reset") очистить
-          button.btn.btn_simple.submit(type="button") применить
+          button.btn.btn_simple.select__reset.js-select__reset(type="reset") очистить
+          button.btn.btn_simple.submit.js-submit(type="button") применить
           

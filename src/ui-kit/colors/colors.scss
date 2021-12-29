@@ -9,6 +9,11 @@
   }
 }
 
+.colors-list {
+  margin: 0px;
+  padding-left: 10px;
+}
+
 .colors-item { 
   gap: 40px;
   margin-bottom: 20px;
@@ -32,9 +37,12 @@
 .type-list {
   display: grid;
   grid-template: repeat(4, min-content) / min-content 1fr;
-  grid-column-gap: 30px;
-  grid-row-gap: 50px;
+  grid-column-gap: 20px;
+  grid-row-gap: 36px;
+  margin: 0px;
+  padding-left: 30px;
   .type_light {
-    color: rgba(31, 32, 65, 0.25);   
+    color: rgba(31, 32, 65, 0.25); 
+    text-align: end;  
   }
 }

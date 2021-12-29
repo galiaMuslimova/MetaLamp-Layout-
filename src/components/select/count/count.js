@@ -1,59 +1,55 @@
-import { createPlacementText, createGuestsText, showHideResetButton } from "@c/select/select.js"
+import { createPlacementText, createGuestsText, showHideResetButton } from '@c/select/select.js';
 
-$(document).ready(function () {
-  $(".count__num").each(function () {
-    if ($(this).val() == 0) {
-      $(this).siblings(".minus").addClass("disabled")
+$(document).ready(() => {
+  const $countNums = $('.js-count__num');
+  $countNums.each(function () {
+    if ($(this).val() === 0) {
+      const $minus = $(this).siblings('.js-minus');
+      $minus.addClass('disabled');
     }
-  })
+  });
 
-  $(".plus, .minus").click(function () {
+  function countSelectItems(element) {
+    const $inputElement = element.siblings('.js-count__num');
+    let inputValue = Number($inputElement.val());
+
+    if (element.hasClass('js-plus')) {
+      $inputElement.val(inputValue += 1);
+    }
+    if (element.hasClass('js-minus')) {
+      if (inputValue > 0) {
+        $inputElement.val(inputValue -= 1);
+      }
+    }
+  }
+
+  function changeSelectButtonClass(element) {
+    const $inputElement = element.siblings('.js-count__num');
+    const inputValue = $inputElement.val();
+    const minusBtn = $inputElement.siblings('.js-minus');
+
+    if (inputValue > 0) {
+      if (minusBtn.hasClass('disabled')) {
+        minusBtn.removeClass('disabled');
+      }
+    } else if (!minusBtn.hasClass('disabled')) {
+      minusBtn.addClass('disabled');
+    }
+  }
+
+  $('.js-plus, .js-minus').on('click', function () {
     countSelectItems($(this));
     changeSelectButtonClass($(this));
-    showHideResetButton($(this).closest("form"));
-    let selectForm = $(this).closest("form");
+    showHideResetButton($(this).closest('form'));
+    const $selectForm = $(this).closest('form');
 
-    if (selectForm.hasClass("placement")) {        
-      let str = createPlacementText(selectForm);
-      selectForm.find(".input").val(str);
+    if ($selectForm.hasClass('placement')) {
+      const str = createPlacementText($selectForm);
+      $selectForm.find('.js-input').val(str);
     }
-    if (selectForm.hasClass("guests")) {
-      let str = createGuestsText(selectForm);
-      selectForm.find(".input").val(str);
-    }    
-  })
+    if ($selectForm.hasClass('guests')) {
+      const str = createGuestsText($selectForm);
+      $selectForm.find('.js-input').val(str);
+    }
+  });
 });
-
-function countSelectItems (element) {
-  let inputElement = element.siblings(".count__num");
-  let inputValue = inputElement.val();
-
-  if (element.hasClass('plus')) {
-    inputElement.val(++inputValue);
-  };
-  if (element.hasClass('minus')) {
-    if (inputValue > 0) {
-      inputElement.val(--inputValue);
-    }        
-  }
-}
-
-function changeSelectButtonClass(element) {
-  let inputElement = element.siblings(".count__num");
-  let inputValue = inputElement.val();
-  let minusBtn = inputElement.siblings(".minus");
-
-  if (inputValue > 0) {
-    if (minusBtn.hasClass("disabled")) {
-      minusBtn.removeClass("disabled")
-    }
-  }
-  else {
-    if (!minusBtn.hasClass("disabled")) {
-      minusBtn.addClass("disabled")
-    }
-  }
-}
-
-
-

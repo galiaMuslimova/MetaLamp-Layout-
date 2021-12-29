@@ -1,5 +1,6 @@
 mixin like({count, isCheck, name})
-  label.like.row
-    input.input_hidden.like__input(type="checkbox", checked=isCheck, name=name)
-    span.like__icon.icon-heart 
-    input.like__count(value=count) 
+  form.like.js-like.row
+    label
+      input.input_hidden.like__input.js-like__input(type="checkbox", checked=isCheck, name=name)
+      span.like__icon.icon-heart 
+    input.like__count.js-like__count(value=count) 

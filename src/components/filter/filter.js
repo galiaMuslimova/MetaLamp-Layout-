@@ -1,10 +1,11 @@
-import { makeCalendar } from "@c/calendar/calendar.js"
+import makeCalendar from '@c/calendar/calendar.js';
 
-$(".filter").ready(function() {
-  let datepicker_filter = makeCalendar(".datepicker_filter");
-  let filterDate = ['2019-08-19', '2019-08-23'];
-  datepicker_filter.selectDate(filterDate);
-  $(".filter__expandable").find(".input__open").on("click", function(){
-    $(this).toggleClass("active")
-  })
-})  
+$(() => {
+  const datepickerFilter = makeCalendar('.js-datepicker_filter');
+  const filterDate = ['2019-08-19', '2019-08-23'];
+  datepickerFilter.selectDate(filterDate);
+  const $inputOpen = $('.js-filter__expandable').find('.js-input__open');
+  $inputOpen.on('click', function () {
+    $(this).toggleClass('active');
+  });
+});

@@ -17,7 +17,7 @@
   }
 
   &__col {
-    max-width: 320px;
+    max-width: 266px;
   }
 
   &__item {
@@ -42,7 +42,15 @@
         transform: rotateZ(180deg);
       }      
     }
-  }  
+  } 
+  
+  .col1 {
+    .filter__item {
+      &:last-child {
+        margin-bottom: 16px;
+      }
+    }
+  }
 
   .drop {
     margin-top: 0px;
