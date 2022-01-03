@@ -15,14 +15,22 @@ const uiKitHtmlPlugins = uiKit.map(fileName => new HTMLWebpackPlugin({
   filename: `ui-kit/${fileName}.html`
 }))
 
-const config = {
+module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: './index.js',  
+  output: {
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'docs'),
+    assetModuleFilename: 'images/[hash][ext][query]'
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@c': path.resolve(__dirname, 'src/components/'),
     }
+  },
+  devServer: {
+    port: 4000
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -71,30 +79,3 @@ const config = {
     ]
   }
 };
-
-const docs = Object.assign({}, config, {
-  name: "docs",
-  mode: "development",
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'docs'),
-    assetModuleFilename: 'images/[hash][ext][query]'
-  },
-  devServer: {
-    port: 4000
-  }
-});
-
-const dist = Object.assign({}, config, {
-  name: "dist",
-  mode: "production",
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    library: "MetaLayout",
-    libraryTarget: "umd"
-  },
-});
-
-
-module.exports = [docs, dist];
