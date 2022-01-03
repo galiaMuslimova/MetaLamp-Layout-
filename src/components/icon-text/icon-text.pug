@@ -2,7 +2,7 @@ mixin icon-text(title, text)
   -const data = require("@c/icon-text/icon-text.json")
   .icon-text
     .icon-text__icon 
-      img(src=require("@c/icon-text/svg/" + data[title].src) alt=`${data[title].alt}`)
+      img(src=require("@a/icons/info-icons/" + data[title].src) alt=`${data[title].alt}`)
     .col
       .icon-text__title= title
       .icon-text__text= text

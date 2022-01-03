@@ -6,7 +6,7 @@ mixin review(data)
       .row
         .col.review__col
           .review__image
-            img(src= require("@c/review/img/" + val.image) alt='person photo')
+            img(src= require("@a/images/review-images/" + val.image) alt='person photo')
           .review__like 
             +like(val.like)
         .col.review__col 

@@ -1,13 +1,9 @@
-import './theme/icons/icons.css';
-import './theme/fonts.scss';
-import './theme/type.scss';
-import './theme/global.scss';
-
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
 
-requireAll(require.context('./theme', true, /\.js$/));
+requireAll(require.context('./assets', true, /\.scss$/));
+requireAll(require.context('./assets', true, /\.css$/));
 
 requireAll(require.context('@c', true, /\.js$/));
 requireAll(require.context('@c', true, /\.scss$/));

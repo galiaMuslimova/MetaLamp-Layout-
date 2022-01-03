@@ -8,7 +8,7 @@ include ../../components/bullet/bullet.pug
 block content
   -const selectedRoom = require("@/pages/room/room.json")
   -function roomRequireAll(requireContext) { return requireContext.keys().map(requireContext) };
-  -const roomImages = roomRequireAll(require.context("@/pages/room/img/", true, /\.(jpg|png|jpeg)$/));
+  -const roomImages = roomRequireAll(require.context("@a/images/catalog-images/888/", true, /\.(jpg|png|jpeg)$/));
 
   .room
     .room__view

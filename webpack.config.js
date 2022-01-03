@@ -7,7 +7,7 @@ const pages = ['index', 'room', 'login', 'signin', 'catalog', 'empty'];
 const htmlPlugins = pages.map(fileName => new HTMLWebpackPlugin({  
   template: `pages/${fileName}/${fileName}.pug`,
   filename: `${fileName}.html`,
-  favicon: `favicon.jpg`
+  favicon: `assets/images/favicon.jpg`
 }));
 const uiKit = ['cards', 'colors', 'forms', 'insertions'];
 const uiKitHtmlPlugins = uiKit.map(fileName => new HTMLWebpackPlugin({
@@ -25,8 +25,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'src/'),
       '@c': path.resolve(__dirname, 'src/components/'),
+      '@a': path.resolve(__dirname, 'src/assets/')
     }
   },
   devServer: {
