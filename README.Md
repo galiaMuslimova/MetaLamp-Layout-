@@ -1,11 +1,24 @@
-## MetaLamp учебный проект
-Можно посмотреть на `https://galiamuslimova.github.io/MetaLamp-Layout-/`
+## MetaLamp Layout
+Учебный проект созданный по макету компании FSD(Metalamp)
 
-## Установка
-Все необходимые файлы можно взять из папки dist
+## Установка и просмотр
+Проект можно посмотреть по ссылке https://galiamuslimova.github.io/MetaLamp-Layout-/
+Исходные файлы хранятся в папке src
+Сборка в папке docs, из которой формируется страница github pages.
 
+## Плагины
+В проекте использовались следующие плагины:
++ JQuery версии 3.6.0
++ Air-datepicker версии 3.0.0
++ Nouislider версии 15.4.0
++ Chart.js версии 3.6.0
 
-Использовался JQuery версии 3.6.0
+## Ui Kit
+Страницы ui kit можно посмотреть по следующим ссылкам
++ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/colors
++ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/forms
++ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/cards
++ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/insertions
 
 
 
