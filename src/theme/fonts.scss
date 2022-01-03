@@ -1,21 +1,23 @@
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
-	font-weight: bold;
-  src: url('Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  src: url('montserrat-bold.woff') format('woff'),
+    url('montserrat-bold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
-	font-weight: normal;
-  src: url('Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  src: url('montserrat-regular.woff') format('woff'),
+    url('montserrat-regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
-	font-weight: bold;
-  src: url('Quicksand-Bold.ttf') format('truetype');
+  font-weight: bold;
+  src: url('quicksand-bold.woff') format('woff'),
+    url('quicksand-bold.woff2') format('woff2');
 }
-
