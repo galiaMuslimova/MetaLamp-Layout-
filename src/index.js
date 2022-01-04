@@ -2,8 +2,9 @@ function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
 
-requireAll(require.context('./assets', true, /\.scss$/));
-requireAll(require.context('./assets', true, /\.css$/));
+requireAll(require.context('@a', true, /\.scss$/));
+requireAll(require.context('@a', true, /\.css$/));
+requireAll(require.context('@a', true, /\.js$/));
 
 requireAll(require.context('@c', true, /\.js$/));
 requireAll(require.context('@c', true, /\.scss$/));

@@ -6,8 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const pages = ['index', 'room', 'login', 'signin', 'catalog', 'empty'];
 const htmlPlugins = pages.map(fileName => new HTMLWebpackPlugin({  
   template: `pages/${fileName}/${fileName}.pug`,
-  filename: `${fileName}.html`,
-  favicon: `assets/images/favicon.jpg`
+  filename: `${fileName}.html`
 }));
 const uiKit = ['cards', 'colors', 'forms', 'insertions'];
 const uiKitHtmlPlugins = uiKit.map(fileName => new HTMLWebpackPlugin({
