@@ -27,8 +27,12 @@ function createSlider(el) {
   return slider;
 }
 
+
 $(() => {
-  createSlider($('.slider_filter'));
+  const $filterSlider = $('.slider_filter');
+  if ($filterSlider.length > 0) {
+    createSlider($filterSlider)
+  }  
 });
 
 export default createSlider;

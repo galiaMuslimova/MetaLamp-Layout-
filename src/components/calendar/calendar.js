@@ -4,7 +4,7 @@ import 'air-datepicker/air-datepicker.css';
 function showDateInInput(res, dp, element) {
   const $form = $(dp.$datepicker).closest('form');
   const $inputArr = $form.find('.input');
-  if (element === '.js-datepicker_filter') {
+  if (element === '.js-datepicker_filter') {    
     const date1 = dp.formatDate(res.date[0], 'dd MMM');
     const date2 = dp.formatDate(res.date[1], 'dd MMM');
     const str = `${date1} - ${date2}`;
@@ -31,6 +31,7 @@ function makeCalendar(element) {
       showDateInInput(res, dp, element);
     },
   });
+
   $(() => {
     $('.js-calendar__reset').on('click', () => {
       dp.clear();
