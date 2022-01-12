@@ -2,9 +2,9 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
 function showDateInInput(res, dp, element) {
-  const $form = $(dp.$datepicker).closest('.form');
-  const $inputArr = $form.find('.input');
-  if (element === '.js-datepicker_filter') {
+  const $form = $(dp.$datepicker).closest('form');
+  const $inputArr = $form.find('.input__field');
+  if (element === '.calendar__dp_filter') {
     const date1 = dp.formatDate(res.date[0], 'dd MMM');
     const date2 = dp.formatDate(res.date[1], 'dd MMM');
     const str = `${date1} - ${date2}`;
@@ -17,8 +17,8 @@ function showDateInInput(res, dp, element) {
   }
 }
 
-function makeCalendar() {
-  const dp = new AirDatepicker('.calendar__dp', {
+function makeCalendar(element) {
+  const dp = new AirDatepicker(element, {
     navTitles: {
       days: 'MMMM <i>yyyy</i>',
     },
@@ -32,12 +32,19 @@ function makeCalendar() {
     },
   });
 
-  $(() => {
-    $('.js-calendar__reset').on('click', () => {
-      dp.clear();
-    });
-  });
   return dp;
 }
+
+
+$('.js-calendar__reset').on('click', () => {
+  dp.clear();
+});
+
+$('.js-calendar__submit').on('click', function () {
+  const $selectForm = $(this).closest('form');
+  const $drop = $selectForm.find('.js-drop');
+  $drop.removeClass('drop_active');
+});
+
 
 export default makeCalendar;

@@ -1,2 +1,6 @@
-mixin button({theme, type='button', text})
+include ../icon-arrow/icon-arrow.pug
+
+mixin button({theme, type='button', text, icon})
   button.btn(class='btn_' + theme, type=type)= text
+    if(icon)
+      +icon-arrow()

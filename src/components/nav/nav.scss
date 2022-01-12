@@ -1,56 +1,56 @@
 .nav {
-  &__topmenu { 
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;  
-    align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: baseline;
 
-    @media (max-width: 924px) {
-      display: none;
-      width: 100%; 
+  @media (max-width: 924px) {
+    display: none;
+
+    &_for-mobile {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 0px;
-      line-height: 3em;      
-
-      &_mobile {
-        display: flex;
-        flex-direction: column;   
-        align-items: center;         
-      }   
-    }              
+      line-height: 3em;
+    }
   }
 
-  &__item {    
-    display: grid;
-    align-items: center;
-    > a {
-      display: block;
-      line-height: 30px;
-      &:hover, &:focus {        
-        font-weight: bold;
-        color: rgba(31, 32, 65, 0.75);
-      } 
-    }
-    &_link {
+  &__item {
+    &_with-submenu {
+      display: grid;
+
       @media (max-width: 924px) {
         grid-template-columns: 1fr min-content;
       }
-      span {
-        font-size: 0.6em;
-        padding: 0.8em;
-        display: inline-block;
-        @media (max-width: 924px) {
-          transform: rotateZ(-90deg);
-        }               
-      }
-    }      
+    }
   }
 
-  &__submenu {    
-    list-style: none;
-    margin: 0;
+  &__link {
+    text-decoration: none;
+    outline: none;
+    color: rgba(31, 32, 65, 0.5);
+
+    &:hover,
+    &:focus {
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    font-size: 0.6em;
+    padding: 0em 0.8em;
+    cursor: pointer;
+
+    @media (max-width: 924px) {
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  &__submenu {
     display: none;
     flex-direction: column;
     background: #fff;
@@ -58,22 +58,8 @@
     width: 100%;
     z-index: 60;
 
-    li {
-      padding: 5px;
-      white-space: nowrap;
-      a {
-      &:hover, &:focus {
-        font-weight: bold;
-        color: rgba(31, 32, 65, 0.75);
-      } 
-    }
-    }
-    &.open {
+    &_opened {
       display: flex;
     }
   }
-
-  &__down {
-    cursor: pointer;
-  }  
 }

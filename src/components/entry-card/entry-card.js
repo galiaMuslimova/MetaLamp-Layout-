@@ -1,6 +1,11 @@
+import makeCalendar from '@c/calendar/calendar.js'; 
+
 $(() => {
-  const $entryCard = $('.js-entry-card').find('.js-btn_link');
-  $entryCard.on('click', () => {
+  const $entryCardCalendarPlace = '.calendar__dp_entry-card';
+  const entryCardCalendar = makeCalendar($entryCardCalendarPlace);
+  
+  const $entryCardButton = $('.js-entry-card').find('.js-entry-card__button');
+  $entryCardButton.on('click', () => {
     $(location).attr('href', './catalog.html');
   });
 });

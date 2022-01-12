@@ -1,17 +1,17 @@
 include ../input/input.pug
-include ../select/select.pug
-include ../calendar/calendar.pug
+include ../drop/drop.pug
 
-mixin form(category, array, value) 
-  form(class=category)
-    +input(/*type*/ "text", value)(class='dropdown')
+//-mixin form({
+    category: guests / placement / calendar,
+    items: array, ex. [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
+    value: ex. "Сколько гостей"
+    type: '' / 'with-buttons'
+  })
 
-    if(category == "guests" || category == "placement")
-      +select(array)(class=attributes.class /* "select_card" for select with submit and reset buttons */)
-
-    if(category == "calendar")
-      .drop.js-drop 
-        +calendar("datepicker_filter js-datepicker_filter")
+mixin form({category, id,  type='', items, value}) 
+  form.form(class='form_'+category)
+    +input({category:'dropdown', type:"text", value:value})
+    +drop({category:category, id:id, type:type, items:items})
 
 
 

@@ -1,10 +1,10 @@
 import { createPlacementText, createGuestsText, showHideResetButton } from '@c/select/select.js';
 
-$(document).ready(() => {
+$(() => {
   const $countNums = $('.js-count__num');
   $countNums.each(function () {
     if ($(this).val() === 0) {
-      const $minus = $(this).siblings('.js-minus');
+      const $minus = $(this).siblings('.js-count__btn_minus');
       $minus.addClass('disabled');
     }
   });
@@ -13,10 +13,10 @@ $(document).ready(() => {
     const $inputElement = element.siblings('.js-count__num');
     let inputValue = Number($inputElement.val());
 
-    if (element.hasClass('js-plus')) {
+    if (element.hasClass('js-count__btn_plus')) {
       $inputElement.val(inputValue += 1);
     }
-    if (element.hasClass('js-minus')) {
+    if (element.hasClass('js-count__btn_minus')) {
       if (inputValue > 0) {
         $inputElement.val(inputValue -= 1);
       }
@@ -26,30 +26,30 @@ $(document).ready(() => {
   function changeSelectButtonClass(element) {
     const $inputElement = element.siblings('.js-count__num');
     const inputValue = $inputElement.val();
-    const minusBtn = $inputElement.siblings('.js-minus');
+    const minusBtn = $inputElement.siblings('.js-count__btn_minus');
 
     if (inputValue > 0) {
-      if (minusBtn.hasClass('disabled')) {
-        minusBtn.removeClass('disabled');
+      if (minusBtn.hasClass('count__btn_disabled')) {
+        minusBtn.removeClass('count__btn_disabled');
       }
-    } else if (!minusBtn.hasClass('disabled')) {
-      minusBtn.addClass('disabled');
+    } else if (!minusBtn.hasClass('count__btn_disabled')) {
+      minusBtn.addClass('count__btn_disabled');
     }
   }
 
-  $('.js-plus, .js-minus').on('click', function () {
+  $('.js-count__btn_plus, .js-count__btn_minus').on('click', function () {
     countSelectItems($(this));
     changeSelectButtonClass($(this));
     showHideResetButton($(this).closest('form'));
     const $selectForm = $(this).closest('form');
 
-    if ($selectForm.hasClass('placement')) {
+    if ($selectForm.hasClass('form_placement')) {
       const str = createPlacementText($selectForm);
-      $selectForm.find('.js-input').val(str);
+      $selectForm.find('.js-input__field').val(str);
     }
-    if ($selectForm.hasClass('guests')) {
+    if ($selectForm.hasClass('form_guests')) {
       const str = createGuestsText($selectForm);
-      $selectForm.find('.js-input').val(str);
+      $selectForm.find('.js-input__field').val(str);
     }
   });
 });

@@ -17,56 +17,6 @@ html, body {
   flex: 1 0 auto;
 }
 
-//ограничивает содержимое страницы
-.container {
-  max-width: 1160px;
-  width: 96vw;
-  padding: 0 1vw;
-  margin: 0 auto;
-  position: relative;
-
-  @media (max-width: 900px) {
-    width: 94vw;
-  }
-}
-
-//размещает элементы в строку
-.row {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-
-  &_fill {
-    justify-content: space-between;
-  }    
-
-  &_start {
-    justify-content: flex-start;
-    gap: 10px;
-  }
-}
-
-//размещает элементы в столбец
-.col {
-  display: flex;
-  flex-direction: column;
-}
-
-a {
-  text-decoration: none;
-  outline: none;
-  color: rgba(31,32,65,0.5);  
-}
-
-form {
-  position: relative;
-  margin: 0px;
-}
-
-.active {
-  display: block;
-}
-
 .fixed-page{
   overflow: hidden; 
 }

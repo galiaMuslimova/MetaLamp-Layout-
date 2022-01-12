@@ -1,6 +1,12 @@
 include ../calendar/calendar.pug
+include ../select/select.pug
+include ../checkbox-list/checkbox-list.pug
 
-mixin drop({category, type})
-  .drop.js-drop 
+mixin drop({category, id, type, items})
+  .drop.js-drop(class='drop_' + category) 
     if(category=='calendar')
-      +calendar({type: type})
+      +calendar({id:id, type: type})
+    if(category=='guests' || category=='placement')
+      +select({items:items, type:type})
+    if(category=='checkbox')
+      +checkbox-list(items)

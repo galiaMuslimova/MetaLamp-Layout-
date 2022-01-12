@@ -1,54 +1,42 @@
 include ../form/form.pug
-include ../checkbox/checkbox.pug
 include ../calendar/calendar.pug
 include ../slider/slider.pug 
+include ../checkbox-list/checkbox-list.pug
+include ../icon-open/icon-open.pug
+include ../drop/drop.pug
 
 .filter.js-filter
-  .col.col1.filter__col
+  .filter__col
     .filter__item
-      h3 даты пребывания в отеле
-      +form(
-        /*category=*/ "calendar", 
-        /*array*/ [],
-        /*value*/ "19 авг - 23 авг") 
+      h3.filter__subtitle даты пребывания в отеле
+      +form({category: 'calendar', id: 'filter', value: '19 авг - 23 авг'}) 
     .filter__item
-      h3 гости
-      +form( 
-        /*category=*/ "guests", 
-        /*array*/ [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]) 
+      h3.filter__subtitle гости
+      +form({category: "guests", items: [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]}) 
     .filter__item
       .filter__slider
         +slider("slider_filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
     .filter__item 
-      form.form_checkbox
-        h3 правила дома
-        .form_checkbox__list        
-          +checkbox({id:"smoke", text:"Можно курить"})
-          +checkbox({id:"pet", text:"Можно с питомцами", checked:true})
-          +checkbox({id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true})    
-  .col.col2.filter__col
+      .filter__checkbox
+        h3.filter__subtitle правила дома     
+        +checkbox-list([{id:"smoke", text:"Можно курить"}, {id:"pet", text:"Можно с питомцами", checked:true}, {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}])    
+  .filter__col
     .filter__item 
-      form.form_checkbox
-        h3 доступность
-        .form_checkbox__list
-          +checkbox({id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."})
-          +checkbox({id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}) 
+      .filter__checkbox
+        h3.filter__subtitle доступность
+        +checkbox-list([{id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}]) 
     .filter__item 
-      h3 удобства номера
-      +form(
-        /*category=*/ "placement", 
-        /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+      h3.filter__subtitle удобства номера
+      +form({category: "placement", items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]})
     .filter__item 
-      form.form_checkbox
-        .row.row_fill.filter__expandable.js-filter__expandable
-          h3 дополнительные удобства
-          button.input__open.js-input__open.form_btn(type="button")
-            span.icon-open
-        .drop.js-drop.form_checkbox__drop
-          .form_checkbox__list 
-            +checkbox({id:"breakfast", text:"Завтрак"})
-            +checkbox({id:"table", text:"Письменный стол", checked:true})
-            +checkbox({id:"chair", text:"Стул для кормления", checked:true})
-            +checkbox({id:"crib", text:"Кроватка"})(class="checked")
-            +checkbox({id:"TV", text:"Телевизор"})
-            +checkbox({id:"shampoo", text:"Шампунь"})
+      .filter__expandable
+        .filter__row
+          h3.filter__subtitle дополнительные удобства
+          +icon-open('expandable')
+        +drop({category: 'checkbox', items: [
+          {id:"breakfast", text:"Завтрак"}, 
+          {id:"table", text:"Письменный стол", checked:true}, 
+          {id:"chair", text:"Стул для кормления", checked:true}, 
+          {id:"crib", text:"Кроватка", checked:true}, 
+          {id:"TV", text:"Телевизор"}, 
+          {id:"shampoo", text:"Шампунь"}]})

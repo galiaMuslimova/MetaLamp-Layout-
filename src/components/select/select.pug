@@ -1,14 +1,15 @@
 include ../count/count.pug
 
-mixin select(array)
-  .drop.js-drop    
-    .select.js-select(class = attributes.class) 
-      each item in array
-        .row.row_fill.select__row
-          h3=item.name
-          +count(item.count)
-      if(attributes.class=="select_card")
-        .row.row_fill.select__row
-          button.btn.btn_simple.select__reset.js-select__reset(type="reset") очистить
-          button.btn.btn_simple.submit.js-submit(type="button") применить
+mixin select({items, type})
+  .select.js-select
+    each item in items
+      .select__row
+        h3.select__subtitle=item.name
+        +count(item.count)
+    if(type=="with-buttons")
+      .select__row
+        .select__reset.js-select__reset
+          +button({ theme: 'simple', type: 'reset', text: 'очистить' })
+        .select__submit.js-select__submit
+          +button({ theme: 'simple', type: 'button', text: 'применить' })
           

@@ -1,32 +1,41 @@
-.btn {  
+.btn {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 15px;
   font-weight: bold;
-  outline: none; 
-  box-sizing: border-box; 
+  outline: none;
+  box-sizing: border-box;
   cursor: pointer;
 
-  &_blue, &_white, &_link {
+  &_blue,
+  &_white,
+  &_link {
     height: 44px;
     border-radius: 22px;
     padding: 0px 20px;
   }
 
-  &_blue, &_link {
+  &_blue,
+  &_link {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
     border: none;
     color: #FFFFFF;
+
     a {
       color: #fff;
     }
   }
 
-  &_blue, &_white {
-    &:hover, &.hovered {
+  &_blue,
+  &_white {
+    max-height: 44px;
+    height: 100%;
+
+    &:hover,
+    &.hovered {
       opacity: 0.5;
-    }    
+    }
   }
 
   &_white {
@@ -42,19 +51,22 @@
     border: none;
     color: #BC9CFF;
     padding: 0;
-    &:hover, &.hovered {
+
+    &:hover,
+    &.hovered {
       color: rgba(31, 32, 65, 0.5);
     }
   }
 
-  &_link {    
+  &_link {
     width: 100%;
     position: relative;
+
     span {
       position: absolute;
       right: 0;
       width: 44px;
       font-size: 1.5em;
     }
-  }  
+  }
 }

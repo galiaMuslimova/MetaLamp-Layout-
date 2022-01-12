@@ -45,9 +45,9 @@ include ../../components/review/review.pug
         form.form_checkbox
           h3 Checkbox Buttons
           .form_checkbox__list
-            +checkbox("smoke", "Можно курить")
-            +checkbox("pet", "Можно с питомцами")(class="checked")
-            +checkbox("invite", "Можно пригласить гостей \n (до 10 человек)")(class="checked")
+            +checkbox({id:"smoke", text:"Можно курить"})
+            +checkbox({id:"pet", text:"Можно с питомцами", checked:true})
+            +checkbox({id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true})
       .form-block.radio-block
         h3 radio buttons
         +radio(["Мужчина", "Женщина"])
@@ -185,8 +185,8 @@ include ../../components/review/review.pug
       form.filter_checkbox
         h3 Rich Checkbox Buttons
         .filter_checkbox__list
-          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере  \n не менее 91 см.")
-          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  \n  и проводит до номера.")   
+          +checkbox({id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере  \n не менее 91 см."})
+          +checkbox({id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист  \n  и проводит до номера."})   
    
     //bullet list
     .block10 

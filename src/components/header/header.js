@@ -1,9 +1,9 @@
 $(() => {
-  $('.js-nav__login').on('click', () => {
+  $('.js-header__login').on('click', () => {
     $(location).attr('href', './login.html');
   });
 
-  $('.js-nav__signin').on('click', () => {
+  $('.js-header__signin').on('click', () => {
     $(location).attr('href', './signin.html');
   });
 });

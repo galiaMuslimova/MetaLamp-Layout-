@@ -1,4 +1,7 @@
 .count {  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 92px;
 
   &__btn {
@@ -10,7 +13,7 @@
     color: #1F204180;
     background-color: #ffff;
 
-    &.disabled {
+    &_disabled {
       opacity: 0.38;
     }
   }

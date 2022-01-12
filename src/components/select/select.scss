@@ -5,26 +5,28 @@
   box-sizing: border-box;
 
   &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding-bottom: 7px;
     align-items: center;
   }
 
   &__reset {
     visibility: hidden;
-    &.active {
-      visibility: visible ;
+
+    &_active {
+      visibility: visible;
     }
-  }   
-  
+  }
+
   &_card {
     padding-bottom: 6px;
+
     .select__row {
       &:last-child {
         padding-top: 12px;
       }
+    }
   }
 }
-}
-
- 
-

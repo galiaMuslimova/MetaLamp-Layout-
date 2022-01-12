@@ -1,13 +1,14 @@
 include ../drop/drop.pug
 include ../input/input.pug
 
-mixin double-date()
-  .double-date  
-    .double-date__item
-      h3.double-date__subtitle прибытие
-      +input({category: 'date', value: 'ДД.ММ.ГГГГ'})
-    .double-date__item
-      h3.double-date__subtitle выезд
-      +input({category: 'date', value: 'ДД.ММ.ГГГГ'})
-  +drop({category: 'calendar', type: 'calendar_with-buttons'})
+mixin double-date({id})
+  form.double-date
+    .double-date__row  
+      .double-date__item
+        h3.double-date__subtitle прибытие
+        +input({category: 'date', value: 'ДД.ММ.ГГГГ'})
+      .double-date__item
+        h3.double-date__subtitle выезд
+        +input({category: 'date', value: 'ДД.ММ.ГГГГ'})
+    +drop({category: 'calendar', id:id, type: 'with-buttons'})
     

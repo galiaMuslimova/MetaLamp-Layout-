@@ -1,4 +1,5 @@
 .icon-open {
+
   &_rotated-left,
   &_rotated-right {
     &:before {
@@ -17,5 +18,14 @@
     &:before {
       transform: rotateZ(-90deg);
     }
+  }
+
+  &_expandable {
+    display: block;
+    font-size: 0.7em;
+  }
+
+  &_active {
+    transform: rotateZ(180deg);
   }
 }

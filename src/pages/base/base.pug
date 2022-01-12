@@ -15,13 +15,17 @@ html
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
   body
-    .wrapper
+    .body 
       //-background-image of page      
-      .back 
+      .body__back 
         block back
-      header        
-        +header()
-      main
-        block content     
-      footer
-        include ../../components/footer/footer.pug
+      header.body__header 
+        .body__container       
+          +header()
+      main.body__main
+        .body__container  
+          block content     
+      footer.body__footer
+        .body__container 
+          include ../../components/links/links.pug
+          include ../../components/rights/rights.pug

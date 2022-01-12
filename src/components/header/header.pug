@@ -1,17 +1,20 @@
+include ../button/button.pug
+
 mixin header(isRegistered=false)  
   .header.js-header
-    .container.header__container
-      .header__logo
-        include ../logo/logo.pug
-      .header__nav
-        include ../nav/nav.pug
-      .header__registration.js-header__registration
-        if !isRegistered
-          button.btn.btn_white.nav__signin.js-nav__signin войти            
-          button.btn.btn_blue.nav__login.js-nav__login зарегистрироваться
-        else  
-          .nav__divider 
-          .nav__name Юлий Цезарь
-      .header__burger-btn
-        include ../burger/burger.pug
+    .header__logo
+      include ../logo/logo.pug
+    .header__nav
+      include ../nav/nav.pug
+    .header__registration.js-header__registration
+      if !isRegistered
+        .js-header__login
+          +button({theme: 'white', text: 'войти'})   
+        .js-header__signin
+          +button({theme: 'blue', text: 'зарегистрироваться'})          
+      else  
+        .header__divider 
+        .header__name Юлий Цезарь
+    .header__burger
+      include ../burger/burger.pug
       

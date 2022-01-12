@@ -10,12 +10,12 @@ mixin input({category='', type='text', value, focus})
         +icon-arrow()
 
     if(category=="dropdown")
-      input.input__field(type=type, value=value)
+      input.input__field.js-input__field(type=type, value=value)
       button.input__btn.js-input__btn(type="button")
         +icon-open()
 
     if(category=="date")
-      input.input__field(type=type, placeholder=value)
+      input.input__field.js-input__field(type=type, placeholder=value)
       button.input__btn.js-input__btn(type="button")
         +icon-open()
 

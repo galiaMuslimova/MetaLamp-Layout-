@@ -1,6 +1,7 @@
 function takeItemsCount(selectForm) {
   const $items = selectForm.find('.js-count__num');
   const values = $items.map((x) => $($items[x]).val());
+  console.log(values)
   return ([Number(values[0]), Number(values[1]), Number(values[2])]);
 }
 
@@ -8,9 +9,9 @@ function showHideResetButton(selectForm) {
   const result = takeItemsCount(selectForm).reduce((sum, elem) => sum + elem, 0);
   const $reset = selectForm.find('.js-select__reset');
   if (result > 0) {
-    $reset.addClass('active');
+    $reset.addClass('select__reset_active');
   } else {
-    $reset.removeClass('active');
+    $reset.removeClass('select__reset_active');
   }
 }
 
@@ -26,14 +27,14 @@ function createGuestsText(selectForm) {
   const adults = `${adultsNum} ${declOfNum(adultsNum, ['гость', 'гостя', 'гостей'])}`;
   const babies = `${numOfGuests[2]} ${declOfNum(numOfGuests[2], ['младенец', 'младенца', 'младенцев'])}`;
   let str;
-  if (numOfGuests[0] + numOfGuests[1] === 0) {
+  if (adultsNum === 0) {
     str = 'Сколько гостей';
   } else
-  if (numOfGuests[2] === 0) {
-    str = adults;
-  } else {
-    str = `${adults}, ${babies}`;
-  }
+    if (numOfGuests[2] === 0) {
+      str = adults;
+    } else {
+      str = `${adults}, ${babies}`;
+    }
   return str;
 }
 
@@ -50,38 +51,46 @@ function createPlacementText(selectForm) {
   return str;
 }
 
-$(window).on('load', () => {
+$(() => {
   const $select = $('.js-select');
   $select.each(function () {
-    const $selectForm = $(this).closest('form');
-    const $input = $selectForm.find('.js-input');
-    if ($selectForm.hasClass('guests')) {
+    const $selectForm = $(this).closest('form');    
+    const $input = $selectForm.find('.js-input__field');    
+    if ($selectForm.hasClass('form_guests')) {
       const str = createGuestsText($selectForm);
+      console.log(str)
       $input.val(str);
       showHideResetButton($selectForm);
     }
-    if ($selectForm.hasClass('placement')) {
+    if ($selectForm.hasClass('form_placement')) {
       const str = createPlacementText($selectForm);
       $input.val(str);
     }
-  });
+  })
 
   $('.js-select__reset').on('click', function () {
     const $selectForm = $(this).closest('form');
     const $countNums = $selectForm.find('.js-count__num');
-    const $minus = $selectForm.find('.js-minus');
+    const $minus = $selectForm.find('.js-count__btn_minus');
     $countNums.each(function () {
       $(this).val(0);
     });
     $minus.each(function () {
-      $(this).addClass('disabled');
+      $(this).addClass('count__btn_disabled');
     });
     showHideResetButton($selectForm);
+  });
+
+  $('.js-select__submit').on('click', function () {
+    const $selectForm = $(this).closest('form');
+    const $drop = $selectForm.find('.js-drop');
+    $drop.removeClass('drop_active');
   });
 });
 
 export {
-  showHideResetButton,
-  createGuestsText,
-  createPlacementText,
-};
+  createPlacementText, 
+  createGuestsText, 
+  showHideResetButton
+}
+
