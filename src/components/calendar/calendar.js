@@ -2,9 +2,9 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
 function showDateInInput(res, dp, element) {
-  const $form = $(dp.$datepicker).closest('form');
+  const $form = $(dp.$datepicker).closest('.form');
   const $inputArr = $form.find('.input');
-  if (element === '.js-datepicker_filter') {    
+  if (element === '.js-datepicker_filter') {
     const date1 = dp.formatDate(res.date[0], 'dd MMM');
     const date2 = dp.formatDate(res.date[1], 'dd MMM');
     const str = `${date1} - ${date2}`;
@@ -17,16 +17,16 @@ function showDateInInput(res, dp, element) {
   }
 }
 
-function makeCalendar(element) {
-  const dp = new AirDatepicker(element, {
+function makeCalendar() {
+  const dp = new AirDatepicker('.calendar__dp', {
     navTitles: {
       days: 'MMMM <i>yyyy</i>',
     },
     multipleDates: true,
     range: true,
     dynamicRange: true,
-    prevHtml: '<span class="icon-arrow_back"></span>',
-    nextHtml: '<span class="icon-arrow"></span>',
+    prevHtml: '<div class="calendar__arrow"><span class="icon-arrow_back"></span></div>',
+    nextHtml: '<div class="calendar__arrow"><span class="icon-arrow"></span></div>',
     onSelect(res) {
       showDateInInput(res, dp, element);
     },

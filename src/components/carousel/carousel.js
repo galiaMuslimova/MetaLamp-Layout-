@@ -1,40 +1,40 @@
 $(document).ready(() => {
   $('.js-carousel__mover').on('click', function () {
-    const $images = $(this).siblings('.js-carousel__image');
-    const $indicators = $(this).siblings('.js-carousel__indicators');
+    const $images = $(this).siblings('.js-carousel__slide-list');
+    const $indicators = $(this).siblings('.js-carousel__indicators-list');
 
-    function slideToRight(itemList) {
-      const $activeItem = itemList.find('.js-shown');
+    function slideToRight({itemList, className}) {
+      const $activeItem = itemList.find('[class$="shown"]');
       if ($activeItem.next()[0] !== undefined) {
         const $nextItem = $activeItem.next();
-        $nextItem.addClass('shown js-shown');
+        $nextItem.addClass(className);
       } else {
         const $firstItem = itemList.children().first();
-        $($firstItem).addClass('shown js-shown');
+        $($firstItem).addClass(className);
       }
-      $activeItem.removeClass('shown js-shown');
+      $activeItem.removeClass(className);
     }
 
-    function slideToLeft(itemList) {
-      const $activeItem = itemList.find('.js-shown');
+    function slideToLeft({itemList, className}) {
+      const $activeItem = itemList.find('[class$="shown"]');
       if ($activeItem.prev()[0] !== undefined) {
         const $prevItem = $activeItem.prev();
-        $prevItem.addClass('shown js-shown');
+        $prevItem.addClass(className);
       } else {
         const $lastItem = itemList.children().last();
-        $($lastItem).addClass('shown js-shown');
+        $($lastItem).addClass(className);
       }
-      $activeItem.removeClass('shown js-shown');
+      $activeItem.removeClass(className);
     }
 
     if ($(this).hasClass('js-carousel__mover_right')) {
-      slideToRight($images);
-      slideToRight($indicators);
+      slideToRight({ itemList: $images, className: 'carousel__slide_shown'});
+      slideToRight({ itemList: $indicators, className: 'carousel__indicator_shown' });
     }
 
     if ($(this).hasClass('js-carousel__mover_left')) {
-      slideToLeft($images);
-      slideToLeft($indicators);
+      slideToLeft({ itemList: $images, className: 'carousel__slide_shown'});
+      slideToLeft({ itemList: $indicators, className: 'carousel__indicator_shown' });
     }
   });
 });

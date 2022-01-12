@@ -1,23 +1,26 @@
-mixin input(type, value, focus)  
-  .input-row.js-input-row(class=attributes.class)
+include ../icon-open/icon-open.pug
+include ../icon-arrow/icon-arrow.pug
 
-    if(attributes.class=="subscript")
-      input.input.js-input(type=type, placeholder=value)
-      button.input__right(type="button")
-        i.icon-arrow
+mixin input({category='', type='text', value, focus})  
+  .input.js-input(class='input_' + category)
 
-    if(attributes.class=="dropdown")
-      input.input.js-input(type=type, value=value)
-      button.input__open.js-input__open(type="button")
-        i.icon-open
+    if(category=="subscript")
+      input.input__field(type=type, placeholder=value)
+      button.input__btn.input__btn_with-arrow.js-input__btn(type="button")
+        +icon-arrow()
 
-    if(attributes.class=="date")
-      input.input.js-input(type=type, placeholder=value)
-      button.input__open.js-input__open(type="button")
-        i.icon-open
+    if(category=="dropdown")
+      input.input__field(type=type, value=value)
+      button.input__btn.js-input__btn(type="button")
+        +icon-open()
 
-    if(!(attributes.class))
-      input.input.js-input(type=type, placeholder=value, autofocus=focus)    
+    if(category=="date")
+      input.input__field(type=type, placeholder=value)
+      button.input__btn.js-input__btn(type="button")
+        +icon-open()
+
+    if(category='')
+      input.input__field(type=type, placeholder=value, autofocus=focus)    
 
 
   

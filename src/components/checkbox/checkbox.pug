@@ -1,11 +1,15 @@
-mixin checkbox(id, text, subtext)
-  .check.row.row_start 
-    label.check__label
-      input.input_hidden.check__input(type="checkbox" id=id checked=attributes.class)
-      span.check__box.icon-check
-    .check__text
-      if(subtext)      
-        p.p_bold=text
-        p.check__subtext.p_small=subtext
-      else 
-        p.p_lightGrey=text
+include ../icon-check/icon-check.pug
+
+mixin checkbox({id, text, subtext, checked=false})
+  .checkbox
+    .checkbox__row 
+      label.checkbox__label
+        input.checkbox__input(type="checkbox" id=id checked=checked)
+        span.checkbox__box
+          +icon-check()
+      .checkbox__content
+        if(subtext)      
+          p.checkbox__text.checkbox__text_bold=text
+          p.checkbox__subtext=subtext
+        else 
+          p.checkbox__text.checkbox__text_light=text

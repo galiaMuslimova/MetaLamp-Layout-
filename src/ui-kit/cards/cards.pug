@@ -1,4 +1,4 @@
-include ../../components/catalog-card/catalog-card.pug
+include ../../components/catalog-item/catalog-item.pug
 include ../../components/calendar/calendar.pug 
 
 .cards
@@ -10,14 +10,14 @@ include ../../components/calendar/calendar.pug
     include ../../components/signin-card/signin-card.pug
   .cards__col    
     +calendar("js-datepicker_cards")(class="select_card")
-    +catalog-card({
+    +catalog-item({
       "num": 888,
       "luxury": true,
       "cost": 9990,
       "stars": 5,
       "review": 145
     })
-    +catalog-card({
+    +catalog-item({
       "num": 840,
       "luxury": false,
       "cost": 9990,

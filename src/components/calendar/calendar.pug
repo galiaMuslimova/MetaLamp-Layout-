@@ -1,7 +1,11 @@
-mixin calendar(type)  
-  .calendar.calendar__container
-    div(class=type)
-    if(attributes.class=="select_card")
-      .row.row_fill.calendar__row
-        button.btn.btn_simple.calendar__reset.js-calendar__reset(type="reset") очистить
-        button.btn.btn_simple.submit.js-submit(type="button") применить
+include ../button/button.pug
+
+mixin calendar({classname, type})  
+  .calendar
+    .calendar__dp
+    if(type=='calendar_with-buttons')
+      .calendar__row
+        .js-calendar__reset
+          +button({ theme: 'simple', type: 'reset', text: 'очистить' })
+        .js-calendar__submit
+          +button({ theme: 'simple', type: 'submit', text: 'применить' })

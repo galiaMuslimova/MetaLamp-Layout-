@@ -1,0 +1,6 @@
+include ../calendar/calendar.pug
+
+mixin drop({category, type})
+  .drop.js-drop 
+    if(category=='calendar')
+      +calendar({type: type})

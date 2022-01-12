@@ -1,0 +1,21 @@
+.icon-open {
+  &_rotated-left,
+  &_rotated-right {
+    &:before {
+      display: inline-block;
+      color: #fff;
+    }
+  }
+
+  &_rotated-left {
+    &:before {
+      transform: rotateZ(90deg);
+    }
+  }
+
+  &_rotated-right {
+    &:before {
+      transform: rotateZ(-90deg);
+    }
+  }
+}

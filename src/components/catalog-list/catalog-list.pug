@@ -1,7 +1,7 @@
 - const data = require('@c/catalog-list/catalog-list.json')
-include ../catalog-card/catalog-card.pug
+include ../catalog-item/catalog-item.pug
 
 .catalog-list.js-catalog-list
   each item in data  
-    +catalog-card(item)
+    +catalog-item(item)
     

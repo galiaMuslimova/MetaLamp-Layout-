@@ -48,24 +48,3 @@ h4 {
 p {
   margin: 0;
 }
-
-.p {
-  //чекбоксы фильтра с начертанием bold
-  &_bold {
-    font-weight: bold;
-    line-height: 20px;
-  }  
-
-  //более светлые тексты, чаще в filter
-  &_lightGrey {
-    line-height: 20px;
-    color: rgba(31,32,65,0.5);
-  }
-
-  //номера в календаре и тексты с маленьким шрифтом
-  &_small {
-    font-size: 12px;
-    line-height: 14px;
-    color: rgba(31,32,65,0.5);
-  }   
-}

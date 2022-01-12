@@ -1,11 +1,11 @@
 include ../rate/rate.pug
 include ../carousel/carousel.pug
 
-mixin catalog-card(item)
-  .catalog-item.js-catalog-item
-    +carousel(item.num)
+mixin catalog-item(item)
+  .catalog-item
+    +carousel({num: item.num})
     .catalog-item__content.js-catalog-item__content
-      .row
+      .catalog-item__row.catalog-item__row_first
         h4.catalog-item__num №
         h2.catalog-item__num_big= item.num
         if(item.luxury)
@@ -13,8 +13,8 @@ mixin catalog-card(item)
         .catalog-item__cost_bold= item.cost.toLocaleString() + '₽'
         p.catalog-item__cost_small в сутки
       .catalog-item__divider
-      .row.row_fill
-        +rate(item.stars)                 
+      .catalog-item__row.catalog-item__row_second
+        +rate({starsCount: item.stars})                 
         p.catalog-item__review
-          span.catalog-item__review_bold= item.review 
-          span Отзывов
+          span.catalog-item__text_bold= item.review 
+          span.catalog-item__text Отзывов

@@ -23,16 +23,16 @@ include ../slider/slider.pug
       form.form_checkbox
         h3 правила дома
         .form_checkbox__list        
-          +checkbox("smoke", "Можно курить")
-          +checkbox("pet", "Можно с питомцами")(class="checked")
-          +checkbox("invite", "Можно пригласить гостей \n (до 10 человек)")(class="checked")    
+          +checkbox({id:"smoke", text:"Можно курить"})
+          +checkbox({id:"pet", text:"Можно с питомцами", checked:true})
+          +checkbox({id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true})    
   .col.col2.filter__col
     .filter__item 
       form.form_checkbox
         h3 доступность
         .form_checkbox__list
-          +checkbox("corridor", "Широкий коридор", "Ширина коридоров в номере \n не менее 91 см.")
-          +checkbox("assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.") 
+          +checkbox({id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."})
+          +checkbox({id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}) 
     .filter__item 
       h3 удобства номера
       +form(
@@ -46,9 +46,9 @@ include ../slider/slider.pug
             span.icon-open
         .drop.js-drop.form_checkbox__drop
           .form_checkbox__list 
-            +checkbox("breakfast", "Завтрак")
-            +checkbox("table", "Письменный стол")(class="checked")
-            +checkbox("chair", "Стул для кормления")(class="checked")
-            +checkbox("crib", "Кроватка")(class="checked")
-            +checkbox("TV", "Телевизор")
-            +checkbox("shampoo", "Шампунь")
+            +checkbox({id:"breakfast", text:"Завтрак"})
+            +checkbox({id:"table", text:"Письменный стол", checked:true})
+            +checkbox({id:"chair", text:"Стул для кормления", checked:true})
+            +checkbox({id:"crib", text:"Кроватка"})(class="checked")
+            +checkbox({id:"TV", text:"Телевизор"})
+            +checkbox({id:"shampoo", text:"Шампунь"})

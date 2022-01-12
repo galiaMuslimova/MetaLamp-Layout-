@@ -4,7 +4,7 @@ mixin header(isRegistered=false)
       .header__logo
         include ../logo/logo.pug
       .header__nav
-        include nav/nav.pug
+        include ../nav/nav.pug
       .header__registration.js-header__registration
         if !isRegistered
           button.btn.btn_white.nav__signin.js-nav__signin войти            
@@ -13,5 +13,5 @@ mixin header(isRegistered=false)
           .nav__divider 
           .nav__name Юлий Цезарь
       .header__burger-btn
-        include burger-btn/burger-btn.pug
+        include ../burger/burger.pug
       
