@@ -1,5 +1,5 @@
 extends ../base/base.pug
-include ../../components/icon-text/icon-text.pug
+include ../../components/feature/feature.pug
 include ../../components/chart/chart.pug
 include ../../components/review/review.pug
 include ../../components/like/like.pug
@@ -21,9 +21,9 @@ block content
     .container.room__container
       .room__info           
         h2 Сведения о номере
-        +icon-text('Комфорт', 'Шумопоглощающие стены')
-        +icon-text('Удобство', 'Окно в каждой из спален')
-        +icon-text('Уют', 'Номер оснащён камином')
+        +feature('Комфорт', 'Шумопоглощающие стены')
+        +feature('Удобство', 'Окно в каждой из спален')
+        +feature('Уют', 'Номер оснащён камином')
       .room__chart
         h2 Впечатления от номера              
         +chart(selectedRoom.review)
