@@ -1,9 +1,9 @@
 mixin slider({type, title, text})
-  form(class=type)
-    .row.row_fill.slider__row
-      h3= title
-      p.p_small.slider__result.js-slider__result
-    .row.slider__row
-      .slider__body.js-slider__body
-    if text
+  form.slider(class=type)
+    .slider__row
+      h3.slider__title= title
+      p.slider__result.js-slider__result
+    .slider__row
+      .slider__anchor.js-slider__anchor
+    if(text)
       p.slider__text= text 

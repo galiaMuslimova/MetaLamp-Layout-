@@ -1,5 +1,6 @@
 mixin toggle({text, isCheck})
-  label.row.row_start.toggle
-    input.input_hidden.toggle__input(type="checkbox" checked=isCheck)
-    span.toggle__box
-    p=text
+  .toggle
+    label.toggle__label
+      input.toggle__input(type="checkbox" checked=isCheck)
+      span.toggle__box
+      p.toggle__text= text

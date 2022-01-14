@@ -2,11 +2,11 @@ extends ../base/base.pug
 include ../../components/input/input.pug
 
 block content     
-  .container.main__container
+  .main
     .main__card
       include ../../components/entry-card/entry-card.pug
     .main__note
       p.main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 
 block back
-  img.back__image(src=require("@a/images/background-images/index.jpg"), alt="background room image")
+  img.main__image(src=require("@a/images/background-images/index.jpg"), alt="background room image")

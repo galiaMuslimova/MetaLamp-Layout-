@@ -3,7 +3,7 @@ import createPagination from '@c/pagination/pagination.js';
 $(() => {
   $('.js-catalog__button').on('click', function () {
     const $filter = $(this).siblings('.js-catalog__filter');
-    $filter.toggleClass('active');
+    $filter.toggleClass('catalog__filter_active');
   });
 
   const baseElement = $('.js-pagination__anchor_catalog');

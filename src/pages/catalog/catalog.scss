@@ -14,7 +14,7 @@
       display: none;
       background-color: #fff;
       z-index: 50;
-      &.active {
+      &_active {
         display: block;
       }
     }

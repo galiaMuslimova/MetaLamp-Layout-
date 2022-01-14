@@ -55,14 +55,14 @@ $(() => {
   const $select = $('.js-select');
   $select.each(function () {
     const $selectForm = $(this).closest('form');    
-    const $input = $selectForm.find('.js-input__field');    
-    if ($selectForm.hasClass('form_guests')) {
+    const $input = $selectForm.find('.js-input__field'); 
+    const $drop = $selectForm.find('.js-drop');   
+    if ($drop.hasClass('drop_guests')) {
       const str = createGuestsText($selectForm);
-      console.log(str)
       $input.val(str);
       showHideResetButton($selectForm);
     }
-    if ($selectForm.hasClass('form_placement')) {
+    if ($drop.hasClass('drop_placement')) {
       const str = createPlacementText($selectForm);
       $input.val(str);
     }

@@ -1,13 +1,13 @@
 include ../count/count.pug
 
-mixin select({items, type})
+mixin select({items, hasButton})
   .select.js-select
     each item in items
       .select__row
         h3.select__subtitle=item.name
         +count(item.count)
-    if(type=="with-buttons")
-      .select__row
+    if(hasButton==true)
+      .select__buttons
         .select__reset.js-select__reset
           +button({ theme: 'simple', type: 'reset', text: 'очистить' })
         .select__submit.js-select__submit

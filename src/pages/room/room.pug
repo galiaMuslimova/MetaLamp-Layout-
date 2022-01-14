@@ -6,39 +6,41 @@ include ../../components/like/like.pug
 include ../../components/bullet/bullet.pug
 
 block content
-  -const selectedRoom = require("@/pages/room/room.json")
-  -function roomRequireAll(requireContext) { return requireContext.keys().map(requireContext) };
-  -const roomImages = roomRequireAll(require.context("@a/images/catalog-images/888/", true, /\.(jpg|png|jpeg)$/));
-
   .room
-    .room__view
-      .room__image.room__image_1
-        img(src=roomImages[0] alt='room image')
-      .room__image.room__image_2
-        img(src=roomImages[1] alt='room image')
-      .room__image.room__image_3
-        img(src=roomImages[2] alt='room image')
-    .container.room__container
+    .room__content
       .room__info           
-        h2 Сведения о номере
+        h2.room__subtitle Сведения о номере
         +feature('Комфорт', 'Шумопоглощающие стены')
         +feature('Удобство', 'Окно в каждой из спален')
         +feature('Уют', 'Номер оснащён камином')
       .room__chart
-        h2 Впечатления от номера              
+        h2.room__subtitle Впечатления от номера              
         +chart(selectedRoom.review)
       .room__review 
-        .row.row_fill
-          h2 Отзывы посетителей номера
-          p 2 отзыва
+        .room__row
+          h2.room__subtitle Отзывы посетителей номера
+          p.room__text 2 отзыва
         -const data = require("@c/review/review.json")
         +review(data)
       .room__rules
-        h2 Правила 
+        h2.room__subtitle Правила 
         +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", 
         "Время прибытия — после 13:00, а выезд до 12:00"])
       .room__cancel 
-        h2 Отмена 
-        p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.                
+        h2.room__subtitle Отмена 
+        p.room__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.                
       .room__card
         include ../../components/room-card/room-card.pug
+
+block view 
+  -const selectedRoom = require("@/pages/room/room.json")
+  -function roomRequireAll(requireContext) { return requireContext.keys().map(requireContext) };
+  -const roomImages = roomRequireAll(require.context("@a/images/catalog-images/888/", true, /\.(jpg|png|jpeg)$/));
+
+  .room__view
+    .room__photo.room__photo_1
+      img.room__image(src=roomImages[0] alt='room image')
+    .room__photo.room__photo_2
+      img.room__image(src=roomImages[1] alt='room image')
+    .room__photo.room__photo_3
+      img.room__image(src=roomImages[2] alt='room image')

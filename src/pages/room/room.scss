@@ -1,54 +1,5 @@
 .room {
-  h2 {
-    margin: 0;
-  }
-
-  &__view {
-    height: 33.1vw;
-    display: grid;
-    grid:
-      "image1 image2"50% "image1 image3"50% /0.68fr 0.32fr;
-
-    @media(max-width: 770px) {
-      grid: "image1";
-    }
-  }
-
-  &__image {
-    height: max-content;
-
-    @media(max-width: 770px) {
-      height: 100%;
-    }
-
-    &_1 {
-      grid-area: image1;
-    }
-
-    &_2 {
-      grid-area: image2;
-
-      @media(max-width: 770px) {
-        display: none;
-      }
-    }
-
-    &_3 {
-      grid-area: image3;
-
-      @media(max-width: 770px) {
-        display: none;
-      }
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__container {
+  &__content {
     padding-top: 5vw;
     padding-bottom: 4.2vw;
     display: grid;
@@ -81,6 +32,10 @@
     }
   }
 
+  &__subtitle {
+    margin: 0;
+  }
+
   &__info {
     grid-area: info;
 
@@ -100,17 +55,20 @@
   &__review {
     grid-area: review;
 
-    >.row {
-      align-items: baseline;
-      margin-bottom: 19px;
-
-      @media(max-width: 770px) {
-        flex-direction: column;
-      }
-    }
-
     @media(max-width: 770px) {
       margin: 15px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 19px;
+
+    @media(max-width: 770px) {
+      flex-direction: column;
     }
   }
 
@@ -126,11 +84,6 @@
     grid-area: rules;
     max-width: 260px;
 
-    >h2 {
-      margin-left: 20px;
-      margin-bottom: 18px;
-    }
-
     @media(max-width: 770px) {
       margin: 15px;
     }
@@ -140,12 +93,53 @@
     grid-area: cancel;
     max-width: 340px;
 
-    >h2 {
-      margin-bottom: 18px;
-    }
-
     @media(max-width: 770px) {
       margin: 10px;
     }
+  }
+
+  &__view {
+    height: 33.1vw;
+    display: grid;
+    grid:
+      "photo1 photo2"50% "photo1 photo3"50% /0.68fr 0.32fr;
+
+    @media(max-width: 770px) {
+      grid: "photo1";
+    }
+  }
+
+  &__photo {
+    height: max-content;
+
+    @media(max-width: 770px) {
+      height: 100%;
+    }
+
+    &_1 {
+      grid-area: photo1;
+    }
+
+    &_2 {
+      grid-area: photo2;
+
+      @media(max-width: 770px) {
+        display: none;
+      }
+    }
+
+    &_3 {
+      grid-area: photo3;
+
+      @media(max-width: 770px) {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

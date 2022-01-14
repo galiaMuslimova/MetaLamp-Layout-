@@ -10,6 +10,10 @@
     justify-content: space-between;
     padding-bottom: 7px;
     align-items: center;
+
+    &:last-child {
+      padding-top: 12px;
+    }
   }
 
   &__reset {
@@ -17,16 +21,6 @@
 
     &_active {
       visibility: visible;
-    }
-  }
-
-  &_card {
-    padding-bottom: 6px;
-
-    .select__row {
-      &:last-child {
-        padding-top: 12px;
-      }
     }
   }
 }

@@ -1,20 +1,19 @@
 extends ../base/base.pug
+include ../../components/icon-open/icon-open.pug
 include ../../components/pagination/pagination.pug
 
 block content
-  .container
-    .catalog
-      .catalog__filter.js-catalog__filter
-        include ../../components/filter/filter.pug
-      .catalog__button.js-catalog__button
-        span.icon-open
-      .catalog__list
-        .catalog__title
-          h1 Номера, которые мы для вас подобрали
-        .catalog__content
-          include ../../components/catalog-list/catalog-list.pug
-        .catalog__pagination
-          +pagination({id: "catalog"})
-          
+  .catalog
+    .catalog__filter.js-catalog__filter
+      include ../../components/filter/filter.pug
+    .catalog__button.js-catalog__button
+      +icon-open()
+    .catalog__list
+      h1.catalog__title Номера, которые мы для вас подобрали
+      .catalog__content
+        include ../../components/catalog-list/catalog-list.pug
+      .catalog__pagination
+        +pagination({id: "catalog"})
+        
     
   

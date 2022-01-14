@@ -1,18 +1,18 @@
 include ../input/input.pug
+include ../button/button.pug
 
-.card.signin-card 
-  .card__inner
-    .card__item 
-      h1 Войти
-    .card__item 
-      .card__input
+.signin-card 
+  .signin-card__inner
+    .signin-card__item 
+      h1.signin-card__title Войти
+    .signin-card__item 
+      .signin-card__input
         +input("text", "Email")
-      .card__input
+      .signin-card__input
         +input("text", "Пароль")
-    .card__item 
-      button.btn.btn_link Войти
-        span.icon-arrow
-    .card__item 
-      .row.row_fill 
-        p Нет аккаунта на Toxin?
-        button.btn.btn_white.nav__login создать
+    .signin-card__item 
+      +button({theme: 'link', text: 'Войти', icon: true})
+    .signin-card__item 
+      .signin-card__row
+        p.signin-card__text Нет аккаунта на Toxin?
+        +button({theme: 'white', text: 'создать'})

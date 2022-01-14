@@ -3,5 +3,40 @@
   width: 100%;
   max-height: 358px;
   height: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
   margin: 11.8vw auto;
+  background: #FFFFFF;
+
+  @media (max-width: 420px) {
+    width: 300px;
+  }
+
+  &__inner {
+    padding: 40px 30px 30px 30px;
+
+    @media (max-width: 420px) {
+      padding: 15px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 21px;
+
+    &:last-child {
+      margin-top: 30px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 8px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

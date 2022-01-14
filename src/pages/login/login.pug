@@ -2,9 +2,8 @@ extends ../base/base.pug
 
 block content  
   .login
-    .container
+    .login__content
       include ../../components/login-card/login-card.pug
 
 block back
-  .login__back
-    img(src=require("@a/images/background-images/login.jpg"), alt="background room image")
+  img.login__image(src=require("@a/images/background-images/login.jpg"), alt="background room image")

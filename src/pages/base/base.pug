@@ -18,10 +18,12 @@ html
     .body 
       //-background-image of page      
       .body__back 
-        block back
+        block back      
       header.body__header 
         .body__container       
           +header()
+      .body__view
+        block view
       main.body__main
         .body__container  
           block content     
