@@ -1,0 +1,51 @@
+.templates {
+  margin: 145px auto;
+  display: grid;
+  grid-template: min-content / 1fr 1fr;
+  grid-column-gap: 18%;
+
+  &__list {
+    margin: 0px;
+    padding-left: 10px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__color {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background-color: red;
+  }
+
+  &__color-name {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    line-height: 28px;
+  }
+
+  &__color-title {
+    font-weight: bold;
+  }
+
+  &__types {
+    display: grid;
+    grid-template: repeat(4, min-content) / min-content 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 36px;
+    margin: 0px;
+    padding-left: 30px;
+  }
+
+  &__types-name {
+    color: rgba(31, 32, 65, 0.25);
+    text-align: end;
+  }
+}

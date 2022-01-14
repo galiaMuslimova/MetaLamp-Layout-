@@ -2,7 +2,7 @@ include ../calendar/calendar.pug
 include ../select/select.pug
 include ../checkbox-list/checkbox-list.pug
 
-mixin drop({type, id='', hasButton=false, items})
+mixin drop({type='calendar', id='', hasButton=false, items})
   .drop.js-drop(class='drop_' + category) 
     if(type=='calendar')
       +calendar({id:id, hasButton: hasButton})
