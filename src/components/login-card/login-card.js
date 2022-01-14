@@ -6,5 +6,7 @@ $(() => {
     const $drop = $(this).siblings('.js-drop');
     $drop.toggleClass('active');
   });
-  makeCalendar('.js-datepicker_login');
+
+  const $loginCardCalendarPlace = '.calendar__dp_login';
+  const loginCardCalendar = makeCalendar($loginCardCalendarPlace);
 });

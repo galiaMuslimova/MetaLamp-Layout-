@@ -17,8 +17,8 @@ function getPageList(totalPages, page) {
   return range(1, 1).concat(0, range(page - 1, page + 1), 0, totalPages);
 }
 
-function showPage(pageNum) {
-  const numberOfItems = $('.js-catalog-list .js-catalog-item').length;
+function showPage(pageNum, el, items) {
+  const numberOfItems = items.length;
   const limitPerPage = 12;
   const totalPages = Math.ceil(numberOfItems / limitPerPage);
 
@@ -26,47 +26,46 @@ function showPage(pageNum) {
 
   const currentPage = pageNum;
 
-  $('.js-catalog-list .js-catalog-item').hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
+  items.hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
 
-  $('.js-pagination li').slice(1, -1).remove();
+  el.find('.pagination__item').slice(1, -1).remove();
 
   getPageList(totalPages, currentPage).forEach((item) => {
     $('<li>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
-      .toggleClass('active', item === currentPage)
+      .toggleClass('pagination__item_active', item === currentPage)
       .text(item || '...')
       .insertBefore('.pagination__item_next');
   });
 
-  $('.js-pagination__item_previous').toggleClass('disable', currentPage === 1);
-  $('.js-pagination__item_next').toggleClass('disable', currentPage === totalPages);
+  $('.js-pagination__item_previous').toggleClass('pagination__item_disable', currentPage === 1);
+  $('.js-pagination__item_next').toggleClass('pagination__item_disable', currentPage === totalPages);
   return true;
 }
 
-function createPagination(el) {
+function createPagination(el, items) {
   let currentPage = 1;
 
   $(el).append(
-    $('<li>').addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('icon-arrow_back')),
-    $('<li>').addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('icon-arrow')),
+    $('<li>').addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back'))),
+    $('<li>').addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow')))
   );
 
-  showPage(1);
+  showPage(currentPage, el, items);
 
   $(document).on('click', '.js-pagination__item_current', function () {
     currentPage = Number($(this).text());
-    return showPage(Number($(this).text()));
+    return showPage(currentPage, el, items);
   });
 
-  $('.js-pagination__item_next').on('click', () => { showPage(currentPage += 1); });
+  $('.js-pagination__item_next').on('click', () => { 
+    currentPage += 1;
+    showPage(currentPage, el, items); 
+  });
 
-  $('.js-pagination__item_previous').on('click', () => { showPage(currentPage -= 1); });
+  $('.js-pagination__item_previous').on('click', () => { 
+    currentPage -= 1
+    showPage(currentPage, el, items); 
+  });
 }
-
-$(() => {
-  $.fn.pagination = function () {
-    createPagination(this);
-    return this;
-  };
-});
 
 export default createPagination;

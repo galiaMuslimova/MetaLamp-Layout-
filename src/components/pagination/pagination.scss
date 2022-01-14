@@ -1,4 +1,9 @@
 .pagination {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 2.7vw auto 4.5vw auto;
+  padding-right: 15px;
   user-select: none;
   font-size: 12px;
 
@@ -20,24 +25,9 @@
       border-radius: 22px;
       color: #fff;
       font-weight: bold;
-
-      &.disable {
-        display: none;
-      }
-
-      span {
-        color: white;
-
-        &:before {
-          display: block;
-          font-size: 1.4em;
-          line-height: 1.4em;
-          margin: 0.3em;
-        }
-      }
     }
 
-    &_current.active {
+    &_active {
       border-radius: 22px;
       color: #fff;
       font-weight: bold;
@@ -46,10 +36,31 @@
 
     &_previous,
     &_next,
-    &_current.active {
+    &_active {
       @media(max-width: 770px) {
         width: 40px;
       }
     }
+
+    &_disable {
+      display: none;
+    }
+  }
+
+  &__icon {
+    color: white;
+
+    &:before {
+      display: block;
+      font-size: 1.4em;
+      line-height: 1.4em;
+      margin: 0.3em;
+    }
+  }
+
+  &__text {
+    width: max-content;
+    margin: 0 auto;
+    padding: 7px;
   }
 }

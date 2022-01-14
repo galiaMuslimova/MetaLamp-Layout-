@@ -1,11 +1,12 @@
 mixin feature(title, text)
   -const featureData = require("@c/feature/feature.json")
-  -const featureSrc = "@a/icons/info-icons/" + featureData[title].src
+  -const featureSrc = require("@a/icons/info-icons/" + featureData[title].src)
   -const featureAlt = `${featureData[title].alt}`
   .feature
-    .feature__icon 
-      img.feature__image(src=require(featureSrc) alt=featureAlt)
-    .col
-      .feature__title= title
-      .feature__text= text
-  .feature__divider
+    .feature__content
+      .feature__icon 
+        img.feature__image(src=featureSrc alt=featureAlt)
+      .feature__col
+        .feature__title= title
+        .feature__text= text
+    .feature__divider

@@ -25,6 +25,17 @@
     margin-bottom: 21px;
   }
 
+  &__title {
+    color: rgba(31, 32, 65, 1);
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 1);
+  }
+
   &__button {
     margin-top: 30px;
   }

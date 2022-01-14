@@ -1,11 +1,9 @@
 .links {
-  background-color: #fff;
-  border-bottom: 1px solid rgba(31, 32, 65, 0.25);
-  border-top: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  height: 25.7vw;
   display: flex;
+  height: 25.7vw;
   align-items: center;
+  box-sizing: border-box;
+
   @media only screen and (max-width: 1024px) {
     display: none;
   }
@@ -17,6 +15,8 @@
   }
 
   &__col {
+    display: flex;
+    flex-direction: column;
     max-width: 260px;
     align-items: flex-start;
     gap: 13px;
@@ -24,6 +24,14 @@
 
   &__subtitle {
     margin: 4px 0px;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 1);
+  }
+
+  &__text {
+    text-decoration: none;
   }
 
   &__form {

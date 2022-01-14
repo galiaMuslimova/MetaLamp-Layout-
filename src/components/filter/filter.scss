@@ -26,6 +26,13 @@
     margin-bottom: 20px;
   }
 
+  &__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 1);
+  }
+
   &__slider {
     margin: 10px 0px;
   }

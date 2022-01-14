@@ -1,12 +1,25 @@
 .feature {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 53px 1fr;
-  margin: 21px 0px 19px 4px;
+  &:last-child {
+    &__divider {
+      display: none;
+    }    
+  }
+
+  &__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 53px 1fr;
+    margin: 21px 0px 19px 4px;
+  }
 
   &__icon {
     display: flex;
     align-items: center;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -14,9 +27,6 @@
   }
 
   &__divider {
-    &:last-child {
-      display: none;
-    }
     height: 1px;
     max-width: 280px;
     width: 100%;

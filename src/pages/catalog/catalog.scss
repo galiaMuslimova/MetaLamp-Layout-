@@ -51,18 +51,4 @@
   &__content {    
     min-height: 1090px;
   }
-  
-  &__pagination {
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    margin: 2.7vw auto 4.5vw auto;
-    padding-right: 15px;
-  }
-
-  &__pag-text {
-    width: max-content;
-    margin: 0 auto;
-    padding: 7px;
-  }
 }

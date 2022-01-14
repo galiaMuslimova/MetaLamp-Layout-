@@ -1,15 +1,57 @@
 .login-card {
   max-width: 380px;
+  width: 100%;
   max-height: 646px;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
   margin: 1.3vw auto;
+  background: #FFFFFF;
+
+  @media (max-width: 420px) {
+    width: 300px;
+  }
+
+  &__inner {
+    padding: 40px 30px 30px 30px;
+
+    @media (max-width: 420px) {
+      padding: 15px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 21px;
+
+    &:last-child {
+      margin-top: 30px;
+    }
+  }
+
+  &__title {
+    color: rgba(31, 32, 65, 1);
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 1);
+  }
+
+  &__input {
+    margin-bottom: 8px;
+  }
 
   &__radio {
     padding: 1px;
   }
 
-  &__button {
-    button {
-      padding: 0px 24px;
-    }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

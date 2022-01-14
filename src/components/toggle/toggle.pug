@@ -1,4 +1,4 @@
-mixin toggle(text, isCheck)
+mixin toggle({text, isCheck})
   label.row.row_start.toggle
     input.input_hidden.toggle__input(type="checkbox" checked=isCheck)
     span.toggle__box

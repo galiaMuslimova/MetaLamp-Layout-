@@ -1,0 +1,26 @@
+.calculation {
+  display: grid;
+  grid-template-columns: minmax(min-content, 214px) 30px 1fr;
+  align-items: baseline;
+
+  &__text {
+    line-height: 18px;
+
+    &_circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      margin: 0 auto;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    &_cost {
+      margin-left: auto;
+    }
+  }
+
+
+}

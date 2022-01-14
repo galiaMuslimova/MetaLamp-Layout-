@@ -9,13 +9,22 @@ include ../drop/drop.pug
   .filter__col
     .filter__item
       h3.filter__subtitle даты пребывания в отеле
-      +form({category: 'calendar', id: 'filter', value: '19 авг - 23 авг'}) 
+      +form({
+        inputDate: {value: '19 авг - 23 авг'}, 
+        dropDate: {type: 'calendar', id: 'filter'}
+      }) 
     .filter__item
       h3.filter__subtitle гости
-      +form({category: "guests", items: [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]}) 
+      +form({
+        inputDate: {value: '19 авг - 23 авг'}, 
+        dropDate: {
+          type: 'guests', 
+          items: [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]
+          }
+        }) 
     .filter__item
       .filter__slider
-        +slider("slider_filter", "диапазон цены", "Стоимость за сутки пребывания в номере")
+        +slider({type:"slider_filter", title:"диапазон цены", text:"Стоимость за сутки пребывания в номере"})
     .filter__item 
       .filter__checkbox
         h3.filter__subtitle правила дома     
@@ -24,19 +33,28 @@ include ../drop/drop.pug
     .filter__item 
       .filter__checkbox
         h3.filter__subtitle доступность
-        +checkbox-list([{id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}]) 
+        +checkbox-list([
+          {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}]) 
     .filter__item 
       h3.filter__subtitle удобства номера
-      +form({category: "placement", items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]})
+      +form({
+        dropDate: {
+          type: "placement", 
+          items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]
+          }
+        })
     .filter__item 
       .filter__expandable
         .filter__row
           h3.filter__subtitle дополнительные удобства
           +icon-open('expandable')
-        +drop({category: 'checkbox', items: [
+        +drop({
+          type: 'checkbox', 
+          items: [
           {id:"breakfast", text:"Завтрак"}, 
           {id:"table", text:"Письменный стол", checked:true}, 
           {id:"chair", text:"Стул для кормления", checked:true}, 
           {id:"crib", text:"Кроватка", checked:true}, 
           {id:"TV", text:"Телевизор"}, 
-          {id:"shampoo", text:"Шампунь"}]})
+          {id:"shampoo", text:"Шампунь"}]
+        })

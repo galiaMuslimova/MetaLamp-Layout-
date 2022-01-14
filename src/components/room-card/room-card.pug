@@ -1,53 +1,39 @@
 - const roomData = require('@c/room-card/room-card.json')
 include ../form/form.pug
 include ../double-date/double-date.pug
+include ../calculation/calculation.pug
 
-.card.room-card   
+.room-card   
   -const date = roomData.date
   -const diff = Math.abs(+new Date(date[1]) - +new Date(date[0]));
   -const days = diff/1000/60/60/24;
-  .card__inner
-    .card__item
-      .row.room-card__title
-        h4.catalog-item__num №
-        h1.room-card__num= roomData.num
-        h3.catalog-item__num_light= roomData.luxury?"люкс":""
-        .catalog-item__cost_bold= roomData.cost.toLocaleString() + '₽'
-        p.catalog-item__cost_small в сутки
-    .card__item
+  .room-card__inner
+    .room-card__item
+      .room-card__title
+        p.room-card__title-block
+          span.room-card__number-sign №
+          span.room-card__number= roomData.num
+          span.room-card__lux= roomData.luxury ? "люкс" : ""
+        p.room-card__title-block
+          span.room-card__cost= roomData.cost.toLocaleString() + '₽'
+          span.room-card__cost-text в сутки
+    .room-card__item
       +double-date("datepicker_room js-datepicker_room")
-    .card__item
-      h3 гости 
-      +form( 
-        /*category*/ "guests", 
-        /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}])(class="select_card")
-    .card__item
-      .room-card__calculation.calculation 
-        .calculation__item 
-          p= roomData.cost.toLocaleString() + '₽ х '
-            span= days + 'суток'
-        .calculation__item
-        .calculation__item.cost
-          p 
-            span= (roomData.cost*days).toLocaleString() + '₽'
-        .calculation__item
-          p Сбор за услуги: скидка 
-            span= (roomData.discount).toLocaleString() + '₽'
-        .calculation__item.circle-i
-          span i
-        .calculation__item.cost
-          p 0₽
-        .calculation__item
-          p Сбор за дополнительные услуги
-        .calculation__item.circle-i
-          span i
-        .calculation__item.cost
-          p
-            span.room-card__fee= roomData.fee + '₽'   
-    .card__item
-      .row.room-card__total.total 
-        h2 Итого
-        .total__divider
-        h2= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
-      button.btn.btn_link забронировать
-        span.icon-arrow
+    .room-card__item
+      h3.room-card__subtitle гости 
+      +form({
+        dropDate: {
+          type: "guests",
+          hasButton: true,
+          items: [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}]
+        }
+      }) 
+    .room-card__calculation 
+      +calculation(roomData, days)        
+    .room-card__item
+      .room-card__total 
+        h2.room-card__total-text Итого
+        .room-card__dots
+        h2.room-card__total-cost= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
+      .room-card__butoon 
+        +button({theme: "link", text: "забронировать", icon: true})

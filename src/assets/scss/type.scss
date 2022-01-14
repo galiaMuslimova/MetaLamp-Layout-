@@ -1,16 +1,19 @@
-$darkShade: rgba(31,32,65,1);
+$darkShade: rgba(31, 32, 65, 1);
 $purple: #BC9CFF;
 $green: #6FCF97;
 $white: #FFFFFF;
 
-//основной шрифт
-html, body, p, input, button {
+html,
+body {
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-size: 14px;
   line-height: 24px;
   font-weight: normal;
-  color: rgba(31,32,65,0.75);
+  color: rgba(31, 32, 65, 0.75);
 }
+
+//основной шрифт
+/*
 
 h1, h2, h3, h4 {
   font-weight: bold;  
@@ -47,4 +50,4 @@ h4 {
 
 p {
   margin: 0;
-}
+}*/

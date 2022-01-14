@@ -1,4 +1,6 @@
 .like {
+  display: flex;
+  flex-direction: row;
   width: 40px;
   height: 20px;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -9,23 +11,31 @@
   position: relative;
 
   &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width: 100%;
-    &:checked + .like__icon:before {
-      background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+    margin: 0px;
+    color: transparent;
+    text-shadow: 0 0 0 black;
+    cursor: pointer;
+
+    &:checked+.like__icon:before {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: none;
+      background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
     }
   }
 
-  &__icon {    
+  &__icon {
     &:before {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgba(31, 32, 65, 0.25);
       line-height: 10px;
       margin: 0.7em;
       font-size: 0.5em;
-      color: #fff;      
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: rgba(31, 32, 65, 0.25);
+      color: #fff;
     }
   }
 

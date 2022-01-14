@@ -19,25 +19,25 @@ include ../../components/review/review.pug
         .row.row_fill.row_title
           h3 Text Field
           h3.row_title__default default
-        +input("E-mail", "Email")   
+        +input({type: "empty", fontType:"E-mail", value:"Email"})   
       form
         .row.row_fill.row_title
           h3 Text Field
           h3 Hover / Focus
-        +input("text", "This is pretty awesome", "autofocus")
+        +input({type: "empty", value: "This is pretty awesome", focus: true})
       form
         h3 Dropdown
-        +input("text", "Сколько гостей")(class="dropdown")
+        +input({value: "Сколько гостей"})
       form
         h3 masked text field
-        +input("text", "ДД.ММ.ГГГГ")
+        +input({type: "empty", value: "ДД.ММ.ГГГГ"})
       .row.double-date 
         form
           h3 date dropdown
-          +input("text", "ДД.ММ.ГГГГ")(class="dropdown")
+          +input({type: "dropdown", value: "ДД.ММ.ГГГГ"})
         form
           h3 date dropdown
-          +input("text", "19.08.2019")(class="dropdown")
+          +input({type: "dropdown", value: "19.08.2019"})
     
     //checkbox, radio...
     .block2 
@@ -80,7 +80,7 @@ include ../../components/review/review.pug
     //slider, buttons...
     .block3
       .forms__slider
-        +slider("js-slider_forms", "Range Slider")
+        +slider({type:"js-slider_forms", text:"Range Slider"})
       .buttons-block
         h3 buttons 
         .row.row_start 
@@ -112,11 +112,11 @@ include ../../components/review/review.pug
       .filter-date-block
         form
           h3 filter date dropdown
-          +input("text", "19 авг - 23 авг")(class="dropdown")
+          +input({type:"dropdown", value:"19 авг - 23 авг"})
       .filter-subscription-block
         form
           h3 subscription text field
-          +input("text", "Email")(class="subscript")
+          +input({type:"subscript", value:"Email"})
     
     //dropdown first column
     .block5
@@ -124,32 +124,47 @@ include ../../components/review/review.pug
         .row.row_fill.row_title
           h3 dropdown 
           h3 default
-        +form(
-          /*category=*/ "placement", 
-          /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+        +form({
+            dropDate: {
+              type:"placement", 
+              items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]
+            }
+          })
       .form-select.js-expanded
         .row.row_fill.row_title
           h3 dropdown 
           h3 expanded
-        +form(
-          /*category=*/ "placement", 
-          /*items*/ [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}])
+        +form({
+            dropDate: {
+              type:"placement", 
+              items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]
+            }
+          })
     
     //dropdown second column
     .block6
       .form-select.js-expanded
         h3 dropdown 
-        +form( 
-          /*category=*/ "guests", 
-          /*items*/ [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}])(class="select_card")
+        +form({
+            dropDate: {
+              type:"guests", 
+              hasButton: true,
+              items: [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
+            }
+          })
     
     //dropdown third column
     .block7
       .form-select.js-expanded
         h3 dropdown 
-        +form( 
-          /*category=*/ "guests", 
-          /*items*/ [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}])(class="select_card")
+        +form({
+          dropDate: {
+            type:"guests", 
+            hasButton: true,
+            items: [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}]
+          }
+        }) 
+          
     
     //expandable list
     .block8

@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
   $('.js-like').on('change', function () {
     const isCheck = $(this).find('.js-like__input').is(':checked');
     const $likeInput = $(this).find('.js-like__count');

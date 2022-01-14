@@ -1,31 +1,31 @@
 include ../input/input.pug
 
 .links
-  .container.links__container
-      .col.links__col
-        .links__logo
-          include ../logo/logo.pug
-        p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-      .col.links__col
-        h3.links__subtitle Навигация 
-        a(href='../../empty.html') О нас
-        a(href='../../empty.html') Новости
-        a(href='../../empty.html') Служба поддержки
-        a(href='../../empty.html') Услуги
-      .col.links__col
-        h3.links__subtitle О нас
-        a(href='../../empty.html') О сервисе
-        a(href='../../empty.html') Наша команда
-        a(href='../../empty.html') Вакансии
-        a(href='../../empty.html') Инвесторы
-      .col.links__col
-        h3.links__subtitle Служба поддержки
-        a(href='../../empty.html') Соглашение
-        a(href='../../empty.html') Сообщества
-        a(href='../../empty.html') Связь с нами
-      .col.links__col
-        h3.links__subtitle Подписка
-        p Получайте специальные предложения и новости сервиса
-        form.links__form           
-          +input("text", "Email")(class="subscript")
+  .links__container
+    .links__col
+      .links__logo
+        include ../logo/logo.pug
+      p.links__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+    .links__col
+      h3.links__subtitle Навигация 
+      a.links__text(href='../../empty.html') О нас
+      a.links__text(href='../../empty.html') Новости
+      a.links__text(href='../../empty.html') Служба поддержки
+      a.links__text(href='../../empty.html') Услуги
+    .links__col
+      h3.links__subtitle О нас
+      a.links__text(href='../../empty.html') О сервисе
+      a.links__text(href='../../empty.html') Наша команда
+      a.links__text(href='../../empty.html') Вакансии
+      a.links__text(href='../../empty.html') Инвесторы
+    .links__col
+      h3.links__subtitle Служба поддержки
+      a.links__text(href='../../empty.html') Соглашение
+      a.links__text(href='../../empty.html') Сообщества
+      a.links__text(href='../../empty.html') Связь с нами
+    .links__col
+      h3.links__subtitle Подписка
+      p.links__info Получайте специальные предложения и новости сервиса
+      form.links__form           
+        +input({category:"subscript", type:"e-mail", text:"Email"})
       

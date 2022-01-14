@@ -7,13 +7,18 @@ include ../button/button.pug
     .entry-card__item
       h1.entry-card__title Найдём номера под ваши пожелания
     .entry-card__item      
-      +double-date({id:'entry-card'})
+      +double-date({id:'entry'})
     .entry-card__item
-      h3 гости 
+      h3.entry-card__subtitle гости 
       +form({ 
-        category: "guests", 
-        items: [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}],
-        value: "Сколько гостей",
-        type: 'with-buttons'})
+        inputDate: {
+          value: "Сколько гостей"
+        },
+        dropDate: {
+          type: "guests", 
+          hasButton: true,
+          items: [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
+          }
+        })
     .entry-card__button.js-entry-card__button
-      +button({theme:'link', text:'подобрать номер', icon: 'arrow'})
+      +button({theme:'link', text:'подобрать номер', icon: true})

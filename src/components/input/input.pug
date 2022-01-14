@@ -1,26 +1,26 @@
 include ../icon-open/icon-open.pug
 include ../icon-arrow/icon-arrow.pug
 
-mixin input({category='', type='text', value, focus})  
-  .input.js-input(class='input_' + category)
+mixin input({type='dropdown', fontType='text', value, focus=false})  
+  .input.js-input(class='input_' + type)
 
-    if(category=="subscript")
-      input.input__field(type=type, placeholder=value)
-      button.input__btn.input__btn_with-arrow.js-input__btn(type="button")
+    if(type=="subscript")
+      input.input__field(type=fontType, placeholder=value)
+      button.input__btn.js-input__btn.input__btn_with-arrow(type="button")
         +icon-arrow()
 
-    if(category=="dropdown")
-      input.input__field.js-input__field(type=type, value=value)
+    if(type=="dropdown")
+      input.input__field.js-input__field(type=fontType, value=value)
       button.input__btn.js-input__btn(type="button")
         +icon-open()
 
-    if(category=="date")
-      input.input__field.js-input__field(type=type, placeholder=value)
+    if(type=="date")
+      input.input__field.js-input__field(type=fontType, placeholder=value)
       button.input__btn.js-input__btn(type="button")
         +icon-open()
 
-    if(category='')
-      input.input__field(type=type, placeholder=value, autofocus=focus)    
+    if(type=="empty")
+      input.input__field(type=fontType, placeholder=value, autofocus=focus)    
 
 
   

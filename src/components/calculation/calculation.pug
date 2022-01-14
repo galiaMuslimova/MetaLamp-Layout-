@@ -1,0 +1,19 @@
+mixin calculation(roomData, days)
+  .calculation  
+    p.calculation__text= roomData.cost.toLocaleString() + '₽ х '
+      span.calculation__text= days + 'суток'
+    p.calculation__text 
+    p.calculation__text.calculation__text_cost 
+      span.calculation__text= (roomData.cost*days).toLocaleString() + '₽'
+
+    p.calculation__text Сбор за услуги: скидка 
+      span.calculation__text= (roomData.discount).toLocaleString() + '₽'
+    p.calculation__text.calculation__text_circle i
+    p.calculation__text.calculation__text_cost 0₽
+
+    p.calculation__text Сбор за дополнительные услуги
+    p.calculation__text.calculation__text_circle i
+    p.calculation__text.calculation__text_cost
+      span.calculation__text= roomData.fee + '₽' 
+    
+      

@@ -1,9 +1,13 @@
+include ../icon-star/icon-star.pug
+
 mixin rate({starsCount})
-  .row.rate 
+  .rate 
     - let i = 0
     while i < count 
-      span.rate__item.icon-star
+      span.rate__item 
+        +icon-star({theme: 'colored'})
       - ++i
     while i < 5 
-      span.rate__item.icon-star-empty
+      span.rate__item 
+        +icon-star({theme: 'empty'})
       - ++i                 

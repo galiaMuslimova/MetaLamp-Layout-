@@ -2,7 +2,7 @@ include ../rate/rate.pug
 include ../carousel/carousel.pug
 
 mixin catalog-item(item)
-  .catalog-item
+  .catalog-item.js-catalog-item 
     +carousel({num: item.num})
     .catalog-item__content.js-catalog-item__content
       .catalog-item__row.catalog-item__row_first

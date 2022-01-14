@@ -64,15 +64,11 @@
     }
   }
 
-  &__btn,
-  &__btn_with-arrow {
+  &__btn {
+    font-size: 8px;
     color: rgba(31, 32, 65, 0.5);
     border: none;
     background: #FFFFFF;
-  }
-
-  &__btn {
-    font-size: 8px;
 
     &_with-arrow {
       -webkit-background-clip: text;

@@ -1,17 +1,10 @@
 include ../input/input.pug
 include ../drop/drop.pug
 
-//-mixin form({
-    category: guests / placement / calendar,
-    items: array, ex. [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
-    value: ex. "Сколько гостей"
-    type: '' / 'with-buttons'
-  })
-
-mixin form({category, id,  type='', items, value}) 
-  form.form(class='form_'+category)
-    +input({category:'dropdown', type:"text", value:value})
-    +drop({category:category, id:id, type:type, items:items})
+mixin form({inputDate={}, dropDate={}}) 
+  form.form
+    +input(inputDate)
+    +drop(dropDate)
 
 
 

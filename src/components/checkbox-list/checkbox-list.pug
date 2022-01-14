@@ -1,6 +1,5 @@
 include ../checkbox/checkbox.pug
 
 mixin checkbox-list(items)
-  form.checkbox-list
-    each item in items
-      +checkbox(item)
+  each item in items
+    +checkbox(item)

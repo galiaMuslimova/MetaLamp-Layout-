@@ -1,4 +1,5 @@
 extends ../base/base.pug
+include ../../components/pagination/pagination.pug
 
 block content
   .container
@@ -13,7 +14,7 @@ block content
         .catalog__content
           include ../../components/catalog-list/catalog-list.pug
         .catalog__pagination
-          .pagination.js-pagination.pagination_catalog.js-pagination_catalog
-          .catalog__pag-text 1 – 12 из 100+ вариантов аренды
+          +pagination({id: "catalog"})
+          
     
   

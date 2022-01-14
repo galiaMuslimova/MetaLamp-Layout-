@@ -1,23 +1,31 @@
 .radio {
-  position: relative;
+  display: flex;
+  flex-direction: row;
   gap: 20px;
 
   &__label {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
-    align-items: center;  
-    position: relative; 
   }
+  
+  &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    margin: 0px;
+    color: transparent;
+    text-shadow: 0 0 0 black;
+    cursor: pointer;
 
-  &__text {
-    color: rgba(31, 32, 65, 0.5);
-  }
-
-  &__input {   
-    &:checked + .radio__box:before {
-      display: block;           
+    &:checked+.radio__box:before {
+      display: block;
     }
 
-    &:checked ~ p {
+    &:checked~p {
       color: rgba(31, 32, 65, 0.75);
     }
   }
@@ -28,7 +36,7 @@
     border-radius: 10px;
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
-    cursor: pointer;        
+    cursor: pointer;
 
     &:before {
       display: none;
@@ -39,5 +47,9 @@
       content: "";
       background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
+  }
+
+  &__text {
+    color: rgba(31, 32, 65, 0.5);
   }
 }
