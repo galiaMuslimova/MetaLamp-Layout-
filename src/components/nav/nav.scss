@@ -20,6 +20,8 @@
   &__item {
     &_with-submenu {
       display: grid;
+      font-size: 14px;
+      line-height: 17px;
 
       @media (max-width: 924px) {
         grid-template-columns: 1fr min-content;

@@ -18,7 +18,7 @@ include ../calculation/calculation.pug
           span.room-card__cost= roomData.cost.toLocaleString() + '₽'
           span.room-card__cost-text в сутки
     .room-card__item
-      +double-date("datepicker_room js-datepicker_room")
+      +double-date("room")
     .room-card__item
       h3.room-card__subtitle гости 
       +form({

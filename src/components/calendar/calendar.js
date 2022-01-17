@@ -36,11 +36,11 @@ function makeCalendar(element) {
 }
 
 
-$('.js-calendar__reset').on('click', () => {
+$('.js-calendar__btn_reset').on('click', () => {
   dp.clear();
 });
 
-$('.js-calendar__submit').on('click', function () {
+$('.js-calendar__btn_submit').on('click', function () {
   const $selectForm = $(this).closest('form');
   const $drop = $selectForm.find('.js-drop');
   $drop.removeClass('drop_active');

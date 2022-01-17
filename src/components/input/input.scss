@@ -1,14 +1,26 @@
 .input {
-  height: 44px;
   display: grid;
   grid-template-columns: 1fr 44px;
+  height: 44px;
   border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
   box-sizing: border-box;
+  border-radius: 4px;
 
   &:focus-within,
   &:hover {
     border: 1px solid rgba(31, 32, 65, 0.5);
+  }
+
+  &_active {
+    border-radius: 4px 4px 0px 0px;
+
+    .input__field {
+      color: rgba(31, 32, 65, 0.5);
+    }
+
+    .input__btn {
+      color: rgba(31, 32, 65, 0.75);
+    }
   }
 
   &_date {
@@ -48,7 +60,10 @@
     height: 100%;
     background: #FFFFFF;
     border: none;
-    padding: 0 5px 0px 15px;
+    padding: 0 3px 0px 13px;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
 
     &::placeholder {
       color: rgba(31, 32, 65, 0.25);

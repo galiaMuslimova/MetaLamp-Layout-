@@ -1,11 +1,13 @@
 .btn {
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: bold;
   outline: none;
   box-sizing: border-box;
   cursor: pointer;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
 
   &_blue,
   &_white,
@@ -61,6 +63,7 @@
   &_link {
     width: 100%;
     position: relative;
+    padding-right: 23px;
 
     span {
       position: absolute;

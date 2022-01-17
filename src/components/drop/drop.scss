@@ -7,7 +7,18 @@
   background: #FFFFFF;
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  margin-top: 6px;
+  border-radius: 4px;
+
+  &_calendar {
+    margin-top: 6px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+  }
+
+  &_guests,
+  &_placement {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 0px 0px 4px 4px;
+  }
 
   &_active {
     display: block;

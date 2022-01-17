@@ -1,5 +1,6 @@
 include ../../components/form/form.pug
 include ../../components/input/input.pug
+include ../../components/double-date/double-date.pug
 include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/radio/radio.pug
 include ../../components/toggle/toggle.pug
@@ -7,6 +8,7 @@ include ../../components/like/like.pug
 include ../../components/rate/rate.pug
 include ../../components/slider/slider.pug
 include ../../components/button/button.pug
+include ../../components/pagination/pagination.pug
 include ../../components/select/select.pug
 include ../../components/bullet/bullet.pug
 include ../../components/feature/feature.pug
@@ -44,7 +46,7 @@ include ../../components/review/review.pug
         inputDate: {type: "empty", value: 'ДД.ММ.ГГГГ'},
         dropDate: {type: 'calendar', id: 'login'}
         })
-    +double-date({id:"forms"})
+    +double-date({id:"forms", values: ['ДД.ММ.ГГГГ', '19.08.2021']})
   
   //checkbox, radio...
   .forms__block2 

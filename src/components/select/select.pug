@@ -4,7 +4,7 @@ mixin select({items, hasButton})
   .select.js-select
     each item in items
       .select__row
-        h3.select__subtitle=item.name
+        .select__subtitle=item.name
         +count(item.count)
     if(hasButton==true)
       .select__buttons

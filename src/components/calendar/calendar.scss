@@ -10,9 +10,14 @@
     padding: 20px;
   }
 
+  &__btn {
+    line-height: 15px;
+  }
+
   &__arrow {
     color: #BC9CFF;
     font-size: 1.3em;
+    padding-top: 5px;
   }
 
   .air-datepicker {
@@ -26,7 +31,7 @@
 
     &-nav {
       border-bottom: none;
-      padding: 15px 23px 20px 23px;
+      padding: 15px 23px 21px 23px;
 
       &--title {
         font-weight: bold;

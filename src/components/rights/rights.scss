@@ -28,6 +28,7 @@
   }
 
   &__text {
+    line-height: 17px;
     @media only screen and (max-width: 1024px) {
       margin: 15px;
     }
@@ -36,7 +37,7 @@
   &__list {
     display: flex;
     flex-direction: row;
-    gap: 23px;
+    gap: 20px;
     align-items: center;
 
     @media only screen and (max-width: 1024px) {
@@ -45,6 +46,7 @@
   }
 
   &__icon {
-    height: 22px;
+    height: 24px;
+    width: 24px;
   }
 }

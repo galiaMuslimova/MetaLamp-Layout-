@@ -1,6 +1,6 @@
 .links {
   display: flex;
-  height: 25.7vw;
+  height: 25.45vw;
   align-items: center;
   box-sizing: border-box;
 
@@ -19,27 +19,40 @@
     flex-direction: column;
     max-width: 260px;
     align-items: flex-start;
-    gap: 13px;
+    gap: 20px;
+  }
+
+  &__logo {
+    margin-bottom: 0px;
+  }
+
+  &__info {
+    margin: 0px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__info-text {
+    line-height: 14px;
+    vertical-align: text-top;
   }
 
   &__subtitle {
-    margin: 4px 0px;
+    margin: 4px 0px 1px 0px;
     font-size: 12px;
-    line-height: 18px;
+    line-height: 15px;
     text-transform: uppercase;
     color: rgba(31, 32, 65, 1);
   }
 
   &__text {
+    padding-top: 1px;
     text-decoration: none;
+    line-height: 17px;
+    color: rgba(31, 32, 65, 0.5);
   }
 
   &__form {
     width: 100%;
-    margin-top: 8px;
-  }
-
-  &__logo {
-    margin-bottom: 3px;
   }
 }

@@ -1,15 +1,6 @@
 import { createPlacementText, createGuestsText, showHideResetButton } from '@c/select/select.js';
 
-$(() => {
-  const $countNums = $('.js-count__num');
-  $countNums.each(function () {
-    if ($(this).val() === 0) {
-      const $minus = $(this).siblings('.js-count__btn_minus');
-      $minus.addClass('disabled');
-    }
-  });
-
-  function countSelectItems(element) {
+function countSelectItems(element) {
     const $inputElement = element.siblings('.js-count__num');
     let inputValue = Number($inputElement.val());
 
@@ -37,17 +28,27 @@ $(() => {
     }
   }
 
+$(() => {
+  const $countNums = $('.js-count__num');
+  $countNums.each(function () {
+    if ($(this).val() === 0) {
+      const $minus = $(this).siblings('.js-count__btn_minus');
+      $minus.addClass('disabled');
+    }
+  });
+
   $('.js-count__btn_plus, .js-count__btn_minus').on('click', function () {
+    const $selectDrop = $(this).closest('.drop');
+    const $selectForm = $(this).closest('form'); 
     countSelectItems($(this));
     changeSelectButtonClass($(this));
-    showHideResetButton($(this).closest('form'));
-    const $selectForm = $(this).closest('form');
+    showHideResetButton($selectForm);    
 
-    if ($selectForm.hasClass('form_placement')) {
+    if ($selectDrop.hasClass('drop_placement')) {
       const str = createPlacementText($selectForm);
       $selectForm.find('.js-input__field').val(str);
     }
-    if ($selectForm.hasClass('form_guests')) {
+    if ($selectDrop.hasClass('drop_guests')) {
       const str = createGuestsText($selectForm);
       $selectForm.find('.js-input__field').val(str);
     }

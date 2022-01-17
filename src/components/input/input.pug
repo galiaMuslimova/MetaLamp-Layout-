@@ -10,7 +10,7 @@ mixin input({type='dropdown', fontType='text', value, focus=false})
         +icon-arrow()
 
     if(type=="dropdown")
-      input.input__field.js-input__field(type=fontType, value=value)
+      input.input__field.js-input__field.input__field_active(type=fontType, value=value)
       button.input__btn.js-input__btn(type="button")
         +icon-open()
 

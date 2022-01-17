@@ -2,7 +2,7 @@
   height: 100%;
   display: grid;
   grid:
-    ".    .    ."4.8vw "card .    ."max-content ".    .    ."21.7vw ".    . note"48px ".    .    ."1.5vw /max-content 1fr 293px;
+    ".    .    ."4.8vw "card .    ."max-content ".    .    ."21.8vw ".    . note"48px ".    .    ."1fr /max-content 1fr 293px;
 
   @media (max-width: 830px) {
     grid:
@@ -25,6 +25,10 @@
   &__text {
     margin: 0;
     text-align: right;
+  }
+
+  &__back {
+    height: 900px;
   }
   
   &__image {
