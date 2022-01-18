@@ -2,9 +2,10 @@ import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
 function createSlider(el) {
-  const sliderPlace = el.find('.js-slider__body');
+  const $sliderPlace = el.find('.js-slider__anchor');
+  const $resultPlace = el.find('.js-slider__result');
 
-  const slider = noUiSlider.create(sliderPlace[0], {
+  const slider = noUiSlider.create($sliderPlace[0], {
     start: [5000, 10000],
     behaviour: 'drag',
     connect: true,
@@ -14,7 +15,7 @@ function createSlider(el) {
     },
   });
   function showResult(values) {
-    el.find('.js-slider__result').text(`${(parseInt(values[0], 10)).toLocaleString()}₽ - ${(parseInt(values[1], 10)).toLocaleString()}₽`);
+    $resultPlace.text(`${(parseInt(values[0], 10)).toLocaleString()}₽ - ${(parseInt(values[1], 10)).toLocaleString()}₽`);
   }
 
   slider.on('slide', (values) => {

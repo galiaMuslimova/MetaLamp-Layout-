@@ -6,15 +6,15 @@ mixin catalog-item(item)
     +carousel({num: item.num})
     .catalog-item__content.js-catalog-item__content
       .catalog-item__row.catalog-item__row_first
-        h4.catalog-item__num №
-        h2.catalog-item__num_big= item.num
+        .catalog-item__num-sign № 
+        .catalog-item__num= item.num
         if(item.luxury)
-          h3.catalog-item__num_light= 'люкс'
+          .catalog-item__lux люкс
         .catalog-item__cost_bold= item.cost.toLocaleString() + '₽'
-        p.catalog-item__cost_small в сутки
+        .catalog-item__cost_small в сутки
       .catalog-item__divider
       .catalog-item__row.catalog-item__row_second
         +rate({starsCount: item.stars})                 
-        p.catalog-item__review
-          span.catalog-item__text_bold= item.review 
-          span.catalog-item__text Отзывов
+        .catalog-item__review
+          .catalog-item__text.catalog-item__text_bold= item.review 
+          .catalog-item__text Отзывов

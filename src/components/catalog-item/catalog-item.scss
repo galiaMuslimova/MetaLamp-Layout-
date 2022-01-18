@@ -7,7 +7,7 @@
   border-radius: 4px;
 
   &__content {
-    padding: 20px 17px 20px 20px;
+    padding: 23px 17px 16px 20px;
   }
 
   &__row {
@@ -17,6 +17,7 @@
     &_first {
       align-items: flex-end;
       line-height: 20px;
+
       &:last-child {
         align-items: center;
       }
@@ -27,20 +28,28 @@
     }
   }
 
+  &__num-sign {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1F2041;
+    padding-left: 2px;
+  }
+
   &__num {
-    line-height: 20px;
+    font-weight: bold;
+    font-size: 19px;
+    padding: 0px 3px;
+    color: #1F2041;
+  }
 
-    &_big {
-      font-size: 20px;
-      margin: 0;
-      padding: 0em 0.2em;
-    }
-
-    &_light {
-      color: #BC9CFF;
-      margin: 0;
-      padding: 0em 0.2em;
-    }
+  &__lux {
+    color: #BC9CFF;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    padding: 0px 7px;
   }
 
   &__cost {
@@ -70,9 +79,10 @@
   }
 
   &__text {
+    display: inline-block;
     &_bold {
       font-weight: bold;
-      padding: 0.3em;
+      padding: 0em 0.3em;
     }
   }
 }

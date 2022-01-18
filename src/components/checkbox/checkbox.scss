@@ -19,22 +19,22 @@
     position: absolute;
     margin: 0px;
     color: transparent;
-    text-shadow: 0 0 0 black;    
+    text-shadow: 0 0 0 black;
     cursor: pointer;
 
-    &:checked + .checkbox__box > .icon-check:before {
+    &:checked+.checkbox__box>.icon-check:before {
       display: block;
     }
   }
 
-  &__box {    
+  &__box {
     display: block;
     width: 20px;
     height: 20px;
     border: 1px solid #BC9CFF;
     box-sizing: border-box;
     border-radius: 4px;
-    cursor: pointer;        
+    cursor: pointer;
   }
 
   &__content {
@@ -43,10 +43,13 @@
   }
 
   &__text {
-    line-height: 20px;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 18px;
 
     &_bold {
       font-weight: bold;
+      line-height: 20px;
     }
 
     &_light {
@@ -55,6 +58,7 @@
   }
 
   &__subtext {
+    margin: 0px;
     padding-top: 5px;
     font-size: 12px;
     line-height: 14px;

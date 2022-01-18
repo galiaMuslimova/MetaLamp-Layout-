@@ -5,6 +5,24 @@
     justify-content: space-between;
   }
 
+  &__title {
+    margin: 0px 0px 5px 0px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 1);
+  }
+
+  &__result {
+    margin: 0px;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
   &__anchor {
     height: 6px;
     width: 100%;
@@ -55,6 +73,7 @@
   }
 
   &__text {
+    margin: 0px;
     font-size: 12px;
     line-height: 12px;
     color: rgba(31, 32, 65, 0.5);

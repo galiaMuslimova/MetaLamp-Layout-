@@ -52,15 +52,15 @@
     "num": 450,
     "luxury": false,
     "cost": 5000,
-    "stars": 3,
-    "review": 77
+    "stars": 4,
+    "review": 39
   },
   {
     "num": 350,
     "luxury": false,
     "cost": 5300,
-    "stars": 4,
-    "review": 39
+    "stars": 3,
+    "review": 77
   },  
   {
     "num": 666,

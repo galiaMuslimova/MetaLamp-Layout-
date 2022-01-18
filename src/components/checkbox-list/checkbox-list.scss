@@ -1,13 +1,6 @@
 .checkbox-list {
-  padding: 12px 0px;
+  padding-top: 11px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  &__title {
-    margin: 0px;
-    font-size: 12px;
-    line-height: 18px;
-    text-transform: uppercase;
-  }
 }

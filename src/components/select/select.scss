@@ -1,5 +1,5 @@
 .select {
-  padding: 5px 6px 12px 14px;
+  padding: 5px 6px 8px 14px;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -9,10 +9,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-    &:last-child {
-      padding-top: 12px;
-    }
   }
 
   &__subtitle {
@@ -29,6 +25,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 12px;
+    margin-bottom: 4px;
     line-height: 15px;
   }
 

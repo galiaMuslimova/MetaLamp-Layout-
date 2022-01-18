@@ -9,10 +9,17 @@ $(() => {
     filterCalendar.selectDate(filterDate);    
   }
 
-  const $filterSlider = $('.slider_filter');
+  const $filterSlider = $('.js-slider_filter');
   if ($filterSlider.length > 0) {
     createSlider($filterSlider)
   }
+
+  const $iconOpen = $('.js-filter__icon');
+  $iconOpen.on('click', function () {
+    $(this).toggleClass('filter__icon_expanded');
+    const $drop = $(this).closest('.filter__expandable').find('.js-drop');
+    $drop.toggleClass('drop_active');
+  });
 })
 
 
