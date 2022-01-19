@@ -7,7 +7,7 @@ mixin review(data)
         .review__photo
           img.review__image(src= require("@a/images/review-images/" + val.image) alt='person photo')
         .review__like 
-          +like(val.like)
+          +like({count: val.like.count, isCheck: val.like.isCheck, name: val.like.name})
       .review__col 
         .review__title= val.name 
         .review__subtitle= val.time 

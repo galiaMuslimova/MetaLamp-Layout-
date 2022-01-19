@@ -53,18 +53,16 @@
   }
 
   &__cost {
-    &_bold {
-      color: rgba(31, 32, 65, 0.5);
-      margin-left: auto;
-      font-weight: bold;
-      padding: 0px 4px;
-    }
+    color: rgba(31, 32, 65, 0.5);
+    margin-left: auto;
+    font-weight: bold;
+    padding: 0px 4px;
+  }
 
-    &_small {
-      color: rgba(31, 32, 65, 0.5);
-      font-size: 12px;
-      line-height: 16px;
-    }
+  &__cost-text {
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px;
+    line-height: 16px;
   }
 
   &__divider {
@@ -80,6 +78,7 @@
 
   &__text {
     display: inline-block;
+
     &_bold {
       font-weight: bold;
       padding: 0em 0.3em;

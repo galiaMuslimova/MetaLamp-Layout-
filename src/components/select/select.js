@@ -1,7 +1,6 @@
 function takeItemsCount(selectForm) {
   const $items = selectForm.find('.js-count__num');
   const values = $items.map((x) => $($items[x]).val());
-  console.log(values)
   return ([Number(values[0]), Number(values[1]), Number(values[2])]);
 }
 

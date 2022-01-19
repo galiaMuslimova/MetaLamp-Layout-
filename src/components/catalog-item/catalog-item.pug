@@ -10,8 +10,8 @@ mixin catalog-item(item)
         .catalog-item__num= item.num
         if(item.luxury)
           .catalog-item__lux люкс
-        .catalog-item__cost_bold= item.cost.toLocaleString() + '₽'
-        .catalog-item__cost_small в сутки
+        .catalog-item__cost= item.cost.toLocaleString() + '₽'
+        .catalog-item__cost-text в сутки
       .catalog-item__divider
       .catalog-item__row.catalog-item__row_second
         +rate({starsCount: item.stars})                 

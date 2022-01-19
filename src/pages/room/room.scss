@@ -34,6 +34,11 @@
 
   &__subtitle {
     margin: 0;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    color: #1F2041;
+
   }
 
   &__info {
@@ -42,6 +47,13 @@
     @media(max-width: 800px) {
       margin: auto;
     }
+  }
+
+  &__divider {
+    height: 1px;
+    max-width: 280px;
+    width: 100%;
+    background: rgba(31, 32, 65, 0.1);
   }
 
   &__chart {
@@ -58,6 +70,10 @@
     @media(max-width: 770px) {
       margin: 15px;
     }
+  }
+
+  &__text {
+    margin: 0px;
   }
 
   &__row {
@@ -87,6 +103,10 @@
     @media(max-width: 770px) {
       margin: 15px;
     }
+
+    .room__subtitle {
+      padding: 0px 0px 18px 20px;
+    }
   }
 
   &__cancel {
@@ -95,6 +115,10 @@
 
     @media(max-width: 770px) {
       margin: 10px;
+    }
+
+    .room__subtitle {
+      padding: 0px 0px 18px 0px;
     }
   }
 

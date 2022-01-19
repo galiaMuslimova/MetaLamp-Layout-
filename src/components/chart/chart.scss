@@ -1,10 +1,9 @@
 .chart {
   &__container {
     height: 125px;
-    width: 300px;
+    width: 320px;
     margin-top: 1.35vw;
     position: relative;
-    margin-left: -13px;
 
     @media(max-width: 770px) {
       margin: 0px;

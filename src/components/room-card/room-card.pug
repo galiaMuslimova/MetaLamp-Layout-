@@ -10,15 +10,13 @@ include ../calculation/calculation.pug
   .room-card__inner
     .room-card__item
       .room-card__title
-        p.room-card__title-block
-          span.room-card__number-sign №
-          span.room-card__number= roomData.num
-          span.room-card__lux= roomData.luxury ? "люкс" : ""
-        p.room-card__title-block
-          span.room-card__cost= roomData.cost.toLocaleString() + '₽'
-          span.room-card__cost-text в сутки
+        .room-card__num-sign №
+        .room-card__num= roomData.num
+        .room-card__lux= roomData.luxury ? "люкс" : ""
+        .room-card__cost= roomData.cost.toLocaleString() + '₽'
+        .room-card__cost-text в сутки
     .room-card__item
-      +double-date("room")
+      +double-date({id:"room"})
     .room-card__item
       h3.room-card__subtitle гости 
       +form({
@@ -32,8 +30,8 @@ include ../calculation/calculation.pug
       +calculation(roomData, days)        
     .room-card__item
       .room-card__total 
-        h2.room-card__total-text Итого
+        .room-card__total-text Итого
         .room-card__dots
-        h2.room-card__total-cost= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
+        .room-card__total-cost= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
       .room-card__butoon 
         +button({theme: "link", text: "забронировать", icon: true})
