@@ -3,12 +3,17 @@
   flex-direction: row;
   gap: 20px;
 
+  &__item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
   &__label {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
   }
   
   &__input {
@@ -51,5 +56,6 @@
 
   &__text {
     color: rgba(31, 32, 65, 0.5);
+    margin: 0px;
   }
 }

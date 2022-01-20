@@ -16,21 +16,24 @@ include ../button/button.pug
       .login-card__radio 
         +radio()
     .login-card__item
-      h3.login-card__subtitle дата рождения
-      +form({
-        inputDate: {type: "empty", value: 'ДД.ММ.ГГГГ'},
-        dropDate: {type: 'calendar', id: 'login'}
-        })
+      .login-card__form
+        h3.login-card__subtitle дата рождения
+        +form({
+          inputDate: {type: "empty", value: 'ДД.ММ.ГГГГ'},
+          dropDate: {type: 'calendar', id: 'login'}
+          })
     .login-card__item
-      h3.login-card__subtitle данные для входа в сервис
-      .login-card__input
-        +input({type: "empty", value:'Email'})
+      .login-card__form
+        h3.login-card__subtitle данные для входа в сервис
+        .login-card__input
+          +input({type: "empty", value:'Email'})
       .login-card__input
         +input({type: "empty", value:"Пароль"})
       .login-card__toggle
         +toggle({text:"Получать спецпредложения"})
     .login-card__item
-      +button({theme: "link", text: "зарегистрироваться", icon: true})
+      .login-card__link-button
+        +button({theme: "link", text: "зарегистрироваться", icon: true})
     .login-card__item
       .login-card__row
         p.login-card__text Уже есть аккаунт на Toxin

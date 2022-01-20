@@ -8,9 +8,9 @@ mixin header(isRegistered=false)
       include ../nav/nav.pug
     .header__registration.js-header__registration
       if !isRegistered
-        .js-header__login
-          +button({theme: 'white', text: 'войти'})   
         .js-header__signin
+          +button({theme: 'white', text: 'войти'})   
+        .js-header__login
           +button({theme: 'blue', text: 'зарегистрироваться'})          
       else  
         .header__divider 

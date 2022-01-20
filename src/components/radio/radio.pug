@@ -1,10 +1,12 @@
 mixin radio()
   form.radio    
-    label.radio__label
-      input.radio__input(type="radio" name="radio" checked)
-      span.radio__box
-    p.radio__text Мужчина
-    label.radio__label
-      input.radio__input(type="radio" name="radio")
-      span.radio__box
-    p.radio__text Женщина
+    .radio__item 
+      label.radio__label
+        input.radio__input(type="radio" name="radio" checked)
+        span.radio__box
+      p.radio__text Мужчина
+    .radio__item
+      label.radio__label
+        input.radio__input(type="radio" name="radio")
+        span.radio__box
+      p.radio__text Женщина

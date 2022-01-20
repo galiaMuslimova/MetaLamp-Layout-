@@ -15,7 +15,10 @@
   }
 
   &__inner {
-    padding: 40px 30px 30px 30px;
+    padding: 39px 29px 29px 29px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     @media (max-width: 420px) {
       padding: 15px;
@@ -23,35 +26,47 @@
   }
 
   &__item {
-    margin-bottom: 21px;
-
-    &:last-child {
-      margin-top: 30px;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   &__title {
+    margin: 0px;
+    line-height: 29px;
+    font-size: 24px;
+    font-weight: bold;
     color: rgba(31, 32, 65, 1);
   }
 
   &__subtitle {
+    margin: 0px 0px 5px 0px;
+    font-weight: bold;
     font-size: 12px;
-    line-height: 18px;
+    line-height: 15px;
     text-transform: uppercase;
     color: rgba(31, 32, 65, 1);
   }
 
-  &__input {
-    margin-bottom: 8px;
-  }
-
-  &__radio {
-    padding: 1px;
+  &__link-button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 44px;
   }
 
   &__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    margin: 0px;
+  }
+
+  &__button {
+    width: 100px;
+    height: 44px;
   }
 }

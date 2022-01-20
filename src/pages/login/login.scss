@@ -1,6 +1,13 @@
 .login {
+  &__content {
+    padding-left: 6px;
+  }
+  
   &__image {
-    max-height: 754px;
-    height: 100%;
+    width: 100%;
+  }
+
+  &__back {
+    height: 753px;
   }
 }

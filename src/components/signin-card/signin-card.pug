@@ -7,12 +7,14 @@ include ../button/button.pug
       h1.signin-card__title Войти
     .signin-card__item 
       .signin-card__input
-        +input("text", "Email")
+        +input({type: "empty", fontType: "Email", value:"Email"})
       .signin-card__input
-        +input("text", "Пароль")
-    .signin-card__item 
-      +button({theme: 'link', text: 'Войти', icon: true})
+        +input({type: "empty", fontType: "text", value:"Пароль"})
+    .signin-card__item
+      .signin-card__link-button 
+        +button({theme: 'link', text: 'Войти', icon: true})
     .signin-card__item 
       .signin-card__row
         p.signin-card__text Нет аккаунта на Toxin?
-        +button({theme: 'white', text: 'создать'})
+        .signin-card__button 
+          +button({theme: 'white', text: 'создать'})

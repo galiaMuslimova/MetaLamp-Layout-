@@ -21,12 +21,12 @@ include ../../components/review/review.pug
     form.forms__form
       .forms__row.forms__row_subtitle
         .forms__subtitle Text Field
-        .forms__subtitle_transparent default
+        .forms__subtitle.forms__subtitle_transparent default
       +input({type: "empty", fontType:"E-mail", value:"Email"})   
     form.forms__form
       .forms__row.forms__row_subtitle
         .forms__subtitle Text Field
-        .forms__subtitle Hover / Focus
+        .forms__subtitle.forms__subtitle_transparent Hover / Focus
       +input({type: "empty", value: "This is pretty awesome", focus: true})
     form.forms__form
       h3.forms__subtitle Dropdown
@@ -46,7 +46,8 @@ include ../../components/review/review.pug
         inputDate: {type: "empty", value: 'ДД.ММ.ГГГГ'},
         dropDate: {type: 'calendar', id: 'login'}
         })
-    +double-date({id:"forms", values: ['ДД.ММ.ГГГГ', '19.08.2021']})
+    .forms__double-date 
+      +double-date({id:"forms", values: ['ДД.ММ.ГГГГ', '19.08.2021'], titles: ['date dropdown', 'date dropdown']})
   
   //checkbox, radio...
   .forms__block2 
@@ -56,19 +57,19 @@ include ../../components/review/review.pug
         {id:"smoke", text:"Можно курить"},
         {id:"pet", text:"Можно с питомцами", checked:true},
         {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}])
-    form.forms__radio
+    .forms__radio
       h3.forms__subtitle radio buttons
       +radio()
-    form.forms__toggle      
+    .forms__toggle      
       h3.forms__subtitle toggle
       +toggle("Получать спецпредложения", "checked")
       +toggle("Получать спецпредложения")
-    form.forms__like
+    .forms__like
       h3.forms__subtitle like button 
       .forms__row
         +like({"count": "2",  "isCheck": false, "name": "like-1"})
         +like({"count": "12", "isCheck": true, "name": "like-2"})
-    form.forms__rate
+    .forms__rate
       h3.forms__subtitle rate button
       .forms__row 
         +rate(4)
@@ -81,17 +82,22 @@ include ../../components/review/review.pug
     .forms__buttons
       h3.forms__subtitle buttons 
       .forms__row 
-        button.btn.btn_blue click me
-        button.btn.btn_blue.hovered click me
+        .forms__button 
+          +button({theme: 'blue', text: 'click me'})
+        .forms__button.forms__button_hovered
+          +button({theme: 'blue', text: 'click me'})
       .forms__row  
-        +button({theme: 'white', text: 'click me'})
-        .forms__button_hovered
+        .forms__button 
+          +button({theme: 'white', text: 'click me'})
+        .forms__button.forms__button_hovered
           +button({theme: 'white', text: 'click me'})
       .forms__row 
-        +button({theme: 'simple', text: 'click me'})
-        .forms__button_hovered
+        .forms__button 
           +button({theme: 'simple', text: 'click me'})
-      +button({theme: 'link', text: 'перейти к оплате', icon: true})
+        .forms__button.forms__button_hovered
+          +button({theme: 'simple', text: 'click me'})
+      .forms__button
+        +button({theme: 'link', text: 'перейти к оплате', icon: true})
     .forms__pagination 
       h3.forms__subtitle pagination
       +pagination({id: "catalog"})

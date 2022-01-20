@@ -8,11 +8,13 @@
   line-height: 15px;
   text-align: center;
   text-transform: uppercase;
+  width: 100%;
+  max-height: 44px;
+  height: 100%;
 
   &_blue,
   &_white,
   &_link {
-    height: 44px;
     border-radius: 22px;
     padding: 0px 20px;
   }
@@ -31,9 +33,6 @@
 
   &_blue,
   &_white {
-    max-height: 44px;
-    height: 100%;
-
     &:hover,
     &.hovered {
       opacity: 0.5;
@@ -61,7 +60,6 @@
   }
 
   &_link {
-    width: 100%;
     position: relative;
     padding-right: 23px;
 

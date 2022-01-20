@@ -1,4 +1,8 @@
 .toggle {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
   &__label {
     position: relative;
     display: flex;
@@ -45,5 +49,10 @@
       margin: 3px 0px;
       transform: translateX(3px);
     }
+  }
+
+  &__text {
+    margin: 0px;
+    line-height: 20px;
   }
 }
