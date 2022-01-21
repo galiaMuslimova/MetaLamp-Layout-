@@ -9,6 +9,8 @@ function showDateInInput(res, dp, element) {
     const date2 = dp.formatDate(res.date[1], 'dd MMM');
     const str = `${date1} - ${date2}`;
     $($inputArr[0]).val(str.toLowerCase());
+  } else if (element === '.calendar__dp_cards') {
+    return;
   } else {
     $($inputArr[0]).val(res.formattedDate[0]);
     if (res.formattedDate[1]) {
@@ -22,7 +24,7 @@ function makeCalendar(element) {
     navTitles: {
       days: 'MMMM <i>yyyy</i>',
     },
-    multipleDates: true,
+    multipleDates: true,  
     range: true,
     dynamicRange: true,
     prevHtml: '<div class="calendar__arrow"><span class="icon-arrow_back"></span></div>',

@@ -1,6 +1,6 @@
 include ../button/button.pug
 
-mixin calendar({id, hasButton})  
+mixin calendar({id, hasButton=false})  
   .calendar
     .calendar__dp(class='calendar__dp_'+id)
     if(hasButton)

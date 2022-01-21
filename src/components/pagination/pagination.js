@@ -46,8 +46,8 @@ function createPagination(el, items) {
   let currentPage = 1;
 
   $(el).append(
-    $('<li>').addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back'))),
-    $('<li>').addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow')))
+    $('<li>').addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back icon-arrow_pag'))),
+    $('<li>').addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow icon-arrow_pag')))
   );
 
   showPage(currentPage, el, items);

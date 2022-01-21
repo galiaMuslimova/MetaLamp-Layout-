@@ -1,4 +1,5 @@
 .slider {
+  margin: 0px;
   &__row {
     display: flex;
     flex-direction: row;
@@ -26,7 +27,7 @@
   &__anchor {
     height: 6px;
     width: 100%;
-    margin: 17px 0px;
+    margin: 17px 0px 4px 0px;
 
     .noUi-handle {
       box-shadow: none;
@@ -73,7 +74,7 @@
   }
 
   &__text {
-    margin: 0px;
+    margin: 13px 0px 0px 0px;
     font-size: 12px;
     line-height: 12px;
     color: rgba(31, 32, 65, 0.5);

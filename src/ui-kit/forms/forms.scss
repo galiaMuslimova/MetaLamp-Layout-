@@ -4,47 +4,61 @@
   display: grid;
   justify-content: space-between;
   padding: 0 1vw;
-  margin: 143px auto;
+  margin: 144px auto;
   position: relative;
-  grid:
-    "block1 block2 block3"
-    "block4 block2 block3"
-    "block5 block6 block7"
-    "block8 block9 block10"
-    "block11 block12 block12"
-    / 320px 320px 320px;
+  grid-template-columns: 320px 1fr;
+  grid-column-gap: 126px;
 
-  @for $i from 1 through 12 {
-    .block#{$i} {
-      grid-area: block#{$i};
+  &__first-col {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+  }
+
+  &__inputs {
+    margin-bottom: 25px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+
+    &_narrow {
+      max-width: 266px;
+    }
+
+    &_with-large-gap {
+      gap: 123px;
+      width: 320px;
     }
   }
 
-  &__block1,
-  &__block2 {
+  &__sub-block {
     display: flex;
     flex-direction: column;
-  }
-
-  &__block1 {
     gap: 20px;
-  }
-
-  &__block2 {
-    margin-left: 27px;
-    gap: 30px;
-  }
-
-  &__block2,
-  &__block4,
-  &__block5 {
-    max-width: 266px;
   }
 
   &__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    &_start {
+      justify-content: start;
+      gap: 20px;
+    }
+  }
+
+  &__form {
+    margin: 0px;
+  }
+
+  &__item {
+    &_narrow {
+      width: 266px;
+    }
   }
 
   &__subtitle {
@@ -61,97 +75,117 @@
     }
   }
 
-  &__form {
-    margin: 0px;
+  &__divider {
+    height: 1px;
+    max-width: 280px;
+    width: 100%;
+    background: rgba(31, 32, 65, 0.1);
   }
 
-  //block1
-  &__block1 {
-    .forms__form {
-      max-width: 320px;
-      width: 100%;
-    }
-
-    .forms__double-date {
-      margin-top: 20px;
-    }
-  }
-
-  //block2
-  &__radio {
+  &__radio,
+  &__toggle,
+  &__like,
+  &__rate {
     .forms__subtitle {
       margin-bottom: 15px;
     }
   }
 
-  &__toggle {
+  &__toggle-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__like {
+    .forms__row {
+      gap: 15px;
+    }
+  }
+
+  &__select_expanded {
+    margin-bottom: 133px;
+  }
+
+  &__expandable {
+    position: relative;
+
+    &_expanded {
+      margin-bottom: 188px;
+    }
+
+    &_with-gap {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__expand-icon {
+    height: 100%;
+    line-height: 1em;
+    font-size: 0.6em;
+    padding: 0.5em 2em;
+
+    &_expanded {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &__second-col {
+    display: flex;
+    flex-direction: column;
+    gap: 196px;
+  }
+
+  &__first-row {
+    display: flex;
+    flex-direction: row;
+    gap: 132px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
     .forms__subtitle {
       margin-bottom: 15px;
     }
   }
-
-
-  //block3
-  &__slider {
-    max-width: 266px;
-  }
-
-  &__buttons {}
 
   &__button {
     height: 44px;
 
+    &_simple {
+      height: 15px;
+    }
+
     &_hovered {
       opacity: 0.5;
+    }
+
+    &_link {
+      width: 320px;
     }
   }
 
   &__pagination {
-    margin-top: 40px;
+    margin-top: 15px;
   }
 
-  //block4
-  &__date-dropdown {
-    margin-top: 20px;
+  &__second-row {
+    display: flex;
+    flex-direction: row;
+    gap: 72px;
   }
 
-  &__subscription {
-    margin-top: 41px;
+  &__bullet {
+    .forms__subtitle {
+      margin-bottom: 15px;
+    }
   }
 
-  //block 5, block 6, block7
-  &__block5,
-  &__block6,
-  &__block7 {
-    margin-top: 80px;
+  &__review {
+    margin-top: 12px;
   }
-
-  &__block6 {
-    margin-left: 27px;
-    width: 320px;
-  }
-
-  &__block8 {
-    max-width: 266px;
-    margin-top: 146px;
-  }
-
-  &__block9,
-  &__block10 {
-    margin-top: 153px;
-  }
-
-  &__block9 {
-    margin-left: 27px;
-  }
-
-  &__block11 {
-    margin-top: 172px;
-  }
-
-  &__block12 {
-    margin-top: 203px;
-    margin-left: 27px;
-  }
-
 }

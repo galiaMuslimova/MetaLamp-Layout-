@@ -1,5 +1,5 @@
-mixin toggle({text, isCheck})
-  .toggle
+mixin toggle({text, isCheck=false})
+  form.toggle
     label.toggle__label
       input.toggle__input(type="checkbox" checked=isCheck)
       span.toggle__box

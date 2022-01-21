@@ -1,11 +1,11 @@
 import makeCalendar from '@c/calendar/calendar.js';
 
 $(() => {
-  const $cardsCalendarElement = $('.js-datepicker_cards');
+  const $cardsCalendarElement = '.calendar__dp_cards';
   if ($cardsCalendarElement.length > 0) {
     const cardsCalendar = makeCalendar($cardsCalendarElement);
-    cardsCalendar.update({ onSelect: false });
-    cardsCalendar.setFocusDate('2019-08-08');
-    cardsCalendar.selectDate(['2019-08-19', '2019-08-23']);
+    cardsCalendar.update({
+      selectedDates: ['2019-08-19', '2019-08-23']
+    })
   }
 });

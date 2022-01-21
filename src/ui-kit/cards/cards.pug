@@ -9,18 +9,20 @@ include ../../components/calendar/calendar.pug
     include ../../components/room-card/room-card.pug
     include ../../components/signin-card/signin-card.pug
   .cards__col    
-    +calendar("js-datepicker_cards")(class="select_card")
-    +catalog-item({
-      "num": 888,
-      "luxury": true,
-      "cost": 9990,
-      "stars": 5,
-      "review": 145
-    })
-    +catalog-item({
-      "num": 840,
-      "luxury": false,
-      "cost": 9990,
-      "stars": 4,
-      "review": 65
-    })
+    +calendar({id: 'cards', hasButton: true})
+    .cards__catalog-card 
+      +catalog-item({
+        "num": 888,
+        "luxury": true,
+        "cost": 9990,
+        "stars": 5,
+        "review": 145
+      })
+    .cards__catalog-card
+      +catalog-item({
+        "num": 840,
+        "luxury": false,
+        "cost": 9990,
+        "stars": 4,
+        "review": 65
+      })
