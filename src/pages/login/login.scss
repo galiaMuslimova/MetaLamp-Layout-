@@ -1,14 +1,22 @@
 .login {
   &__content {
     padding-left: 6px;
-    margin: 1.3vw auto;
+    margin: 1.3vw 0vw;
+
+    .login-card {
+      margin: 0px auto;
+    }
   }
 
   &__image {
     width: 100%;
+
+    @media only screen and (max-width: 1400px) {
+height: 100%;
+    }
   }
 
-  &__back {
-    height: 753px;
+    &__back {
+      height: 753px;
+    }
   }
-}

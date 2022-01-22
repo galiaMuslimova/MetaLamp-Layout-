@@ -7,14 +7,14 @@ mixin header(isRegistered=false)
     .header__nav
       include ../nav/nav.pug
     .header__registration.js-header__registration
-      if !isRegistered
+      if(isRegistered)
+        .header__divider 
+        .header__name Юлий Цезарь                  
+      else  
         .js-header__signin
           +button({theme: 'white', text: 'войти'})   
         .js-header__login
-          +button({theme: 'blue', text: 'зарегистрироваться'})          
-      else  
-        .header__divider 
-        .header__name Юлий Цезарь
+          +button({theme: 'blue', text: 'зарегистрироваться'})
     .header__burger
       include ../burger/burger.pug
       

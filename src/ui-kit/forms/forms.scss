@@ -171,6 +171,9 @@
 
   &__pagination {
     margin-top: 15px;
+    .pagination {
+      margin-left: 0px;
+    }
   }
 
   &__second-row {

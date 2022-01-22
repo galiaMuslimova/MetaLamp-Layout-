@@ -31,7 +31,7 @@ function showPage(pageNum, el, items) {
   el.find('.pagination__item').slice(1, -1).remove();
 
   getPageList(totalPages, currentPage).forEach((item) => {
-    $('<li>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
+    $('<div>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
       .toggleClass('pagination__item_active', item === currentPage)
       .text(item || '...')
       .insertBefore('.pagination__item_next');
@@ -46,8 +46,8 @@ function createPagination(el, items) {
   let currentPage = 1;
 
   $(el).append(
-    $('<li>').addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back icon-arrow_pag'))),
-    $('<li>').addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow icon-arrow_pag')))
+    $('<div>').addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back icon-arrow_pag'))),
+    $('<div>').addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow icon-arrow_pag')))
   );
 
   showPage(currentPage, el, items);

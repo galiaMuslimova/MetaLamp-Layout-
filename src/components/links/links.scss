@@ -20,6 +20,10 @@
     max-width: 260px;
     align-items: flex-start;
     gap: 20px;
+
+    &_with-info {
+      gap: 17px;
+    }
   }
 
   &__logo {
@@ -30,11 +34,7 @@
     margin: 0px;
     font-size: 14px;
     line-height: 24px;
-  }
-
-  &__info-text {
-    line-height: 14px;
-    vertical-align: text-top;
+    margin-bottom: 5px;
   }
 
   &__subtitle {

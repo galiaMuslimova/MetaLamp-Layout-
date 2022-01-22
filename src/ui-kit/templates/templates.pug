@@ -1,24 +1,29 @@
 -const data = require('./templates.json')
-.container
-  .templates     
-    ul.templates__colors
-      each i, index in data
-        li.templates__row
-          .templates__color(class= 'templates__color_' + index)
-          style. 
-            .templates__color_#{index} {
-              background-color: #{i.value};
-              opacity: #{i.opacity};
-            }        
-          .templates__color-name
-            .templates__color-title= i.title
-            .templates__color-value= i.value
-    ul.templates__types
-      h1.templates__types-name H1
-      h1.templates__types-description This one is the sub-section or widget title
-      h2.templates__types-name H2 
-      h2.templates__types-description Next one is the item title inside widgets
-      h3.templates__types-name H3
-      h3.templates__types-description This is a label or CTA text
-      p.templates__types-name Body 
-      p.templates__types-description This is the body text which is used for most of the design, like paragraphs, lists, etc.
+.templates 
+  .templates__container 
+    .templates__content   
+      .templates__colors
+        each i, index in data
+          .templates__row
+            .templates__color(class= 'templates__color_' + index)
+            style. 
+              .templates__color_#{index} {
+                background-color: #{i.value};
+                opacity: #{i.opacity};
+              }        
+            .templates__color-name
+              .templates__color-title= i.title
+              .templates__color-value= i.value
+      .templates__types
+        .templates__types-row.templates__types-row_is-h1
+          h1.templates__type-name H1
+          h1.templates__type-description.templates__type-description_is-h1 This one is the sub-section or widget title
+        .templates__types-row.templates__types-row_is-h2
+          h2.templates__type-name H2 
+          h2.templates__type-description Next one is the item title inside widgets
+        .templates__types-row.templates__types-row_is-h3
+          h3.templates__type-name H3
+          h3.templates__type-description This is a label or CTA text
+        .templates__types-row.templates__types-row_is-p
+          p.templates__type-name Body 
+          p.templates__type-description= "This is the body text which is used for most \nof the design, like paragraphs, lists, etc."

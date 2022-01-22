@@ -1,10 +1,18 @@
 include ../../components/header/header.pug
 
 .insertions.js-insertions  
-  +header()
-  +header(true)
-  footer
-    include ../../components/links/links.pug
-    include ../../components/rights/rights.pug
-  .insertions__rights
+  header.insertions__header
+    .insertions__container
+      +header()
+  header.insertions__header
+    .insertions__container
+      +header(true)
+  footer.insertions__footer
+    .insertions__links 
+      .insertions__container 
+        include ../../components/links/links.pug
+    .insertions__rights 
+      .insertions__container
+        include ../../components/rights/rights.pug
+  .insertions__rights.insertions__rights_mobile
     include ../../components/rights/rights.pug

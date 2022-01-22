@@ -20,6 +20,7 @@
   &__item {
     &_with-submenu {
       display: grid;
+      height: 20px;
       font-size: 14px;
       line-height: 17px;
 
@@ -59,6 +60,7 @@
     padding: 10px;
     width: 100%;
     z-index: 60;
+    gap: 20px;
 
     &_opened {
       display: flex;
