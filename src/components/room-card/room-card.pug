@@ -34,4 +34,4 @@ include ../calculation/calculation.pug
         .room-card__dots
         .room-card__total-cost= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
       .room-card__button 
-        +button({theme: "link", text: "забронировать", icon: true})
+        +button({theme: "with-arrow", text: "забронировать", icon: true})

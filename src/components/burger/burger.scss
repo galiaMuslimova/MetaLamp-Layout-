@@ -37,7 +37,7 @@
   }
 
   &_pushed {
-    span {
+    .burger__item {
       opacity: 0;
       transition: 0.1s;
     }

@@ -22,7 +22,7 @@ function showDateInInput(res, dp, element) {
 function makeCalendar(element) {
   const dp = new AirDatepicker(element, {
     navTitles: {
-      days: 'MMMM <i>yyyy</i>',
+      days: 'MMMM <i class="calendar__year">yyyy</i>',
     },
     multipleDates: true,  
     range: true,

@@ -60,6 +60,14 @@
     line-height: 35px;
   }
 
+  &__signin-btn {
+    width: 87px;
+  }
+
+  &__login-btn {
+    width: 196px;
+  }
+
   &__burger {
     @media (max-width: 924px) {
       grid-area: burger

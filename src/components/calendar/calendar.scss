@@ -20,6 +20,11 @@
     padding-top: 5px;
   }
 
+  &__year {
+    font-weight: bold;
+    color: #1F2041;
+  }
+
   .air-datepicker {
     --adp-width: 100%;
     --adp-font-family: 'Montserrat', 'Arial', sans-serif;
@@ -38,11 +43,6 @@
         font-size: 19px;
         line-height: 23px;
         color: #1F2041;
-
-        i {
-          font-weight: bold;
-          color: #1F2041;
-        }
       }
     }
 

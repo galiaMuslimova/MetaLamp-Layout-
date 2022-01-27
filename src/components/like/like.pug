@@ -5,8 +5,5 @@ mixin like({count, isCheck, name})
     label.like__label
       input.like__input.js-like__input(type="checkbox", checked=isCheck, name=name)
       span.like__icon
-        if(isCheck)
-          +icon-heart({colored: true})
-        else 
-          +icon-heart({colored: false})
+        +icon-heart()
     input.like__count.js-like__count(value=count) 
