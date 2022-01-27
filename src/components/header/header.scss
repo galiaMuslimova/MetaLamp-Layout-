@@ -42,7 +42,7 @@
       display: none;
     }
 
-    &_mobile {
+    &_for-mobile {
       @media (max-width: 600px) {
         display: flex;
         margin: auto;

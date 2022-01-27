@@ -23,7 +23,7 @@
     }
   }
 
-  &_date {
+  &_for-date {
     .input__field {
       text-transform: uppercase;
 
@@ -33,9 +33,9 @@
     }
   }
 
-  &_dropdown,
-  &_subscript,
-  &_date {
+  &_for-dropdown,
+  &_for-subscript,
+  &_for-date {
     .input__field {
       color: rgba(31, 32, 65, 0.75);
     }

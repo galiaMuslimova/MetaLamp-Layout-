@@ -28,7 +28,7 @@ include ../../components/review/review.pug
             .forms__form 
               +input({type: "empty", fontType:"E-mail", value:"Email"}) 
           .forms__item
-            .forms__row.forms__row_subtitle
+            .forms__row.forms__row_with-subtitle
               .forms__subtitle Text Field
               .forms__subtitle.forms__subtitle_transparent Hover / Focus
             form.forms__form
@@ -66,7 +66,7 @@ include ../../components/review/review.pug
     .forms__block.forms__block_narrow
       .forms__sub-block
         .forms__select
-          .forms__row
+          .forms__row.forms__row_with-subtitle
             h3.forms__subtitle dropdown 
             .forms__subtitle.forms__subtitle_transparent default
           +form({
@@ -76,7 +76,7 @@ include ../../components/review/review.pug
             }
           })
         .forms__select.forms__select_expanded.js-forms__select_expanded
-          .forms__row
+          .forms__row.forms__row_with-subtitle
             h3.forms__subtitle dropdown 
             .forms__subtitle.forms__subtitle_transparent expanded
           +form({
@@ -87,7 +87,7 @@ include ../../components/review/review.pug
           })
       .forms__sub-block
         .forms__expandable.forms__expandable_with-gap
-          .forms__row
+          .forms__row.forms__row_with-icon
             h3.forms__subtitle expandable checkbox list
             .forms__expand-icon.js-forms__expand-icon 
               +icon-open('expandable')
@@ -102,7 +102,7 @@ include ../../components/review/review.pug
             {id:"shampoo", text:"Шампунь"}]
           })
         .forms__expandable.forms__expandable_expanded.js-forms__expandable_expanded
-          .forms__row
+          .forms__row.forms__row_with-icon
             h3.forms__subtitle expandable checkbox list
             .forms__expand-icon.forms__expand-icon_expanded.js-forms__expand-icon  
               +icon-open('expandable')
@@ -145,12 +145,12 @@ include ../../components/review/review.pug
             +toggle({text: "Получать спецпредложения"})
         .forms__like
           h3.forms__subtitle like button 
-          .forms__row.forms__row_start
+          .forms__row
             +like({"count": "2",  "isCheck": false, "name": "like-1"})
             +like({"count": "12", "isCheck": true, "name": "like-2"})
         .forms__rate
           h3.forms__subtitle rate button
-          .forms__row 
+          .forms__row.forms__row_for-rate 
             +rate({starsCount: 4})
             +rate({starsCount: 5}) 
       
@@ -161,17 +161,17 @@ include ../../components/review/review.pug
         .forms__buttons
           .forms__item
             h3.forms__subtitle buttons 
-            .forms__row.forms__row_start 
+            .forms__row
               .forms__button 
                 +button({theme: 'blue', text: 'click me'})
               .forms__button.forms__button_hovered
                 +button({theme: 'blue', text: 'click me'})
-          .forms__row.forms__row_start 
+          .forms__row
             .forms__button 
               +button({theme: 'white', text: 'click me'})
             .forms__button.forms__button_hovered
               +button({theme: 'white', text: 'click me'})
-          .forms__row.forms__row_start 
+          .forms__row
             .forms__button.forms__button_simple 
               +button({theme: 'simple', text: 'click me'})
             .forms__button.forms__button_hovered.forms__button_simple

@@ -9,13 +9,13 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
 
-  &_calendar {
+  &_for-calendar {
     margin-top: 6px;
     border: 1px solid rgba(31, 32, 65, 0.25);
   }
 
-  &_guests,
-  &_placement {
+  &_for-guests,
+  &_for-placement {
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 0px 0px 4px 4px;
   }
@@ -24,7 +24,7 @@
     display: block;
   }
 
-  &_checkbox {
+  &_for-checkbox {
     box-shadow: none;
   }
 }

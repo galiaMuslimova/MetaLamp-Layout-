@@ -43,11 +43,14 @@
   &__row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 20px;
 
-    &_start {
-      justify-content: start;
-      gap: 20px;
+
+    &_with-subtitle,
+    &_with-icon,
+    &_for-rate {
+      justify-content: space-between;
     }
   }
 
@@ -164,13 +167,14 @@
       opacity: 0.5;
     }
 
-    &_link {
+    &_with-arrow {
       width: 320px;
     }
   }
 
   &__pagination {
     margin-top: 15px;
+
     .pagination {
       margin-left: 0px;
     }

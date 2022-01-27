@@ -55,22 +55,22 @@
     grid-template-columns: 58px 1fr;
     grid-column-gap: 30px;
 
-    &_is-h1 {
+    &_with-h1 {
       font-size: 24px;
       line-height: 30px;
     }
 
-    &_is-h2 {
+    &_with-h2 {
       font-size: 19px;
     }
 
-    &_is-h3 {
+    &_with-h3 {
       text-transform: uppercase;
       font-size: 12px;
       line-height: 15px;
     }
 
-    &_is-p {
+    &_with-p {
       font-size: 14px;
       line-height: 24px;
       white-space: pre-wrap;

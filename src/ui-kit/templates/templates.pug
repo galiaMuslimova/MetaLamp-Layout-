@@ -7,7 +7,7 @@
           .templates__row
             .templates__color(class= 'templates__color_' + index)
             style. 
-              .templates__color_#{index} {
+              .templates__color {
                 background-color: #{i.value};
                 opacity: #{i.opacity};
               }        
@@ -15,15 +15,15 @@
               .templates__color-title= i.title
               .templates__color-value= i.value
       .templates__types
-        .templates__types-row.templates__types-row_is-h1
+        .templates__types-row.templates__types-row_with-h1
           h1.templates__type-name H1
-          h1.templates__type-description.templates__type-description_is-h1 This one is the sub-section or widget title
-        .templates__types-row.templates__types-row_is-h2
+          h1.templates__type-description This one is the sub-section or widget title
+        .templates__types-row.templates__types-row_with-h2
           h2.templates__type-name H2 
           h2.templates__type-description Next one is the item title inside widgets
-        .templates__types-row.templates__types-row_is-h3
+        .templates__types-row.templates__types-row_with-h3
           h3.templates__type-name H3
           h3.templates__type-description This is a label or CTA text
-        .templates__types-row.templates__types-row_is-p
+        .templates__types-row.templates__types-row_with-p
           p.templates__type-name Body 
           p.templates__type-description= "This is the body text which is used for most \nof the design, like paragraphs, lists, etc."

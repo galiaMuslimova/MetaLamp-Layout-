@@ -31,7 +31,7 @@
       display: block;
     }
 
-    &:checked~p {
+    &:checked~.radio__text {
       color: rgba(31, 32, 65, 0.75);
     }
   }

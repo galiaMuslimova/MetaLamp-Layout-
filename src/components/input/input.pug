@@ -2,7 +2,7 @@ include ../icon-open/icon-open.pug
 include ../icon-arrow/icon-arrow.pug
 
 mixin input({type='dropdown', fontType='text', value, focus=false})  
-  .input.js-input(class='input_' + type)
+  .input.js-input(class='input_for-' + type)
 
     if(type=="subscript")
       input.input__field(type=fontType, placeholder=value)

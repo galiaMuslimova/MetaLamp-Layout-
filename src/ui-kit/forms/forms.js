@@ -1,7 +1,7 @@
 import createSlider from '@c/slider/slider.js';
 
 $(() => {
-  const $formsSlider = $('.js-slider_forms');
+  const $formsSlider = $('.js-slider_for-forms');
   if ($formsSlider.length > 0) {
     createSlider($formsSlider);
   }  
@@ -23,6 +23,6 @@ $(() => {
     );
   }
 
-  const baseElement = $('.js-pagination__anchor_forms');
+  const baseElement = $('.js-pagination__anchor_for-forms');
   createFormsPagination(baseElement)
 });

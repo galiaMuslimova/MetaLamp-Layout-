@@ -140,11 +140,11 @@
       height: 100%;
     }
 
-    &_1 {
+    &_first {
       grid-area: photo1;
     }
 
-    &_2 {
+    &_second {
       grid-area: photo2;
 
       @media(max-width: 770px) {
@@ -152,7 +152,7 @@
       }
     }
 
-    &_3 {
+    &__third {
       grid-area: photo3;
 
       @media(max-width: 770px) {

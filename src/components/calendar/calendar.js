@@ -4,12 +4,12 @@ import 'air-datepicker/air-datepicker.css';
 function showDateInInput(res, dp, element) {
   const $form = $(dp.$datepicker).closest('form');
   const $inputArr = $form.find('.input__field');
-  if (element === '.calendar__dp_filter') {
+  if (element === '.calendar__dp_for-filter') {
     const date1 = dp.formatDate(res.date[0], 'dd MMM');
     const date2 = dp.formatDate(res.date[1], 'dd MMM');
     const str = `${date1} - ${date2}`;
     $($inputArr[0]).val(str.toLowerCase());
-  } else if (element === '.calendar__dp_cards') {
+  } else if (element === '.calendar__dp_for-cards') {
     return;
   } else {
     $($inputArr[0]).val(res.formattedDate[0]);
@@ -38,11 +38,11 @@ function makeCalendar(element) {
 }
 
 
-$('.js-calendar__btn_reset').on('click', () => {
+$('.js-calendar__btn_for-reset').on('click', () => {
   dp.clear();
 });
 
-$('.js-calendar__btn_submit').on('click', function () {
+$('.js-calendar__btn_for-submit').on('click', function () {
   const $selectForm = $(this).closest('form');
   const $drop = $selectForm.find('.js-drop');
   $drop.removeClass('drop_active');

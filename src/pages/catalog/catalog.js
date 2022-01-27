@@ -6,7 +6,7 @@ $(() => {
     $filter.toggleClass('catalog__filter_active');
   });
 
-  const baseElement = $('.js-pagination__anchor_catalog');
+  const baseElement = $('.js-pagination__anchor_for-catalog');
   const paginationItems = $('.js-catalog-list .js-catalog-item')
 
   createPagination(baseElement, paginationItems)

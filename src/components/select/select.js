@@ -6,11 +6,11 @@ function takeItemsCount(selectForm) {
 
 function showHideResetButton(selectForm) {
   const result = takeItemsCount(selectForm).reduce((sum, elem) => sum + elem, 0);
-  const $reset = selectForm.find('.js-select__reset');
+  const $reset = selectForm.find('.js-select__reset-btn');
   if (result > 0) {
-    $reset.addClass('select__reset_active');
+    $reset.addClass('select__reset-btn_active');
   } else {
-    $reset.removeClass('select__reset_active');
+    $reset.removeClass('select__reset-btn_active');
   }
 }
 
@@ -56,21 +56,21 @@ $(() => {
     const $selectForm = $(this).closest('form');    
     const $input = $selectForm.find('.js-input__field'); 
     const $drop = $selectForm.find('.js-drop');   
-    if ($drop.hasClass('drop_guests')) {
+    if ($drop.hasClass('drop_for-guests')) {
       const str = createGuestsText($selectForm);
       $input.val(str);
       showHideResetButton($selectForm);
     }
-    if ($drop.hasClass('drop_placement')) {
+    if ($drop.hasClass('drop_for-placement')) {
       const str = createPlacementText($selectForm);
       $input.val(str);
     }
   })
 
-  $('.js-select__reset').on('click', function () {
+  $('.js-select__reset-btn').on('click', function () {
     const $selectForm = $(this).closest('form');
     const $countNums = $selectForm.find('.js-count__num');
-    const $minus = $selectForm.find('.js-count__btn_minus');
+    const $minus = $selectForm.find('.js-count__btn_with-minus');
     $countNums.each(function () {
       $(this).val(0);
     });
@@ -80,7 +80,7 @@ $(() => {
     showHideResetButton($selectForm);
   });
 
-  $('.js-select__submit').on('click', function () {
+  $('.js-select__submit-btn').on('click', function () {
     const $selectForm = $(this).closest('form');
     const $drop = $selectForm.find('.js-drop');
     $drop.removeClass('drop_active');

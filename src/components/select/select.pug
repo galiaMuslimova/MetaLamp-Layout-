@@ -8,8 +8,8 @@ mixin select({items, hasButton})
         +count(item.count)
     if(hasButton==true)
       .select__buttons
-        .select__reset.js-select__reset
+        .select__reset-btn.js-select__reset-btn
           +button({ theme: 'simple', type: 'reset', text: 'очистить' })
-        .select__submit.js-select__submit
+        .select__submit-btn.js-select__submit-btn
           +button({ theme: 'simple', type: 'button', text: 'применить' })
           
