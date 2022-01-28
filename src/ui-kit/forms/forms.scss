@@ -22,7 +22,7 @@
   &__block {
     display: flex;
     flex-direction: column;
-    gap: 41px;
+    gap: 40px;
 
     &_narrow {
       max-width: 266px;
@@ -48,9 +48,12 @@
 
 
     &_with-subtitle,
-    &_with-icon,
-    &_for-rate {
+    &_with-icon {
       justify-content: space-between;
+    }
+
+    &_for-rate {
+      gap: 17px;
     }
   }
 
@@ -158,9 +161,11 @@
 
   &__button {
     height: 44px;
+    width: 99px;
 
     &_simple {
       height: 15px;
+      width: 62px;
     }
 
     &_hovered {

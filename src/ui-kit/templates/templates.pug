@@ -3,17 +3,17 @@
   .templates__container 
     .templates__content   
       .templates__colors
-        each i, index in data
+        each item in data
           .templates__row
-            .templates__color(class= 'templates__color_' + index)
+            .templates__color(class= 'templates__color_' + item.modifier)
             style. 
-              .templates__color {
-                background-color: #{i.value};
-                opacity: #{i.opacity};
+              .templates__color_#{item.modifier} {
+                background-color: #{item.value};
+                opacity: #{item.opacity};
               }        
             .templates__color-name
-              .templates__color-title= i.title
-              .templates__color-value= i.value
+              .templates__color-title= item.title
+              .templates__color-value= item.value
       .templates__types
         .templates__types-row.templates__types-row_with-h1
           h1.templates__type-name H1

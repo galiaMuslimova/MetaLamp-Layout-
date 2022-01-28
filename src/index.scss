@@ -1,0 +1,47 @@
+.index {
+  &__container {
+    max-width: 1160px;
+    width: 96vw;
+    padding: 0 1vw;
+    margin: 0 auto;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    line-height: 29px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(31, 32, 65, 1);
+    text-align: center;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    color: #1F2041;
+  }
+
+  &__link {
+    text-decoration: none;
+    outline: none;
+    color: rgba(31, 32, 65, 0.5);
+    margin: 7px;
+
+    &:hover,
+    &:focus {
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
+}

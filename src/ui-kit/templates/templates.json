@@ -1,36 +1,45 @@
 [
   {
     "title": "Dark Shade 100%",
+    "modifier": "dark",
     "value": "#1F2041",
     "opacity": "100%"
 
   },
   {
     "title": "Dark Shade 75%",
+    "modifier": "dark-grey",
     "value": "#1F2041",
     "opacity": "75%"
   },
   {
     "title": "Dark Shade 50%",
+    "modifier": "grey",
     "value": "#1F2041",
     "opacity": "50%"
   },
   {
     "title": "Dark Shade 25%",
+    "modifier": "light-grey",
     "value": "#1F2041",
     "opacity": "25%"
   },
   {
     "title": "Dark Shade 5%",
+    "modifier": "light",
     "value": "#1F2041",
     "opacity": "5%"
   },
   {
     "title": "Purple",
-    "value": "#BC9CFF"
+    "modifier": "purple",
+    "value": "#BC9CFF",
+    "opacity": "100%"
   },
   {
     "title": "Green",
-    "value": "#6FCF97"
+    "modifier": "green",
+    "value": "#6FCF97",
+    "opacity": "100%"
   }
 ]

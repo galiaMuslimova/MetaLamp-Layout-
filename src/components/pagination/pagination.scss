@@ -1,13 +1,18 @@
-.pagination {  
+.pagination {
   display: flex;
   flex-direction: column;
-  width: max-content;  
+  width: max-content;
   padding-right: 12px;
   font-size: 12px;
   margin: 0px auto;
 
+  &__anchor {
+    display: flex;
+    flex-direction: row;
+  }
+
   &__item {
-    display: inline-block;
+    display: block;
     text-align: center;
     height: 40px;
     width: 40px;
@@ -24,6 +29,7 @@
       border-radius: 22px;
       color: #fff;
       font-size: 18px;
+      color: white;
     }
 
     &_active {
@@ -44,10 +50,6 @@
     &_disable {
       display: none;
     }
-  }
-
-  &__icon {
-    color: white;
   }
 
   &__text {

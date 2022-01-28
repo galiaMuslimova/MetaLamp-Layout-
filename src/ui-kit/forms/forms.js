@@ -14,12 +14,12 @@ $(() => {
 
   function createFormsPagination(el){
     $(el).append(
-      $('<li>').addClass('pagination__item').addClass('pagination__item_active').text('1'),
-      $('<li>').addClass('pagination__item').text('2'),
-      $('<li>').addClass('pagination__item').text('3'),
-      $('<li>').addClass('pagination__item').addClass('pagination__item_dots').text('...'),
-      $('<li>').addClass('pagination__item').text('15'),
-      $('<li>').addClass('pagination__item').addClass('pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow icon-arrow_pag')))
+      $('<div>').addClass('pagination__item').addClass('pagination__item_active').text('1'),
+      $('<div>').addClass('pagination__item').text('2'),
+      $('<div>').addClass('pagination__item').text('3'),
+      $('<div>').addClass('pagination__item').addClass('pagination__item_dots').text('...'),
+      $('<div>').addClass('pagination__item').text('15'),
+      $('<div>').addClass('pagination__item pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow')))
     );
   }
 
