@@ -8,10 +8,8 @@ nav.nav.js-nav
       span.nav__icon.js-nav__icon
         +icon-open()
     .nav__submenu.js-nav__submenu         
-      a.nav__link(href='../../empty.html') Услуга 1         
-      a.nav__link(href='../../empty.html') Услуга 2         
-      a.nav__link(href='../../empty.html') Услуга 3         
-      a.nav__link(href='../../empty.html') Услуга 4
+      each item in ['Услуга 1', 'Услуга 2', 'Услуга 3', 'Услуга 4', 'Услуга 5']          
+        a.nav__link(href='./empty.html')= item
   .nav__item 
     a.nav__link(href='./empty.html') Вакансии
   .nav__item 
@@ -20,9 +18,6 @@ nav.nav.js-nav
     a.nav__link.nav__link_with-icon Соглашения
       span.nav__icon.js-nav__icon
         +icon-open()
-    .nav__submenu.js-nav__submenu          
-      a.nav__link(href='./empty.html') Соглашения 1         
-      a.nav__link(href='./empty.html') Соглашения 2         
-      a.nav__link(href='./empty.html') Соглашения 3         
-      a.nav__link(href='./empty.html') Соглашения 4         
-      a.nav__link(href='./empty.html') Соглашения 5
+    .nav__submenu.js-nav__submenu
+      each item in ['Соглашения 1', 'Соглашения 2', 'Соглашения 3', 'Соглашения 4']          
+        a.nav__link(href='./empty.html')= item         

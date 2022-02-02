@@ -8,21 +8,16 @@ include ../input/input.pug
       p.links__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
     .links__col
       h3.links__subtitle Навигация 
-      a.links__text(href='../../empty.html') О нас
-      a.links__text(href='../../empty.html') Новости
-      a.links__text(href='../../empty.html') Служба поддержки
-      a.links__text(href='../../empty.html') Услуги
+      each item in ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
+        a.links__text(href='../../empty.html')=item
     .links__col
       h3.links__subtitle О нас
-      a.links__text(href='../../empty.html') О сервисе
-      a.links__text(href='../../empty.html') Наша команда
-      a.links__text(href='../../empty.html') Вакансии
-      a.links__text(href='../../empty.html') Инвесторы
+      each item in ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
+        a.links__text(href='../../empty.html')=item
     .links__col
       h3.links__subtitle Служба поддержки
-      a.links__text(href='../../empty.html') Соглашение
-      a.links__text(href='../../empty.html') Сообщества
-      a.links__text(href='../../empty.html') Связь с нами
+      each item in ['Соглашение', 'Сообщества', 'Связь с нами']
+        a.links__text(href='../../empty.html')=item
     .links__col.links__col_with-info
       h3.links__subtitle Подписка
       p.links__info Получайте специальные предложения и новости сервиса
