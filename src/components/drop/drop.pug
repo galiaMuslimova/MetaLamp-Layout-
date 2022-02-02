@@ -1,5 +1,5 @@
 include ../calendar/calendar.pug
-include ../select/select.pug
+include ../selector/selector.pug
 include ../checkbox-list/checkbox-list.pug
 
 mixin drop({type='calendar', id='', hasButton=false, items})
@@ -7,6 +7,6 @@ mixin drop({type='calendar', id='', hasButton=false, items})
     if(type=='calendar')
       +calendar({id:id, hasButton: hasButton})
     if(type=='guests' || type=='placement')
-      +select({items:items, hasButton: hasButton})
+      +selector({items:items, hasButton: hasButton})
     if(type=='checkbox')
       +checkbox-list(items)

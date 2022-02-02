@@ -5,7 +5,7 @@ mixin carousel({num})
   -function requireAll(requireContext) { return requireContext.keys().filter(el => el.includes(num)).map(requireContext) };
   -const images = requireAll(require.context("@a/images/catalog-images/", true, /\.(jpg|png|jpeg)$/));
 
-  .carousel  
+  .carousel.js-carousel
     .carousel__slide-list.js-carousel__slide-list
       .carousel__slide.carousel__slide_shown
         img.carousel__image(src=images[0] alt='room image')

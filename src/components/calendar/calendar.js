@@ -33,7 +33,6 @@ function makeCalendar(element) {
       showDateInInput(res, dp, element);
     },
   });
-
   return dp;
 }
 

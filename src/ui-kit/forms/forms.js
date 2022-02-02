@@ -6,7 +6,7 @@ $(() => {
     createSlider($formsSlider);
   }  
 
-  $('.js-forms__select_expanded').find('.js-drop').addClass('drop_active');
+  $('.js-forms__selector_expanded').find('.js-drop').addClass('drop_active');
   $('.js-forms__expandable_expanded').find('.js-drop').addClass('drop_active');
   $('.js-forms__expand-icon').on('click', function(){
     $(this).toggleClass('forms__expand-icon_expanded');

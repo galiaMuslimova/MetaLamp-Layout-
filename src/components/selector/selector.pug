@@ -1,0 +1,15 @@
+include ../counter/counter.pug
+
+mixin selector({items, hasButton})
+  .selector.js-selector
+    each item in items
+      .selector__row
+        .selector__subtitle=item.name
+        +counter(item.amount)
+    if(hasButton==true)
+      .selector__buttons
+        .selector__reset-btn.js-selector__reset-btn
+          +button({ theme: 'simple', type: 'reset', text: 'очистить' })
+        .selector__submit-btn.js-selector__submit-btn
+          +button({ theme: 'simple', type: 'button', text: 'применить' })
+          

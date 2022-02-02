@@ -19,7 +19,7 @@ include ../drop/drop.pug
       inputDate: {value: '19 авг - 23 авг'}, 
       dropDate: {
         type: 'guests', 
-        items: [{name: "Взрослые", count: 3}, {name: "Дети", count: 0}, {name: "Младенцы", count: 1}]
+        items: [{name: "Взрослые", amount: 3}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 1}]
         }
       }) 
   .filter__item
@@ -39,7 +39,7 @@ include ../drop/drop.pug
     +form({
       dropDate: {
         type: "placement", 
-        items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]
+        items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
         }
       })
   .filter__item 

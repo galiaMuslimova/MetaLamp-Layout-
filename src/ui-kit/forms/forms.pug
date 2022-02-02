@@ -9,7 +9,7 @@ include ../../components/rate/rate.pug
 include ../../components/slider/slider.pug
 include ../../components/button/button.pug
 include ../../components/pagination/pagination.pug
-include ../../components/select/select.pug
+include ../../components/selector/selector.pug
 include ../../components/bullet/bullet.pug
 include ../../components/feature/feature.pug
 include ../../components/review/review.pug
@@ -65,7 +65,7 @@ include ../../components/review/review.pug
     //dropdown first column and expandable
     .forms__block.forms__block_narrow
       .forms__sub-block
-        .forms__select
+        .forms__selector
           .forms__row.forms__row_with-subtitle
             h3.forms__subtitle dropdown 
             .forms__subtitle.forms__subtitle_transparent default
@@ -75,7 +75,7 @@ include ../../components/review/review.pug
               items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]
             }
           })
-        .forms__select.forms__select_expanded.js-forms__select_expanded
+        .forms__selector.forms__selector_expanded.js-forms__selector_expanded
           .forms__row.forms__row_with-subtitle
             h3.forms__subtitle dropdown 
             .forms__subtitle.forms__subtitle_transparent expanded
@@ -186,7 +186,7 @@ include ../../components/review/review.pug
     .forms__second-row
       //dropdown second column and rich checkbox
       .forms__block.forms__block_with-large-gap
-        .forms__select.forms__select_expanded.js-forms__select_expanded
+        .forms__selector.forms__selector_expanded.js-forms__selector_expanded
           h3.forms__subtitle dropdown 
           +form({
             dropDate: {
@@ -202,7 +202,7 @@ include ../../components/review/review.pug
       
       //dropdown third column and bullet list
       .forms__block.forms__block_with-large-gap
-        .forms__select.forms__select_expanded.js-forms__select_expanded
+        .forms__selector.forms__selector_expanded.js-forms__selector_expanded
           h3.forms__subtitle dropdown 
           +form({
             dropDate: {
