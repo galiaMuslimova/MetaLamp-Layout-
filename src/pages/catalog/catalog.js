@@ -1,4 +1,4 @@
-import createPagination from '@c/pagination/pagination.js'; 
+import Pagination from '@c/pagination/pagination.js'; 
 
 $(() => {
   $('.js-catalog__button').on('click', function () {
@@ -9,5 +9,5 @@ $(() => {
   const baseElement = $('.js-pagination__anchor_for-catalog');
   const paginationItems = $('.js-catalog-list .js-catalog-item')
 
-  createPagination(baseElement, paginationItems)
+  new Pagination(baseElement, paginationItems)
 });

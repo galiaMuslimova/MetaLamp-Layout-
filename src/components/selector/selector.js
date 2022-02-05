@@ -1,35 +1,82 @@
-import Counter from '@c/counter/counter.pug'
+import Counter from '../counter/counter.js'
 
 class Selector {
   constructor(element) {
     this.element = element;
     this.$selectForm = $(this.element).closest('form');
     this.$input = this.$selectForm.find('.js-input__field');
-    this.$drop = this.$selectForm.find('.js-drop');
-    this.numsArray = this.takeNumsArray();
+    this.$drop = this.$selectForm.find('.js-drop');    
+    this.$resetBtn = this.$selectForm.find('.js-selector__reset-btn');
+    this.$submitBtn = this.$selectForm.find('.js-selector__submit-btn');
     this.counters = [];
+    this.valuesArray = [];
+    this.init()
   }
 
   init() {
-    this.element.find('.counter').each(function () {
-      const counter = new Counter(this);
-      this.counters.push(counter);
+    const el = this;
+    $(this.element).find('.counter').each(function () {
+      let counter = new Counter($(this));
+      counter.init()
+      el.counters.push(counter);
     })
+
+    this.valuesArray = this.takeNumsArray();
+    this.changeCount();
+    this.clickResetBtn();
+    this.clickSubmitBtn();
+  }
+
+  changeCount() {
+    const el = this;
+    const $buttons = $(this.element).find('.js-counter__btn');
+    $buttons.each(function () {
+      $(this).on('click', function () {
+        el.valuesArray = el.takeNumsArray();
+        el.changeInputText();
+        const result = el.valuesArray.reduce((sum, elem) => sum + elem, 0);
+        const isResetBtnActive = el.$resetBtn.hasClass('selector__reset-btn_active');
+        if (result > 0 && !isResetBtnActive) {
+          el.$resetBtn.addClass('selector__reset-btn_active');
+        } else if (result < 1 && isResetBtnActive) {
+          el.$resetBtn.removeClass('selector__reset-btn_active');
+        }
+      })
+    })
+  }
+
+  clickResetBtn() {
+    const el = this;
+    this.$resetBtn.on('click', function () {
+      for (const counter of el.counters) {
+        counter.numBtnValue = 0;
+        counter.toggleDisable()
+      }
+      el.$resetBtn.removeClass('selector__reset-btn_active');
+      el.changeInputText();
+    });
+  }
+
+  clickSubmitBtn() {
+    const el = this;
+    this.$submitBtn.on('click', function () {
+      el.$drop.removeClass('drop_active');
+    });
+  }
+
+  changeInputText() {
     let str;
     if (this.$drop.hasClass('drop_for-guests')) {
-      str = createGuestsText();
-      showHideResetButton();
+      str = this.createGuestsText();
     }
-    if ($drop.hasClass('drop_for-placement')) {
-      str = createPlacementText();      
+    if (this.$drop.hasClass('drop_for-placement')) {
+      str = this.createPlacementText();
     }
     this.$input.val(str);
   }
 
   takeNumsArray() {
-    const $items = this.$selectForm.find('.js-counter__num');
-    const values = $items.map((x) => $($items[x]).val());
-    return ([Number(values[0]), Number(values[1]), Number(values[2])]);
+    return this.counters.map((counter) => counter.numBtnValue);
   }
 
   declOfNum(number, titles) {
@@ -39,13 +86,13 @@ class Selector {
   }
 
   createGuestsText() {
-    const adultsNum = this.numsArray[0] + this.numsArray[1];
+    const adultsNum = this.valuesArray[0] + this.valuesArray[1];
     const adultsText = this.declOfNum(adultsNum, ['гость', 'гостя', 'гостей']);
     const adults = `${adultsNum} ${adultsText}`;
 
-    const babiesNum = this.numsArray[2];
+    const babiesNum = this.valuesArray[2];
     const babiesText = this.declOfNum(babiesNum, ['младенец', 'младенца', 'младенцев']);
-    const babies = `${babiesNum}, ${babiesText}`
+    const babies = `${babiesNum} ${babiesText}`
 
     let str;
     if (adultsNum === 0) {
@@ -60,11 +107,11 @@ class Selector {
   }
 
   createPlacementText() {
-    const bedroomsNum = this.numsArray[0];
+    const bedroomsNum = this.valuesArray[0];
     const bedroomsText = declOfNum(bedroomsNum, ['спальня', 'спальни', 'спален'])
     const bedrooms = `${bedroomsNum} ${bedroomsText}`;
 
-    const bedsNum = this.numsArray[1];
+    const bedsNum = this.valuesArray[1];
     const bedsText = declOfNum(bedsNum, ['кровать', 'кровати', 'кроватей']);
     const beds = `${bedsNum} ${bedsText}`;
 
@@ -76,49 +123,12 @@ class Selector {
     }
     return str;
   }
-
-  showHideResetButton() {
-    const result = this.numsArray.reduce((sum, elem) => sum + elem, 0);
-    const $reset = this.$selectForm.find('.js-selector__reset-btn');
-    if (result > 0) {
-      $reset.addClass('selector__reset-btn_active');
-    } else {
-      $reset.removeClass('selector__reset-btn_active');
-    }
-  }
-
-  
-
-  
-
-  
 }
-
-
 
 $(() => {
   $('.js-selector').each(function () {
     new Selector(this)
   })
-
-  $('.js-selector__reset-btn').on('click', function () {
-    const $selectForm = $(this).closest('form');
-    const $countNums = $selectForm.find('.js-counter__num');
-    const $minus = $selectForm.find('.js-count__btn_with-minus');
-    $countNums.each(function () {
-      $(this).val(0);
-    });
-    $minus.each(function () {
-      $(this).addClass('counter__btn_disabled');
-    });
-    showHideResetButton($selectForm);
-  });
-
-  $('.js-selector__submit-btn').on('click', function () {
-    const $selectForm = $(this).closest('form');
-    const $drop = $selectForm.find('.js-drop');
-    $drop.removeClass('drop_active');
-  });
 });
 
 
