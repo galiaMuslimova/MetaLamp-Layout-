@@ -1,31 +1,42 @@
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
-function createSlider(el) {
-  const $sliderPlace = el.find('.js-slider__anchor');
-  const $resultPlace = el.find('.js-slider__result');
-
-  const slider = noUiSlider.create($sliderPlace[0], {
-    start: [5000, 10000],
-    behaviour: 'drag',
-    connect: true,
-    range: {
-      min: 0,
-      max: 15000,
-    },
-  });
-  function showResult(values) {
-    $resultPlace.text(`${(parseInt(values[0], 10)).toLocaleString()}₽ - ${(parseInt(values[1], 10)).toLocaleString()}₽`);
+export default class Slider {
+  constructor(element) {
+    this.element = element;
+    this.$sliderPlace = this.element.find('.js-slider__anchor');
+    this.$resultPlace = this.element.find('.js-slider__result');
+    this.values = [];
+    this.init();
   }
 
-  slider.on('slide', (values) => {
-    showResult(values);
-  });
+  init() {
+    const el = this;
+    const slider = noUiSlider.create(el.$sliderPlace[0], {
+      start: [5000, 10000],
+      behaviour: 'drag',
+      connect: true,
+      range: {
+        min: 0,
+        max: 15000,
+      },
+    });
 
-  const result = slider.get();
-  showResult(result);
+    this.values = slider.get();
+    this.showResult();
 
-  return slider;
+    slider.on('slide', (values) => {
+      el.values = values;
+      el.showResult();
+    });    
+  }  
+
+  showResult() {
+    let value1 = (parseInt(this.values[0], 10)).toLocaleString();
+    let value2 = (parseInt(this.values[1], 10)).toLocaleString();
+    this.$resultPlace.text(`${value1}₽ - ${value2}₽`);
+  }
 }
 
-export default createSlider;
+
+

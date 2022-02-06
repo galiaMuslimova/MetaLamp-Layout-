@@ -1,6 +1,6 @@
-import makeCalendar from '@c/calendar/calendar.js';
+import Calendar from '@c/calendar/calendar.js';
 
 $(() => {
   const $loginCardCalendarPlace = '.calendar__dp_for-login';
-  const loginCardCalendar = makeCalendar($loginCardCalendarPlace);
+  const loginCardCalendar = new Calendar($loginCardCalendarPlace);
 });

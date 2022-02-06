@@ -16,7 +16,7 @@ include ../drop/drop.pug
     .filter__guests
       h3.filter__subtitle гости
       +form({
-      inputDate: {value: '19 авг - 23 авг'}, 
+      inputDate: {value: '3 взрослых, 1 младенец'}, 
       dropDate: {
         type: 'guests', 
         items: [{name: "Взрослые", amount: 3}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 1}]
@@ -37,6 +37,7 @@ include ../drop/drop.pug
   .filter__item 
     h3.filter__subtitle удобства номера
     +form({
+      inputDate: {value: '2 спальни, 2 кровати...'},
       dropDate: {
         type: "placement", 
         items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]

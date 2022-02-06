@@ -5,7 +5,7 @@ class Selector {
     this.element = element;
     this.$selectForm = $(this.element).closest('form');
     this.$input = this.$selectForm.find('.js-input__field');
-    this.$drop = this.$selectForm.find('.js-drop');    
+    this.$drop = this.$selectForm.find('.js-drop');
     this.$resetBtn = this.$selectForm.find('.js-selector__reset-btn');
     this.$submitBtn = this.$selectForm.find('.js-selector__submit-btn');
     this.counters = [];
@@ -25,24 +25,29 @@ class Selector {
     this.changeCount();
     this.clickResetBtn();
     this.clickSubmitBtn();
+    this.clickButton();
   }
 
-  changeCount() {
+  clickButton() {
     const el = this;
     const $buttons = $(this.element).find('.js-counter__btn');
     $buttons.each(function () {
       $(this).on('click', function () {
-        el.valuesArray = el.takeNumsArray();
-        el.changeInputText();
-        const result = el.valuesArray.reduce((sum, elem) => sum + elem, 0);
-        const isResetBtnActive = el.$resetBtn.hasClass('selector__reset-btn_active');
-        if (result > 0 && !isResetBtnActive) {
-          el.$resetBtn.addClass('selector__reset-btn_active');
-        } else if (result < 1 && isResetBtnActive) {
-          el.$resetBtn.removeClass('selector__reset-btn_active');
-        }
+        el.changeCount()
       })
     })
+  }
+
+  changeCount() {
+    this.valuesArray = this.takeNumsArray();
+    this.changeInputText();
+    const result = this.valuesArray.reduce((sum, elem) => sum + elem, 0);
+    const isResetBtnActive = this.$resetBtn.hasClass('selector__reset-btn_active');
+    if (result > 0 && !isResetBtnActive) {
+      this.$resetBtn.addClass('selector__reset-btn_active');
+    } else if (result < 1 && isResetBtnActive) {
+      this.$resetBtn.removeClass('selector__reset-btn_active');
+    }
   }
 
   clickResetBtn() {
@@ -108,11 +113,11 @@ class Selector {
 
   createPlacementText() {
     const bedroomsNum = this.valuesArray[0];
-    const bedroomsText = declOfNum(bedroomsNum, ['спальня', 'спальни', 'спален'])
+    const bedroomsText = this.declOfNum(bedroomsNum, ['спальня', 'спальни', 'спален'])
     const bedrooms = `${bedroomsNum} ${bedroomsText}`;
 
     const bedsNum = this.valuesArray[1];
-    const bedsText = declOfNum(bedsNum, ['кровать', 'кровати', 'кроватей']);
+    const bedsText = this.declOfNum(bedsNum, ['кровать', 'кровати', 'кроватей']);
     const beds = `${bedsNum} ${bedsText}`;
 
     let str;

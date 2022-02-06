@@ -1,17 +1,16 @@
-import makeCalendar from '@c/calendar/calendar.js';
-import createSlider from '@c/slider/slider.js';
+import Calendar from '@c/calendar/calendar.js';
+import Slider from '@c/slider/slider.js';
 
 $(() => {
   const $filterCalendarPlace = '.calendar__dp_for-filter';
   if ($($filterCalendarPlace).length > 0) {
-    const filterCalendar = makeCalendar($filterCalendarPlace);
-    const filterDate = ['2019-08-19', '2019-08-23'];
-    filterCalendar.selectDate(filterDate);    
+    const filterCalendar = new Calendar($filterCalendarPlace);
+    const filterDate = ['2019-08-19', '2019-08-23'];   
   }
 
   const $filterSlider = $('.js-slider_for-filter');
   if ($filterSlider.length > 0) {
-    createSlider($filterSlider)
+    const slider = new Slider($filterSlider)
   }
 
   const $iconOpen = $('.js-filter__icon');

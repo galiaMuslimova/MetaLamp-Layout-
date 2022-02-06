@@ -1,9 +1,9 @@
-import createSlider from '@c/slider/slider.js';
+import Slider from '@c/slider/slider.js';
 
 $(() => {
   const $formsSlider = $('.js-slider_for-forms');
   if ($formsSlider.length > 0) {
-    createSlider($formsSlider);
+    new Slider($formsSlider);
   }  
 
   $('.js-forms__selector_expanded').find('.js-drop').addClass('drop_active');
