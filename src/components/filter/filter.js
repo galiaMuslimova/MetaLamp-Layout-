@@ -5,12 +5,15 @@ $(() => {
   const $filterCalendarPlace = '.calendar__dp_for-filter';
   if ($($filterCalendarPlace).length > 0) {
     const filterCalendar = new Calendar($filterCalendarPlace);
-    const filterDate = ['2019-08-19', '2019-08-23'];   
+    filterCalendar.init();
+    const filterDate = ['2019-08-19', '2019-08-23'];
+    filterCalendar.dp.selectDate(filterDate);
   }
 
   const $filterSlider = $('.js-slider_for-filter');
   if ($filterSlider.length > 0) {
-    const slider = new Slider($filterSlider)
+    const slider = new Slider($filterSlider);
+    slider.init();
   }
 
   const $iconOpen = $('.js-filter__icon');
@@ -19,6 +22,4 @@ $(() => {
     const $drop = $(this).closest('.filter__expandable-list').find('.js-drop');
     $drop.toggleClass('drop_active');
   });
-})
-
-
+});

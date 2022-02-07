@@ -4,31 +4,30 @@ $(() => {
   const $chart = $('.js-chart__content');
 
   if ($chart.length > 0) {
-    const ctx = $chart[0].getContext('2d');
+    const ctxContext = $chart[0].getContext('2d');
     const chartData = (require('@/pages/room/room.json')).voices;
 
     /* COLORS */
 
-    const orangeGradient = ctx.createLinearGradient(0, 0, 120, 120);
+    const orangeGradient = ctxContext.createLinearGradient(0, 0, 120, 120);
     orangeGradient.addColorStop(0, 'rgba(255, 227, 156, 1)');
     orangeGradient.addColorStop(1, 'rgba(255, 186, 156, 1)');
 
-    const greenGradient = ctx.createLinearGradient(0, 0, 120, 120);
+    const greenGradient = ctxContext.createLinearGradient(0, 0, 120, 120);
     greenGradient.addColorStop(0, 'rgba(111, 207, 151, 1)');
     greenGradient.addColorStop(1, 'rgba(102, 210, 234, 1)');
 
-    const blueGradient = ctx.createLinearGradient(0, 0, 120, 120);
+    const blueGradient = ctxContext.createLinearGradient(0, 0, 120, 120);
     blueGradient.addColorStop(0, 'rgba(188, 156, 255, 1)');
     blueGradient.addColorStop(1, 'rgba(139, 164, 249, 1)');
 
-    const blackGradient = ctx.createLinearGradient(0, 0, 120, 120);
+    const blackGradient = ctxContext.createLinearGradient(0, 0, 120, 120);
     blackGradient.addColorStop(0, 'rgba(144, 144, 144, 1)');
     blackGradient.addColorStop(1, 'rgba(61, 73, 117, 1)');
 
-
     /* PLUGINS */
 
-    //this plugin right number in chart
+    // this plugin right number in chart
     const numberInChart = {
       id: 'text1',
       beforeDraw(chart) {
@@ -48,9 +47,9 @@ $(() => {
         ctx.fillText(text, textX, textY);
         ctx.save();
       },
-    }
+    };
 
-    //this plugin add text to number inside
+    // this plugin add text to number inside
     const textInChart = {
       id: 'text2',
       beforeDraw(chart) {
@@ -70,23 +69,25 @@ $(() => {
         ctx.fillText(text, textX, textY);
         ctx.save();
       },
-    }
+    };
 
-    //this plugin correct legend position
+    // this plugin correct legend position
     const legendPosition = {
       id: 'position',
-      beforeInit(chart) {        
-        const originalFit = chart.legend.fit
-        chart.legend.fit = function fit() {
+      beforeInit(chart) {
+        const chartElement = chart;
+        const originalFit = chart.legend.fit;
+        chartElement.legend.fit = function fit() {
           originalFit.bind(chart.legend)();
           this.width += 35;
-        }
+        };
       },
       beforeDraw(chart) {
-        chart.legend.left = 142;
-        chart.legend.bottom = 130;
-      }
-    }
+        const chartElement = chart;
+        chartElement.legend.left = 142;
+        chartElement.legend.bottom = 130;
+      },
+    };
 
     /* DATA */
 
@@ -102,13 +103,12 @@ $(() => {
         backgroundColor: [blackGradient, blueGradient, greenGradient, orangeGradient],
       }],
     };
-    
 
-     /* CONFIG */
+    /* CONFIG */
 
     const config = {
       type: 'doughnut',
-      data: data,
+      data,
       options: {
         plugins: {
           legend: {
@@ -131,13 +131,11 @@ $(() => {
         maintainAspectRatio: false,
         cutout: '90%',
       },
-      plugins: [numberInChart, textInChart, legendPosition]
+      plugins: [numberInChart, textInChart, legendPosition],
     };
-
 
     /* CHART */
 
     const myChart = new Chart(ctx, config);
-
   }
 });

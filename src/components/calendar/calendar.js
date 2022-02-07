@@ -7,8 +7,7 @@ export default class Calendar {
     this.$form = $(this.element).closest('form');
     this.$drop = this.$form.find('.js-drop');
     this.$inputArr = this.$form.find('.input__field');
-    this.dp;
-    this.init();
+    this.dp = {};
   }
 
   init() {
@@ -17,13 +16,14 @@ export default class Calendar {
       navTitles: {
         days: 'MMMM <i class="calendar__year">yyyy</i>',
       },
+      startDate: new Date(2019, 7, 19),
       multipleDates: true,
       range: true,
       dynamicRange: true,
       prevHtml: '<div class="calendar__arrow"><span class="icon-arrow_back"></span></div>',
       nextHtml: '<div class="calendar__arrow"><span class="icon-arrow"></span></div>',
-      onSelect(res) {        
-        el.showDateInInput(res);        
+      onSelect(res) {
+        el.showDateInInput(res);
       },
     });
 
@@ -31,7 +31,7 @@ export default class Calendar {
       el.dp.clear();
     });
 
-    $('.js-calendar__btn_for-submit').on('click', function () {
+    $('.js-calendar__btn_for-submit').on('click', () => {
       el.$drop.removeClass('drop_active');
     });
   }
@@ -42,14 +42,11 @@ export default class Calendar {
       const date2 = this.dp.formatDate(res.date[1], 'dd MMM');
       const str = `${date1} - ${date2}`;
       $(this.$inputArr[0]).val(str.toLowerCase());
-    } else if (this.element === '.calendar__dp_for-cards') {
-      return;
+    } else if (this.element === '.calendar__dp_for-login') {
+      $(this.$inputArr[0]).val(res.formattedDate);
     } else {
       $(this.$inputArr[0]).val(res.formattedDate[0]);
-      if (res.formattedDate[1]) {
-        $(this.$inputArr[1]).val(res.formattedDate[1]);
-      }
+      $(this.$inputArr[1]).val(res.formattedDate[1]);
     }
   }
 }
-

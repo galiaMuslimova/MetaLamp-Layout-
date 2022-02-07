@@ -15,5 +15,11 @@
   &__catalog-card {
     margin-left: 0px;
     margin-right: auto;
+
+    &_focused {
+      .carousel__mover {
+        display: flex;
+      }
+    }
   }
 }

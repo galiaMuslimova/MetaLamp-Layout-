@@ -26,7 +26,12 @@
   &_for-date {
     .input__field {
       text-transform: uppercase;
+    }
+  }
 
+  &_for-date,
+  &_for-dropdown {
+    .input__field {
       &::placeholder {
         color: rgba(31, 32, 65, 0.75);
       }
@@ -46,6 +51,8 @@
       margin: 0;
       padding: 0;
       line-height: 1em;
+      cursor: pointer;
+      caret-color: transparent;
 
       &:hover,
       &:focus {

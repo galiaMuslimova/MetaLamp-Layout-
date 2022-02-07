@@ -21,6 +21,7 @@
     color: transparent;
     text-shadow: 0 0 0 black;
     cursor: pointer;
+    caret-color: transparent;
 
     &:checked+.checkbox__box>.icon-check:before {
       display: block;

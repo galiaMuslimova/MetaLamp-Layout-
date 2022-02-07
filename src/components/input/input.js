@@ -1,5 +1,5 @@
-$(document).ready(() => {
-  $('.js-input__btn').on('click', function () {
+$(() => {
+  $('.js-input__btn, .js-input_for-empty').on('click', function () {
     const $drop = $(this).closest('form').find('.js-drop');
     $drop.toggleClass('drop_active');
     const $input = $(this).closest('form').find('.js-input');

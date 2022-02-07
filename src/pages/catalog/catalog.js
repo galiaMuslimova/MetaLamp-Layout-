@@ -7,7 +7,8 @@ $(() => {
   });
 
   const baseElement = $('.js-pagination__anchor_for-catalog');
-  const paginationItems = $('.js-catalog-list .js-catalog-item')
+  const paginationItems = $('.js-catalog-list .js-catalog-item');
 
-  new Pagination(baseElement, paginationItems)
+  const pagination = new Pagination(baseElement, paginationItems);
+  pagination.init();
 });

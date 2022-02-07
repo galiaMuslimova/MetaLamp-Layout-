@@ -38,6 +38,7 @@
 
   &__expandable-list {
     position: relative;
+    margin: 0px;
   }
 
   &__row {
@@ -52,6 +53,7 @@
     line-height: 1em;
     font-size: 0.6em;
     padding: 0.5em 2em;
+    caret-color: transparent;
 
     &_expanded {
       transform: rotateZ(180deg);

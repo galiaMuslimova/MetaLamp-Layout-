@@ -10,25 +10,25 @@ include ../button/button.pug
       h1.login-card__title Регистрация аккаунта
     .login-card__item
       .login-card__input
-        +input({type: "empty", value:'Имя'})
+        +input({type: "empty", placeholder:'Имя'})
       .login-card__input
-        +input({type: "empty", value:'Фамилия'})
+        +input({type: "empty", placeholder:'Фамилия'})
       .login-card__radio 
         +radio()
     .login-card__item
       .login-card__form
         h3.login-card__subtitle дата рождения
         +form({
-          inputDate: {type: "empty", value: 'ДД.ММ.ГГГГ'},
+          inputDate: {type: "empty", placeholder: 'ДД.ММ.ГГГГ'},
           dropDate: {type: 'calendar', id: 'login'}
           })
     .login-card__item
       .login-card__form
         h3.login-card__subtitle данные для входа в сервис
         .login-card__input
-          +input({type: "empty", value:'Email'})
+          +input({type: "empty", placeholder:'Email'})
       .login-card__input
-        +input({type: "empty", value:"Пароль"})
+        +input({type: "empty", placeholder:"Пароль"})
       .login-card__toggle
         +toggle({text:"Получать спецпредложения"})
     .login-card__item

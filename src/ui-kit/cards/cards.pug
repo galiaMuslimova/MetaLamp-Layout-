@@ -10,7 +10,7 @@ include ../../components/calendar/calendar.pug
     include ../../components/signin-card/signin-card.pug
   .cards__col    
     +calendar({id: 'cards', hasButton: true})
-    .cards__catalog-card 
+    .cards__catalog-card.cards__catalog-card_focused
       +catalog-item({
         "num": 888,
         "luxury": true,

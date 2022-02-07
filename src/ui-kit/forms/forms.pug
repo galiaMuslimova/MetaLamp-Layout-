@@ -72,7 +72,7 @@ include ../../components/review/review.pug
           +form({
             dropDate: {
               type:"placement", 
-              items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]
+              items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
             }
           })
         .forms__selector.forms__selector_expanded.js-forms__selector_expanded
@@ -82,7 +82,7 @@ include ../../components/review/review.pug
           +form({
             dropDate: {
               type:"placement", 
-              items: [{name: "Спальни", count: 2}, {name: "Кровати", count: 2}, {name: "Ванные комнаты", count: 0}]
+              items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
             }
           })
       .forms__sub-block
@@ -192,7 +192,7 @@ include ../../components/review/review.pug
             dropDate: {
               type:"guests", 
               hasButton: true,
-              items: [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
+              items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
             }
           })
         .forms__checkbox
@@ -208,7 +208,7 @@ include ../../components/review/review.pug
             dropDate: {
               type:"guests", 
               hasButton: true,
-              items: [{name: "Взрослые", count: 2}, {name: "Дети", count: 1}, {name: "Младенцы", count: 0}]
+              items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
             }
           }) 
         form.forms__bullet

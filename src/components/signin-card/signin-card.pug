@@ -7,9 +7,9 @@ include ../button/button.pug
       h1.signin-card__title Войти
     .signin-card__item 
       .signin-card__input
-        +input({type: "empty", fontType: "Email", value:"Email"})
+        +input({type: "empty", fontType: "Email", placeholder:"Email"})
       .signin-card__input
-        +input({type: "empty", fontType: "text", value:"Пароль"})
+        +input({type: "empty", fontType: "text", placeholder:"Пароль"})
     .signin-card__item
       .signin-card__link-button 
         +button({theme: 'with-arrow', text: 'Войти', icon: true})

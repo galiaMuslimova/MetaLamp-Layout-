@@ -7,7 +7,6 @@ export default class Slider {
     this.$sliderPlace = this.element.find('.js-slider__anchor');
     this.$resultPlace = this.element.find('.js-slider__result');
     this.values = [];
-    this.init();
   }
 
   init() {
@@ -28,15 +27,12 @@ export default class Slider {
     slider.on('slide', (values) => {
       el.values = values;
       el.showResult();
-    });    
-  }  
+    });
+  }
 
   showResult() {
-    let value1 = (parseInt(this.values[0], 10)).toLocaleString();
-    let value2 = (parseInt(this.values[1], 10)).toLocaleString();
+    const value1 = (parseInt(this.values[0], 10)).toLocaleString();
+    const value2 = (parseInt(this.values[1], 10)).toLocaleString();
     this.$resultPlace.text(`${value1}₽ - ${value2}₽`);
   }
 }
-
-
-

@@ -1,10 +1,12 @@
-.counter {  
+.counter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 92px;
+  align-items: center;
 
   &__btn {
+    cursor: pointer;
     width: 30px;
     height: 30px;
     border: 1px solid rgba(31, 32, 65, 0.25);
@@ -20,12 +22,10 @@
 
   &__num {
     max-width: 2rem;
-    border: none;
     text-align: center;
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
     color: #1F2041;
-    margin-bottom: 4px;
-  }  
+  }
 }

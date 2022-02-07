@@ -1,26 +1,26 @@
 include ../icon-open/icon-open.pug
 include ../icon-arrow/icon-arrow.pug
 
-mixin input({type='dropdown', fontType='text', value, focus=false})  
-  .input.js-input(class='input_for-' + type)
+mixin input({type='dropdown', fontType='text', placeholder, value, focus=false})  
+  .input.js-input(class=`input_for-${type} js-input_for-${type}`)
 
     if(type=="subscript")
-      input.input__field(type=fontType, placeholder=value)
+      input.input__field(type=fontType, placeholder=placeholder)
       button.input__btn.js-input__btn.input__btn_with-arrow(type="button")
         +icon-arrow()
 
     if(type=="dropdown")
-      input.input__field.js-input__field.input__field_active(type=fontType, value=value)
+      input.input__field.js-input__field.input__field_active(type=fontType, placeholder=placeholder || 'Сколько гостей', value=value)
       button.input__btn.js-input__btn(type="button")
         +icon-open()
 
     if(type=="date")
-      input.input__field.js-input__field(type=fontType, placeholder=value)
+      input.input__field.js-input__field(type=fontType, placeholder='ДД.ММ.ГГГГ', value=value)
       button.input__btn.js-input__btn(type="button")
         +icon-open()
 
     if(type=="empty")
-      input.input__field(type=fontType, placeholder=value, autofocus=focus)    
+      input.input__field(type=fontType, placeholder=placeholder, autofocus=focus)
 
 
   
