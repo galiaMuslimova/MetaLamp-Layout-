@@ -1,10 +1,10 @@
 export default class Pagination {
-  constructor(element, items) {
+  constructor(element, items, limitPerPage = 12) {
     this.element = element;
     this.items = items;
+    this.limitPerPage = limitPerPage;
     this.currentPage = 1;
-    this.numberOfItems = this.items.length;
-    this.limitPerPage = 12;
+    this.numberOfItems = this.items.length;    
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
   }
 
