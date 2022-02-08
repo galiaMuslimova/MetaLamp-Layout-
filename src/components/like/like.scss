@@ -14,8 +14,6 @@
   margin: 0px;
 
   &__input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     height: 20px;
     width: 20px;
@@ -26,7 +24,7 @@
     cursor: pointer;
 
     &:checked+.like__icon>.icon-heart:before {
-      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: none;
       background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));

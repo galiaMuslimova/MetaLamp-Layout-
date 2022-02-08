@@ -13,12 +13,6 @@
 + Nouislider версии 15.4.0
 + Chart.js версии 3.6.0
 
-## Ui Kit
-Страницы ui kit можно посмотреть по следующим ссылкам
-+ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/colors
-+ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/forms
-+ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/cards
-+ https://galiamuslimova.github.io/MetaLamp-Layout-/ui-kit/insertions
 
 
 

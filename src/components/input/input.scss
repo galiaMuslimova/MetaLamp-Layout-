@@ -93,8 +93,8 @@
     background: #FFFFFF;
 
     &_with-arrow {
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
       font-size: 18px;
       background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
     }

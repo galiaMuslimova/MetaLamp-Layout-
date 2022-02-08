@@ -1,7 +1,7 @@
 .icon-star,
 .icon-star-empty {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   margin: 0;
   padding: 0em 0.04em;
   background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));

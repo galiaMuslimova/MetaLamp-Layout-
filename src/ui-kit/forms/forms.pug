@@ -26,13 +26,13 @@ include ../../components/review/review.pug
               .forms__subtitle Text Field
               .forms__subtitle.forms__subtitle_transparent default
             .forms__form 
-              +input({type: "empty", fontType:"E-mail", value:"Email"}) 
+              +input({type: "empty", fontType:"E-mail", placeholder:"Email"}) 
           .forms__item
             .forms__row.forms__row_with-subtitle
               .forms__subtitle Text Field
               .forms__subtitle.forms__subtitle_transparent Hover / Focus
             form.forms__form
-              +input({type: "empty", value: "This is pretty awesome", focus: true})
+              +input({type: "empty", placeholder: "This is pretty awesome", focus: true})
           .forms__item
             h3.forms__subtitle Dropdown
             +form({ 
@@ -46,7 +46,7 @@ include ../../components/review/review.pug
           .forms__item
             h3.forms__subtitle masked text field
             +form({
-              inputDate: {type: "empty", value: 'ДД.ММ.ГГГГ'},
+              inputDate: {type: "empty", placeholder: 'ДД.ММ.ГГГГ'},
               dropDate: {type: 'calendar', id: 'login'}
               }) 
         .forms__item 
@@ -60,7 +60,7 @@ include ../../components/review/review.pug
         .forms__item.forms__item_narrow
           h3.forms__subtitle subscription text field
           form.forms__form        
-            +input({type:"subscript", value:"Email"})
+            +input({type:"subscript", placeholder:"Email"})
     
     //dropdown first column and expandable
     .forms__block.forms__block_narrow
