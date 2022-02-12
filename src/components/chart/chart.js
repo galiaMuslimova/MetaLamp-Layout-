@@ -1,11 +1,13 @@
 import Chart from 'chart.js/auto';
 
+const chartData = require('@/pages/room/room.json');
+
 $(() => {
   const $chart = $('.js-chart__content');
 
   if ($chart.length > 0) {
     const ctxContext = $chart[0].getContext('2d');
-    const chartData = (require('@/pages/room/room.json')).voices;
+    const { voices } = chartData;
 
     /* COLORS */
 
@@ -40,7 +42,7 @@ $(() => {
         ctx.fillStyle = '#BC9CFF';
         ctx.textBaseline = 'middle';
 
-        const text = chartData.total;
+        const text = voices.total;
         const textX = Math.round((width - ctx.measureText(text).width) / 2);
         const textY = height / 2 - 10;
 
@@ -99,7 +101,7 @@ $(() => {
         'Великолепно',
       ],
       datasets: [{
-        data: [chartData.Disappointed, chartData.Satisfactory, chartData.Good, chartData.Excellent],
+        data: [voices.Disappointed, voices.Satisfactory, voices.Good, voices.Excellent],
         backgroundColor: [blackGradient, blueGradient, greenGradient, orangeGradient],
       }],
     };
@@ -136,6 +138,6 @@ $(() => {
 
     /* CHART */
 
-    const myChart = new Chart(ctx, config);
+    const myChart = new Chart(ctxContext, config);
   }
 });

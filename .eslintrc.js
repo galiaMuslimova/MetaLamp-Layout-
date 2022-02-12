@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es6: true,
@@ -6,15 +7,13 @@ module.exports = {
     jquery: true,
   },
   extends: [
-    'airbnb-base',
+    'airbnb',
   ],
-  parserOptions: {
-    sourceType: 'module',
-  },
   rules: {
     'linebreak-style': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'no-restricted-globals': 'off',
+    'no-unused-vars': 'off'
   },
 };

@@ -8,7 +8,7 @@ $(() => {
     const submenu = this;
 
     $(document).on('click', (event) => {
-      if ($(submenu).find(event.target).length == 0) {
+      if ($(submenu).find(event.target).length === 0) {
         $(submenu).find('.nav__submenu').removeClass('nav__submenu_opened');
       }
     });

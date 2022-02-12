@@ -14,11 +14,13 @@
       flex-direction: column;
       gap: 0px;
     }
+
+    &__item {
+      padding: 10px;
+    }
   }
 
   &__item {
-    padding: 10px;
-
     &_with-submenu {
       display: grid;
       height: 20px;

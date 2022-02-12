@@ -4,7 +4,7 @@ export default class Pagination {
     this.items = items;
     this.limitPerPage = limitPerPage;
     this.currentPage = 1;
-    this.numberOfItems = this.items.length;    
+    this.numberOfItems = this.items.length;
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
   }
 

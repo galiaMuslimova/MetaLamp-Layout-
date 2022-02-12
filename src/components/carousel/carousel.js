@@ -6,21 +6,9 @@ class Carousel {
     this.$rightBtn = $(this.element).find('.js-carousel__mover_right');
     this.$leftBtn = $(this.element).find('.js-carousel__mover_left');
     this.moveCarousel();
-  }  
-
-  moveCarousel(){
-    const el = this;
-    this.$leftBtn.on('click', function () {
-      el.#slideToLeft(el.$itemList, 'carousel__slide_shown')
-      el.#slideToLeft(el.$indicators, 'carousel__indicator_shown')
-    });
-    this.$rightBtn.on('click', function () {
-      el.#slideToRight(el.$itemList, 'carousel__slide_shown')
-      el.#slideToRight(el.$indicators, 'carousel__indicator_shown')
-    })
   }
 
-  #slideToRight(list, className) {
+  static slideToRight(list, className) {
     const $activeItem = $(list).find('[class$="shown"]');
     if ($activeItem.next()[0] !== undefined) {
       const $nextItem = $activeItem.next();
@@ -32,7 +20,7 @@ class Carousel {
     $activeItem.removeClass(className);
   }
 
-  #slideToLeft(list, className) {
+  static slideToLeft(list, className) {
     const $activeItem = list.find('[class$="shown"]');
     if ($activeItem.prev()[0] !== undefined) {
       const $prevItem = $activeItem.prev();
@@ -43,10 +31,22 @@ class Carousel {
     }
     $activeItem.removeClass(className);
   }
+
+  moveCarousel() {
+    const el = this;
+    this.$leftBtn.on('click', () => {
+      Carousel.slideToLeft(el.$itemList, 'carousel__slide_shown');
+      Carousel.slideToLeft(el.$indicators, 'carousel__indicator_shown');
+    });
+    this.$rightBtn.on('click', () => {
+      Carousel.slideToRight(el.$itemList, 'carousel__slide_shown');
+      Carousel.slideToRight(el.$indicators, 'carousel__indicator_shown');
+    });
+  }
 }
 
 $(() => {
   $('.js-carousel').each(function () {
     const carousel = new Carousel($(this));
-  })
+  });
 });
