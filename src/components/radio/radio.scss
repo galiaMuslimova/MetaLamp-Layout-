@@ -1,14 +1,7 @@
 .radio {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  margin: 0px;
-
-  &__item {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
+  gap: 10px;
 
   &__label {
     position: relative;
@@ -16,7 +9,7 @@
     flex-direction: row;
     align-items: center;
   }
-  
+
   &__input {
     appearance: none;
     position: absolute;
@@ -24,6 +17,7 @@
     color: transparent;
     text-shadow: 0 0 0 black;
     cursor: pointer;
+    caret-color: transparent;
 
     &:checked+.radio__box:before {
       display: block;
@@ -41,6 +35,7 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     cursor: pointer;
+    caret-color: transparent;
 
     &:before {
       display: none;

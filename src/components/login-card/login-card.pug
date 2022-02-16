@@ -14,7 +14,8 @@ include ../button/button.pug
       .login-card__input
         +input({type: "empty", placeholder:'Фамилия'})
       .login-card__radio 
-        +radio()
+        +radio({text: "Мужчина"})
+        +radio({text: "Женщина"})
     .login-card__item
       .login-card__form
         h3.login-card__subtitle дата рождения

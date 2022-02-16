@@ -137,7 +137,9 @@ include ../../components/review/review.pug
             {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}])
         .forms__radio
           h3.forms__subtitle radio buttons
-          +radio()
+          .forms__row   
+            +radio({text: "Мужчина"})
+            +radio({text: "Женщина"})
         .forms__toggle      
           h3.forms__subtitle toggle
           .forms__toggle-items

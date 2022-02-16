@@ -47,6 +47,12 @@
     color: rgba(31, 32, 65, 1);
   }
 
+  &__radio {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
   &__link-button {
     margin-top: 5px;
     margin-bottom: 10px;
