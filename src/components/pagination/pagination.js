@@ -6,27 +6,38 @@ export default class Pagination {
     this.currentPage = 1;
     this.numberOfItems = this.items.length;
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
+    this.$prevBtn = $('<div>');
+    this.$nextBtn = $('<div>');
   }
 
   init() {
-    const el = this;
-    this.createPagination();
+    this.addPaginationArrowButtons();
     this.showPage();
+    this.bindEventListeners();
+  }
 
+  bindEventListeners() {
+    const root = this;
     $(document).on('click', '.js-pagination__item_current', function () {
-      el.currentPage = Number($(this).text());
-      el.showPage();
+      root.handleNumberButtonClick($(this));
     });
+    this.$nextBtn.on('click', this.handleNextButtonClick.bind(this));
+    this.$prevBtn.on('click', this.handlePrevButtonClick.bind(this));
+  }
 
-    $('.js-pagination__item_next').on('click', () => {
-      el.currentPage += 1;
-      el.showPage();
-    });
+  handleNumberButtonClick(element) {
+    this.currentPage = Number(element.text());
+    this.showPage();
+  }
 
-    $('.js-pagination__item_previous').on('click', () => {
-      el.currentPage -= 1;
-      el.showPage();
-    });
+  handleNextButtonClick() {
+    this.currentPage += 1;
+    this.showPage();
+  }
+
+  handlePrevButtonClick() {
+    this.currentPage -= 1;
+    this.showPage();
   }
 
   static createRange(start, end) {
@@ -56,24 +67,26 @@ export default class Pagination {
     const end = this.currentPage * this.limitPerPage;
     if (this.currentPage < 1 || this.currentPage > this.totalPages) return false;
     this.items.hide().slice(start, end).show();
+
     this.element.find('.pagination__item').slice(1, -1).remove();
 
-    this.getPageList().forEach((item) => {
-      $('<div>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
-        .toggleClass('pagination__item_active', item === this.currentPage)
-        .text(item || '...')
-        .insertBefore('.pagination__item_next');
-    });
+    this.getPageList().forEach((item) => this.addPaginationItems(item));
 
-    $('.js-pagination__item_previous').toggleClass('pagination__item_disable', this.currentPage === 1);
-    $('.js-pagination__item_next').toggleClass('pagination__item_disable', this.currentPage === this.totalPages);
+    this.$prevBtn.toggleClass('pagination__item_disable', this.currentPage === 1);
+    this.$nextBtn.toggleClass('pagination__item_disable', this.currentPage === this.totalPages);
     return true;
   }
 
-  createPagination() {
-    $(this.element).append(
-      $('<div>').addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back'))),
-      $('<div>').addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow'))),
-    );
+  addPaginationItems(item) {
+    $('<div>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
+      .toggleClass('pagination__item_active', item === this.currentPage)
+      .text(item || '...')
+      .insertBefore('.pagination__item_next');
+  }
+
+  addPaginationArrowButtons() {
+    this.$prevBtn = this.$prevBtn.addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back')));
+    this.$nextBtn = this.$nextBtn.addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow')));
+    $(this.element).append(this.$prevBtn, this.$nextBtn);
   }
 }

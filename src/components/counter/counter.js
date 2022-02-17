@@ -9,35 +9,27 @@ export default class Counter {
   }
 
   init() {
-    this.clickMinusBtn();
-    this.clickPlusBtn();
+    this.bindEventListeners();
     this.toggleDisable();
   }
 
-  resetForm() {
-    this.numBtnValue = 0;
-    this.$numBtn.text(0);
+  bindEventListeners() {
+    this.$minusBtn.on('click', this.handleMinusBtnClick.bind(this));
+    this.$plusBtn.on('click', this.handlePlusBtnClick.bind(this));
+  }
+
+  handleMinusBtnClick() {
+    if (this.numBtnValue > 0) {
+      this.numBtnValue -= 1;
+      this.$numBtn.html(this.numBtnValue);
+    }
     this.toggleDisable();
   }
 
-  clickMinusBtn() {
-    const el = this;
-    this.$minusBtn.on('click', () => {
-      if (el.numBtnValue > 0) {
-        el.numBtnValue -= 1;
-        el.$numBtn.html(el.numBtnValue);
-      }
-      el.toggleDisable();
-    });
-  }
-
-  clickPlusBtn() {
-    const el = this;
-    this.$plusBtn.on('click', () => {
-      el.numBtnValue += 1;
-      el.$numBtn.html(el.numBtnValue);
-      el.toggleDisable();
-    });
+  handlePlusBtnClick() {
+    this.numBtnValue += 1;
+    this.$numBtn.html(this.numBtnValue);
+    this.toggleDisable();
   }
 
   toggleDisable() {
@@ -48,5 +40,11 @@ export default class Counter {
       this.$minusBtn.removeClass('counter__btn_disabled');
       this.isDisable = !this.isDisable;
     }
+  }
+
+  resetForm() {
+    this.numBtnValue = 0;
+    this.$numBtn.text(0);
+    this.toggleDisable();
   }
 }

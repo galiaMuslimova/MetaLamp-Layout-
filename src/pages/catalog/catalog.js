@@ -1,22 +1,34 @@
-import Pagination from '@c/pagination/pagination.js';
+import Pagination from '@c/pagination/Pagination.js';
 
-$(() => {
-  $('.js-catalog__button').on('click', function () {
-    const $filter = $(this).siblings('.js-catalog__filter');
-    $filter.toggleClass('catalog__filter_active');
-  });
+class Catalog {
+  constructor() {
+    this.$filterOpenBtn = $('.js-catalog__button');
+    this.baseElement = $('.js-pagination__anchor_for-catalog');
+    this.paginationItems = $('.js-catalog-list .js-catalog-item');
+    this.makePagination();
+    this.bindEventHandlers();
+  }
 
-  const baseElement = $('.js-pagination__anchor_for-catalog');
-  const paginationItems = $('.js-catalog-list .js-catalog-item');
-
-  if (window.innerWidth < 600) {
-    const pagination = new Pagination(baseElement, paginationItems, 4);
-    pagination.init();
-  } else if (window.innerWidth < 900) {
-    const pagination = new Pagination(baseElement, paginationItems, 8);
-    pagination.init();
-  } else {
-    const pagination = new Pagination(baseElement, paginationItems);
+  makePagination() {
+    let pagination;
+    if (window.innerWidth < 600) {
+      pagination = new Pagination(this.baseElement, this.paginationItems, 4);
+    } else if (window.innerWidth < 900) {
+      pagination = new Pagination(this.baseElement, this.paginationItems, 8);
+    } else {
+      pagination = new Pagination(this.baseElement, this.paginationItems);
+    }
     pagination.init();
   }
-});
+
+  bindEventHandlers() {
+    this.$filterOpenBtn.on('click', this.handleFilterClassToggle.bind(this));
+  }
+
+  handleFilterClassToggle() {
+    const $filter = this.$filterOpenBtn.siblings('.js-catalog__filter');
+    $filter.toggleClass('catalog__filter_active');
+  }
+}
+
+const catalog = new Catalog();

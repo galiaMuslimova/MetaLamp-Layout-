@@ -1,12 +1,21 @@
-$(() => {
-  $('.js-drop').each(function () {
-    const drop = this;
-    const form = $(drop).closest('form');
+class Drop {
+  constructor(element) {
+    this.element = element;
+    const form = this.element.closest('form');
+  }
 
-    $(document).on('click', (event) => {
-      if ($(form).find(event.target).length === 0) {
-        $(drop).removeClass('drop_active');
-      }
-    });
-  });
+  bindEventListeners() {
+    const el = this;
+    $(document).on('click', this.handleDropClassActiveRemove.bind(this, event));
+  }
+
+  handleDropClassActiveRemove(event) {
+    if (this.element.find(event.target).length === 0) {
+      this.element.removeClass('drop_active');
+    }
+  }
+}
+
+$('.js-drop').each(function () {
+  const drop = new Drop($(this));
 });

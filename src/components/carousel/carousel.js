@@ -5,7 +5,7 @@ class Carousel {
     this.$indicators = $(this.element).find('.js-carousel__indicators-list');
     this.$rightBtn = $(this.element).find('.js-carousel__mover_right');
     this.$leftBtn = $(this.element).find('.js-carousel__mover_left');
-    this.moveCarousel();
+    this.bindEventListeners();
   }
 
   static slideToRight(list, className) {
@@ -32,16 +32,19 @@ class Carousel {
     $activeItem.removeClass(className);
   }
 
-  moveCarousel() {
-    const el = this;
-    this.$leftBtn.on('click', () => {
-      Carousel.slideToLeft(el.$itemList, 'carousel__slide_shown');
-      Carousel.slideToLeft(el.$indicators, 'carousel__indicator_shown');
-    });
-    this.$rightBtn.on('click', () => {
-      Carousel.slideToRight(el.$itemList, 'carousel__slide_shown');
-      Carousel.slideToRight(el.$indicators, 'carousel__indicator_shown');
-    });
+  bindEventListeners() {
+    this.$leftBtn.on('click', this.handleLeftBtnClick);
+    this.$rightBtn.on('click', this.handleRightBtnClick);
+  }
+
+  handleLeftBtnClick() {
+    Carousel.slideToLeft(this.$itemList, 'carousel__slide_shown');
+    Carousel.slideToLeft(this.$indicators, 'carousel__indicator_shown');
+  }
+
+  handleRightBtnClick() {
+    Carousel.slideToRight(this.$itemList, 'carousel__slide_shown');
+    Carousel.slideToRight(this.$indicators, 'carousel__indicator_shown');
   }
 }
 

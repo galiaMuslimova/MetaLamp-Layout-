@@ -26,14 +26,19 @@ export default class Calendar {
         el.showDateInInput(res);
       },
     });
+  }
 
-    $('.js-calendar__btn_for-reset').on('click', () => {
-      el.dp.clear();
-    });
+  bindEventListeners() {
+    $('.js-calendar__btn_for-reset').on('click', this.handleResetBtnClick);
+    $('.js-calendar__btn_for-submit').on('click', this.handleSubmitBtnClick);
+  }
 
-    $('.js-calendar__btn_for-submit').on('click', () => {
-      el.$drop.removeClass('drop_active');
-    });
+  handleResetBtnClick() {
+    this.dp.clear();
+  }
+
+  handleSubmitBtnClick() {
+    this.$drop.removeClass('drop_active');
   }
 
   showDateInInput(res) {

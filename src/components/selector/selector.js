@@ -1,4 +1,4 @@
-import Counter from '../counter/counter.js';
+import Counter from '../counter/Counter.js';
 
 class Selector {
   constructor(element) {
@@ -6,35 +6,34 @@ class Selector {
     this.$selectForm = $(this.element).closest('form');
     this.$input = this.$selectForm.find('.js-input__field');
     this.$drop = this.$selectForm.find('.js-drop');
+    this.$buttons = $(this.element).find('.js-counter__btn');
     this.$resetBtn = this.$selectForm.find('.js-selector__reset-btn');
     this.$submitBtn = this.$selectForm.find('.js-selector__submit-btn');
-    this.counters = [];
-    this.valuesArray = [];
+    this.counters = this.makeCounters();
+    this.valuesArray = this.takeNumsArray();
+    this.init();
   }
 
   init() {
-    const el = this;
-    $(this.element).find('.counter').each(function () {
-      const counter = new Counter($(this));
-      counter.init();
-      el.counters.push(counter);
-    });
-
-    this.valuesArray = this.takeNumsArray();
     this.changeCount();
-    this.clickResetBtn();
-    this.clickSubmitBtn();
-    this.clickButton();
+    this.bindEventListeners();
   }
 
-  clickButton() {
-    const el = this;
-    const $buttons = $(this.element).find('.js-counter__btn');
-    $buttons.each(function () {
-      $(this).on('click', () => {
-        el.changeCount();
-      });
+  bindEventListeners() {
+    this.$buttons.on('click', this.changeCount.bind(this));
+    this.$resetBtn.on('click', this.resetForm.bind(this));
+    this.$submitBtn.on('click', this.handleDropClassActiveRemove.bind(this));
+  }
+
+  makeCounters() {
+    const counters = [];
+    const $counters = $(this.element).find('.counter');
+    $counters.each(function () {
+      const counter = new Counter($(this));
+      counter.init();
+      counters.push(counter);
     });
+    return counters;
   }
 
   changeCount() {
@@ -49,20 +48,14 @@ class Selector {
     }
   }
 
-  clickResetBtn() {
-    const el = this;
-    this.$resetBtn.on('click', () => {
-      el.counters.forEach((counter) => {
-        counter.resetForm();
-      });
+  resetForm() {
+    this.counters.forEach((counter) => {
+      counter.resetForm();
     });
   }
 
-  clickSubmitBtn() {
-    const el = this;
-    this.$submitBtn.on('click', () => {
-      el.$drop.removeClass('drop_active');
-    });
+  handleDropClassActiveRemove() {
+    this.$drop.removeClass('drop_active');
   }
 
   changeInputText() {
@@ -99,11 +92,11 @@ class Selector {
     if (adultsNum === 0) {
       str = 'Сколько гостей';
     } else
-    if (babiesNum === 0) {
-      str = adults;
-    } else {
-      str = `${adults}, ${babies}`;
-    }
+      if (babiesNum === 0) {
+        str = adults;
+      } else {
+        str = `${adults}, ${babies}`;
+      }
     return str;
   }
 
