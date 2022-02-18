@@ -1,6 +1,6 @@
 class Like {
   constructor(element) {
-    this.element = element;    
+    this.element = element;
     this.$likeInput = this.element.find('.js-like__count');
     this.likeCount = Number(this.$likeInput.val());
     this.bindEventListeners();

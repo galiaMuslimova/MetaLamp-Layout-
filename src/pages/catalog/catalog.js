@@ -16,7 +16,7 @@ class Catalog {
     } else if (window.innerWidth < 900) {
       pagination = new Pagination(this.baseElement, this.paginationItems, 8);
     } else {
-      pagination = new Pagination(this.baseElement, this.paginationItems);
+      pagination = new Pagination(this.baseElement, this.paginationItems, 12);
     }
     pagination.init();
   }

@@ -6,7 +6,7 @@ class Nav {
 
   bindEventHandlers() {
     $('.js-nav__icon').on('click', this.handleNavSubmenuOpen);
-    $(document).on('click', this.handleNavSubmenuClose);
+    $(document).on('click', Nav.handleNavSubmenuClose);
   }
 
   handleNavSubmenuOpen() {
@@ -14,7 +14,7 @@ class Nav {
     $subMenu.toggleClass('nav__submenu_opened');
   }
 
-  handleNavSubmenuClose(event) {
+  static handleNavSubmenuClose(event) {
     const $navItemArr = $('.js-nav__item_with-submenu');
     $navItemArr.each(function () {
       if ($(this).find(event.target).length === 0) {

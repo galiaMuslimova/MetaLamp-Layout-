@@ -92,11 +92,11 @@ class Selector {
     if (adultsNum === 0) {
       str = 'Сколько гостей';
     } else
-      if (babiesNum === 0) {
-        str = adults;
-      } else {
-        str = `${adults}, ${babies}`;
-      }
+    if (babiesNum === 0) {
+      str = adults;
+    } else {
+      str = `${adults}, ${babies}`;
+    }
     return str;
   }
 

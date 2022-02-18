@@ -11,17 +11,15 @@ class Input {
     this.$inputBtn.on('click', this.handleDropOpen.bind(this));
     if (this.element.hasClass('js-input_for-empty')) {
       this.element.on('click', this.handleDropOpen.bind(this));
-    }    
+    }
   }
 
-  handleDropOpen() {    
+  handleDropOpen() {
     this.$drop.toggleClass('drop_active');
     this.element.toggleClass('input_active');
   }
 }
 
-$('.js-input').each(function() {
-  new Input($(this));
-})
-
-
+$('.js-input').each(function () {
+  let input = new Input($(this));
+});

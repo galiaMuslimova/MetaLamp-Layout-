@@ -1,15 +1,15 @@
 class Drop {
   constructor(element) {
-    this.element = element;    
-    this.bindEventListeners();
+    this.element = element;
+    Drop.bindEventListeners();
   }
 
-  bindEventListeners() {
-    $(document).on('click', this.handleDropClassActiveRemove);
+  static bindEventListeners() {
+    $(document).on('click', Drop.handleDropClassActiveRemove);
   }
 
-  handleDropClassActiveRemove(event) {
-    const $dropArr = $('.js-drop');    
+  static handleDropClassActiveRemove(event) {
+    const $dropArr = $('.js-drop');
     $dropArr.each(function () {
       this.$form = $(this).closest('form');
       if (this.$form.find(event.target).length === 0) {

@@ -29,8 +29,12 @@
 
   &__back {
     height: 900px;
+
+    @media (min-width: 1500px) {
+      height: 100%;
+    }
   }
-  
+
   &__image {
     margin: 0 auto;
     width: 100%;

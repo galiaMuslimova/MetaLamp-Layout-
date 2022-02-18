@@ -8,7 +8,20 @@
   }
 
   &__back {
-    max-height: 772px;
+    max-height: 772px;    
+
+    @media (max-width: 1450px) {
+      height: 100%;
+    }
+
+    @media (min-width: 1500px) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }

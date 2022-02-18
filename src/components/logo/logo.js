@@ -1,6 +1,7 @@
 class Logo {
   constructor() {
     this.$logo = $('.js-header').find('.js-logo');
+    this.bindEventListeners();
   }
 
   bindEventListeners() {
