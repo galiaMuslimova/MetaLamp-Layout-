@@ -42,12 +42,12 @@ export default class Calendar {
   }
 
   showDateInInput(res) {
-    if (this.element === '.calendar__dp_for-filter') {
+    if (this.element === '.js-calendar__dp_for-filter') {
       const date1 = this.dp.formatDate(res.date[0], 'dd MMM');
       const date2 = this.dp.formatDate(res.date[1], 'dd MMM');
       const str = `${date1} - ${date2}`;
       $(this.$inputArr[0]).val(str.toLowerCase());
-    } else if (this.element === '.calendar__dp_for-login') {
+    } else if (this.element === '.js-calendar__dp_for-login') {
       $(this.$inputArr[0]).val(res.formattedDate);
     } else {
       $(this.$inputArr[0]).val(res.formattedDate[0]);

@@ -4,6 +4,8 @@ class EntryCard {
   constructor() {
     this.entryCardCalendarPlace = '.calendar__dp_for-entry-card';
     this.$entryCardButton = $('.js-entry-card').find('.js-entry-card__button');
+    this.makeCalendar();
+    this.bindEventListeners();
   }
 
   makeCalendar() {

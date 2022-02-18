@@ -33,8 +33,8 @@ class Carousel {
   }
 
   bindEventListeners() {
-    this.$leftBtn.on('click', this.handleLeftBtnClick);
-    this.$rightBtn.on('click', this.handleRightBtnClick);
+    this.$leftBtn.on('click', this.handleLeftBtnClick.bind(this));
+    this.$rightBtn.on('click', this.handleRightBtnClick.bind(this));
   }
 
   handleLeftBtnClick() {

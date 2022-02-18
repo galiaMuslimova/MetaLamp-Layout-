@@ -6,7 +6,7 @@ class Nav {
 
   bindEventHandlers() {
     $('.js-nav__icon').on('click', this.handleNavSubmenuOpen);
-    $(document).on('click', Nav.handleNavSubmenuClose);
+    $(document).on('click', this.handleNavSubmenuClose);
   }
 
   handleNavSubmenuOpen() {
@@ -14,11 +14,11 @@ class Nav {
     $subMenu.toggleClass('nav__submenu_opened');
   }
 
-  static handleNavSubmenuClose() {
-    const $subMenuArr = $('.js-nav__submenu');
-    $subMenuArr.each(function () {
-      if ($(this).find(this.event.target).length === 0) {
-        $(this).removeClass('nav__submenu_opened');
+  handleNavSubmenuClose(event) {
+    const $navItemArr = $('.js-nav__item_with-submenu');
+    $navItemArr.each(function () {
+      if ($(this).find(event.target).length === 0) {
+        $(this).find('.js-nav__submenu').removeClass('nav__submenu_opened');
       }
     });
   }

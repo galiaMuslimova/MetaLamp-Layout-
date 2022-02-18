@@ -27,11 +27,11 @@ export default class Slider {
   }
 
   bindEventListeners() {
-    this.slider.on('slide', this.handleSliderSlide.bind(this, this.values));
+    this.slider.on('slide', this.handleSliderSlide.bind(this));
   }
 
-  handleSliderSlide(values) {
-    this.values = values;
+  handleSliderSlide() {
+    this.values = this.slider.get();
     this.showResult();
   }
 

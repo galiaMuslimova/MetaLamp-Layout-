@@ -1,6 +1,7 @@
 class CatalogItem {
   constructor() {
     this.$catalogItem = $('.js-catalog-item__content');
+    this.bindEventListeners();
   }
 
   bindEventListeners() {

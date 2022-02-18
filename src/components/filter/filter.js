@@ -3,9 +3,12 @@ import Slider from '@c/slider/Slider.js';
 
 class Filter {
   constructor() {
-    this.$filterCalendarPlace = '.calendar__dp_for-filter';
+    this.$filterCalendarPlace = '.js-calendar__dp_for-filter';
     this.$filterSlider = $('.js-slider_for-filter');
     this.$iconOpen = $('.js-filter__icon');
+    this.makeCalendar();
+    this.makeSlider();
+    this.bindEventListeners();
   }
 
   makeCalendar() {

@@ -1,18 +1,21 @@
 class Drop {
   constructor(element) {
-    this.element = element;
-    const form = this.element.closest('form');
+    this.element = element;    
+    this.bindEventListeners();
   }
 
   bindEventListeners() {
-    const el = this;
-    $(document).on('click', this.handleDropClassActiveRemove.bind(this, event));
+    $(document).on('click', this.handleDropClassActiveRemove);
   }
 
   handleDropClassActiveRemove(event) {
-    if (this.element.find(event.target).length === 0) {
-      this.element.removeClass('drop_active');
-    }
+    const $dropArr = $('.js-drop');    
+    $dropArr.each(function () {
+      this.$form = $(this).closest('form');
+      if (this.$form.find(event.target).length === 0) {
+        $(this).removeClass('drop_active');
+      }
+    });
   }
 }
 
