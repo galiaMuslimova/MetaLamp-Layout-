@@ -1,7 +1,7 @@
 class Input {
   constructor(element) {
     this.element = element;
-    this.$form = this.element.closest('form');
+    this.$form = this.element.closest('.js-form');
     this.$drop = this.$form.find('.js-drop');
     this.$inputBtn = this.element.find('.js-input__btn');
     this.bindEventListeners();
@@ -21,5 +21,5 @@ class Input {
 }
 
 $('.js-input').each(function () {
-  let input = new Input($(this));
+  const input = new Input($(this));
 });

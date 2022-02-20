@@ -6,6 +6,6 @@ mixin calendar({id, hasButton=false})
     if(hasButton)
       .calendar__row
         .calendar__btn.js-calendar__btn_for-reset
-          +button({ theme: 'simple', type: 'reset', text: 'очистить' })
+          +button({ theme: 'simple', type: 'button', text: 'очистить' })
         .calendar__btn.js-calendar__btn_for-submit
           +button({ theme: 'simple', type: 'button', text: 'применить' })

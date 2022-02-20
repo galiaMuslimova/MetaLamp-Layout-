@@ -10,7 +10,6 @@ class Forms {
 
   init() {
     this.makeSlider();
-    this.bindExpandIconClick();
     this.createPagination();
   }
 
@@ -19,16 +18,6 @@ class Forms {
       const slider = new Slider(this.$formsSlider);
       slider.init();
     }
-  }
-
-  bindExpandIconClick() {
-    this.$expandIcon.on('click', this.handleExpandIconClassChange);
-  }
-
-  handleExpandIconClassChange() {
-    $(this).toggleClass('forms__expand-icon_expanded');
-    const $drop = $(this).closest('.js-forms__expandable').find('.js-drop');
-    $drop.toggleClass('drop_active');
   }
 
   createPagination() {

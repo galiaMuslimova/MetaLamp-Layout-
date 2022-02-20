@@ -114,10 +114,7 @@
     margin-bottom: 133px;
   }
 
-  &__expandable {
-    position: relative;
-    margin: 0px;
-    
+  &__expandable {    
     &_expanded {
       margin-bottom: 188px;
     }
@@ -126,18 +123,7 @@
       margin-bottom: 23px;
     }
   }
-
-  &__expand-icon {
-    height: 100%;
-    line-height: 1em;
-    font-size: 0.6em;
-    padding: 0.5em 2em;
-
-    &_expanded {
-      transform: rotateZ(180deg);
-    }
-  }
-
+  
   &__second-col {
     display: flex;
     flex-direction: column;

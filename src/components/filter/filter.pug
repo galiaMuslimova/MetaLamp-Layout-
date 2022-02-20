@@ -1,9 +1,7 @@
 include ../form/form.pug
-include ../calendar/calendar.pug
 include ../slider/slider.pug 
 include ../checkbox-list/checkbox-list.pug
-include ../icon-open/icon-open.pug
-include ../drop/drop.pug
+include ../expandable-list/expandable-list.pug
 
 .filter.js-filter
   .filter__item
@@ -44,18 +42,4 @@ include ../drop/drop.pug
         }
       })
   .filter__item 
-    form.filter__expandable-list
-      .filter__row
-        h3.filter__subtitle дополнительные удобства
-        .filter__icon.js-filter__icon 
-          +icon-open('expandable')
-      +drop({
-        type: 'checkbox', 
-        items: [
-        {id:"breakfast", text:"Завтрак"}, 
-        {id:"table", text:"Письменный стол", checked:true}, 
-        {id:"chair", text:"Стул для кормления", checked:true}, 
-        {id:"crib", text:"Кроватка", checked:true}, 
-        {id:"TV", text:"Телевизор"}, 
-        {id:"shampoo", text:"Шампунь"}]
-      })
+    +expandable-list({title: 'дополнительные удобства'})

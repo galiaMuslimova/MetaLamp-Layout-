@@ -1,0 +1,36 @@
+.expandable-list {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0px 0px 5px 0px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 1);
+  }
+
+  &__icon {
+    height: 100%;
+    line-height: 1em;
+    font-size: 0.6em;
+    padding: 0.5em 2em;
+    caret-color: transparent;
+
+    &_expanded {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &__check-list {
+    display: none;
+
+    &_active {
+      display: block;
+    }
+  }
+}

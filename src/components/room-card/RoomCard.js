@@ -2,7 +2,7 @@ import Calendar from '@c/calendar/Calendar.js';
 
 class RoomCard {
   constructor() {
-    this.roomCalendarElement = '.calendar__dp_for-room';
+    this.roomCalendarElement = '.calendar__dp_for-room-card';
     this.makeCalendar();
   }
 

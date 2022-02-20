@@ -4,7 +4,7 @@ include ../form/form.pug
 include ../toggle/toggle.pug
 include ../button/button.pug
 
-.login-card.js-login-card
+form.login-card.js-login-card
   .login-card__inner
     .login-card__item 
       h1.login-card__title Регистрация аккаунта
@@ -21,7 +21,7 @@ include ../button/button.pug
         h3.login-card__subtitle дата рождения
         +form({
           inputDate: {type: "empty", placeholder: 'ДД.ММ.ГГГГ'},
-          dropDate: {type: 'calendar', id: 'login'}
+          dropDate: {type: 'calendar', id: 'login-card'}
           })
     .login-card__item
       .login-card__form
@@ -34,7 +34,7 @@ include ../button/button.pug
         +toggle({text:"Получать спецпредложения"})
     .login-card__item
       .login-card__link-button
-        +button({theme: "with-arrow", text: "зарегистрироваться", icon: true})
+        +button({theme: "with-arrow", type:"submit", text: "зарегистрироваться", icon: true})
     .login-card__item
       .login-card__row
         p.login-card__text Уже есть аккаунт на Toxin

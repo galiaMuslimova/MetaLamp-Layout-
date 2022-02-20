@@ -8,5 +8,4 @@ mixin drop({type='calendar', id='', hasButton=false, items})
       +calendar({id:id, hasButton: hasButton})
     if(type=='guests' || type=='placement')
       +selector({items:items, hasButton: hasButton})
-    if(type=='checkbox')
-      +checkbox-list(items)
+      

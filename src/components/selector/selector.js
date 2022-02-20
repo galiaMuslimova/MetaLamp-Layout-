@@ -3,7 +3,7 @@ import Counter from '../counter/Counter.js';
 class Selector {
   constructor(element) {
     this.element = element;
-    this.$selectForm = $(this.element).closest('form');
+    this.$selectForm = $(this.element).closest('.js-form');
     this.$input = this.$selectForm.find('.js-input__field');
     this.$drop = this.$selectForm.find('.js-drop');
     this.$buttons = $(this.element).find('.js-counter__btn');
@@ -52,6 +52,8 @@ class Selector {
     this.counters.forEach((counter) => {
       counter.resetForm();
     });
+    this.valuesArray = this.takeNumsArray();
+    this.changeInputText();
   }
 
   handleDropClassActiveRemove() {

@@ -1,0 +1,17 @@
+include ../checkbox-list/checkbox-list.pug
+include ../icon-open/icon-open.pug
+
+mixin expandable-list({title})
+  .expandable-list.js-expandable-list
+    .expandable-list__row
+      h3.expandable-list__title= title
+      .expandable-list__icon.js-expandable-list__icon 
+        +icon-open('expandable')
+    .expandable-list__check-list.js-expandable-list__check-list
+      +checkbox-list([
+        {id:"breakfast", text:"Завтрак"}, 
+        {id:"table", text:"Письменный стол", checked:true}, 
+        {id:"chair", text:"Стул для кормления", checked:true}, 
+        {id:"crib", text:"Кроватка", checked:true}, 
+        {id:"TV", text:"Телевизор"}, 
+        {id:"shampoo", text:"Шампунь"}])

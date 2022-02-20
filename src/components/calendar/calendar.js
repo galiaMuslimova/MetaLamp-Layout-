@@ -4,9 +4,11 @@ import 'air-datepicker/air-datepicker.css';
 export default class Calendar {
   constructor(element) {
     this.element = element;
-    this.$form = $(this.element).closest('form');
+    this.$form = $(this.element).closest('.js-form');
     this.$drop = this.$form.find('.js-drop');
     this.$inputArr = this.$form.find('.input__field');
+    this.$resetBtn = this.$form.find('.js-calendar__btn_for-reset');
+    this.$submitBtn = this.$form.find('.js-calendar__btn_for-submit');
     this.dp = {};
   }
 
@@ -26,15 +28,17 @@ export default class Calendar {
         el.showDateInInput(res);
       },
     });
+    this.bindEventListeners();
   }
 
   bindEventListeners() {
-    $('.js-calendar__btn_for-reset').on('click', this.handleResetBtnClick);
-    $('.js-calendar__btn_for-submit').on('click', this.handleSubmitBtnClick);
+    this.$resetBtn.on('click', this.handleResetBtnClick.bind(this));
+    this.$submitBtn.on('click', this.handleSubmitBtnClick.bind(this));
   }
 
   handleResetBtnClick() {
     this.dp.clear();
+    this.showDateInInput({ date: [undefined, undefined], formattedDate: [undefined, undefined] });
   }
 
   handleSubmitBtnClick() {
@@ -47,7 +51,7 @@ export default class Calendar {
       const date2 = this.dp.formatDate(res.date[1], 'dd MMM');
       const str = `${date1} - ${date2}`;
       $(this.$inputArr[0]).val(str.toLowerCase());
-    } else if (this.element === '.js-calendar__dp_for-login') {
+    } else if (this.element === '.js-calendar__dp_for-login-card') {
       $(this.$inputArr[0]).val(res.formattedDate);
     } else {
       $(this.$inputArr[0]).val(res.formattedDate[0]);

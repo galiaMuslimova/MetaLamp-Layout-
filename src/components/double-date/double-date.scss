@@ -1,12 +1,7 @@
 .double-date {
-  position: relative;
-  margin: 0px;
-
-  &__row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1.5vw;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.5vw;
 
   &__subtitle {
     margin: 0px 0px 5px 0px;

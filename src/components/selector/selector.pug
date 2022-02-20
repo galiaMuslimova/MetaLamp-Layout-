@@ -9,7 +9,7 @@ mixin selector({items, hasButton})
     if(hasButton==true)
       .selector__buttons
         .selector__reset-btn.js-selector__reset-btn
-          +button({ theme: 'simple', type: 'reset', text: 'очистить' })
+          +button({ theme: 'simple', type: 'button', text: 'очистить' })
         .selector__submit-btn.js-selector__submit-btn
           +button({ theme: 'simple', type: 'button', text: 'применить' })
           

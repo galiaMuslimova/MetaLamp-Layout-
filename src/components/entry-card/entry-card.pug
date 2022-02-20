@@ -2,12 +2,18 @@ include ../double-date/double-date.pug
 include ../form/form.pug
 include ../button/button.pug
 
-.entry-card.js-entry-card
+form.entry-card.js-entry-card
   .entry-card__inner
     .entry-card__item
       h1.entry-card__title Найдём номера под ваши пожелания
     .entry-card__item      
-      +double-date({id:'entry-card'})
+      +form({
+        dropDate: {
+          type: 'calendar', 
+          id: 'entry-card', 
+          hasButton: true
+          }
+      })
     .entry-card__item
       h3.entry-card__subtitle гости 
       +form({ 
@@ -21,4 +27,4 @@ include ../button/button.pug
           }
         })
     .entry-card__button.js-entry-card__button
-      +button({theme:'with-arrow', text:'подобрать номер', icon: true})
+      +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true})

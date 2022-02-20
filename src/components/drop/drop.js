@@ -11,7 +11,7 @@ class Drop {
   static handleDropClassActiveRemove(event) {
     const $dropArr = $('.js-drop');
     $dropArr.each(function () {
-      this.$form = $(this).closest('form');
+      this.$form = $(this).closest('.js-form');
       if (this.$form.find(event.target).length === 0) {
         $(this).removeClass('drop_active');
       }

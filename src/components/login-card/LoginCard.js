@@ -2,7 +2,7 @@ import Calendar from '@c/calendar/Calendar.js';
 
 class LoginCard {
   constructor() {
-    this.loginCardCalendarPlace = '.js-calendar__dp_for-login';
+    this.loginCardCalendarPlace = '.js-calendar__dp_for-login-card';
     this.makeCalendar();
   }
 

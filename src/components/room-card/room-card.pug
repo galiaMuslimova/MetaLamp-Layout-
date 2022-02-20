@@ -3,7 +3,7 @@ include ../form/form.pug
 include ../double-date/double-date.pug
 include ../calculation/calculation.pug
 
-.room-card   
+form.room-card   
   -const date = roomData.date
   -const diff = Math.abs(+new Date(date[1]) - +new Date(date[0]));
   -const days = diff/1000/60/60/24;
@@ -16,7 +16,13 @@ include ../calculation/calculation.pug
         .room-card__cost= roomData.cost.toLocaleString() + '₽'
         .room-card__cost-text в сутки
     .room-card__item
-      +double-date({id:"room"})
+      +form({
+        dropDate: {
+          type: 'calendar', 
+          id: 'room-card', 
+          hasButton: true
+        }
+      }) 
     .room-card__item
       h3.room-card__subtitle гости 
       +form({
@@ -34,4 +40,4 @@ include ../calculation/calculation.pug
         .room-card__dots
         .room-card__total-cost= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
       .room-card__button 
-        +button({theme: "with-arrow", text: "забронировать", icon: true})
+        +button({theme: "with-arrow", type:"submit", text: "забронировать", icon: true})

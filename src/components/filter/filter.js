@@ -5,10 +5,8 @@ class Filter {
   constructor() {
     this.$filterCalendarPlace = '.js-calendar__dp_for-filter';
     this.$filterSlider = $('.js-slider_for-filter');
-    this.$iconOpen = $('.js-filter__icon');
     this.makeCalendar();
     this.makeSlider();
-    this.bindEventListeners();
   }
 
   makeCalendar() {
@@ -25,16 +23,6 @@ class Filter {
       const slider = new Slider(this.$filterSlider);
       slider.init();
     }
-  }
-
-  bindEventListeners() {
-    this.$iconOpen.on('click', this.handleIconOpenClick);
-  }
-
-  handleIconOpenClick() {
-    $(this).toggleClass('filter__icon_expanded');
-    const $drop = $(this).closest('.filter__expandable-list').find('.js-drop');
-    $drop.toggleClass('drop_active');
   }
 }
 

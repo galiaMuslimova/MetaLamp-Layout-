@@ -1,9 +1,13 @@
 include ../input/input.pug
+include ../double-date/double-date.pug
 include ../drop/drop.pug
 
 mixin form({inputDate={}, dropDate={}}) 
-  form.form
-    +input(inputDate)
+  .form.js-form    
+    if(dropDate.id === 'entry-card' || dropDate.id === 'room-card')
+      +double-date(inputDate)
+    else 
+      +input(inputDate)
     +drop(dropDate)
 
 
