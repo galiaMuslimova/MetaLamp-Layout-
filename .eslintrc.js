@@ -8,7 +8,9 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    'plugin:fsd/all',
   ],
+  plugins: ['fsd'],
   rules: {
     'linebreak-style': 'off',
     'import/extensions': 'off',
