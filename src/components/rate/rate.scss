@@ -3,5 +3,20 @@
   flex-direction: row;
   justify-content: flex-start;
   font-size: 1.5em;
-  padding: 0px 2px;  
+  padding: 0px 2px;
+
+  &__star {
+    -webkit-text-stroke: 0.4em transparent;
+    background: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+    background-clip: text;   
+    color: #fff;
+    font-size: 0.5em;
+    padding: 0.56em;
+    cursor: pointer;
+    caret-color: transparent;
+
+    &_colored {
+      -webkit-text-fill-color: transparent;
+    }
+  }
 }

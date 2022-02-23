@@ -24,15 +24,15 @@
     cursor: pointer;
 
     &:checked+.like__icon>.icon-heart:before {
-      background-clip: text;
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: none;
+      background-clip: text;
       background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
     }
   }
 
   &__icon {
-    font-size: 0.6em;    
+    font-size: 0.6em;
   }
 
   &__count {

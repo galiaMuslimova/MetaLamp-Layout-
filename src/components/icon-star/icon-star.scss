@@ -1,12 +1,8 @@
-.icon-star,
-.icon-star-empty {
-  background-clip: text;
-  color: transparent;
+.icon-star {
   margin: 0;
   padding: 0em 0.04em;
-  background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
 
   &:before {
     margin: 0;
-  }
+  }  
 }

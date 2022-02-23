@@ -1,11 +1,13 @@
 include ../icon-star/icon-star.pug
 
 mixin rate({starsCount})
-  .rate 
+  .rate.js-rate
     - let i = 0
     while i < starsCount 
-      +icon-star({theme: 'colored'})
-      - ++i
+      .rate__star.js-rate__star.rate__star_colored 
+        +icon-star()
+      - i += 1
     while i < 5 
-      +icon-star({theme: 'empty'})
-      - ++i                 
+      .rate__star.js-rate__star
+        +icon-star()
+      - i += 1                 
