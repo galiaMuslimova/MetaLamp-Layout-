@@ -13,12 +13,10 @@ class Drop {
     $dropArr.each(function () {
       this.$form = $(this).closest('.js-form');
       if (this.$form.find(event.target).length === 0) {
-        //$(this).removeClass('drop_active');
+        $(this).removeClass('drop_active');
       }
     });
   }
 }
 
-$('.js-drop').each(function () {
-  const drop = new Drop($(this));
-});
+export default Drop;

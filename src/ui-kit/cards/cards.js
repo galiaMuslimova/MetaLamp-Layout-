@@ -1,15 +1,10 @@
 import Calendar from '@c/calendar/Calendar.js';
 
 class Cards {
-  constructor() {
-    this.cardsCalendarAnchor = '.calendar__dp_for-cards';
-    this.init();
-  }
-
-  init() {
-    if ($('.js-calendar__dp_for-cards').length > 0) {
-      this.makeCalendar();
-    }
+  constructor(element, anchor) {
+    this.element = element;
+    this.cardsCalendarAnchor = anchor;
+    this.makeCalendar();
   }
 
   makeCalendar() {
@@ -22,4 +17,4 @@ class Cards {
   }
 }
 
-const cards = new Cards();
+export default Cards;

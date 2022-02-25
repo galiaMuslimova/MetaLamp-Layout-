@@ -16,6 +16,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'no-restricted-globals': 'off',
-    'no-unused-vars': 'off'
+    'no-unused-vars': 'off',
+    'func-names': 'off'
   },
 };

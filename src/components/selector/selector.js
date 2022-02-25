@@ -3,10 +3,10 @@ import Counter from '../counter/Counter.js';
 class Selector {
   constructor(element) {
     this.element = element;
-    this.$selectForm = $(this.element).closest('.js-form');
+    this.$selectForm = this.element.closest('.js-form');
     this.$input = this.$selectForm.find('.js-input__field');
     this.$drop = this.$selectForm.find('.js-drop');
-    this.$buttons = $(this.element).find('.js-counter__btn');
+    this.$buttons = this.element.find('.js-counter__btn');
     this.$resetBtn = this.$selectForm.find('.js-selector__reset-btn');
     this.$submitBtn = this.$selectForm.find('.js-selector__submit-btn');
     this.counters = this.makeCounters();
@@ -121,9 +121,4 @@ class Selector {
   }
 }
 
-$(() => {
-  $('.js-selector').each(function () {
-    const selector = new Selector(this);
-    selector.init();
-  });
-});
+export default Selector;

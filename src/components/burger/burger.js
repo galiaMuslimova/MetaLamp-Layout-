@@ -1,10 +1,11 @@
 class Burger {
-  constructor() {
-    this.$burger = $('.js-burger');
+  constructor(element) {
+    this.element = element;
+    this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$burger.on('click', this.handleBurgerClick);
+    this.element.on('click', this.handleBurgerClick);
   }
 
   handleBurgerClick() {
@@ -17,3 +18,5 @@ class Burger {
     $reg.toggleClass('header__registration_for-mobile');
   }
 }
+
+export default Burger;

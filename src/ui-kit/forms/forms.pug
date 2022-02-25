@@ -15,7 +15,7 @@ include ../../components/feature/feature.pug
 include ../../components/review/review.pug
 
  
-.forms
+.forms.js-forms
   .forms__first-col
     //inputs
     .forms__inputs 
@@ -88,7 +88,7 @@ include ../../components/review/review.pug
       .forms__sub-block
         .forms__expandable_with-gap 
           +expandable-list({title: 'expandable-list'})
-        .forms__expandable_expanded 
+        .forms__expandable_expanded.js-forms__expandable_expanded 
           +expandable-list({title: 'expandable-list'})
     
     //features
@@ -112,7 +112,7 @@ include ../../components/review/review.pug
         .forms__radio
           h3.forms__subtitle radio buttons
           .forms__row   
-            +radio({text: "Мужчина"})
+            +radio({text: "Мужчина", checked: true})
             +radio({text: "Женщина"})
         .forms__toggle      
           h3.forms__subtitle toggle

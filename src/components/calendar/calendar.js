@@ -1,7 +1,7 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
-export default class Calendar {
+class Calendar {
   constructor(element) {
     this.element = element;
     this.$form = $(this.element).closest('.js-form');
@@ -59,3 +59,5 @@ export default class Calendar {
     }
   }
 }
+
+export default Calendar;

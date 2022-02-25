@@ -1,7 +1,8 @@
 class Header {
-  constructor() {
-    this.$loginBtn = $('.js-header__login-btn');
-    this.signinBtn = $('.js-header__signin-btn');
+  constructor(element) {
+    this.element = element;
+    this.$loginBtn = this.element.find('.js-header__login-btn');
+    this.signinBtn = this.element.find('.js-header__signin-btn');
     this.bindEventListeners();
   }
 
@@ -15,4 +16,4 @@ class Header {
   }
 }
 
-const header = new Header();
+export default Header;

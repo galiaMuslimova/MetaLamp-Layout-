@@ -11,7 +11,7 @@ const options = {
   },
 };
 
-export default class Slider {
+class Slider {
   constructor(element) {
     this.element = element;
     this.$sliderPlace = this.element.find('.js-slider__anchor');
@@ -41,3 +41,5 @@ export default class Slider {
     this.$resultPlace.text(`${value1}₽ - ${value2}₽`);
   }
 }
+
+export default Slider;

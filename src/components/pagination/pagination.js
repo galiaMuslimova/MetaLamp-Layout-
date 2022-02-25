@@ -1,4 +1,4 @@
-export default class Pagination {
+class Pagination {
   constructor(element, items, limitPerPage = 12) {
     this.element = element;
     this.items = items;
@@ -65,11 +65,11 @@ export default class Pagination {
   showPage() {
     const start = (this.currentPage - 1) * this.limitPerPage;
     const end = this.currentPage * this.limitPerPage;
-    
-    if (this.currentPage < 1 || this.currentPage > this.totalPages) { 
-      return false 
-    };
-    this.items.hide().slice(start, end).show();    
+
+    if (this.currentPage < 1 || this.currentPage > this.totalPages) {
+      return false;
+    }
+    this.items.hide().slice(start, end).show();
     this.element.find('.pagination__item').slice(1, -1).remove();
 
     this.getPageList().forEach((item) => this.addPaginationItems(item));
@@ -92,3 +92,5 @@ export default class Pagination {
     $(this.element).append(this.$prevBtn, this.$nextBtn);
   }
 }
+
+export default Pagination;

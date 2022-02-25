@@ -20,6 +20,4 @@ class Input {
   }
 }
 
-$('.js-input').each(function () {
-  const input = new Input($(this));
-});
+export default Input;

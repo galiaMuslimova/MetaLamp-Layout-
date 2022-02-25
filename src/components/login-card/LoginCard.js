@@ -1,8 +1,9 @@
 import Calendar from '@c/calendar/Calendar.js';
 
 class LoginCard {
-  constructor() {
-    this.loginCardCalendarPlace = '.js-calendar__dp_for-login-card';
+  constructor(element, anchor) {
+    this.element = element;
+    this.loginCardCalendarPlace = anchor;
     this.makeCalendar();
   }
 
@@ -19,4 +20,4 @@ class LoginCard {
   }
 }
 
-const loginCard = new LoginCard();
+export default LoginCard;

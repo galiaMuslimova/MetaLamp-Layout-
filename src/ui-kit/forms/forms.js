@@ -1,27 +1,26 @@
 import Slider from '@c/slider/Slider.js';
 
 class Forms {
-  constructor() {
-    this.$expandIcon = $('.js-forms__expand-icon');
-    this.$paginationAnchor = $('.js-pagination__anchor_for-forms');
-    this.$formsSlider = $('.js-slider_for-forms');
+  constructor(element) {
+    this.element = element;
+    this.$expandIcon = this.element.find('.js-forms__expand-icon');
+    this.$paginationAnchor = this.element.find('.js-pagination__anchor_for-forms');
+    this.$formsSlider = this.element.find('.js-slider_for-forms');
     this.init();
   }
 
   init() {
     this.makeSlider();
     this.createPagination();
+    Forms.handleExpandableClassChange();
   }
 
   makeSlider() {
-    if (this.$formsSlider.length > 0) {
-      const slider = new Slider(this.$formsSlider);
-      slider.init();
-    }
+    const slider = new Slider(this.$formsSlider);
+    slider.init();
   }
 
   createPagination() {
-    Forms.handleExpandableClassChange();
     this.$paginationAnchor.append(
       $('<div>').addClass('pagination__item').addClass('pagination__item_active').text('1'),
       $('<div>').addClass('pagination__item').text('2'),
@@ -34,8 +33,8 @@ class Forms {
 
   static handleExpandableClassChange() {
     $('.js-forms__selector_expanded').find('.js-drop').addClass('drop_active');
-    $('.js-forms__expandable_expanded').find('.js-drop').addClass('drop_active');
+    $('.js-forms__expandable_expanded').find('.js-expandable-list__check-list').addClass('expandable-list__check-list_active');
   }
 }
 
-const forms = new Forms();
+export default Forms;

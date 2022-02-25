@@ -1,6 +1,7 @@
 class Nav {
-  constructor() {
-    this.$navIcon = $('.js-nav__icon');
+  constructor(element) {
+    this.element = element;
+    this.$navIcon = this.element.find('.js-nav__icon');
     this.bindEventHandlers();
   }
 
@@ -24,4 +25,4 @@ class Nav {
   }
 }
 
-const nav = new Nav();
+export default Nav;

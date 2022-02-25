@@ -1,9 +1,10 @@
 class Insertions {
-  constructor() {
-    this.$insertions = $('.js-insertions');
+  constructor(element) {
+    this.element = element;
+    this.changeStyle();
   }
 
   changeStyle() {
-    this.$insertions.find('.js-nav__item_checked ').find('.nav__link').css('font-weight', 'bold');
+    this.element.find('.js-nav__item_checked ').find('.nav__link').css('font-weight', 'bold');
   }
 }

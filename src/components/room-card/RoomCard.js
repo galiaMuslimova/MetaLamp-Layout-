@@ -1,8 +1,9 @@
 import Calendar from '@c/calendar/Calendar.js';
 
 class RoomCard {
-  constructor() {
-    this.roomCalendarElement = '.calendar__dp_for-room-card';
+  constructor(element, anchor) {
+    this.element = element;
+    this.roomCalendarElement = anchor;
     this.makeCalendar();
   }
 
@@ -16,4 +17,4 @@ class RoomCard {
   }
 }
 
-const roomCard = new RoomCard();
+export default RoomCard;

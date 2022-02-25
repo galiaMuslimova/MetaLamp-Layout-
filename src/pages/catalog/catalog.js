@@ -1,10 +1,11 @@
 import Pagination from '@c/pagination/Pagination.js';
 
 class Catalog {
-  constructor() {
-    this.$filterOpenBtn = $('.js-catalog__button');
-    this.baseElement = $('.js-pagination__anchor_for-catalog');
-    this.paginationItems = $('.js-catalog-list .js-catalog-item');
+  constructor(element) {
+    this.element = element;
+    this.$filterOpenBtn = this.element.find('.js-catalog__button');
+    this.baseElement = this.element.find('.js-pagination__anchor_for-catalog');
+    this.paginationItems = this.element.find('.js-catalog-item');
     this.makePagination();
     this.bindEventHandlers();
   }
@@ -31,4 +32,4 @@ class Catalog {
   }
 }
 
-const catalog = new Catalog();
+export default Catalog;

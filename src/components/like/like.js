@@ -20,6 +20,4 @@ class Like {
   }
 }
 
-$('.js-like').each(function () {
-  const like = new Like($(this));
-});
+export default Like;

@@ -48,8 +48,4 @@ class Carousel {
   }
 }
 
-$(() => {
-  $('.js-carousel').each(function () {
-    const carousel = new Carousel($(this));
-  });
-});
+export default Carousel;

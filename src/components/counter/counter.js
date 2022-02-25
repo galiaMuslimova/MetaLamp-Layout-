@@ -1,4 +1,4 @@
-export default class Counter {
+class Counter {
   constructor(element) {
     this.element = element;
     this.$numBtn = $(this.element).find('.js-counter__num');
@@ -48,3 +48,5 @@ export default class Counter {
     this.toggleDisable();
   }
 }
+
+export default Counter;

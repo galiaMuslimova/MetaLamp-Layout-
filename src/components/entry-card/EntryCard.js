@@ -1,9 +1,10 @@
 import Calendar from '@c/calendar/Calendar.js';
 
 class EntryCard {
-  constructor() {
-    this.entryCardCalendarPlace = '.calendar__dp_for-entry-card';
-    this.$entryCardButton = $('.js-entry-card').find('.js-entry-card__button');
+  constructor(element, anchor) {
+    this.element = element;
+    this.entryCardCalendarPlace = anchor;
+    this.$entryCardButton = this.element.find('.js-entry-card__button');
     this.makeCalendar();
     this.bindEventListeners();
   }
@@ -22,4 +23,4 @@ class EntryCard {
   }
 }
 
-const entryCard = new EntryCard();
+export default EntryCard;

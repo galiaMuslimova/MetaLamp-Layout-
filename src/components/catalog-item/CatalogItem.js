@@ -1,11 +1,11 @@
 class CatalogItem {
-  constructor() {
-    this.$catalogItem = $('.js-catalog-item__content');
+  constructor(element) {
+    this.element = element;
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$catalogItem.on('click', CatalogItem.handleCatalogItemAddLinkAttr);
+    this.element.on('click', CatalogItem.handleCatalogItemAddLinkAttr);
   }
 
   static handleCatalogItemAddLinkAttr(name) {
@@ -13,4 +13,4 @@ class CatalogItem {
   }
 }
 
-const catalogItem = new CatalogItem();
+export default CatalogItem;

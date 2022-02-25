@@ -24,6 +24,4 @@ class Rate {
   }
 }
 
-$('.js-rate').each(function () {
-  const rate = new Rate(this);
-});
+export default Rate;

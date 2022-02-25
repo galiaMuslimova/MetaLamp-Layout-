@@ -2,9 +2,10 @@ import Calendar from '@c/calendar/Calendar.js';
 import Slider from '@c/slider/Slider.js';
 
 class Filter {
-  constructor() {
-    this.$filterCalendarPlace = '.js-calendar__dp_for-filter';
-    this.$filterSlider = $('.js-slider_for-filter');
+  constructor(element, anchor) {
+    this.element = element;
+    this.$filterCalendarPlace = anchor;
+    this.$filterSlider = this.element.find('.js-slider_for-filter');
     this.makeCalendar();
     this.makeSlider();
   }
@@ -26,4 +27,4 @@ class Filter {
   }
 }
 
-const filter = new Filter();
+export default Filter;

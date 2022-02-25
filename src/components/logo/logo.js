@@ -1,11 +1,11 @@
 class Logo {
-  constructor() {
-    this.$logo = $('.js-header').find('.js-logo');
+  constructor(element) {
+    this.element = element;
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$logo.on('click', Logo.handleLogoAddLinkAttr);
+    this.element.on('click', Logo.handleLogoAddLinkAttr);
   }
 
   static handleLogoAddLinkAttr() {
@@ -13,4 +13,4 @@ class Logo {
   }
 }
 
-const logo = new Logo();
+export default Logo;

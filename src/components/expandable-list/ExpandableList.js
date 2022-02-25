@@ -25,6 +25,4 @@ class ExpandableList {
   }
 }
 
-$('.js-expandable-list').each(function() {
-  const expandableList = new ExpandableList($(this));
-});
+export default ExpandableList;
