@@ -14,7 +14,7 @@
 + Chart.js версии 3.6.0
 
 ## Eslint
-Команда для запуска линтера **npx eslint src**
+Команды для запуска линтера **npm run elint**, **npm run elint-fix**
 
 
 
