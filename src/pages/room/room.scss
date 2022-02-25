@@ -4,7 +4,7 @@
     padding-bottom: 4.2vw;
     display: grid;
     grid-column-gap: 4.8vw;
-    grid-row-gap: 1vw;
+    grid-row-gap: 0.8vw;
     grid:
       "info chart card"
       "review review card"
@@ -36,7 +36,7 @@
     margin: 0;
     font-weight: bold;
     font-size: 19px;
-    line-height: 23px;
+    line-height: 24px;
     color: #1F2041;
   }
 

@@ -28,7 +28,7 @@ include ../expandable-list/expandable-list.pug
       h3.filter__subtitle правила дома     
       +checkbox-list([{id:"smoke", text:"Можно курить"}, {id:"pet", text:"Можно с питомцами", checked:true}, {id:"invite", text:"Можно пригласить гостей \n(до 10 человек)", checked:true}])    
   .filter__item 
-    .filter__checkbox
+    .filter__checkbox.filter__checkbox_rich
       h3.filter__subtitle доступность
       +checkbox-list([
         {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \nне менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист \nи проводит до номера."}]) 

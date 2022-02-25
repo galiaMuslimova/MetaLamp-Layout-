@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 92px;
-  align-items: center;
+  align-items: flex-start;
 
   &__btn {
     cursor: pointer;
@@ -27,5 +27,6 @@
     font-weight: bold;
     text-transform: uppercase;
     color: #1F2041;
+    line-height: 26px;
   }
 }

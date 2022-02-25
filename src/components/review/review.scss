@@ -1,14 +1,14 @@
 .review {
   display: flex;
   flex-direction: row;
-  margin-bottom: 21px;
+  margin-bottom: 23px;
 
   &__col {
     display: flex;
     flex-direction: column;
 
     &:last-child {
-      margin: 0px 0px 0px 10px;
+      margin: 0px 0px 0px 9px;
     }
   }
 

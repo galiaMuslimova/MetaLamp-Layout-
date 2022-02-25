@@ -1,6 +1,6 @@
 .rights {
   background-color: #fff;
-  height: 70px;
+  height: 71px;
 
   @media only screen and (max-width: 1024px) {
     height: 367px;
@@ -29,8 +29,9 @@
 
   &__text {
     line-height: 17px;
+
     @media only screen and (max-width: 1024px) {
-      margin: 15px;
+      margin: 10px 0px 17px 0px;
     }
   }
 

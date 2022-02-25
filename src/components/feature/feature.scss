@@ -2,7 +2,8 @@
   &__content {
     width: 100%;
     display: grid;
-    grid-template-columns: 53px 1fr;
+    grid-template-columns: 40px 1fr;
+    gap: 13px;
     margin: 21px 0px 19px 4px;
   }
 
@@ -18,5 +19,9 @@
 
   &__title {
     font-weight: bold;
+  }
+
+  &__image {
+    margin: 0px auto;
   }
 }

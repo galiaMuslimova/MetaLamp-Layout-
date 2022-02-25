@@ -1,6 +1,6 @@
-mixin radio({text})  
+mixin radio({text, checked=false})  
   .radio 
     label.radio__label
-      input.radio__input(type="radio" name="radio" checked)
+      input.radio__input(type="radio" name="radio" checked=checked)
       span.radio__box
     p.radio__text= text
