@@ -20,7 +20,7 @@ form.login-card.js-login-card
       .login-card__form
         h3.login-card__subtitle дата рождения
         +form({
-          inputDate: {type: "empty", placeholder: 'ДД.ММ.ГГГГ'},
+          inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
           dropDate: {type: 'calendar', id: 'login-card'}
           })
     .login-card__item

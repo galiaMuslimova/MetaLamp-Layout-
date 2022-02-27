@@ -1,21 +1,26 @@
 class Like {
   constructor(element) {
     this.element = element;
-    this.$likeInput = this.element.find('.js-like__count');
-    this.likeCount = Number(this.$likeInput.val());
+    this.$likeCount = this.element.find('.js-like__count');
+    this.$likeInput = this.element.find('.js-like__input');
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.element.on('change', this.handleLikeChange.bind(this));
+    this.element.on('click', this.handleLikeChange.bind(this));
   }
 
-  handleLikeChange() {
-    const isCheck = this.element.find('.js-like__input').is(':checked');
-    if (isCheck) {
-      this.$likeInput.val(this.likeCount += 1);
+  handleLikeChange(event) {
+    const likeNum = Number(this.$likeCount.val());
+    let isChecked = this.$likeInput.prop('checked');
+    if (event.target !== this.$likeInput[0]) {
+      isChecked = !isChecked;
+      this.$likeInput.prop('checked', isChecked);
+    }
+    if (isChecked) {
+      this.$likeCount.val(likeNum + 1);
     } else {
-      this.$likeInput.val(this.likeCount -= 1);
+      this.$likeCount.val(likeNum - 1);
     }
   }
 }

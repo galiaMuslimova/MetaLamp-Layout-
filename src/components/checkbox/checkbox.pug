@@ -1,7 +1,7 @@
 include ../icon-check/icon-check.pug
 
 mixin checkbox({id, text, subtext, checked=false})
-  .checkbox
+  .checkbox.js-checkbox
     .checkbox__row 
       label.checkbox__label
         input.checkbox__input(type="checkbox" id=id checked=checked)

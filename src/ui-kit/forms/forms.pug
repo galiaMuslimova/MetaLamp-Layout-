@@ -46,7 +46,7 @@ include ../../components/review/review.pug
           .forms__item
             h3.forms__subtitle masked text field
             +form({
-              inputDate: {type: "empty", placeholder: 'ДД.ММ.ГГГГ'},
+              inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
               dropDate: {type: 'calendar', id: 'login'}
               }) 
         .forms__item 
