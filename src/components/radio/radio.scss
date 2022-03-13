@@ -1,8 +1,4 @@
 .radio {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-
   &__label {
     position: relative;
     display: flex;
@@ -50,6 +46,6 @@
 
   &__text {
     color: rgba(31, 32, 65, 0.5);
-    margin: 0px;
+    padding-left: 10px;
   }
 }

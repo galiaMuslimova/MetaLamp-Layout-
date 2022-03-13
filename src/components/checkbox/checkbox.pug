@@ -2,14 +2,13 @@ include ../icon-check/icon-check.pug
 
 mixin checkbox({id, text, subtext, checked=false})
   .checkbox.js-checkbox
-    .checkbox__row 
-      label.checkbox__label
-        input.checkbox__input(type="checkbox" id=id checked=checked)
-        span.checkbox__box
-          +icon-check()
-      .checkbox__content
-        if(subtext)      
-          p.checkbox__text.checkbox__text_bold=text
-          p.checkbox__subtext=subtext
+    label.checkbox__label
+      input.checkbox__input(type="checkbox" id=id checked=checked)
+      span.checkbox__box
+        +icon-check()      
+      span.checkbox__content 
+        if(subtext)     
+          span.checkbox__text.checkbox__text_bold=text
+          span.checkbox__subtext=subtext
         else 
-          p.checkbox__text.checkbox__text_light=text
+          span.checkbox__text.checkbox__text_light=text
