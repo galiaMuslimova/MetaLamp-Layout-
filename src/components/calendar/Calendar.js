@@ -7,8 +7,8 @@ class Calendar {
     this.$form = $(this.element).closest('.js-form');
     this.$drop = this.$form.find('.js-drop');
     this.$inputArr = this.$form.find('.input__field');
-    this.$resetBtn = this.$form.find('.js-calendar__btn_for-reset');
-    this.$submitBtn = this.$form.find('.js-calendar__btn_for-submit');
+    this.$resetButton = this.$form.find('.js-calendar__button_for-reset');
+    this.$submitButton = this.$form.find('.js-calendar__button_for-submit');
     this.dp = {};
   }
 
@@ -32,16 +32,16 @@ class Calendar {
   }
 
   bindEventListeners() {
-    this.$resetBtn.on('click', this.handleResetBtnClick.bind(this));
-    this.$submitBtn.on('click', this.handleSubmitBtnClick.bind(this));
+    this.$resetButton.on('click', this.handleResetButtonClick.bind(this));
+    this.$submitButton.on('click', this.handleSubmitButtonClick.bind(this));
   }
 
-  handleResetBtnClick() {
+  handleResetButtonClick() {
     this.dp.clear();
     this.showDateInInput({ date: [undefined, undefined], formattedDate: [undefined, undefined] });
   }
 
-  handleSubmitBtnClick() {
+  handleSubmitButtonClick() {
     this.$drop.removeClass('drop_active');
   }
 

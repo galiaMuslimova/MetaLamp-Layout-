@@ -1,20 +1,22 @@
+extends ../ui-kit-base/ui-kit-base.pug
 include ../../components/header/header.pug
 include ../../components/links/links.pug
 include ../../components/rights/rights.pug
 
-.insertions.js-insertions  
-  header.insertions__header
-    .insertions__container
-      +header()
-  header.insertions__header
-    .insertions__container
-      +header(true)
-  footer.insertions__footer
-    .insertions__links 
-      .insertions__container 
-        +links()
-    .insertions__rights 
+block content
+  .insertions.js-insertions  
+    header.insertions__header
       .insertions__container
-        +rights()
-  .insertions__rights.insertions__rights_for-mobile
-    +rights()
+        +header()
+    header.insertions__header
+      .insertions__container
+        +header(true)
+    footer.insertions__footer
+      .insertions__links 
+        .insertions__container 
+          +links()
+      .insertions__rights 
+        .insertions__container
+          +rights()
+    .insertions__rights.insertions__rights_for-mobile
+      +rights()

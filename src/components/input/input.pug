@@ -6,17 +6,17 @@ mixin input({type='dropdown', fontType='text', placeholder, value, focus=false})
 
     if(type=="subscript")
       input.input__field.js-input__field(type=fontType, placeholder=placeholder)
-      button.input__btn.js-input__btn.input__btn_with-arrow(type="submit")
+      button.input__button.js-input__button.input__button_with-arrow(type="submit")
         +icon-arrow()
 
     if(type=="dropdown")
       input.input__field.js-input__field.input__field_active(type=fontType, placeholder=placeholder || 'Сколько гостей', value=value, readonly)
-      button.input__btn.js-input__btn(type="button")
+      button.input__button.js-input__button(type="button")
         +icon-open()
 
     if(type=="date")
       input.input__field.js-input__field.js-input__field_for-date(type=fontType, placeholder='ДД.ММ.ГГГГ', value=value, readonly)
-      button.input__btn.js-input__btn(type="button")
+      button.input__button.js-input__button(type="button")
         +icon-open()
 
     if(type=="simple-date")

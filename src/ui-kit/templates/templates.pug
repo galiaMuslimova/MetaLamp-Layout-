@@ -1,30 +1,32 @@
+extends ../ui-kit-base/ui-kit-base.pug
 -const data = require('./templates.json')
 
-.templates 
-  .templates__container 
-    .templates__content   
-      .templates__colors
-        each item in data
-          .templates__row
-            .templates__color(class= 'templates__color_' + item.modifier)
-            style. 
-              .templates__color_#{item.modifier} {
-                background-color: #{item.value};
-                opacity: #{item.opacity};
-              }        
-            .templates__color-name
-              .templates__color-title= item.title
-              .templates__color-value= item.value
-      .templates__types
-        .templates__types-row.templates__types-row_with-h1
-          h1.templates__type-name H1
-          h1.templates__type-description This one is the sub-section or widget title
-        .templates__types-row.templates__types-row_with-h2
-          h2.templates__type-name H2 
-          h2.templates__type-description Next one is the item title inside widgets
-        .templates__types-row.templates__types-row_with-h3
-          h3.templates__type-name H3
-          h3.templates__type-description This is a label or CTA text
-        .templates__types-row.templates__types-row_with-p
-          p.templates__type-name Body 
-          p.templates__type-description= "This is the body text which is used for most \nof the design, like paragraphs, lists, etc."
+block content
+  .templates 
+    .templates__container 
+      .templates__content   
+        .templates__colors
+          each item in data
+            .templates__row
+              .templates__color(class= 'templates__color_' + item.modifier)
+              style. 
+                .templates__color_#{item.modifier} {
+                  background-color: #{item.value};
+                  opacity: #{item.opacity};
+                }        
+              .templates__color-name
+                .templates__color-title= item.title
+                .templates__color-value= item.value
+        .templates__types
+          .templates__types-row.templates__types-row_with-h1
+            h1.templates__type-name H1
+            h1.templates__type-description This one is the sub-section or widget title
+          .templates__types-row.templates__types-row_with-h2
+            h2.templates__type-name H2 
+            h2.templates__type-description Next one is the item title inside widgets
+          .templates__types-row.templates__types-row_with-h3
+            h3.templates__type-name H3
+            h3.templates__type-description This is a label or CTA text
+          .templates__types-row.templates__types-row_with-p
+            p.templates__type-name Body 
+            p.templates__type-description= "This is the body text which is used for most \nof the design, like paragraphs, lists, etc."

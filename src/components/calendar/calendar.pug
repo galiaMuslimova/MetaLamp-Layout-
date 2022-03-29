@@ -5,7 +5,7 @@ mixin calendar({id, hasButton=false})
     .calendar__dp(class=`calendar__dp_for-${id} js-calendar__dp_for-${id}` )
     if(hasButton)
       .calendar__row
-        .calendar__btn.js-calendar__btn_for-reset
+        .calendar__button.js-calendar__button_for-reset
           +button({ theme: 'simple', type: 'button', text: 'очистить' })
-        .calendar__btn.js-calendar__btn_for-submit
+        .calendar__button.js-calendar__button_for-submit
           +button({ theme: 'simple', type: 'button', text: 'применить' })

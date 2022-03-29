@@ -8,8 +8,8 @@ mixin selector({items, hasButton})
         +counter(item.amount)
     if(hasButton==true)
       .selector__buttons
-        .selector__reset-btn.js-selector__reset-btn
+        .selector__reset-Button.js-selector__reset-button
           +button({ theme: 'simple', type: 'button', text: 'очистить' })
-        .selector__submit-btn.js-selector__submit-btn
+        .selector__submit-button.js-selector__submit-button
           +button({ theme: 'simple', type: 'button', text: 'применить' })
           

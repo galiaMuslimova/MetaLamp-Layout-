@@ -6,8 +6,8 @@ class Pagination {
     this.currentPage = 1;
     this.numberOfItems = this.items.length;
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
-    this.$prevBtn = $('<div>');
-    this.$nextBtn = $('<div>');
+    this.$prevButton = $('<div>');
+    this.$nextButton = $('<div>');
   }
 
   init() {
@@ -21,8 +21,8 @@ class Pagination {
     $(document).on('click', '.js-pagination__item_current', function () {
       root.handleNumberButtonClick($(this));
     });
-    this.$nextBtn.on('click', this.handleNextButtonClick.bind(this));
-    this.$prevBtn.on('click', this.handlePrevButtonClick.bind(this));
+    this.$nextButton.on('click', this.handleNextButtonClick.bind(this));
+    this.$prevButton.on('click', this.handlePrevButtonClick.bind(this));
   }
 
   handleNumberButtonClick(element) {
@@ -74,8 +74,8 @@ class Pagination {
 
     this.getPageList().forEach((item) => this.addPaginationItems(item));
 
-    this.$prevBtn.toggleClass('pagination__item_disable', this.currentPage === 1);
-    this.$nextBtn.toggleClass('pagination__item_disable', this.currentPage === this.totalPages);
+    this.$prevButton.toggleClass('pagination__item_disable', this.currentPage === 1);
+    this.$nextButton.toggleClass('pagination__item_disable', this.currentPage === this.totalPages);
     return true;
   }
 
@@ -87,9 +87,9 @@ class Pagination {
   }
 
   addPaginationArrowButtons() {
-    this.$prevBtn = this.$prevBtn.addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back')));
-    this.$nextBtn = this.$nextBtn.addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow')));
-    $(this.element).append(this.$prevBtn, this.$nextBtn);
+    this.$prevButton = this.$prevButton.addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back')));
+    this.$nextButton = this.$nextButton.addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow')));
+    $(this.element).append(this.$prevButton, this.$nextButton);
   }
 }
 

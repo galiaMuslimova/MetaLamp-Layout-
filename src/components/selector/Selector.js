@@ -6,9 +6,9 @@ class Selector {
     this.$selectForm = this.element.closest('.js-form');
     this.$input = this.$selectForm.find('.js-input__field');
     this.$drop = this.$selectForm.find('.js-drop');
-    this.$buttons = this.element.find('.js-counter__btn');
-    this.$resetBtn = this.$selectForm.find('.js-selector__reset-btn');
-    this.$submitBtn = this.$selectForm.find('.js-selector__submit-btn');
+    this.$buttons = this.element.find('.js-counter__button');
+    this.$resetButton = this.$selectForm.find('.js-selector__reset-button');
+    this.$submitButton = this.$selectForm.find('.js-selector__submit-button');
     this.counters = this.makeCounters();
     this.valuesArray = this.takeNumsArray();
     this.init();
@@ -21,8 +21,8 @@ class Selector {
 
   bindEventListeners() {
     this.$buttons.on('click', this.changeCount.bind(this));
-    this.$resetBtn.on('click', this.resetForm.bind(this));
-    this.$submitBtn.on('click', this.handleDropClassActiveRemove.bind(this));
+    this.$resetButton.on('click', this.resetForm.bind(this));
+    this.$submitButton.on('click', this.handleDropClassActiveRemove.bind(this));
   }
 
   makeCounters() {
@@ -40,11 +40,11 @@ class Selector {
     this.valuesArray = this.takeNumsArray();
     this.changeInputText();
     const result = this.valuesArray.reduce((sum, elem) => sum + elem, 0);
-    const isResetBtnActive = this.$resetBtn.hasClass('selector__reset-btn_active');
-    if (result > 0 && !isResetBtnActive) {
-      this.$resetBtn.addClass('selector__reset-btn_active');
-    } else if (result < 1 && isResetBtnActive) {
-      this.$resetBtn.removeClass('selector__reset-btn_active');
+    const isResetButtonActive = this.$resetButton.hasClass('selector__reset-button_active');
+    if (result > 0 && !isResetButtonActive) {
+      this.$resetButton.addClass('selector__reset-button_active');
+    } else if (result < 1 && isResetButtonActive) {
+      this.$resetButton.removeClass('selector__reset-button_active');
     }
   }
 
@@ -72,7 +72,7 @@ class Selector {
   }
 
   takeNumsArray() {
-    return this.counters.map((counter) => counter.numBtnValue);
+    return this.counters.map((counter) => counter.numButtonValue);
   }
 
   static declOfNum(number, titles) {

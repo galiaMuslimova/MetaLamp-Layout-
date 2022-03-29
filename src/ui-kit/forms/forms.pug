@@ -1,3 +1,4 @@
+extends ../ui-kit-base/ui-kit-base.pug
 include ../../components/form/form.pug
 include ../../components/input/input.pug
 include ../../components/double-date/double-date.pug
@@ -14,183 +15,183 @@ include ../../components/bullet/bullet.pug
 include ../../components/feature/feature.pug
 include ../../components/review/review.pug
 
- 
-.forms.js-forms
-  .forms__first-col
-    //inputs
-    .forms__inputs 
-      .forms__block
-        .forms__sub-block
-          .forms__item
-            .forms__row.forms__row_with-subtitle
-              .forms__subtitle Text Field
-              .forms__subtitle.forms__subtitle_transparent default
-            .forms__form 
-              +input({type: "empty", fontType:"E-mail", placeholder:"Email"}) 
-          .forms__item
-            .forms__row.forms__row_with-subtitle
-              .forms__subtitle Text Field
-              .forms__subtitle.forms__subtitle_transparent Hover / Focus
-            form.forms__form
-              +input({type: "empty", placeholder: "This is pretty awesome", focus: true})
-          .forms__item
-            h3.forms__subtitle Dropdown
-            +form({ 
-              inputDate: { value: "Сколько гостей" },
-              dropDate: {
-                type: "guests", 
-                hasButton: true,
-                items: [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
-                }
-              })
-          .forms__item
-            h3.forms__subtitle masked text field
+block content
+  .forms.js-forms
+    .forms__first-col
+      //inputs
+      .forms__inputs 
+        .forms__block
+          .forms__sub-block
+            .forms__item
+              .forms__row.forms__row_with-subtitle
+                .forms__subtitle Text Field
+                .forms__subtitle.forms__subtitle_transparent default
+              .forms__form 
+                +input({type: "empty", fontType:"E-mail", placeholder:"Email"}) 
+            .forms__item
+              .forms__row.forms__row_with-subtitle
+                .forms__subtitle Text Field
+                .forms__subtitle.forms__subtitle_transparent Hover / Focus
+              form.forms__form
+                +input({type: "empty", placeholder: "This is pretty awesome", focus: true})
+            .forms__item
+              h3.forms__subtitle Dropdown
+              +form({ 
+                inputDate: { value: "Сколько гостей" },
+                dropDate: {
+                  type: "guests", 
+                  hasButton: true,
+                  items: [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
+                  }
+                })
+            .forms__item
+              h3.forms__subtitle masked text field
+              +form({
+                inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
+                dropDate: {type: 'calendar', id: 'log-in'}
+                }) 
+          .forms__item 
+            +double-date({id:"forms", values: ['ДД.ММ.ГГГГ', '19.08.2021'], titles: ['date dropdown', 'date dropdown']})
+          .forms__item.forms__item_narrow
+            h3.forms__subtitle filter date dropdown
             +form({
-              inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
-              dropDate: {type: 'calendar', id: 'log-in'}
-              }) 
-        .forms__item 
-          +double-date({id:"forms", values: ['ДД.ММ.ГГГГ', '19.08.2021'], titles: ['date dropdown', 'date dropdown']})
-        .forms__item.forms__item_narrow
-          h3.forms__subtitle filter date dropdown
-          +form({
-            inputDate: {value: '19 авг - 23 авг'}, 
-            dropDate: {type: 'calendar', id: 'filter'}
-          }) 
-        .forms__item.forms__item_narrow
-          h3.forms__subtitle subscription text field
-          form.forms__form        
-            +input({type:"subscript", placeholder:"Email"})
-    
-    //dropdown first column and expandable
-    .forms__block.forms__block_narrow
-      .forms__sub-block
-        .forms__selector
-          .forms__row.forms__row_with-subtitle
-            h3.forms__subtitle dropdown 
-            .forms__subtitle.forms__subtitle_transparent default
-          +form({
-            dropDate: {
-              type:"placement", 
-              items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
-            }
-          })
-        .forms__selector.forms__selector_expanded.js-forms__selector_expanded
-          .forms__row.forms__row_with-subtitle
-            h3.forms__subtitle dropdown 
-            .forms__subtitle.forms__subtitle_transparent expanded
-          +form({
-            dropDate: {
-              type:"placement", 
-              items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
-            }
-          })
-      .forms__sub-block
-        .forms__expandable_with-gap 
-          +expandable-list({title: 'expandable-list'})
-        .forms__expandable_expanded.js-forms__expandable_expanded 
-          +expandable-list({title: 'expandable-list'})
-    
-    //features
-    .forms__features
-      +feature("Комфорт", "Шумопоглощающие стены")
-      .forms__divider
-      +feature("Удобство", "Окно в каждой из спален")
-      .forms__divider
-
-    
-  .forms__second-col
-    .forms__first-row
-      //checkbox, radio...
-      .forms__block
-        .forms__item
-          h3.forms__subtitle Checkbox Buttons
-          +checkbox-list([
-            {id:"smoke", text:"Можно курить"},
-            {id:"pet", text:"Можно с питомцами", checked:true},
-            {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}])
-        .forms__radio
-          h3.forms__subtitle radio buttons
-          .forms__row   
-            +radio({text: "Мужчина", checked: true})
-            +radio({text: "Женщина"})
-        .forms__toggle      
-          h3.forms__subtitle toggle
-          .forms__toggle-items
-            +toggle({text: "Получать спецпредложения", isCheck: true})
-            +toggle({text: "Получать спецпредложения"})
-        .forms__like
-          h3.forms__subtitle like button 
-          .forms__row
-            +like({"count": "2",  "isCheck": false, "name": "like-1"})
-            +like({"count": "12", "isCheck": true, "name": "like-2"})
-        .forms__rate
-          h3.forms__subtitle rate button
-          .forms__row.forms__row_for-rate 
-            +rate({starsCount: 4})
-            +rate({starsCount: 5}) 
+              inputDate: {value: '19 авг - 23 авг'}, 
+              dropDate: {type: 'calendar', id: 'filter'}
+            }) 
+          .forms__item.forms__item_narrow
+            h3.forms__subtitle subscription text field
+            form.forms__form        
+              +input({type:"subscript", placeholder:"Email"})
       
-      //slider, buttons...
-      .forms__block
-        .forms__item.forms__item_narrow
-          +slider({type:"forms", title:"Range Slider"})
-        .forms__buttons
+      //dropdown first column and expandable
+      .forms__block.forms__block_narrow
+        .forms__sub-block
+          .forms__selector
+            .forms__row.forms__row_with-subtitle
+              h3.forms__subtitle dropdown 
+              .forms__subtitle.forms__subtitle_transparent default
+            +form({
+              dropDate: {
+                type:"placement", 
+                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+              }
+            })
+          .forms__selector.forms__selector_expanded.js-forms__selector_expanded
+            .forms__row.forms__row_with-subtitle
+              h3.forms__subtitle dropdown 
+              .forms__subtitle.forms__subtitle_transparent expanded
+            +form({
+              dropDate: {
+                type:"placement", 
+                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+              }
+            })
+        .forms__sub-block
+          .forms__expandable_with-gap 
+            +expandable-list({title: 'expandable-list'})
+          .forms__expandable_expanded.js-forms__expandable_expanded 
+            +expandable-list({title: 'expandable-list'})
+      
+      //features
+      .forms__features
+        +feature("Комфорт", "Шумопоглощающие стены")
+        .forms__divider
+        +feature("Удобство", "Окно в каждой из спален")
+        .forms__divider
+
+      
+    .forms__second-col
+      .forms__first-row
+        //checkbox, radio...
+        .forms__block
           .forms__item
-            h3.forms__subtitle buttons 
+            h3.forms__subtitle Checkbox Buttons
+            +checkbox-list([
+              {id:"smoke", text:"Можно курить"},
+              {id:"pet", text:"Можно с питомцами", checked:true},
+              {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}])
+          .forms__radio
+            h3.forms__subtitle radio buttons
+            .forms__row   
+              +radio({text: "Мужчина", checked: true})
+              +radio({text: "Женщина"})
+          .forms__toggle      
+            h3.forms__subtitle toggle
+            .forms__toggle-items
+              +toggle({text: "Получать спецпредложения", isCheck: true})
+              +toggle({text: "Получать спецпредложения"})
+          .forms__like
+            h3.forms__subtitle like button 
+            .forms__row
+              +like({"count": "2",  "isCheck": false, "name": "like-1"})
+              +like({"count": "12", "isCheck": true, "name": "like-2"})
+          .forms__rate
+            h3.forms__subtitle rate button
+            .forms__row.forms__row_for-rate 
+              +rate({starsCount: 4})
+              +rate({starsCount: 5}) 
+        
+        //slider, buttons...
+        .forms__block
+          .forms__item.forms__item_narrow
+            +slider({type:"forms", title:"Range Slider"})
+          .forms__buttons
+            .forms__item
+              h3.forms__subtitle buttons 
+              .forms__row
+                .forms__button 
+                  +button({theme: 'blue', text: 'click me'})
+                .forms__button.forms__button_hovered
+                  +button({theme: 'blue', text: 'click me'})
             .forms__row
               .forms__button 
-                +button({theme: 'blue', text: 'click me'})
+                +button({theme: 'white', text: 'click me'})
               .forms__button.forms__button_hovered
-                +button({theme: 'blue', text: 'click me'})
-          .forms__row
-            .forms__button 
-              +button({theme: 'white', text: 'click me'})
-            .forms__button.forms__button_hovered
-              +button({theme: 'white', text: 'click me'})
-          .forms__row
-            .forms__button.forms__button_simple 
-              +button({theme: 'simple', text: 'click me'})
-            .forms__button.forms__button_hovered.forms__button_simple
-              +button({theme: 'simple', text: 'click me'})
-          .forms__button.forms__button_with-arrow
-            +button({theme: 'with-arrow', text: 'перейти к оплате', icon: true})
-        .forms__item 
-          h3.forms__subtitle pagination
-          .forms__pagination 
-            +pagination({id: "forms"})
-    
-    .forms__second-row
-      //dropdown second column and rich checkbox
-      .forms__block.forms__block_with-large-gap
-        .forms__selector.forms__selector_expanded.js-forms__selector_expanded
-          h3.forms__subtitle dropdown 
-          +form({
-            dropDate: {
-              type:"guests", 
-              hasButton: true,
-              items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-            }
-          })
-        .forms__checkbox
-          h3.forms__subtitle Rich Checkbox Buttons
-          +checkbox-list([
-            {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}])   
+                +button({theme: 'white', text: 'click me'})
+            .forms__row
+              .forms__button.forms__button_simple 
+                +button({theme: 'simple', text: 'click me'})
+              .forms__button.forms__button_hovered.forms__button_simple
+                +button({theme: 'simple', text: 'click me'})
+            .forms__button.forms__button_with-arrow
+              +button({theme: 'with-arrow', text: 'перейти к оплате', icon: true})
+          .forms__item 
+            h3.forms__subtitle pagination
+            .forms__pagination 
+              +pagination({id: "forms"})
       
-      //dropdown third column and bullet list
-      .forms__block.forms__block_with-large-gap
-        .forms__selector.forms__selector_expanded.js-forms__selector_expanded
-          h3.forms__subtitle dropdown 
-          +form({
-            dropDate: {
-              type:"guests", 
-              hasButton: true,
-              items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
-            }
-          }) 
-        form.forms__bullet
-          h3.forms__subtitle bullet list 
-          +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, \n а выезд до 12:00"])
-    
-    .forms__review
-      -const data = require("@c/review/review.json")
-      +review([data[0]])
+      .forms__second-row
+        //dropdown second column and rich checkbox
+        .forms__block.forms__block_with-large-gap
+          .forms__selector.forms__selector_expanded.js-forms__selector_expanded
+            h3.forms__subtitle dropdown 
+            +form({
+              dropDate: {
+                type:"guests", 
+                hasButton: true,
+                items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
+              }
+            })
+          .forms__checkbox
+            h3.forms__subtitle Rich Checkbox Buttons
+            +checkbox-list([
+              {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}])   
+        
+        //dropdown third column and bullet list
+        .forms__block.forms__block_with-large-gap
+          .forms__selector.forms__selector_expanded.js-forms__selector_expanded
+            h3.forms__subtitle dropdown 
+            +form({
+              dropDate: {
+                type:"guests", 
+                hasButton: true,
+                items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
+              }
+            }) 
+          form.forms__bullet
+            h3.forms__subtitle bullet list 
+            +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, \n а выезд до 12:00"])
+      
+      .forms__review
+        -const data = require("@c/review/review.json")
+        +review([data[0]])

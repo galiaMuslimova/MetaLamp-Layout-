@@ -1,11 +1,11 @@
 class Counter {
   constructor(element) {
     this.element = element;
-    this.$numBtn = $(this.element).find('.js-counter__num');
-    this.numBtnValue = Number(this.$numBtn.text());
-    this.$minusBtn = $(this.element).find('.js-counter__btn_with-minus');
-    this.$plusBtn = $(this.element).find('.js-counter__btn_with-plus');
-    this.isDisable = this.$minusBtn.hasClass('counter__btn_disabled');
+    this.$numButton = $(this.element).find('.js-counter__number');
+    this.numButtonValue = Number(this.$numButton.text());
+    this.$minusButton = $(this.element).find('.js-counter__button_with-minus');
+    this.$plusButton = $(this.element).find('.js-counter__button_with-plus');
+    this.isDisable = this.$minusButton.hasClass('counter__button_disabled');
   }
 
   init() {
@@ -14,37 +14,37 @@ class Counter {
   }
 
   bindEventListeners() {
-    this.$minusBtn.on('click', this.handleMinusBtnClick.bind(this));
-    this.$plusBtn.on('click', this.handlePlusBtnClick.bind(this));
+    this.$minusButton.on('click', this.handleMinusButtonClick.bind(this));
+    this.$plusButton.on('click', this.handlePlusButtonClick.bind(this));
   }
 
-  handleMinusBtnClick() {
-    if (this.numBtnValue > 0) {
-      this.numBtnValue -= 1;
-      this.$numBtn.html(this.numBtnValue);
+  handleMinusButtonClick() {
+    if (this.numButtonValue > 0) {
+      this.numButtonValue -= 1;
+      this.$numButton.html(this.numButtonValue);
     }
     this.toggleDisable();
   }
 
-  handlePlusBtnClick() {
-    this.numBtnValue += 1;
-    this.$numBtn.html(this.numBtnValue);
+  handlePlusButtonClick() {
+    this.numButtonValue += 1;
+    this.$numButton.html(this.numButtonValue);
     this.toggleDisable();
   }
 
   toggleDisable() {
-    if (this.numBtnValue < 1 && !this.isDisable) {
-      this.$minusBtn.addClass('counter__btn_disabled');
+    if (this.numButtonValue < 1 && !this.isDisable) {
+      this.$minusButton.addClass('counter__button_disabled');
       this.isDisable = !this.isDisable;
-    } else if (this.numBtnValue > 0 && this.isDisable) {
-      this.$minusBtn.removeClass('counter__btn_disabled');
+    } else if (this.numButtonValue > 0 && this.isDisable) {
+      this.$minusButton.removeClass('counter__button_disabled');
       this.isDisable = !this.isDisable;
     }
   }
 
   resetForm() {
-    this.numBtnValue = 0;
-    this.$numBtn.text(0);
+    this.numButtonValue = 0;
+    this.$numButton.text(0);
     this.toggleDisable();
   }
 }

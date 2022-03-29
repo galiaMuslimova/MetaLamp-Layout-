@@ -1,7 +1,3 @@
-include ../../components/header/header.pug
-include ../../components/links/links.pug
-include ../../components/rights/rights.pug
-
 doctype html 
 html
   head
@@ -16,22 +12,5 @@ html
     meta(name="msapplication-TileColor" content="#da532c")
     meta(name="theme-color" content="#ffffff")
   body
-    .base 
-      //-background-image of page      
-      .base__back 
-        block back      
-      header.base__header 
-        .base__container       
-          +header()
-      .base__view
-        block view
-      main.base__main
-        .base__container  
-          block content     
-      footer.base__footer
-        .base__links
-          .base__container 
-            +links()
-        .base__rights
-          .base__container 
-            +rights()
+    .ui-kit-base    
+      block content     

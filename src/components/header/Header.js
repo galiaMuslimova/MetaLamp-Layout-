@@ -1,14 +1,14 @@
 class Header {
   constructor(element) {
     this.element = element;
-    this.$logInBtn = this.element.find('.js-header__log-in-btn');
-    this.$signInBtn = this.element.find('.js-header__sign-in-btn');
+    this.$logInButton = this.element.find('.js-header__log-in-button');
+    this.$signInButton = this.element.find('.js-header__sign-in-button');
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$logInBtn.on('click', Header.handleHeaderAddLinkAttr.bind(this, 'log-in'));
-    this.$signInBtn.on('click', Header.handleHeaderAddLinkAttr.bind(this, 'sign-in'));
+    this.$logInButton.on('click', Header.handleHeaderAddLinkAttr.bind(this, 'log-in'));
+    this.$signInButton.on('click', Header.handleHeaderAddLinkAttr.bind(this, 'sign-in'));
   }
 
   static handleHeaderAddLinkAttr(name) {

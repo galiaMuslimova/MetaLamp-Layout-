@@ -15,9 +15,9 @@ mixin header(isRegistered=false)
         .header__divider 
         .header__name Юлий Цезарь                  
       else  
-        .header__sign-in-btn.js-header__sign-in-btn
+        .header__sign-in-button.js-header__sign-in-button
           +button({theme: 'white', text: 'войти'})   
-        .header__log-in-btn.js-header__log-in-btn
+        .header__log-in-button.js-header__log-in-button
           +button({theme: 'blue', text: 'зарегистрироваться'})
     .header__burger
       +burger()

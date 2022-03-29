@@ -4,14 +4,14 @@ class Input {
     this.$form = this.element.closest('.js-form');
     this.$inputField = this.$form.find('.js-input__field');
     this.$drop = this.$form.find('.js-drop');
-    this.$inputBtn = this.element.find('.js-input__btn');
+    this.$inputButton = this.element.find('.js-input__button');
     this.isInputDate = this.$inputField.hasClass('js-input__field_for-date');
     this.value = this.$inputField.val();
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$inputBtn.on('click', this.handleDropOpen.bind(this));
+    this.$inputButton.on('click', this.handleDropOpen.bind(this));
     if (this.element.hasClass('js-input_for-empty')) {
       this.element.on('click', this.handleDropOpen.bind(this));
     }
