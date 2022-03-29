@@ -1,6 +1,7 @@
 class Logo {
-  constructor(element) {
-    this.element = element;
+  constructor(root) {
+    this.root = root;
+    this.element = this.root.find('.js-logo');
     this.bindEventListeners();
   }
 

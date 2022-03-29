@@ -1,10 +1,11 @@
 import Chart from 'chart.js/auto';
 
-class MyChart {
-  constructor(element, chartData) {
-    this.element = element;
+class RoomChart {
+  constructor(root, chartData) {
+    this.$root = root;
+    this.$element = this.$root.find('.js-room-chart__content');
     this.chartData = chartData;
-    this.ctxContext = this.element[0].getContext('2d');
+    this.ctxContext = this.$element[0].getContext('2d');
     this.voices = this.chartData.voices;
     this.colors = this.createColors();
     this.data = this.createData();
@@ -58,9 +59,9 @@ class MyChart {
   }
 
   createConfig() {
-    const numberInChart = MyChart.createNumberInChart(this.voices);
-    const textInChart = MyChart.createTextInChart();
-    const legendPosition = MyChart.createLegendPosition();
+    const numberInChart = RoomChart.createNumberInChart(this.voices);
+    const textInChart = RoomChart.createTextInChart();
+    const legendPosition = RoomChart.createLegendPosition();
 
     const config = {
       type: 'doughnut',
@@ -146,17 +147,17 @@ class MyChart {
     const legendPosition = {
       id: 'position',
       beforeInit(chart) {
-        const chartElement = chart;
+        const chart$element = chart;
         const originalFit = chart.legend.fit;
-        chartElement.legend.fit = function fit() {
+        chart$element.legend.fit = function fit() {
           originalFit.bind(chart.legend)();
           this.width += 35;
         };
       },
       beforeDraw(chart) {
-        const chartElement = chart;
-        chartElement.legend.left = 142;
-        chartElement.legend.bottom = 130;
+        const chart$element = chart;
+        chart$element.legend.left = 142;
+        chart$element.legend.bottom = 130;
       },
     };
 
@@ -164,4 +165,4 @@ class MyChart {
   }
 }
 
-export default MyChart;
+export default RoomChart;

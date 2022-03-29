@@ -12,8 +12,9 @@ const options = {
 };
 
 class Slider {
-  constructor(element) {
-    this.element = element;
+  constructor(form) {
+    this.form = form;
+    this.element = this.form.find('.js-slider');
     this.$sliderPlace = this.element.find('.js-slider__anchor');
     this.$resultPlace = this.element.find('.js-slider__result');
     this.values = [];

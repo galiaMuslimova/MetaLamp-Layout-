@@ -1,6 +1,7 @@
 class Like {
-  constructor(element) {
-    this.element = element;
+  constructor(root) {
+    this.root = root;
+    this.element = this.root.find('.js-like');
     this.$likeCount = this.element.find('.js-like__count');
     this.$likeInput = this.element.find('.js-like__input');
     this.bindEventListeners();

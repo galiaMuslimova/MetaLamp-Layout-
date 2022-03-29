@@ -1,6 +1,8 @@
 class Pagination {
-  constructor(element, items, limitPerPage = 12) {
-    this.element = element;
+  constructor(root, items, limitPerPage = 12) {
+    this.$root = root;
+    this.$element = this.$root.find('.js-pagination');
+    this.$anchor = this.$element.find('.js-pagination__anchor');
     this.items = items;
     this.limitPerPage = limitPerPage;
     this.currentPage = 1;
@@ -70,7 +72,7 @@ class Pagination {
       return false;
     }
     this.items.hide().slice(start, end).show();
-    this.element.find('.pagination__item').slice(1, -1).remove();
+    this.$anchor.find('.pagination__item').slice(1, -1).remove();
 
     this.getPageList().forEach((item) => this.addPaginationItems(item));
 
@@ -83,13 +85,24 @@ class Pagination {
     $('<div>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
       .toggleClass('pagination__item_active', item === this.currentPage)
       .text(item || '...')
-      .insertBefore('.pagination__item_next');
+      .insertBefore(this.$prevButton);
   }
 
   addPaginationArrowButtons() {
     this.$prevButton = this.$prevButton.addClass('pagination__item').addClass('pagination__item_previous js-pagination__item_previous').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow_back')));
     this.$nextButton = this.$nextButton.addClass('pagination__item').addClass('pagination__item_next js-pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow')));
-    $(this.element).append(this.$prevButton, this.$nextButton);
+    $(this.$anchor).append(this.$prevButton, this.$nextButton);
+  }
+
+  createPaginationSample() {
+    this.$anchor.append(
+      $('<div>').addClass('pagination__item').addClass('pagination__item_active').text('1'),
+      $('<div>').addClass('pagination__item').text('2'),
+      $('<div>').addClass('pagination__item').text('3'),
+      $('<div>').addClass('pagination__item').addClass('pagination__item_dots').text('...'),
+      $('<div>').addClass('pagination__item').text('15'),
+      $('<div>').addClass('pagination__item pagination__item_next').append($('<span>').addClass('pagination__icon').append($('<span>').addClass('icon-arrow'))),
+    );
   }
 }
 

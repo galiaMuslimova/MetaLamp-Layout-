@@ -1,9 +1,9 @@
 class Input {
-  constructor(element) {
-    this.element = element;
-    this.$form = this.element.closest('.js-form');
-    this.$inputField = this.$form.find('.js-input__field');
-    this.$drop = this.$form.find('.js-drop');
+  constructor(root, drop) {
+    this.$root = $(root);
+    this.drop = drop;
+    this.$element = this.root.find('.js-input');
+    this.$inputField = this.$element.find('.js-input__field');
     this.$inputButton = this.element.find('.js-input__button');
     this.isInputDate = this.$inputField.hasClass('js-input__field_for-date');
     this.value = this.$inputField.val();
@@ -21,8 +21,8 @@ class Input {
   }
 
   handleDropOpen() {
-    this.$drop.toggleClass('drop_active');
-    this.element.toggleClass('input_active');
+    this.drop.toggleActiveClass();
+    this.$element.toggleClass('input_active');
   }
 
   handleInputKeyup() {

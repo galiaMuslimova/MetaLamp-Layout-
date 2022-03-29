@@ -1,8 +1,9 @@
 class ExpandableList {
-  constructor(element) {
-    this.element = element;
-    this.$expandIcon = $(this.element).find('.js-expandable-list__icon');
-    this.$checkboxList = $(this.element).find('.js-expandable-list__check-list');
+  constructor(root) {
+    this.root = root;
+    this.element = root.find('.js-expandable-list');
+    this.$expandIcon = this.element.find('.js-expandable-list__icon');
+    this.$checkboxList = this.element.find('.js-expandable-list__check-list');
     this.bindEventListeners();
   }
 

@@ -122,7 +122,7 @@ block content
               +toggle({text: "Получать спецпредложения"})
           .forms__like
             h3.forms__subtitle like button 
-            .forms__row
+            .forms__row.forms__row_for-like
               +like({"count": "2",  "isCheck": false, "name": "like-1"})
               +like({"count": "12", "isCheck": true, "name": "like-2"})
           .forms__rate
@@ -157,7 +157,7 @@ block content
               +button({theme: 'with-arrow', text: 'перейти к оплате', icon: true})
           .forms__item 
             h3.forms__subtitle pagination
-            .forms__pagination 
+            .forms__pagination.js-forms__pagination
               +pagination({id: "forms"})
       
       .forms__second-row

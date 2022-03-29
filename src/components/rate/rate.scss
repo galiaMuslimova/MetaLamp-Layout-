@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  font-size: 1.5em;
+  font-size: 1.515em;
   padding: 0px 2px;
 
   &__star {
-    -webkit-text-stroke: 0.4em transparent;
+    -webkit-text-stroke: 0.35em transparent;
     background: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
     background-clip: text;   
     color: #fff;

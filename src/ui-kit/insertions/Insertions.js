@@ -1,10 +1,18 @@
+import Header from '@c/header/Header';
+import Links from '@c/links/Links';
+
 class Insertions {
   constructor(element) {
     this.element = element;
+    this.firstHeader = new Header(this.element);
+    this.firstHeader = new Header(this.element);
+    this.firstLinks = new Links(this.element);
     this.changeStyle();
   }
 
   changeStyle() {
-    this.element.find('.js-nav__item_checked ').find('.nav__link').css('font-weight', 'bold');
+    this.firstHeader.checkLink(0);
   }
 }
+
+export default Insertions;

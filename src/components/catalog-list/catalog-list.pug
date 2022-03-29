@@ -1,8 +1,9 @@
-- const data = require('@c/catalog-list/catalog-list.json')
 include ../catalog-item/catalog-item.pug
 
 mixin catalog-list()
+  - const data = require('@c/catalog-list/catalog-list.json')
   .catalog-list.js-catalog-list
     each item in data  
-      +catalog-item(item)
+      .catalog-list__item 
+        +catalog-item(item)
     

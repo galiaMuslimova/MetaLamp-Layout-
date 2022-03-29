@@ -1,11 +1,12 @@
+import CatalogList from '@c/catalog-list/CatalogList.js';
 import Pagination from '@c/pagination/Pagination.js';
 
 class Catalog {
   constructor(element) {
-    this.element = element;
+    this.$element = element;
     this.$filterOpenButton = this.element.find('.js-catalog__button');
-    this.baseElement = this.element.find('.js-pagination__anchor_for-catalog');
-    this.paginationItems = this.element.find('.js-catalog-item');
+    this.catalogList = new CatalogList(this.$element);
+    this.$paginationItems = this.element.find('.js-catalog-item');
     this.makePagination();
     this.bindEventHandlers();
   }
@@ -13,11 +14,11 @@ class Catalog {
   makePagination() {
     let pagination;
     if (window.innerWidth < 600) {
-      pagination = new Pagination(this.baseElement, this.paginationItems, 4);
+      pagination = new Pagination(this.$element, this.$paginationItems, 4);
     } else if (window.innerWidth < 900) {
-      pagination = new Pagination(this.baseElement, this.paginationItems, 8);
+      pagination = new Pagination(this.$element, this.$paginationItems, 8);
     } else {
-      pagination = new Pagination(this.baseElement, this.paginationItems, 12);
+      pagination = new Pagination(this.$element, this.$paginationItems, 12);
     }
     pagination.init();
   }

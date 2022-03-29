@@ -1,21 +1,18 @@
 class Burger {
-  constructor(element) {
-    this.element = element;
+  constructor(root, openBurgerFunction) {
+    this.$root = root;
+    this.openBurgerFunction = openBurgerFunction;
+    this.$element = this.$root.find('.js-burger');
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.element.on('click', this.handleBurgerClick);
+    this.$element.on('click', this.handleBurgerClick);
   }
 
   handleBurgerClick() {
     $(this).toggleClass('burger_pushed');
-
-    const $topMenu = $(this).closest('.js-header').find('.js-nav');
-    $topMenu.toggleClass('nav_for-mobile');
-
-    const $reg = $(this).closest('.js-header').find('.js-header__registration');
-    $reg.toggleClass('header__registration_for-mobile');
+    this.openBurgerFunction();
   }
 }
 

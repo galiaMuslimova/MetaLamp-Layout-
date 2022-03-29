@@ -2,19 +2,21 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
 class Calendar {
-  constructor(element) {
-    this.element = element;
-    this.$form = $(this.element).closest('.js-form');
-    this.$drop = this.$form.find('.js-drop');
-    this.$inputArr = this.$form.find('.input__field');
-    this.$resetButton = this.$form.find('.js-calendar__button_for-reset');
-    this.$submitButton = this.$form.find('.js-calendar__button_for-submit');
+  constructor(place, form, drop, input) {
+    this.place = place;
+    this.anchor = `.js-calendar__dp_for-${this.place}`;
+    this.form = form;
+    this.drop = drop;
+    this.$inputArr = input.$inputField;
+    this.$resetButton = this.form.$element.find('.js-calendar__button_for-reset');
+    this.$submitButton = this.form.$element.find('.js-calendar__button_for-submit');
     this.dp = {};
+    this.init();
   }
 
   init() {
     const el = this;
-    this.dp = new AirDatepicker(this.element, {
+    this.dp = new AirDatepicker(this.anchor, {
       navTitles: {
         days: 'MMMM <i class="calendar__year">yyyy</i>',
       },
@@ -42,7 +44,7 @@ class Calendar {
   }
 
   handleSubmitButtonClick() {
-    this.$drop.removeClass('drop_active');
+    this.drop.removeActiveClass();
   }
 
   showDateInInput(res) {

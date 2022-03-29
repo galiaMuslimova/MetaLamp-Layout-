@@ -1,17 +1,13 @@
-import Calendar from '@c/calendar/Calendar.js';
+import Form from '../form/Form';
 
 class EntryCard {
-  constructor(element, anchor) {
-    this.element = element;
-    this.entryCardCalendarPlace = anchor;
+  constructor(root) {
+    this.root = root;
+    this.element = this.root.find('.js-entry-card');
     this.$entryCardButton = this.element.find('.js-entry-card__button');
-    this.makeCalendar();
+    this.dateForm = new Form({ root: this.element, type: 'calendar', place: 'entry-card' });
+    this.guestsForm = new Form({ root: this.element, type: 'selector', place: 'entry-card' });
     this.bindEventListeners();
-  }
-
-  makeCalendar() {
-    const entryCardCalendar = new Calendar(this.entryCardCalendarPlace);
-    entryCardCalendar.init();
   }
 
   bindEventListeners() {

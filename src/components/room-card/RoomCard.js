@@ -1,19 +1,17 @@
-import Calendar from '@c/calendar/Calendar.js';
+import Form from '../form/Form';
 
 class RoomCard {
-  constructor(element, anchor) {
-    this.element = element;
-    this.roomCalendarElement = anchor;
-    this.makeCalendar();
+  constructor(root) {
+    this.root = root;
+    this.element = this.root.find('.js-room-card');
+    this.dateForm = new Form({ root: this.element, type: 'calendar', place: 'room-card' });
+    this.guestsForm = new Form({ root: this.element, type: 'selector', place: 'room-card' });
+    this.initCalendar();
   }
 
-  makeCalendar() {
-    if ($(this.roomCalendarElement).length > 0) {
-      const datepickerRoom = new Calendar(this.roomCalendarElement);
-      datepickerRoom.init();
-      const roomDate = ['2019-08-19', '2019-08-23'];
-      datepickerRoom.dp.selectDate(roomDate);
-    }
+  initCalendar() {
+    const newDate = ['2019-08-19', '2019-08-23'];
+    this.dateForm.setDate(newDate);
   }
 }
 

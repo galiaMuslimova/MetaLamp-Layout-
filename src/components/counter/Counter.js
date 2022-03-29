@@ -1,6 +1,7 @@
 class Counter {
-  constructor(element) {
+  constructor(element, changeCountFunction) {
     this.element = element;
+    this.changeCountFunction = changeCountFunction;
     this.$numButton = $(this.element).find('.js-counter__number');
     this.numButtonValue = Number(this.$numButton.text());
     this.$minusButton = $(this.element).find('.js-counter__button_with-minus');
@@ -24,12 +25,14 @@ class Counter {
       this.$numButton.html(this.numButtonValue);
     }
     this.toggleDisable();
+    this.changeCountFunction();
   }
 
   handlePlusButtonClick() {
     this.numButtonValue += 1;
     this.$numButton.html(this.numButtonValue);
     this.toggleDisable();
+    this.changeCountFunction();
   }
 
   toggleDisable() {

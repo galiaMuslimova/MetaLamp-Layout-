@@ -5,7 +5,8 @@ mixin selector({items, hasButton})
     each item in items
       .selector__row
         .selector__subtitle=item.name
-        +counter(item.amount)
+        .selector__counter.js-selector__counter  
+          +counter(item.amount)
     if(hasButton==true)
       .selector__buttons
         .selector__reset-Button.js-selector__reset-button

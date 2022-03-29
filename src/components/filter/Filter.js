@@ -1,29 +1,21 @@
-import Calendar from '@c/calendar/Calendar.js';
-import Slider from '@c/slider/Slider.js';
+import Form from '../form/Form.js';
+import Slider from '../slider/Slider.js';
+import ExpandableList from '../expandableList/ExpandableList.js';
 
 class Filter {
-  constructor(element, anchor) {
+  constructor(element) {
     this.element = element;
-    this.$filterCalendarPlace = anchor;
-    this.$filterSlider = this.element.find('.js-slider_for-filter');
-    this.makeCalendar();
-    this.makeSlider();
+    this.dateForm = new Form({ root: this.element, type: 'calendar', place: 'filter' });
+    this.guestsForm = new Form({ root: this.element, type: 'selector', place: 'filter' });
+    this.slider = new Slider(this.element);
+    this.placementForm = new Form({ root: this.element, type: 'selector', place: 'filter' });
+    this.expandableList = new ExpandableList(this.element);
+    this.initCalendar();
   }
 
-  makeCalendar() {
-    if ($(this.$filterCalendarPlace).length > 0) {
-      const filterCalendar = new Calendar(this.$filterCalendarPlace);
-      filterCalendar.init();
-      const filterDate = ['2019-08-19', '2019-08-23'];
-      filterCalendar.dp.selectDate(filterDate);
-    }
-  }
-
-  makeSlider() {
-    if (this.$filterSlider.length > 0) {
-      const slider = new Slider(this.$filterSlider);
-      slider.init();
-    }
+  initCalendar() {
+    const filterDate = ['2019-08-19', '2019-08-23'];
+    this.dateForm.setDate(filterDate);
   }
 }
 

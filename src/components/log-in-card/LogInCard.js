@@ -1,22 +1,20 @@
-import Calendar from '@c/calendar/Calendar.js';
+import Form from '../form/Form';
 
 class LogInCard {
-  constructor(element, anchor) {
-    this.element = element;
-    this.logInCardCalendarPlace = anchor;
-    this.makeCalendar();
+  constructor(root) {
+    this.root = root;
+    this.element = this.root.find('.js-log-in-card');
+    this.dateForm = new Form({ root: this.element, type: 'calendar', place: 'log-in-card' });
+    this.initCalendar();
   }
 
-  makeCalendar() {
-    if ($(this.logInCardCalendarPlace).length > 0) {
-      const logInCardCalendar = new Calendar(this.logInCardCalendarPlace);
-      logInCardCalendar.init();
-      logInCardCalendar.dp.update({
-        multipleDates: false,
-        range: false,
-        dynamicRange: false,
-      });
-    }
+  initCalendar() {
+    const options = {
+      multipleDates: false,
+      range: false,
+      dynamicRange: false,
+    };
+    this.dateForm.updateCalendar(options);
   }
 }
 

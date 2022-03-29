@@ -1,16 +1,15 @@
 import Counter from '../counter/Counter.js';
 
 class Selector {
-  constructor(element) {
-    this.element = element;
-    this.$selectForm = this.element.closest('.js-form');
-    this.$input = this.$selectForm.find('.js-input__field');
-    this.$drop = this.$selectForm.find('.js-drop');
-    this.$buttons = this.element.find('.js-counter__button');
-    this.$resetButton = this.$selectForm.find('.js-selector__reset-button');
-    this.$submitButton = this.$selectForm.find('.js-selector__submit-button');
+  constructor(form, drop, input) {
+    this.form = form;
+    this.drop = drop;
+    this.$element = this.form.$element.find('.js-selector');
+    this.$input = input.$inputField;
+    this.$resetButton = this.$element.find('.js-selector__reset-button');
+    this.$submitButton = this.$element.find('.js-selector__submit-button');
     this.counters = this.makeCounters();
-    this.valuesArray = this.takeNumsArray();
+    this.valuesArray = this.takeNumbersArray();
     this.init();
   }
 
@@ -27,9 +26,9 @@ class Selector {
 
   makeCounters() {
     const counters = [];
-    const $counters = $(this.element).find('.counter');
+    const $counters = this.$element.find('.js-selector__counter');
     $counters.each(function () {
-      const counter = new Counter($(this));
+      const counter = new Counter($(this), this.changeCount);
       counter.init();
       counters.push(counter);
     });
@@ -37,7 +36,7 @@ class Selector {
   }
 
   changeCount() {
-    this.valuesArray = this.takeNumsArray();
+    this.valuesArray = this.takeNumbersArray();
     this.changeInputText();
     const result = this.valuesArray.reduce((sum, elem) => sum + elem, 0);
     const isResetButtonActive = this.$resetButton.hasClass('selector__reset-button_active');
@@ -52,26 +51,26 @@ class Selector {
     this.counters.forEach((counter) => {
       counter.resetForm();
     });
-    this.valuesArray = this.takeNumsArray();
+    this.valuesArray = this.takeNumbersArray();
     this.changeInputText();
   }
 
   handleDropClassActiveRemove() {
-    this.$drop.removeClass('drop_active');
+    this.drop.removeActiveClass();
   }
 
   changeInputText() {
     let str;
-    if (this.$drop.hasClass('drop_for-guests')) {
+    if (this.drop.hasGuestsClass()) {
       str = this.createGuestsText();
     }
-    if (this.$drop.hasClass('drop_for-placement')) {
+    if (this.drop.hasPlacementClass()) {
       str = this.createPlacementText();
     }
     this.$input.val(str);
   }
 
-  takeNumsArray() {
+  takeNumbersArray() {
     return this.counters.map((counter) => counter.numButtonValue);
   }
 

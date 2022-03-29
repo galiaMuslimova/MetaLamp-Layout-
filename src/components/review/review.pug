@@ -2,7 +2,7 @@ include ../like/like.pug
 
 mixin review(data)
   each val in data
-    .review
+    .review.js-review
       .review__col
         .review__photo
           img.review__image(src= require("@a/images/review-images/" + val.image) alt='person photo')

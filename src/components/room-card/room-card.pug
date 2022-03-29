@@ -1,9 +1,9 @@
-- const roomData = require('@c/room-card/room-card.json')
 include ../form/form.pug
 include ../double-date/double-date.pug
 include ../calculation/calculation.pug
 
 mixin room-card()
+  - const roomData = require('@c/room-card/room-card.json')
   form.room-card.js-room-card
     -const date = roomData.date
     -const diff = Math.abs(+new Date(date[1]) - +new Date(date[0]));
