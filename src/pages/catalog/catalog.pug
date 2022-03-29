@@ -1,5 +1,7 @@
 extends ../base/base.pug
+include ../../components/filter/filter.pug
 include ../../components/icon-open/icon-open.pug
+include ../../components/catalog-list/catalog-list.pug
 include ../../components/pagination/pagination.pug
 
 block title 
@@ -8,13 +10,13 @@ block title
 block content
   .catalog.js-catalog
     .catalog__filter.js-catalog__filter
-      include ../../components/filter/filter.pug
+      +filter()
     .catalog__button.js-catalog__button
       +icon-open()
     .catalog__list
       h1.catalog__title Номера, которые мы для вас подобрали
       .catalog__content
-        include ../../components/catalog-list/catalog-list.pug
+        +catalog-list()
       .catalog__pagination
         +pagination({id: "catalog"})
         

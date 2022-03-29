@@ -1,0 +1,14 @@
+extends ../base/base.pug
+include ../../components/log-in-card/log-in-card.pug
+
+block title 
+  title Hotel Log In 
+
+block content  
+  .log-in
+    .log-in__content
+      +log-in-card()
+
+block back
+  .log-in__back
+    img.log-in__image(src=require("@a/images/background-images/log-in.jpg"), alt="background room image")

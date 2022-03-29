@@ -2,29 +2,30 @@ include ../double-date/double-date.pug
 include ../form/form.pug
 include ../button/button.pug
 
-form.entry-card.js-entry-card
-  .entry-card__inner
-    .entry-card__item
-      h1.entry-card__title Найдём номера под ваши пожелания
-    .entry-card__item      
-      +form({
-        dropDate: {
-          type: 'calendar', 
-          id: 'entry-card', 
-          hasButton: true
-          }
-      })
-    .entry-card__item
-      h3.entry-card__subtitle гости 
-      +form({ 
-        inputDate: {
-          placeholder: "Сколько гостей"
-        },
-        dropDate: {
-          type: "guests", 
-          hasButton: true,
-          items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-          }
+mixin entry-card()
+  form.entry-card.js-entry-card
+    .entry-card__inner
+      .entry-card__item
+        h1.entry-card__title Найдём номера под ваши пожелания
+      .entry-card__item      
+        +form({
+          dropDate: {
+            type: 'calendar', 
+            id: 'entry-card', 
+            hasButton: true
+            }
         })
-    .entry-card__button.js-entry-card__button
-      +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true})
+      .entry-card__item
+        h3.entry-card__subtitle гости 
+        +form({ 
+          inputDate: {
+            placeholder: "Сколько гостей"
+          },
+          dropDate: {
+            type: "guests", 
+            hasButton: true,
+            items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
+            }
+          })
+      .entry-card__button.js-entry-card__button
+        +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true})

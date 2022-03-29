@@ -1,12 +1,12 @@
-.login-card {
+.sign-in-card {
   max-width: 380px;
   width: 100%;
-  max-height: 646px;
+  max-height: 358px;
   height: 100%;
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  border-radius: 4px;  
   background: #FFFFFF;
 
   @media (max-width: 420px) {
@@ -14,10 +14,7 @@
   }
 
   &__inner {
-    padding: 39px 29px 29px 29px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    padding: 40px 30px 30px 30px;
 
     @media (max-width: 420px) {
       padding: 15px;
@@ -25,9 +22,11 @@
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin-bottom: 21px;
+
+    &:last-child {
+      margin-top: 30px;
+    }
   }
 
   &__title {
@@ -38,24 +37,11 @@
     color: rgba(31, 32, 65, 1);
   }
 
-  &__subtitle {
-    margin: 0px 0px 5px 0px;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: rgba(31, 32, 65, 1);
-  }
-
-  &__radio {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  &__input {
+    margin-bottom: 8px;
   }
 
   &__link-button {
-    margin-top: 5px;
-    margin-bottom: 10px;
     height: 44px;
   }
 

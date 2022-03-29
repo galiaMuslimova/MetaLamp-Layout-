@@ -1,4 +1,6 @@
 include ../../components/header/header.pug
+include ../../components/links/links.pug
+include ../../components/rights/rights.pug
 
 .insertions.js-insertions  
   header.insertions__header
@@ -10,9 +12,9 @@ include ../../components/header/header.pug
   footer.insertions__footer
     .insertions__links 
       .insertions__container 
-        include ../../components/links/links.pug
+        +links()
     .insertions__rights 
       .insertions__container
-        include ../../components/rights/rights.pug
+        +rights()
   .insertions__rights.insertions__rights_for-mobile
-    include ../../components/rights/rights.pug
+    +rights()

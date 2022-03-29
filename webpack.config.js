@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const pages = ['main', 'room', 'login', 'signin', 'catalog', 'empty'];
+const pages = ['main', 'room', 'log-in', 'sign-in', 'catalog', 'empty'];
 const htmlPlugins = pages.map((fileName) => new HTMLWebpackPlugin({
   template: `pages/${fileName}/${fileName}.pug`,
   filename: `pages/${fileName}.html`,

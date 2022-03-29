@@ -8,8 +8,8 @@
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     "start": "webpack-dev-server --mode development --open",
-    "elint": "eslint src",
-    "elint-fix": "eslint --fix src"
+    "eslint": "eslint src",
+    "eslint-fix": "eslint --fix src"
   },
   "repository": {
     "type": "git",

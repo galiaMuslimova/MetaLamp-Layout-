@@ -1,5 +1,6 @@
 extends ../base/base.pug
 include ../../components/input/input.pug
+include ../../components/entry-card/entry-card.pug
 
 block title 
   title Hotel search
@@ -7,7 +8,7 @@ block title
 block content     
   .main
     .main__card
-      include ../../components/entry-card/entry-card.pug
+      +entry-card()
     .main__note
       p.main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 

@@ -1,4 +1,6 @@
 include ../../components/header/header.pug
+include ../../components/links/links.pug
+include ../../components/rights/rights.pug
 
 //-<!DOCTYPE html>
 doctype html 
@@ -30,7 +32,7 @@ html
       footer.body__footer
         .body__links
           .body__container 
-            include ../../components/links/links.pug
+            +links()
         .body__rights
           .body__container 
-            include ../../components/rights/rights.pug
+            +rights()

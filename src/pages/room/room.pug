@@ -4,6 +4,7 @@ include ../../components/chart/chart.pug
 include ../../components/review/review.pug
 include ../../components/like/like.pug
 include ../../components/bullet/bullet.pug
+include ../../components/room-card/room-card.pug
 
 block title 
   title Hotel Room
@@ -35,7 +36,7 @@ block content
         h2.room__subtitle Отмена 
         p.room__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.                
       .room__card
-        include ../../components/room-card/room-card.pug
+        +room-card()
 
 block view 
   -const selectedRoom = require("@/pages/room/room.json")

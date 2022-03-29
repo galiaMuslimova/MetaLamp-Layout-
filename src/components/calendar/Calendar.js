@@ -51,7 +51,7 @@ class Calendar {
       const date2 = this.dp.formatDate(res.date[1], 'dd MMM');
       const str = `${date1} - ${date2}`;
       $(this.$inputArr[0]).val(str.toLowerCase());
-    } else if (this.element === '.js-calendar__dp_for-login-card') {
+    } else if (this.element === '.js-calendar__dp_for-log-in-card') {
       $(this.$inputArr[0]).val(res.formattedDate);
     } else {
       $(this.$inputArr[0]).val(res.formattedDate[0]);

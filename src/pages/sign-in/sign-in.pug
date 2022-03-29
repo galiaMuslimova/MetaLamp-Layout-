@@ -1,0 +1,14 @@
+extends ../base/base.pug
+include ../../components/sign-in-card/sign-in-card.pug
+
+block title 
+  title Hotel Sign In
+
+block content  
+  .sign-in
+    .sign-in__content
+      +sign-in-card()
+
+block back
+  .sign-in__back
+    img.sign-in__image(src=require("@a/images/background-images/log-in.jpg"), alt="background room image")
