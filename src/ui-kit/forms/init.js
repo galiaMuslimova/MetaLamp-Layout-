@@ -1,3 +1,4 @@
 import Forms from './Forms.js';
 
-const forms = new Forms($('.js-forms'));
+const formsElement = $('.js-forms');
+const forms = new Forms(formsElement);

@@ -1,3 +1,4 @@
 import Base from './Base';
 
-const base = new Base('.js-base');
+const baseElement = $('.js-base');
+const base = new Base(baseElement);

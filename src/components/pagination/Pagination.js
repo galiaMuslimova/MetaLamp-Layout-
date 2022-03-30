@@ -1,12 +1,12 @@
 class Pagination {
-  constructor(root, items, limitPerPage = 12) {
-    this.$root = root;
+  constructor($root, $items, limitPerPage = 12) {
+    this.$root = $root;
     this.$element = this.$root.find('.js-pagination');
     this.$anchor = this.$element.find('.js-pagination__anchor');
-    this.items = items;
+    this.$items = $items;
     this.limitPerPage = limitPerPage;
     this.currentPage = 1;
-    this.numberOfItems = this.items.length;
+    this.numberOfItems = this.$items.length;
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
     this.$prevButton = $('<div>');
     this.$nextButton = $('<div>');
@@ -54,11 +54,11 @@ class Pagination {
     if (this.currentPage <= 3) {
       start = [1, 2, 3];
     } else if (this.currentPage >= this.totalPages - 1) {
-      end = this.constructor.createRange(this.totalPages - 2, this.totalPages);
+      end = Pagination.createRange(this.totalPages - 2, this.totalPages);
     } else if (this.currentPage >= this.totalPages - 2) {
-      end = this.constructor.createRange(this.totalPages - 3, this.totalPages);
+      end = Pagination.createRange(this.totalPages - 3, this.totalPages);
     } else {
-      const intro = this.constructor.createRange(this.currentPage - 1, this.currentPage + 1);
+      const intro = Pagination.createRange(this.currentPage - 1, this.currentPage + 1);
       middle = [0].concat(intro, 0);
     }
     return start.concat(middle, end);
@@ -71,7 +71,8 @@ class Pagination {
     if (this.currentPage < 1 || this.currentPage > this.totalPages) {
       return false;
     }
-    this.items.hide().slice(start, end).show();
+
+    this.$items.hide().slice(start, end).show();
     this.$anchor.find('.pagination__item').slice(1, -1).remove();
 
     this.getPageList().forEach((item) => this.addPaginationItems(item));
@@ -85,7 +86,7 @@ class Pagination {
     $('<div>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
       .toggleClass('pagination__item_active', item === this.currentPage)
       .text(item || '...')
-      .insertBefore(this.$prevButton);
+      .insertBefore(this.$nextButton);
   }
 
   addPaginationArrowButtons() {

@@ -1,17 +1,15 @@
 import CatalogItem from '@c/catalog-item/CatalogItem';
 
 class CatalogList {
-  constructor(root) {
-    this.$root = root;
+  constructor($root) {
+    this.$root = $root;
     this.$element = this.$root.find('.js-catalog-list');
-    this.items = [];
+    this.init();
   }
 
   init() {
-    const { $element } = this;
-    this.$element.find('.catalog-list__item').each(() => {
-      const catalogItem = new CatalogItem($element);
-      $element.items.push(catalogItem);
+    this.$element.find('.js-catalog-list__item').each(function () {
+      const catalogItem = new CatalogItem($(this));
     });
   }
 }

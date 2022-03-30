@@ -1,12 +1,14 @@
-import CatalogList from '@c/catalog-list/CatalogList.js';
-import Pagination from '@c/pagination/Pagination.js';
+import CatalogList from '@c/catalog-list/CatalogList';
+import Pagination from '@c/pagination/Pagination';
+import Filter from '@c/filter/Filter';
 
 class Catalog {
-  constructor(element) {
-    this.$element = element;
-    this.$filterOpenButton = this.element.find('.js-catalog__button');
+  constructor(catalogElement) {
+    this.$element = catalogElement;
+    this.$filterOpenButton = this.$element.find('.js-catalog__button');
+    this.filter = new Filter(this.$element);
     this.catalogList = new CatalogList(this.$element);
-    this.$paginationItems = this.element.find('.js-catalog-item');
+    this.$paginationItems = this.$element.find('.js-catalog-item');
     this.makePagination();
     this.bindEventHandlers();
   }

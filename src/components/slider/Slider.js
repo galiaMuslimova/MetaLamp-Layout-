@@ -12,13 +12,14 @@ const options = {
 };
 
 class Slider {
-  constructor(form) {
-    this.form = form;
-    this.element = this.form.find('.js-slider');
-    this.$sliderPlace = this.element.find('.js-slider__anchor');
-    this.$resultPlace = this.element.find('.js-slider__result');
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-slider');
+    this.$sliderPlace = this.$element.find('.js-slider__anchor');
+    this.$resultPlace = this.$element.find('.js-slider__result');
     this.values = [];
     this.slider = noUiSlider.create(this.$sliderPlace[0], options);
+    this.init();
   }
 
   init() {

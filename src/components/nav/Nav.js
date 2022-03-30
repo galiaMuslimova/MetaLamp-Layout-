@@ -1,8 +1,8 @@
 class Nav {
-  constructor(root) {
-    this.root = root;
-    this.element = this.root.find('.js-nav');
-    this.$navIcon = this.element.find('.js-nav__icon');
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-nav');
+    this.$navIcon = this.$element.find('.js-nav__icon');
     this.bindEventHandlers();
   }
 
@@ -17,18 +17,21 @@ class Nav {
   }
 
   toggleMobileClass() {
-    this.element.toggleClass('nav_for-mobile');
+    this.$element.toggleClass('nav_for-mobile');
   }
 
   static handleNavSubmenuClose(event) {
     const $navItemArr = $('.js-nav__item_with-submenu');
+    const $subMenu = $(event.target).closest('.js-nav__item_with-submenu');
     $navItemArr.each(function () {
-      $(this).find('.js-nav__submenu').removeClass('nav__submenu_opened');
+      if ($subMenu[0] !== $(this)[0]) {
+        $(this).find('.js-nav__submenu').removeClass('nav__submenu_opened');
+      }
     });
   }
 
   checkLink(index) {
-    this.element.find('.nav__link')[index].addClass('nav__link_checked');
+    this.$element.find('.nav__link')[index].addClass('nav__link_checked');
   }
 }
 

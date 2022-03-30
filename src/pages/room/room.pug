@@ -1,6 +1,6 @@
 extends ../base/base.pug
 include ../../components/feature/feature.pug
-include ../../components/chart/chart.pug
+include ../../components/room-chart/room-chart.pug
 include ../../components/review/review.pug
 include ../../components/like/like.pug
 include ../../components/bullet/bullet.pug
@@ -21,7 +21,7 @@ block content
         +feature('Уют', 'Номер оснащён камином')
       .room__chart
         h2.room__subtitle Впечатления от номера              
-        +chart(selectedRoom.review)
+        +room-chart(selectedRoom.review)
       .room__review 
         .room__row
           h2.room__subtitle Отзывы посетителей номера

@@ -4,6 +4,6 @@ mixin catalog-list()
   - const data = require('@c/catalog-list/catalog-list.json')
   .catalog-list.js-catalog-list
     each item in data  
-      .catalog-list__item 
+      .catalog-list__item.js-catalog-list__item 
         +catalog-item(item)
     

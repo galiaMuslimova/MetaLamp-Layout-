@@ -1,14 +1,14 @@
 class Like {
-  constructor(root) {
-    this.root = root;
-    this.element = this.root.find('.js-like');
-    this.$likeCount = this.element.find('.js-like__count');
-    this.$likeInput = this.element.find('.js-like__input');
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-like');
+    this.$likeCount = this.$element.find('.js-like__count');
+    this.$likeInput = this.$element.find('.js-like__input');
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.element.on('click', this.handleLikeChange.bind(this));
+    this.$element.on('click', this.handleLikeChange.bind(this));
   }
 
   handleLikeChange(event) {

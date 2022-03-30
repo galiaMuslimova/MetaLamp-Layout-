@@ -1,3 +1,4 @@
 import Insertions from './Insertions.js';
 
-const insertions = new Insertions($('.js-insertions'));
+const insertionsElement = $('.js-insertions');
+const insertions = new Insertions(insertionsElement);

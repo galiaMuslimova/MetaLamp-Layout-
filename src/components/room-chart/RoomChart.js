@@ -1,8 +1,8 @@
 import Chart from 'chart.js/auto';
 
 class RoomChart {
-  constructor(root, chartData) {
-    this.$root = root;
+  constructor($root, chartData) {
+    this.$root = $root;
     this.$element = this.$root.find('.js-room-chart__content');
     this.chartData = chartData;
     this.ctxContext = this.$element[0].getContext('2d');

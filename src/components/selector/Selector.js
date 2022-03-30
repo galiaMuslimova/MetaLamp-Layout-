@@ -19,16 +19,16 @@ class Selector {
   }
 
   bindEventListeners() {
-    this.$buttons.on('click', this.changeCount.bind(this));
     this.$resetButton.on('click', this.resetForm.bind(this));
     this.$submitButton.on('click', this.handleDropClassActiveRemove.bind(this));
   }
 
   makeCounters() {
     const counters = [];
+    const element = this;
     const $counters = this.$element.find('.js-selector__counter');
     $counters.each(function () {
-      const counter = new Counter($(this), this.changeCount);
+      const counter = new Counter($(this), element.changeCount.bind(element));
       counter.init();
       counters.push(counter);
     });

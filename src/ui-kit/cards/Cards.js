@@ -4,11 +4,11 @@ import LogInCard from '@c/log-in-card/LogInCard.js';
 import Calendar from '@c/calendar/Calendar.js';
 
 class Cards {
-  constructor(element) {
-    this.element = element;
-    this.entryCard = new EntryCard(this.element);
-    this.roomCard = new RoomCard(this.element);
-    this.logInCard = new LogInCard(this.element);
+  constructor($element) {
+    this.$element = $element;
+    this.entryCard = new EntryCard(this.$element);
+    this.roomCard = new RoomCard(this.$element);
+    this.logInCard = new LogInCard(this.$element);
     this.calendar = new Calendar('cards');
     this.initCalendar();
   }

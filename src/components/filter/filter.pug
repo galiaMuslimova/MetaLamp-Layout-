@@ -6,13 +6,13 @@ include ../expandable-list/expandable-list.pug
 mixin filter()
   .filter.js-filter
     .filter__item
-      .filter__date
+      .filter__date.js-filter__date
         h3.filter__subtitle даты пребывания в отеле
         +form({
           inputDate: {value: '19 авг - 23 авг'}, 
           dropDate: {type: 'calendar', id: 'filter'}
         }) 
-      .filter__guests
+      .filter__guests.js-filter__guests
         h3.filter__subtitle гости
         +form({
         inputDate: {value: '3 взрослых, 1 младенец'}, 
@@ -34,13 +34,15 @@ mixin filter()
         +checkbox-list([
           {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \nне менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист \nи проводит до номера."}]) 
     .filter__item 
-      h3.filter__subtitle удобства номера
-      +form({
-        inputDate: {value: '2 спальни, 2 кровати...'},
-        dropDate: {
-          type: "placement", 
-          items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
-          }
-        })
+      .filter__placement.js-filter__placement
+        h3.filter__subtitle удобства номера
+        +form({
+          inputDate: {value: '2 спальни, 2 кровати...'},
+          dropDate: {
+            type: "placement", 
+            items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+            }
+          })
     .filter__item 
-      +expandable-list({title: 'дополнительные удобства'})
+      .filter__expandable-list.js-filter__expandable-list
+        +expandable-list({title: 'дополнительные удобства'})

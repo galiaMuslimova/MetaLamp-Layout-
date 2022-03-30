@@ -1,11 +1,11 @@
 class Counter {
-  constructor(element, changeCountFunction) {
-    this.element = element;
+  constructor($element, changeCountFunction) {
+    this.$element = $element;
     this.changeCountFunction = changeCountFunction;
-    this.$numButton = $(this.element).find('.js-counter__number');
+    this.$numButton = $(this.$element).find('.js-counter__number');
     this.numButtonValue = Number(this.$numButton.text());
-    this.$minusButton = $(this.element).find('.js-counter__button_with-minus');
-    this.$plusButton = $(this.element).find('.js-counter__button_with-plus');
+    this.$minusButton = $(this.$element).find('.js-counter__button_with-minus');
+    this.$plusButton = $(this.$element).find('.js-counter__button_with-plus');
     this.isDisable = this.$minusButton.hasClass('counter__button_disabled');
   }
 

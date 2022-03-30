@@ -1,6 +1,6 @@
 class Carousel {
-  constructor(root) {
-    this.$root = root;
+  constructor($root) {
+    this.$root = $root;
     this.$element = this.$root.find('.js-carousel');
     this.$itemList = this.$element.find('.js-carousel__slide-list');
     this.$indicators = this.$element.find('.js-carousel__indicators-list');

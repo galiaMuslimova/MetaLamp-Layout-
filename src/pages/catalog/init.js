@@ -1,3 +1,4 @@
 import Catalog from './Catalog.js';
 
-const catalog = new Catalog($('.js-catalog'));
+const catalogElement = $('.js-catalog');
+const catalog = new Catalog(catalogElement);

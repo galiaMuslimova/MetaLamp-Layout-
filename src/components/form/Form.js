@@ -5,12 +5,12 @@ import Selector from '../selector/Selector';
 
 class Form {
   constructor({ root, type, place }) {
-    this.root = $(root);
+    this.$root = root;
     this.type = type;
     this.place = place;
-    this.$element = this.root.find('.js-form');
-    this.drop = new Drop(this.element);
-    this.input = new Input(this.element, this.drop);
+    this.$element = this.$root.find('.js-form');
+    this.drop = new Drop(this.$element);
+    this.input = new Input(this.$element, this.drop, this.openDropFunction);
     this.calendar = undefined;
     this.init();
   }
@@ -21,6 +21,10 @@ class Form {
     } else if (this.type === 'selector') {
       const selector = new Selector(this, this.drop, this.input);
     }
+  }
+
+  openDropFunction() {
+    this.drop.toggleActiveClass();
   }
 
   setDate(date) {

@@ -20,6 +20,7 @@
     font-size: 0.6em;
     padding: 0.5em 2em;
     caret-color: transparent;
+    cursor: pointer;
 
     &_expanded {
       transform: rotateZ(180deg);

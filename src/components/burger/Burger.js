@@ -1,6 +1,6 @@
 class Burger {
-  constructor(root, openBurgerFunction) {
-    this.$root = root;
+  constructor($root, openBurgerFunction) {
+    this.$root = $root;
     this.openBurgerFunction = openBurgerFunction;
     this.$element = this.$root.find('.js-burger');
     this.bindEventListeners();

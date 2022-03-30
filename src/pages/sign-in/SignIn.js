@@ -1,6 +1,6 @@
 class SignIn {
-  constructor(element) {
-    this.element = element;
+  constructor($element) {
+    this.$element = $element;
   }
 }
 

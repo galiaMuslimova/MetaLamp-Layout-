@@ -1,12 +1,12 @@
 class Logo {
-  constructor(root) {
-    this.root = root;
-    this.element = this.root.find('.js-logo');
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-logo');
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.element.on('click', Logo.handleLogoAddLinkAttr);
+    this.$element.on('click', Logo.handleLogoAddLinkAttr);
   }
 
   static handleLogoAddLinkAttr() {

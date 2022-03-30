@@ -1,10 +1,11 @@
 class Input {
-  constructor(root, drop) {
-    this.$root = $(root);
+  constructor($root, drop, openDropFunction) {
+    this.$root = $root;
     this.drop = drop;
-    this.$element = this.root.find('.js-input');
+    this.openDropFunction = openDropFunction;
+    this.$element = this.$root.find('.js-input');
     this.$inputField = this.$element.find('.js-input__field');
-    this.$inputButton = this.element.find('.js-input__button');
+    this.$inputButton = this.$element.find('.js-input__button');
     this.isInputDate = this.$inputField.hasClass('js-input__field_for-date');
     this.value = this.$inputField.val();
     this.bindEventListeners();
@@ -12,8 +13,8 @@ class Input {
 
   bindEventListeners() {
     this.$inputButton.on('click', this.handleDropOpen.bind(this));
-    if (this.element.hasClass('js-input_for-empty')) {
-      this.element.on('click', this.handleDropOpen.bind(this));
+    if (this.$element.hasClass('js-input_for-empty')) {
+      this.$element.on('click', this.handleDropOpen.bind(this));
     }
     if (this.isInputDate) {
       this.$inputField.on('keyup', this.handleInputKeyup.bind(this));
@@ -21,7 +22,7 @@ class Input {
   }
 
   handleDropOpen() {
-    this.drop.toggleActiveClass();
+    this.openDropFunction();
     this.$element.toggleClass('input_active');
   }
 

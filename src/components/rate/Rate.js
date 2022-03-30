@@ -1,8 +1,8 @@
 class Rate {
-  constructor(root) {
-    this.root = root;
-    this.element = this.root.find('.js-rate');
-    this.$stars = this.element.find('.js-rate__star');
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-rate');
+    this.$stars = this.$element.find('.js-rate__star');
     this.bindEventListeners();
   }
 
