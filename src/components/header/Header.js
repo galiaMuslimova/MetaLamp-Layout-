@@ -33,8 +33,8 @@ class Header {
     $(location).attr('href', `./${name}.html`);
   }
 
-  checkLink(index) {
-    this.nav.checkLink(index);
+  changeStyle(index) {
+    this.nav.changeStyle(index);
   }
 }
 

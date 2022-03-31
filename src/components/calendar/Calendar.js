@@ -7,7 +7,8 @@ class Calendar {
     this.anchor = `.js-calendar__dp_for-${this.place}`;
     this.form = form;
     this.drop = drop;
-    this.$inputArr = input.$inputField;
+    this.input = input;
+    this.$inputArr = this.input ? this.input.$inputField : undefined;
     this.$resetButton = this.form.$element.find('.js-calendar__button_for-reset');
     this.$submitButton = this.form.$element.find('.js-calendar__button_for-submit');
     this.dp = {};
@@ -57,7 +58,9 @@ class Calendar {
       $(this.$inputArr[0]).val(str.toLowerCase());
     } else if (this.anchor === '.js-calendar__dp_for-log-in-card') {
       $(this.$inputArr[0]).val(res.formattedDate);
-    } else {
+    } else if (
+      this.anchor === '.js-calendar__dp_for-entry-card'
+      || this.anchor === '.js-calendar__dp_for-room-card') {
       $(this.$inputArr[0]).val(res.formattedDate[0]);
       $(this.$inputArr[1]).val(res.formattedDate[1]);
     }

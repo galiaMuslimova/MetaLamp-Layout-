@@ -21,6 +21,9 @@ class Form {
   }
 
   init() {
+    if (this.place === 'cards') {
+      this.input = undefined;
+    }
     if (this.type === 'calendar') {
       this.calendar = new Calendar(this.place, this, this.drop, this.input);
     } else if (this.type === 'selector') {
@@ -33,7 +36,9 @@ class Form {
   }
 
   changeDate(date) {
-    this.calendar.dp.selectDate(date);
+    const splitDate = date.split('.');
+    const newDate = new Date(Number(splitDate[2]), Number(splitDate[1] - 1), Number(splitDate[0]));
+    this.calendar.dp.selectDate(newDate);
   }
 
   setDate(date) {

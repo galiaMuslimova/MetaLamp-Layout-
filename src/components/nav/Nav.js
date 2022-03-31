@@ -30,8 +30,9 @@ class Nav {
     });
   }
 
-  checkLink(index) {
-    this.$element.find('.nav__link')[index].addClass('nav__link_checked');
+  changeStyle(index) {
+    const chosenLink = this.$element.find('.nav__link')[index];
+    $(chosenLink).addClass('nav__link_checked');
   }
 }
 

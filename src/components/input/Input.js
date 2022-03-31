@@ -3,6 +3,7 @@ class Input {
     this.$root = $root;
     this.drop = drop;
     this.openDrop = openDrop;
+    this.changeDate = changeDate;
     this.$element = this.$root.find('.js-input');
     this.$inputField = this.$element.find('.js-input__field');
     this.$inputButton = this.$element.find('.js-input__button');
@@ -23,7 +24,7 @@ class Input {
     this.$element.toggleClass('input_active');
   }
 
-  handleInputKeyup() {    
+  handleInputKeyup() {
     const oneDigitDay = '^[0-3]$';
     const TwoDigitDay = '^(0[1-9]|[12]\\d|3[01])$';
     const DayAndDot = '^(0[1-9]|[12]\\d|3[01])\\.$';
@@ -48,9 +49,8 @@ class Input {
     }
 
     if (this.value.length === 10) {
-      this.changeDate(new Date(this.value));
+      this.changeDate(this.value);
     }
-    console.log(this.value)
 
     this.$inputField.val(this.value);
   }

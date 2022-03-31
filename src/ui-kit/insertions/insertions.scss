@@ -5,7 +5,7 @@
   grid-template: 70px 70px min-content min-content;
   grid-row-gap: 40px;
 
-  &__header {
+  &__header-wrapper {
     background-color: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
@@ -18,16 +18,16 @@
     position: relative;
   }
 
-  &__footer {
+  &__footer-wrapper {
     background-color: #fff;
   }
 
-  &__links {
+  &__links-wrapper {
     border-bottom: 1px solid rgba(31, 32, 65, 0.25);
     border-top: 1px solid rgba(31, 32, 65, 0.25);
   }
 
-  &__rights {
+  &__rights-wrapper {
     &_for-mobile {
       width: 768px;
       height: 367px;

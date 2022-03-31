@@ -14,8 +14,9 @@ block content
     .cards__col
       +room-card()
       +sign-in-card()
-    .cards__col    
-      +calendar({id: 'cards', hasButton: true})
+    .cards__col 
+      .cards__date.js-cards__date   
+        +calendar({id: 'cards', hasButton: true})
       .cards__catalog-card.cards__catalog-card_focused
         +catalog-item({
           "num": 888,

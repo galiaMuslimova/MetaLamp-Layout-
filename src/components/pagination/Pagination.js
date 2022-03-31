@@ -6,13 +6,15 @@ class Pagination {
     this.$items = $items;
     this.limitPerPage = limitPerPage;
     this.currentPage = 1;
-    this.numberOfItems = this.$items.length;
-    this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
+    this.numberOfItems = undefined;
+    this.totalPages = undefined;
     this.$prevButton = $('<div>');
     this.$nextButton = $('<div>');
   }
 
   init() {
+    this.numberOfItems = this.$items.length;
+    this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
     this.addPaginationArrowButtons();
     this.showPage();
     this.bindEventListeners();
