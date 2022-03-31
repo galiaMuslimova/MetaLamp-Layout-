@@ -17,22 +17,24 @@ mixin room-card()
           .room-card__cost= roomData.cost.toLocaleString() + '₽'
           .room-card__cost-text в сутки
       .room-card__item
-        +form({
-          dropDate: {
-            type: 'calendar', 
-            id: 'room-card', 
-            hasButton: true
-          }
-        }) 
+        .room-card__date.js-room-card__date
+          +form({
+            dropDate: {
+              type: 'calendar', 
+              id: 'room-card', 
+              hasButton: true
+            }
+          }) 
       .room-card__item
         h3.room-card__subtitle гости 
-        +form({
-          dropDate: {
-            type: "guests",
-            hasButton: true,
-            items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
-          }
-        }) 
+        .room-card__guests.js-room-card__guests
+          +form({
+            dropDate: {
+              type: "guests",
+              hasButton: true,
+              items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
+            }
+          }) 
       .room-card__calculation 
         +calculation(roomData, days)        
       .room-card__item

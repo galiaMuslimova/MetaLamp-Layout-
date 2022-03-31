@@ -1,32 +1,29 @@
 class Input {
-  constructor($root, drop, openDropFunction) {
+  constructor($root, drop, openDrop, changeDate) {
     this.$root = $root;
     this.drop = drop;
-    this.openDropFunction = openDropFunction;
+    this.openDrop = openDrop;
     this.$element = this.$root.find('.js-input');
     this.$inputField = this.$element.find('.js-input__field');
     this.$inputButton = this.$element.find('.js-input__button');
-    this.isInputDate = this.$inputField.hasClass('js-input__field_for-date');
     this.value = this.$inputField.val();
     this.bindEventListeners();
   }
 
   bindEventListeners() {
     this.$inputButton.on('click', this.handleDropOpen.bind(this));
-    if (this.$element.hasClass('js-input_for-empty')) {
-      this.$element.on('click', this.handleDropOpen.bind(this));
-    }
-    if (this.isInputDate) {
+    if (this.$element.hasClass('js-input_for-simple-date')) {
+      this.$inputField.on('click', this.handleDropOpen.bind(this));
       this.$inputField.on('keyup', this.handleInputKeyup.bind(this));
     }
   }
 
   handleDropOpen() {
-    this.openDropFunction();
+    this.openDrop();
     this.$element.toggleClass('input_active');
   }
 
-  handleInputKeyup() {
+  handleInputKeyup() {    
     const oneDigitDay = '^[0-3]$';
     const TwoDigitDay = '^(0[1-9]|[12]\\d|3[01])$';
     const DayAndDot = '^(0[1-9]|[12]\\d|3[01])\\.$';
@@ -45,6 +42,15 @@ class Input {
     if (isCorrectExp || inputValue.length === 0) {
       this.value = inputValue;
     }
+
+    if (this.value.length === 2 || this.value.length === 5) {
+      this.value = `${this.value}.`;
+    }
+
+    if (this.value.length === 10) {
+      this.changeDate(new Date(this.value));
+    }
+    console.log(this.value)
 
     this.$inputField.val(this.value);
   }

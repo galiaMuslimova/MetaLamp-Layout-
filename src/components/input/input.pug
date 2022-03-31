@@ -22,7 +22,7 @@ mixin input({type='dropdown', fontType='text', placeholder, value, focus=false})
     if(type=="simple-date")
       input.input__field.js-input__field.js-input__field_for-date(type=fontType, placeholder='ДД.ММ.ГГГГ', value=value)
 
-    if(type=="empty")
+    if(type=="empty"  || type=="name")
       input.input__field.js-input__field(type=fontType, placeholder=placeholder, autofocus=focus)
 
 

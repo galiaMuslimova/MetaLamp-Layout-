@@ -16,21 +16,23 @@ class Calendar {
 
   init() {
     const el = this;
-    this.dp = new AirDatepicker(this.anchor, {
-      navTitles: {
-        days: 'MMMM <i class="calendar__year">yyyy</i>',
-      },
-      startDate: new Date(2019, 7, 19),
-      multipleDates: true,
-      range: true,
-      dynamicRange: true,
-      prevHtml: '<div class="calendar__arrow"><span class="icon-arrow_back"></span></div>',
-      nextHtml: '<div class="calendar__arrow"><span class="icon-arrow"></span></div>',
-      onSelect(res) {
-        el.showDateInInput(res);
-      },
-    });
-    this.bindEventListeners();
+    if ($(this.anchor)[0]) {
+      this.dp = new AirDatepicker(this.anchor, {
+        navTitles: {
+          days: 'MMMM <i class="calendar__year">yyyy</i>',
+        },
+        startDate: new Date(2019, 7, 19),
+        multipleDates: true,
+        range: true,
+        dynamicRange: true,
+        prevHtml: '<div class="calendar__arrow"><span class="icon-arrow_back"></span></div>',
+        nextHtml: '<div class="calendar__arrow"><span class="icon-arrow"></span></div>',
+        onSelect(res) {
+          el.showDateInInput(res);
+        },
+      });
+      this.bindEventListeners();
+    }
   }
 
   bindEventListeners() {

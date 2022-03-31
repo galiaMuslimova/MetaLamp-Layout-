@@ -1,9 +1,17 @@
 import EntryCard from '@c/entry-card/EntryCard';
 
 class Main {
-  constructor($element) {
-    this.$element = $element;
-    this.entryCard = new EntryCard(this.$element);
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-main');
+    this.entryCard = undefined;
+    this.init();
+  }
+
+  init() {
+    if (this.$element[0]) {
+      this.entryCard = new EntryCard(this.$element);
+    }
   }
 }
 

@@ -4,7 +4,13 @@ class Review {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-review');
-    this.like = new Like(this.$element);
+    this.init();
+  }
+
+  init() {
+    this.$element.each(function () {
+      const like = new Like($(this));
+    });
   }
 }
 

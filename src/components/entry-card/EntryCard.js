@@ -5,8 +5,16 @@ class EntryCard {
     this.$root = $root;
     this.$element = this.$root.find('.js-entry-card');
     this.$entryCardButton = this.$element.find('.js-entry-card__button');
-    this.dateForm = new Form({ root: this.$element, type: 'calendar', place: 'entry-card' });
-    this.guestsForm = new Form({ root: this.$element, type: 'selector', place: 'entry-card' });
+    this.dateForm = new Form({
+      root: this.$element.find('.js-entry-card__date'),
+      type: 'calendar',
+      place: 'entry-card',
+    });
+    this.guestsForm = new Form({
+      root: this.$element.find('.js-entry-card__guests'),
+      type: 'selector',
+      place: 'entry-card',
+    });
     this.bindEventListeners();
   }
 

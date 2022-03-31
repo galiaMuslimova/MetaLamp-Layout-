@@ -18,14 +18,17 @@ class Slider {
     this.$sliderPlace = this.$element.find('.js-slider__anchor');
     this.$resultPlace = this.$element.find('.js-slider__result');
     this.values = [];
-    this.slider = noUiSlider.create(this.$sliderPlace[0], options);
+    this.slider = undefined;
     this.init();
   }
 
   init() {
-    this.values = this.slider.get();
-    this.showResult();
-    this.bindEventListeners();
+    if (this.$sliderPlace[0]) {
+      this.slider = noUiSlider.create(this.$sliderPlace[0], options);
+      this.values = this.slider.get();
+      this.showResult();
+      this.bindEventListeners();
+    }
   }
 
   bindEventListeners() {

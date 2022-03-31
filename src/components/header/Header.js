@@ -11,7 +11,7 @@ class Header {
     this.registration = this.$element.find('.js-header__registration');
     this.logo = new Logo(this.$element);
     this.nav = new Nav(this.$element);
-    this.burger = new Burger(this.$element, this.openBurgerFunction);
+    this.burger = new Burger(this.$element, this.openMenu.bind(this));
     this.bindEventListeners();
   }
 
@@ -24,7 +24,7 @@ class Header {
     this.registration.toggleClass(className);
   }
 
-  openBurgerFunction() {
+  openMenu() {
     this.nav.toggleMobileClass();
     this.toggleRegistrationClass('header__registration_for-mobile');
   }

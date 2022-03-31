@@ -10,7 +10,12 @@ class Form {
     this.place = place;
     this.$element = this.$root.find('.js-form');
     this.drop = new Drop(this.$element);
-    this.input = new Input(this.$element, this.drop, this.openDropFunction);
+    this.input = new Input(
+      this.$element,
+      this.drop,
+      this.openDrop.bind(this),
+      this.changeDate.bind(this),
+    );
     this.calendar = undefined;
     this.init();
   }
@@ -23,8 +28,12 @@ class Form {
     }
   }
 
-  openDropFunction() {
+  openDrop() {
     this.drop.toggleActiveClass();
+  }
+
+  changeDate(date) {
+    this.calendar.dp.selectDate(date);
   }
 
   setDate(date) {

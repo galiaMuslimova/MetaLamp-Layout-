@@ -1,9 +1,17 @@
 import LogInCard from '@c/log-in-card/LogInCard';
 
 class LogIn {
-  constructor($element) {
-    this.$element = $element;
-    this.logInCard = new LogInCard(this.$element);
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-log-in');
+    this.logInCard = undefined;
+    this.init();
+  }
+
+  init() {
+    if (this.$element[0]) {
+      this.logInCard = new LogInCard(this.$element);
+    }
   }
 }
 

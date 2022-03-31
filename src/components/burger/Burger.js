@@ -1,18 +1,18 @@
 class Burger {
-  constructor($root, openBurgerFunction) {
+  constructor($root, openMenu) {
     this.$root = $root;
-    this.openBurgerFunction = openBurgerFunction;
+    this.openMenu = openMenu;
     this.$element = this.$root.find('.js-burger');
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$element.on('click', this.handleBurgerClick);
+    this.$element.on('click', this.handleBurgerClick.bind(this));
   }
 
   handleBurgerClick() {
-    $(this).toggleClass('burger_pushed');
-    this.openBurgerFunction();
+    this.$element.toggleClass('burger_pushed');
+    this.openMenu();
   }
 }
 

@@ -3,14 +3,23 @@ import Pagination from '@c/pagination/Pagination';
 import Filter from '@c/filter/Filter';
 
 class Catalog {
-  constructor(catalogElement) {
-    this.$element = catalogElement;
+  constructor($root) {
+    this.$root = $root;
+    this.$element = this.$root.find('.js-catalog');
     this.$filterOpenButton = this.$element.find('.js-catalog__button');
-    this.filter = new Filter(this.$element);
-    this.catalogList = new CatalogList(this.$element);
     this.$paginationItems = this.$element.find('.js-catalog-item');
-    this.makePagination();
+    this.filter = undefined;
+    this.catalogList = undefined;
     this.bindEventHandlers();
+    this.init();
+  }
+
+  init() {
+    if (this.$element[0]) {
+      this.filter = new Filter(this.$element);
+      this.catalogList = new CatalogList(this.$element);
+      this.makePagination();
+    }
   }
 
   makePagination() {
