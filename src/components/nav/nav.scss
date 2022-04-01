@@ -21,6 +21,7 @@
   }
 
   &__item {
+    cursor: pointer;
     &_with-submenu {
       display: grid;
       height: 20px;

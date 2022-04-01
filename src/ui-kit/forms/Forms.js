@@ -68,17 +68,17 @@ class Forms {
         root: this.$element.find('.js-forms__placement_is-second'),
         type: 'selector',
       });
-      this.secondPlacement.drop.toggleActiveClass();
+      this.secondPlacement.input.handleDropOpen();
       this.secondGuests = new Form({
         root: this.$element.find('.js-forms__guests_is-second'),
         type: 'selector',
       });
-      this.secondGuests.drop.toggleActiveClass();
+      this.secondGuests.input.handleDropOpen();
       this.thirdGuests = new Form({
         root: this.$element.find('.js-forms__guests_is-third'),
         type: 'selector',
       });
-      this.thirdGuests.drop.toggleActiveClass();
+      this.thirdGuests.input.handleDropOpen();
       this.firstExpandable = new ExpandableList(this.$element.find('.js-forms__expandable_is-first'));
       this.secondExpandable = new ExpandableList(this.$element.find('.js-forms__expandable_expanded'));
       this.secondExpandable.drop.toggleActiveClass();

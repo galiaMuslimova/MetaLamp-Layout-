@@ -1,5 +1,5 @@
 .selector {
-  padding: 5px 6px 7px 14px;
+  padding: 7px 6px 7px 14px;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -18,22 +18,5 @@
     line-height: 15px;
     text-transform: uppercase;
     color: rgba(31, 32, 65, 1);
-  }
-
-  &__buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 12px;
-    margin-bottom: 4px;
-    line-height: 15px;
-  }
-
-  &__reset-button{
-    visibility: hidden;
-
-    &_active {
-      visibility: visible;
-    }
   }
 }

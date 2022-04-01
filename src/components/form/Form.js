@@ -12,14 +12,17 @@ class Form {
     this.dateType = dateType;
     this.id = id;
     this.$element = this.$root.find('.js-form');
-    this.drop = new Drop(this.$element);
+    this.drop = new Drop(this.$element, this.toggleDropOpen.bind(this));
     this.input = new Input(
       this.$element,
       this.drop,
-      this.openDrop.bind(this),
+      this.toggleDropOpen.bind(this),
       this.changeDate.bind(this),
     );
     this.calendar = undefined;
+    this.selector = undefined;
+    this.$resetButton = this.$element.find('.js-drop__button_for-reset');
+    this.$submitButton = this.$element.find('.js-drop__button_for-submit');
     this.init();
   }
 
@@ -28,14 +31,46 @@ class Form {
       this.input = undefined;
     }
     if (this.type === 'calendar') {
-      this.calendar = new Calendar(this.dateType, this.id, this, this.drop, this.input);
+      this.calendar = new Calendar(this.dateType, this.id, this.input);
     } else if (this.type === 'selector') {
-      const selector = new Selector(this, this.drop, this.input);
+      this.selector = new Selector(this, this.drop, this.input, this.$resetButton);
+    }
+    this.bindEventListeners();
+  }
+
+  bindEventListeners() {
+    $(document).on('click', this.handleDropClassActiveRemove.bind(this));
+    this.$resetButton.on('click', this.handleResetButtonClick.bind(this));
+    this.$submitButton.on('click', this.handleSubmitButtonClick.bind(this));
+  }
+
+  handleResetButtonClick() {
+    if (this.type === 'calendar') {
+      this.calendar.resetCalendar();
+      this.$resetButton.addClass('drop__button_active');
+    } else if (this.type === 'selector') {
+      this.selector.resetForm();
     }
   }
 
-  openDrop() {
+  handleSubmitButtonClick() {
+    this.closeDrop();
+  }
+
+  handleDropClassActiveRemove(event) {
+    if (this.$root.find(event.target).length === 0) {
+      this.closeDrop();
+    }
+  }
+
+  toggleDropOpen() {
     this.drop.toggleActiveClass();
+    this.input.toggleActiveClass();
+  }
+
+  closeDrop() {
+    this.drop.removeActiveClass();
+    this.input.removeActiveClass();
   }
 
   changeDate(date) {

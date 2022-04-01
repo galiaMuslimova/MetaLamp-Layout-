@@ -10,6 +10,7 @@
   &__anchor {
     display: flex;
     flex-direction: row;
+    user-select: none;
   }
 
   &__item {

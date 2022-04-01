@@ -21,7 +21,14 @@ class Input {
 
   handleDropOpen() {
     this.openDrop();
+  }
+
+  toggleActiveClass() {
     this.$element.toggleClass('input_active');
+  }
+
+  removeActiveClass() {
+    this.$element.removeClass('input_active');
   }
 
   handleInputKeyup() {

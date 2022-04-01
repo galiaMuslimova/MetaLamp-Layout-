@@ -1,26 +1,15 @@
 import Counter from '../counter/Counter.js';
 
 class Selector {
-  constructor(form, drop, input) {
+  constructor(form, drop, input, $resetButton) {
     this.form = form;
     this.drop = drop;
     this.$element = this.form.$element.find('.js-selector');
     this.$input = input.$inputField;
-    this.$resetButton = this.$element.find('.js-selector__reset-button');
-    this.$submitButton = this.$element.find('.js-selector__submit-button');
+    this.$resetButton = $resetButton;
     this.counters = this.makeCounters();
     this.valuesArray = this.takeNumbersArray();
-    this.init();
-  }
-
-  init() {
     this.changeCount();
-    this.bindEventListeners();
-  }
-
-  bindEventListeners() {
-    this.$resetButton.on('click', this.resetForm.bind(this));
-    this.$submitButton.on('click', this.handleDropClassActiveRemove.bind(this));
   }
 
   makeCounters() {
@@ -39,11 +28,11 @@ class Selector {
     this.valuesArray = this.takeNumbersArray();
     this.changeInputText();
     const result = this.valuesArray.reduce((sum, elem) => sum + elem, 0);
-    const isResetButtonActive = this.$resetButton.hasClass('selector__reset-button_active');
+    const isResetButtonActive = this.$resetButton.hasClass('drop__button_active');
     if (result > 0 && !isResetButtonActive) {
-      this.$resetButton.addClass('selector__reset-button_active');
+      this.$resetButton.addClass('drop__button_active');
     } else if (result < 1 && isResetButtonActive) {
-      this.$resetButton.removeClass('selector__reset-button_active');
+      this.$resetButton.removeClass('drop__button_active');
     }
   }
 
@@ -53,10 +42,7 @@ class Selector {
     });
     this.valuesArray = this.takeNumbersArray();
     this.changeInputText();
-  }
-
-  handleDropClassActiveRemove() {
-    this.drop.removeActiveClass();
+    this.$resetButton.removeClass('drop__button_active');
   }
 
   changeInputText() {

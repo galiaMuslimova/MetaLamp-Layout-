@@ -37,6 +37,7 @@
     justify-content: center;
     font-size: 0.5em;
     caret-color: transparent;
+    cursor: pointer;
 
     &_left {
       grid-area: 1 / 1 / span 2 / span 1;

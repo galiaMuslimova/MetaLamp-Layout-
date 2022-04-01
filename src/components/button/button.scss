@@ -1,4 +1,4 @@
-.button{
+.button {
   width: 100%;
   max-height: 44px;
   height: 100%;
@@ -17,6 +17,10 @@
   &_white,
   &_with-arrow {
     border-radius: 22px;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &_blue,
@@ -27,12 +31,6 @@
     color: #FFFFFF;
   }
 
-  &_blue,
-  &_white {
-    &:hover {
-      opacity: 0.5;
-    }
-  }
 
   &_white {
     color: #BC9CFF;
@@ -63,6 +61,7 @@
 
   &__text {
     grid-area: 1/1/span 1/span 2;
+    user-select: none;
   }
 
   &__icon {

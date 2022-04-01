@@ -8,18 +8,18 @@
   box-sizing: border-box;
   border-radius: 10px;
   align-items: center;
-  cursor: pointer;
   position: relative;
   padding-bottom: 0.1em;
   padding-left: 0.3em;
   margin: 0px;
   caret-color: transparent;
+  user-select: none;
 
   &__input {
     appearance: none;
-    height: 1px;
-    width: 1px;
     position: absolute;
+    height: 100%;
+    width: 100%;
     margin: 0px;
     color: transparent;
     text-shadow: 0 0 0 black;
@@ -27,7 +27,8 @@
 
     &:checked+.like__icon>.icon-heart:before {
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke-width: none;
+      -webkit-text-stroke-color: rgba(188, 156, 255, 1);
+      stroke-width: none;
       background-clip: text;
       background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
     }
@@ -38,15 +39,11 @@
   }
 
   &__count {
-    padding: 0px;
-    outline: none;
-    border: none;
-    background: none;
-    width: 10px;
+    display: inline-block;
+    width: 20px;
     text-align: center;
     font-size: 10px;
     line-height: 10px;
     color: rgba(31, 32, 65, 0.25);
-    cursor: pointer;
   }
 }

@@ -1,11 +1,6 @@
 include ../button/button.pug
 
-mixin calendar({id, hasButton=false})  
+mixin calendar({id})  
   .calendar
     .calendar__dp(class=`calendar__dp_for-${id} js-calendar__dp_for-${id}` )
-    if(hasButton)
-      .calendar__row
-        .calendar__button.js-calendar__button_for-reset
-          +button({ theme: 'simple', type: 'button', text: 'очистить' })
-        .calendar__button.js-calendar__button_for-submit
-          +button({ theme: 'simple', type: 'button', text: 'применить' })
+    

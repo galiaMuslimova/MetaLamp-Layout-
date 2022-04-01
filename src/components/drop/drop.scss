@@ -18,6 +18,8 @@
   &_for-placement {
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 0px 0px 4px 4px;
+    border-top: none;
+    user-select: none;
   }
 
   &_for-list {
@@ -31,4 +33,35 @@
   &_for-checkbox {
     box-shadow: none;
   }
-}
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 4px;
+    background-color: white;
+
+    &_for-calendar {
+      padding: 20px;
+    }
+
+    &_for-guests,
+    &_for-placement {
+      padding: 12px 5px 12px 15px;
+
+      .drop__button {
+        &_for-reset {
+          visibility: hidden;
+        }
+
+        &_active {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+    &__button {
+      line-height: 15px;
+    }
+  }

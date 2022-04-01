@@ -12,16 +12,12 @@ class Like {
   }
 
   handleLikeChange(event) {
-    const likeNum = Number(this.$likeCount.val());
-    let isChecked = this.$likeInput.prop('checked');
-    if (event.target !== this.$likeInput[0]) {
-      isChecked = !isChecked;
-      this.$likeInput.prop('checked', isChecked);
-    }
+    const likeNum = Number(this.$likeCount.text());
+    const isChecked = this.$likeInput.prop('checked');
     if (isChecked) {
-      this.$likeCount.val(likeNum + 1);
+      this.$likeCount.html(likeNum + 1);
     } else {
-      this.$likeCount.val(likeNum - 1);
+      this.$likeCount.html(likeNum - 1);
     }
   }
 }

@@ -2,16 +2,12 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
 class Calendar {
-  constructor(dateType, id, form, drop, input) {
+  constructor(dateType, id, input) {
     this.dateType = dateType;
     this.id = id;
     this.anchor = `.js-calendar__dp_for-${this.id}`;
-    this.form = form;
-    this.drop = drop;
     this.input = input;
     this.$inputArr = this.input ? this.input.$inputField : undefined;
-    this.$resetButton = this.form.$element.find('.js-calendar__button_for-reset');
-    this.$submitButton = this.form.$element.find('.js-calendar__button_for-submit');
     this.dp = {};
     this.init();
   }
@@ -19,15 +15,6 @@ class Calendar {
   init() {
     if ($(this.anchor)[0]) {
       this.createDatePicker();
-      this.bindEventListeners();
-    }
-    if (this.dateType === 'single') {
-      const options = {
-        multipleDates: false,
-        range: false,
-        dynamicRange: false,
-      };
-      this.dp.update(options);
     }
   }
 
@@ -47,20 +34,22 @@ class Calendar {
         el.showDateInInput(res);
       },
     });
+    if (this.dateType === 'single') {
+      const options = {
+        multipleDates: false,
+        range: false,
+        dynamicRange: false,
+      };
+      this.dp.update(options);
+    }
   }
 
-  bindEventListeners() {
-    this.$resetButton.on('click', this.handleResetButtonClick.bind(this));
-    this.$submitButton.on('click', this.handleSubmitButtonClick.bind(this));
-  }
-
-  handleResetButtonClick() {
+  resetCalendar() {
     this.dp.clear();
-    this.showDateInInput({ date: [undefined, undefined], formattedDate: [undefined, undefined] });
-  }
-
-  handleSubmitButtonClick() {
-    this.drop.removeActiveClass();
+    this.showDateInInput({
+      date: [undefined, undefined],
+      formattedDate: [undefined, undefined],
+    });
   }
 
   showDateInInput(res) {
