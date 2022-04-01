@@ -113,7 +113,7 @@
   }
 
   &__expandable {    
-    &_with-gap {
+    &_is-first {
       margin-bottom: 23px;
     }
   }
@@ -180,5 +180,9 @@
 
   &__review {
     margin-top: 12px;
+  }
+
+  &__features {
+    margin-top: 190px;
   }
 }

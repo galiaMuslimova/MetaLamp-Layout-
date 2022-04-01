@@ -11,9 +11,9 @@ mixin log-in-card()
         h1.log-in-card__title Регистрация аккаунта
       .log-in-card__item
         .log-in-card__input
-          +input({type: "name", placeholder:'Имя'})
+          +input({type: "empty", placeholder:'Имя'})
         .log-in-card__input
-          +input({type: "name", placeholder:'Фамилия'})
+          +input({type: "empty", placeholder:'Фамилия'})
         .log-in-card__radio 
           +radio({text: "Мужчина", checked: true})
           +radio({text: "Женщина"})
@@ -22,8 +22,14 @@ mixin log-in-card()
           h3.log-in-card__subtitle дата рождения
           .log-in-card__date.js-log-in-card__date
             +form({
-              inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
-              dropDate: {type: 'calendar', id: 'log-in-card'}
+              inputDate: {
+                type: "simple-date", 
+                placeholder: 'ДД.ММ.ГГГГ',                
+                },
+              dropDate: {
+                type: 'calendar', 
+                id: 'log-in-card',
+                dateType: 'single'}
               })
       .log-in-card__item
         .log-in-card__form

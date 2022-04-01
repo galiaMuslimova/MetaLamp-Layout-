@@ -16,13 +16,14 @@ class Cards {
 
   init() {
     if (this.$element[0]) {
-      this.entryCard = new EntryCard(this.$element);
-      this.roomCard = new RoomCard(this.$element);
-      this.logInCard = new LogInCard(this.$element);
+      this.entryCard = new EntryCard(this.$element.find('.js-cards__entry-card'));
+      this.roomCard = new RoomCard(this.$element.find('.js-cards__room-card'));
+      this.logInCard = new LogInCard(this.$element.find('.js-cards__log-in-card'));
       this.dateForm = new Form({
         root: this.$element.find('.js-cards__date '),
         type: 'calendar',
-        place: 'cards',
+        dateType: 'empty',
+        id: 'cards',
       });
       this.initCalendar();
     }

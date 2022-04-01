@@ -28,10 +28,6 @@
   }
 
   &__check-list {
-    display: none;
-
-    &_active {
-      display: block;
-    }
+    position: relative;
   }
 }

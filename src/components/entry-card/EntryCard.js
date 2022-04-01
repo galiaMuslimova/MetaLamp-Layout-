@@ -8,12 +8,12 @@ class EntryCard {
     this.dateForm = new Form({
       root: this.$element.find('.js-entry-card__date'),
       type: 'calendar',
-      place: 'entry-card',
+      dateType: 'double',
+      id: 'entry-card',
     });
     this.guestsForm = new Form({
       root: this.$element.find('.js-entry-card__guests'),
       type: 'selector',
-      place: 'entry-card',
     });
     this.bindEventListeners();
   }

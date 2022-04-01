@@ -7,18 +7,9 @@ class LogInCard {
     this.dateForm = new Form({
       root: this.$element.find('.js-log-in-card__date'),
       type: 'calendar',
-      place: 'log-in-card',
+      dateType: 'single',
+      id: 'log-in-card',
     });
-    this.initCalendar();
-  }
-
-  initCalendar() {
-    const options = {
-      multipleDates: false,
-      range: false,
-      dynamicRange: false,
-    };
-    this.dateForm.updateCalendar(options);
   }
 }
 

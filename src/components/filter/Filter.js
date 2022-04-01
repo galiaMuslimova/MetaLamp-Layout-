@@ -9,18 +9,17 @@ class Filter {
     this.dateForm = new Form({
       root: this.$element.find('.js-filter__date'),
       type: 'calendar',
-      place: 'filter',
+      dateType: 'pair',
+      id: 'filter',
     });
     this.guestsForm = new Form({
       root: this.$element.find('.js-filter__guests'),
       type: 'selector',
-      place: 'filter',
     });
     this.slider = new Slider(this.$element);
     this.placementForm = new Form({
       root: this.$element.find('.js-filter__placement'),
       type: 'selector',
-      place: 'filter',
     });
     this.expandableList = new ExpandableList(this.$element.find('.js-filter__expandable-list'));
     this.initCalendar();

@@ -4,10 +4,13 @@ import Calendar from '../calendar/Calendar';
 import Selector from '../selector/Selector';
 
 class Form {
-  constructor({ root, type, place }) {
+  constructor({
+    root, type, dateType, id,
+  }) {
     this.$root = root;
     this.type = type;
-    this.place = place;
+    this.dateType = dateType;
+    this.id = id;
     this.$element = this.$root.find('.js-form');
     this.drop = new Drop(this.$element);
     this.input = new Input(
@@ -21,11 +24,11 @@ class Form {
   }
 
   init() {
-    if (this.place === 'cards') {
+    if (this.dateType === 'empty') {
       this.input = undefined;
     }
     if (this.type === 'calendar') {
-      this.calendar = new Calendar(this.place, this, this.drop, this.input);
+      this.calendar = new Calendar(this.dateType, this.id, this, this.drop, this.input);
     } else if (this.type === 'selector') {
       const selector = new Selector(this, this.drop, this.input);
     }
@@ -47,10 +50,6 @@ class Form {
 
   setFocusDate(date) {
     this.calendar.dp.setFocusDate(date);
-  }
-
-  updateCalendar(options) {
-    this.calendar.dp.update(options);
   }
 }
 

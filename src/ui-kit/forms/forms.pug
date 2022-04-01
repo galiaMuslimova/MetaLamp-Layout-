@@ -36,28 +36,51 @@ block content
                 +input({type: "empty", placeholder: "This is pretty awesome", focus: true})
             .forms__item
               h3.forms__subtitle Dropdown
-              +form({ 
-                inputDate: { value: "Сколько гостей" },
-                dropDate: {
-                  type: "guests", 
-                  hasButton: true,
-                  items: [{name: "Взрослые", count: 0}, {name: "Дети", count: 0}, {name: "Младенцы", count: 0}]
-                  }
-                })
+              .forms__guests.forms__guests_is-first.js-forms__guests_is-first
+                +form({ 
+                  inputDate: { value: "Сколько гостей" },
+                  dropDate: {
+                    type: "guests", 
+                    hasButton: true,
+                    items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
+                    }
+                  })
             .forms__item
               h3.forms__subtitle masked text field
-              +form({
-                inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
-                dropDate: {type: 'calendar', id: 'log-in'}
-                }) 
+              .forms__date.forms__date_is-first.js-forms__date_is-first
+                +form({
+                  inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
+                  dropDate: {
+                    type: 'calendar',
+                    dateType: 'single', 
+                    id: 'forms-single'
+                    }
+                  }) 
           .forms__item 
-            +double-date({id:"forms", values: ['ДД.ММ.ГГГГ', '19.08.2021'], titles: ['date dropdown', 'date dropdown']})
+            .forms__date.forms__date_is-second.js-forms__date_is-second
+              +form({
+                inputDate: {
+                  values: ['ДД.ММ.ГГГГ', '19.08.2019'],
+                  titles: ['date dropdown', 'date dropdown']
+                },
+                dropDate: {
+                  type: 'calendar', 
+                  dateType: 'double',
+                  id: 'forms-double', 
+                  hasButton: true
+                } 
+            })
           .forms__item.forms__item_narrow
             h3.forms__subtitle filter date dropdown
-            +form({
-              inputDate: {value: '19 авг - 23 авг'}, 
-              dropDate: {type: 'calendar', id: 'filter'}
-            }) 
+            .forms__date.forms__date_is-third.js-forms__date_is-third
+              +form({
+                inputDate: {type: 'date', value: '19 авг - 23 авг'}, 
+                dropDate: {
+                  type: 'calendar', 
+                  dateType: 'pair',
+                  id: 'forms-pair',
+                  }
+              }) 
           .forms__item.forms__item_narrow
             h3.forms__subtitle subscription text field
             form.forms__form        
@@ -70,26 +93,28 @@ block content
             .forms__row.forms__row_with-subtitle
               h3.forms__subtitle dropdown 
               .forms__subtitle.forms__subtitle_transparent default
-            +form({
-              dropDate: {
-                type:"placement", 
-                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
-              }
-            })
+            .forms__placement.forms__placement_is-first.js-forms__placement_is-first
+              +form({
+                dropDate: {
+                  type:"placement", 
+                  items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+                }
+              })
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             .forms__row.forms__row_with-subtitle
               h3.forms__subtitle dropdown 
               .forms__subtitle.forms__subtitle_transparent expanded
-            +form({
-              dropDate: {
-                type:"placement", 
-                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
-              }
-            })
+            .forms__placement.forms__placement_is-second.js-forms__placement_is-second
+              +form({
+                dropDate: {
+                  type:"placement", 
+                  items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+                }
+              })
         .forms__sub-block
-          .forms__expandable_with-gap 
+          .forms__expandable.forms__expandable_is-first.js-forms__expandable_is-first 
             +expandable-list({title: 'expandable-list'})
-          .forms__expandable_expanded.js-forms__expandable_expanded 
+          .forms__expandable.forms__expandable_expanded.js-forms__expandable_expanded 
             +expandable-list({title: 'expandable-list'})
       
       //features
@@ -123,13 +148,17 @@ block content
           .forms__like
             h3.forms__subtitle like button 
             .forms__row.forms__row_for-like
-              +like({"count": "2",  "isCheck": false, "name": "like-1"})
-              +like({"count": "12", "isCheck": true, "name": "like-2"})
+              .forms_like-item.forms_like-item_is-first.js-forms_like-item_is-first
+                +like({"count": "2",  "isCheck": false, "name": "like-1"})
+              .forms_like-item.forms_like-item_is-second.js-forms_like-item_is-second
+                +like({"count": "12", "isCheck": true, "name": "like-2"})
           .forms__rate
             h3.forms__subtitle rate button
-            .forms__row.forms__row_for-rate 
-              +rate({starsCount: 4})
-              +rate({starsCount: 5}) 
+            .forms__row.forms__row_for-rate
+              .forms_rate-item.forms_rate-item_is-first.js-forms_rate-item_is-first
+                +rate({starsCount: 4})
+              .forms_rate-item.forms_rate-item_is-first.js-forms_rate-item_is-first
+                +rate({starsCount: 5}) 
         
         //slider, buttons...
         .forms__block
@@ -165,13 +194,14 @@ block content
         .forms__block.forms__block_with-large-gap
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             h3.forms__subtitle dropdown 
-            +form({
-              dropDate: {
-                type:"guests", 
-                hasButton: true,
-                items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-              }
-            })
+            .forms__guests.forms__guests_is-second.js-forms__guests_is-second
+              +form({
+                dropDate: {
+                  type:"guests", 
+                  hasButton: true,
+                  items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
+                }
+              })
           .forms__checkbox
             h3.forms__subtitle Rich Checkbox Buttons
             +checkbox-list([
@@ -181,17 +211,18 @@ block content
         .forms__block.forms__block_with-large-gap
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             h3.forms__subtitle dropdown 
-            +form({
-              dropDate: {
-                type:"guests", 
-                hasButton: true,
-                items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
-              }
-            }) 
+            .forms__guests.forms__guests_is-third.js-forms__guests_is-third
+              +form({
+                dropDate: {
+                  type:"guests", 
+                  hasButton: true,
+                  items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
+                }
+              }) 
           form.forms__bullet
             h3.forms__subtitle bullet list 
             +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, \n а выезд до 12:00"])
       
-      .forms__review
+      .forms__review.js-forms__review
         -const data = require("@c/review/review.json")
         +review([data[0]])

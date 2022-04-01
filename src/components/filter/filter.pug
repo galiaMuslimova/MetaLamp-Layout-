@@ -10,7 +10,11 @@ mixin filter()
         h3.filter__subtitle даты пребывания в отеле
         +form({
           inputDate: {value: '19 авг - 23 авг'}, 
-          dropDate: {type: 'calendar', id: 'filter'}
+          dropDate: {
+            type: 'calendar', 
+            dateType: 'pair',
+            id: 'filter',
+            }
         }) 
       .filter__guests.js-filter__guests
         h3.filter__subtitle гости

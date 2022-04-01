@@ -9,11 +9,15 @@ include ../../components/sign-in-card/sign-in-card.pug
 block content
   .cards.js-cards
     .cards__col
-      +entry-card()
-      +log-in-card()
+      .cards__entry-card.js-cards__entry-card
+        +entry-card()
+      .cards__log-in-card.js-cards__log-in-card   
+        +log-in-card()
     .cards__col
-      +room-card()
-      +sign-in-card()
+      .cards__room-card.js-cards__room-card
+        +room-card()
+      .cards__sign-in-card.js-cards__sign-in-card
+        +sign-in-card()
     .cards__col 
       .cards__date.js-cards__date   
         +calendar({id: 'cards', hasButton: true})

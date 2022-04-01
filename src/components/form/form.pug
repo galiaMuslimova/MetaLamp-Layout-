@@ -4,7 +4,7 @@ include ../drop/drop.pug
 
 mixin form({inputDate={}, dropDate={}}) 
   .form.js-form    
-    if(dropDate.id === 'entry-card' || dropDate.id === 'room-card')
+    if(dropDate.dateType === 'double')
       +double-date(inputDate)
     else 
       +input(inputDate)

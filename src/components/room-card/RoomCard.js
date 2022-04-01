@@ -7,12 +7,12 @@ class RoomCard {
     this.dateForm = new Form({
       root: this.$element.find('.js-room-card__date'),
       type: 'calendar',
-      place: 'room-card',
+      dateType: 'double',
+      id: 'room-card',
     });
     this.guestsForm = new Form({
       root: this.$element.find('.js-room-card__guests'),
       type: 'selector',
-      place: 'room-card',
     });
     this.initCalendar();
   }
