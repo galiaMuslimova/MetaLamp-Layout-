@@ -2,18 +2,18 @@
   min-height: 70px;
   height: 100%;
   display: grid;
-  grid-template: 100% / 1fr max-content max-content;
+  grid-template: 100% / 1fr 40% max-content;
   grid-column-gap: 20px;
   align-items: center;
 
   @media (max-width: 924px) {
     grid:
-      "logo reg burger"60px "nav nav nav"max-content /1fr max-content max-content;
+      "logo reg burger" 60px "nav nav nav" max-content /1fr max-content max-content;
   }
 
   @media (max-width: 600px) {
     grid:
-      "logo burger"60px "reg reg"max-content "nav nav"max-content /1fr max-content;
+      "logo burger" 60px "reg reg" max-content "nav nav" max-content /1fr max-content;
   }
 
   &__logo {

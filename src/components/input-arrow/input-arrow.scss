@@ -1,0 +1,59 @@
+.input-arrow {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  height: 44px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: white;
+
+  &:focus-within,
+  &:hover {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+  }
+
+  &__field {
+    height: 100%;
+    padding: 0 3px 0px 13px;
+    border: none;
+    background: transparent; 
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.75);
+
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.25);
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+
+      &::placeholder {
+        color: rgba(31, 32, 65, 0.75);
+      }
+    }
+  }
+
+  &__button {
+    width: 44px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    background-clip: text;
+    background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+    font-size: 18px;
+    line-height: 1em;
+    color: transparent;
+    caret-color: transparent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+}

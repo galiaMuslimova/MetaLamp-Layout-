@@ -1,9 +1,8 @@
 .nav {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  justify-content: space-between;
   align-items: baseline;
-
 
   @media (max-width: 924px) {
     display: none;
@@ -22,6 +21,7 @@
 
   &__item {
     cursor: pointer;
+
     &_with-submenu {
       display: grid;
       height: 20px;
@@ -43,6 +43,7 @@
     &:focus {
       font-weight: bold;
       color: rgba(31, 32, 65, 0.75);
+      //text-shadow: 0 0 .9px rgba(31, 32, 65, 0.75), 0 0 .9px rgba(31, 32, 65, 0.75), 0 0 .9px rgba(31, 32, 65, 0.75);
     }
 
     &_checked {

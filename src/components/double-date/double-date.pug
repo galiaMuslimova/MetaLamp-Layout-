@@ -1,14 +1,14 @@
 include ../drop/drop.pug
-include ../input/input.pug
+include ../input-open/input-open.pug
 
 mixin double-date({values = ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'], titles = ['прибытие', 'выезд']})
   .double-date
     .double-date__item
       h3.double-date__subtitle= titles[0]
       .double-date__input   
-        +input({type: 'date', value: values[0]})
+        +input-open({value: values[0]})
     .double-date__item
       h3.double-date__subtitle= titles[1]
       .double-date__input
-        +input({type: 'date', value: values[1]})
+        +input-open({value: values[1]})
     

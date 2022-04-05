@@ -1,4 +1,4 @@
-include ../input/input.pug
+include ../input-open/input-open.pug
 include ../double-date/double-date.pug
 include ../drop/drop.pug
 
@@ -7,7 +7,7 @@ mixin form({inputDate={}, dropDate={}})
     if(dropDate.dateType === 'double')
       +double-date(inputDate)
     else 
-      +input(inputDate)
+      +input-open(inputDate)
     +drop(dropDate)
 
 

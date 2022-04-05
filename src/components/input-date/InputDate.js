@@ -1,22 +1,17 @@
-class Input {
+class InputDate {
   constructor($root, drop, openDrop, changeDate) {
     this.$root = $root;
     this.drop = drop;
     this.openDrop = openDrop;
     this.changeDate = changeDate;
-    this.$element = this.$root.find('.js-input');
-    this.$inputField = this.$element.find('.js-input__field');
-    this.$inputButton = this.$element.find('.js-input__button');
-    this.value = this.$inputField.val();
+    this.$element = this.$root.find('.js-input-date');
+    this.value = this.$element.val();
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$inputButton.on('click', this.handleDropOpen.bind(this));
-    if (this.$element.hasClass('js-input_for-simple-date')) {
-      this.$inputField.on('click', this.handleDropOpen.bind(this));
-      this.$inputField.on('keyup', this.handleInputKeyup.bind(this));
-    }
+    this.$element.on('click', this.handleDropOpen.bind(this));
+    this.$element.on('keyup', this.handleInputKeyup.bind(this));
   }
 
   handleDropOpen() {
@@ -24,11 +19,11 @@ class Input {
   }
 
   toggleActiveClass() {
-    this.$element.toggleClass('input_active');
+    this.$element.toggleClass('input-date_active');
   }
 
   removeActiveClass() {
-    this.$element.removeClass('input_active');
+    this.$element.removeClass('input-date_active');
   }
 
   handleInputKeyup() {
@@ -59,8 +54,8 @@ class Input {
       this.changeDate(this.value);
     }
 
-    this.$inputField.val(this.value);
+    this.$element.val(this.value);
   }
 }
 
-export default Input;
+export default InputDate;

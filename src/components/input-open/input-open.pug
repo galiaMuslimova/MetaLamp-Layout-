@@ -1,0 +1,7 @@
+include ../icon-open/icon-open.pug
+
+mixin input-open({value})  
+  .input-open.js-input-open
+    input.input-open__field.js-input-open__field(type='text', value=value, readonly)
+    button.input-open__button.js-input-open__button(type="button")
+      +icon-open()  

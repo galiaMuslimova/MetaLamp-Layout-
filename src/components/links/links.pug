@@ -1,4 +1,4 @@
-include ../input/input.pug
+include ../input-arrow/input-arrow.pug
 
 mixin links()
   .links.js-links
@@ -23,5 +23,5 @@ mixin links()
         h3.links__subtitle Подписка
         p.links__info Получайте специальные предложения и новости сервиса
         form.links__form           
-          +input({type:"subscript", fontType:"e-mail", placeholder:"Email"})
+          +input-arrow({fontType:"e-mail", placeholder:"Email"})
         
