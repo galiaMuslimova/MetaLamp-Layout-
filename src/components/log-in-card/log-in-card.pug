@@ -1,6 +1,6 @@
 include ../input/input.pug
 include ../radio/radio.pug
-include ../form/form.pug
+include ../form-simple-date/form-simple-date.pug
 include ../toggle/toggle.pug
 include ../button/button.pug
 
@@ -11,9 +11,9 @@ mixin log-in-card()
         h1.log-in-card__title Регистрация аккаунта
       .log-in-card__item
         .log-in-card__input
-          +input({type: "empty", placeholder:'Имя'})
+          +input({ placeholder:'Имя'})
         .log-in-card__input
-          +input({type: "empty", placeholder:'Фамилия'})
+          +input({ placeholder:'Фамилия'})
         .log-in-card__radio 
           +radio({text: "Мужчина", checked: true})
           +radio({text: "Женщина"})
@@ -21,23 +21,14 @@ mixin log-in-card()
         .log-in-card__form
           h3.log-in-card__subtitle дата рождения
           .log-in-card__date.js-log-in-card__date
-            +form({
-              inputDate: {
-                type: "simple-date", 
-                placeholder: 'ДД.ММ.ГГГГ',                
-                },
-              dropDate: {
-                type: 'calendar', 
-                id: 'log-in-card',
-                dateType: 'single'}
-              })
+            +form-simple-date({ value: 'ДД.ММ.ГГГГ',  id: 'log-in-card' })
       .log-in-card__item
         .log-in-card__form
           h3.log-in-card__subtitle данные для входа в сервис
           .log-in-card__input
-            +input({type: "empty", placeholder:'Email'})
+            +input({fontType: 'e-mail', placeholder:'Email'})
         .log-in-card__input
-          +input({type: "empty", placeholder:"Пароль"})
+          +input({placeholder:"Пароль"})
         .log-in-card__toggle
           +toggle({text:"Получать спецпредложения"})
       .log-in-card__item

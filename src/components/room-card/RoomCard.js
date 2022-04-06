@@ -1,19 +1,12 @@
-import Form from '../form/Form';
+import FormDoubleDate from '../form-double-date/FormDoubleDate';
+import FormSelector from '../form-selector/FormSelector';
 
 class RoomCard {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-room-card');
-    this.dateForm = new Form({
-      root: this.$element.find('.js-room-card__date'),
-      type: 'calendar',
-      dateType: 'double',
-      id: 'room-card',
-    });
-    this.guestsForm = new Form({
-      root: this.$element.find('.js-room-card__guests'),
-      type: 'selector',
-    });
+    this.dateForm = new FormDoubleDate(this.$element.find('.js-room-card__guests'), 'room-card');
+    this.guestsForm = new FormSelector(this.$element.find('.js-room-card__guests'));
     this.initCalendar();
   }
 

@@ -1,0 +1,9 @@
+include ../input-open/input-open.pug
+include ../calendar/calendar.pug
+
+mixin form-pair-date({value, id}) 
+  .form-pair-date 
+    .form-pair-date__input.js-form-pair-date__input
+      +input-open(value)
+    .form-pair-date__calendar.js-form-pair-date__calendar
+      +calendar(id)

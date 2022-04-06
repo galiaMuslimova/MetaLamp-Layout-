@@ -1,4 +1,7 @@
-import Form from '../../components/form/Form';
+import FormSelector from '../../components/form-selector/FormSelector';
+import FormDoubleDate from '../../components/form-double-date/FormDoubleDate';
+import FormSimpleDate from '../../components/form-simple-date/FormSimpleDate';
+import FormPairDate from '../../components/form-pair-date/FormPairDate';
 import Like from '../../components/like/Like';
 import Rate from '../../components/rate/Rate';
 import Slider from '../../components/slider/Slider.js';
@@ -20,8 +23,8 @@ class Forms {
     this.secondRate = undefined;
     this.pagination = undefined;
     this.slider = undefined;
-    this.firstPlacement = undefined;
-    this.secondPlacement = undefined;
+    this.firstPlace = undefined;
+    this.secondPlace = undefined;
     this.secondGuests = undefined;
     this.firstExpandable = undefined;
     this.secondExpandable = undefined;
@@ -31,28 +34,10 @@ class Forms {
 
   init() {
     if (this.$element[0]) {
-      this.firstGuests = new Form({
-        root: this.$element.find('.js-forms__guests_is-first'),
-        type: 'selector',
-      });
-      this.firstDate = new Form({
-        root: this.$element.find('.js-forms__date_is-first'),
-        type: 'calendar',
-        dateType: 'single',
-        id: 'forms-single',
-      });
-      this.secondDate = new Form({
-        root: this.$element.find('.js-forms__date_is-second'),
-        type: 'calendar',
-        dateType: 'double',
-        id: 'forms-double',
-      });
-      this.thirdDate = new Form({
-        root: this.$element.find('.js-forms__date_is-third'),
-        type: 'calendar',
-        dateType: 'pair',
-        id: 'forms-pair',
-      });
+      this.firstGuests = new FormSelector(this.$element.find('.js-forms__guests_is-first'));
+      this.firstDate = new FormSimpleDate(this.$element.find('.js-forms__date_is-first'));
+      this.secondDate = new FormDoubleDate(this.$element.find('.js-forms__date_is-second'), 'forms-double');
+      this.thirdDate = new FormPairDate(this.$element.find('.js-forms__date_is-third'));
       this.firstLike = new Like(this.$element.find('.js-forms_like-item_is-first'));
       this.secondLike = new Like(this.$element.find('.js-forms_like-item_is-second'));
       this.firstRate = new Rate(this.$element.find('.js-forms_rate-item_is-first'));
@@ -60,24 +45,12 @@ class Forms {
       this.slider = new Slider(this.$element);
       this.pagination = new Pagination(this.$element);
       this.pagination.createPaginationSample();
-      this.firstPlacement = new Form({
-        root: this.$element.find('.js-forms__placement_is-first'),
-        type: 'selector',
-      });
-      this.secondPlacement = new Form({
-        root: this.$element.find('.js-forms__placement_is-second'),
-        type: 'selector',
-      });
-      this.secondPlacement.input.handleDropOpen();
-      this.secondGuests = new Form({
-        root: this.$element.find('.js-forms__guests_is-second'),
-        type: 'selector',
-      });
+      this.firstPlace = new FormSelector(this.$element.find('.js-forms__placement_is-first'));
+      this.secondPlace = new FormSelector(this.$element.find('.js-forms__placement_is-second'));
+      this.secondPlace.input.handleDropOpen();
+      this.secondGuests = new FormSelector(this.$element.find('.js-forms__guests_is-second'));
       this.secondGuests.input.handleDropOpen();
-      this.thirdGuests = new Form({
-        root: this.$element.find('.js-forms__guests_is-third'),
-        type: 'selector',
-      });
+      this.thirdGuests = new FormSelector(this.$element.find('.js-forms__guests_is-third'));
       this.thirdGuests.input.handleDropOpen();
       this.firstExpandable = new ExpandableList(this.$element.find('.js-forms__expandable_is-first'));
       this.secondExpandable = new ExpandableList(this.$element.find('.js-forms__expandable_expanded'));

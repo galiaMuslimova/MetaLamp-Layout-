@@ -1,0 +1,18 @@
+.drop-buttons {
+  line-height: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 4px;
+  background-color: white;
+
+  &__item {
+    &_for-reset {
+      visibility: hidden;
+    }
+
+    &_active {
+      visibility: visible;
+    }
+  }
+}

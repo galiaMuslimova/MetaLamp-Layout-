@@ -1,5 +1,6 @@
-include ../form/form.pug
-include ../double-date/double-date.pug
+include ../form-double-date/form-double-date.pug 
+include ../form-selector/form-selector.pug
+include ../button/button.pug
 include ../calculation/calculation.pug
 
 mixin room-card()
@@ -18,24 +19,13 @@ mixin room-card()
           .room-card__cost-text в сутки
       .room-card__item
         .room-card__date.js-room-card__date
-          +form({
-            dropDate: {
-              type: 'calendar', 
-              dateType: 'double', 
-              id: 'room-card',
-              hasButton: true
-            }
-          }) 
+          +form-double-date({id: 'room-card' })
       .room-card__item
         h3.room-card__subtitle гости 
         .room-card__guests.js-room-card__guests
-          +form({
-            dropDate: {
-              type: "guests",
-              hasButton: true,
-              items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
-            }
-          }) 
+          +form-selector({
+            items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
+          })
       .room-card__calculation 
         +calculation(roomData, days)        
       .room-card__item

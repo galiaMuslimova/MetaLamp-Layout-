@@ -1,9 +1,7 @@
 class InputOpen {
-  constructor($root, drop, openDrop, changeDate) {
+  constructor($root, openDrop) {
     this.$root = $root;
-    this.drop = drop;
     this.openDrop = openDrop;
-    this.changeDate = changeDate;
     this.$element = this.$root.find('.js-input-open');
     this.$inputField = this.$element.find('.js-input-open__field');
     this.$inputButton = this.$element.find('.js-input-open__button');
@@ -12,11 +10,7 @@ class InputOpen {
   }
 
   bindEventListeners() {
-    this.$inputButton.on('click', this.handleDropOpen.bind(this));
-  }
-
-  handleDropOpen() {
-    this.openDrop();
+    this.$inputButton.on('click', this.openDrop());
   }
 
   toggleActiveClass() {
@@ -25,6 +19,10 @@ class InputOpen {
 
   removeActiveClass() {
     this.$element.removeClass('input-open_active');
+  }
+
+  setDate(date) {
+    this.$inputField.val(date);
   }
 }
 

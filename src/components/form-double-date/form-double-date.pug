@@ -1,0 +1,15 @@
+include ../input-open/input-open.pug
+include ../calendar/calendar.pug
+
+mixin form-double-date({values=['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'], titles=['прибытие', 'выезд'], id}) 
+  .form-double-date.js-form-double-date    
+    .form-double-date__row
+      .form-double-date__item.form-double-date__item_is-first.js-form-double-date__item_is-first
+        h3.form-double-date__subtitle= titles[0]
+        .form-double-date__input   
+          +input-open(values[0])
+      .form-double-date__item.form-double-date__item_is-second.js-form-double-date__item_is-second
+        h3.form-double-date__subtitle= titles[1]
+        .form-double-date__input
+          +input-open(values[1])
+    +calendar({id: id})

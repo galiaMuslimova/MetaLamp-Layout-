@@ -1,5 +1,5 @@
-include ../double-date/double-date.pug 
-include ../form/form.pug
+include ../form-double-date/form-double-date.pug 
+include ../form-selector/form-selector.pug
 include ../button/button.pug
 
 mixin entry-card()
@@ -9,26 +9,13 @@ mixin entry-card()
         h1.entry-card__title Найдём номера под ваши пожелания
       .entry-card__item 
         .entry-card__date.js-entry-card__date       
-          +form({
-            dropDate: {
-              type: 'calendar', 
-              dateType: 'double', 
-              id: 'entry-card',
-              hasButton: true
-              }
-          })
+          +form-double-date({id: 'entry-card' })
       .entry-card__item
         h3.entry-card__subtitle гости 
         .entry-card__guests.js-entry-card__guests
-          +form({ 
-            inputDate: {
-              placeholder: "Сколько гостей"
-            },
-            dropDate: {
-              type: "guests", 
-              hasButton: true,
-              items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-              }
-            })
+          +form-selector({
+            value: "Сколько гостей", 
+            items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
+          })
       .entry-card__button.js-entry-card__button
         +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true})

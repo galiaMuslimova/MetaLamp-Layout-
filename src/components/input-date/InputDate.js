@@ -1,7 +1,6 @@
 class InputDate {
-  constructor($root, drop, openDrop, changeDate) {
+  constructor($root, openDrop, changeDate) {
     this.$root = $root;
-    this.drop = drop;
     this.openDrop = openDrop;
     this.changeDate = changeDate;
     this.$element = this.$root.find('.js-input-date');

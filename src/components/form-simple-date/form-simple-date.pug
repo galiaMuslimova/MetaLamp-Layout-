@@ -1,0 +1,9 @@
+include ../input-date/input-date.pug
+include ../calendar/calendar.pug
+
+mixin form-simple-date({value, id}) 
+  .form-simple-date 
+    .form-simple-date__input
+      +input-date(value)
+    .form-simple-date__calendar
+      +calendar(id)

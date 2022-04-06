@@ -1,14 +1,18 @@
 import Counter from '../counter/Counter.js';
+import DropButtons from '../drop-buttons/DropButtons.js';
 
 class Selector {
-  constructor(form, drop, input, $resetButton) {
-    this.form = form;
-    this.drop = drop;
-    this.$element = this.form.$element.find('.js-selector');
-    this.$input = input.$inputField;
-    this.$resetButton = $resetButton;
+  constructor($root, closeSelector) {
+    this.$root = $root;
+    this.closeSelector = closeSelector;
+    this.$element = this.$root.$element.find('.js-selector');
     this.counters = this.makeCounters();
     this.valuesArray = this.takeNumbersArray();
+    this.dropButtons = new DropButtons(
+      this.$element,
+      this.resetSelector.bind(this),
+      this.submitSelector.bind(this),
+    );
     this.changeCount();
   }
 
@@ -28,21 +32,33 @@ class Selector {
     this.valuesArray = this.takeNumbersArray();
     this.changeInputText();
     const result = this.valuesArray.reduce((sum, elem) => sum + elem, 0);
-    const isResetButtonActive = this.$resetButton.hasClass('drop__button_active');
+    const isResetButtonActive = this.dropButtons.hasActiveClass();
     if (result > 0 && !isResetButtonActive) {
-      this.$resetButton.addClass('drop__button_active');
+      this.dropButtons.removeActiveClass();
     } else if (result < 1 && isResetButtonActive) {
-      this.$resetButton.removeClass('drop__button_active');
+      this.dropButtons.removeActiveClass();
     }
   }
 
-  resetForm() {
+  resetSelector() {
     this.counters.forEach((counter) => {
       counter.resetForm();
     });
     this.valuesArray = this.takeNumbersArray();
     this.changeInputText();
-    this.$resetButton.removeClass('drop__button_active');
+    this.dropButtons.removeActiveClass();
+  }
+
+  submitSelector() {
+    this.closeSelector();
+  }
+
+  removeActiveClass() {
+    this.$element.removeClass('selector_active');
+  }
+
+  toggleActiveClass() {
+    this.$element.toggleClass('selector_active');
   }
 
   changeInputText() {

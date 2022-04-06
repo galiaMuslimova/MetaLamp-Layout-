@@ -1,10 +1,10 @@
-import Drop from '../drop/Drop';
+import CheckboxList from '../checkbox-list/CheckboxList';
 
 class ExpandableList {
   constructor($root) {
     this.$root = $root;
     this.$element = $root.find('.js-expandable-list');
-    this.drop = new Drop(this.$element);
+    this.drop = new CheckboxList(this.$element);
     this.$expandIcon = this.$element.find('.js-expandable-list__icon');
     this.$checkboxList = this.$element.find('.js-expandable-list__check-list');
     this.bindEventListeners();

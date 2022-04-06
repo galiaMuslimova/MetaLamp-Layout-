@@ -1,7 +1,10 @@
 extends ../ui-kit-base/ui-kit-base.pug
-include ../../components/form/form.pug
+include ../../components/form-selector/form-selector.pug
+include ../../components/form-simple-date/form-simple-date.pug
+include ../../components/form-double-date/form-double-date.pug
+include ../../components/form-pair-date/form-pair-date.pug
 include ../../components/input/input.pug
-include ../../components/double-date/double-date.pug
+include ../../components/input-arrow/input-arrow.pug
 include ../../components/radio/radio.pug
 include ../../components/toggle/toggle.pug
 include ../../components/like/like.pug
@@ -27,64 +30,40 @@ block content
                 .forms__subtitle Text Field
                 .forms__subtitle.forms__subtitle_transparent default
               .forms__form 
-                +input({type: "empty", fontType:"E-mail", placeholder:"Email"}) 
+                +input({fontType:"E-mail", placeholder:"Email"}) 
             .forms__item
               .forms__row.forms__row_with-subtitle
                 .forms__subtitle Text Field
                 .forms__subtitle.forms__subtitle_transparent Hover / Focus
               form.forms__form
-                +input({type: "empty", placeholder: "This is pretty awesome", focus: true})
+                +input({placeholder: "This is pretty awesome", focus: true})
             .forms__item
               h3.forms__subtitle Dropdown
               .forms__guests.forms__guests_is-first.js-forms__guests_is-first
-                +form({ 
-                  inputDate: { value: "Сколько гостей" },
-                  dropDate: {
-                    type: "guests", 
-                    hasButton: true,
-                    items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-                    }
+                +form-selector({ 
+                  value: "Сколько гостей",
+                  items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
                   })
             .forms__item
               h3.forms__subtitle masked text field
               .forms__date.forms__date_is-first.js-forms__date_is-first
-                +form({
-                  inputDate: {type: "simple-date", placeholder: 'ДД.ММ.ГГГГ'},
-                  dropDate: {
-                    type: 'calendar',
-                    dateType: 'single', 
-                    id: 'forms-single'
-                    }
-                  }) 
+                +form-simple-date({ value: 'ДД.ММ.ГГГГ', id: 'forms-single'}) 
           .forms__item 
             .forms__date.forms__date_is-second.js-forms__date_is-second
-              +form({
+              +form-double-date({
                 inputDate: {
                   values: ['ДД.ММ.ГГГГ', '19.08.2019'],
                   titles: ['date dropdown', 'date dropdown']
-                },
-                dropDate: {
-                  type: 'calendar', 
-                  dateType: 'double',
-                  id: 'forms-double', 
-                  hasButton: true
-                } 
-            })
+                }, id: 'forms-double'
+              })
           .forms__item.forms__item_narrow
             h3.forms__subtitle filter date dropdown
             .forms__date.forms__date_is-third.js-forms__date_is-third
-              +form({
-                inputDate: {type: 'date', value: '19 авг - 23 авг'}, 
-                dropDate: {
-                  type: 'calendar', 
-                  dateType: 'pair',
-                  id: 'forms-pair',
-                  }
-              }) 
+              +form-pair-date({value: '19 авг - 23 авг', id: 'forms-pair'}) 
           .forms__item.forms__item_narrow
             h3.forms__subtitle subscription text field
             form.forms__form        
-              +input({type:"subscript", placeholder:"Email"})
+              +input-arrow({placeholder:"Email"})
       
       //dropdown first column and expandable
       .forms__block.forms__block_narrow
@@ -94,22 +73,16 @@ block content
               h3.forms__subtitle dropdown 
               .forms__subtitle.forms__subtitle_transparent default
             .forms__placement.forms__placement_is-first.js-forms__placement_is-first
-              +form({
-                dropDate: {
-                  type:"placement", 
-                  items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
-                }
+              +form-selector({
+                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
               })
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             .forms__row.forms__row_with-subtitle
               h3.forms__subtitle dropdown 
               .forms__subtitle.forms__subtitle_transparent expanded
             .forms__placement.forms__placement_is-second.js-forms__placement_is-second
-              +form({
-                dropDate: {
-                  type:"placement", 
-                  items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
-                }
+              +form-selector({
+                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
               })
         .forms__sub-block
           .forms__expandable.forms__expandable_is-first.js-forms__expandable_is-first 
@@ -195,12 +168,8 @@ block content
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-second.js-forms__guests_is-second
-              +form({
-                dropDate: {
-                  type:"guests", 
-                  hasButton: true,
-                  items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-                }
+              +form-selector({
+                items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
               })
           .forms__checkbox
             h3.forms__subtitle Rich Checkbox Buttons
@@ -212,12 +181,8 @@ block content
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-third.js-forms__guests_is-third
-              +form({
-                dropDate: {
-                  type:"guests", 
-                  hasButton: true,
-                  items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
-                }
+              +form-selector({
+                items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
               }) 
           form.forms__bullet
             h3.forms__subtitle bullet list 

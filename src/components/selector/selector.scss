@@ -1,8 +1,27 @@
 .selector {
-  padding: 7px 6px 7px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  z-index: 4;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px;
+  border-top: none;
+  user-select: none;
+
+  &_active {
+    display: block;
+  }
+
+  &__content {
+    padding: 7px 6px 7px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
 
   &__row {
     display: flex;
@@ -18,5 +37,9 @@
     line-height: 15px;
     text-transform: uppercase;
     color: rgba(31, 32, 65, 1);
+  }
+
+  &__buttons {
+    padding: 12px 5px 12px 15px;
   }
 }

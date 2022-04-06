@@ -1,7 +1,7 @@
 import EntryCard from '@c/entry-card/EntryCard.js';
 import RoomCard from '@c/room-card/RoomCard.js';
 import LogInCard from '@c/log-in-card/LogInCard.js';
-import Form from '@c/form/Form.js';
+import Calendar from '@c/calendar/Calendar.js';
 
 class Cards {
   constructor($root) {
@@ -19,12 +19,7 @@ class Cards {
       this.entryCard = new EntryCard(this.$element.find('.js-cards__entry-card'));
       this.roomCard = new RoomCard(this.$element.find('.js-cards__room-card'));
       this.logInCard = new LogInCard(this.$element.find('.js-cards__log-in-card'));
-      this.dateForm = new Form({
-        root: this.$element.find('.js-cards__date '),
-        type: 'calendar',
-        dateType: 'empty',
-        id: 'cards',
-      });
+      this.calendar = new Calendar({ $root: this.$element.find('.js-cards__date'), id: 'cards' });
       this.initCalendar();
     }
   }
@@ -32,8 +27,8 @@ class Cards {
   initCalendar() {
     const newDate = ['2019-08-19', '2019-08-23'];
     const cardFocusDate = new Date(2019, 7, 8);
-    this.dateForm.setDate(newDate);
-    this.dateForm.setFocusDate(cardFocusDate);
+    this.calendar.setDate(newDate);
+    this.calendar.setFocusDate(cardFocusDate);
   }
 }
 
