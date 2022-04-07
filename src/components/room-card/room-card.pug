@@ -1,5 +1,5 @@
 include ../form-double-date/form-double-date.pug 
-include ../form-selector/form-selector.pug
+include ../form-guests/form-guests.pug
 include ../button/button.pug
 include ../calculation/calculation.pug
 
@@ -23,7 +23,7 @@ mixin room-card()
       .room-card__item
         h3.room-card__subtitle гости 
         .room-card__guests.js-room-card__guests
-          +form-selector({
+          +form-guests({
             items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
           })
       .room-card__calculation 

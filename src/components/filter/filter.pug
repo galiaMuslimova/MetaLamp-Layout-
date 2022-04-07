@@ -1,5 +1,6 @@
 include ../form-pair-date/form-pair-date.pug
-include ../form-selector/form-selector.pug
+include ../form-guests/form-guests.pug
+include ../form-placement/form-placement.pug
 include ../slider/slider.pug 
 include ../checkbox-list/checkbox-list.pug
 include ../expandable-list/expandable-list.pug
@@ -12,7 +13,7 @@ mixin filter()
         +form-pair-date({ value: '19 авг - 23 авг', id: 'filter' }) 
       .filter__guests.js-filter__guests
         h3.filter__subtitle гости
-        +form-selector({
+        +form-guests({
           value: '3 взрослых, 1 младенец',
           items: [{name: "Взрослые", amount: 3}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 1}]
         }) 
@@ -31,9 +32,9 @@ mixin filter()
     .filter__item 
       .filter__placement.js-filter__placement
         h3.filter__subtitle удобства номера
-        +form-selector({
+        +form-placement({
           value: '2 спальни, 2 кровати...',
-          items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+          items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}],
           })
     .filter__item 
       .filter__expandable-list.js-filter__expandable-list

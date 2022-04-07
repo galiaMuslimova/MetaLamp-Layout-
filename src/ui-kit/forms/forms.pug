@@ -1,5 +1,6 @@
 extends ../ui-kit-base/ui-kit-base.pug
-include ../../components/form-selector/form-selector.pug
+include ../../components/form-guests/form-guests.pug
+include ../../components/form-placement/form-placement.pug
 include ../../components/form-simple-date/form-simple-date.pug
 include ../../components/form-double-date/form-double-date.pug
 include ../../components/form-pair-date/form-pair-date.pug
@@ -12,7 +13,6 @@ include ../../components/rate/rate.pug
 include ../../components/slider/slider.pug
 include ../../components/button/button.pug
 include ../../components/pagination/pagination.pug
-include ../../components/selector/selector.pug
 include ../../components/expandable-list/expandable-list.pug
 include ../../components/bullet/bullet.pug
 include ../../components/feature/feature.pug
@@ -40,7 +40,7 @@ block content
             .forms__item
               h3.forms__subtitle Dropdown
               .forms__guests.forms__guests_is-first.js-forms__guests_is-first
-                +form-selector({ 
+                +form-guests({ 
                   value: "Сколько гостей",
                   items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
                   })
@@ -73,16 +73,18 @@ block content
               h3.forms__subtitle dropdown 
               .forms__subtitle.forms__subtitle_transparent default
             .forms__placement.forms__placement_is-first.js-forms__placement_is-first
-              +form-selector({
-                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+              +form-placement({
+                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}],
+                type: 'placement'
               })
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             .forms__row.forms__row_with-subtitle
               h3.forms__subtitle dropdown 
               .forms__subtitle.forms__subtitle_transparent expanded
             .forms__placement.forms__placement_is-second.js-forms__placement_is-second
-              +form-selector({
-                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+              +form-placement({
+                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}],
+                type: 'placement'
               })
         .forms__sub-block
           .forms__expandable.forms__expandable_is-first.js-forms__expandable_is-first 
@@ -168,7 +170,7 @@ block content
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-second.js-forms__guests_is-second
-              +form-selector({
+              +form-guests({
                 items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
               })
           .forms__checkbox
@@ -181,7 +183,7 @@ block content
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-third.js-forms__guests_is-third
-              +form-selector({
+              +form-guests({
                 items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
               }) 
           form.forms__bullet

@@ -1,5 +1,5 @@
 include ../form-double-date/form-double-date.pug 
-include ../form-selector/form-selector.pug
+include ../form-guests/form-guests.pug
 include ../button/button.pug
 
 mixin entry-card()
@@ -13,9 +13,6 @@ mixin entry-card()
       .entry-card__item
         h3.entry-card__subtitle гости 
         .entry-card__guests.js-entry-card__guests
-          +form-selector({
-            value: "Сколько гостей", 
-            items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-          })
+          +form-guests({items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}] })
       .entry-card__button.js-entry-card__button
         +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true})

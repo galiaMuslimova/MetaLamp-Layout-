@@ -1,5 +1,5 @@
 import FormDoubleDate from '../form-double-date/FormDoubleDate';
-import FormSelector from '../form-selector/FormSelector';
+import FormGuests from '../form-guests/FormGuests';
 
 class EntryCard {
   constructor($root) {
@@ -7,7 +7,7 @@ class EntryCard {
     this.$element = this.$root.find('.js-entry-card');
     this.$entryCardButton = this.$element.find('.js-entry-card__button');
     this.dateForm = new FormDoubleDate(this.$element.find('.js-entry-card__date'), 'entry-card');
-    this.guestsForm = new FormSelector(this.$element.find('.js-entry-card__guests'));
+    this.guestsForm = new FormGuests(this.$element.find('.js-entry-card__guests'));
     this.bindEventListeners();
   }
 

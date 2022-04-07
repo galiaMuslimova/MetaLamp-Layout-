@@ -1,0 +1,9 @@
+include ../input-open/input-open.pug
+include ../selector-guests/selector-guests.pug
+
+mixin form-guests({value='', items})
+  .form-guests.js-form-guests
+    .form-guests__input.js-form-guests__input
+      +input-open({placeholder: 'Сколько гостей', value: value})
+    .form-guests__drop.js-form-guests__drop
+      +selector-guests(items)

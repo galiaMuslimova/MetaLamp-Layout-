@@ -1,0 +1,9 @@
+include ../input-open/input-open.pug
+include ../selector-placement/selector-placement.pug
+
+mixin form-placement({value='', items, type})
+  .form-placement.js-form-placement
+    .form-placement__input.js-form-placement__input
+      +input-open({placeholder:'Сколько спален', value:value})
+    .form-placement__drop.js-form-placement__drop
+      +selector-placement(items)

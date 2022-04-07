@@ -1,7 +1,9 @@
+import Observer from '../../observer/Observer';
+
 class Counter {
-  constructor($element, changeCountFunction) {
+  constructor($element) {
     this.$element = $element;
-    this.changeCountFunction = changeCountFunction;
+    this.observer = new Observer();
     this.$numButton = $(this.$element).find('.js-counter__number');
     this.numButtonValue = Number(this.$numButton.text());
     this.$minusButton = $(this.$element).find('.js-counter__button_with-minus');
@@ -25,14 +27,14 @@ class Counter {
       this.$numButton.html(this.numButtonValue);
     }
     this.toggleDisable();
-    this.changeCountFunction();
+    this.observer.notify('change');
   }
 
   handlePlusButtonClick() {
     this.numButtonValue += 1;
     this.$numButton.html(this.numButtonValue);
     this.toggleDisable();
-    this.changeCountFunction();
+    this.observer.notify('change');
   }
 
   toggleDisable() {

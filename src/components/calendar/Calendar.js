@@ -1,20 +1,19 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
+import Observer from '../../observer/Observer';
 import DropButtons from '../drop-buttons/DropButtons';
 
 class Calendar {
-  constructor($root, id, changeDate, closeCalendar) {
+  constructor($root, id) {
     this.$root = $root;
+    this.id = id;
     this.anchor = `.js-calendar__dp_for-${this.id}`;
     this.$element = this.$root.find('.js-calendar');
-    this.id = id;
-    this.changeDate = changeDate;
-    this.closeCalendar = closeCalendar;
-    this.dropButtons = new DropButtons(
-      this.$element,
-      this.resetCalendar.bind(this),
-      this.submitCalendar.bind(this),
-    );
+    this.observer = new Observer();
+    this.dropButtons = new DropButtons(this.$element);
+    this.dropButtons.observer.subscribe({ key: 'clickReset', observer: this.reset.bind(this) });
+    this.dropButtons.observer.subscribe({ key: 'clickSubmit', observer: this.submit.bind(this) });
+    this.dropButtons.addActiveClass();
     this.dp = {};
     this.init();
   }
@@ -38,21 +37,21 @@ class Calendar {
       prevHtml: '<div class="calendar__arrow"><span class="icon-arrow_back"></span></div>',
       nextHtml: '<div class="calendar__arrow"><span class="icon-arrow"></span></div>',
       onSelect(res) {
-        el.changeDate(res);
+        el.observer.notify('change', res);
       },
     });
   }
 
-  resetCalendar() {
+  reset() {
     this.dp.clear();
-    this.changeDate({
+    this.observer.notify('change', {
       date: [undefined, undefined],
       formattedDate: [undefined, undefined],
     });
   }
 
-  submitCalendar() {
-    this.closeCalendar();
+  submit() {
+    this.observer.notify('close');
   }
 
   setOptions(options) {

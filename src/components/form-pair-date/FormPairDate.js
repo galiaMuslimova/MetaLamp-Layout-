@@ -10,7 +10,6 @@ class FormPairDate {
       this.$element.find('.js-form-pair-date__input'),
       this.toggleDropOpen.bind(this),
     );
-    this.bindEventListeners();
   }
 
   changeDate(res) {

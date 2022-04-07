@@ -1,4 +1,6 @@
 .form-double-date {
+  position: relative;
+  
   &__row {
     display: grid;
     grid-template-columns: 1fr 1fr;

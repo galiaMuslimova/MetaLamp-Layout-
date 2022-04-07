@@ -1,16 +1,21 @@
+import Observer from '../../observer/Observer';
+
 class InputOpen {
-  constructor($root, openDrop) {
+  constructor($root) {
     this.$root = $root;
-    this.openDrop = openDrop;
+    this.observer = new Observer();
     this.$element = this.$root.find('.js-input-open');
     this.$inputField = this.$element.find('.js-input-open__field');
     this.$inputButton = this.$element.find('.js-input-open__button');
-    this.value = this.$inputField.val();
     this.bindEventListeners();
   }
 
   bindEventListeners() {
-    this.$inputButton.on('click', this.openDrop());
+    this.$inputButton.on('click', this.handleButtonClick.bind(this));
+  }
+
+  handleButtonClick() {
+    this.observer.notify('click');
   }
 
   toggleActiveClass() {
@@ -21,8 +26,8 @@ class InputOpen {
     this.$element.removeClass('input-open_active');
   }
 
-  setDate(date) {
-    this.$inputField.val(date);
+  setValue(value) {
+    this.$inputField.val(value);
   }
 }
 
