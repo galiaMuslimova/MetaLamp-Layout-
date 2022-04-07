@@ -6,10 +6,7 @@ class FormSelector {
     this.$root = $root;
     this.$element = this.$root.find('.js-form-selector');
     this.input = new InputOpen(this.$element.find('.js-form-selector__input'));
-    this.input.observer.subscribe({ key: 'click', observer: this.openSelector.bind(this) });
     this.selector = new Selector(this.$element.find('.js-form-selector__drop'));
-    this.selector.observer.subscribe({ key: 'close', observer: this.closeSelector.bind(this) });
-    this.selector.observer.subscribe({ key: 'setValue', observer: this.setValue.bind(this) });
     this.isOpen = this.selector.isOpen();
     this.bindEventListeners();
   }
@@ -30,14 +27,16 @@ class FormSelector {
     this.isOpen = false;
   }
 
-  setValue(value) {
-    this.input.setValue(value);
-  }
-
   handleDropClassActiveRemove(event) {
     if (this.isOpen && this.$root.find(event.target).length === 0) {
       this.closeSelector();
     }
+  }
+
+  static declOfNum(number, titles) {
+    const cases = [2, 0, 1, 1, 1, 2];
+    const isTwo = number % 100 > 4 && number % 100 < 20;
+    return titles[isTwo ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
   }
 }
 

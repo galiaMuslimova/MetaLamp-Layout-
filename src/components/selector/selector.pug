@@ -1,7 +1,7 @@
 include ../counter/counter.pug
 include ../drop-buttons/drop-buttons.pug
 
-mixin selector(items)
+mixin selector(items, hasButton)
   .selector.js-selector
     .selector__content 
       each item in items
@@ -9,6 +9,7 @@ mixin selector(items)
           .selector__subtitle=item.name
           .selector__counter.js-selector__counter  
             +counter(item.amount)
-    .selector__buttons 
-      +drop-buttons()
+    if(hasButton)
+      .selector__buttons.js-selector__buttons 
+        +drop-buttons()
           

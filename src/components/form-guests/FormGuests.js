@@ -1,44 +1,44 @@
 import FormSelector from '../form-selector/FormSelector';
-import SelectorGuests from '../selector-guests/SelectorGuests';
+import Selector from '../selector/Selector';
 import InputOpen from '../input-open/InputOpen';
 
-class FormGuests {
+class FormGuests extends FormSelector {
   constructor($root) {
+    super($root);
     this.$root = $root;
     this.$element = this.$root.find('.js-form-guests');
     this.input = new InputOpen(this.$element.find('.js-form-guests__input'));
     this.input.observer.subscribe({ key: 'click', observer: this.openSelector.bind(this) });
-    this.selector = new SelectorGuests(this.$element.find('.js-form-guests__drop'));
+    this.selector = new Selector(this.$element.find('.js-form-guests__drop'));
+    this.selector.observer.subscribe({ key: 'change', observer: this.setValue.bind(this) });
     this.selector.observer.subscribe({ key: 'close', observer: this.closeSelector.bind(this) });
-    this.selector.observer.subscribe({ key: 'setValue', observer: this.setValue.bind(this) });
-    this.isOpen = this.selector.isOpen();
-    this.bindEventListeners();
+    this.selector.changeCount();
   }
 
-  bindEventListeners() {
-    $(document).on('click', this.handleDropClassActiveRemove.bind(this));
+  setValue(array) {
+    const str = this.createGuestsText(array);
+    this.input.setValue(str);
   }
 
-  openSelector() {
-    this.input.toggleActiveClass();
-    this.selector.toggleActiveClass();
-    this.isOpen = !this.isOpen;
-  }
+  createGuestsText(array) {
+    const adultsNum = array[0] + array[1];
+    const adultsText = this.constructor.declOfNum(adultsNum, ['гость', 'гостя', 'гостей']);
+    const adults = `${adultsNum} ${adultsText}`;
 
-  closeSelector() {
-    this.input.removeActiveClass();
-    this.selector.removeActiveClass();
-    this.isOpen = false;
-  }
+    const babiesNum = array[2];
+    const babiesText = this.constructor.declOfNum(babiesNum, ['младенец', 'младенца', 'младенцев']);
+    const babies = `${babiesNum} ${babiesText}`;
 
-  setValue(value) {
-    this.input.setValue(value);
-  }
-
-  handleDropClassActiveRemove(event) {
-    if (this.isOpen && this.$root.find(event.target).length === 0) {
-      this.closeSelector();
+    let str;
+    if (adultsNum === 0) {
+      str = 'Сколько гостей';
+    } else
+    if (babiesNum === 0) {
+      str = adults;
+    } else {
+      str = `${adults}, ${babies}`;
     }
+    return str;
   }
 }
 

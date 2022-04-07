@@ -7,12 +7,19 @@ class Selector {
     this.$root = $root;
     this.$element = this.$root.find('.js-selector');
     this.observer = new Observer();
-    this.dropButtons = new DropButtons(this.$element);
-    this.dropButtons.observer.subscribe({ key: 'clickReset', observer: this.reset.bind(this) });
-    this.dropButtons.observer.subscribe({ key: 'clickSubmit', observer: this.submit.bind(this) });
+    this.dropButtons = undefined;
+    this.addDropButtons();
     this.counters = this.makeCounters();
     this.valuesArray = this.takeNumbersArray();
-    this.changeCount();
+  }
+
+  addDropButtons() {
+    const hasButton = this.$element.find('.js-selector__buttons').length > 0;
+    if (hasButton) {
+      this.dropButtons = new DropButtons(this.$element);
+      this.dropButtons.observer.subscribe({ key: 'clickReset', observer: this.reset.bind(this) });
+      this.dropButtons.observer.subscribe({ key: 'clickSubmit', observer: this.submit.bind(this) });
+    }
   }
 
   makeCounters() {
@@ -30,9 +37,15 @@ class Selector {
 
   changeCount() {
     this.valuesArray = this.takeNumbersArray();
-    const result = this.valuesArray.reduce((sum, elem) => sum + elem, 0);
-    this.changeInputText();
+    this.observer.notify('change', this.valuesArray);
+    if (this.dropButtons !== undefined) {
+      this.changeButtonsClass();
+    }
+  }
+
+  changeButtonsClass() {
     const isResetButtonActive = this.dropButtons.hasActiveClass();
+    const result = this.valuesArray.reduce((sum, elem) => sum + elem, 0);
     if (result > 0 && !isResetButtonActive) {
       this.dropButtons.addActiveClass();
     } else if (result < 1 && isResetButtonActive) {
@@ -44,18 +57,15 @@ class Selector {
     this.counters.forEach((counter) => {
       counter.resetForm();
     });
-    this.changeInputText();
     this.valuesArray = this.takeNumbersArray();
-    this.dropButtons.removeActiveClass();
+    this.observer.notify('change', this.valuesArray);
+    if (this.dropButtons !== undefined) {
+      this.dropButtons.removeActiveClass();
+    }
   }
 
   submit() {
     this.observer.notify('close');
-  }
-
-  changeInputText() {
-    const str = '';
-    this.observer.notify('setValue', str);
   }
 
   removeActiveClass() {
@@ -72,12 +82,6 @@ class Selector {
 
   takeNumbersArray() {
     return this.counters.map((counter) => counter.numButtonValue);
-  }
-
-  static declOfNum(number, titles) {
-    const cases = [2, 0, 1, 1, 1, 2];
-    const isTwo = number % 100 > 4 && number % 100 < 20;
-    return titles[isTwo ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
   }
 }
 

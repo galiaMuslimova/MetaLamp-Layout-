@@ -13,6 +13,8 @@ mixin entry-card()
       .entry-card__item
         h3.entry-card__subtitle гости 
         .entry-card__guests.js-entry-card__guests
-          +form-guests({items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}] })
+          +form-guests({
+            items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}], 
+            hasButton: true })
       .entry-card__button.js-entry-card__button
         +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true})

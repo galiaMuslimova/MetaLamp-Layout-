@@ -24,7 +24,8 @@ mixin room-card()
         h3.room-card__subtitle гости 
         .room-card__guests.js-room-card__guests
           +form-guests({
-            items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
+            items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}],
+            hasButton: true
           })
       .room-card__calculation 
         +calculation(roomData, days)        
