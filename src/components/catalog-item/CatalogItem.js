@@ -8,6 +8,10 @@ class CatalogItem {
     this.rate = new Rate(this.$element);
     this.carousel = new Carousel(this.$element);
   }
+
+  setFocus() {
+    this.carousel.setFocus();
+  }
 }
 
 export default CatalogItem;

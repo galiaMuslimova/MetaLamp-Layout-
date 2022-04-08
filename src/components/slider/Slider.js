@@ -1,5 +1,6 @@
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
+import '../noUi-handle/noUi-handle.scss';
 
 const options = {
   start: [5000, 10000],

@@ -5,7 +5,8 @@ mixin checkbox({id, text, subtext, checked=false})
     label.checkbox__label
       input.checkbox__input(type="checkbox" id=id checked=checked)
       span.checkbox__box
-        +icon-check()      
+        span.checkbox__icon
+          +icon-check()      
       span.checkbox__content 
         if(subtext)     
           span.checkbox__text.checkbox__text_bold=text

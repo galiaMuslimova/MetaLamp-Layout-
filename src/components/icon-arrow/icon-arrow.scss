@@ -1,4 +1,12 @@
 .icon-arrow {
   line-height: inherit;
   vertical-align: middle;
+
+  &:before {
+    content: "\f102";
+  }
+
+  &_back {
+    transform: rotateZ(90deg);
+  }
 }

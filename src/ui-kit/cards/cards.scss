@@ -18,11 +18,5 @@
 
   &__catalog-card {
     margin: 12px auto 0px 0px;
-
-    &_focused {
-      .carousel__mover {
-        display: flex;
-      }
-    }
   }
 }

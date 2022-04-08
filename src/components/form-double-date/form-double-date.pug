@@ -12,4 +12,4 @@ mixin form-double-date({placeholder=['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ']
         h3.form-double-date__subtitle= titles[1]
         .form-double-date__input
           +input-open({placeholder: placeholder[1], value: values[1]})
-    +calendar({id: id})
+    +calendar(id)

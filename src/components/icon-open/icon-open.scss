@@ -2,6 +2,10 @@
   color: rgba(31, 32, 65, 0.5);
   caret-color: transparent;
 
+  &:before {
+    content: "\f106";
+  }
+
   &_rotated-left,
   &_rotated-right {
     &:before {

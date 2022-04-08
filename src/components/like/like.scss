@@ -35,7 +35,7 @@
     text-shadow: 0 0 0 black;
     cursor: pointer;
 
-    &:checked+.like__icon>.icon-heart:before {
+    &:checked+.like__icon>.like-heart {
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-color: rgba(188, 156, 255, 1);
       stroke-width: none;

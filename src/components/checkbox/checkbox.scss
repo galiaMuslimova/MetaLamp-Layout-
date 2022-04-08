@@ -10,9 +10,13 @@
     cursor: pointer;
     caret-color: transparent;
 
-    &:checked+.checkbox__box>.icon-check:before {
+    &:checked+.checkbox__box>.checkbox__icon {
       display: inline-block;
     }
+  }
+
+  &__icon {
+    display: none;
   }
 
   &__box {

@@ -1,5 +1,6 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
+import '../air-datepicker/air-datepicker.scss';
 import Observer from '../../observer/Observer';
 import DropButtons from '../drop-buttons/DropButtons';
 
@@ -24,7 +25,7 @@ class Calendar {
       multipleDates: true,
       range: true,
       dynamicRange: true,
-      prevHtml: '<div class="calendar__arrow"><span class="icon-arrow_back"></span></div>',
+      prevHtml: '<div class="calendar__arrow"><span class="icon-arrow icon-arrow_back"></span></div>',
       nextHtml: '<div class="calendar__arrow"><span class="icon-arrow"></span></div>',
       onSelect(res) {
         el.observer.notify('change', res);

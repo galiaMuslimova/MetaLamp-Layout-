@@ -1,14 +1,14 @@
 .sign-in {
   &__content {
     margin: 11.8vw 0vw;
+  }
 
-    .sign-in-card {
-      margin: 0px auto;
-    }
+  &__card {
+    margin: 0px auto;
   }
 
   &__back {
-    max-height: 772px;    
+    max-height: 772px;
 
     @media (max-width: 1450px) {
       height: 100%;

@@ -6,5 +6,6 @@ mixin like({count, isCheck, name})
       input.like__input.js-like__input(type="checkbox", checked=isCheck, name=name)
       span.like__row
         span.like__icon
-          +icon-heart()
+          span.like__heart
+            +icon-heart()
         span.like__count.js-like__count= count 

@@ -2,6 +2,7 @@ import EntryCard from '@c/entry-card/EntryCard.js';
 import RoomCard from '@c/room-card/RoomCard.js';
 import LogInCard from '@c/log-in-card/LogInCard.js';
 import Calendar from '@c/calendar/Calendar.js';
+import CatalogItem from '@c/catalog-item/CatalogItem.js';
 
 class Cards {
   constructor($root) {
@@ -20,6 +21,8 @@ class Cards {
       this.roomCard = new RoomCard(this.$element.find('.js-cards__room-card'));
       this.logInCard = new LogInCard(this.$element.find('.js-cards__log-in-card'));
       this.calendar = new Calendar(this.$element.find('.js-cards__date'));
+      this.catalogItem = new CatalogItem(this.$element.find('.js-cards__catalog-card_focused'));
+      this.catalogItem.setFocus();
       this.initCalendar();
     }
   }

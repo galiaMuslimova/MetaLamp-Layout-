@@ -47,6 +47,10 @@ class Carousel {
     Carousel.slideToRight(this.$itemList, 'carousel__slide_shown');
     Carousel.slideToRight(this.$indicators, 'carousel__indicator_shown');
   }
+
+  setFocus() {
+    this.$element.addClass('carousel_focused');
+  }
 }
 
 export default Carousel;
