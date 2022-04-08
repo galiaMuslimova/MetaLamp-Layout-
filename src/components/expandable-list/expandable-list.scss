@@ -1,4 +1,6 @@
 .expandable-list {
+  position: relative;
+
   &__row {
     display: flex;
     flex-direction: row;
@@ -22,12 +24,20 @@
     caret-color: transparent;
     cursor: pointer;
 
-    &_expanded {
+    &_active {
       transform: rotateZ(180deg);
     }
   }
 
   &__check-list {
-    position: relative;
+    position: absolute;
+    display: none;
+    z-index: 4;
+    background: #FFFFFF;
+    width: 100%;
+
+    &_active {
+      display: block;
+    }
   }
 }

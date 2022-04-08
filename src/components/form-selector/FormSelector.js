@@ -4,9 +4,9 @@ import InputOpen from '../input-open/InputOpen';
 class FormSelector {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-form-selector');
-    this.input = new InputOpen(this.$element.find('.js-form-selector__input'));
-    this.selector = new Selector(this.$element.find('.js-form-selector__drop'));
+    this.$element = this.$root;
+    this.input = new InputOpen(this.$root);
+    this.selector = new Selector(this.$root);
     this.isOpen = this.selector.isOpen();
     this.bindEventListeners();
   }

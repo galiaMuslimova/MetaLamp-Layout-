@@ -6,6 +6,7 @@ class RoomChart {
     this.$element = this.$root.find('.js-room-chart__content');
     this.chartData = chartData;
     this.ctxContext = this.$element[0].getContext('2d');
+    console.log(this.$element[0])
     this.voices = this.chartData.voices;
     this.colors = this.createColors();
     this.data = this.createData();

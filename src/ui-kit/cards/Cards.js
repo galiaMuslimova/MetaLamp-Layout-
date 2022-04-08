@@ -19,12 +19,14 @@ class Cards {
       this.entryCard = new EntryCard(this.$element.find('.js-cards__entry-card'));
       this.roomCard = new RoomCard(this.$element.find('.js-cards__room-card'));
       this.logInCard = new LogInCard(this.$element.find('.js-cards__log-in-card'));
-      this.calendar = new Calendar({ $root: this.$element.find('.js-cards__date'), id: 'cards' });
+      this.calendar = new Calendar(this.$element.find('.js-cards__date'));
       this.initCalendar();
     }
   }
 
   initCalendar() {
+    this.calendar.createDatePicker();
+    this.calendar.toggleActiveClass();
     const newDate = ['2019-08-19', '2019-08-23'];
     const cardFocusDate = new Date(2019, 7, 8);
     this.calendar.setDate(newDate);

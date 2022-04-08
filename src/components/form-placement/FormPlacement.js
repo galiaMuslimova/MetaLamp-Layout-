@@ -12,7 +12,7 @@ class FormPlacement extends FormSelector {
     this.selector = new Selector(this.$element.find('.js-form-placement__drop'));
     this.selector.observer.subscribe({ key: 'change', observer: this.setValue.bind(this) });
     this.selector.observer.subscribe({ key: 'close', observer: this.closeSelector.bind(this) });
-    this.init();
+    this.selector.changeCount();
   }
 
   setValue(array) {

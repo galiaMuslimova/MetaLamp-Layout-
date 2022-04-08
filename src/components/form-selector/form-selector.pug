@@ -1,9 +1,0 @@
-include ../input-open/input-open.pug
-include ../selector/selector.pug
-
-mixin form-selector({value='', items, type})
-  .form-selector.js-form-selector
-    .form-selector__input.js-form-selector__input
-      +input-open(value)
-    .form-selector__drop.js-form-selector__drop
-      +selector(items, type)

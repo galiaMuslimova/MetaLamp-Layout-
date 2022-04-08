@@ -5,7 +5,7 @@ class RoomCard {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-room-card');
-    this.dateForm = new FormDoubleDate(this.$element.find('.js-room-card__guests'), 'room-card');
+    this.dateForm = new FormDoubleDate(this.$element.find('.js-room-card__date'));
     this.guestsForm = new FormGuests(this.$element.find('.js-room-card__guests'));
     this.initCalendar();
   }

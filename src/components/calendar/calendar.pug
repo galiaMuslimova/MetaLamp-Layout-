@@ -2,7 +2,7 @@ include ../drop-buttons/drop-buttons.pug
 
 mixin calendar({id})  
   .calendar.js-calendar
-    .calendar__dp(class=`calendar__dp_for-${id} js-calendar__dp_for-${id}` )
+    .calendar__dp.js-calendar__dp(class=`calendar__dp_for-${id} js-calendar__dp_for-${id}` )
     .calendar__buttons 
       +drop-buttons()
     

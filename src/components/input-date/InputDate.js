@@ -1,8 +1,9 @@
+import Observer from '../../observer/Observer';
+
 class InputDate {
-  constructor($root, openDrop, changeDate) {
+  constructor($root) {
     this.$root = $root;
-    this.openDrop = openDrop;
-    this.changeDate = changeDate;
+    this.observer = new Observer();
     this.$element = this.$root.find('.js-input-date');
     this.value = this.$element.val();
     this.bindEventListeners();
@@ -14,7 +15,7 @@ class InputDate {
   }
 
   handleDropOpen() {
-    this.openDrop();
+    this.observer.notify('click');
   }
 
   toggleActiveClass() {
@@ -23,6 +24,10 @@ class InputDate {
 
   removeActiveClass() {
     this.$element.removeClass('input-date_active');
+  }
+
+  setDate(date) {
+    this.$element.val(date);
   }
 
   handleInputKeyup() {
@@ -50,7 +55,7 @@ class InputDate {
     }
 
     if (this.value.length === 10) {
-      this.changeDate(this.value);
+      this.observer.notify('change', this.value);
     }
 
     this.$element.val(this.value);

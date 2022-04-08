@@ -4,24 +4,14 @@ import Observer from '../../observer/Observer';
 import DropButtons from '../drop-buttons/DropButtons';
 
 class Calendar {
-  constructor($root, id) {
+  constructor($root) {
     this.$root = $root;
-    this.id = id;
-    this.anchor = `.js-calendar__dp_for-${this.id}`;
     this.$element = this.$root.find('.js-calendar');
+    this.classes = this.$element.find('.js-calendar__dp').attr('class');
+    this.anchor = `.${this.classes.split(' ')[3]}`;
     this.observer = new Observer();
     this.dropButtons = new DropButtons(this.$element);
-    this.dropButtons.observer.subscribe({ key: 'clickReset', observer: this.reset.bind(this) });
-    this.dropButtons.observer.subscribe({ key: 'clickSubmit', observer: this.submit.bind(this) });
-    this.dropButtons.addActiveClass();
     this.dp = {};
-    this.init();
-  }
-
-  init() {
-    if ($(this.anchor)[0]) {
-      this.createDatePicker();
-    }
   }
 
   createDatePicker() {
@@ -40,6 +30,9 @@ class Calendar {
         el.observer.notify('change', res);
       },
     });
+    this.dropButtons.observer.subscribe({ key: 'clickReset', observer: this.reset.bind(this) });
+    this.dropButtons.observer.subscribe({ key: 'clickSubmit', observer: this.submit.bind(this) });
+    this.dropButtons.addActiveClass();
   }
 
   reset() {
@@ -66,12 +59,20 @@ class Calendar {
     this.dp.setFocusDate(newDate);
   }
 
+  formatDate(date, type) {
+    return this.dp.formatDate(date, type);
+  }
+
   removeActiveClass() {
     this.$element.removeClass('calendar_active');
   }
 
   toggleActiveClass() {
     this.$element.toggleClass('calendar_active');
+  }
+
+  isOpen() {
+    return this.$element.hasClass('calendar_active');
   }
 }
 

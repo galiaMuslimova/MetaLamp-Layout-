@@ -1,5 +1,6 @@
 .input {
   height: 44px;
+  width: 100%;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
@@ -15,6 +16,7 @@
 
   &:focus-within,
   &:hover {
+    outline: none;
     border: 1px solid rgba(31, 32, 65, 0.5);
-  } 
+  }
 }

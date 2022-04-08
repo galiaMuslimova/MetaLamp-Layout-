@@ -1,12 +1,14 @@
 import InputOpen from '../input-open/InputOpen';
 import Calendar from '../calendar/Calendar';
+import FormCalendar from '../form-calendar/FormCalendar';
 
-class FormDoubleDate {
-  constructor($root, id) {
+class FormDoubleDate extends FormCalendar {
+  constructor($root) {
+    super($root);
     this.$root = $root;
-    this.id = id;
     this.$element = this.$root.find('.js-form-double-date');
-    this.calendar = new Calendar(this.$element, this.id);
+    this.calendar = new Calendar(this.$element);
+    this.calendar.createDatePicker();
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
     this.firstInput = new InputOpen(this.$element.find('.js-form-double-date__item_is-first'));
@@ -21,23 +23,15 @@ class FormDoubleDate {
   }
 
   openDrop() {
-    this.calendar.toggleActiveClass();
+    super.openDrop();
     this.firstInput.toggleActiveClass();
     this.secondInput.toggleActiveClass();
   }
 
   closeCalendar() {
-    this.calendar.removeActiveClass();
+    super.openDrop();
     this.firstInput.removeActiveClass();
     this.secondInput.removeActiveClass();
-  }
-
-  setDate(date) {
-    this.calendar.setDate(date);
-  }
-
-  setFocusDate(date) {
-    this.calendar.setFocusDate(date);
   }
 }
 

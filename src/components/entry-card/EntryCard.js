@@ -6,7 +6,7 @@ class EntryCard {
     this.$root = $root;
     this.$element = this.$root.find('.js-entry-card');
     this.$entryCardButton = this.$element.find('.js-entry-card__button');
-    this.dateForm = new FormDoubleDate(this.$element.find('.js-entry-card__date'), 'entry-card');
+    this.dateForm = new FormDoubleDate(this.$element.find('.js-entry-card__date'));
     this.guestsForm = new FormGuests(this.$element.find('.js-entry-card__guests'));
     this.bindEventListeners();
   }
