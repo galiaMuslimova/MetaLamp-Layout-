@@ -1,2 +1,7 @@
-mixin input-date({value})  
+mixin input-date(options)  
+  - const fontType = options.fonType || 'text'
+  - const placeholder = options.placeholder || ''
+  - const value = options.value || ''
+  - const focus = options.focus || false
+  
   input.input-date.js-input-date(type='text', placeholder='ДД.ММ.ГГГГ', value=value)

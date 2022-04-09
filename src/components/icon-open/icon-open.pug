@@ -1,7 +1,7 @@
-mixin icon-open(type)
-  if(type=='expandable')
-    span.icon-open(class='icon-open_expandable js-icon-open_expandable')
-  else if(type=='rotated-left' || type=='rotated-right')
-    span.icon-open(class='icon-open_'+type)
+mixin icon-open(options = {})
+  - const type = options.type || undefined
+
+  if(type)
+    span.icon-open(class=`icon-open_${type} js-icon-open_${type}`)
   else 
     span.icon-open

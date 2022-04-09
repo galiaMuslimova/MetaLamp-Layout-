@@ -1,14 +1,17 @@
 include ../counter/counter.pug
 include ../drop-buttons/drop-buttons.pug
 
-mixin selector(items, hasButton)
+mixin selector(options)
+  - const items = options.items || []
+  - const hasButton = options.hasButton || false
+
   .selector.js-selector
     .selector__content 
       each item in items
         .selector__row
           .selector__subtitle=item.name
           .selector__counter.js-selector__counter  
-            +counter(item.amount)
+            +counter({ amount: item.amount })
     if(hasButton)
       .selector__buttons.js-selector__buttons 
         +drop-buttons()

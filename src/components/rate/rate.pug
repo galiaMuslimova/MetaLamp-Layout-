@@ -1,6 +1,8 @@
 include ../icon-star/icon-star.pug
 
-mixin rate({starsCount})
+mixin rate(options)
+  - const startsCount = options.starsCount || 3
+
   .rate.js-rate
     - let i = 0
     while i < starsCount 

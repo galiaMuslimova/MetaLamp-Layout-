@@ -1,6 +1,8 @@
 include ../checkbox/checkbox.pug
 
-mixin checkbox-list(items)
+mixin checkbox-list(options)
+  - const items = options.items || undefined 
+
   .checkbox-list
     each item in items
       +checkbox(item)

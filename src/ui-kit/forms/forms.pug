@@ -92,9 +92,9 @@ block content
       
       //features
       .forms__features
-        +feature("Комфорт", "Шумопоглощающие стены")
+        +feature({title: "Комфорт", text: "Шумопоглощающие стены"})
         .forms__divider
-        +feature("Удобство", "Окно в каждой из спален")
+        +feature({title: "Удобство", text: "Окно в каждой из спален"})
         .forms__divider
 
       
@@ -104,10 +104,10 @@ block content
         .forms__block
           .forms__item
             h3.forms__subtitle Checkbox Buttons
-            +checkbox-list([
+            +checkbox-list({ items: [
               {id:"smoke", text:"Можно курить"},
               {id:"pet", text:"Можно с питомцами", checked:true},
-              {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}])
+              {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}] })
           .forms__radio
             h3.forms__subtitle radio buttons
             .forms__row   
@@ -173,8 +173,8 @@ block content
               })
           .forms__checkbox
             h3.forms__subtitle Rich Checkbox Buttons
-            +checkbox-list([
-              {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}])   
+            +checkbox-list({ items: [
+              {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}] })   
         
         //dropdown third column and bullet list
         .forms__block.forms__block_with-large-gap
@@ -186,8 +186,8 @@ block content
               }) 
           form.forms__bullet
             h3.forms__subtitle bullet list 
-            +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, \n а выезд до 12:00"])
+            +bullet({ items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, \n а выезд до 12:00"] })
       
       .forms__review.js-forms__review
         -const data = require("@c/review/review.json")
-        +review([data[0]])
+        +review({data: [data[0]]})

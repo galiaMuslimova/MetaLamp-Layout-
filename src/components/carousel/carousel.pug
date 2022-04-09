@@ -1,9 +1,10 @@
 include ../icon-open/icon-open.pug
 
-mixin carousel({num})  
+mixin carousel(options)  
+  - const num = options.num || 0
   //-import all images from directory of this number as array "images"
-  -function requireAll(requireContext) { return requireContext.keys().filter(el => el.includes(num)).map(requireContext) };
-  -const images = requireAll(require.context("@a/images/catalog-images/", true, /\.(jpg|png|jpeg)$/));
+  - function requireAll(requireContext) { return requireContext.keys().filter(el => el.includes(num)).map(requireContext) };
+  - const images = requireAll(require.context("@a/images/catalog-images/", true, /\.(jpg|png|jpeg)$/));  
 
   .carousel.js-carousel
     .carousel__slide-list.js-carousel__slide-list
@@ -16,9 +17,9 @@ mixin carousel({num})
       .carousel__slide
         img.carousel__image(src=images[3] alt='room image')
     .carousel__mover.js-carousel__mover.carousel__mover_left.js-carousel__mover_left
-      +icon-open('rotated-left')
+      +icon-open({ type: 'rotated-left' })
     .carousel__mover.js-carousel__mover.carousel__mover_right.js-carousel__mover_right
-      +icon-open('rotated-right')
+      +icon-open({ type: 'rotated-right' })
     .carousel__indicators-list.js-carousel__indicators-list
       .carousel__indicator.carousel__indicator_shown
       .carousel__indicator

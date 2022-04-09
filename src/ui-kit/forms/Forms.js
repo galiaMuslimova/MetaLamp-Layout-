@@ -46,7 +46,7 @@ class Forms {
       this.secondRate = new Rate(this.$element.find('.js-forms_rate-item_is-second'));
       this.slider = new Slider(this.$element);
       this.pagination = new Pagination(this.$element);
-      this.pagination.createPaginationSample();
+      this.pagination.disablePreviousButton();
       this.firstPlace = new FormPlacement(this.$element.find('.js-forms__placement_is-first'));
       this.secondPlace = new FormPlacement(this.$element.find('.js-forms__placement_is-second'));
       this.secondPlace.openSelector();

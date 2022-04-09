@@ -1,4 +1,9 @@
-mixin input({fontType='text', placeholder, focus=false}) 
+mixin input(options) 
+  - const fontType = options.fonType || 'text'
+  - const placeholder = options.placeholder || ''
+  - const value = options.value || ''
+  - const focus = options.focus || false
+
   input.input.js-input(type=fontType, placeholder=placeholder, autofocus=focus)
 
 

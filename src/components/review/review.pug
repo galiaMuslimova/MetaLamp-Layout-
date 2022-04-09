@@ -1,6 +1,8 @@
 include ../like/like.pug
 
-mixin review(data)
+mixin review(options)
+  - const data = options.data || data
+
   each val in data
     .review.js-review
       .review__col

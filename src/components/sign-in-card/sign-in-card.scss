@@ -1,16 +1,16 @@
 .sign-in-card {
-  max-width: 380px;
-  width: 100%;
+  width: 380px;
   max-height: 358px;
   height: 100%;
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;  
+  border-radius: 4px;
   background: #FFFFFF;
 
   @media (max-width: 420px) {
-    width: 300px;
+    max-width: 380px;
+    width: 100%;
   }
 
   &__inner {

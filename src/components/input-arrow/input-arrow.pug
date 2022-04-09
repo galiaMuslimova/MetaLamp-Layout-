@@ -1,7 +1,12 @@
 include ../icon-open/icon-open.pug
 include ../icon-arrow/icon-arrow.pug
 
-mixin input-arrow({fontType='text', placeholder})  
+mixin input-arrow(options) 
+  - const fontType = options.fonType || 'text'
+  - const placeholder = options.placeholder || ''
+  - const value = options.value || ''
+  - const focus = options.focus || false
+
   .input-arrow.js-input-arrow
     input.input-arrow__field.js-input-arrow__field(type=fontType, placeholder=placeholder)
     button.input-arrow__button.js-input-arrow__button(type="submit")

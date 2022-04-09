@@ -1,17 +1,14 @@
 include ../checkbox-list/checkbox-list.pug
 include ../icon-open/icon-open.pug
 
-mixin expandable-list({title})
+mixin expandable-list(options)
+  - const title = options.title || 'title'
+  - const items = options.items || [{id:"breakfast", text:"Завтрак"}, {id:"table", text:"Письменный стол", checked:true}, {id:"chair", text:"Стул для кормления", checked:true},  {id:"crib", text:"Кроватка", checked:true}, {id:"TV", text:"Телевизор"}, {id:"shampoo", text:"Шампунь"}]
+
   .expandable-list.js-expandable-list
     .expandable-list__row
       h3.expandable-list__title= title
       .expandable-list__icon.js-expandable-list__icon 
-        +icon-open('expandable')
+        +icon-open({ type: 'expandable' })
     .expandable-list__check-list.js-expandable-list__check-list
-      +checkbox-list([
-        {id:"breakfast", text:"Завтрак"}, 
-        {id:"table", text:"Письменный стол", checked:true}, 
-        {id:"chair", text:"Стул для кормления", checked:true}, 
-        {id:"crib", text:"Кроватка", checked:true}, 
-        {id:"TV", text:"Телевизор"}, 
-        {id:"shampoo", text:"Шампунь"}])
+      +checkbox-list({ items: items })

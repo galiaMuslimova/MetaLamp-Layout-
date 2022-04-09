@@ -1,6 +1,5 @@
 .log-in-card {
-  max-width: 380px;
-  width: 100%;
+  width: 380px;
   max-height: 646px;
   height: 100%;
   box-sizing: border-box;
@@ -10,7 +9,8 @@
   background: #FFFFFF;
 
   @media (max-width: 420px) {
-    width: 300px;
+    max-width: 380px;
+    width: 100%;
   }
 
   &__inner {

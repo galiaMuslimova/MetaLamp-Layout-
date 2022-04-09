@@ -10,28 +10,29 @@ block title
   title Hotel Room
 
 block content
+  -const data = require("@c/review/review.json")
+
   .room.js-room
     .room__content
       .room__info           
         h2.room__subtitle Сведения о номере
-        +feature('Комфорт', 'Шумопоглощающие стены')
+        +feature({title: 'Комфорт', text: 'Шумопоглощающие стены'})
         .room__divider
-        +feature('Удобство', 'Окно в каждой из спален')
+        +feature({title: 'Удобство', text: 'Окно в каждой из спален'})
         .room__divider
-        +feature('Уют', 'Номер оснащён камином')
+        +feature({title: 'Уют', text: 'Номер оснащён камином'})
       .room__chart
         h2.room__subtitle Впечатления от номера              
-        +room-chart(selectedRoom.review)
+        +room-chart()
       .room__review 
         .room__row
           h2.room__subtitle Отзывы посетителей номера
-          p.room__text 2 отзыва
-        -const data = require("@c/review/review.json")
-        +review(data)
+          p.room__text 2 отзыва        
+        +review({data: data})
       .room__rules
         h2.room__subtitle Правила 
-        +bullet(["Нельзя с питомцами", "Без вечеринок и мероприятий", 
-        "Время прибытия — после 13:00, а выезд до 12:00"])
+        +bullet({ items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", 
+        "Время прибытия — после 13:00, а выезд до 12:00"] })
       .room__cancel 
         h2.room__subtitle Отмена 
         p.room__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.                

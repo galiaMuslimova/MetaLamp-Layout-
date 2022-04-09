@@ -1,4 +1,7 @@
-mixin radio({text, checked=false})  
+mixin radio(options)  
+  - const text = options.text || ''
+  - const checked = options.checked || false 
+
   .radio 
     label.radio__label
       input.radio__input(type="radio" name="radio" checked=checked)

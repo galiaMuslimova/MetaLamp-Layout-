@@ -1,6 +1,11 @@
 include ../icon-check/icon-check.pug
 
-mixin checkbox({id, text, subtext, checked=false})
+mixin checkbox(options)
+  - const id = options.id || undefined
+  - const text = options.text || 'text'
+  - const subtext = options.subtext || undefined
+  - const checked = options.checked || false
+
   .checkbox.js-checkbox
     label.checkbox__label
       input.checkbox__input(type="checkbox" id=id checked=checked)

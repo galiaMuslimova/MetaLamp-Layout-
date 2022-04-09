@@ -1,4 +1,20 @@
-mixin pagination({id})
+include ../icon-arrow/icon-arrow.pug
+include ../icon-arrow-back/icon-arrow-back.pug
+
+mixin pagination(options)
+  - const id = options.id || ''
+
   .pagination.js-pagination
     .pagination__anchor.js-pagination__anchor(class='js-pagination__anchor_for-' + id)
+      .pagination__item.js-pagination__item.pagination__item_previous.js-pagination__item_previous
+        span.pagination__icon 
+          +icon-arrow-back
+      .pagination__item.pagination__item_current.js-pagination__item_current.pagination__item_active 1
+      .pagination__item.pagination__item_current.js-pagination__item_current 2
+      .pagination__item.pagination__item_current.js-pagination__item_current 3
+      .pagination__item.pagination__item_dots.js-pagination__item_dots ...
+      .pagination__item.pagination__item_current.js-pagination__item_current 15
+      .pagination__item.pagination__item_next.js-pagination__item_next
+        span.pagination__icon 
+          +icon-arrow
     .pagination__text 1 – 12 из 100+ вариантов аренды

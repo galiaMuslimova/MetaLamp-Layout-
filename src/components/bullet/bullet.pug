@@ -1,6 +1,8 @@
-mixin bullet(array)
+mixin bullet(options)
+  - const items = options.items || undefined 
+
   .bullet
-    each item in array 
+    each item in items 
       .bullet__row
         .bullet__ellipse 
         .bullet__text= item

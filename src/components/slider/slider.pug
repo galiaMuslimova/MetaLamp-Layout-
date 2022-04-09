@@ -1,4 +1,8 @@
-mixin slider({type, title, text})
+mixin slider(options)
+  - const type = options.type || ''
+  - const title = options.title || ''
+  - const text = options.text || ''
+
   form.slider.js-slider(class='js-slider_for-' + type)
     .slider__row
       h3.slider__title= title
