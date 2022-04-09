@@ -1,41 +1,29 @@
 .like {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
   width: 40px;
   height: 20px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 10px;
-  align-items: center;
   position: relative;
   margin: 0px;
   caret-color: transparent;
   user-select: none;
-
-  &__label {
-    height: 100%;
-    width: 100%;
-  }
+  cursor: pointer;
 
   &__row {
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    align-items: center;
+    height: 18px;
+    width: 36px;
+    display: grid;
+    grid-template-columns: 45% 35%;
+    grid-template-rows: 100%;
   }
 
-  &__input {
-    appearance: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    color: transparent;
-    text-shadow: 0 0 0 black;
-    cursor: pointer;
+  &__icon {
+    font-size: 0.5em;
+    line-height: 18px;
+    text-align: center;
 
-    &:checked+.like__icon>.like-heart {
+    &_active {
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-color: rgba(188, 156, 255, 1);
       stroke-width: none;
@@ -44,20 +32,10 @@
     }
   }
 
-  &__icon {
-    font-size: 0.5em;
-    display: inline-block;
-    line-height: 10px;
-    vertical-align: text-top;
-  }
-
   &__count {
-    display: inline-block;
-    vertical-align: text-top;
-    width: 20px;
     text-align: center;
     font-size: 10px;
-    line-height: 10px;
+    line-height: 18px;
     color: rgba(31, 32, 65, 0.25);
   }
 }

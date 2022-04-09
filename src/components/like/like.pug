@@ -1,11 +1,8 @@
 include ../icon-heart/icon-heart.pug
 
 mixin like({count, isCheck, name})
-  form.like.js-like
-    label.like__label
-      input.like__input.js-like__input(type="checkbox", checked=isCheck, name=name)
-      span.like__row
-        span.like__icon
-          span.like__heart
-            +icon-heart()
-        span.like__count.js-like__count= count 
+  .like.js-like
+    .like__row
+      span.like__icon.js-like__icon(class=`${isCheck ? 'like__icon_active' : ''}`)
+        +icon-heart()
+      span.like__count.js-like__count= count 

@@ -10,6 +10,10 @@
     cursor: pointer;
     caret-color: transparent;
 
+    &:checked+.checkbox__box {
+      border: 1px solid #BC9CFF;
+    }
+
     &:checked+.checkbox__box>.checkbox__icon {
       display: inline-block;
     }
@@ -20,7 +24,7 @@
   }
 
   &__box {
-    border: 1px solid #BC9CFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 4px;
     display: inline-block;

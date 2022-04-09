@@ -21,18 +21,6 @@ class FormDoubleDate extends FormCalendar {
     this.firstInput.setValue(res.formattedDate[0]);
     this.secondInput.setValue(res.formattedDate[1]);
   }
-
-  openDrop() {
-    super.openDrop();
-    this.firstInput.toggleActiveClass();
-    this.secondInput.toggleActiveClass();
-  }
-
-  closeCalendar() {
-    super.openDrop();
-    this.firstInput.removeActiveClass();
-    this.secondInput.removeActiveClass();
-  }
 }
 
 export default FormDoubleDate;

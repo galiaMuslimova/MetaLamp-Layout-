@@ -23,13 +23,11 @@ class FormCalendar {
 
   openDrop() {
     this.calendar.toggleActiveClass();
-    this.input.toggleActiveClass();
     this.isOpen = !this.isOpen;
   }
 
   closeCalendar() {
     this.calendar.removeActiveClass();
-    this.input.removeActiveClass();
     this.isOpen = false;
   }
 

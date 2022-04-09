@@ -7,16 +7,12 @@
   border-radius: 4px;
   background: white;
 
-  &:focus-within,
-  &:hover {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-  }
-
   &_active {
     border-radius: 4px 4px 0px 0px;
+    border: 1px solid rgba(31, 32, 65, 0.5);
 
     .input-open__field {
-      color: rgba(31, 32, 65, 0.5);
+      color: rgba(31, 32, 65, 0.75);
     }
 
     .input-open__button {

@@ -1,6 +1,6 @@
 .form-double-date {
   position: relative;
-  
+
   &__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -18,5 +18,9 @@
 
   &__input {
     text-transform: uppercase;
+  }
+
+  &__calendar {
+    margin-top: 6px;
   }
 }

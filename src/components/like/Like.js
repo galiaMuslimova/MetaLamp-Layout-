@@ -3,7 +3,7 @@ class Like {
     this.$root = $root;
     this.$element = this.$root.find('.js-like');
     this.$likeCount = this.$element.find('.js-like__count');
-    this.$likeInput = this.$element.find('.js-like__input');
+    this.$likeIcon = this.$element.find('.js-like__icon');
     this.bindEventListeners();
   }
 
@@ -11,10 +11,11 @@ class Like {
     this.$element.on('click', this.handleLikeChange.bind(this));
   }
 
-  handleLikeChange(event) {
+  handleLikeChange() {
+    this.$likeIcon.toggleClass('like__icon_active');
     const likeNum = Number(this.$likeCount.text());
-    const isChecked = this.$likeInput.prop('checked');
-    if (isChecked) {
+    const isActive = this.$likeIcon.hasClass('like__icon_active');
+    if (isActive) {
       this.$likeCount.html(likeNum + 1);
     } else {
       this.$likeCount.html(likeNum - 1);

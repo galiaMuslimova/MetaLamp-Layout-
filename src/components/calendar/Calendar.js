@@ -25,7 +25,7 @@ class Calendar {
       multipleDates: true,
       range: true,
       dynamicRange: true,
-      prevHtml: '<div class="calendar__arrow"><span class="icon-arrow icon-arrow_back"></span></div>',
+      prevHtml: '<div class="calendar__arrow"><span class="icon-arrow-back"></span></div>',
       nextHtml: '<div class="calendar__arrow"><span class="icon-arrow"></span></div>',
       onSelect(res) {
         el.observer.notify('change', res);
