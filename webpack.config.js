@@ -30,6 +30,11 @@ module.exports = {
       '@a': path.resolve(__dirname, 'src/assets/'),
     },
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     port: 4000,
   },
