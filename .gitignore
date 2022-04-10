@@ -1,2 +1,4 @@
 node_modules
-docs
+package.json
+webpack.config.js
+package-lock.json
