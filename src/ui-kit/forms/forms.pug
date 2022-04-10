@@ -169,7 +169,8 @@ block content
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-second.js-forms__guests_is-second
               +form-guests({
-                items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
+                items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}],
+                hasButton: true
               })
           .forms__checkbox
             h3.forms__subtitle Rich Checkbox Buttons
@@ -182,7 +183,8 @@ block content
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-third.js-forms__guests_is-third
               +form-guests({
-                items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}]
+                items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}],
+                hasButton: true
               }) 
           form.forms__bullet
             h3.forms__subtitle bullet list 

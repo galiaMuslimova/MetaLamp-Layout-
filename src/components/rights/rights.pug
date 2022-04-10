@@ -1,5 +1,7 @@
-mixin rights()
-  .rights
+mixin rights(options = {})
+  - const type = options.type || undefined
+   
+  .rights(class= `${type ? 'rights_' + type : ''}`)
     .rights__inner
       .rights__logo
         +logo()

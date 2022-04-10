@@ -33,23 +33,6 @@
       height: 367px;
       margin: 0 auto;
       background-color: #fff;
-
-      .insertions__rights {
-        &__inner {
-          height: 367px;
-          flex-direction: column;
-          justify-content: center;
-          gap: 10px;
-        }
-
-        &__logo {
-          display: block;
-        }
-
-        &__text {
-          margin: 10px 0px 17px 0px;
-        }
-      }
     }
   }
 }
