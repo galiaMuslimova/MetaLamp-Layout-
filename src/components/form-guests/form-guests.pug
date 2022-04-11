@@ -4,7 +4,7 @@ include ../selector/selector.pug
 mixin form-guests(options)
   - const value = options.values || '' 
   - const items = options.items || [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-  - const hasButton = options.hasButton || false
+  - const hasButton = options.hasButton || true
 
   .form-guests.js-form-guests
     .form-guests__input.js-form-guests__input

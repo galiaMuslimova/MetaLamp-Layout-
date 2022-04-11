@@ -41,12 +41,12 @@
 
     &:hover,
     &:focus {
-      font-weight: bold;
+      -webkit-text-stroke: 1px rgba(31, 32, 65, 0.75);
       color: rgba(31, 32, 65, 0.75);
     }
 
     &_checked {
-      font-weight: bold;
+      -webkit-text-stroke: 1px rgba(31, 32, 65, 0.75);
       color: rgba(31, 32, 65, 0.75);
     }
   }
