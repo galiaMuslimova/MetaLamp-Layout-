@@ -8,8 +8,8 @@ class Calendar {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-calendar');
-    this.classes = this.$element.find('.js-calendar__dp').attr('class');
-    this.anchor = `.${this.classes.split(' ')[3]}`;
+    this.id = this.$element.find('.js-calendar__dp').attr('id');
+    this.anchor = `#${this.id}`;
     this.observer = new Observer();
     this.dropButtons = new DropButtons(this.$element);
     this.dp = {};

@@ -4,7 +4,7 @@ mixin calendar(options)
   - const id = options.id || ''
 
   .calendar.js-calendar
-    .calendar__dp.js-calendar__dp(class=`calendar__dp_for-${id} js-calendar__dp_for-${id}` )
+    .calendar__dp.js-calendar__dp(id=`js-calendar-${id}`)
     .calendar__buttons 
       +drop-buttons()
     
