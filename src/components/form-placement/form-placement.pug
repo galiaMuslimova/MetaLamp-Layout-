@@ -1,4 +1,4 @@
-include ../input-open/input-open.pug
+include ../input/input.pug
 include ../selector/selector.pug
 
 mixin form-placement(options)
@@ -7,6 +7,6 @@ mixin form-placement(options)
 
   .form-placement.js-form-placement
     .form-placement__input.js-form-placement__input
-      +input-open({placeholder:'Сколько спален', value:value})
+      +input({placeholder:'Сколько спален', value:value, forOpen: true })
     .form-placement__drop.js-form-placement__drop
       +selector({items: items})

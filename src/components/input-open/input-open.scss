@@ -1,62 +1,12 @@
 .input-open {
-  display: grid;
-  grid-template-columns: 1fr 44px;
-  height: 44px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  border-radius: 4px;
-  background: white;
 
-  &_active {
-    border-radius: 4px 4px 0px 0px;
-    border: 1px solid rgba(31, 32, 65, 0.5);
-
-    .input-open__field {
-      color: rgba(31, 32, 65, 0.75);
-    }
-
-    .input-open__button {
-      color: rgba(31, 32, 65, 0.75);
-    }
-  }
+  
 
   &__field {
-    height: 100%;
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 0 3px 0px 13px;
-    font-family: 'Montserrat', 'Arial', sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    color: rgba(31, 32, 65, 0.75);
 
     &::placeholder {
       color: rgba(31, 32, 65, 0.75);
     }
-
-    &:hover,
-    &:focus {
-      outline: none;
-    }
   }
 
-  &__button {
-    font-size: 8px;
-    color: rgba(31, 32, 65, 0.5);
-    border: none;
-    background: transparent;
-    width: 44px;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    line-height: 1em;
-    cursor: pointer;
-    caret-color: transparent;
-
-    &:hover,
-    &:focus {
-      outline: none;
-    }
-  }
 }

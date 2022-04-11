@@ -1,6 +1,6 @@
 import Calendar from '../calendar/Calendar';
 import FormCalendar from '../form-calendar/FormCalendar';
-import InputOpen from '../input-open/InputOpen';
+import Input from '../input/Input';
 
 class FormPairDate extends FormCalendar {
   constructor($root) {
@@ -11,7 +11,7 @@ class FormPairDate extends FormCalendar {
     this.calendar.createDatePicker();
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
-    this.input = new InputOpen(this.$element.find('.js-form-pair-date__input'));
+    this.input = new Input(this.$element.find('.js-form-pair-date__input'));
     this.input.observer.subscribe({ key: 'click', observer: this.openDrop.bind(this) });
   }
 

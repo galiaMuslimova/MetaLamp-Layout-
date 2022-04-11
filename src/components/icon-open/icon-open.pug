@@ -2,6 +2,6 @@ mixin icon-open(options = {})
   - const type = options.type || undefined
 
   if(type)
-    span.icon-open(class=`icon-open_${type} js-icon-open_${type}`)
+    span.icon-open.js-icon-open(class=`icon-open_${type} js-icon-open_${type}`)
   else 
-    span.icon-open
+    span.icon-open.js-icon-open

@@ -1,4 +1,4 @@
-include ../input-open/input-open.pug
+include ../input/input.pug
 include ../calendar/calendar.pug
 
 mixin form-double-date(options) 
@@ -12,10 +12,10 @@ mixin form-double-date(options)
       .form-double-date__item.form-double-date__item_is-first.js-form-double-date__item_is-first
         h3.form-double-date__subtitle= titles[0]
         .form-double-date__input   
-          +input-open({ placeholder: placeholder[0],  value: values[0] })
+          +input({ placeholder: placeholder[0],  value: values[0], forOpen: true })
       .form-double-date__item.form-double-date__item_is-second.js-form-double-date__item_is-second
         h3.form-double-date__subtitle= titles[1]
         .form-double-date__input
-          +input-open({ placeholder: placeholder[1], value: values[1] })
+          +input({ placeholder: placeholder[1], value: values[1], forOpen: true })
     .form-double-date__calendar 
       +calendar({ id: id })

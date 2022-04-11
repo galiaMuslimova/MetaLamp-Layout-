@@ -1,4 +1,4 @@
-include ../input-open/input-open.pug
+include ../input/input.pug
 include ../selector/selector.pug
 
 mixin form-guests(options)
@@ -8,6 +8,6 @@ mixin form-guests(options)
 
   .form-guests.js-form-guests
     .form-guests__input.js-form-guests__input
-      +input-open({placeholder: 'Сколько гостей', value: value})
+      +input({placeholder: 'Сколько гостей', value: value, forOpen: true })
     .form-guests__drop.js-form-guests__drop
       +selector({items: items, hasButton: hasButton})

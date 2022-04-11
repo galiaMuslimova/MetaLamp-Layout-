@@ -1,13 +1,13 @@
 import FormSelector from '../form-selector/FormSelector';
 import Selector from '../selector/Selector';
-import InputOpen from '../input-open/InputOpen';
+import Input from '../input/Input';
 
 class FormPlacement extends FormSelector {
   constructor($root) {
     super($root);
     this.$root = $root;
     this.$element = this.$root.find('.js-form-placement');
-    this.input = new InputOpen(this.$element.find('.js-form-placement__input'));
+    this.input = new Input(this.$element.find('.js-form-placement__input'));
     this.input.observer.subscribe({ key: 'click', observer: this.openSelector.bind(this) });
     this.selector = new Selector(this.$element.find('.js-form-placement__drop'));
     this.selector.observer.subscribe({ key: 'change', observer: this.setValue.bind(this) });

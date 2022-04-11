@@ -5,6 +5,8 @@ mixin input-open(options)
   - const placeholder = options.placeholder || ''
   - const value = options.value || ''
   - const focus = options.focus || false
+  - const withArrow = options.withArrow || false
+  - const withDrop = options.withDrop || false
 
   .input-open.js-input-open
     input.input-open__field.js-input-open__field(type='text', placeholder=placeholder, value=value, readonly)

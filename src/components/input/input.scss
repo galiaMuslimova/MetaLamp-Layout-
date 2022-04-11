@@ -1,26 +1,78 @@
 .input {
+  display: grid;
+  grid-template-columns: 1fr min-content;
   height: 44px;
-  width: 100%;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
   background: white;
-  padding: 0 13px 0px 13px;
-  font-family: 'Montserrat', 'Arial', sans-serif;
-  font-size: 14px;
-  line-height: 18px;
 
-  &::placeholder {
-    color: rgba(31, 32, 65, 0.25);
+  &:focus,
+  &:hover {
+    border: 1px solid rgba(31, 32, 65, 0.5);
   }
 
-  &:focus-within,
-  &:hover {
-    outline: none;
-    border: 1px solid rgba(31, 32, 65, 0.5);
+  &_active {
+    border-radius: 4px 4px 0px 0px;
+
+    .input__field,
+    .input__button {
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
+
+  &__field {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0 3px 0px 13px;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.75);
+    padding: 0 6px 0px 13px;
 
     &::placeholder {
-      color: rgba(31, 32, 65, 0.75);
+      color: rgba(31, 32, 65, 0.25);
+    }
+
+    &:focus,
+    &:hover {
+      outline: none;
+
+      &::placeholder {
+        color: rgba(31, 32, 65, 0.75);
+      }
+    }
+  }
+
+  &__button {
+    width: 44px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    line-height: 1em;
+    caret-color: transparent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+
+    &_with-arrow {
+      background-clip: text;
+      background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+      font-size: 18px;
+      color: transparent;
+    }
+
+    &_for-open {
+      font-size: 8px;
+      color: rgba(31, 32, 65, 0.5);
     }
   }
 }
