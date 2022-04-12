@@ -9,8 +9,8 @@ mixin input(options)
   - const withArrow = options.withArrow || false
   - const forOpen = options.forOpen || false
 
-  .input.js-input(type=fontType, placeholder=placeholder, autofocus=focus)
-    input.input__field.js-input__field
+  .input.js-input(autofocus=focus)
+    input.input__field.js-input__field(type=fontType, placeholder=placeholder, value=value)
 
     if(withArrow)
       button.input__button.input__button_with-arrow(type="submit")

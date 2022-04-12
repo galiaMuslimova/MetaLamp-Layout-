@@ -9,8 +9,12 @@ class FormSimpleDate extends FormCalendar {
     this.$element = this.$root.find('.js-form-simple-date');
     this.calendar = new Calendar(this.$element.find('.js-form-simple-date__calendar'));
     this.calendar.createDatePicker();
+    this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
+    this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
     this.$input = this.$element.find('.js-form-simple-date__input');
+    console.log(this.$input)
     this.init();
+    this.bindEventListeners();
   }
 
   init() {
@@ -23,18 +27,23 @@ class FormSimpleDate extends FormCalendar {
   }
 
   bindEventListeners() {
-    this.$input.on('click', this.closeCalendar.bind(this));
+    this.$input.on('click', this.handleCalendarClose.bind(this));
     this.$input.on('keyup', this.handleInputKeyup.bind(this));
   }
 
   changeDate(res) {
-    this.input.setDate(res.formattedDate);
+    this.$input.val(res.formattedDate);
   }
 
   changeInput(value) {
     const valuesArray = value.split('.');
     const date = new Date(valuesArray[2], valuesArray[1], valuesArray[0]);
     this.calendar.setDate(date);
+  }
+
+  handleCalendarClose() {
+    console.log('close')
+    this.closeCalendar();
   }
 
   handleInputKeyup() {

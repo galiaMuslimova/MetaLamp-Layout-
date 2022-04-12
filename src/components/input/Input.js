@@ -1,4 +1,3 @@
-import IconOpen from '../icon-open/IconOpen';
 import Observer from '../../observer/Observer';
 
 class Input {
@@ -17,8 +16,7 @@ class Input {
 
   initOpenButton() {
     this.$openButton = this.$element.find('.js-input__button_for-open');
-    this.iconOpen = new IconOpen(this.$openButton);
-    this.iconOpen.observer.subscribe('clickIcon', this.handleClickIconOpen.bind(this));
+    this.$openButton.on('click', this.handleClickIconOpen.bind(this));
   }
 
   handleClickIconOpen() {
