@@ -1,11 +1,11 @@
 import Selector from '../selector/Selector';
-import InputOpen from '../input-open/InputOpen';
+import Input from '../input/Input';
 
 class FormSelector {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root;
-    this.input = new InputOpen(this.$root);
+    this.input = new Input(this.$root);
     this.selector = new Selector(this.$root);
     this.isOpen = this.selector.isOpen();
     this.bindEventListeners();

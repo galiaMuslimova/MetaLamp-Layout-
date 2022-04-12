@@ -2,7 +2,7 @@ include ../input/input.pug
 include ../calendar/calendar.pug
 
 mixin form-simple-date(options) 
-  - const value = options.values || 'ДД.ММ.ГГГГ' 
+  - const value = options.values || undefined 
   - const id = options.id || ''
 
   .form-simple-date.js-form-simple-date 

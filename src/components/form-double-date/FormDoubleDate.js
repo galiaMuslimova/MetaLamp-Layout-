@@ -21,6 +21,12 @@ class FormDoubleDate extends FormCalendar {
     this.firstInput.setValue(res.formattedDate[0]);
     this.secondInput.setValue(res.formattedDate[1]);
   }
+
+  closeCalendar() {
+    super.closeCalendar();
+    this.firstInput.setValue('ДД.ММ.ГГГГ');
+    this.secondInput.setValue('ДД.ММ.ГГГГ');
+  }
 }
 
 export default FormDoubleDate;

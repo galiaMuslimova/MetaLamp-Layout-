@@ -1,10 +1,7 @@
 import Calendar from '../calendar/Calendar';
-import FormCalendar from '../form-calendar/FormCalendar';
-import Input from '../input/Input';
 
-class FormSimpleDate extends FormCalendar {
+class FormSimpleDate {
   constructor($root) {
-    super($root);
     this.$root = $root;
     this.$element = this.$root.find('.js-form-simple-date');
     this.calendar = new Calendar(this.$element.find('.js-form-simple-date__calendar'));
@@ -12,7 +9,6 @@ class FormSimpleDate extends FormCalendar {
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
     this.$input = this.$element.find('.js-form-simple-date__input');
-    console.log(this.$input)
     this.init();
     this.bindEventListeners();
   }
@@ -23,12 +19,20 @@ class FormSimpleDate extends FormCalendar {
       range: false,
       dynamicRange: false,
     };
-    this.setOptions(options);
+    this.calendar.setOptions(options);
   }
 
   bindEventListeners() {
-    this.$input.on('click', this.handleCalendarClose.bind(this));
+    $(document).on('click', this.handleDropClassActiveRemove.bind(this));
+    this.$input.on('click', this.handleCalendarOpen.bind(this));
     this.$input.on('keyup', this.handleInputKeyup.bind(this));
+  }
+
+  handleDropClassActiveRemove(event) {
+    if (this.isOpen && this.$root.find(event.target).length === 0) {
+      this.calendar.removeActiveClass();
+      this.isOpen = false;
+    }
   }
 
   changeDate(res) {
@@ -41,9 +45,14 @@ class FormSimpleDate extends FormCalendar {
     this.calendar.setDate(date);
   }
 
-  handleCalendarClose() {
-    console.log('close')
-    this.closeCalendar();
+  handleCalendarOpen() {
+    this.calendar.toggleActiveClass();
+    this.isOpen = !this.isOpen;
+  }
+
+  closeCalendar() {
+    this.calendar.removeActiveClass();
+    this.isOpen = false;
   }
 
   handleInputKeyup() {

@@ -5,7 +5,6 @@ include ../../components/form-simple-date/form-simple-date.pug
 include ../../components/form-double-date/form-double-date.pug
 include ../../components/form-pair-date/form-pair-date.pug
 include ../../components/input/input.pug
-include ../../components/input-arrow/input-arrow.pug
 include ../../components/radio/radio.pug
 include ../../components/toggle/toggle.pug
 include ../../components/like/like.pug
@@ -63,7 +62,7 @@ block content
           .forms__item.forms__item_narrow
             h3.forms__subtitle subscription text field
             form.forms__form        
-              +input-arrow({placeholder:"Email"})
+              +input({ placeholder:"Email", withArrow: true })
       
       //dropdown first column and expandable
       .forms__block.forms__block_narrow

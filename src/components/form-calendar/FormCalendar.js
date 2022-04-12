@@ -1,12 +1,12 @@
 import Calendar from '../calendar/Calendar';
-import InputOpen from '../input-open/InputOpen';
+import Input from '../input/Input';
 
 class FormCalendar {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root;
     this.calendar = new Calendar(this.$root);
-    this.input = new InputOpen(this.$root);
+    this.input = new Input(this.$root);
     this.isOpen = this.calendar.isOpen();
     this.bindEventListeners();
   }

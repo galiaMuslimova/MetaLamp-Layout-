@@ -7,13 +7,14 @@
   border-radius: 4px;
   background: white;
 
-  &:focus,
+  &:focus-within,
   &:hover {
     border: 1px solid rgba(31, 32, 65, 0.5);
   }
 
   &_active {
     border-radius: 4px 4px 0px 0px;
+    border: 1px solid rgba(31, 32, 65, 0.5);
 
     .input__field,
     .input__button {
@@ -37,10 +38,16 @@
       color: rgba(31, 32, 65, 0.25);
     }
 
-    &:focus,
+    &:focus-within,
     &:hover {
       outline: none;
 
+      &::placeholder {
+        color: rgba(31, 32, 65, 0.75);
+      }
+    }
+
+    &_for-open {
       &::placeholder {
         color: rgba(31, 32, 65, 0.75);
       }

@@ -18,6 +18,10 @@
     color: rgba(31, 32, 65, 0.75);
     padding: 0 6px 0px 13px;
 
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.25);
+    }
+
     &:focus,
     &:hover {
       outline: none;
