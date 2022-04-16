@@ -8,9 +8,9 @@ mixin sign-in-card()
         h1.sign-in-card__title Войти
       .sign-in-card__item 
         .sign-in-card__input
-          +input({fontType: "Email", placeholder:"Email"})
+          +input({inputType: "Email", placeholder:"Email"})
         .sign-in-card__input
-          +input({fontType: "text", placeholder:"Пароль"})
+          +input({inputType: "text", placeholder:"Пароль"})
       .sign-in-card__item
         .sign-in-card__link-button 
           +button({theme: 'with-arrow', type:"submit", text: 'Войти', icon: true})

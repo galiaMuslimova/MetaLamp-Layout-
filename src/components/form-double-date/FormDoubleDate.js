@@ -1,8 +1,8 @@
 import Input from '../input/Input';
 import Calendar from '../calendar/Calendar';
-import FormCalendar from '../form-calendar/FormCalendar';
+import FormPairDate from '../form-pair-date/FormPairDate';
 
-class FormDoubleDate extends FormCalendar {
+class FormDoubleDate extends FormPairDate {
   constructor($root) {
     super($root);
     this.$root = $root;
@@ -20,12 +20,6 @@ class FormDoubleDate extends FormCalendar {
   changeDate(res) {
     this.firstInput.setValue(res.formattedDate[0]);
     this.secondInput.setValue(res.formattedDate[1]);
-  }
-
-  closeCalendar() {
-    super.closeCalendar();
-    this.firstInput.setValue('ДД.ММ.ГГГГ');
-    this.secondInput.setValue('ДД.ММ.ГГГГ');
   }
 }
 

@@ -8,15 +8,14 @@ class Input {
     this.observer = new Observer();
     this.value = this.$inputField.val();
     this.hasOpenButton = this.$element.find('.js-input__button_for-open').length > 0;
-    this.$openButton = undefined;
     if (this.hasOpenButton) {
       this.initOpenButton();
     }
   }
 
   initOpenButton() {
-    this.$openButton = this.$element.find('.js-input__button_for-open');
-    this.$openButton.on('click', this.handleClickIconOpen.bind(this));
+    const $openButton = this.$element.find('.js-input__button_for-open');
+    $openButton.on('click', this.handleClickIconOpen.bind(this));
   }
 
   handleClickIconOpen() {

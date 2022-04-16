@@ -8,6 +8,6 @@ mixin form-guests(options)
 
   .form-guests.js-form-guests
     .form-guests__input.js-form-guests__input
-      +input({placeholder: 'Сколько гостей', value: value, forOpen: true })
+      +input({placeholder: 'Сколько гостей', value: value, openable: true })
     .form-guests__drop.js-form-guests__drop
       +selector({items: items, hasButton: hasButton})

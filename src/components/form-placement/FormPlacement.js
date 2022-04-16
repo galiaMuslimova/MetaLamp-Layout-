@@ -1,8 +1,8 @@
-import FormSelector from '../form-selector/FormSelector';
+import FormGuests from '../form-guests/FormGuests';
 import Selector from '../selector/Selector';
 import Input from '../input/Input';
 
-class FormPlacement extends FormSelector {
+class FormPlacement extends FormGuests {
   constructor($root) {
     super($root);
     this.$root = $root;
