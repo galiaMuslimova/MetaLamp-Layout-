@@ -1,6 +1,6 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
-import '../air-datepicker/air-datepicker.scss';
+import './air-datepicker.scss';
 import Observer from '../../observer/Observer';
 import DropButtons from '../drop-buttons/DropButtons';
 
@@ -8,16 +8,18 @@ class Calendar {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-calendar');
-    this.id = this.$element.find('.js-calendar__dp').attr('id');
-    this.anchor = `#${this.id}`;
+    this.$calendarPlace = this.$element.find('.js-calendar__dp');
+    this.id = `id${Date.now() * Math.floor(Math.random() * 100)}`;
     this.observer = new Observer();
     this.dropButtons = new DropButtons(this.$element);
     this.dp = {};
+    this.createDatePicker();
   }
 
   createDatePicker() {
     const el = this;
-    this.dp = new AirDatepicker(this.anchor, {
+    this.$calendarPlace.attr('id', this.id);
+    this.dp = new AirDatepicker(`#${this.id}`, {
       navTitles: {
         days: 'MMMM <i class="calendar__year">yyyy</i>',
       },

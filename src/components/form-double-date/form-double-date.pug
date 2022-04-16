@@ -5,7 +5,6 @@ mixin form-double-date(options)
   - const placeholders = options.placeholders || ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ']
   - const values = options.values || ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'] 
   - const titles = options.titles || ['прибытие', 'выезд'] 
-  - const id = options.id || ''
 
   .form-double-date.js-form-double-date    
     .form-double-date__row
@@ -18,4 +17,4 @@ mixin form-double-date(options)
         .form-double-date__input
           +input({ placeholder: placeholders[1], value: values[1], openable: true })
     .form-double-date__calendar 
-      +calendar({ id: id })
+      +calendar()

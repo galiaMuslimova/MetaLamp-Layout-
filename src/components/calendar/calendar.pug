@@ -1,10 +1,8 @@
 include ../drop-buttons/drop-buttons.pug
 
-mixin calendar(options)  
-  - const id = options.id || ''
-
+mixin calendar()  
   .calendar.js-calendar
-    .calendar__dp.js-calendar__dp(id=`js-calendar-${id}`)
+    .calendar__dp.js-calendar__dp
     .calendar__buttons 
       +drop-buttons()
     

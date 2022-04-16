@@ -8,7 +8,6 @@ class FormDoubleDate extends FormPairDate {
     this.$root = $root;
     this.$element = this.$root.find('.js-form-double-date');
     this.calendar = new Calendar(this.$element);
-    this.calendar.createDatePicker();
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
     this.firstInput = new Input(this.$element.find('.js-form-double-date__item_is-first'));

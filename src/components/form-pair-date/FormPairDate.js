@@ -6,7 +6,6 @@ class FormPairDate {
     this.$root = $root;
     this.$element = this.$root.find('.js-form-pair-date');
     this.calendar = new Calendar(this.$element.find('.js-form-pair-date__calendar'));
-    this.calendar.createDatePicker();
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
     this.input = new Input(this.$element.find('.js-form-pair-date__input'));

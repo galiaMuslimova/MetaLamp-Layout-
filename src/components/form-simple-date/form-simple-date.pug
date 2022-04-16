@@ -3,9 +3,8 @@ include ../calendar/calendar.pug
 
 mixin form-simple-date(options) 
   - const value = options.values || undefined 
-  - const id = options.id || ''
 
   .form-simple-date.js-form-simple-date 
     input.form-simple-date__input.js-form-simple-date__input(type='text', placeholder='ДД.ММ.ГГГГ', value = value)
     .form-simple-date__calendar.js-form-simple-date__calendar
-      +calendar({ id: id })
+      +calendar()
