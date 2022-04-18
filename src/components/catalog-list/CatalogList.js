@@ -8,7 +8,8 @@ class CatalogList {
   }
 
   init() {
-    this.$element.find('.js-catalog-list__item').each(function () {
+    const $catalogListItems = this.$element.find('.js-catalog-list__item');
+    $catalogListItems.each(function () {
       const catalogItem = new CatalogItem($(this));
     });
   }

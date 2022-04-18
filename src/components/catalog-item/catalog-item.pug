@@ -1,9 +1,7 @@
 include ../rate/rate.pug
 include ../carousel/carousel.pug
 
-mixin catalog-item(options)
-  - const item = options.item || undefined
-
+mixin catalog-item({ item = undefined })
   .catalog-item.js-catalog-item 
     +carousel({num: item.num})
     .catalog-item__content.js-catalog-item__content

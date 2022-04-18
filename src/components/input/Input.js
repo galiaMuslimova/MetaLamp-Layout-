@@ -7,15 +7,15 @@ class Input {
     this.$inputField = this.$element.find('.js-input__field');
     this.observer = new Observer();
     this.value = this.$inputField.val();
-    this.hasOpenButton = this.$element.find('.js-input__button_for-open').length > 0;
-    if (this.hasOpenButton) {
-      this.initOpenButton();
-    }
+    this.$openButton = this.$element.find('.js-input__button_openable');
+    this.hasOpenButton = this.$openButton.length > 0;
+    this.initOpenButton();
   }
 
   initOpenButton() {
-    const $openButton = this.$element.find('.js-input__button_for-open');
-    $openButton.on('click', this.handleClickIconOpen.bind(this));
+    if (this.hasOpenButton) {
+      this.$openButton.on('click', this.handleClickIconOpen.bind(this));
+    }
   }
 
   handleClickIconOpen() {

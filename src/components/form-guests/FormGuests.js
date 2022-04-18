@@ -5,9 +5,11 @@ class FormGuests {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-form-guests');
-    this.input = new Input(this.$element.find('.js-form-guests__input'));
+    this.$inputElement = this.$element.find('.js-form-guests__input');
+    this.input = new Input(this.$inputElement);
     this.input.observer.subscribe({ key: 'click', observer: this.openSelector.bind(this) });
-    this.selector = new Selector(this.$element.find('.js-form-guests__drop'));
+    this.$selectorElement = this.$element.find('.js-form-guests__drop');
+    this.selector = new Selector(this.$selectorElement);
     this.selector.observer.subscribe({ key: 'change', observer: this.setValue.bind(this) });
     this.selector.observer.subscribe({ key: 'close', observer: this.closeSelector.bind(this) });
     this.isOpen = this.selector.isOpen();

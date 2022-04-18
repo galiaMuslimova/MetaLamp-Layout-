@@ -8,27 +8,27 @@ class Cards {
   constructor($root) {
     this.$root = $root;
     this.$element = $root.find('.js-cards');
-    this.entryCard = undefined;
-    this.roomCard = undefined;
-    this.logInCard = undefined;
-    this.dateForm = undefined;
     this.init();
   }
 
   init() {
     if (this.$element[0]) {
-      this.entryCard = new EntryCard(this.$element.find('.js-cards__entry-card'));
-      this.roomCard = new RoomCard(this.$element.find('.js-cards__room-card'));
-      this.logInCard = new LogInCard(this.$element.find('.js-cards__log-in-card'));
-      this.calendar = new Calendar(this.$element.find('.js-cards__date'));
-      this.catalogItem = new CatalogItem(this.$element.find('.js-cards__catalog-card_focused'));
+      const $entryCardElement = this.$element.find('.js-cards__entry-card');
+      this.entryCard = new EntryCard($entryCardElement);
+      const $roomCardElement = this.$element.find('.js-cards__room-card');
+      this.roomCard = new RoomCard($roomCardElement);
+      const $logInCardElement = this.$element.find('.js-cards__log-in-card');
+      this.logInCard = new LogInCard($logInCardElement);
+      const $calendarElement = this.$element.find('.js-cards__date');
+      this.calendar = new Calendar($calendarElement);
+      const $catalogItemElement = this.$element.find('.js-cards__catalog-card_focused');
+      this.catalogItem = new CatalogItem($catalogItemElement);
       this.catalogItem.setFocus();
       this.initCalendar();
     }
   }
 
   initCalendar() {
-    this.calendar.createDatePicker();
     this.calendar.toggleActiveClass();
     const newDate = ['2019-08-19', '2019-08-23'];
     const cardFocusDate = new Date(2019, 7, 8);

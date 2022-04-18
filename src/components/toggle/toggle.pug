@@ -1,7 +1,4 @@
-mixin toggle(options)
-  - const text = options.text || ''
-  - const isCheck = options.isCheck || false
-
+mixin toggle({ text = '', isCheck = false })
   .toggle
     label.toggle__label
       input.toggle__input(type="checkbox" checked=isCheck)

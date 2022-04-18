@@ -8,9 +8,6 @@ class Room {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-room');
-    this.review = undefined;
-    this.roomCard = undefined;
-    this.chart = undefined;
     this.init();
   }
 

@@ -8,10 +8,8 @@ class Catalog {
     this.$element = this.$root.find('.js-catalog');
     this.$filterOpenButton = this.$element.find('.js-catalog__button');
     this.$paginationItems = this.$element.find('.js-catalog-item');
-    this.filter = undefined;
-    this.catalogList = undefined;
-    this.bindEventHandlers();
     this.init();
+    this.bindEventListeners();
   }
 
   init() {
@@ -34,7 +32,7 @@ class Catalog {
     pagination.init();
   }
 
-  bindEventHandlers() {
+  bindEventListeners() {
     this.$filterOpenButton.on('click', this.handleFilterClassToggle.bind(this));
   }
 

@@ -5,17 +5,17 @@ class Insertions {
   constructor($root) {
     this.$root = $root;
     this.$element = $root.find('.js-insertions');
-    this.firstHeader = undefined;
-    this.secondHeader = undefined;
-    this.firstLinks = undefined;
     this.init();
   }
 
   init() {
     if (this.$element[0]) {
-      this.firstHeader = new Header(this.$element.find('.js-insertions__header_is-first'));
-      this.secondHeader = new Header(this.$element.find('.js-insertions__header_is-second'));
-      this.firstLinks = new Links(this.$element.find('.js-insertions__links'));
+      const $firstHeaderElement = this.$element.find('.js-insertions__header_is-first');
+      this.firstHeader = new Header($firstHeaderElement);
+      const $secondHeaderElement = this.$element.find('.js-insertions__header_is-second');
+      this.secondHeader = new Header($secondHeaderElement);
+      const $linksElement = this.$element.find('.js-insertions__links');
+      this.firstLinks = new Links($linksElement);
       this.changeStyle(0);
     }
   }

@@ -5,10 +5,12 @@ class FormPairDate {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-form-pair-date');
-    this.calendar = new Calendar(this.$element.find('.js-form-pair-date__calendar'));
+    this.$calendarElement = this.$element.find('.js-form-pair-date__calendar');
+    this.calendar = new Calendar(this.$calendarElement);
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
-    this.input = new Input(this.$element.find('.js-form-pair-date__input'));
+    this.$inputElement = this.$element.find('.js-form-pair-date__input');
+    this.input = new Input(this.$inputElement);
     this.input.observer.subscribe({ key: 'click', observer: this.openDrop.bind(this) });
     this.isOpen = this.calendar.isOpen();
     this.bindEventListeners();

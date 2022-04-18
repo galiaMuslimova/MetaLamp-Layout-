@@ -1,8 +1,6 @@
 include ../like/like.pug
 
-mixin review(options)
-  - const data = options.data || data
-
+mixin review({ data = undefined })
   each val in data
     .review.js-review
       .review__col

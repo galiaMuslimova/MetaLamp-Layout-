@@ -29,4 +29,129 @@
     font-weight: bold;
     color: #1F2041;
   }
+
+  .air-datepicker {
+    --adp-width: 100%;
+    --adp-font-family: 'Montserrat', 'Arial', sans-serif;
+    --adp-padding: 20px;
+    --adp-btn-border-radius: 22px;
+    --adp-nav-arrow-color: #BC9CFF;
+    --adp-border-color: none;
+
+    &-body--cells {
+      &.-days- {
+        grid-auto-rows: 1fr;
+      }
+    }
+
+    &-nav {
+      border-bottom: none;
+      padding: 15px 23px 21px 23px;
+
+      &--title {
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 23px;
+        color: #1F2041;
+      }
+    }
+
+    &--content {
+      padding-top: 10px;
+      padding-bottom: 0px;
+    }
+
+    &-body {
+      &--day-names {
+        margin-bottom: 12px;
+      }
+
+      &--day-name {
+        text-transform: none;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        color: #BC9CFF;
+      }
+    }
+
+    &-cell {
+      height: 0px;
+      padding: 50% 0%;
+
+      &.-day- {
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(31, 32, 65, 0.5);
+
+        &:hover,
+        &:focus,
+        &.-focus- {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+          border-radius: 22px;
+          color: #fff;
+          font-weight: bold;
+
+          &.-in-range- {
+            color: rgba(31, 32, 65, 0.5);
+          }
+        }
+
+        &.-range-from-,
+        &.-range-to- {
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+          border-radius: 22px;
+          color: #fff;
+          font-weight: bold;
+          border: none;
+
+          &:before {
+            content: "";
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            opacity: 0.25;
+            z-index: -1;
+          }
+        }
+
+        &.-range-to- {
+          &:before {
+            right: 50%;
+          }
+        }
+
+        &.-range-from- {
+          &:before {
+            left: 50%;
+          }
+        }
+
+        &.-selected- {
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+          border-radius: 22px;
+          color: #fff;
+          font-weight: bold;
+        }
+
+        &.-in-range- {
+          background: none;
+
+          &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            opacity: 0.25;
+          }
+        }
+
+        &.-other-month- {
+          color: rgba(31, 32, 65, 0.25);
+        }
+      }
+    }
+  }
 }

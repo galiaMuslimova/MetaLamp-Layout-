@@ -14,7 +14,8 @@ class Selector {
   }
 
   addDropButtons() {
-    const hasButton = this.$element.find('.js-selector__buttons').length > 0;
+    const $buttons = this.$element.find('.js-selector__buttons');
+    const hasButton = $buttons.length > 0;
     if (hasButton) {
       this.dropButtons = new DropButtons(this.$element);
       this.dropButtons.observer.subscribe({ key: 'clickReset', observer: this.reset.bind(this) });

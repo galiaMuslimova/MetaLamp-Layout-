@@ -1,6 +1,4 @@
-mixin bullet(options)
-  - const items = options.items || undefined 
-
+mixin bullet({ items = undefined })
   .bullet
     each item in items 
       .bullet__row

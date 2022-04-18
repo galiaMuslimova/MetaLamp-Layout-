@@ -4,7 +4,6 @@ class Main {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-main');
-    this.entryCard = undefined;
     this.init();
   }
 

@@ -1,11 +1,7 @@
 include ../input/input.pug
 include ../selector/selector.pug
 
-mixin form-guests(options)
-  - const value = options.values || '' 
-  - const items = options.items || [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
-  - const hasButton = options.hasButton || true
-
+mixin form-guests({ value = '', items = [ {name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}], hasButton = true })
   .form-guests.js-form-guests
     .form-guests__input.js-form-guests__input
       +input({placeholder: 'Сколько гостей', value: value, openable: true })

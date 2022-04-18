@@ -1,7 +1,6 @@
 include ../icon-open/icon-open.pug
 
-mixin carousel(options)  
-  - const num = options.num || 0
+mixin carousel({ num = 0 })  
   //-import all images from directory of this number as array "images"
   - function requireAll(requireContext) { return requireContext.keys().filter(el => el.includes(num)).map(requireContext) };
   - const images = requireAll(require.context("@a/images/catalog-images/", true, /\.(jpg|png|jpeg)$/));  

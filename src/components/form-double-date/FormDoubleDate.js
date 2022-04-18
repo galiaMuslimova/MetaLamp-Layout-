@@ -10,9 +10,11 @@ class FormDoubleDate extends FormPairDate {
     this.calendar = new Calendar(this.$element);
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
-    this.firstInput = new Input(this.$element.find('.js-form-double-date__item_is-first'));
+    this.$firstInputElement = this.$element.find('.js-form-double-date__item_is-first');
+    this.firstInput = new Input(this.$firstInputElement);
     this.firstInput.observer.subscribe({ key: 'click', observer: this.openDrop.bind(this) });
-    this.secondInput = new Input(this.$element.find('.js-form-double-date__item_is-second'));
+    this.$secondInputElement = this.$element.find('.js-form-double-date__item_is-second');
+    this.secondInput = new Input(this.$secondInputElement);
     this.secondInput.observer.subscribe({ key: 'click', observer: this.openDrop.bind(this) });
   }
 

@@ -1,24 +1,17 @@
 include ../icon-open/icon-open.pug
 include ../icon-arrow/icon-arrow.pug
 
-mixin input(options) 
-  - const inputType = options.fonType || 'text'
-  - const placeholder = options.placeholder || ''
-  - const value = options.value || ''
-  - const focus = options.focus || false
-  - const withArrow = options.withArrow || false
-  - const openable = options.openable || false
-
+mixin input({ inputType = 'text', placeholder = '', value = '', focus = false, withArrow = false, openable = false })
   .input.js-input(autofocus=focus)
-    input.input__field.js-input__field(type=inputType, placeholder=placeholder, value=value autofocus=focus class=`${openable ? 'input__field_for-open' : ''}`)
+    input.input__field.js-input__field(type=inputType, placeholder=placeholder, value=value autofocus=focus class=`${openable ? 'input__field_openable' : ''}`)
 
     if(withArrow)
       button.input__button.input__button_with-arrow(type="submit")
         +icon-arrow()
 
     if(openable)
-      button.input__button.input__button_for-open.js-input__button_for-open(type="button")
-        +icon-open() 
+      button.input__button.input__button_openable.js-input__button_openable(type="button")
+        +icon-open({}) 
 
 
   

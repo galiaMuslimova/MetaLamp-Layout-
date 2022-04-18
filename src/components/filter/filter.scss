@@ -11,6 +11,7 @@
     display: grid;
     grid-template: 1fr 1fr 1fr/ 1fr 1fr;
     grid-column-gap: 40px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
   }
 
   @media only screen and (max-width: 600px) {
@@ -21,6 +22,12 @@
 
   &__date {
     margin-bottom: 21px;
+  }
+
+  &__item {
+    max-width: 320px;
+    width: 100%;
+    margin: 0px auto;
   }
 
   &__subtitle {

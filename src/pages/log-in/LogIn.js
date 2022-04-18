@@ -4,7 +4,6 @@ class LogIn {
   constructor($root) {
     this.$root = $root;
     this.$element = this.$root.find('.js-log-in');
-    this.logInCard = undefined;
     this.init();
   }
 

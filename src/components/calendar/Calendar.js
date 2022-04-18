@@ -1,6 +1,5 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
-import './air-datepicker.scss';
 import Observer from '../../observer/Observer';
 import DropButtons from '../drop-buttons/DropButtons';
 

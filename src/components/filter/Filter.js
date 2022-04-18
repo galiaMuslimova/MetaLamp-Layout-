@@ -8,11 +8,15 @@ class Filter {
   constructor($root) {
     this.$root = $root;
     this.$element = $root.find('.js-filter');
-    this.dateForm = new FormPairDate(this.$element.find('.js-filter__date'));
-    this.guestsForm = new FormGuests(this.$element.find('.js-filter__guests'));
+    this.$date = this.$element.find('.js-filter__date');
+    this.dateForm = new FormPairDate(this.$date);
+    this.$guests = this.$element.find('.js-filter__guests');
+    this.guestsForm = new FormGuests(this.$guests);
     this.slider = new Slider(this.$element);
-    this.placementForm = new FormPlacement(this.$element.find('.js-filter__placement'));
-    this.expandableList = new ExpandableList(this.$element.find('.js-filter__expandable-list'));
+    this.$placement = this.$element.find('.js-filter__placement');
+    this.placementForm = new FormPlacement(this.$placement);
+    this.$expandableList = this.$element.find('.js-filter__expandable-list');
+    this.expandableList = new ExpandableList(this.$expandableList);
     this.initCalendar();
   }
 

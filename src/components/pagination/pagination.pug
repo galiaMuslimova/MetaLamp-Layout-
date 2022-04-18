@@ -1,9 +1,7 @@
 include ../icon-arrow/icon-arrow.pug
 include ../icon-arrow-back/icon-arrow-back.pug
 
-mixin pagination(options)
-  - const id = options.id || ''
-
+mixin pagination({ id = '' })
   .pagination.js-pagination
     .pagination__anchor.js-pagination__anchor(class='js-pagination__anchor_for-' + id)
       .pagination__item.js-pagination__item.pagination__item_previous.js-pagination__item_previous

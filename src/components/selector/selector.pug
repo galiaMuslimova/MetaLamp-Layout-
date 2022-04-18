@@ -1,10 +1,7 @@
 include ../counter/counter.pug
 include ../drop-buttons/drop-buttons.pug
 
-mixin selector(options)
-  - const items = options.items || []
-  - const hasButton = options.hasButton || false
-
+mixin selector({ items = [], hasButton = false })
   .selector.js-selector
     .selector__content 
       each item in items

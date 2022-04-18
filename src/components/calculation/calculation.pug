@@ -1,7 +1,4 @@
-mixin calculation(options)
-  - const roomData = options.roomData || undefined 
-  - const days = options.days || 0
-
+mixin calculation({ roomData = undefined, days = 0 })
   .calculation  
     p.calculation__text= roomData.cost.toLocaleString() + '₽ х '
       span.calculation__text= days + ' суток'

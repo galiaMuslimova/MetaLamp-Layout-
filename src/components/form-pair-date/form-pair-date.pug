@@ -1,9 +1,7 @@
 include ../input/input.pug
 include ../calendar/calendar.pug
 
-mixin form-pair-date(options) 
-  - const value = options.values || 'ДД.ММ.ГГГГ' 
-
+mixin form-pair-date({ value = 'ДД.ММ.ГГГГ' }) 
   .form-pair-date.js-form-pair-date 
     .form-pair-date__input.js-form-pair-date__input
       +input({value: value, openable: true })

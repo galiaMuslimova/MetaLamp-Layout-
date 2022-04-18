@@ -1,10 +1,7 @@
 include ../input/input.pug
 include ../selector/selector.pug
 
-mixin form-placement(options)
-  - const value = options.values || '' 
-  - const items = options.items || [{name: "Спальни", amount: 0}, {name: "Кровати", amount: 0}, {name: "Ванные комнаты", amount: 0}]
-
+mixin form-placement({ value = '', items = [ {name: "Спальни", amount: 0}, {name: "Кровати", amount: 0}, {name: "Ванные комнаты", amount: 0}] })
   .form-placement.js-form-placement
     .form-placement__input.js-form-placement__input
       +input({placeholder:'Сколько спален', value:value, openable: true })

@@ -1,9 +1,7 @@
-mixin feature(options)
+mixin feature({ title = '', text = '' })
   - const featureData = require("@c/feature/feature.json")
-  - const title = options.title || ''
   - const featureSrc = require("@a/icons/info-icons/" + featureData[title].src)
   - const featureAlt = `${featureData[title].alt}`  
-  - const text = options.text || ''
 
   .feature
     .feature__content
