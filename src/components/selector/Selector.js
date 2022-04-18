@@ -7,7 +7,6 @@ class Selector {
     this.$root = $root;
     this.$element = this.$root.find('.js-selector');
     this.observer = new Observer();
-    this.dropButtons = undefined;
     this.addDropButtons();
     this.counters = this.makeCounters();
     this.valuesArray = this.takeNumbersArray();

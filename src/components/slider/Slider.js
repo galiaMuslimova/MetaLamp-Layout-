@@ -18,7 +18,6 @@ class Slider {
     this.$sliderPlace = this.$element.find('.js-slider__anchor');
     this.$resultPlace = this.$element.find('.js-slider__result');
     this.values = [];
-    this.slider = undefined;
     this.init();
   }
 

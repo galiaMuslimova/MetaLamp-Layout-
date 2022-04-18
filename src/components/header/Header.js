@@ -8,7 +8,7 @@ class Header {
     this.$element = this.$root.find('.js-header');
     this.$logInButton = this.$element.find('.js-header__log-in-button');
     this.$signInButton = this.$element.find('.js-header__sign-in-button');
-    this.registration = this.$element.find('.js-header__registration');
+    this.$registration = this.$element.find('.js-header__registration');
     this.logo = new Logo(this.$element);
     this.nav = new Nav(this.$element);
     this.burger = new Burger(this.$element, this.openMenu.bind(this));
@@ -21,7 +21,7 @@ class Header {
   }
 
   toggleRegistrationClass(className) {
-    this.registration.toggleClass(className);
+    this.$registration.toggleClass(className);
   }
 
   openMenu() {
