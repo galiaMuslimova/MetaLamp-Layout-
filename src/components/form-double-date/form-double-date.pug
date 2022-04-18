@@ -7,10 +7,10 @@ mixin form-double-date({ placeholders = ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГ
       .form-double-date__item.form-double-date__item_is-first.js-form-double-date__item_is-first
         h3.form-double-date__subtitle= titles[0]
         .form-double-date__input   
-          +input({ placeholder: placeholders[0],  value: values[0], openable: true })
+          +input({ placeholder: placeholders[0],  value: values[0], openable: true, isReadonly: true })
       .form-double-date__item.form-double-date__item_is-second.js-form-double-date__item_is-second
         h3.form-double-date__subtitle= titles[1]
         .form-double-date__input
-          +input({ placeholder: placeholders[1], value: values[1], openable: true })
+          +input({ placeholder: placeholders[1], value: values[1], openable: true, isReadonly: true })
     .form-double-date__calendar 
       +calendar()

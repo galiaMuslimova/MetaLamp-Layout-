@@ -13,6 +13,7 @@ class Like {
 
   handleLikeChange() {
     this.$likeIcon.toggleClass('like__icon_active');
+    this.$likeCount.toggleClass('like__count_active');
     const likeNum = Number(this.$likeCount.text());
     const isActive = this.$likeIcon.hasClass('like__icon_active');
     if (isActive) {

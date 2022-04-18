@@ -1,6 +1,7 @@
 .like {
   width: 40px;
   height: 20px;
+  display: flex;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 10px;
@@ -11,21 +12,24 @@
   cursor: pointer;
 
   &__row {
-    height: 18px;
-    width: 36px;
-    display: grid;
-    grid-template-columns: 45% 35%;
-    grid-template-rows: 100%;
+    display: inline-block;
+    padding: 0px 2px;
+    line-height: 16px;
   }
 
   &__icon {
     font-size: 0.5em;
-    line-height: 18px;
     text-align: center;
+    margin-left: 2px;
+    margin-top: 1px;
+    -webkit-text-stroke: 1px rgba(31, 32, 65, 0.25);
+    line-height: 9px;
+    display: inline;
+    vertical-align: middle;
+    color: #fff;
 
     &_active {
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke-color: rgba(188, 156, 255, 1);
       stroke-width: none;
       background-clip: text;
       background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
@@ -33,9 +37,16 @@
   }
 
   &__count {
+    width: 22px;
     text-align: center;
     font-size: 10px;
-    line-height: 18px;
     color: rgba(31, 32, 65, 0.25);
+    line-height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+
+    &_active {
+      color: #BC9CFF;
+    }
   }
 }

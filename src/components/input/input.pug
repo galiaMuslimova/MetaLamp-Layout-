@@ -1,9 +1,9 @@
 include ../icon-open/icon-open.pug
 include ../icon-arrow/icon-arrow.pug
 
-mixin input({ inputType = 'text', placeholder = '', value = '', focus = false, withArrow = false, openable = false })
+mixin input({ inputType = 'text', placeholder = '', value = '', focus = false, withArrow = false, openable = false, isReadonly = false })
   .input.js-input(autofocus=focus)
-    input.input__field.js-input__field(type=inputType, placeholder=placeholder, value=value autofocus=focus class=`${openable ? 'input__field_openable' : ''}`)
+    input.input__field.js-input__field(type=inputType, placeholder=placeholder, value=value autofocus=focus class=`${openable ? 'input__field_openable' : ''}`, readonly=isReadonly)
 
     if(withArrow)
       button.input__button.input__button_with-arrow(type="submit")

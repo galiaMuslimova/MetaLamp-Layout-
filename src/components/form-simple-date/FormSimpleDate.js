@@ -9,6 +9,7 @@ class FormSimpleDate {
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
     this.$input = this.$element.find('.js-form-simple-date__input');
+    this.value = this.$input.val();
     this.init();
     this.bindEventListeners();
   }
@@ -68,7 +69,7 @@ class FormSimpleDate {
     const regExpStr = `${oneDigitDay}|${TwoDigitDay}|${DayAndDot}|${DayDotOneDigitMonth}|${DayDotMonth}|${DayDotMonthDot}|${DayMonthOneDigitYear}|${DayMonthTwoDigitYear}|${allDate}`;
     const decimalsRegExp = new RegExp(regExpStr);
 
-    const inputValue = this.$inputField.val();
+    const inputValue = this.$input.val();
     const isCorrectExp = decimalsRegExp.test(inputValue);
 
     if (isCorrectExp || inputValue.length === 0) {
@@ -83,7 +84,7 @@ class FormSimpleDate {
       this.changeInput(this.value);
     }
 
-    this.$element.val(this.value);
+    this.$input.val(this.value);
   }
 }
 
