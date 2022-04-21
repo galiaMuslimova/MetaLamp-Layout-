@@ -7,11 +7,11 @@ block content
   .insertions.js-insertions  
     header.insertions__header-wrapper
       .insertions__container
-        .insertions__header.insertions__header_is-first.js-insertions__header_is-first 
+        .insertions__header(data-header-type = 'first') 
           +header({})
     header.insertions__header-wrapper
       .insertions__container
-        .insertions__header.insertions__header_is-second.js-insertions__header_is-second
+        .insertions__header(data-header-type = 'second')
           +header({ isRegistered: true })
     footer.insertions__footer-wrapper
       .insertions__links-wrapper 
