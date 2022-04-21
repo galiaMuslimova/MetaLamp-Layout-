@@ -6,5 +6,5 @@ mixin catalog-list()
   .catalog-list.js-catalog-list
     each item in data  
       .catalog-list__item.js-catalog-list__item 
-        +catalog-item({ item: item })
+        +catalog-item({ num, luxury, cost, stars, review } = item)
     

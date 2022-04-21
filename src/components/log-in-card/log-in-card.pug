@@ -15,8 +15,8 @@ mixin log-in-card()
         .log-in-card__input
           +input({ placeholder:'Фамилия'})
         .log-in-card__radio 
-          +radio({text: "Мужчина", isCheck: true})
-          +radio({text: "Женщина"})
+          +radio({ text: "Мужчина", isCheck: true })
+          +radio({ text: "Женщина" })
       .log-in-card__item
         .log-in-card__form
           h3.log-in-card__subtitle дата рождения
@@ -26,19 +26,19 @@ mixin log-in-card()
         .log-in-card__form
           h3.log-in-card__subtitle данные для входа в сервис
           .log-in-card__input
-            +input({inputType: 'e-mail', placeholder:'Email'})
+            +input({ inputType: 'email', placeholder:'Email' })
         .log-in-card__input
-          +input({placeholder:"Пароль"})
+          +input({ placeholder:"Пароль" })
         .log-in-card__toggle
-          +toggle({text:"Получать спецпредложения"})
+          +toggle({ text: "Получать спецпредложения" })
       .log-in-card__item
         .log-in-card__link-button
-          +button({theme: "with-arrow", type:"submit", text: "зарегистрироваться", icon: true})
+          +button({ theme: "with-arrow", type:"submit", text: "зарегистрироваться", icon: true })
       .log-in-card__item
         .log-in-card__row
           p.log-in-card__text Уже есть аккаунт на Toxin
           .log-in-card__button.js-log-in-card__button
-            +button({theme: "white", text: "войти"})
+            +button({ theme: "white", text: "войти" })
 
 
         

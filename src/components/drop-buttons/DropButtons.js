@@ -5,8 +5,8 @@ class DropButtons {
     this.$root = $root;
     this.$element = this.$root.find('.js-drop-buttons');
     this.observer = new Observer();
-    this.$resetButton = this.$element.find('.js-drop-buttons__item_for-reset');
-    this.$submitButton = this.$element.find('.js-drop-buttons__item_for-submit');
+    this.$resetButton = this.$element.find('[data-button-type="reset"]');
+    this.$submitButton = this.$element.find('[data-button-type="submit"]');
     this.bindEventListeners();
   }
 

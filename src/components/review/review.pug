@@ -1,14 +1,13 @@
 include ../like/like.pug
 
-mixin review({ data = undefined })
-  each val in data
+mixin review({ name = "Патрисия Стёклышкова", image = "patricia.jpg", time = "Неделю назад", content = "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", like = { count, isCheck } })
     .review.js-review
       .review__col
         .review__photo
-          img.review__image(src= require("@a/images/review-images/" + val.image) alt='person photo')
+          img.review__image(src= require("@a/images/review-images/" + image) alt='person photo')
         .review__like 
-          +like({count: val.like.count, isCheck: val.like.isCheck, name: val.like.name})
+          +like({ count: like.count, isCheck: like.isCheck })
       .review__col 
-        .review__title= val.name 
-        .review__subtitle= val.time 
-        .review__content= val.content
+        .review__title= name 
+        .review__subtitle= time 
+        .review__content= content

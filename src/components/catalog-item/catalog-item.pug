@@ -1,20 +1,20 @@
 include ../rate/rate.pug
 include ../carousel/carousel.pug
 
-mixin catalog-item({ item = undefined })
+mixin catalog-item({ num = 888, luxury = true, cost = 9990, stars = 5, review = 145 })
   .catalog-item.js-catalog-item 
-    +carousel({num: item.num})
+    +carousel({ num: num})
     .catalog-item__content.js-catalog-item__content
       .catalog-item__row.catalog-item__row_first
         .catalog-item__num-sign № 
-        .catalog-item__num= item.num
-        if(item.luxury)
+        .catalog-item__num= num
+        if(luxury)
           .catalog-item__lux люкс
-        .catalog-item__cost= item.cost.toLocaleString() + '₽'
+        .catalog-item__cost= cost.toLocaleString() + '₽'
         .catalog-item__cost-text в сутки
       .catalog-item__divider
       .catalog-item__row.catalog-item__row_second
-        +rate({starsCount: item.stars})                 
+        +rate({ starsCount: stars})                 
         .catalog-item__review
-          .catalog-item__text.catalog-item__text_bold= item.review 
+          .catalog-item__text.catalog-item__text_bold= review 
           .catalog-item__text Отзывов

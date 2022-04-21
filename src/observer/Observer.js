@@ -3,7 +3,7 @@ class Observer {
     this.observers = [];
   }
 
-  notify(key, data = undefined) {
+  notify(key, data = null) {
     this.observers.forEach((item) => {
       if (item.key === key) {
         item.observer(data);

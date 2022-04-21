@@ -40,8 +40,8 @@ class Calendar {
   reset() {
     this.dp.clear();
     this.observer.notify('change', {
-      date: [undefined, undefined],
-      formattedDate: [undefined, undefined],
+      date: ['', ''],
+      formattedDate: ['', ''],
     });
   }
 
