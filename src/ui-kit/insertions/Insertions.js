@@ -10,9 +10,9 @@ class Insertions {
 
   init() {
     if (this.$element[0]) {
-      const $firstHeaderElement = this.$element.find('.js-insertions__header_is-first');
+      const $firstHeaderElement = this.$element.find('[data-header-type="first"]');
       this.firstHeader = new Header($firstHeaderElement);
-      const $secondHeaderElement = this.$element.find('.js-insertions__header_is-second');
+      const $secondHeaderElement = this.$element.find('[data-header-type="second"]');
       this.secondHeader = new Header($secondHeaderElement);
       const $linksElement = this.$element.find('.js-insertions__links');
       this.firstLinks = new Links($linksElement);
