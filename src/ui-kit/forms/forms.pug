@@ -29,19 +29,19 @@ block content
                 .forms__subtitle Text Field
                 .forms__subtitle.forms__subtitle_transparent default
               .forms__form 
-                +input({inputType:"email", placeholder:"Email"}) 
+                +input({ inputType: "email", placeholder: "Email" }) 
             .forms__item
               .forms__row.forms__row_with-subtitle
                 .forms__subtitle Text Field
                 .forms__subtitle.forms__subtitle_transparent Hover / Focus
               form.forms__form
-                +input({placeholder: "This is pretty awesome", focus: true})
+                +input({ placeholder: "This is pretty awesome", focus: true })
             .forms__item
               h3.forms__subtitle Dropdown
               .forms__guests.forms__guests_is-first.js-forms__guests_is-first
                 +form-guests({ 
                   value: "Сколько гостей",
-                  items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}]
+                  items: [{ name: "Взрослые", amount: 0 }, { name: "Дети", amount: 0 }, { name: "Младенцы", amount: 0 }]
                   })
             .forms__item
               h3.forms__subtitle masked text field
@@ -73,7 +73,7 @@ block content
               .forms__subtitle.forms__subtitle_transparent default
             .forms__placement.forms__placement_is-first.js-forms__placement_is-first
               +form-placement({
-                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+                items: [{ name: "Спальни", amount: 2 }, { name: "Кровати", amount: 2 }, { name: "Ванные комнаты", amount: 0 }]
               })
           .forms__selector.forms__selector_expanded.js-forms__selector_expanded
             .forms__row.forms__row_with-subtitle
@@ -81,19 +81,19 @@ block content
               .forms__subtitle.forms__subtitle_transparent expanded
             .forms__placement.forms__placement_is-second.js-forms__placement_is-second
               +form-placement({
-                items: [{name: "Спальни", amount: 2}, {name: "Кровати", amount: 2}, {name: "Ванные комнаты", amount: 0}]
+                items: [{ name: "Спальни", amount: 2 }, { name: "Кровати", amount: 2 }, { name: "Ванные комнаты", amount: 0 }]
               })
         .forms__sub-block
           .forms__expandable.forms__expandable_is-first.js-forms__expandable_is-first 
-            +expandable-list({title: 'expandable checkbox list'})
+            +expandable-list({ title: 'expandable checkbox list' })
           .forms__expandable.forms__expandable_expanded.js-forms__expandable_expanded 
-            +expandable-list({title: 'expandable checkbox list'})
+            +expandable-list({ title: 'expandable checkbox list' })
       
       //features
       .forms__features
-        +feature({title: "Комфорт", text: "Шумопоглощающие стены"})
+        +feature({ title: "Комфорт", text: "Шумопоглощающие стены" })
         .forms__divider
-        +feature({title: "Удобство", text: "Окно в каждой из спален"})
+        +feature({ title: "Удобство", text: "Окно в каждой из спален" })
         .forms__divider
 
       
@@ -104,33 +104,33 @@ block content
           .forms__item
             h3.forms__subtitle Checkbox Buttons
             +checkbox-list({ items: [
-              {id:"smoke", text:"Можно курить"},
-              {id:"pet", text:"Можно с питомцами", checked:true},
-              {id:"invite", text:"Можно пригласить гостей \n (до 10 человек)", checked:true}] })
+              { id: "smoke", text: "Можно курить" },
+              { id: "pet", text: "Можно с питомцами", checked: true },
+              { id: "invite", text: "Можно пригласить гостей \n (до 10 человек)", checked: true }] })
           .forms__radio
             h3.forms__subtitle radio buttons
             .forms__row   
-              +radio({text: "Мужчина", isCheck: true})
-              +radio({text: "Женщина"})
+              +radio({ text: "Мужчина", isCheck: true })
+              +radio({ text: "Женщина"})
           .forms__toggle      
             h3.forms__subtitle toggle
             .forms__toggle-items
-              +toggle({text: "Получать спецпредложения", isCheck: true})
-              +toggle({text: "Получать спецпредложения"})
+              +toggle({ text: "Получать спецпредложения", isCheck: true })
+              +toggle({ text: "Получать спецпредложения"})
           .forms__like
             h3.forms__subtitle like button 
             .forms__row.forms__row_for-like
               .forms_like-item.forms_like-item_is-first.js-forms_like-item_is-first
-                +like({"count": "2",  "isCheck": false, "name": "like-1"})
+                +like({ "count": "2",  "isCheck": false, "name": "like-1" })
               .forms_like-item.forms_like-item_is-second.js-forms_like-item_is-second
-                +like({"count": "12", "isCheck": true, "name": "like-2"})
+                +like({ "count": "12", "isCheck": true, "name": "like-2" })
           .forms__rate
             h3.forms__subtitle rate button
             .forms__row.forms__row_for-rate
               .forms_rate-item.forms_rate-item_is-first.js-forms_rate-item_is-first
-                +rate({starsCount: 4})
+                +rate({ tarsCount: 4 })
               .forms_rate-item.forms_rate-item_is-first.js-forms_rate-item_is-first
-                +rate({starsCount: 5}) 
+                +rate({ starsCount: 5 }) 
         
         //slider, buttons...
         .forms__block
@@ -141,25 +141,25 @@ block content
               h3.forms__subtitle buttons 
               .forms__row
                 .forms__button 
-                  +button({theme: 'blue', text: 'click me'})
+                  +button({ theme: 'blue', text: 'click me' })
                 .forms__button.forms__button_hovered
-                  +button({theme: 'blue', text: 'click me'})
+                  +button({ theme: 'blue', text: 'click me' })
             .forms__row
               .forms__button 
-                +button({theme: 'white', text: 'click me'})
+                +button({ theme: 'white', text: 'click me' })
               .forms__button.forms__button_hovered
-                +button({theme: 'white', text: 'click me'})
+                +button({ theme: 'white', text: 'click me' })
             .forms__row
               .forms__button.forms__button_simple 
-                +button({theme: 'simple', text: 'click me'})
+                +button({ theme: 'simple', text: 'click me' })
               .forms__button.forms__button_hovered.forms__button_simple
-                +button({theme: 'simple', text: 'click me'})
+                +button({ theme: 'simple', text: 'click me' })
             .forms__button.forms__button_with-arrow
-              +button({theme: 'with-arrow', text: 'перейти к оплате', icon: true})
+              +button({ theme: 'with-arrow', text: 'перейти к оплате', icon: true })
           .forms__item 
             h3.forms__subtitle pagination
             .forms__pagination.js-forms__pagination
-              +pagination({id: "forms"})
+              +pagination({ id: "forms" })
       
       .forms__second-row
         //dropdown second column and rich checkbox
@@ -168,13 +168,13 @@ block content
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-second.js-forms__guests_is-second
               +form-guests({
-                items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}],
+                items: [{ name: "Взрослые", amount: 0 }, { name: "Дети", amount: 0 }, { name: "Младенцы", amount: 0 }],
                 hasButton: true
               })
           .forms__checkbox
             h3.forms__subtitle Rich Checkbox Buttons
             +checkbox-list({ items: [
-              {id:"corridor", text:"Широкий коридор", subtext:"Ширина коридоров в номере \n не менее 91 см."}, {id:"assistant", text:"Помощник для инвалидов", subtext:"На 1 этаже вас встретит специалист и проводит до номера."}] })   
+              { id: "corridor", text: "Широкий коридор", subtext: "Ширина коридоров в номере \n не менее 91 см." }, { id: "assistant", text: "Помощник для инвалидов", subtext: "На 1 этаже вас встретит специалист и проводит до номера." }] })   
         
         //dropdown third column and bullet list
         .forms__block.forms__block_with-large-gap
@@ -182,7 +182,7 @@ block content
             h3.forms__subtitle dropdown 
             .forms__guests.forms__guests_is-third.js-forms__guests_is-third
               +form-guests({
-                items: [{name: "Взрослые", amount: 2}, {name: "Дети", amount: 1}, {name: "Младенцы", amount: 0}],
+                items: [{ name: "Взрослые", amount: 2 }, { name: "Дети", amount: 1 }, { name: "Младенцы", amount: 0 }],
                 hasButton: true
               }) 
           form.forms__bullet
@@ -191,4 +191,4 @@ block content
       
       .forms__review.js-forms__review
         -const data = require("@c/review/review.json")
-        +review({data: [data[0]]})
+        +review({ data: [data[0]] })
