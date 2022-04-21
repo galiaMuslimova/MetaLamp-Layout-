@@ -3,7 +3,7 @@ mixin feature({ title = 'Комфорт', text = 'Шумопоглощающие
   - const featureSrc = require("@a/icons/info-icons/" + featureData[title].src)
   - const featureAlt = `${featureData[title].alt}`  
 
-  .feature
+  .feature.js-feature
     .feature__content
       .feature__icon 
         img.feature__image(src=featureSrc alt=featureAlt)
