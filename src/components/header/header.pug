@@ -4,7 +4,7 @@ include ../button/button.pug
 include ../burger/burger.pug
 
 
-mixin header({ isRegistered = false })
+mixin header({ isRegistered = false } = {})
   .header.js-header
     .header__logo
       +logo()
