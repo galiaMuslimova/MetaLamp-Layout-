@@ -6,8 +6,6 @@ class Pagination {
     this.$items = $items;
     this.limitPerPage = limitPerPage;
     this.currentPage = 1;
-    this.numberOfItems = undefined;
-    this.totalPages = undefined;
     this.$prevButton = this.$element.find('.js-pagination__item_previous');
     this.$nextButton = this.$element.find('.js-pagination__item_next');
   }
@@ -50,7 +48,7 @@ class Pagination {
 
   getPageList() {
     let start = [1];
-    let middle = [undefined];
+    let middle = [null];
     let end = [this.totalPages];
     if (this.currentPage <= 3) {
       start = [1, 2, 3];
@@ -60,7 +58,7 @@ class Pagination {
       end = Pagination.createRange(this.totalPages - 3, this.totalPages);
     } else {
       const intro = Pagination.createRange(this.currentPage - 1, this.currentPage + 1);
-      middle = [undefined].concat(intro, undefined);
+      middle = [null].concat(intro, null);
     }
     return start.concat(middle, end);
   }
