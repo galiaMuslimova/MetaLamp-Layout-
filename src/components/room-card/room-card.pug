@@ -28,7 +28,7 @@ mixin room-card()
             hasButton: true
           })
       .room-card__calculation 
-        +calculation({ roomData: roomData, days: days })        
+        +calculation({ cost: roomData.cost, discount: roomData.discount, fee: roomData.fee, days: days })        
       .room-card__item
         .room-card__total 
           .room-card__total-text Итого

@@ -8,14 +8,14 @@ mixin sign-in-card()
         h1.sign-in-card__title Войти
       .sign-in-card__item 
         .sign-in-card__input
-          +input({inputType: "Email", placeholder:"Email"})
+          +input({ inputType: "Email", placeholder:"Email" })
         .sign-in-card__input
-          +input({inputType: "text", placeholder:"Пароль"})
+          +input({ inputType: "text", placeholder:"Пароль" })
       .sign-in-card__item
         .sign-in-card__link-button 
-          +button({theme: 'with-arrow', type:"submit", text: 'Войти', icon: true})
+          +button({ theme: 'with-arrow', type:"submit", text: 'Войти', icon: true })
       .sign-in-card__item 
         .sign-in-card__row
           p.sign-in-card__text Нет аккаунта на Toxin?
           .sign-in-card__button 
-            +button({theme: 'white', text: 'создать'})
+            +button({ theme: 'white', text: 'создать' })
