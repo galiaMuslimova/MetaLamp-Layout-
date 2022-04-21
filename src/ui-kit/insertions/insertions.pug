@@ -8,7 +8,7 @@ block content
     header.insertions__header-wrapper
       .insertions__container
         .insertions__header(data-header-type = 'first') 
-          +header({})
+          +header()
     header.insertions__header-wrapper
       .insertions__container
         .insertions__header(data-header-type = 'second')
@@ -21,7 +21,7 @@ block content
       .insertions__rights-wrapper 
         .insertions__container
           .insertions__rights
-            +rights({})
+            +rights()
     .insertions__rights-wrapper.insertions__rights-wrapper_for-mobile
       .insertions__rights
         +rights({ type: 'for-mobile' })
