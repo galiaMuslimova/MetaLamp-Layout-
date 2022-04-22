@@ -13,51 +13,87 @@ import Review from '../../components/review/Review';
 class Forms {
   constructor($root) {
     this.$root = $root;
-    this.$element = $root.find('.js-forms');
     this.init();
   }
 
   init() {
+    this.$element = this.$root.find('.js-forms');
     if (this.$element[0]) {
-      const $firstGuestsElement = this.$element.find('.js-forms__guests_is-first');
-      this.firstGuests = new FormGuests($firstGuestsElement);
-      const $firstDateElement = this.$element.find('.js-forms__date_is-first');
-      this.firstDate = new FormSimpleDate($firstDateElement);
-      const $secondDateElement = this.$element.find('.js-forms__date_is-second');
-      this.secondDate = new FormDoubleDate($secondDateElement);
-      const $thirdDateElement = this.$element.find('.js-forms__date_is-third');
-      this.thirdDate = new FormPairDate($thirdDateElement);
-      this.thirdDate.setDate(['2019-08-19', '2019-08-23']);
-      const $firstLikeElement = this.$element.find('.js-forms_like-item_is-first');
-      this.firstLike = new Like($firstLikeElement);
-      const $secondLikeElement = this.$element.find('.js-forms_like-item_is-second');
-      this.secondLike = new Like($secondLikeElement);
-      const $firstRateElement = this.$element.find('.js-forms_rate-item_is-first');
-      this.firstRate = new Rate($firstRateElement);
-      const $secondRateElement = this.$element.find('.js-forms_rate-item_is-second');
-      this.secondRate = new Rate($secondRateElement);
-      this.slider = new Slider(this.$element);
-      this.pagination = new Pagination(this.$element);
-      this.pagination.disablePreviousButton();
-      const $firstPlaceElement = this.$element.find('.js-forms__placement_is-first');
-      this.firstPlace = new FormPlacement($firstPlaceElement);
-      const $secondPlaceElement = this.$element.find('.js-forms__placement_is-second');
-      const secondPlace = new FormPlacement($secondPlaceElement);
-      secondPlace.openSelector();
-      const $secondGuestsElement = this.$element.find('.js-forms__guests_is-second');
-      this.secondGuests = new FormGuests($secondGuestsElement);
-      this.secondGuests.openSelector();
-      const $thirdGuestsElement = this.$element.find('.js-forms__guests_is-third');
-      this.thirdGuests = new FormGuests($thirdGuestsElement);
-      this.thirdGuests.openSelector();
-      const $firstExpandableElement = this.$element.find('.js-forms__expandable_is-first');
-      this.firstExpandable = new ExpandableList($firstExpandableElement);
-      const $secondExpandableElement = this.$element.find('.js-forms__expandable_expanded');
-      this.secondExpandable = new ExpandableList($secondExpandableElement);
-      this.secondExpandable.handleExpandableOpen();
-      const $reviewElement = this.$element.find('.js-forms__review');
-      this.review = new Review($reviewElement);
+      this.initDates();
+      this.initGuests();
+      this.initPlacement();
+      this.initLike();
+      this.initRate();
+      this.initExpandable();
+      this.initReview();
+      this.initSlider();
+      this.initPagination();
     }
+  }
+
+  initDates() {
+    const $firstDateElement = this.$element.find('.js-forms__date_is-first');
+    const firstDate = new FormSimpleDate($firstDateElement);
+    const $secondDateElement = this.$element.find('.js-forms__date_is-second');
+    const secondDate = new FormDoubleDate($secondDateElement);
+    const $thirdDateElement = this.$element.find('.js-forms__date_is-third');
+    const thirdDate = new FormPairDate($thirdDateElement);
+    thirdDate.setDate(['2019-08-19', '2019-08-23']);
+  }
+
+  initGuests() {
+    const $firstGuestsElement = this.$element.find('.js-forms__guests_is-first');
+    const firstGuests = new FormGuests($firstGuestsElement);
+    const $secondGuestsElement = this.$element.find('.js-forms__guests_is-second');
+    const secondGuests = new FormGuests($secondGuestsElement);
+    secondGuests.openSelector();
+    const $thirdGuestsElement = this.$element.find('.js-forms__guests_is-third');
+    const thirdGuests = new FormGuests($thirdGuestsElement);
+    thirdGuests.openSelector();
+  }
+
+  initPlacement() {
+    const $firstPlaceElement = this.$element.find('.js-forms__placement_is-first');
+    const firstPlace = new FormPlacement($firstPlaceElement);
+    const $secondPlaceElement = this.$element.find('.js-forms__placement_is-second');
+    const secondPlace = new FormPlacement($secondPlaceElement);
+    secondPlace.openSelector();
+  }
+
+  initLike() {
+    const $firstLikeElement = this.$element.find('.js-forms_like-item_is-first');
+    const firstLike = new Like($firstLikeElement);
+    const $secondLikeElement = this.$element.find('.js-forms_like-item_is-second');
+    const secondLike = new Like($secondLikeElement);
+  }
+
+  initRate() {
+    const $firstRateElement = this.$element.find('.js-forms_rate-item_is-first');
+    const firstRate = new Rate($firstRateElement);
+    const $secondRateElement = this.$element.find('.js-forms_rate-item_is-second');
+    const secondRate = new Rate($secondRateElement);
+  }
+
+  initExpandable() {
+    const $firstExpandableElement = this.$element.find('.js-forms__expandable_is-first');
+    const firstExpandable = new ExpandableList($firstExpandableElement);
+    const $secondExpandableElement = this.$element.find('.js-forms__expandable_expanded');
+    const secondExpandable = new ExpandableList($secondExpandableElement);
+    secondExpandable.handleExpandableOpen();
+  }
+
+  initReview() {
+    const $reviewElement = this.$element.find('.js-forms__review');
+    const review = new Review($reviewElement);
+  }
+
+  initPagination() {
+    const pagination = new Pagination(this.$element);
+    pagination.disablePreviousButton();
+  }
+
+  initSlider() {
+    const slider = new Slider(this.$element);
   }
 }
 

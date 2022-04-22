@@ -1,16 +1,16 @@
 class Pagination {
   constructor($root, $items, limitPerPage = 12) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-pagination');
-    this.$anchor = this.$element.find('.js-pagination__anchor');
     this.$items = $items;
     this.limitPerPage = limitPerPage;
-    this.currentPage = 1;
-    this.$prevButton = this.$element.find('.js-pagination__item_previous');
-    this.$nextButton = this.$element.find('.js-pagination__item_next');
   }
 
   init() {
+    this.$element = this.$root.find('.js-pagination');
+    this.$anchor = this.$element.find('.js-pagination__anchor');
+    this.currentPage = 1;
+    this.$prevButton = this.$element.find('.js-pagination__item_previous');
+    this.$nextButton = this.$element.find('.js-pagination__item_next');
     this.numberOfItems = this.$items.length;
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
     this.showPage();

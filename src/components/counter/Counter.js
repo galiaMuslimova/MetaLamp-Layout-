@@ -4,16 +4,17 @@ class Counter {
   constructor($element) {
     this.$element = $element;
     this.observer = new Observer();
+    this.init();
+    this.bindEventListeners();
+    this.toggleDisable();
+  }
+
+  init() {
     this.$numButton = $(this.$element).find('.js-counter__number');
     this.numButtonValue = Number(this.$numButton.text());
     this.$minusButton = $(this.$element).find('[data-counter-type="minus"]');
     this.$plusButton = $(this.$element).find('[data-counter-type="plus"]');
     this.isDisable = this.$minusButton.hasClass('counter__button_disabled');
-  }
-
-  init() {
-    this.bindEventListeners();
-    this.toggleDisable();
   }
 
   bindEventListeners() {

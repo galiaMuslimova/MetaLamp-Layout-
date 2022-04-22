@@ -5,14 +5,14 @@ import Filter from '@c/filter/Filter';
 class Catalog {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-catalog');
-    this.$filterOpenButton = this.$element.find('.js-catalog__button');
-    this.$paginationItems = this.$element.find('.js-catalog-item');
     this.init();
     this.bindEventListeners();
   }
 
   init() {
+    this.$element = this.$root.find('.js-catalog');
+    this.$filterOpenButton = this.$element.find('.js-catalog__button');
+    this.$paginationItems = this.$element.find('.js-catalog-item');
     if (this.$element[0]) {
       this.filter = new Filter(this.$element);
       this.catalogList = new CatalogList(this.$element);

@@ -1,10 +1,14 @@
 class Like {
   constructor($root) {
     this.$root = $root;
+    this.init();
+    this.bindEventListeners();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-like');
     this.$likeCount = this.$element.find('.js-like__count');
     this.$likeIcon = this.$element.find('.js-like__icon');
-    this.bindEventListeners();
   }
 
   bindEventListeners() {

@@ -5,6 +5,11 @@ import Nav from '../nav/Nav';
 class Header {
   constructor($root) {
     this.$root = $root;
+    this.init();
+    this.bindEventListeners();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-header');
     this.$logInButton = this.$element.find('.js-header__log-in-button');
     this.$signInButton = this.$element.find('.js-header__sign-in-button');
@@ -12,7 +17,6 @@ class Header {
     this.logo = new Logo(this.$element);
     this.nav = new Nav(this.$element);
     this.burger = new Burger(this.$element, this.openMenu.bind(this));
-    this.bindEventListeners();
   }
 
   bindEventListeners() {

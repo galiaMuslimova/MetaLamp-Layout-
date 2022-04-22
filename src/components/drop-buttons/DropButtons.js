@@ -3,11 +3,15 @@ import Observer from '../../observer/Observer';
 class DropButtons {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-drop-buttons');
     this.observer = new Observer();
+    this.init();
+    this.bindEventListeners();
+  }
+
+  init() {
+    this.$element = this.$root.find('.js-drop-buttons');
     this.$resetButton = this.$element.find('[data-button-type="reset"]');
     this.$submitButton = this.$element.find('[data-button-type="submit"]');
-    this.bindEventListeners();
   }
 
   bindEventListeners() {

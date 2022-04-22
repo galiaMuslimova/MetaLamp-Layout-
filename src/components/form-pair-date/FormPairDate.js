@@ -4,16 +4,20 @@ import Input from '../input/Input';
 class FormPairDate {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-form-pair-date');
-    this.$calendarElement = this.$element.find('.js-form-pair-date__calendar');
-    this.calendar = new Calendar(this.$calendarElement);
+    this.init();
+    this.bindEventListeners();
+  }
+
+  init() {
+    const $element = this.$root.find('.js-form-pair-date');
+    const $calendarElement = $element.find('.js-form-pair-date__calendar');
+    this.calendar = new Calendar($calendarElement);
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
-    this.$inputElement = this.$element.find('.js-form-pair-date__input');
-    this.input = new Input(this.$inputElement);
+    const $inputElement = $element.find('.js-form-pair-date__input');
+    this.input = new Input($inputElement);
     this.input.observer.subscribe({ key: 'click', observer: this.openDrop.bind(this) });
     this.isOpen = this.calendar.isOpen();
-    this.bindEventListeners();
   }
 
   changeDate(res) {
@@ -28,6 +32,7 @@ class FormPairDate {
   }
 
   handleDropClassActiveRemove(event) {
+    console.log(this.isOpen, this.$root.find(event.target).length === 0)
     if (this.isOpen && this.$root.find(event.target).length === 0) {
       this.closeCalendar();
     }

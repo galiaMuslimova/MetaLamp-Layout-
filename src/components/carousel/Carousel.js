@@ -1,16 +1,16 @@
 class Carousel {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-carousel');
-    this.$slidesList = this.$element.find('.js-carousel__slide-list');
-    this.$indicatorsList = this.$element.find('.js-carousel__indicators-list');
-    this.$rightButton = this.$element.find('.js-carousel__mover_right');
-    this.$leftButton = this.$element.find('.js-carousel__mover_left');
     this.init();
     this.bindEventListeners();
   }
 
   init() {
+    this.$element = this.$root.find('.js-carousel');
+    this.$slidesList = this.$element.find('.js-carousel__slide-list');
+    this.$indicatorsList = this.$element.find('.js-carousel__indicators-list');
+    this.$rightButton = this.$element.find('.js-carousel__mover_right');
+    this.$leftButton = this.$element.find('.js-carousel__mover_left');
     const $slides = this.$slidesList.find('.js-carousel__slide');
     const firstSlide = $slides[0];
     $(firstSlide).addClass('carousel__slide_shown');

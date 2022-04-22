@@ -7,23 +7,23 @@ import CatalogItem from '@c/catalog-item/CatalogItem.js';
 class Cards {
   constructor($root) {
     this.$root = $root;
-    this.$element = $root.find('.js-cards');
     this.init();
   }
 
   init() {
+    this.$element = this.$root.find('.js-cards');
     if (this.$element[0]) {
       const $entryCardElement = this.$element.find('.js-cards__entry-card');
-      this.entryCard = new EntryCard($entryCardElement);
+      const entryCard = new EntryCard($entryCardElement);
       const $roomCardElement = this.$element.find('.js-cards__room-card');
-      this.roomCard = new RoomCard($roomCardElement);
+      const roomCard = new RoomCard($roomCardElement);
       const $logInCardElement = this.$element.find('.js-cards__log-in-card');
-      this.logInCard = new LogInCard($logInCardElement);
+      const logInCard = new LogInCard($logInCardElement);
       const $calendarElement = this.$element.find('.js-cards__date');
       this.calendar = new Calendar($calendarElement);
       const $catalogItemElement = this.$element.find('.js-cards__catalog-card_focused');
-      this.catalogItem = new CatalogItem($catalogItemElement);
-      this.catalogItem.setFocus();
+      const catalogItem = new CatalogItem($catalogItemElement);
+      catalogItem.setFocus();
       this.initCalendar();
     }
   }

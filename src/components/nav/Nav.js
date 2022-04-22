@@ -1,9 +1,13 @@
 class Nav {
   constructor($root) {
     this.$root = $root;
+    this.init();
+    this.bindEventHandlers();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-nav');
     this.$navIcon = this.$element.find('.js-nav__icon');
-    this.bindEventHandlers();
   }
 
   bindEventHandlers() {

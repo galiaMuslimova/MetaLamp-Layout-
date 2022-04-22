@@ -7,11 +7,11 @@ const chartData = require('@/pages/room/room.json');
 class Room {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-room');
     this.init();
   }
 
   init() {
+    this.$element = this.$root.find('.js-room');
     if (this.$element[0]) {
       this.review = new Review(this.$element);
       this.roomCard = new RoomCard(this.$element);

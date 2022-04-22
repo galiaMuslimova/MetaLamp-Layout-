@@ -5,9 +5,13 @@ import DropButtons from '../drop-buttons/DropButtons.js';
 class Selector {
   constructor($root) {
     this.$root = $root;
+    this.init();
+    this.addDropButtons();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-selector');
     this.observer = new Observer();
-    this.addDropButtons();
     this.counters = this.makeCounters();
     this.valuesArray = this.takeNumbersArray();
   }

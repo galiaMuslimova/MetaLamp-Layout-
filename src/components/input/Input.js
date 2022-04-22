@@ -3,13 +3,17 @@ import Observer from '../../observer/Observer';
 class Input {
   constructor($root) {
     this.$root = $root;
+    this.init();
+    this.initOpenButton();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-input');
     this.$inputField = this.$element.find('.js-input__field');
     this.observer = new Observer();
     this.value = this.$inputField.val();
     this.$openButton = this.$element.find('.js-input__button_openable');
     this.hasOpenButton = this.$openButton.length > 0;
-    this.initOpenButton();
   }
 
   initOpenButton() {

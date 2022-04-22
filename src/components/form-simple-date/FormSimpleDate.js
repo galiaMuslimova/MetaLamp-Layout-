@@ -3,6 +3,11 @@ import Calendar from '../calendar/Calendar';
 class FormSimpleDate {
   constructor($root) {
     this.$root = $root;
+    this.init();
+    this.bindEventListeners();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-form-simple-date');
     this.$calendarElement = this.$element.find('.js-form-simple-date__calendar');
     this.calendar = new Calendar(this.$calendarElement);
@@ -10,11 +15,6 @@ class FormSimpleDate {
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
     this.$input = this.$element.find('.js-form-simple-date__input');
     this.value = this.$input.val();
-    this.init();
-    this.bindEventListeners();
-  }
-
-  init() {
     const options = {
       multipleDates: false,
       range: false,

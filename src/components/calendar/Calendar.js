@@ -6,13 +6,16 @@ import DropButtons from '../drop-buttons/DropButtons';
 class Calendar {
   constructor($root) {
     this.$root = $root;
+    this.observer = new Observer();
+    this.init();
+    this.createDatePicker();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-calendar');
     this.$calendarPlace = this.$element.find('.js-calendar__dp');
     this.id = `id${Date.now() * Math.floor(Math.random() * 100)}`;
-    this.observer = new Observer();
     this.dropButtons = new DropButtons(this.$element);
-    this.dp = {};
-    this.createDatePicker();
   }
 
   createDatePicker() {

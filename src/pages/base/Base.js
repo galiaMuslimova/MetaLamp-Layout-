@@ -8,12 +8,16 @@ import LogIn from '@/pages/log-in/LogIn';
 class Base {
   constructor($element) {
     this.$element = $element;
-    this.header = new Header(this.$element);
-    this.linksClass = new Links(this.$element);
-    this.main = new Main(this.$element);
-    this.catalog = new Catalog(this.$element);
-    this.room = new Room(this.$element);
-    this.logIn = new LogIn(this.$element);
+    this.init();
+  }
+
+  init() {
+    const header = new Header(this.$element);
+    const linksClass = new Links(this.$element);
+    const main = new Main(this.$element);
+    const catalog = new Catalog(this.$element);
+    const room = new Room(this.$element);
+    const logIn = new LogIn(this.$element);
   }
 }
 

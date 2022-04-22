@@ -3,8 +3,12 @@ import Chart from 'chart.js/auto';
 class RoomChart {
   constructor($root, chartData) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-room-chart__content');
     this.chartData = chartData;
+    this.init();
+  }
+
+  init() {
+    this.$element = this.$root.find('.js-room-chart__content');
     this.ctxContext = this.$element[0].getContext('2d');
     this.voices = this.chartData.voices;
     this.colors = this.createColors();

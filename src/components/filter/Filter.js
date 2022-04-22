@@ -7,7 +7,12 @@ import FormPlacement from '../form-placement/FormPlacement.js';
 class Filter {
   constructor($root) {
     this.$root = $root;
-    this.$element = $root.find('.js-filter');
+    this.init();
+    this.initCalendar();
+  }
+
+  init() {
+    this.$element = this.$root.find('.js-filter');
     this.$date = this.$element.find('.js-filter__date');
     this.dateForm = new FormPairDate(this.$date);
     this.$guests = this.$element.find('.js-filter__guests');
@@ -17,7 +22,6 @@ class Filter {
     this.placementForm = new FormPlacement(this.$placement);
     this.$expandableList = this.$element.find('.js-filter__expandable-list');
     this.expandableList = new ExpandableList(this.$expandableList);
-    this.initCalendar();
   }
 
   initCalendar() {
