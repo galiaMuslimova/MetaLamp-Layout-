@@ -3,17 +3,10 @@ import Selector from '../selector/Selector';
 import Input from '../input/Input';
 
 class FormPlacement extends FormGuests {
-  constructor($root) {
-    super($root);
-    this.$root = $root;
-    this.init();
-  }
-
   init() {
     const $element = this.$root.find('.js-form-placement');
     const $inputElement = $element.find('.js-form-placement__input');
     this.input = new Input($inputElement);
-    console.log(this.input)
     this.input.observer.subscribe({ key: 'click', observer: this.openSelector.bind(this) });
     const $selectorElement = $element.find('.js-form-placement__drop');
     this.selector = new Selector($selectorElement);

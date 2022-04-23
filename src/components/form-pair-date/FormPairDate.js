@@ -32,7 +32,6 @@ class FormPairDate {
   }
 
   handleDropClassActiveRemove(event) {
-    console.log(this.isOpen, this.$root.find(event.target).length === 0)
     if (this.isOpen && this.$root.find(event.target).length === 0) {
       this.closeCalendar();
     }

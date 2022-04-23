@@ -4,6 +4,8 @@ import Input from '../input/Input';
 class FormGuests {
   constructor($root) {
     this.$root = $root;
+    this.input = null;
+    this.selector = null;
     this.init();
     this.bindEventListeners();
   }

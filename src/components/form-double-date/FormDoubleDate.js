@@ -3,12 +3,6 @@ import Calendar from '../calendar/Calendar';
 import FormPairDate from '../form-pair-date/FormPairDate';
 
 class FormDoubleDate extends FormPairDate {
-  constructor($root) {
-    super($root);
-    this.$root = $root;
-    this.init();
-  }
-
   init() {
     const $element = this.$root.find('.js-form-double-date');
     this.calendar = new Calendar($element);
