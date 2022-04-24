@@ -1,24 +1,19 @@
 include ../input/input.pug
 
 mixin links()
+  - const data = require('@c/links/links.json')
+
   .links.js-links
     .links__container
       .links__col.links__col_with-info
         .links__logo
           +logo()
         p.links__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-      .links__col
-        h3.links__subtitle Навигация 
-        each item in ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
-          a.links__text(href='./empty.html')=item
-      .links__col
-        h3.links__subtitle О нас
-        each item in ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
-          a.links__text(href='./empty.html')=item
-      .links__col
-        h3.links__subtitle Служба поддержки
-        each item in ['Соглашение', 'Сообщества', 'Связь с нами']
-          a.links__text(href='./empty.html')=item
+      each item in data
+        .links__col
+          h3.links__subtitle= item.title 
+          each link in item.links
+            a.links__text(href='./empty.html')= link
       .links__col.links__col_with-info
         h3.links__subtitle Подписка
         p.links__info Получайте специальные предложения и новости сервиса

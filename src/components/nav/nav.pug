@@ -1,24 +1,18 @@
 include ../icon-open/icon-open.pug
 
 mixin nav()
+  - const data = require('@c/nav/nav.json')
+
   nav.nav.js-nav  
-    .nav__item
-      a.nav__link(href='./empty.html') О нас
-    .nav__item.nav__item_with-submenu.js-nav__item_with-submenu
-      a.nav__link.nav__link_with-icon Услуги
-        span.nav__icon.js-nav__icon
-          +icon-open({})
-      .nav__submenu.js-nav__submenu         
-        each item in ['Услуга 1', 'Услуга 2', 'Услуга 3', 'Услуга 4', 'Услуга 5']          
-          a.nav__link(href='./empty.html')= item
-    .nav__item 
-      a.nav__link(href='./empty.html') Вакансии
-    .nav__item 
-      a.nav__link(href='./empty.html') Новости
-    .nav__item.nav__item_with-submenu.js-nav__item_with-submenu
-      a.nav__link.nav__link_with-icon Соглашения
-        span.nav__icon.js-nav__icon
-          +icon-open({})
-      .nav__submenu.js-nav__submenu
-        each item in ['Соглашения 1', 'Соглашения 2', 'Соглашения 3', 'Соглашения 4']          
-          a.nav__link(href='./empty.html')= item         
+    each item in data 
+      if item.submenu 
+        .nav__item.nav__item_with-submenu.js-nav__item_with-submenu
+          a.nav__link.nav__link_with-icon= item.link
+            span.nav__icon.js-nav__icon
+              +icon-open({})
+          .nav__submenu.js-nav__submenu         
+            each subitem in item.submenu          
+              a.nav__link(href='./empty.html')= subitem
+      else
+        .nav__item
+          a.nav__link(href='./empty.html')= item.link

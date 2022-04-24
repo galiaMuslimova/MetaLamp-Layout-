@@ -1,17 +1,17 @@
 include ../icon-arrow/icon-arrow.pug
 include ../icon-arrow-back/icon-arrow-back.pug
 
-mixin pagination({ id = '' })
+mixin pagination({ id = '', numbers = { 'from': 1, 'to': 15 } })
   .pagination.js-pagination
     .pagination__anchor.js-pagination__anchor(class='js-pagination__anchor_for-' + id)
       .pagination__item.js-pagination__item.pagination__item_previous.js-pagination__item_previous
         span.pagination__icon 
           +icon-arrow-back
-      .pagination__item.pagination__item_current.js-pagination__item_current.pagination__item_active 1
-      .pagination__item.pagination__item_current.js-pagination__item_current 2
-      .pagination__item.pagination__item_current.js-pagination__item_current 3
-      .pagination__item.pagination__item_dots.js-pagination__item_dots ...
-      .pagination__item.pagination__item_current.js-pagination__item_current 15
+      .pagination__item.pagination__item_active(data-pagination-button = 'current')= numbers.from
+      .pagination__item(data-pagination-button = 'current')= numbers.from + 1 
+      .pagination__item(data-pagination-button = 'current')= numbers.from + 2
+      .pagination__item(data-pagination-button = 'dots') ...
+      .pagination__item(data-pagination-button = 'current')= numbers.to
       .pagination__item.pagination__item_next.js-pagination__item_next
         span.pagination__icon 
           +icon-arrow

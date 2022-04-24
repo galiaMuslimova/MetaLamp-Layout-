@@ -18,16 +18,14 @@ class Pagination {
   }
 
   bindEventListeners() {
-    const root = this;
-    $(document).on('click', '.js-pagination__item_current', function () {
-      root.handleNumberButtonClick($(this));
-    });
+    $(document).on('click', '[data-pagination-button="current"]', this.handleNumberButtonClick.bind(this) );
     this.$nextButton.on('click', this.handleNextButtonClick.bind(this));
     this.$prevButton.on('click', this.handlePrevButtonClick.bind(this));
   }
 
-  handleNumberButtonClick(element) {
-    this.currentPage = Number(element.text());
+  handleNumberButtonClick(event) {
+    const number = $(event.target).text();
+    this.currentPage = Number(number);
     this.showPage();
   }
 
@@ -86,7 +84,7 @@ class Pagination {
   }
 
   addPaginationItems(item) {
-    $('<div>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
+    $('<div>').addClass('pagination__item').attr('data-pagination-button', item ? 'current' : 'dots')
       .toggleClass('pagination__item_active', item === this.currentPage)
       .text(item || '...')
       .insertBefore(this.$nextButton);
