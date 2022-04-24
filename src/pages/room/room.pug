@@ -10,7 +10,7 @@ block title
   title Hotel Room
 
 block content
-  -const data = require("@c/review/review.json")
+  - const reviews = require("@/pages/room/reviews.json")
 
   .room.js-room
     .room__content
@@ -28,8 +28,8 @@ block content
         .room__row
           h2.room__subtitle Отзывы посетителей номера
           p.room__text 2 отзыва        
-        each item in data
-          +review({ name, image, time, content, like } = item)
+        each item in reviews
+          +review({ item })
       .room__rules
         h2.room__subtitle Правила 
         +bullet({ items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", 

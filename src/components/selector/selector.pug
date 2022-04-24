@@ -1,7 +1,7 @@
 include ../counter/counter.pug
 include ../drop-buttons/drop-buttons.pug
 
-mixin selector({ items = [{ name: "Взрослые", amount: 0 }, { name: "Дети", amount: 0 }, { name: "Младенцы", amount: 0 }], hasButton = false })
+mixin selector({ items = require('@c/form-guests/form-guests.json'), hasButton = false })
   .selector.js-selector
     .selector__content 
       each item in items

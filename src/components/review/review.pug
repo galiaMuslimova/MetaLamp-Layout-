@@ -1,13 +1,12 @@
 include ../like/like.pug
 
-mixin review({ name = "Патрисия Стёклышкова", image = "patricia.jpg", time = "Неделю назад", content = "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", like = { count, isCheck } })
-    .review.js-review
-      .review__col
-        .review__photo
-          img.review__image(src= require("@a/images/review-images/" + image) alt='person photo')
-        .review__like 
-          +like({ count: like.count, isCheck: like.isCheck })
-      .review__col 
-        .review__title= name 
-        .review__subtitle= time 
-        .review__content= content
+mixin review({ item = require("@c/review/review.json") } = {} )
+  .review.js-review
+    .review__col
+      .review__photo
+        img.review__image(src= require("@a/images/review-images/" + item.image) alt='person photo')
+      .review__like         
+    .review__col 
+      .review__title= item.name 
+      .review__subtitle= item.time 
+      .review__content= item.content

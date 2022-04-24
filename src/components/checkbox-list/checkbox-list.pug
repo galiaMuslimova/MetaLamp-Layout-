@@ -1,6 +1,6 @@
 include ../checkbox/checkbox.pug
 
-mixin checkbox-list({ items = [{ id: "smoke", text: "Можно курить" }, { id: "pet", text: "Можно с питомцами", checked: true }, { id: "invite", text: "Можно пригласить гостей \n(до 10 человек)", checked: true }] })
+mixin checkbox-list({ items = require('@c/expandable-list/expandable-list.json') })
   .checkbox-list
     each item in items
       +checkbox(item)

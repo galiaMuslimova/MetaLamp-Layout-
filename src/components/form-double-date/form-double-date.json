@@ -1,0 +1,14 @@
+[
+  {
+    "order": "first",
+    "title": "прибытие",
+    "placeholder": "ДД.ММ.ГГГГ",
+    "value": "ДД.ММ.ГГГГ"
+  },
+  {
+    "order": "second",
+    "title": "выезд",
+    "placeholder": "ДД.ММ.ГГГГ",
+    "value": "ДД.ММ.ГГГГ"
+  }
+]

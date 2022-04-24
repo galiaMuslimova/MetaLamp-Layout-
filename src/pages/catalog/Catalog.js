@@ -29,7 +29,7 @@ class Catalog {
     } else {
       pagination = new Pagination(this.$element, this.$paginationItems, 12);
     }
-    pagination.init();
+    pagination.activatePagination();
   }
 
   bindEventListeners() {

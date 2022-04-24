@@ -3,14 +3,18 @@ class Pagination {
     this.$root = $root;
     this.$items = $items;
     this.limitPerPage = limitPerPage;
+    this.init();
   }
 
   init() {
     this.$element = this.$root.find('.js-pagination');
     this.$anchor = this.$element.find('.js-pagination__anchor');
-    this.currentPage = 1;
     this.$prevButton = this.$element.find('.js-pagination__item_previous');
     this.$nextButton = this.$element.find('.js-pagination__item_next');
+  }
+
+  activatePagination() {
+    this.currentPage = 1;
     this.numberOfItems = this.$items.length;
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
     this.showPage();
@@ -18,7 +22,7 @@ class Pagination {
   }
 
   bindEventListeners() {
-    $(document).on('click', '[data-pagination-button="current"]', this.handleNumberButtonClick.bind(this) );
+    $(document).on('click', '[data-pagination-button="current"]', this.handleNumberButtonClick.bind(this));
     this.$nextButton.on('click', this.handleNextButtonClick.bind(this));
     this.$prevButton.on('click', this.handlePrevButtonClick.bind(this));
   }
