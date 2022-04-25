@@ -7,11 +7,11 @@ class Nav {
 
   init() {
     this.$element = this.$root.find('.js-nav');
-    this.$navIcon = this.$element.find('.js-nav__icon');
+    this.$subMenuLink = this.$element.find('.js-nav__item_with-submenu');
   }
 
   bindEventHandlers() {
-    this.$navIcon.on('click', this.handleNavSubmenuOpen);
+    this.$subMenuLink.on('click', this.handleNavSubmenuOpen);
     $(document).on('click', Nav.handleNavSubmenuClose);
   }
 

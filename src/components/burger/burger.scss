@@ -38,6 +38,7 @@
   }
 
   &_pushed {
+    width: 25px;
     .burger__item {
       opacity: 0;
       transition: 0.1s;
