@@ -1,6 +1,6 @@
 include ../icon-heart/icon-heart.pug
 
-mixin like({ count = 2, isCheck = false })
+mixin like({ count = 2, isCheck = false } = {})
   .like.js-like
     .like__row
       span.like__icon.js-like__icon(class=`${isCheck ? 'like__icon_active' : ''}`)

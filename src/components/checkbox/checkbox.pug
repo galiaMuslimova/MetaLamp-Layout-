@@ -1,6 +1,6 @@
 include ../icon-check/icon-check.pug
 
-mixin checkbox({ id = "smoke", text = "Можно курить", subtext = null, checked = false })
+mixin checkbox({ id = "smoke", text = "Можно курить", subtext = null, checked = false } = {})
   .checkbox.js-checkbox
     label.checkbox__label
       input.checkbox__input(type="checkbox" id=id checked=checked)

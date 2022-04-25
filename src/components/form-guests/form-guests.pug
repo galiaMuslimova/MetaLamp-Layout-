@@ -1,7 +1,7 @@
 include ../input/input.pug
 include ../selector/selector.pug
 
-mixin form-guests({ value = '', items = require('@c/form-guests/form-guests.json'), hasButton = true })
+mixin form-guests({ value = '', items = require('@c/form-guests/form-guests.json'), hasButton = true } = {})
   .form-guests.js-form-guests
     .form-guests__input.js-form-guests__input
       +input({placeholder: 'Сколько гостей', value: value, openable: true, isReadonly: true })

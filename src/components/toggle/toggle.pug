@@ -1,4 +1,4 @@
-mixin toggle({ text = 'Получать спецпредложения', isCheck = false })
+mixin toggle({ text = 'Получать спецпредложения', isCheck = false } = {})
   .toggle
     label.toggle__label
       input.toggle__input(type="checkbox" checked=isCheck)

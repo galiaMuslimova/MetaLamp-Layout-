@@ -74,7 +74,8 @@ class Pagination {
     }
 
     this.$items.hide().slice(start, end).show();
-    this.$anchor.find('.pagination__item').slice(1, -1).remove();
+    const paginationItems = this.$anchor.find('.js-pagination__item');
+    paginationItems.slice(1, -1).remove();
 
     this.getPageList().forEach((item) => this.addPaginationItems(item));
 
@@ -88,7 +89,7 @@ class Pagination {
   }
 
   addPaginationItems(item) {
-    $('<div>').addClass('pagination__item').attr('data-pagination-button', item ? 'current' : 'dots')
+    $('<div>').addClass('pagination__item js-pagination__item').attr('data-pagination-button', item ? 'current' : 'dots')
       .toggleClass('pagination__item_active', item === this.currentPage)
       .text(item || '...')
       .insertBefore(this.$nextButton);

@@ -1,4 +1,4 @@
-mixin calculation({ cost = 9990, discount = 2179, fee = 300, days = 4 })
+mixin calculation({ cost = 9990, discount = 2179, fee = 300, days = 4 } = {})
   .calculation  
     p.calculation__text= cost.toLocaleString() + '₽ х '
       span.calculation__text= days + ' суток'

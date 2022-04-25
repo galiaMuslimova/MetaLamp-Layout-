@@ -1,14 +1,15 @@
 include ../counter/counter.pug
 include ../drop-buttons/drop-buttons.pug
 
-mixin selector({ items = require('@c/form-guests/form-guests.json'), hasButton = false })
+mixin selector({ items = require('@c/form-guests/form-guests.json'), hasButton = false } = {})
   .selector.js-selector
     .selector__content 
       each item in items
+        - let { name, amount } = item
         .selector__row
-          .selector__subtitle=item.name
+          .selector__subtitle=name
           .selector__counter.js-selector__counter  
-            +counter({ amount: item.amount })
+            +counter({ amount: amount })
     if(hasButton)
       .selector__buttons.js-selector__buttons 
         +drop-buttons()

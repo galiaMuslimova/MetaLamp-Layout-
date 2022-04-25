@@ -2,13 +2,14 @@ include ../input/input.pug
 include ../calendar/calendar.pug
 
 
-mixin form-double-date({ items = require('@c/form-double-date/form-double-date.json') }) 
+mixin form-double-date({ items = require('@c/form-double-date/form-double-date.json') } = {}) 
   .form-double-date.js-form-double-date    
     .form-double-date__row
       each item in items
-        .form-double-date__item(data-date-order = item.order)
-          h3.form-double-date__subtitle= item.title
+        - let { order, title, placeholder, value } = item
+        .form-double-date__item(data-date-order = order)
+          h3.form-double-date__subtitle= title
           .form-double-date__input   
-            +input({ placeholder: item.placeholder,  value: item.value, openable: true, isReadonly: true })      
+            +input({ placeholder: placeholder,  value: value, openable: true, isReadonly: true })      
     .form-double-date__calendar 
       +calendar()

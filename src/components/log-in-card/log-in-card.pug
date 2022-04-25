@@ -4,7 +4,7 @@ include ../form-simple-date/form-simple-date.pug
 include ../toggle/toggle.pug
 include ../button/button.pug
 
-mixin log-in-card()
+mixin log-in-card({} = {})
   form.log-in-card.js-log-in-card
     .log-in-card__inner
       .log-in-card__item 
@@ -21,7 +21,7 @@ mixin log-in-card()
         .log-in-card__form
           h3.log-in-card__subtitle дата рождения
           .log-in-card__date.js-log-in-card__date
-            +form-simple-date({})
+            +form-simple-date()
       .log-in-card__item
         .log-in-card__form
           h3.log-in-card__subtitle данные для входа в сервис

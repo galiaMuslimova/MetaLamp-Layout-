@@ -1,7 +1,7 @@
 include ../rate/rate.pug
 include ../carousel/carousel.pug
 
-mixin catalog-item({ num = 888, luxury = true, cost = 9990, stars = 5, review = 145 })
+mixin catalog-item({ num = 888, luxury = true, cost = 9990, stars = 5, review = 145 } = {})
   .catalog-item.js-catalog-item 
     +carousel({ num: num})
     .catalog-item__content.js-catalog-item__content

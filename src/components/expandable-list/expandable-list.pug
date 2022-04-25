@@ -1,7 +1,7 @@
 include ../checkbox-list/checkbox-list.pug
 include ../icon-open/icon-open.pug
 
-mixin expandable-list({ title = 'title', items = require('@c/expandable-list/expandable-list.json') })
+mixin expandable-list({ title = 'title', items = require('@c/expandable-list/expandable-list.json') } = {})
   .expandable-list.js-expandable-list
     .expandable-list__row
       h3.expandable-list__title= title

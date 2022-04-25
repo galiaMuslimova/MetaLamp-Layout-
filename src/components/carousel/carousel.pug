@@ -1,6 +1,6 @@
 include ../icon-open/icon-open.pug
 
-mixin carousel({ num = 888 })  
+mixin carousel({ num = 888 } = {})  
   //-import all images from directory of this number as array "images"
   - const context = require.context("@a/images/catalog-images/", true, /\.(jpg|png|jpeg)$/)
   - const images = context.keys().filter(el => el.includes(num)).map(context);  

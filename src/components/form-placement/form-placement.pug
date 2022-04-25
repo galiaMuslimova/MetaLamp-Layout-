@@ -1,7 +1,7 @@
 include ../input/input.pug
 include ../selector/selector.pug
 
-mixin form-placement({ value = '', items = require('@c/form-placement/form-placement.json') })
+mixin form-placement({ value = '', items = require('@c/form-placement/form-placement.json') } = {})
   .form-placement.js-form-placement
     .form-placement__input.js-form-placement__input
       +input({placeholder:'Сколько спален', value:value, openable: true, isReadonly: true })

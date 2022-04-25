@@ -1,6 +1,6 @@
 include ../catalog-item/catalog-item.pug
 
-mixin catalog-list()
+mixin catalog-list({} = {})
   - const data = require('@c/catalog-list/catalog-list.json')
   
   .catalog-list.js-catalog-list

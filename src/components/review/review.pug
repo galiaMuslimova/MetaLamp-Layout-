@@ -1,12 +1,14 @@
 include ../like/like.pug
 
 mixin review({ item = require("@c/review/review.json") } = {} )
+  - let { name, image, time, content, like } = item
   .review.js-review
     .review__col
       .review__photo
-        img.review__image(src= require("@a/images/review-images/" + item.image) alt='person photo')
-      .review__like         
+        img.review__image(src= require("@a/images/review-images/" + image) alt='person photo')
+      .review__like 
+        +like(like)        
     .review__col 
-      .review__title= item.name 
-      .review__subtitle= item.time 
-      .review__content= item.content
+      .review__title= name 
+      .review__subtitle= time 
+      .review__content= content

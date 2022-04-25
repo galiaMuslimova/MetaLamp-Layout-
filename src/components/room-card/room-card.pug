@@ -3,19 +3,19 @@ include ../form-guests/form-guests.pug
 include ../button/button.pug
 include ../calculation/calculation.pug
 
-mixin room-card()
+mixin room-card({} = {})
   - const roomData = require('@c/room-card/room-card.json')
+  - let { num, luxury, cost, stars, review, discount, fee, date } = roomData
   form.room-card.js-room-card
-    -const date = roomData.date
     -const diff = Math.abs(+new Date(date[1]) - +new Date(date[0]));
     -const days = diff/1000/60/60/24;
     .room-card__inner
       .room-card__item
         .room-card__title
           .room-card__num-sign №
-          .room-card__num= roomData.num
-          .room-card__lux= roomData.luxury ? "люкс" : ""
-          .room-card__cost= roomData.cost.toLocaleString() + '₽'
+          .room-card__num= num
+          .room-card__lux= luxury ? "люкс" : ""
+          .room-card__cost= cost.toLocaleString() + '₽'
           .room-card__cost-text в сутки
       .room-card__item
         .room-card__date.js-room-card__date
@@ -28,11 +28,11 @@ mixin room-card()
             hasButton: true
           })
       .room-card__calculation 
-        +calculation({ cost: roomData.cost, discount: roomData.discount, fee: roomData.fee, days: days })        
+        +calculation({ cost: cost, discount: discount, fee: fee, days: days })        
       .room-card__item
         .room-card__total 
           .room-card__total-text Итого
           .room-card__dots
-          .room-card__total-cost= (roomData.cost*days-roomData.discount+roomData.fee).toLocaleString() + '₽'
+          .room-card__total-cost= (cost * days - discount + fee).toLocaleString() + '₽'
         .room-card__button 
           +button({theme: "with-arrow", type:"submit", text: "забронировать", icon: true})
