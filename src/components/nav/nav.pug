@@ -1,8 +1,6 @@
 include ../icon-open/icon-open.pug
 
-mixin nav({} = {})
-  - const data = require('@c/nav/nav.json')
-
+mixin nav({ data = require('@c/nav/nav.json') } = {})
   nav.nav.js-nav  
     each item in data 
       - let { link, submenu } = item

@@ -1,8 +1,6 @@
 include ../input/input.pug
 
-mixin links({} = {})
-  - const data = require('@c/links/links.json')
-
+mixin links({ data = require('@c/links/links.json') } = {})
   .links.js-links
     .links__container
       .links__col.links__col_with-info

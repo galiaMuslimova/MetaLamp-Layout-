@@ -3,8 +3,7 @@ include ../form-guests/form-guests.pug
 include ../button/button.pug
 include ../calculation/calculation.pug
 
-mixin room-card({} = {})
-  - const roomData = require('@c/room-card/room-card.json')
+mixin room-card({ roomData = require('@c/room-card/room-card.json')  } = {})
   - let { num, luxury, cost, stars, review, discount, fee, date } = roomData
   form.room-card.js-room-card
     -const diff = Math.abs(+new Date(date[1]) - +new Date(date[0]));
