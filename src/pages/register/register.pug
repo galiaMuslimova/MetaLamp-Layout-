@@ -1,0 +1,15 @@
+extends ../base/base.pug
+include ../../components/register-card/register-card.pug
+
+block title 
+  title Hotel Register 
+
+block content  
+  .register.js-register
+    .register__content
+      .register__card
+        +register-card()
+
+block back
+  .register__back
+    img.register__image(src=require("@a/images/background-images/register.jpg"), alt="background room image")

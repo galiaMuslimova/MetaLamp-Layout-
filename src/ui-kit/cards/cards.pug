@@ -2,7 +2,7 @@ extends ../ui-kit-base/ui-kit-base.pug
 include ../../components/catalog-item/catalog-item.pug
 include ../../components/calendar/calendar.pug 
 include ../../components/entry-card/entry-card.pug
-include ../../components/log-in-card/log-in-card.pug
+include ../../components/register-card/register-card.pug
 include ../../components/room-card/room-card.pug
 include ../../components/sign-in-card/sign-in-card.pug
 
@@ -11,8 +11,8 @@ block content
     .cards__col
       .cards__entry-card.js-cards__entry-card
         +entry-card()
-      .cards__log-in-card.js-cards__log-in-card   
-        +log-in-card()
+      .cards__register-card.js-cards__register-card    
+        +register-card()
     .cards__col
       .cards__room-card.js-cards__room-card
         +room-card()

@@ -2,7 +2,7 @@ import Header from '@c/header/Header';
 import Main from '@/pages/main/Main.js';
 import Catalog from '@/pages/catalog/Catalog.js';
 import Room from '@/pages/room/Room.js';
-import LogIn from '@/pages/log-in/LogIn';
+import Register from '@/pages/register/Register';
 
 class Base {
   constructor($element) {
@@ -15,7 +15,7 @@ class Base {
     const main = new Main(this.$element);
     const catalog = new Catalog(this.$element);
     const room = new Room(this.$element);
-    const logIn = new LogIn(this.$element);
+    const register = new Register(this.$element);
   }
 }
 

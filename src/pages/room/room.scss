@@ -45,7 +45,7 @@
     height: 33.1vw;
     display: grid;
     grid:
-      "photo1 photo2"50% "photo1 photo3"50% /0.68fr 0.32fr;
+      "photo1 photo2" 50% "photo1 photo3" 50% /0.68fr 0.32fr;
 
     @media(max-width: 770px) {
       display: none;

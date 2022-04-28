@@ -1,6 +1,6 @@
 import EntryCard from '@c/entry-card/EntryCard.js';
 import RoomCard from '@c/room-card/RoomCard.js';
-import LogInCard from '@c/log-in-card/LogInCard.js';
+import RegisterCard from '@c/register-card/RegisterCard.js';
 import Calendar from '@c/calendar/Calendar.js';
 import CatalogItem from '@c/catalog-item/CatalogItem.js';
 
@@ -17,8 +17,8 @@ class Cards {
       const entryCard = new EntryCard($entryCardElement);
       const $roomCardElement = this.$element.find('.js-cards__room-card');
       const roomCard = new RoomCard($roomCardElement);
-      const $logInCardElement = this.$element.find('.js-cards__log-in-card');
-      const logInCard = new LogInCard($logInCardElement);
+      const $registerCardElement = this.$element.find('.js-cards__register-card');
+      const registerCard = new RegisterCard($registerCardElement);
       const $calendarElement = this.$element.find('.js-cards__date');
       this.calendar = new Calendar($calendarElement);
       const $catalogItemElement = this.$element.find('.js-cards__catalog-card_focused');
