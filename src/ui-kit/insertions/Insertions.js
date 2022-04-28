@@ -1,5 +1,4 @@
 import Header from '@c/header/Header';
-import Links from '@c/links/Links';
 
 class Insertions {
   constructor($root) {
@@ -14,14 +13,12 @@ class Insertions {
       this.firstHeader = new Header($firstHeaderElement);
       const $secondHeaderElement = this.$element.find('[data-header-type="second"]');
       this.secondHeader = new Header($secondHeaderElement);
-      const $linksElement = this.$element.find('.js-insertions__links');
-      this.firstLinks = new Links($linksElement);
       this.changeStyle(0);
     }
   }
 
-  changeStyle(num) {
-    this.firstHeader.changeStyle(num);
+  changeStyle(index) {
+    this.firstHeader.changeStyle(index);
   }
 }
 

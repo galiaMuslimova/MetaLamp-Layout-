@@ -11,14 +11,14 @@ mixin header({ isRegistered = false } = {})
     .header__nav
       +nav()
     .header__registration.js-header__registration
-      if(isRegistered)
+      if isRegistered
         .header__divider 
         .header__name Юлий Цезарь                  
       else  
         .header__sign-in-button.js-header__sign-in-button
-          +button({theme: 'white', text: 'войти'})   
+          +button({theme: 'white', text: 'войти', href: './sign-in.html'})   
         .header__log-in-button.js-header__log-in-button
-          +button({theme: 'blue', text: 'зарегистрироваться'})
+          +button({theme: 'blue', text: 'зарегистрироваться', href: './log-in.html'})
     .header__burger
       +burger()
       
