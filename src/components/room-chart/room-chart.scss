@@ -7,7 +7,10 @@
 
     @media(max-width: 770px) {
       margin: 0px;
-      width: 290px;
+    }
+
+    @media(max-width: 340px) {
+      width: 300px;
     }
   }
 }

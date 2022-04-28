@@ -1,7 +1,7 @@
 .burger {
   display: none;
-  height: 35px;
-  width: 45px;
+  height: 30px;
+  width: 35px;
   position: relative;
   margin-left: 20px;
   cursor: pointer;
@@ -21,7 +21,7 @@
   }
 
   &__item {
-    top: 16px;
+    top: 14px;
   }
 
   &:after,
@@ -46,13 +46,13 @@
 
     &:before {
       transform: rotate(45deg);
-      top: 16px;
+      top: 14px;
       transition: 0.2s;
     }
 
     &:after {
       transform: rotate(-45deg);
-      bottom: 16px;
+      bottom: 13px;
       transition: 0.2s;
     }
   }

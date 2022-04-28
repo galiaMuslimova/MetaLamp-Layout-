@@ -6,6 +6,9 @@ include ../../components/like/like.pug
 include ../../components/bullet/bullet.pug
 include ../../components/room-card/room-card.pug
 
+
+
+
 block title 
   title Hotel Room
 
@@ -47,4 +50,8 @@ block view
   .room__view
     each modifier, index in ['first', 'second', 'third']
       .room__photo(class = `room__photo_${modifier}`)
-        img.room__image(src=roomImages[index] alt='room image')
+        img.room__image(src=roomImages[index] alt=index + 'room image')
+
+block back 
+  .room__back 
+    img.room__image(src=require("@a/images/catalog-images/888/888-1.jpg") alt='room image')

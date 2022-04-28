@@ -39,6 +39,7 @@ class Catalog {
   handleFilterClassToggle() {
     const $filter = this.$filterOpenButton.siblings('.js-catalog__filter');
     $filter.toggleClass('catalog__filter_active');
+    this.$filterOpenButton.toggleClass('catalog__button_active');
   }
 }
 
