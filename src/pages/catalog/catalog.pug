@@ -2,7 +2,7 @@ extends ../base/base.pug
 include ../../components/filter/filter.pug
 include ../../components/icon-open/icon-open.pug
 include ../../components/catalog-list/catalog-list.pug
-include ../../components/pagination/pagination.pug
+
 
 block title 
   title Hotel catalog of rooms
@@ -15,11 +15,9 @@ block content
       +icon-open({})
     .catalog__list
       h1.catalog__title Номера, которые мы для вас подобрали
-      .catalog__content
+      .catalog__content.js-catalog__content
         +catalog-list()
-      .catalog__pagination
-        .catalog__pagination-content
-          +pagination()
+      
         
     
   

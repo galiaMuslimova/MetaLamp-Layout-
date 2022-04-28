@@ -13,6 +13,11 @@
 
   &_active {
     display: block;
+    margin-top: 6px;
+  }
+
+  &_shown {
+    display: block;
   }
 
   &__buttons {

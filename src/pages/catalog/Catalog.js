@@ -12,24 +12,10 @@ class Catalog {
   init() {
     this.$element = this.$root.find('.js-catalog');
     this.$filterOpenButton = this.$element.find('.js-catalog__button');
-    this.$paginationItems = this.$element.find('.js-catalog-item');
     if (this.$element[0]) {
       this.filter = new Filter(this.$element);
       this.catalogList = new CatalogList(this.$element);
-      this.makePagination();
     }
-  }
-
-  makePagination() {
-    let pagination;
-    if (window.innerWidth < 600) {
-      pagination = new Pagination(this.$element, this.$paginationItems, 4);
-    } else if (window.innerWidth < 900) {
-      pagination = new Pagination(this.$element, this.$paginationItems, 8);
-    } else {
-      pagination = new Pagination(this.$element, this.$paginationItems, 12);
-    }
-    pagination.activatePagination();
   }
 
   bindEventListeners() {

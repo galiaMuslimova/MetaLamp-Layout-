@@ -22,14 +22,14 @@
   &__block {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 41px;
 
     &_narrow {
       max-width: 266px;
     }
 
     &_with-large-gap {
-      gap: 123px;
+      gap: 119px;
       width: 320px;
     }
   }
@@ -109,7 +109,7 @@
   }
   
   &__selector_expanded {
-    margin-bottom: 133px;
+    margin-bottom: 134px;
   }
 
   &__expandable {    
@@ -121,13 +121,13 @@
   &__second-col {
     display: flex;
     flex-direction: column;
-    gap: 196px;
+    gap: 192px;
   }
 
   &__first-row {
     display: flex;
     flex-direction: row;
-    gap: 132px;
+    gap: 130px;
   }
 
   &__buttons {
@@ -176,10 +176,10 @@
   }
 
   &__review {
-    margin-top: 12px;
+    margin-top: 30px;
   }
 
   &__features {
-    margin-top: 190px;
+    margin-top: 185px;
   }
 }

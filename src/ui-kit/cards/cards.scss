@@ -9,15 +9,15 @@
     display: flex;
     flex-direction: column;
     width: 380px;
-    gap: 28px;
+    gap: 40px;
   }
 
   &__date {
     position: relative;
-    height: 100%;
+    height: 370px;
   }
 
   &__catalog-card {
-    margin: 12px auto 0px 0px;
+    margin: 0px auto 0px 0px;
   }
 }

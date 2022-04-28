@@ -21,15 +21,17 @@ class Cards {
       const registerCard = new RegisterCard($registerCardElement);
       const $calendarElement = this.$element.find('.js-cards__date');
       this.calendar = new Calendar($calendarElement);
-      const $catalogItemElement = this.$element.find('.js-cards__catalog-card_focused');
+      const $catalogItemElement = this.$element.find('[data-catalog-card="focused"]');
       const catalogItem = new CatalogItem($catalogItemElement);
+      const $catalogItemSecondElement = this.$element.find('[data-catalog-card="demo"]');
+      const catalogItemSecond = new CatalogItem($catalogItemSecondElement);
       catalogItem.setFocus();
       this.initCalendar();
     }
   }
 
   initCalendar() {
-    this.calendar.toggleActiveClass();
+    this.calendar.addShownClass();
     const newDate = ['2019-08-19', '2019-08-23'];
     const cardFocusDate = new Date(2019, 7, 8);
     this.calendar.setDate(newDate);

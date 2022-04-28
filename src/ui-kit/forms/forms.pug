@@ -46,19 +46,14 @@ block content
             .forms__item
               h3.forms__subtitle masked text field
               .forms__date.forms__date_is-first.js-forms__date_is-first
-                +form-simple-date({}) 
+                +form-simple-date() 
           .forms__item 
             .forms__date.forms__date_is-second.js-forms__date_is-second
-              +form-double-date({
-                inputDate: {
-                  values: ['ДД.ММ.ГГГГ', '19.08.2019'],
-                  titles: ['date dropdown', 'date dropdown']
-                }, id: 'forms-double'
-              })
+              +form-double-date({ items: [{ title: "date dropdown", placeholder: "ДД.ММ.ГГГГ", order: 'first' }, { title: "date dropdown", placeholder: "ДД.ММ.ГГГГ", order: 'second', value: '19.08.2019' }]})
           .forms__item.forms__item_narrow
             h3.forms__subtitle filter date dropdown
             .forms__date.forms__date_is-third.js-forms__date_is-third
-              +form-pair-date({value: '19 авг - 23 авг', id: 'forms-pair'}) 
+              +form-pair-date({value: '19 авг - 23 авг' }) 
           .forms__item.forms__item_narrow
             h3.forms__subtitle subscription text field
             form.forms__form        
@@ -132,30 +127,35 @@ block content
               .forms_rate-item.forms_rate-item_is-first.js-forms_rate-item_is-first
                 +rate({ starsCount: 5 }) 
         
-        //slider, buttons...
+        //thirst column
         .forms__block
-          .forms__item.forms__item_narrow
-            +slider({ title: "Range Slider" })
-          .forms__buttons
-            .forms__item
-              h3.forms__subtitle buttons 
+
+          //slider, buttons
+          .forms__sub-block
+            .forms__item.forms__item_narrow
+              +slider({ title: "Range Slider" })
+            .forms__buttons
+              .forms__item
+                h3.forms__subtitle buttons 
+                .forms__row
+                  .forms__button 
+                    +button({ theme: 'blue', text: 'click me' })
+                  .forms__button.forms__button_hovered
+                    +button({ theme: 'blue', text: 'click me' })
               .forms__row
                 .forms__button 
-                  +button({ theme: 'blue', text: 'click me' })
+                  +button({ theme: 'white', text: 'click me' })
                 .forms__button.forms__button_hovered
-                  +button({ theme: 'blue', text: 'click me' })
-            .forms__row
-              .forms__button 
-                +button({ theme: 'white', text: 'click me' })
-              .forms__button.forms__button_hovered
-                +button({ theme: 'white', text: 'click me' })
-            .forms__row
-              .forms__button.forms__button_simple 
-                +button({ theme: 'simple', text: 'click me' })
-              .forms__button.forms__button_hovered.forms__button_simple
-                +button({ theme: 'simple', text: 'click me' })
-            .forms__button.forms__button_with-arrow
-              +button({ theme: 'with-arrow', text: 'перейти к оплате', icon: true })
+                  +button({ theme: 'white', text: 'click me' })
+              .forms__row
+                .forms__button.forms__button_simple 
+                  +button({ theme: 'simple', text: 'click me' })
+                .forms__button.forms__button_hovered.forms__button_simple
+                  +button({ theme: 'simple', text: 'click me' })
+              .forms__button.forms__button_with-arrow
+                +button({ theme: 'with-arrow', text: 'перейти к оплате', icon: true })
+          
+          //pagination
           .forms__item 
             h3.forms__subtitle pagination
             .forms__pagination.js-forms__pagination

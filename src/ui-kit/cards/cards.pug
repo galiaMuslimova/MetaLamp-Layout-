@@ -21,23 +21,13 @@ block content
     .cards__col 
       .cards__date.js-cards__date   
         +calendar({ id: 'cards' })
-      .cards__catalog-card.cards__catalog-card_focused.js-cards__catalog-card_focused
-        +catalog-item({
-          item: {
-          "num": 888,
-          "luxury": true,
-          "cost": 9990,
-          "stars": 5,
-          "review": 145
-          }
-        })
-      .cards__catalog-card
+      .cards__catalog-card(data-catalog-card = 'focused')
+        +catalog-item()
+      .cards__catalog-card(data-catalog-card = 'demo')
         +catalog-item({ 
-          item: {
-          "num": 840,
-          "luxury": false,
-          "cost": 9990,
-          "stars": 4,
-          "review": 65
-          } 
+          num: 840,
+          luxury: false,
+          cost: 9990,
+          stars: 4,
+          review: 65
         })

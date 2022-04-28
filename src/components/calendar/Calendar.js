@@ -72,6 +72,10 @@ class Calendar {
     this.$element.removeClass('calendar_active');
   }
 
+  addShownClass() {
+    this.$element.addClass('calendar_shown');
+  }
+
   toggleActiveClass() {
     this.$element.toggleClass('calendar_active');
   }

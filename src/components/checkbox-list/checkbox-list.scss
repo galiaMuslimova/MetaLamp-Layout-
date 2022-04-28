@@ -1,8 +1,8 @@
 .checkbox-list {
-  padding-top: 7px;
+  padding-top: 9px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 6px;
 
   @media (max-width: 924px) {
     padding: 10px;
