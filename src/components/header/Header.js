@@ -9,7 +9,7 @@ class Header {
 
   init() {
     this.$element = this.$root.find('.js-header');
-    this.$logInButton = this.$element.find('.js-header__log-in-button');
+    this.$registerButton = this.$element.find('.js-header__register-button');
     this.$signInButton = this.$element.find('.js-header__sign-in-button');
     this.$registration = this.$element.find('.js-header__registration');
     this.nav = new Nav(this.$element);
