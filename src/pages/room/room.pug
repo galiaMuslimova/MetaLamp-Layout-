@@ -14,16 +14,16 @@ block title
 
 block content
   - const reviews = require("@/pages/room/reviews.json")
+  - const features = require("@/pages/room/features.json")
 
   .room.js-room
     .room__content
       .room__info           
         h2.room__subtitle Сведения о номере
-        +feature({ title: 'Комфорт', text: 'Шумопоглощающие стены' })
-        .room__divider
-        +feature({ title: 'Удобство', text: 'Окно в каждой из спален' })
-        .room__divider
-        +feature({ title: 'Уют', text: 'Номер оснащён камином' })
+        each feature in features
+          .room__feature 
+            +feature(feature)
+            .room__divider
       .room__chart
         h2.room__subtitle Впечатления от номера              
         +room-chart()

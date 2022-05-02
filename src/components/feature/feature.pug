@@ -1,12 +1,10 @@
-mixin feature({ title = 'Комфорт', text = 'Шумопоглощающие стены' } = {})
-  - const featureData = require("@c/feature/feature.json")
-  - const featureSrc = require("@a/icons/info-icons/" + featureData[title].src)
-  - const featureAlt = `${featureData[title].alt}`  
+mixin feature({ src = 'comfort.svg', title = 'Комфорт', text = 'Шумопоглощающие стены' } = {})
+  - const featureSrc = require("@a/icons/info-icons/" + src)
 
   .feature.js-feature
     .feature__content
       .feature__icon 
-        img.feature__image(src=featureSrc alt=featureAlt)
+        img.feature__image(src=featureSrc alt=title)
       .feature__col
         .feature__title= title
         .feature__text= text    
