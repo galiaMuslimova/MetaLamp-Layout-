@@ -1,35 +1,37 @@
 import EntryCard from '@c/entry-card/EntryCard.js';
 import RoomCard from '@c/room-card/RoomCard.js';
-import LogInCard from '@c/log-in-card/LogInCard.js';
+import RegisterCard from '@c/register-card/RegisterCard.js';
 import Calendar from '@c/calendar/Calendar.js';
 import CatalogItem from '@c/catalog-item/CatalogItem.js';
 
 class Cards {
   constructor($root) {
     this.$root = $root;
-    this.$element = $root.find('.js-cards');
-    this.entryCard = undefined;
-    this.roomCard = undefined;
-    this.logInCard = undefined;
-    this.dateForm = undefined;
     this.init();
   }
 
   init() {
+    this.$element = this.$root.find('.js-cards');
     if (this.$element[0]) {
-      this.entryCard = new EntryCard(this.$element.find('.js-cards__entry-card'));
-      this.roomCard = new RoomCard(this.$element.find('.js-cards__room-card'));
-      this.logInCard = new LogInCard(this.$element.find('.js-cards__log-in-card'));
-      this.calendar = new Calendar(this.$element.find('.js-cards__date'));
-      this.catalogItem = new CatalogItem(this.$element.find('.js-cards__catalog-card_focused'));
-      this.catalogItem.setFocus();
+      const $entryCardElement = this.$element.find('.js-cards__entry-card');
+      const entryCard = new EntryCard($entryCardElement);
+      const $roomCardElement = this.$element.find('.js-cards__room-card');
+      const roomCard = new RoomCard($roomCardElement);
+      const $registerCardElement = this.$element.find('.js-cards__register-card');
+      const registerCard = new RegisterCard($registerCardElement);
+      const $calendarElement = this.$element.find('.js-cards__date');
+      this.calendar = new Calendar($calendarElement);
+      const $catalogItemElement = this.$element.find('[data-catalog-card="focused"]');
+      const catalogItem = new CatalogItem($catalogItemElement);
+      const $catalogItemSecondElement = this.$element.find('[data-catalog-card="demo"]');
+      const catalogItemSecond = new CatalogItem($catalogItemSecondElement);
+      catalogItem.setFocus();
       this.initCalendar();
     }
   }
 
   initCalendar() {
-    this.calendar.createDatePicker();
-    this.calendar.toggleActiveClass();
+    this.calendar.addShownClass();
     const newDate = ['2019-08-19', '2019-08-23'];
     const cardFocusDate = new Date(2019, 7, 8);
     this.calendar.setDate(newDate);

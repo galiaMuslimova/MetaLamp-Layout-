@@ -1,9 +1,5 @@
-mixin slider(options)
-  - const type = options.type || ''
-  - const title = options.title || ''
-  - const text = options.text || ''
-
-  form.slider.js-slider(class='js-slider_for-' + type)
+mixin slider({ title = 'диапазон цены', text = 'Стоимость за сутки пребывания в номере' } = {})
+  form.slider.js-slider
     .slider__row
       h3.slider__title= title
       p.slider__result.js-slider__result

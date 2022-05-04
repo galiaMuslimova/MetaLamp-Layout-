@@ -1,12 +1,22 @@
 class Carousel {
   constructor($root) {
     this.$root = $root;
+    this.init();
+    this.bindEventListeners();
+  }
+
+  init() {
     this.$element = this.$root.find('.js-carousel');
-    this.$itemList = this.$element.find('.js-carousel__slide-list');
-    this.$indicators = this.$element.find('.js-carousel__indicators-list');
+    this.$slidesList = this.$element.find('.js-carousel__slide-list');
+    this.$indicatorsList = this.$element.find('.js-carousel__indicators-list');
     this.$rightButton = this.$element.find('.js-carousel__mover_right');
     this.$leftButton = this.$element.find('.js-carousel__mover_left');
-    this.bindEventListeners();
+    const $slides = this.$slidesList.find('.js-carousel__slide');
+    const firstSlide = $slides[0];
+    $(firstSlide).addClass('carousel__slide_shown');
+    const $indicators = this.$indicatorsList.find('.js-carousel__indicator');
+    const firstIndicator = $indicators[0];
+    $(firstIndicator).addClass('carousel__indicator_shown');
   }
 
   static slideToRight(list, className) {
@@ -16,7 +26,7 @@ class Carousel {
       $nextItem.addClass(className);
     } else {
       const $firstItem = $(list).children().first();
-      $($firstItem).addClass(className);
+      $firstItem.addClass(className);
     }
     $activeItem.removeClass(className);
   }
@@ -28,7 +38,7 @@ class Carousel {
       $prevItem.addClass(className);
     } else {
       const $lastItem = list.children().last();
-      $($lastItem).addClass(className);
+      $lastItem.addClass(className);
     }
     $activeItem.removeClass(className);
   }
@@ -39,13 +49,13 @@ class Carousel {
   }
 
   handleLeftButtonClick() {
-    Carousel.slideToLeft(this.$itemList, 'carousel__slide_shown');
-    Carousel.slideToLeft(this.$indicators, 'carousel__indicator_shown');
+    Carousel.slideToLeft(this.$slidesList, 'carousel__slide_shown');
+    Carousel.slideToLeft(this.$indicatorsList, 'carousel__indicator_shown');
   }
 
   handleRightButtonClick() {
-    Carousel.slideToRight(this.$itemList, 'carousel__slide_shown');
-    Carousel.slideToRight(this.$indicators, 'carousel__indicator_shown');
+    Carousel.slideToRight(this.$slidesList, 'carousel__slide_shown');
+    Carousel.slideToRight(this.$indicatorsList, 'carousel__indicator_shown');
   }
 
   setFocus() {

@@ -1,14 +1,10 @@
-mixin feature(options)
-  - const featureData = require("@c/feature/feature.json")
-  - const title = options.title || ''
-  - const featureSrc = require("@a/icons/info-icons/" + featureData[title].src)
-  - const featureAlt = `${featureData[title].alt}`  
-  - const text = options.text || ''
+mixin feature({ src = 'comfort.svg', title = 'Комфорт', text = 'Шумопоглощающие стены' } = {})
+  - const featureSrc = require("@a/icons/info-icons/" + src)
 
-  .feature
+  .feature.js-feature
     .feature__content
       .feature__icon 
-        img.feature__image(src=featureSrc alt=featureAlt)
+        img.feature__image(src=featureSrc alt=title)
       .feature__col
         .feature__title= title
         .feature__text= text    

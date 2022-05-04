@@ -1,12 +1,20 @@
-.log-in {
+.register {
   &__content {
     padding-left: 6px;
     margin: 1.3vw 0vw;
+
+    @media(max-width: 350px) {
+      padding: 0px;
+    }
   }
 
   &__card {
     margin: 0px auto;
     width: max-content;
+
+    @media(max-width: 350px) {
+      width: 100%;
+    }
   }
 
   &__back {

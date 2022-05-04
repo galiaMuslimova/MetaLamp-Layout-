@@ -1,15 +1,15 @@
-import FormSelector from '../form-selector/FormSelector';
+import FormGuests from '../form-guests/FormGuests';
 import Selector from '../selector/Selector';
-import InputOpen from '../input-open/InputOpen';
+import Input from '../input/Input';
 
-class FormPlacement extends FormSelector {
-  constructor($root) {
-    super($root);
-    this.$root = $root;
-    this.$element = this.$root.find('.js-form-placement');
-    this.input = new InputOpen(this.$element.find('.js-form-placement__input'));
+class FormPlacement extends FormGuests {
+  init() {
+    const $element = this.$root.find('.js-form-placement');
+    const $inputElement = $element.find('.js-form-placement__input');
+    this.input = new Input($inputElement);
     this.input.observer.subscribe({ key: 'click', observer: this.openSelector.bind(this) });
-    this.selector = new Selector(this.$element.find('.js-form-placement__drop'));
+    const $selectorElement = $element.find('.js-form-placement__drop');
+    this.selector = new Selector($selectorElement);
     this.selector.observer.subscribe({ key: 'change', observer: this.setValue.bind(this) });
     this.selector.observer.subscribe({ key: 'close', observer: this.closeSelector.bind(this) });
     this.selector.changeCount();

@@ -64,6 +64,13 @@
     user-select: none;
   }
 
+  &__link {
+    text-decoration: none;
+    grid-area: 1/1/span 1/span 2;
+    user-select: none;
+    color: inherit;
+  }
+
   &__icon {
     grid-area: 1/2/span 1/span 1;
     color: #fff;

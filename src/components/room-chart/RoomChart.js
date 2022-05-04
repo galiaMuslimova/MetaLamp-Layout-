@@ -3,10 +3,13 @@ import Chart from 'chart.js/auto';
 class RoomChart {
   constructor($root, chartData) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-room-chart__content');
     this.chartData = chartData;
+    this.init();
+  }
+
+  init() {
+    this.$element = this.$root.find('.js-room-chart__content');
     this.ctxContext = this.$element[0].getContext('2d');
-    console.log(this.$element[0]);
     this.voices = this.chartData.voices;
     this.colors = this.createColors();
     this.data = this.createData();
@@ -16,7 +19,6 @@ class RoomChart {
 
   createColors() {
     const colors = {};
-
     const orange = this.ctxContext.createLinearGradient(0, 0, 120, 120);
     orange.addColorStop(0, 'rgba(255, 227, 156, 1)');
     orange.addColorStop(1, 'rgba(255, 186, 156, 1)');

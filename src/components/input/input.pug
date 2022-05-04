@@ -1,10 +1,17 @@
-mixin input(options) 
-  - const fontType = options.fonType || 'text'
-  - const placeholder = options.placeholder || ''
-  - const value = options.value || ''
-  - const focus = options.focus || false
+include ../icon-open/icon-open.pug
+include ../icon-arrow/icon-arrow.pug
 
-  input.input.js-input(type=fontType, placeholder=placeholder, autofocus=focus)
+mixin input({ inputType = 'text', placeholder = '', value = '', focus = false, withArrow = false, openable = false, isReadonly = false } = {})
+  .input.js-input(autofocus=focus)
+    input.input__field.js-input__field(type=inputType, placeholder=placeholder, value=value autofocus=focus class=`${openable ? 'input__field_openable' : ''}`, readonly=isReadonly)
+
+    if(withArrow)
+      button.input__button.input__button_with-arrow(type="submit")
+        +icon-arrow()
+
+    if(openable)
+      button.input__button.input__button_openable.js-input__button_openable(type="button")
+        +icon-open() 
 
 
   

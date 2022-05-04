@@ -1,0 +1,44 @@
+include ../input/input.pug
+include ../radio/radio.pug
+include ../form-simple-date/form-simple-date.pug
+include ../toggle/toggle.pug
+include ../button/button.pug
+
+mixin register-card({} = {})
+  form.register-card.js-register-card 
+    .register-card__inner
+      .register-card__item 
+        h1.register-card__title Регистрация аккаунта
+      .register-card__item
+        .register-card__input
+          +input({ placeholder:'Имя'})
+        .register-card__input
+          +input({ placeholder:'Фамилия'})
+        .register-card__radio 
+          +radio({ text: "Мужчина", isCheck: true })
+          +radio({ text: "Женщина" })
+      .register-card__item
+        .register-card__form
+          h3.register-card__subtitle дата рождения
+          .register-card__date.js-register-card__date
+            +form-simple-date()
+      .register-card__item
+        .register-card__form
+          h3.register-card__subtitle данные для входа в сервис
+          .register-card__input
+            +input({ inputType: 'email', placeholder:'Email' })
+        .register-card__input
+          +input({ placeholder:"Пароль" })
+        .register-card__toggle
+          +toggle({ text: "Получать спецпредложения" })
+      .register-card__item
+        .register-card__link-button
+          +button({ theme: "with-arrow", type:"submit", text: "зарегистрироваться", icon: true })
+      .register-card__item
+        .register-card__row
+          p.register-card__text Уже есть аккаунт на Toxin
+          .register-card__button.js-register-card__button
+            +button({ theme: "white", text: "войти" })
+
+
+        

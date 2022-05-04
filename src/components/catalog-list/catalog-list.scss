@@ -1,9 +1,20 @@
 .catalog-list {
-  display: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  grid-column-gap: 12px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-column-gap: 12px;
+  }
+
+  &__item {
+    margin-bottom: 21px;
+  }
+
+  &__pagination {
+    margin: 1.25vw auto 5.0vw auto;
+  }
+
+  &__pagination-content {
+    margin: 0px auto;
+    width: min-content;
+  }
 }
-
-
-

@@ -1,7 +1,5 @@
-mixin counter(options)
-  - const amount = options.amount || 0
-
+mixin counter({ amount = 0 } = {})
   .counter  
-    button.counter__button.counter__button_with-minus.js-counter__button.js-counter__button_with-minus(type='button') -
+    button.counter__button.js-counter__button(type='button' data-counter-type = 'minus') -
     .counter__number.js-counter__number= amount
-    button.counter__button.counter__button_with-plus.js-counter__button.js-counter__button_with-plus(type='button') +
+    button.counter__button.js-counter__button(type='button' data-counter-type = 'plus') +

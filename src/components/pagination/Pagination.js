@@ -1,18 +1,20 @@
 class Pagination {
   constructor($root, $items, limitPerPage = 12) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-pagination');
-    this.$anchor = this.$element.find('.js-pagination__anchor');
     this.$items = $items;
     this.limitPerPage = limitPerPage;
-    this.currentPage = 1;
-    this.numberOfItems = undefined;
-    this.totalPages = undefined;
+    this.init();
+  }
+
+  init() {
+    this.$element = this.$root.find('.js-pagination');
+    this.$anchor = this.$element.find('.js-pagination__anchor');
     this.$prevButton = this.$element.find('.js-pagination__item_previous');
     this.$nextButton = this.$element.find('.js-pagination__item_next');
   }
 
-  init() {
+  activatePagination() {
+    this.currentPage = 1;
     this.numberOfItems = this.$items.length;
     this.totalPages = Math.ceil(this.numberOfItems / this.limitPerPage);
     this.showPage();
@@ -20,16 +22,14 @@ class Pagination {
   }
 
   bindEventListeners() {
-    const root = this;
-    $(document).on('click', '.js-pagination__item_current', function () {
-      root.handleNumberButtonClick($(this));
-    });
+    $(document).on('click', '[data-pagination-button="current"]', this.handleNumberButtonClick.bind(this));
     this.$nextButton.on('click', this.handleNextButtonClick.bind(this));
     this.$prevButton.on('click', this.handlePrevButtonClick.bind(this));
   }
 
-  handleNumberButtonClick(element) {
-    this.currentPage = Number(element.text());
+  handleNumberButtonClick(event) {
+    const number = $(event.target).text();
+    this.currentPage = Number(number);
     this.showPage();
   }
 
@@ -50,7 +50,7 @@ class Pagination {
 
   getPageList() {
     let start = [1];
-    let middle = [undefined];
+    let middle = [null];
     let end = [this.totalPages];
     if (this.currentPage <= 3) {
       start = [1, 2, 3];
@@ -60,7 +60,7 @@ class Pagination {
       end = Pagination.createRange(this.totalPages - 3, this.totalPages);
     } else {
       const intro = Pagination.createRange(this.currentPage - 1, this.currentPage + 1);
-      middle = [undefined].concat(intro, undefined);
+      middle = [null].concat(intro, null);
     }
     return start.concat(middle, end);
   }
@@ -74,7 +74,8 @@ class Pagination {
     }
 
     this.$items.hide().slice(start, end).show();
-    this.$anchor.find('.pagination__item').slice(1, -1).remove();
+    const paginationItems = this.$anchor.find('.js-pagination__item');
+    paginationItems.slice(1, -1).remove();
 
     this.getPageList().forEach((item) => this.addPaginationItems(item));
 
@@ -88,7 +89,7 @@ class Pagination {
   }
 
   addPaginationItems(item) {
-    $('<div>').addClass('pagination__item').addClass(item ? 'pagination__item_current js-pagination__item_current' : 'pagination__item_dots')
+    $('<div>').addClass('pagination__item js-pagination__item').attr('data-pagination-button', item ? 'current' : 'dots')
       .toggleClass('pagination__item_active', item === this.currentPage)
       .text(item || '...')
       .insertBefore(this.$nextButton);

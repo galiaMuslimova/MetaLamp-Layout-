@@ -21,6 +21,7 @@
 
   &__item {
     cursor: pointer;
+    caret-color: transparent;
 
     &_with-submenu {
       display: grid;
@@ -30,6 +31,7 @@
 
       @media (max-width: 924px) {
         grid-template-columns: 130px 140px;
+        line-height: 20px;
       }
     }
   }
@@ -41,12 +43,12 @@
 
     &:hover,
     &:focus {
-      font-weight: bold;
+      -webkit-text-stroke: 1px rgba(31, 32, 65, 0.75);
       color: rgba(31, 32, 65, 0.75);
     }
 
     &_checked {
-      font-weight: bold;
+      -webkit-text-stroke: 1px rgba(31, 32, 65, 0.75);
       color: rgba(31, 32, 65, 0.75);
     }
   }
@@ -60,6 +62,9 @@
 
     @media (max-width: 924px) {
       transform: rotateZ(-90deg);
+      padding: 0px;
+      margin-left: 10px;
+      vertical-align: middle;
     }
   }
 

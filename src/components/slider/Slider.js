@@ -1,6 +1,5 @@
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
-import '../noUi-handle/noUi-handle.scss';
 
 const options = {
   start: [5000, 10000],
@@ -15,15 +14,14 @@ const options = {
 class Slider {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-slider');
-    this.$sliderPlace = this.$element.find('.js-slider__anchor');
-    this.$resultPlace = this.$element.find('.js-slider__result');
-    this.values = [];
-    this.slider = undefined;
     this.init();
   }
 
   init() {
+    this.$element = this.$root.find('.js-slider');
+    this.$sliderPlace = this.$element.find('.js-slider__anchor');
+    this.$resultPlace = this.$element.find('.js-slider__result');
+    this.values = [];
     if (this.$sliderPlace[0]) {
       this.slider = noUiSlider.create(this.$sliderPlace[0], options);
       this.values = this.slider.get();

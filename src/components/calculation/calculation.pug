@@ -1,22 +1,19 @@
-mixin calculation(options)
-  - const roomData = options.roomData || undefined 
-  - const days = options.days || 0
-
+mixin calculation({ cost = 9990, discount = 2179, fee = 300, days = 4 } = {})
   .calculation  
-    p.calculation__text= roomData.cost.toLocaleString() + '₽ х '
+    p.calculation__text= cost.toLocaleString() + '₽ х '
       span.calculation__text= days + ' суток'
     p.calculation__text 
     p.calculation__text.calculation__text_with-cost 
-      span.calculation__text= (roomData.cost*days).toLocaleString() + '₽'
+      span.calculation__text= (cost*days).toLocaleString() + '₽'
 
     p.calculation__text Сбор за услуги: скидка 
-      span.calculation__text= (roomData.discount).toLocaleString() + '₽'
+      span.calculation__text= (discount).toLocaleString() + '₽'
     p.calculation__text.calculation__text_with-circle i
     p.calculation__text.calculation__text_with-cost 0₽
 
     p.calculation__text Сбор за дополнительные услуги
     p.calculation__text.calculation__text_with-circle i
     p.calculation__text.calculation__text_with-cost
-      span.calculation__text= roomData.fee + '₽' 
+      span.calculation__text= fee + '₽' 
     
       

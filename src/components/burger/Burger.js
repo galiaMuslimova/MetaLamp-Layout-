@@ -2,8 +2,12 @@ class Burger {
   constructor($root, openMenu) {
     this.$root = $root;
     this.openMenu = openMenu;
-    this.$element = this.$root.find('.js-burger');
+    this.init();
     this.bindEventListeners();
+  }
+
+  init() {
+    this.$element = this.$root.find('.js-burger');
   }
 
   bindEventListeners() {

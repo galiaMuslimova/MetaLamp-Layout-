@@ -1,19 +1,18 @@
-import InputOpen from '../input-open/InputOpen';
+import Input from '../input/Input';
 import Calendar from '../calendar/Calendar';
-import FormCalendar from '../form-calendar/FormCalendar';
+import FormPairDate from '../form-pair-date/FormPairDate';
 
-class FormDoubleDate extends FormCalendar {
-  constructor($root) {
-    super($root);
-    this.$root = $root;
-    this.$element = this.$root.find('.js-form-double-date');
-    this.calendar = new Calendar(this.$element);
-    this.calendar.createDatePicker();
+class FormDoubleDate extends FormPairDate {
+  init() {
+    const $element = this.$root.find('.js-form-double-date');
+    this.calendar = new Calendar($element);
     this.calendar.observer.subscribe({ key: 'change', observer: this.changeDate.bind(this) });
     this.calendar.observer.subscribe({ key: 'close', observer: this.closeCalendar.bind(this) });
-    this.firstInput = new InputOpen(this.$element.find('.js-form-double-date__item_is-first'));
+    const $firstInputElement = $element.find('[data-date-order="first"]');
+    this.firstInput = new Input($firstInputElement);
     this.firstInput.observer.subscribe({ key: 'click', observer: this.openDrop.bind(this) });
-    this.secondInput = new InputOpen(this.$element.find('.js-form-double-date__item_is-second'));
+    const $secondInputElement = $element.find('[data-date-order="second"]');
+    this.secondInput = new Input($secondInputElement);
     this.secondInput.observer.subscribe({ key: 'click', observer: this.openDrop.bind(this) });
   }
 

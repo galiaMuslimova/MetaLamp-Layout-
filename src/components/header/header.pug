@@ -4,23 +4,21 @@ include ../button/button.pug
 include ../burger/burger.pug
 
 
-mixin header(options = {})
-  - const isRegistered = options.isRegistered || false 
-
+mixin header({ isRegistered = false } = {})
   .header.js-header
     .header__logo
       +logo()
     .header__nav
       +nav()
     .header__registration.js-header__registration
-      if(isRegistered)
+      if isRegistered
         .header__divider 
         .header__name Юлий Цезарь                  
       else  
         .header__sign-in-button.js-header__sign-in-button
-          +button({theme: 'white', text: 'войти'})   
-        .header__log-in-button.js-header__log-in-button
-          +button({theme: 'blue', text: 'зарегистрироваться'})
+          +button({theme: 'white', text: 'войти', href: './sign-in.html'})   
+        .header__register-button.js-header__register-button
+          +button({theme: 'blue', text: 'зарегистрироваться', href: './register.html'})
     .header__burger
       +burger()
       

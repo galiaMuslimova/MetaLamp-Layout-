@@ -6,21 +6,24 @@ include ../../components/like/like.pug
 include ../../components/bullet/bullet.pug
 include ../../components/room-card/room-card.pug
 
+
+
+
 block title 
   title Hotel Room
 
 block content
-  -const data = require("@c/review/review.json")
+  - const reviews = require("@/pages/room/reviews.json")
+  - const features = require("@/pages/room/features.json")
 
   .room.js-room
     .room__content
       .room__info           
         h2.room__subtitle Сведения о номере
-        +feature({title: 'Комфорт', text: 'Шумопоглощающие стены'})
-        .room__divider
-        +feature({title: 'Удобство', text: 'Окно в каждой из спален'})
-        .room__divider
-        +feature({title: 'Уют', text: 'Номер оснащён камином'})
+        each feature in features
+          .room__feature 
+            +feature(feature)
+            .room__divider
       .room__chart
         h2.room__subtitle Впечатления от номера              
         +room-chart()
@@ -28,7 +31,8 @@ block content
         .room__row
           h2.room__subtitle Отзывы посетителей номера
           p.room__text 2 отзыва        
-        +review({data: data})
+        each item in reviews
+          +review({ item })
       .room__rules
         h2.room__subtitle Правила 
         +bullet({ items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", 
@@ -40,14 +44,14 @@ block content
         +room-card()
 
 block view 
-  -const selectedRoom = require("@/pages/room/room.json")
-  -function roomRequireAll(requireContext) { return requireContext.keys().map(requireContext) };
-  -const roomImages = roomRequireAll(require.context("@a/images/catalog-images/888/", true, /\.(jpg|png|jpeg)$/));
+  - const context = require.context("@a/images/catalog-images/888/", true, /\.(jpg|png|jpeg)$/)
+  - const roomImages = context.keys().map(context);
 
   .room__view
-    .room__photo.room__photo_first
-      img.room__image(src=roomImages[0] alt='room image')
-    .room__photo.room__photo_second
-      img.room__image(src=roomImages[1] alt='room image')
-    .room__photo.room__photo_third
-      img.room__image(src=roomImages[2] alt='room image')
+    each modifier, index in ['first', 'second', 'third']
+      .room__photo(class = `room__photo_${modifier}`)
+        img.room__image(src=roomImages[index] alt=index + 'room image')
+
+block back 
+  .room__back 
+    img.room__image(src=require("@a/images/catalog-images/888/888-1.jpg") alt='room image')

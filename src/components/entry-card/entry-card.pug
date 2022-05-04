@@ -2,7 +2,7 @@ include ../form-double-date/form-double-date.pug
 include ../form-guests/form-guests.pug
 include ../button/button.pug
 
-mixin entry-card()
+mixin entry-card({} = {})
   form.entry-card.js-entry-card
     .entry-card__inner
       .entry-card__item
@@ -17,4 +17,4 @@ mixin entry-card()
             items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}], 
             hasButton: true })
       .entry-card__button.js-entry-card__button
-        +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true})
+        +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true, href: './catalog.html'})

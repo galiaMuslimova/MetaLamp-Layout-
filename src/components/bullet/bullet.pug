@@ -1,6 +1,4 @@
-mixin bullet(options)
-  - const items = options.items || undefined 
-
+mixin bullet({ items = require('@c/bullet/bullet.json') } = {})
   .bullet
     each item in items 
       .bullet__row

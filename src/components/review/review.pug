@@ -1,16 +1,14 @@
 include ../like/like.pug
 
-mixin review(options)
-  - const data = options.data || data
-
-  each val in data
-    .review.js-review
-      .review__col
-        .review__photo
-          img.review__image(src= require("@a/images/review-images/" + val.image) alt='person photo')
-        .review__like 
-          +like({count: val.like.count, isCheck: val.like.isCheck, name: val.like.name})
-      .review__col 
-        .review__title= val.name 
-        .review__subtitle= val.time 
-        .review__content= val.content
+mixin review({ item = require("@c/review/review.json") } = {} )
+  - let { name, image, time, content, like } = item
+  .review.js-review
+    .review__col
+      .review__photo
+        img.review__image(src= require("@a/images/review-images/" + image) alt='person photo')
+      .review__like 
+        +like(like)        
+    .review__col 
+      .review__title= name 
+      .review__subtitle= time 
+      .review__content= content

@@ -1,23 +1,27 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
-import '../air-datepicker/air-datepicker.scss';
 import Observer from '../../observer/Observer';
 import DropButtons from '../drop-buttons/DropButtons';
 
 class Calendar {
   constructor($root) {
     this.$root = $root;
-    this.$element = this.$root.find('.js-calendar');
-    this.classes = this.$element.find('.js-calendar__dp').attr('class');
-    this.anchor = `.${this.classes.split(' ')[3]}`;
     this.observer = new Observer();
+    this.init();
+    this.createDatePicker();
+  }
+
+  init() {
+    this.$element = this.$root.find('.js-calendar');
+    this.$calendarPlace = this.$element.find('.js-calendar__dp');
+    this.id = `id${Date.now() * Math.floor(Math.random() * 100)}`;
     this.dropButtons = new DropButtons(this.$element);
-    this.dp = {};
   }
 
   createDatePicker() {
     const el = this;
-    this.dp = new AirDatepicker(this.anchor, {
+    this.$calendarPlace.attr('id', this.id);
+    this.dp = new AirDatepicker(`#${this.id}`, {
       navTitles: {
         days: 'MMMM <i class="calendar__year">yyyy</i>',
       },
@@ -39,8 +43,8 @@ class Calendar {
   reset() {
     this.dp.clear();
     this.observer.notify('change', {
-      date: [undefined, undefined],
-      formattedDate: [undefined, undefined],
+      date: ['', ''],
+      formattedDate: ['', ''],
     });
   }
 
@@ -66,6 +70,10 @@ class Calendar {
 
   removeActiveClass() {
     this.$element.removeClass('calendar_active');
+  }
+
+  addShownClass() {
+    this.$element.addClass('calendar_shown');
   }
 
   toggleActiveClass() {
