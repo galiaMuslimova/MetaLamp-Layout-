@@ -1,11 +1,8 @@
 include ../icon-arrow/icon-arrow.pug
 
-mixin button({ theme = '', type = 'button', text = '', icon = false, dataType = '', href = null } = {})  
-  button.button(class = 'button_' + theme, type = type, data-button-type = dataType)
-    if href
-      a.button__link(href=href)= text 
-    else
-      .button__text= text
+mixin button({ theme = '', type = 'button', text = '', icon = false, dataType = '', href=null } = {})  
+  a.button(class = 'button_' + theme, type = type, data-button-type = dataType href=href)
+    span.button__text= text
     if(icon)
       .button__icon
         +icon-arrow()

@@ -3,7 +3,7 @@ include ../form-guests/form-guests.pug
 include ../button/button.pug
 
 mixin entry-card({} = {})
-  form.entry-card.js-entry-card
+  form.entry-card.js-entry-card(action='./catalog.html')
     .entry-card__inner
       .entry-card__item
         h1.entry-card__title Найдём номера под ваши пожелания
@@ -17,4 +17,4 @@ mixin entry-card({} = {})
             items: [{name: "Взрослые", amount: 0}, {name: "Дети", amount: 0}, {name: "Младенцы", amount: 0}], 
             hasButton: true })
       .entry-card__button.js-entry-card__button
-        +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true, href: './catalog.html'})
+        +button({theme:'with-arrow', type:'submit', text:'подобрать номер', icon: true, href:'/pages/catalog.html'})
