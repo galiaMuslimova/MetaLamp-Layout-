@@ -31,6 +31,11 @@
   &__like {
     padding-left: 3px;
   }
+  
+  &__title, 
+  &__subtitle{
+    margin: 0px;
+  }
 
   &__title {
     font-weight: bold;

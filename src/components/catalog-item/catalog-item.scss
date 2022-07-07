@@ -13,6 +13,7 @@
   &__row {
     display: flex;
     flex-direction: row;
+    margin: 0px;
 
     &_first {
       align-items: flex-end;
@@ -69,6 +70,7 @@
 
   &__review {
     padding: 0px 2px;
+    margin: 0px;
     color: rgba(31, 32, 65, 0.5);
   }
 

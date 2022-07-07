@@ -7,7 +7,7 @@ mixin selector({ items = require('@c/form-guests/form-guests.json'), hasButton =
       each item in items
         - let { name, amount } = item
         .selector__row
-          .selector__subtitle=name
+          p.selector__subtitle=name
           .selector__counter.js-selector__counter  
             +counter({ amount: amount })
     if(hasButton)

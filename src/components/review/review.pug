@@ -9,6 +9,6 @@ mixin review({ item = require("@c/review/review.json") } = {} )
       .review__like 
         +like(like)        
     .review__col 
-      .review__title= name 
-      .review__subtitle= time 
-      .review__content= content
+      p.review__title= name 
+      p.review__subtitle= time 
+      p.review__content= content

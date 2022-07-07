@@ -4,10 +4,10 @@ mixin rate({ starsCount = 3 } = {})
   .rate.js-rate
     - let i = 0
     while i < starsCount 
-      .rate__star.js-rate__star.rate__star_colored 
+      button.rate__star.js-rate__star.rate__star_colored 
         +icon-star()
       - i += 1
     while i < 5 
-      .rate__star.js-rate__star
+      button.rate__star.js-rate__star
         +icon-star()
       - i += 1                 

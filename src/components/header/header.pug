@@ -13,7 +13,7 @@ mixin header({ isRegistered = false } = {})
     .header__registration.js-header__registration
       if isRegistered
         .header__divider 
-        .header__name Юлий Цезарь                  
+        p.header__name Юлий Цезарь                  
       else  
         .header__sign-in-button.js-header__sign-in-button
           +button({theme: 'white', text: 'войти', href: '/pages/sign-in.html'})   

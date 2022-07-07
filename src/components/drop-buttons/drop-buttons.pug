@@ -1,8 +1,4 @@
-include ../button/button.pug
-
 mixin drop-buttons({} = {})
   .drop-buttons.js-drop-buttons
-    .drop-buttons__item.js-drop-buttons__item
-      +button({ theme: 'simple', type: 'button', text: 'очистить', dataType: 'reset'})
-    .drop-buttons__item.js-drop-buttons__item
-      +button({ theme: 'simple', type: 'button', text: 'применить', dataType: 'submit' })
+    button.drop-buttons__item.js-drop-buttons__item(data-button-type='reset' type='button') очистить
+    button.drop-buttons__item.js-drop-buttons__item(data-button-type='submit' type='button') применить

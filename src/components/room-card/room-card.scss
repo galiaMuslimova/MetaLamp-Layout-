@@ -29,6 +29,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    margin: 0px;
   }
 
   &__num-sign {
@@ -78,6 +79,7 @@
   }
 
   &__total {
+    margin: 0px;
     display: flex;
     flex-direction: row;
     align-items: baseline;

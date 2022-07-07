@@ -18,6 +18,7 @@
     height: 40px;
     width: 40px;
     line-height: 40px;
+    border: none;
     cursor: pointer;
 
     @media(max-width: 770px) {
@@ -54,6 +55,7 @@
 
   &__text {
     width: max-content;
+    margin: 0px auto;
     font-size: 14px;
     line-height: 24px;
     padding: 8px 0px 0px 5px;

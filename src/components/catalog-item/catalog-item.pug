@@ -5,16 +5,16 @@ mixin catalog-item({ num = 888, luxury = true, cost = 9990, stars = 5, review = 
   .catalog-item.js-catalog-item 
     +carousel({ num: num})
     .catalog-item__content.js-catalog-item__content
-      .catalog-item__row.catalog-item__row_first
-        .catalog-item__num-sign № 
-        .catalog-item__num= num
+      p.catalog-item__row.catalog-item__row_first
+        span.catalog-item__num-sign № 
+        span.catalog-item__num= num
         if(luxury)
-          .catalog-item__lux люкс
-        .catalog-item__cost= cost.toLocaleString() + '₽'
-        .catalog-item__cost-text в сутки
+          span.catalog-item__lux люкс
+        span.catalog-item__cost= cost.toLocaleString() + '₽'
+        span.catalog-item__cost-text в сутки
       .catalog-item__divider
       .catalog-item__row.catalog-item__row_second
         +rate({ starsCount: stars})                 
-        .catalog-item__review
-          .catalog-item__text.catalog-item__text_bold= review 
-          .catalog-item__text Отзывов
+        p.catalog-item__review
+          span.catalog-item__text.catalog-item__text_bold= review 
+          span.catalog-item__text Отзывов

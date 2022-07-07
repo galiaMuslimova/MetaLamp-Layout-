@@ -7,6 +7,20 @@
   background-color: white;
 
   &__item {
+    background: none;
+    border: none;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #bc9cff;
+
+    &:hover {
+      color: rgba(31, 32, 65, 0.5);
+    }
+
     &_for-reset {
       visibility: hidden;
     }

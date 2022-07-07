@@ -4,15 +4,15 @@ include ../icon-arrow-back/icon-arrow-back.pug
 mixin pagination({ from = 1, to = 15 } = {})
   .pagination.js-pagination
     .pagination__anchor.js-pagination__anchor
-      .pagination__item.js-pagination__item.pagination__item_previous.js-pagination__item_previous
+      button.pagination__item.js-pagination__item.pagination__item_previous.js-pagination__item_previous
         span.pagination__icon 
           +icon-arrow-back()
-      .pagination__item.js-pagination__item.pagination__item_active(data-pagination-button = 'current')= from
-      .pagination__item.js-pagination__item(data-pagination-button = 'current')= from + 1 
-      .pagination__item.js-pagination__item(data-pagination-button = 'current')= from + 2
-      .pagination__item.js-pagination__item(data-pagination-button = 'dots') ...
-      .pagination__item.js-pagination__item(data-pagination-button = 'current')= to
-      .pagination__item.js-pagination__item.pagination__item_next.js-pagination__item_next
+      button.pagination__item.js-pagination__item.pagination__item_active(data-pagination-button = 'current')= from
+      button.pagination__item.js-pagination__item(data-pagination-button = 'current')= from + 1 
+      button.pagination__item.js-pagination__item(data-pagination-button = 'current')= from + 2
+      button.pagination__item.js-pagination__item(data-pagination-button = 'dots') ...
+      button.pagination__item.js-pagination__item(data-pagination-button = 'current')= to
+      button.pagination__item.js-pagination__item.pagination__item_next.js-pagination__item_next
         span.pagination__icon 
           +icon-arrow()
-    .pagination__text 1 – 12 из 100+ вариантов аренды
+    p.pagination__text 1 – 12 из 100+ вариантов аренды
