@@ -1,6 +1,7 @@
 include ../checkbox/checkbox.pug
 
 mixin checkbox-list({ items = require('@c/expandable-list/expandable-list.json') } = {})
-  .checkbox-list
+  ul.checkbox-list
     each item in items
-      +checkbox(item)
+      li.checkbox-list__item
+        +checkbox(item)

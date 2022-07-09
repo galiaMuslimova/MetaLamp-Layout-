@@ -6,7 +6,7 @@ class Nav {
   }
 
   init() {
-    this.$element = this.$root.find('.js-nav');
+    this.$element = this.$root.find('.js-nav__list');
     this.$subMenuLink = this.$element.find('.js-nav__item_with-submenu');
   }
 
@@ -22,7 +22,7 @@ class Nav {
   }
 
   toggleMobileClass() {
-    this.$element.toggleClass('nav_for-mobile');
+    this.$element.toggleClass('nav__list_for-mobile');
   }
 
   static handleNavSubmenuClose(event) {
@@ -37,7 +37,7 @@ class Nav {
   }
 
   changeStyle(index) {
-    const $link = this.$element.find('.nav__link');
+    const $link = this.$element.find('.js-nav__link');
     const $chosenLink = $link[index];
     $($chosenLink).addClass('nav__link_checked');
   }

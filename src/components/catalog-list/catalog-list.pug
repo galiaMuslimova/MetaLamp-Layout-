@@ -5,9 +5,9 @@ mixin catalog-list({} = {})
   - const data = require('@c/catalog-list/catalog-list.json')
   
   .catalog-list.js-catalog-list
-    .catalog-list__list.js-catalog-list__list
+    ul.catalog-list__list.js-catalog-list__list
       each item in data  
-        .catalog-list__item.js-catalog-list__item 
+        li.catalog-list__item.js-catalog-list__item 
           +catalog-item({ num, luxury, cost, stars, review } = item)
     .catalog-list__pagination
       .catalog-list__pagination-content

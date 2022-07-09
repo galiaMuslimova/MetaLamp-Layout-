@@ -6,9 +6,9 @@ mixin carousel({ num = 888 } = {})
   - const images = context.keys().filter(el => el.includes(num)).map(context);  
 
   .carousel.js-carousel
-    .carousel__slide-list.js-carousel__slide-list
+    ul.carousel__slide-list.js-carousel__slide-list
       each image in images
-        .carousel__slide.js-carousel__slide   
+        li.carousel__slide.js-carousel__slide   
           img.carousel__image(src=image alt='room image')
     .carousel__mover.js-carousel__mover.carousel__mover_left.js-carousel__mover_left
       +icon-open({ type: 'rotated-left' })

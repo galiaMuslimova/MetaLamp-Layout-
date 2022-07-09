@@ -5,18 +5,18 @@ block content
   .templates 
     .templates__container 
       .templates__content   
-        .templates__colors
+        ul.templates__colors
           each item in data
-            .templates__row
+            li.templates__row
               .templates__color(class= 'templates__color_' + item.modifier)
               style. 
                 .templates__color_#{item.modifier} {
                   background-color: #{item.value};
                   opacity: #{item.opacity};
                 }        
-              .templates__color-name
-                .templates__color-title= item.title
-                .templates__color-value= item.value
+              p.templates__color-name
+                span.templates__color-title= item.title
+                span.templates__color-value= item.value
         .templates__types
           .templates__types-row.templates__types-row_with-h1
             h1.templates__type-name H1

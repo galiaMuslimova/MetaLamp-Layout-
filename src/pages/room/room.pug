@@ -31,8 +31,10 @@ block content
         .room__row
           h2.room__subtitle Отзывы посетителей номера
           p.room__text 2 отзыва        
-        each item in reviews
-          +review({ item })
+        ul.room__review-list
+          each item in reviews
+            li.room__review-item
+              +review({ item })
       .room__rules
         h2.room__subtitle Правила 
         +bullet({ items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", 

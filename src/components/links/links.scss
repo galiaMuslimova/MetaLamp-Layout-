@@ -12,6 +12,9 @@
     display: grid;
     grid-template-columns: repeat(5, minmax(160px, max-content));
     grid-column-gap: 2.74vw;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
   }
 
   &__col {
@@ -19,15 +22,10 @@
     flex-direction: column;
     max-width: 260px;
     align-items: flex-start;
-    gap: 20px;
-
-    &_with-info {
-      gap: 17px;
-    }
   }
 
   &__logo {
-    margin-bottom: 0px;
+    margin-bottom: 17px;
   }
 
   &__info {
@@ -38,11 +36,20 @@
   }
 
   &__subtitle {
-    margin: 4px 0px 1px 0px;
+    margin: 4px 0px 18px 0px;
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
     color: rgba(31, 32, 65, 1);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
   }
 
   &__text {
@@ -53,6 +60,7 @@
   }
 
   &__form {
+    margin-top: 17px;
     width: 100%;
   }
 }

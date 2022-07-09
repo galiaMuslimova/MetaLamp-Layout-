@@ -1,6 +1,6 @@
 mixin bullet({ items = require('@c/bullet/bullet.json') } = {})
-  .bullet
+  ul.bullet
     each item in items 
-      .bullet__row
+      li.bullet__row
         .bullet__ellipse 
         p.bullet__text= item

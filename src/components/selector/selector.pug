@@ -3,10 +3,10 @@ include ../drop-buttons/drop-buttons.pug
 
 mixin selector({ items = require('@c/form-guests/form-guests.json'), hasButton = false } = {})
   .selector.js-selector
-    .selector__content 
+    ul.selector__content 
       each item in items
         - let { name, amount } = item
-        .selector__row
+        li.selector__row
           p.selector__subtitle=name
           .selector__counter.js-selector__counter  
             +counter({ amount: amount })

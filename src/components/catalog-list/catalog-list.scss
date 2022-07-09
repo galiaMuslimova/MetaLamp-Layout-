@@ -3,6 +3,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     grid-column-gap: 12px;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
   }
 
   &__item {

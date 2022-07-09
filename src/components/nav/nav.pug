@@ -1,17 +1,19 @@
 include ../icon-open/icon-open.pug
 
 mixin nav({ data = require('@c/nav/nav.json') } = {})
-  nav.nav.js-nav  
-    each item in data 
-      - let { link, submenu } = item
-      if submenu 
-        .nav__item.nav__item_with-submenu.js-nav__item_with-submenu
-          a.nav__link.nav__link_with-icon= link
-            span.nav__icon.js-nav__icon
-              +icon-open()
-          .nav__submenu.js-nav__submenu         
-            each subitem in item.submenu          
-              a.nav__link(href='./empty.html')= subitem
-      else
-        .nav__item
-          a.nav__link(href='./empty.html')= link
+  nav.nav 
+    ul.nav__list.js-nav__list 
+      each item in data 
+        - let { link, submenu } = item
+        if submenu 
+          .nav__item.nav__item_with-submenu.js-nav__item_with-submenu
+            a.nav__link.nav__link_with-icon= link
+              span.nav__icon.js-nav__icon
+                +icon-open()
+            ul.nav__submenu.js-nav__submenu         
+              each subitem in item.submenu     
+                li.nav__submenu-link     
+                  a.nav__link.js-nav__link(href='./empty.html')= subitem
+        else
+          .nav__item
+            a.nav__link(href='./empty.html')= link

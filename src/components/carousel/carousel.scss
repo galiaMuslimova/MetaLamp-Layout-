@@ -16,6 +16,9 @@
 
   &__slide-list {
     grid-area: 1 / 1 / span 2 / span 3;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
   }
 
   &__slide {

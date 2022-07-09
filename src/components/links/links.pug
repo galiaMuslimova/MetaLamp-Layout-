@@ -2,18 +2,20 @@ include ../input/input.pug
 
 mixin links({ data = require('@c/links/links.json') } = {})
   .links.js-links
-    .links__container
-      .links__col.links__col_with-info
+    ul.links__container
+      li.links__col
         .links__logo
           +logo()
         p.links__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       each item in data
         - let { title, links } = item
-        .links__col
+        li.links__col
           h3.links__subtitle= title 
-          each link in links
-            a.links__text(href='./empty.html')= link
-      .links__col.links__col_with-info
+          ul.links__list
+            each link in links
+              li.links__list-item
+                a.links__text(href='./empty.html')= link
+      li.links__col
         h3.links__subtitle Подписка
         p.links__info Получайте специальные предложения и новости сервиса
         form.links__form           
