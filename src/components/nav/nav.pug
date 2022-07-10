@@ -6,7 +6,7 @@ mixin nav({ data = require('@c/nav/nav.json') } = {})
       each item in data 
         - let { link, submenu } = item
         if submenu 
-          .nav__item.nav__item_with-submenu.js-nav__item_with-submenu
+          li.nav__item.nav__item_with-submenu.js-nav__item_with-submenu
             a.nav__link.nav__link_with-icon= link
               span.nav__icon.js-nav__icon
                 +icon-open()
@@ -15,5 +15,5 @@ mixin nav({ data = require('@c/nav/nav.json') } = {})
                 li.nav__submenu-link     
                   a.nav__link.js-nav__link(href='./empty.html')= subitem
         else
-          .nav__item
+          li.nav__item
             a.nav__link(href='./empty.html')= link
