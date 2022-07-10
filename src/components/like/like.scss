@@ -1,21 +1,17 @@
 .like {
   width: 40px;
   height: 20px;
-  display: flex;
   border: 1px solid rgba(31, 32, 65, 0.25);
+  background: none;
   box-sizing: border-box;
   border-radius: 10px;
   position: relative;
   margin: 0px;
+  padding: 0px 2px;
+  line-height: 16px;
   caret-color: transparent;
   user-select: none;
   cursor: pointer;
-
-  &__row {
-    display: inline-block;
-    padding: 0px 2px;
-    line-height: 16px;
-  }
 
   &__icon {
     font-size: 0.5em;
@@ -32,7 +28,10 @@
       -webkit-text-fill-color: transparent;
       stroke-width: none;
       background-clip: text;
-      background-image: linear-gradient(rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+      background-image: linear-gradient(
+        rgba(188, 156, 255, 1),
+        rgba(139, 164, 249, 1)
+      );
     }
   }
 
@@ -46,7 +45,7 @@
     vertical-align: middle;
 
     &_active {
-      color: #BC9CFF;
+      color: #bc9cff;
     }
   }
 }

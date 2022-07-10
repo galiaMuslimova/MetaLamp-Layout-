@@ -8,11 +8,11 @@ mixin calculation({ cost = 9990, discount = 2179, fee = 300, days = 4 } = {})
 
     p.calculation__text Сбор за услуги: скидка 
       span.calculation__text= (discount).toLocaleString() + '₽'
-    p.calculation__text.calculation__text_with-circle i
+    button.calculation__text.calculation__text_with-circle i
     p.calculation__text.calculation__text_with-cost 0₽
 
     p.calculation__text Сбор за дополнительные услуги
-    p.calculation__text.calculation__text_with-circle i
+    button.calculation__text.calculation__text_with-circle i
     p.calculation__text.calculation__text_with-cost
       span.calculation__text= fee + '₽' 
     

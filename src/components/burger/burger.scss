@@ -4,10 +4,12 @@
   width: 35px;
   position: relative;
   margin-left: 20px;
+  border: none;
+  background: none;
   cursor: pointer;
 
   @media only screen and (max-width: 924px) {
-    display: block;
+    display: grid;
   }
 
   &__item,

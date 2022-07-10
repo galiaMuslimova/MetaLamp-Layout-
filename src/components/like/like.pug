@@ -1,8 +1,7 @@
 include ../icon-heart/icon-heart.pug
 
 mixin like({ count = 2, isCheck = false } = {})
-  .like.js-like
-    .like__row
-      span.like__icon.js-like__icon(class=`${isCheck ? 'like__icon_active' : ''}`)
-        +icon-heart()
-      span.like__count.js-like__count= count 
+  button.like.js-like
+    span.like__icon.js-like__icon(class=`${isCheck ? 'like__icon_active' : ''}`)
+      +icon-heart()
+    span.like__count.js-like__count= count 

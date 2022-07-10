@@ -5,7 +5,7 @@ mixin expandable-list({ title = 'title', items = require('@c/expandable-list/exp
   .expandable-list.js-expandable-list
     .expandable-list__row
       h3.expandable-list__title= title
-      .expandable-list__icon.js-expandable-list__icon 
+      button.expandable-list__icon.js-expandable-list__icon 
         +icon-open({ type: 'expandable' })
     .expandable-list__check-list.js-expandable-list__check-list
       +checkbox-list({ items: items })

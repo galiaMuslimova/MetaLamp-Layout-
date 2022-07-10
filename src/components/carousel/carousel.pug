@@ -10,11 +10,11 @@ mixin carousel({ num = 888 } = {})
       each image in images
         li.carousel__slide.js-carousel__slide   
           img.carousel__image(src=image alt='room image')
-    .carousel__mover.js-carousel__mover.carousel__mover_left.js-carousel__mover_left
+    button.carousel__mover.js-carousel__mover.carousel__mover_left.js-carousel__mover_left
       +icon-open({ type: 'rotated-left' })
-    .carousel__mover.js-carousel__mover.carousel__mover_right.js-carousel__mover_right
+    button.carousel__mover.js-carousel__mover.carousel__mover_right.js-carousel__mover_right
       +icon-open({ type: 'rotated-right' })
-    .carousel__indicators-list.js-carousel__indicators-list
+    ul.carousel__indicators-list.js-carousel__indicators-list
       each val in [1,2,3,4]
-        .carousel__indicator.js-carousel__indicator
+        li.carousel__indicator.js-carousel__indicator
 
