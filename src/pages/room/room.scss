@@ -1,7 +1,7 @@
 .room {
   &__content {
     padding-top: 5vw;
-    padding-bottom: 4.2vw;
+    padding-bottom: 4.3vw;
     display: grid;
     grid-column-gap: 4.8vw;
     grid-row-gap: 0.8vw;
@@ -42,7 +42,7 @@
   }
 
   &__view {
-    height: 33.1vw;
+    height: 33.5vw;
     display: grid;
     grid:
       "photo1 photo2" 50% "photo1 photo3" 50% /0.68fr 0.32fr;

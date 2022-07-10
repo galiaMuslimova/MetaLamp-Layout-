@@ -25,7 +25,7 @@
 
   &_blue,
   &_white {
-    padding: 10px 20px;
+    align-items: center;
   }
 
   &_blue,
@@ -38,7 +38,7 @@
   &_white {    
     position: relative;
     color: #bc9cff;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);    
 
     &:hover {
       opacity: 0.5;

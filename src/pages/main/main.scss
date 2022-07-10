@@ -2,11 +2,11 @@
   height: 100%;
   display: grid;
   grid:
-    ".    .    ." 4.8vw "card .    ." max-content ".    .    ." 21.8vw ".    . note" 48px ".    .    ." 1fr /max-content 1fr 293px;
+    ".    .    ." 4.8vw "card .    ." max-content ".    .    ." 22vw ".    . note" 48px ".    .    ." 1fr /max-content 1fr 293px;
 
   @media (max-width: 1024px) {
     grid:
-      ".    .    ." 4.8vw "card .    ." max-content ".    .    ." 21.8vw ".    . note" 48px ".    .    ." 4.8vw /max-content 1fr 293px;
+      ".    .    ." 4.8vw "card .    ." max-content ".    .    ." 22vw ".    . note" 48px ".    .    ." 4.8vw /max-content 1fr 293px;
   }
 
   @media (max-width: 830px) {

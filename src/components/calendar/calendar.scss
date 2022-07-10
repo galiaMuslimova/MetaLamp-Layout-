@@ -22,7 +22,7 @@
   }
 
   &__buttons {
-    padding: 20px;
+    padding: 22px 15px 18px;
   }
 
   &__arrow {
@@ -33,7 +33,6 @@
 
   &__year {
     font-weight: bold;
-    color: #1F2041;
   }
 
   .air-datepicker {
@@ -43,6 +42,7 @@
     --adp-btn-border-radius: 22px;
     --adp-nav-arrow-color: #BC9CFF;
     --adp-border-color: none;
+    --adp-nav-color-secondary: #1F2041;
 
     &-body--cells {
       &.-days- {
