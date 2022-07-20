@@ -29,11 +29,15 @@ class FormPlacement extends FormGuests {
     const bedText = this.constructor.declOfNum(bedNum, ['кровать', 'кровати', 'кроватей']);
     const beds = `${bedNum} ${bedText}`;
 
+    const bathNum = array[2];
+    const bathText = this.constructor.declOfNum(bathNum, ['ванная комната', 'ванные комнаты', 'ванных комнат']);
+    const baths = `${bathNum} ${bathText}`;
+
     let str;
     if (bedroomNum === 0) {
       str = 'Сколько спален';
     } else {
-      str = `${bedrooms}, ${beds}...`;
+      str = `${`${bedrooms}`}${bedNum ? `, ${beds}` : ''}${(!bedNum && bathNum) ? `, ${baths}` : ''}${(bedNum && bathNum) ? '...' : ''}`;
     }
     return str;
   }
