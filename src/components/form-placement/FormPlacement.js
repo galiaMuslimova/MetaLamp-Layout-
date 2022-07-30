@@ -7,11 +7,20 @@ class FormPlacement extends FormGuests {
     const $element = this.$root.find('.js-form-placement');
     const $inputElement = $element.find('.js-form-placement__input');
     this.input = new Input($inputElement);
-    this.input.observer.subscribe({ key: 'click', observer: this.openSelector.bind(this) });
+    this.input.observer.subscribe({
+      key: 'click',
+      observer: this.openSelector.bind(this),
+    });
     const $selectorElement = $element.find('.js-form-placement__drop');
     this.selector = new Selector($selectorElement);
-    this.selector.observer.subscribe({ key: 'change', observer: this.setValue.bind(this) });
-    this.selector.observer.subscribe({ key: 'close', observer: this.closeSelector.bind(this) });
+    this.selector.observer.subscribe({
+      key: 'change',
+      observer: this.setValue.bind(this),
+    });
+    this.selector.observer.subscribe({
+      key: 'close',
+      observer: this.closeSelector.bind(this),
+    });
     this.selector.changeCount();
   }
 
@@ -22,24 +31,47 @@ class FormPlacement extends FormGuests {
 
   createPlacementText(array) {
     const bedroomNum = array[0];
-    const bedroomText = this.constructor.declOfNum(bedroomNum, ['спальня', 'спальни', 'спален']);
+    const bedroomText = this.constructor.declOfNum(bedroomNum, [
+      'спальня',
+      'спальни',
+      'спален',
+    ]);
     const bedrooms = `${bedroomNum} ${bedroomText}`;
 
     const bedNum = array[1];
-    const bedText = this.constructor.declOfNum(bedNum, ['кровать', 'кровати', 'кроватей']);
+    const bedText = this.constructor.declOfNum(bedNum, [
+      'кровать',
+      'кровати',
+      'кроватей',
+    ]);
     const beds = `${bedNum} ${bedText}`;
 
     const bathNum = array[2];
-    const bathText = this.constructor.declOfNum(bathNum, ['ванная комната', 'ванные комнаты', 'ванных комнат']);
+    const bathText = this.constructor.declOfNum(bathNum, [
+      'ванная комната',
+      'ванные комнаты',
+      'ванных комнат',
+    ]);
     const baths = `${bathNum} ${bathText}`;
 
-    let str;
-    if (bedroomNum === 0) {
-      str = 'Сколько спален';
-    } else {
-      str = `${`${bedrooms}`}${bedNum ? `, ${beds}` : ''}${(!bedNum && bathNum) ? `, ${baths}` : ''}${(bedNum && bathNum) ? '...' : ''}`;
+    const hasBathNumAndPlace = bathNum && (!bedroomNum || !bedNum);
+    const hasBathNumWithoutPlace = bathNum && bedNum && bedroomNum;
+
+    const placementArray = [];
+    if (bedroomNum) {
+      placementArray.push(bedrooms);
     }
-    return str;
+    if (bedNum) {
+      placementArray.push(beds);
+    }
+    if (hasBathNumAndPlace) {
+      placementArray.push(baths);
+    }
+    if (hasBathNumWithoutPlace) {
+      placementArray.push('...');
+    }
+
+    return placementArray.join(', ');
   }
 }
 
